@@ -402,7 +402,8 @@
               r.linkTarghetta !== ""
             ) {
               const a = document.createElement("a");    // Crea un elemento <a>
-              a.href = r.linkTarghetta;                 // Imposta l'URL del link
+              const link = `targhetteTipo/${r.linkTarghetta}`;
+              a.href = link;                 // Imposta l'URL del link
               a.textContent = val;                      // Imposta il testo del link
               td.appendChild(a);                        // Aggiunge il link alla cella
             } 
@@ -475,7 +476,8 @@
               r.linkTarghetta !== ""
             ) {
               const a = document.createElement("a");
-              a.href = r.linkTarghetta;
+              const link = `targhetteTipo/${r.linkTarghetta}`;
+              a.href = link;                 // Imposta l'URL del link
               a.textContent = `${c}: ${val}`;
               p.appendChild(a);
             } else {
