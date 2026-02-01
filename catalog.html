@@ -405,7 +405,29 @@
               a.href = r.linkTarghetta;                 // Imposta l'URL del link
               a.textContent = val;                      // Imposta il testo del link
               td.appendChild(a);                        // Aggiunge il link alla cella
-            } else {
+            } 
+            // Se è la colonna "Denominazione ufficio", crea un link con combinazione Denominazione+Localita
+            else if (c === "Denominazione ufficio") {
+              const a = document.createElement("a");
+              const params = new URLSearchParams({
+                denominazione: r["Denominazione ufficio"],
+                localita: r["Località"]
+              });
+              a.href = `office-details.html?${params.toString()}`;
+              a.textContent = val;
+              td.appendChild(a);
+            }
+            // Se è la colonna "Localita", crea un link solo con la localita
+            else if (c === "Località") {
+              const a = document.createElement("a");
+              const params = new URLSearchParams({
+                localita: r["Località"]
+              });
+              a.href = `locality-details.html?${params.toString()}`;
+              a.textContent = val;
+              td.appendChild(a);
+            }
+            else {
               // Altrimenti, semplicemente inserisce il testo nella cella
               td.textContent = val;
             }
