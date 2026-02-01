@@ -201,7 +201,7 @@
         larghezzeColonneFisse = {};
 
       // ----- Carica JSON -----
-      fetch("annulli.json")
+      fetch("targhetteRegno.json")
         .then((res) => res.json())
         .then((json) => {
           data = json;
@@ -272,7 +272,7 @@
         thead.innerHTML = "";
         if (!records.length) return;
         const campi = Object.keys(records[0]).filter(
-          (c) => c !== "linkTarghetta",
+          (c) => (c !== "linkTarghetta" && c !== "linkDatario"),
         );
         const trTitoli = document.createElement("tr");
         campi.forEach((c) => {
@@ -371,8 +371,8 @@
         // Pulisce il corpo della tabella (rimuove righe vecchie)
         tbody.innerHTML = "";
         
-        // Estrae i nomi dei campi dai dati, escludendo "linkTarghetta"
-        const campi = Object.keys(data[0]).filter((c) => c !== "linkTarghetta");
+        // Estrae i nomi dei campi dai dati, escludendo "linkTarghetta" e "linkDatario"
+        const campi = Object.keys(data[0]).filter((c) => (c !== "linkTarghetta" && c !== "linkDatario"));
         
         // Se non ci sono record da mostrare, visualizza messaggio
         if (!records.length) {
@@ -395,9 +395,9 @@
             // Se il valore è un array, lo converte in stringa (es: ["a", "b"] → "a, b")
             if (Array.isArray(val)) val = val.join(", ");
             
-            // Se è la colonna "Targhetta Tipo" o "Descrizione targhetta" e ha un link, crea un link
+            // Se è la colonna "Targhetta Tipo" o "Descrizione" e ha un link, crea un link
             if (
-              (c === "Targhetta Tipo" || c === "Descrizione targhetta") &&
+              (c === "Targhetta Tipo" || c === "Descrizione") &&
               r.linkTarghetta &&
               r.linkTarghetta !== ""
             ) {
@@ -465,12 +465,12 @@
           title.textContent = r.tipo || "Annullo";
           card.appendChild(title);
           Object.keys(r).forEach((c) => {
-            if (c === "linkTarghetta") return;
+            if ((c === "linkTarghetta") || (c === "linkDatario")) return;
             const p = document.createElement("p");
             let val = r[c];
             if (Array.isArray(val)) val = val.join(", ");
             if (
-              c === "Descrizione targhetta" &&
+              c === "Descrizione" &&
               r.linkTarghetta &&
               r.linkTarghetta !== ""
             ) {
@@ -556,7 +556,7 @@
         const conteggio = {};
         records.forEach((r) => {
           const y =
-            r && r.anno !== undefined && r.anno !== null ? r.anno : null;
+            r && r.Anno !== undefined && r.Anno !== null ? r.Anno : null;
           if (y !== null) {
             const key = String(y);
             conteggio[key] = (conteggio[key] || 0) + 1;
