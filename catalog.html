@@ -363,38 +363,56 @@
 
       // ----- Mostra tabella -----
       function mostraTabella(records) {
+        // Seleziona il corpo della tabella (dove andranno le righe)
         const tbody = document.querySelector("#tabellaFiltri tbody");
+        
+        // Pulisce il corpo della tabella (rimuove righe vecchie)
         tbody.innerHTML = "";
+        
+        // Estrae i nomi dei campi dai dati, escludendo "linkTarghetta"
         const campi = Object.keys(data[0]).filter((c) => c !== "linkTarghetta");
+        
+        // Se non ci sono record da mostrare, visualizza messaggio
         if (!records.length) {
-          const tr = document.createElement("tr");
-          const td = document.createElement("td");
-          td.colSpan = campi.length;
-          td.textContent = "Nessun risultato";
-          tr.appendChild(td);
-          tbody.appendChild(tr);
+          const tr = document.createElement("tr");  // Crea una riga
+          const td = document.createElement("td");  // Crea una cella
+          td.colSpan = campi.length;                // Cella occupa tutte le colonne
+          td.textContent = "Nessun risultato";      // Testo del messaggio
+          tr.appendChild(td);                       // Aggiunge la cella alla riga
+          tbody.appendChild(tr);                    // Aggiunge la riga alla tabella
           return;
         }
+        
+        // Ciclo su ogni record da visualizzare
         records.forEach((r) => {
           const tr = document.createElement("tr");
           campi.forEach((c, idx) => {
-            const td = document.createElement("td");
-            let val = r[c];
+            const td = document.createElement("td");  // Crea una cella
+            let val = r[c];  // Ottiene il valore del campo
+            
+            // Se il valore è un array, lo converte in stringa (es: ["a", "b"] → "a, b")
             if (Array.isArray(val)) val = val.join(", ");
+            
+            // Se è la colonna "Targhetta Tipo" o "Descrizione targhetta" e ha un link, crea un link
             if (
-              (idx === 0 || idx == 3) &&
+              (c === "Targhetta Tipo" || c === "Descrizione targhetta") &&
               r.linkTarghetta &&
               r.linkTarghetta !== ""
             ) {
-              const a = document.createElement("a");
-              a.href = r.linkTarghetta;
-              a.textContent = val;
-              td.appendChild(a);
+              const a = document.createElement("a");    // Crea un elemento <a>
+              a.href = r.linkTarghetta;                 // Imposta l'URL del link
+              a.textContent = val;                      // Imposta il testo del link
+              td.appendChild(a);                        // Aggiunge il link alla cella
             } else {
+              // Altrimenti, semplicemente inserisce il testo nella cella
               td.textContent = val;
             }
+            
+            // Aggiunge la cella alla riga
             tr.appendChild(td);
           });
+          
+          // Aggiunge la riga completata al corpo della tabella
           tbody.appendChild(tr);
         });
       }
