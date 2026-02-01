@@ -1,7 +1,7 @@
 // Carica la navbar da navbar.html e la inserisce nel body
 async function loadNavbar() {
   try {
-    const response = await fetch('navbar.html');
+    const response = await fetch('/navbar.html');
     const navbarHTML = await response.text();
     const navbarContainer = document.createElement('div');
     navbarContainer.id = 'navbar-container';
