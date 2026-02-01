@@ -21,7 +21,7 @@
       /* Tabella */
       table {
         border-collapse: collapse;
-        width: max-content;
+        width:1200px;
         table-layout: fixed;
       }
       th,
@@ -201,6 +201,7 @@
         larghezzeColonneFisse = {};
 
       // ----- Carica JSON -----
+      let larghezzaTabellaFissa = null;
       fetch("targhetteRegno.json")
         .then((res) => res.json())
         .then((json) => {
@@ -208,9 +209,7 @@
           calcolaLarghezzeFisse(data);
           costruisciFiltri(data);
           aggiornaVisualizzazione(data);
-          window.addEventListener("resize", () =>
-            aggiornaVisualizzazione(filtraDati(data)),
-          );
+          window.addEventListener("resize", () => aggiornaVisualizzazione(filtraDati(data)));
         });
 
       // ----- Larghezza massima colonna -----
@@ -239,6 +238,7 @@
 
       // ----- Applica larghezze minime -----
       function applicaLarghezzeMinime(records) {
+        // Usa sempre le larghezze calcolate all'avvio, una per colonna
         const larghezze = larghezzeColonneFisse;
         document
           .querySelectorAll("#theadFiltri tr:nth-child(1) th")
@@ -267,35 +267,46 @@
       }
 
       // ----- Costruisci filtri -----
+      /**
+       * Costruisce l'header della tabella con i titoli delle colonne e i filtri a discesa.
+       * @param {Array} records - Array di oggetti dati da cui estrarre i campi e i valori per i filtri
+       */
       function costruisciFiltri(records) {
+        // Seleziona l'elemento thead della tabella e lo svuota
         const thead = document.getElementById("theadFiltri");
         thead.innerHTML = "";
         if (!records.length) return;
+        // Ottiene i nomi dei campi (colonne), escludendo i campi tecnici
         const campi = Object.keys(records[0]).filter(
           (c) => (c !== "linkTarghetta" && c !== "linkDatario"),
         );
+        // Crea la riga dei titoli delle colonne
         const trTitoli = document.createElement("tr");
         campi.forEach((c) => {
           const th = document.createElement("th");
-          th.textContent = c;
-          th.style.minWidth = larghezzeColonneFisse[c] + "px";
+          th.textContent = c; // Nome della colonna
+          th.style.width = larghezzeColonneFisse[c] + "px"; // Larghezza minima calcolata
           trTitoli.appendChild(th);
         });
+        // Crea la riga dei filtri (select per ogni colonna)
         const trFiltri = document.createElement("tr");
         campi.forEach((c) => {
           const th = document.createElement("th"),
             select = document.createElement("select");
-          select.dataset.campo = c;
+          select.dataset.campo = c; // Attributo per sapere a quale campo si riferisce
+          // Opzione "Tutti" per non filtrare
           const optTutti = document.createElement("option");
           optTutti.value = "";
           optTutti.textContent = "Tutti";
           select.appendChild(optTutti);
+          // Raccoglie tutti i valori distinti per questa colonna
           const valori = new Set();
           records.forEach((r) => {
             const v = r[c];
             if (Array.isArray(v)) v.forEach((x) => valori.add(x));
             else if (v != null) valori.add(v);
           });
+          // Aggiunge le opzioni ordinate
           Array.from(valori)
             .sort()
             .forEach((v) => {
@@ -306,11 +317,14 @@
             });
           th.appendChild(select);
           trFiltri.appendChild(th);
+          // Imposta la larghezza del filtro uguale alla colonna
           select.style.width = larghezzeColonneFisse[c] + "px";
+          // Aggiorna la visualizzazione quando cambia il filtro
           select.addEventListener("change", () =>
             aggiornaVisualizzazione(filtraDati(data)),
           );
         });
+        // Aggiunge le due righe all'header della tabella
         thead.appendChild(trTitoli);
         thead.appendChild(trFiltri);
       }
@@ -342,21 +356,22 @@
         const cardContainer = document.getElementById("cardContainer"),
           tbody = document.querySelector("#tabellaFiltri tbody");
 
+        // La tabella è sempre visibile, header e filtri sempre presenti
+        if (vista === "tabella" || vista === "tabella_card") {
+          mostraTabella(mostrati);
+        } else {
+          // Se non è vista tabella, mostra solo header e filtri, svuota tbody
+          mostraTabella([]);
+        }
+        // Card come prima
         if (vista === "card" || vista === "tabella_card") {
           cardContainer.style.display = "flex";
           mostraCard(mostrati);
-          cardContainer.style.width =
-            document.getElementById("tabellaFiltri").offsetWidth + "px";
         } else cardContainer.style.display = "none";
-
-        if (vista === "tabella" || vista === "tabella_card") {
-          tbody.style.display = "table-row-group";
-          mostraTabella(mostrati);
-        } else tbody.style.display = "none";
-
-        // Grafico allineato tabella
-        const graficoWrapper = document.getElementById("graficoWrapper"),
-          tableWidth = document.getElementById("tabellaFiltri").offsetWidth;
+        // Larghezza fissa per card e grafico
+        const tableWidth = larghezzaTabellaFissa || document.getElementById("tabellaFiltri").offsetWidth;
+        cardContainer.style.width = tableWidth + "px";
+        const graficoWrapper = document.getElementById("graficoWrapper");
         graficoWrapper.style.width = tableWidth + "px";
 
         applicaLarghezzeMinime(records);
@@ -374,14 +389,14 @@
         // Estrae i nomi dei campi dai dati, escludendo "linkTarghetta" e "linkDatario"
         const campi = Object.keys(data[0]).filter((c) => (c !== "linkTarghetta" && c !== "linkDatario"));
         
-        // Se non ci sono record da mostrare, visualizza messaggio
+        // Se non ci sono record da mostrare, mostra solo la riga "Nessun risultato" ma lascia header e filtri
         if (!records.length) {
-          const tr = document.createElement("tr");  // Crea una riga
-          const td = document.createElement("td");  // Crea una cella
-          td.colSpan = campi.length;                // Cella occupa tutte le colonne
-          td.textContent = "Nessun risultato";      // Testo del messaggio
-          tr.appendChild(td);                       // Aggiunge la cella alla riga
-          tbody.appendChild(tr);                    // Aggiunge la riga alla tabella
+          //const tr = document.createElement("tr");
+          //const td = document.createElement("td");
+          //td.colSpan = campi.length;
+          //td.textContent = "Nessun risultato";
+          //tr.appendChild(td);
+          //tbody.appendChild(tr);
           return;
         }
         
