@@ -4,6 +4,17 @@
   background: #f0f0f0;
   color: #333;
   margin-top: 40px;
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#footerContainer {
+  margin-top: auto;
 }
 .scroll-to-top {
   display: none;

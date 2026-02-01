@@ -149,26 +149,26 @@
     </style>
   </head>
   <body>
+
     <h1>Doppia vista con filtri, card e grafico</h1>
-
-    <label
-      >Max record:
-      <select id="maxRecords">
-        <option value="100">100</option>
-        <option value="200">200</option>
-        <option value="500">500</option>
-        <option value="all">Tutti</option>
-      </select>
-    </label>
-
-    <label
-      >Vista:
-      <select id="vistaSelezionata">
-        <option value="tabella">Tabella</option>
-        <option value="card">Card</option>
-        <option value="tabella_card">Tabella + Card</option>
-      </select>
-    </label>
+    <div class="controlli-wrapper">
+      <label>Max record:
+        <select id="maxRecords">
+          <option value="100">100</option>
+          <option value="200">200</option>
+          <option value="500">500</option>
+          <option value="all">Tutti</option>
+        </select>
+      </label>
+      <label>Vista:
+        <select id="vistaSelezionata">
+          <option value="tabella">Tabella</option>
+          <option value="card">Card</option>
+          <option value="tabella_card">Tabella + Card</option>
+        </select>
+      </label>
+    </div>
+   
 
     <div class="table-wrapper">
       <table id="tabellaFiltri">
