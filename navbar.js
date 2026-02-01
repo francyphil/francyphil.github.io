@@ -12,7 +12,8 @@ async function loadNavbar() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const homeLink = document.getElementById('nav-home');
     const catalogLink = document.getElementById('nav-catalog');
-    
+    const phindexLink = document.getElementById('nav-phindex');
+
     if (currentPage === 'index.html' || currentPage === '') {
       homeLink.classList.add('active');
     } else if (currentPage === 'catalog.html') {

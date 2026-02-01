@@ -115,7 +115,7 @@
       Nessuna targhetta trovata per questo ufficio.
     </div>
 
-    <script src="navbar.js"></script>
+    <script src="/navbar.js"></script>
     <script>
       // Estrae i parametri dall'URL
       function getURLParams() {
@@ -195,6 +195,16 @@
               tr.appendChild(tdAnno);
               tr.appendChild(tdTipo);
               tr.appendChild(tdUfficio);
+        </script>
+        <link rel="stylesheet" href="/footer.css">
+        <script src="/footer.js"></script>
+        <div id="footerContainer"></div>
+        <script>
+          fetch('/footer.html')
+            .then(res => res.text())
+            .then(html => {
+              document.getElementById('footerContainer').innerHTML = html;
+            });
               tr.appendChild(tdDescrizione);
               tr.appendChild(tdLink);
               
