@@ -1,3 +1,68 @@
+/* Sottomenù multilivello: solo uno visibile per volta */
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-content-sub {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  min-width: 180px;
+  background: #333;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1003;
+  flex-direction: column;
+}
+.dropdown-submenu:hover > .dropdown-content-sub {
+  display: flex;
+}
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1002;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+/* Mostra solo il dropdown principale al passaggio su Catalogo */
+.dropdown:hover > .dropdown-content {
+  display: flex;
+}
+
+/* Mostra solo il relativo sotto-sottomenu al passaggio su Regno o Colonie */
+.dropdown-content .dropdown-submenu > .dropdown-content {
+  display: none;
+}
+.dropdown-content .dropdown-submenu:hover > .dropdown-content {
+  display: flex;
+  left: 100%;
+  top: 0;
+}
+
+.dropdown-content li {
+  width: 100%;
+}
+
+.dropdown-content a {
+  padding: 12px 20px;
+  color: white;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
 /* Barra di navigazione */
 nav {
   background-color: #333;
