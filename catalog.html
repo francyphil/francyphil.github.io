@@ -257,7 +257,9 @@
         document.querySelectorAll("#tabellaFiltri tbody tr").forEach((tr) => {
           const tds = tr.querySelectorAll("td");
           Object.keys(larghezze).forEach(
-            (c, i) => (tds[i].style.minWidth = larghezze[c] + "px"),
+            (c, i) => {
+              if (tds[i]) tds[i].style.minWidth = larghezze[c] + "px";
+            }
           );
         });
       }
