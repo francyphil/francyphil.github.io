@@ -1,300 +1,538 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-<meta charset="UTF-8">
-<title>Doppia vista con filtri, card e grafico allineato</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-body { font-family: sans-serif; padding: 20px; }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Doppia vista con filtri, card e grafico allineato</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
 
-/* Wrapper tabella scrollabile */
-.table-wrapper { overflow-x: auto; margin-top: 20px; }
+      /* Wrapper tabella scrollabile */
+      .table-wrapper {
+        overflow-x: auto;
+        margin-top: 20px;
+      }
 
-/* Tabella */
-table { border-collapse: collapse; width: max-content; table-layout: fixed; }
-th, td { border: 1px solid #ccc; padding: 5px 10px; text-align: left; white-space: nowrap; }
-th { background-color: #f0f0f0; }
+      /* Tabella */
+      table {
+        border-collapse: collapse;
+        width: max-content;
+        table-layout: fixed;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        text-align: left;
+        white-space: nowrap;
+      }
+      th {
+        background-color: #f0f0f0;
+      }
 
-/* Card container allineata alla tabella */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: flex-start;
-    margin-top: 20px;
-}
+      /* Card container allineata alla tabella */
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: flex-start;
+        margin-top: 20px;
+      }
 
-/* Card */
-.card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    width: calc(25% - 15px);
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    transition: transform 0.2s ease;
-}
-.card:hover { transform: scale(1.02); }
+      /* Card */
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        width: calc(25% - 15px);
+        box-sizing: border-box;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: transform 0.2s ease;
+      }
+      .card:hover {
+        transform: scale(1.02);
+      }
 
-.card img {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    object-fit: contain;
-    max-height: 150px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-.card img:hover { transform: scale(1.2); }
+      .card img {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        object-fit: contain;
+        max-height: 150px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+      .card img:hover {
+        transform: scale(1.2);
+      }
 
-.card h3 { margin: 0 0 5px 0; font-size: 16px; text-align: left; }
-.card p { margin: 2px 0; font-size: 14px; text-align: left; }
+      .card h3 {
+        margin: 0 0 5px 0;
+        font-size: 16px;
+        text-align: left;
+      }
+      .card p {
+        margin: 2px 0;
+        font-size: 14px;
+        text-align: left;
+      }
 
-/* Grafico wrapper */
-#graficoWrapper {
-    display: block;
-    margin-top: 20px;
-    width: fit-content; /* larghezza basata su tabella */
-}
-#grafico {
-    width: 100% !important;
-    height: 400px;
-}
+      /* Grafico wrapper */
+      #graficoWrapper {
+        display: block;
+        margin-top: 20px;
+        width: fit-content; /* larghezza basata su tabella */
+      }
+      #grafico {
+        width: 100% !important;
+        height: 400px;
+      }
 
-/* Lightbox overlay */
-#lightboxOverlay {
-    display: none;
-    position: fixed; top:0; left:0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    color: white;
-    flex-direction: column;
-}
-#lightboxImage { max-width: 90%; max-height: 80%; border-radius: 8px; margin-bottom: 10px; }
-#fallbackText { margin-bottom: 10px; }
-#lightboxOverlay .controls {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    margin-top: -50px;
-}
-#lightboxOverlay .controls button {
-    background: rgba(255,255,255,0.2);
-    border: none; color: white; font-size: 24px; padding: 10px 15px; border-radius: 5px; cursor: pointer; transition: background 0.2s;
-}
-#lightboxOverlay .controls button:hover { background: rgba(255,255,255,0.5); }
+      /* Lightbox overlay */
+      #lightboxOverlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        color: white;
+        flex-direction: column;
+      }
+      #lightboxImage {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+      #fallbackText {
+        margin-bottom: 10px;
+      }
+      #lightboxOverlay .controls {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        margin-top: -50px;
+      }
+      #lightboxOverlay .controls button {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        font-size: 24px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      #lightboxOverlay .controls button:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
 
-th select { box-sizing: border-box; }
-</style>
-</head>
-<body>
+      th select {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Doppia vista con filtri, card e grafico</h1>
 
-<h1>Doppia vista con filtri, card e grafico</h1>
+    <label
+      >Max record:
+      <select id="maxRecords">
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="500">500</option>
+        <option value="all">Tutti</option>
+      </select>
+    </label>
 
-<label>Max record:
-<select id="maxRecords">
-    <option value="100">100</option>
-    <option value="200">200</option>
-    <option value="500">500</option>
-    <option value="all">Tutti</option>
-</select>
-</label>
+    <label
+      >Vista:
+      <select id="vistaSelezionata">
+        <option value="tabella">Tabella</option>
+        <option value="card">Card</option>
+        <option value="tabella_card">Tabella + Card</option>
+      </select>
+    </label>
 
-<label>Vista:
-<select id="vistaSelezionata">
-    <option value="tabella">Tabella</option>
-    <option value="card">Card</option>
-    <option value="tabella_card">Tabella + Card</option>
-</select>
-</label>
+    <div class="table-wrapper">
+      <table id="tabellaFiltri">
+        <thead id="theadFiltri"></thead>
+        <tbody></tbody>
+      </table>
+    </div>
 
-<div class="table-wrapper">
-<table id="tabellaFiltri">
-<thead id="theadFiltri"></thead>
-<tbody></tbody>
-</table>
-</div>
+    <div class="card-container" id="cardContainer"></div>
 
-<div class="card-container" id="cardContainer"></div>
+    <!-- Grafico wrapper uguale tabella -->
+    <div id="graficoWrapper">
+      <canvas id="grafico" height="400"></canvas>
+    </div>
 
-<!-- Grafico wrapper uguale tabella -->
-<div id="graficoWrapper">
-    <canvas id="grafico" height="400"></canvas>
-</div>
-
-<div id="lightboxOverlay">
-    <img id="lightboxImage">
-    <div id="fallbackText"></div>
-    <div class="controls">
+    <div id="lightboxOverlay">
+      <img id="lightboxImage" />
+      <div id="fallbackText"></div>
+      <div class="controls">
         <button onclick="prevImage()">⟨</button>
         <button onclick="chiudiLightbox()">✕</button>
         <button onclick="nextImage()">⟩</button>
+      </div>
     </div>
-</div>
 
-<script>
-let data=[], immagini=[], lightboxIndex=0, larghezzeColonneFisse={};
+    <script>
+      let data = [],
+        immagini = [],
+        lightboxIndex = 0,
+        larghezzeColonneFisse = {};
 
-// ----- Carica JSON -----
-fetch('annulli.json')
-    .then(res=>res.json())
-    .then(json=>{
-        data=json;
-        calcolaLarghezzeFisse(data);
-        costruisciFiltri(data);
-        aggiornaVisualizzazione(data);
-        window.addEventListener('resize', ()=>aggiornaVisualizzazione(filtraDati(data)));
-    });
-
-// ----- Larghezza massima colonna -----
-function calcolaLarghezzeFisse(records){
-    if(!records.length) return;
-    const campi=Object.keys(records[0]), larghezze={};
-    const canvas=document.createElement('canvas'), ctx=canvas.getContext('2d');
-    ctx.font=window.getComputedStyle(document.body).font || '16px sans-serif';
-    campi.forEach(c=>{
-        let maxW=ctx.measureText(c).width;
-        records.forEach(r=>{
-            let val=r[c]; if(Array.isArray(val)) val=val.join(', ');
-            if(val!=null){ const w=ctx.measureText(val.toString()).width; if(w>maxW) maxW=w; }
+      // ----- Carica JSON -----
+      fetch("annulli.json")
+        .then((res) => res.json())
+        .then((json) => {
+          data = json;
+          calcolaLarghezzeFisse(data);
+          costruisciFiltri(data);
+          aggiornaVisualizzazione(data);
+          window.addEventListener("resize", () =>
+            aggiornaVisualizzazione(filtraDati(data)),
+          );
         });
-        larghezze[c]=maxW+20;
-    });
-    larghezzeColonneFisse=larghezze;
-}
 
-// ----- Applica larghezze minime -----
-function applicaLarghezzeMinime(records){
-    const larghezze=larghezzeColonneFisse;
-    document.querySelectorAll('#theadFiltri tr:nth-child(1) th').forEach(th=>{ const c=th.textContent; if(larghezze[c]) th.style.minWidth=larghezze[c]+'px'; });
-    document.querySelectorAll('#theadFiltri tr:nth-child(2) th').forEach(th=>{ const select=th.querySelector('select'); if(select){ const c=select.dataset.campo; th.style.minWidth=larghezze[c]+'px'; select.style.width=larghezze[c]+'px'; }});
-    document.querySelectorAll('#tabellaFiltri tbody tr').forEach(tr=>{ const tds=tr.querySelectorAll('td'); Object.keys(larghezze).forEach((c,i)=>tds[i].style.minWidth=larghezze[c]+'px'); });
-}
+      // ----- Larghezza massima colonna -----
+      function calcolaLarghezzeFisse(records) {
+        if (!records.length) return;
+        const campi = Object.keys(records[0]),
+          larghezze = {};
+        const canvas = document.createElement("canvas"),
+          ctx = canvas.getContext("2d");
+        ctx.font =
+          window.getComputedStyle(document.body).font || "16px sans-serif";
+        campi.forEach((c) => {
+          let maxW = ctx.measureText(c).width;
+          records.forEach((r) => {
+            let val = r[c];
+            if (Array.isArray(val)) val = val.join(", ");
+            if (val != null) {
+              const w = ctx.measureText(val.toString()).width;
+              if (w > maxW) maxW = w;
+            }
+          });
+          larghezze[c] = maxW + 20;
+        });
+        larghezzeColonneFisse = larghezze;
+      }
 
-// ----- Costruisci filtri -----
-function costruisciFiltri(records){
-    const thead=document.getElementById('theadFiltri'); thead.innerHTML=''; if(!records.length) return;
-    const campi=Object.keys(records[0]).filter(c => c !== 'linkTarghetta');
-    const trTitoli=document.createElement('tr');
-    campi.forEach(c=>{ const th=document.createElement('th'); th.textContent=c; th.style.minWidth=larghezzeColonneFisse[c]+'px'; trTitoli.appendChild(th); });
-    const trFiltri=document.createElement('tr');
-    campi.forEach(c=>{
-        const th=document.createElement('th'), select=document.createElement('select'); select.dataset.campo=c;
-        const optTutti=document.createElement('option'); optTutti.value=''; optTutti.textContent='Tutti'; select.appendChild(optTutti);
-        const valori=new Set(); records.forEach(r=>{ const v=r[c]; if(Array.isArray(v)) v.forEach(x=>valori.add(x)); else if(v!=null) valori.add(v); });
-        Array.from(valori).sort().forEach(v=>{ const opt=document.createElement('option'); opt.value=v; opt.textContent=v; select.appendChild(opt); });
-        th.appendChild(select); trFiltri.appendChild(th);
-        select.style.width=larghezzeColonneFisse[c]+'px';
-        select.addEventListener('change',()=>aggiornaVisualizzazione(filtraDati(data)));
-    });
-    thead.appendChild(trTitoli); thead.appendChild(trFiltri);
-}
+      // ----- Applica larghezze minime -----
+      function applicaLarghezzeMinime(records) {
+        const larghezze = larghezzeColonneFisse;
+        document
+          .querySelectorAll("#theadFiltri tr:nth-child(1) th")
+          .forEach((th) => {
+            const c = th.textContent;
+            if (larghezze[c]) th.style.minWidth = larghezze[c] + "px";
+          });
+        document
+          .querySelectorAll("#theadFiltri tr:nth-child(2) th")
+          .forEach((th) => {
+            const select = th.querySelector("select");
+            if (select) {
+              const c = select.dataset.campo;
+              th.style.minWidth = larghezze[c] + "px";
+              select.style.width = larghezze[c] + "px";
+            }
+          });
+        document.querySelectorAll("#tabellaFiltri tbody tr").forEach((tr) => {
+          const tds = tr.querySelectorAll("td");
+          Object.keys(larghezze).forEach(
+            (c, i) => (tds[i].style.minWidth = larghezze[c] + "px"),
+          );
+        });
+      }
 
-// ----- Filtra dati -----
-function filtraDati(records){
-    const selects=document.querySelectorAll('#theadFiltri tr:nth-child(2) select'), filtri={};
-    selects.forEach(s=>{ if(s.value!=='') filtri[s.dataset.campo]=s.value; });
-    return records.filter(r=>{ for(const [c,v] of Object.entries(filtri)){ const val=r[c]; if(Array.isArray(val)?!val.includes(v):val!=v) return false; } return true; });
-}
+      // ----- Costruisci filtri -----
+      function costruisciFiltri(records) {
+        const thead = document.getElementById("theadFiltri");
+        thead.innerHTML = "";
+        if (!records.length) return;
+        const campi = Object.keys(records[0]).filter(
+          (c) => c !== "linkTarghetta",
+        );
+        const trTitoli = document.createElement("tr");
+        campi.forEach((c) => {
+          const th = document.createElement("th");
+          th.textContent = c;
+          th.style.minWidth = larghezzeColonneFisse[c] + "px";
+          trTitoli.appendChild(th);
+        });
+        const trFiltri = document.createElement("tr");
+        campi.forEach((c) => {
+          const th = document.createElement("th"),
+            select = document.createElement("select");
+          select.dataset.campo = c;
+          const optTutti = document.createElement("option");
+          optTutti.value = "";
+          optTutti.textContent = "Tutti";
+          select.appendChild(optTutti);
+          const valori = new Set();
+          records.forEach((r) => {
+            const v = r[c];
+            if (Array.isArray(v)) v.forEach((x) => valori.add(x));
+            else if (v != null) valori.add(v);
+          });
+          Array.from(valori)
+            .sort()
+            .forEach((v) => {
+              const opt = document.createElement("option");
+              opt.value = v;
+              opt.textContent = v;
+              select.appendChild(opt);
+            });
+          th.appendChild(select);
+          trFiltri.appendChild(th);
+          select.style.width = larghezzeColonneFisse[c] + "px";
+          select.addEventListener("change", () =>
+            aggiornaVisualizzazione(filtraDati(data)),
+          );
+        });
+        thead.appendChild(trTitoli);
+        thead.appendChild(trFiltri);
+      }
 
-// ----- Aggiorna visualizzazione -----
-function aggiornaVisualizzazione(records){
-    const maxRecords=document.getElementById('maxRecords').value, vista=document.getElementById('vistaSelezionata').value;
-    let max=maxRecords==='all'?records.length:parseInt(maxRecords), mostrati=records.slice(0,max);
-    const cardContainer=document.getElementById('cardContainer'), tbody=document.querySelector('#tabellaFiltri tbody');
+      // ----- Filtra dati -----
+      function filtraDati(records) {
+        const selects = document.querySelectorAll(
+            "#theadFiltri tr:nth-child(2) select",
+          ),
+          filtri = {};
+        selects.forEach((s) => {
+          if (s.value !== "") filtri[s.dataset.campo] = s.value;
+        });
+        return records.filter((r) => {
+          for (const [c, v] of Object.entries(filtri)) {
+            const val = r[c];
+            if (Array.isArray(val) ? !val.includes(v) : val != v) return false;
+          }
+          return true;
+        });
+      }
 
-    if(vista==='card'||vista==='tabella_card'){ cardContainer.style.display='flex'; mostraCard(mostrati); cardContainer.style.width=document.getElementById('tabellaFiltri').offsetWidth+'px'; }
-    else cardContainer.style.display='none';
+      // ----- Aggiorna visualizzazione -----
+      function aggiornaVisualizzazione(records) {
+        const maxRecords = document.getElementById("maxRecords").value,
+          vista = document.getElementById("vistaSelezionata").value;
+        let max = maxRecords === "all" ? records.length : parseInt(maxRecords),
+          mostrati = records.slice(0, max);
+        const cardContainer = document.getElementById("cardContainer"),
+          tbody = document.querySelector("#tabellaFiltri tbody");
 
-    if(vista==='tabella'||vista==='tabella_card'){ tbody.style.display='table-row-group'; mostraTabella(mostrati); }
-    else tbody.style.display='none';
+        if (vista === "card" || vista === "tabella_card") {
+          cardContainer.style.display = "flex";
+          mostraCard(mostrati);
+          cardContainer.style.width =
+            document.getElementById("tabellaFiltri").offsetWidth + "px";
+        } else cardContainer.style.display = "none";
 
-    // Grafico allineato tabella
-    const graficoWrapper=document.getElementById('graficoWrapper'), tableWidth=document.getElementById('tabellaFiltri').offsetWidth;
-    graficoWrapper.style.width=tableWidth+'px';
+        if (vista === "tabella" || vista === "tabella_card") {
+          tbody.style.display = "table-row-group";
+          mostraTabella(mostrati);
+        } else tbody.style.display = "none";
 
-    applicaLarghezzeMinime(records); aggiornaGrafico(records);
-}
+        // Grafico allineato tabella
+        const graficoWrapper = document.getElementById("graficoWrapper"),
+          tableWidth = document.getElementById("tabellaFiltri").offsetWidth;
+        graficoWrapper.style.width = tableWidth + "px";
 
-// ----- Mostra tabella -----
-function mostraTabella(records){
-    const tbody=document.querySelector('#tabellaFiltri tbody'); tbody.innerHTML='';
-    const campi=Object.keys(data[0]).filter(c => c !== 'linkTarghetta');
-    if(!records.length){ 
-        const tr=document.createElement('tr'); 
-        const td=document.createElement('td'); 
-        td.colSpan=campi.length; 
-        td.textContent='Nessun risultato'; 
-        tr.appendChild(td); 
-        tbody.appendChild(tr); 
-        return; }
-    records.forEach(r=>{ 
-        const tr=document.createElement('tr'); 
-        campi.forEach((c,idx)=>{ 
-            const td=document.createElement('td'); 
-            let val=r[c]; 
-            if(Array.isArray(val)) val=val.join(', '); 
-            if((idx===0 || idx == 3 )&& r.linkTarghetta && r.linkTarghetta!==''){
-                const a=document.createElement('a'); 
-                a.href=r.linkTarghetta; 
-                a.textContent=val; 
-                td.appendChild(a); 
+        applicaLarghezzeMinime(records);
+        aggiornaGrafico(records);
+      }
+
+      // ----- Mostra tabella -----
+      function mostraTabella(records) {
+        const tbody = document.querySelector("#tabellaFiltri tbody");
+        tbody.innerHTML = "";
+        const campi = Object.keys(data[0]).filter((c) => c !== "linkTarghetta");
+        if (!records.length) {
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.colSpan = campi.length;
+          td.textContent = "Nessun risultato";
+          tr.appendChild(td);
+          tbody.appendChild(tr);
+          return;
+        }
+        records.forEach((r) => {
+          const tr = document.createElement("tr");
+          campi.forEach((c, idx) => {
+            const td = document.createElement("td");
+            let val = r[c];
+            if (Array.isArray(val)) val = val.join(", ");
+            if (
+              (idx === 0 || idx == 3) &&
+              r.linkTarghetta &&
+              r.linkTarghetta !== ""
+            ) {
+              const a = document.createElement("a");
+              a.href = r.linkTarghetta;
+              a.textContent = val;
+              td.appendChild(a);
             } else {
-                 td.textContent=val;
-                 }
-            tr.appendChild(td); 
-        }); 
-        tbody.appendChild(tr); 
-    });
-}
+              td.textContent = val;
+            }
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+      }
 
-// ----- Mostra card -----
-function mostraCard(records){
-    const container=document.getElementById('cardContainer'); container.innerHTML=''; immagini=[];
-    records.forEach((r,i)=>{
-        const card=document.createElement('div'); card.className='card';
-        const img=document.createElement('img'); const imgPath=`jpg/prev_${r['Targhetta Ufficio']}.jpeg`; img.src=imgPath; img.alt=r.tipo||'Annullo';
-        img.onerror=()=>{ img.style.display='none'; const span=document.createElement('span'); span.textContent='Immagine non ancora presente'; card.insertBefore(span,card.firstChild); };
-        img.onclick=()=>apriLightbox(i); card.appendChild(img);
-        const title=document.createElement('h3'); title.textContent=r.tipo||'Annullo'; card.appendChild(title);
-        Object.keys(r).forEach(c=>{ if(c==='linkTarghetta') return; const p=document.createElement('p'); let val=r[c]; if(Array.isArray(val)) val=val.join(', '); if(c==='Descrizione targhetta' && r.linkTarghetta && r.linkTarghetta!==''){ const a=document.createElement('a'); a.href=r.linkTarghetta; a.textContent=`${c}: ${val}`; p.appendChild(a); } else { p.textContent=`${c}: ${val}`; } card.appendChild(p); });
-        container.appendChild(card); immagini.push(imgPath);
-    });
-}
+      // ----- Mostra card -----
+      function mostraCard(records) {
+        const container = document.getElementById("cardContainer");
+        container.innerHTML = "";
+        immagini = [];
+        records.forEach((r, i) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          const img = document.createElement("img");
+          const imgPath = `jpg/prev_${r["Targhetta Ufficio"]}.jpeg`;
+          img.src = imgPath;
+          img.alt = r.tipo || "Annullo";
+          img.onerror = () => {
+            img.style.display = "none";
+            const span = document.createElement("span");
+            span.textContent = "Immagine non ancora presente";
+            card.insertBefore(span, card.firstChild);
+          };
+          img.onclick = () => apriLightbox(i);
+          card.appendChild(img);
+          const title = document.createElement("h3");
+          title.textContent = r.tipo || "Annullo";
+          card.appendChild(title);
+          Object.keys(r).forEach((c) => {
+            if (c === "linkTarghetta") return;
+            const p = document.createElement("p");
+            let val = r[c];
+            if (Array.isArray(val)) val = val.join(", ");
+            if (
+              c === "Descrizione targhetta" &&
+              r.linkTarghetta &&
+              r.linkTarghetta !== ""
+            ) {
+              const a = document.createElement("a");
+              a.href = r.linkTarghetta;
+              a.textContent = `${c}: ${val}`;
+              p.appendChild(a);
+            } else {
+              p.textContent = `${c}: ${val}`;
+            }
+            card.appendChild(p);
+          });
+          container.appendChild(card);
+          immagini.push(imgPath);
+        });
+      }
 
-// ----- Lightbox -----
-function apriLightbox(index){ lightboxIndex=index; const overlay=document.getElementById('lightboxOverlay'); const img=document.getElementById('lightboxImage'); const fallback=document.getElementById('fallbackText'); img.src=immagini[index]; img.style.display='block'; fallback.textContent=''; img.onerror=()=>{ img.style.display='none'; fallback.textContent='Immagine non ancora presente'; }; overlay.style.display='flex'; }
-function chiudiLightbox(){ document.getElementById('lightboxOverlay').style.display='none'; }
-function prevImage(){ lightboxIndex=(lightboxIndex-1+immagini.length)%immagini.length; apriLightbox(lightboxIndex); }
-function nextImage(){ lightboxIndex=(lightboxIndex+1)%immagini.length; apriLightbox(lightboxIndex); }
+      // ----- Lightbox -----
+      function apriLightbox(index) {
+        lightboxIndex = index;
+        const overlay = document.getElementById("lightboxOverlay");
+        const img = document.getElementById("lightboxImage");
+        const fallback = document.getElementById("fallbackText");
+        img.src = immagini[index];
+        img.style.display = "block";
+        fallback.textContent = "";
+        img.onerror = () => {
+          img.style.display = "none";
+          fallback.textContent = "Immagine non ancora presente";
+        };
+        overlay.style.display = "flex";
+      }
+      function chiudiLightbox() {
+        document.getElementById("lightboxOverlay").style.display = "none";
+      }
+      function prevImage() {
+        lightboxIndex = (lightboxIndex - 1 + immagini.length) % immagini.length;
+        apriLightbox(lightboxIndex);
+      }
+      function nextImage() {
+        lightboxIndex = (lightboxIndex + 1) % immagini.length;
+        apriLightbox(lightboxIndex);
+      }
 
-// ----- Grafico -----
-const ctx=document.getElementById('grafico').getContext('2d');
-let chart=new Chart(ctx,{
-    type:'bar',
-    data:{labels:[],datasets:[{label:'Numero annulli',data:[],backgroundColor:'rgba(54,162,235,0.6)',borderColor:'rgba(54,162,235,1)',borderWidth:1}]},
-    options:{responsive:true, maintainAspectRatio:false, scales:{x:{title:{display:true,text:'Anno'}},y:{title:{display:true,text:'Numero di annulli'},beginAtZero:true}}}
-});
+      // ----- Grafico -----
+      const ctx = document.getElementById("grafico").getContext("2d");
+      let chart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: [],
+          datasets: [
+            {
+              label: "Numero annulli",
+              data: [],
+              backgroundColor: "rgba(54,162,235,0.6)",
+              borderColor: "rgba(54,162,235,1)",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: { title: { display: true, text: "Anno" } },
+            y: {
+              title: { display: true, text: "Numero di annulli" },
+              beginAtZero: true,
+            },
+          },
+        },
+      });
 
-function aggiornaGrafico(records){
-    const conteggio={}; records.forEach(r=>{ if(r.anno!==undefined) conteggio[r.anno]=(conteggio[r.anno]||0)+1; });
-    const anni=Object.keys(conteggio).sort((a,b)=>a-b); const valori=anni.map(a=>conteggio[a]);
-    chart.data.labels=anni; chart.data.datasets[0].data=valori; chart.update();
-}
+      function aggiornaGrafico(records) {
+        // Debug: mostra i record ricevuti
+        console.log("aggiornaGrafico: records count =", records.length);
+        const conteggio = {};
+        records.forEach((r) => {
+          const y =
+            r && r.anno !== undefined && r.anno !== null ? r.anno : null;
+          if (y !== null) {
+            const key = String(y);
+            conteggio[key] = (conteggio[key] || 0) + 1;
+          }
+        });
+        const anni = Object.keys(conteggio).sort(
+          (a, b) => Number(a) - Number(b),
+        );
+        const valori = anni.map((a) => conteggio[a]);
+        console.log("aggiornaGrafico: anni=", anni, "valori=", valori);
+        chart.data.labels = anni;
+        chart.data.datasets[0].data = valori;
+        chart.update();
+      }
 
-// ----- Eventi -----
-document.getElementById('maxRecords').addEventListener('change',()=>aggiornaVisualizzazione(filtraDati(data)));
-document.getElementById('vistaSelezionata').addEventListener('change',()=>aggiornaVisualizzazione(filtraDati(data)));
-</script>
-
-</body>
+      // ----- Eventi -----
+      document
+        .getElementById("maxRecords")
+        .addEventListener("change", () =>
+          aggiornaVisualizzazione(filtraDati(data)),
+        );
+      document
+        .getElementById("vistaSelezionata")
+        .addEventListener("change", () =>
+          aggiornaVisualizzazione(filtraDati(data)),
+        );
+    </script>
+  </body>
 </html>
