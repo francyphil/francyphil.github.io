@@ -497,6 +497,12 @@
             y: {
               title: { display: true, text: "Numero di annulli" },
               beginAtZero: true,
+              ticks: {
+                stepSize: 1,
+                callback: function(value) {
+                  return Math.floor(value);
+                }
+              }
             },
           },
         },
