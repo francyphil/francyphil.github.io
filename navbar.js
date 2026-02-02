@@ -8,16 +8,10 @@ async function loadNavbar() {
     navbarContainer.innerHTML = navbarHTML;
     document.body.insertBefore(navbarContainer, document.body.firstChild);
     
-    // Imposta il link attivo in base alla pagina corrente
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    // Imposta sempre Home come link attivo
     const homeLink = document.getElementById('nav-home');
-    const catalogLink = document.getElementById('nav-catalog');
-    const phindexLink = document.getElementById('nav-phindex');
-
-    if (currentPage === 'index.html' || currentPage === '') {
+    if (homeLink) {
       homeLink.classList.add('active');
-    } else if (currentPage === 'catalog.html') {
-      catalogLink.classList.add('active');
     }
   } catch (error) {
     console.error('Errore caricamento navbar:', error);
