@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="it">
   <head>
+      <link rel="stylesheet" href="/common-bg.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ</title>
@@ -16,7 +17,16 @@
   </head>
   <body>
     <h1>FAQ</h1>
-
+    <link rel="stylesheet" href="/footer.css">
+    <script src="/footer.js"></script>
+    <div id="footerContainer"></div>
+    <script>
+      fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('footerContainer').innerHTML = html;
+        });
+    </script>
     <script src="/navbar.js"></script>
   </body>
 </html>

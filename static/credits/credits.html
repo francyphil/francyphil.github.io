@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="it">
   <head>
+      <link rel="stylesheet" href="/common-bg.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Credits</title>
@@ -21,7 +22,16 @@
 Nel produrre queste pagine gli autori non hanno inteso violare alcun diritto di Copyright o di proprietà. Se, casualmente, è stato utilizzato materiale protetto da Copyright o , si prega di comunicarlo all’e-mail catalogo.targhette@gmail.com al più presto. Provvederemo alla pronta rimozione del materiale protetto.
 Quanto scritto non può essere distribuito, copiato, riprodotto, diffuso, noleggiato, prestato, elaborato o trasformato anche parzialmente se non preventivamente concordato con gli autori. Gli autori mantengono in ogni caso la proprietà ed ogni diritto morale e patrimoniale su queste pagine. Tutti i diritti sono riservati.
 </P>    
-
+    <link rel="stylesheet" href="/footer.css">
+    <script src="/footer.js"></script>
+    <div id="footerContainer"></div>
+    <script>
+      fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('footerContainer').innerHTML = html;
+        });
+    </script>
     <script src="/navbar.js"></script>
   </body>
 </html>
