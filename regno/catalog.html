@@ -656,7 +656,6 @@
 
       function aggiornaGrafico(records) {
         // Debug: mostra i record ricevuti
-        console.log("aggiornaGrafico: records count =", records.length);
         const conteggio = {};
         records.forEach((r) => {
           const y =
@@ -670,7 +669,6 @@
           (a, b) => Number(a) - Number(b),
         );
         const valori = anni.map((a) => conteggio[a]);
-        console.log("aggiornaGrafico: anni=", anni, "valori=", valori);
         chart.data.labels = anni;
         chart.data.datasets[0].data = valori;
         chart.update();
