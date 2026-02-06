@@ -3,7 +3,7 @@
   <head>
       <link rel="stylesheet" href="/common-bg.css" />
     <meta charset="UTF-8" />
-    <title>Doppia vista con filtri, card e grafico allineato</title>
+    <title>Catalogo Regno</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="/navbar.css">
     <style>
@@ -186,29 +186,60 @@
       th select {
         box-sizing: border-box;
       }
+
+      .controlli-box {
+        width: 1200px;
+        margin: 0 0 10px 0;
+        background: transparent;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        padding: 12px 18px 8px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .controlli-box legend {
+        padding: 0 8px;
+        font-weight: 600;
+        font-size: 14px;
+        color: #666;
+        background: #fff;
+      }
+
+      .controlli-wrapper {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+      }
     </style>
   </head>
   <body>
 
-    <h1>Doppia vista con filtri, card e grafico</h1>
-    <div class="controlli-wrapper">
-      <label>Max record:
-        <select id="maxRecords">
-          <option value="100">100</option>
-          <option value="200">200</option>
-          <option value="500">500</option>
-          <option value="all">Tutti</option>
-        </select>
-      </label>
-      <label>Vista:
-        <select id="vistaSelezionata">
-          <option value="tabella">Tabella</option>
-          <option value="card">Card</option>
-          <option value="tabella_card">Tabella + Card</option>
-        </select>
-      </label>
-    </div>
-   
+    <h1></h1>
+    <fieldset class="controlli-box">
+      <legend>Controlli</legend>
+      <div class="controlli-wrapper">
+        <label>Max record:
+          <select id="maxRecords">
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="500">500</option>
+            <option value="all">Tutti</option>
+          </select>
+        </label>
+        <label>Vista:
+          <select id="vistaSelezionata">
+            <option value="tabella">Tabella</option>
+            <option value="card">Card</option>
+            <option value="tabella_card">Tabella + Card</option>
+          </select>
+        </label>
+      </div>
+    </fieldset>
 
     <div class="table-wrapper">
       <table id="tabellaFiltri">
@@ -408,11 +439,13 @@
           cardContainer.style.display = "flex";
           mostraCard(mostrati);
         } else cardContainer.style.display = "none";
-        // Larghezza fissa per card e grafico
+        // Larghezza fissa per card, grafico e controlli-box
         const tableWidth = larghezzaTabellaFissa || document.getElementById("tabellaFiltri").offsetWidth;
         cardContainer.style.width = tableWidth + "px";
         const graficoWrapper = document.getElementById("graficoWrapper");
         graficoWrapper.style.width = tableWidth + "px";
+        const controlliBox = document.querySelector(".controlli-box");
+        if (controlliBox) controlliBox.style.width = tableWidth + "px";
 
         applicaLarghezzeMinime(records);
         aggiornaGrafico(records);
