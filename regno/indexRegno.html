@@ -1,27 +1,27 @@
 <!doctype html>
 <html lang="it">
   <head>
-      <link rel="stylesheet" href="/common-bg.css" />
+    <link rel="stylesheet" href="/common-bg.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Storia Postale</title>
-    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/navbar.css" />
     <style>
       body {
         font-family: sans-serif;
         margin: 0;
-        padding: 20px;
+        padding: 0;
         margin-top: 55px;
       }
-      
+
       h1 {
-        text-align: center;
+        text-align: center !important;
         color: #2c3e50;
         font-size: 2.2em;
         margin: 40px 0 50px 0;
         font-weight: 600;
       }
-      
+
       .categories-container {
         max-width: 1100px;
         margin: 0 auto;
@@ -30,11 +30,11 @@
         flex-wrap: wrap;
         gap: 20px;
       }
-      
+
       .category-card {
         background: white;
         border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         padding: 20px;
         transition: all 0.3s ease;
         display: flex;
@@ -49,16 +49,16 @@
         text-align: center;
         box-sizing: border-box;
       }
-      
+
       .category-card:hover {
-        box-shadow: 0 6px 20px rgba(76,175,80,0.25);
-        border-color: #4CAF50;
+        box-shadow: 0 6px 20px rgba(76, 175, 80, 0.25);
+        border-color: #4caf50;
       }
-      
+
       .category-icon {
         width: 60px;
         height: 60px;
-        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -66,7 +66,7 @@
         font-size: 32px;
         margin-bottom: 12px;
       }
-      
+
       .category-content {
         flex-grow: 1;
         display: flex;
@@ -74,28 +74,27 @@
         align-items: center;
         justify-content: center;
       }
-      
+
       .category-title {
         font-size: 1.2em;
         font-weight: 600;
         color: #2c3e50;
         margin: 0 0 5px 0;
       }
-      
+
       .category-description {
         font-size: 0.85em;
         color: #7f8c8d;
         margin: 0;
         line-height: 1.4;
       }
-      
+
       .category-arrow {
         display: none;
       }
     </style>
   </head>
   <body>
-
     <h1>Catalogo annulli meccanici del Regno d'Italia 1901-1946</h1>
 
     <div class="categories-container">
@@ -105,42 +104,42 @@
           <div class="category-title">Targhette</div>
         </div>
       </a>
-      
+
       <a href="/regno/regnobarre.html" class="category-card">
         <div class="category-icon">▓</div>
         <div class="category-content">
           <div class="category-title">Barre</div>
         </div>
       </a>
-      
+
       <a href="/regno/regnoonde.html" class="category-card">
         <div class="category-icon">〰</div>
         <div class="category-content">
           <div class="category-title">Onde</div>
         </div>
       </a>
-      
+
       <a href="/regno/regnocontinui.html" class="category-card">
         <div class="category-icon">∞</div>
         <div class="category-content">
           <div class="category-title">Continui</div>
         </div>
       </a>
-      
+
       <a href="/regno/regnosperimentali.html" class="category-card">
         <div class="category-icon">⚗</div>
         <div class="category-content">
           <div class="category-title">Sperimentali</div>
         </div>
       </a>
-      
+
       <a href="/regno/regnomanuali.html" class="category-card">
         <div class="category-icon">✋</div>
         <div class="category-content">
           <div class="category-title">Manuali</div>
         </div>
       </a>
-      
+
       <a href="/regno/regnofalsi.html" class="category-card">
         <div class="category-icon">⚠</div>
         <div class="category-content">
@@ -148,16 +147,15 @@
         </div>
       </a>
     </div>
- 
-    
-    <link rel="stylesheet" href="/footer.css">
+
+    <link rel="stylesheet" href="/footer.css" />
     <script src="/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('footerContainer').innerHTML = html;
+      fetch("/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footerContainer").innerHTML = html;
         });
     </script>
     <script src="/navbar.js"></script>

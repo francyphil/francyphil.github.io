@@ -10,7 +10,7 @@
       body {
         font-family: sans-serif;
         margin: 0;
-        padding: 20px;
+        padding: 0;
         margin-top: 55px;
       }
 
@@ -87,7 +87,8 @@
     </style>
 </head>
 <body>
-    <div class="office-header">
+    <div class="content-container">
+      <div class="office-header">
       <h1 id="officeTitle">Ufficio</h1>
       <p id="officeInfo"></p>
     </div>
@@ -206,6 +207,7 @@
       // Carica quando il DOM è pronto
       document.addEventListener('DOMContentLoaded', loadOfficeDetails);
     </script>
+    </div>
 
     <link rel="stylesheet" href="/footer.css">
     <script src="/footer.js"></script>

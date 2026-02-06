@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Regno Annulli Barre</title>
-    <link rel="stylesheet" href="/navbar.css">
-    <link rel="stylesheet" href="/breadcrumb.css">
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb.css" />
     <style>
       body {
         font-family: sans-serif;
         margin: 0;
-        padding: 20px;
+        padding: 0;
         margin-top: 55px;
       }
     </style>
@@ -21,18 +21,20 @@
     <div id="breadcrumbContainer"></div>
     <script src="/breadcrumb.js"></script>
 
-    <h1>Regno Annulli Barre</h1>
+    <div class="content-container">
+      <h1>Regno Annulli Barre</h1>
+    <h2>Tipologie di annulli</h2>
+    <p>Gli annulli meccanici si possono ricondurre a due tipologie differenti a seconda del tipo di impronta:</p>      
+    </div>
 
- 
-    
-    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/footer.css" />
     <script src="/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('footerContainer').innerHTML = html;
+      fetch("/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footerContainer").innerHTML = html;
         });
     </script>
   </body>

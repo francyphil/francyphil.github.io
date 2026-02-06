@@ -1,8 +1,19 @@
-/*
-/*Proviamo senza sfondo*/
-/*
-body {
-  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
-  min-height: 100vh;
+/* Stile globale per i titoli h1 */
+h1 {
+  text-align: left;
 }
-*/
+
+/* Contenitore principale per centrare il contenuto con margini laterali */
+.content-container {
+  width: 1400px;
+  max-width: calc(100% - 40px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Per schermi piccoli, ridurre il padding */
+@media (max-width: 768px) {
+  .content-container {
+    padding: 0 10px;
+  }
+}
