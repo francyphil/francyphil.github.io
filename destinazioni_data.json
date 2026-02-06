@@ -1,0 +1,782 @@
+[
+  {
+    "nome": "Bagdad",
+    "coords": [
+      33.3152,
+      44.3661
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Afghanistan - Bagdad",
+    "immagine": "/static/jpeg/destinazioni/Afghanistan_Bagdad.jpeg",
+    "paese": "Afghanistan",
+    "citta": "Bagdad"
+  },
+  {
+    "nome": "BuenosAires",
+    "coords": [
+      -34.6037,
+      -58.3816
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Argentina - BuenosAires",
+    "immagine": "/static/jpeg/destinazioni/Argentina_BuenosAires.jpeg",
+    "paese": "Argentina",
+    "citta": "BuenosAires"
+  },
+  {
+    "nome": "Sofia",
+    "coords": [
+      42.6977,
+      23.3219
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Bulgaria - Sofia",
+    "immagine": "/static/jpeg/destinazioni/Bulgaria_Sofia.jpeg",
+    "paese": "Bulgaria",
+    "citta": "Sofia"
+  },
+  {
+    "nome": "Ontario",
+    "coords": [
+      43.6532,
+      -79.3832
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Canada - Ontario",
+    "immagine": "/static/jpeg/destinazioni/Canada_Ontario.jpeg",
+    "paese": "Canada",
+    "citta": "Ontario"
+  },
+  {
+    "nome": "Winnipeg",
+    "coords": [
+      49.8951,
+      -97.1384
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Canada - Winnipeg",
+    "immagine": "/static/jpeg/destinazioni/Canada_Winnipeg.jpeg",
+    "paese": "Canada",
+    "citta": "Winnipeg"
+  },
+  {
+    "nome": "LasPalmas",
+    "coords": [
+      28.1235,
+      -15.4363
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Canaria - LasPalmas",
+    "immagine": "/static/jpeg/destinazioni/Canaria_LasPalmas.jpeg",
+    "paese": "Canaria",
+    "citta": "LasPalmas"
+  },
+  {
+    "nome": "Hankow",
+    "coords": [
+      30.5928,
+      114.3055
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Cina - Hankow",
+    "immagine": "/static/jpeg/destinazioni/Cina_Hankow.jpeg",
+    "paese": "Cina",
+    "citta": "Hankow"
+  },
+  {
+    "nome": "Shanghai",
+    "coords": [
+      31.2304,
+      121.4737
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Cina - Shanghai",
+    "immagine": "/static/jpeg/destinazioni/Cina_Shanghai 1.jpeg",
+    "paese": "Cina",
+    "citta": "Shanghai"
+  },
+  {
+    "nome": "Shanghai",
+    "coords": [
+      31.2304,
+      121.4737
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Cina - Shanghai",
+    "immagine": "/static/jpeg/destinazioni/Cina_Shanghai.jpeg",
+    "paese": "Cina",
+    "citta": "Shanghai"
+  },
+  {
+    "nome": "Tiensin",
+    "coords": [
+      39.1422,
+      117.1767
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Cina - Tiensin",
+    "immagine": "/static/jpeg/destinazioni/Cina_Tiensin.jpeg",
+    "paese": "Cina",
+    "citta": "Tiensin"
+  },
+  {
+    "nome": "Cipro",
+    "coords": [
+      35.1264,
+      33.4299
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Cipro",
+    "immagine": "/static/jpeg/destinazioni/Cipro.jpg",
+    "paese": "Cipro",
+    "citta": null
+  },
+  {
+    "nome": "Cipro",
+    "coords": [
+      35.1264,
+      33.4299
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Cipro",
+    "immagine": "/static/jpeg/destinazioni/Cipro_2.jpg",
+    "paese": "Cipro",
+    "citta": ""
+  },
+  {
+    "nome": "Cipro",
+    "coords": [
+      35.1264,
+      33.4299
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Cipro",
+    "immagine": "/static/jpeg/destinazioni/Cipro_3.jpg",
+    "paese": "Cipro",
+    "citta": ""
+  },
+  {
+    "nome": "Alessandria",
+    "coords": [
+      31.2001,
+      29.9187
+    ],
+    "tipo": "coloniale",
+    "descrizione": "Egitto - Alessandria",
+    "immagine": "/static/jpeg/destinazioni/Egitto_Alessandria 1.jpeg",
+    "paese": "Egitto",
+    "citta": "Alessandria"
+  },
+  {
+    "nome": "Alessandria",
+    "coords": [
+      31.2001,
+      29.9187
+    ],
+    "tipo": "coloniale",
+    "descrizione": "Egitto - Alessandria",
+    "immagine": "/static/jpeg/destinazioni/Egitto_Alessandria.jpeg",
+    "paese": "Egitto",
+    "citta": "Alessandria"
+  },
+  {
+    "nome": "Alessandria",
+    "coords": [
+      31.2001,
+      29.9187
+    ],
+    "tipo": "coloniale",
+    "descrizione": "Egitto - Alessandria",
+    "immagine": "/static/jpeg/destinazioni/Egitto_Alessandria.png",
+    "paese": "Egitto",
+    "citta": "Alessandria"
+  },
+  {
+    "nome": "Cairo",
+    "coords": [
+      30.0444,
+      31.2357
+    ],
+    "tipo": "coloniale",
+    "descrizione": "Egitto - Cairo",
+    "immagine": "/static/jpeg/destinazioni/Egitto_Cairo 1.jpeg",
+    "paese": "Egitto",
+    "citta": "Cairo"
+  },
+  {
+    "nome": "Cairo",
+    "coords": [
+      30.0444,
+      31.2357
+    ],
+    "tipo": "coloniale",
+    "descrizione": "Egitto - Cairo",
+    "immagine": "/static/jpeg/destinazioni/Egitto_Cairo 2.jpeg",
+    "paese": "Egitto",
+    "citta": "Cairo"
+  },
+  {
+    "nome": "Cairo",
+    "coords": [
+      30.0444,
+      31.2357
+    ],
+    "tipo": "coloniale",
+    "descrizione": "Egitto - Cairo",
+    "immagine": "/static/jpeg/destinazioni/Egitto_Cairo.jpeg",
+    "paese": "Egitto",
+    "citta": "Cairo"
+  },
+  {
+    "nome": "Quito",
+    "coords": [
+      -0.1807,
+      -78.4678
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Equador - Quito",
+    "immagine": "/static/jpeg/destinazioni/Equador_Quito.jpeg",
+    "paese": "Equador",
+    "citta": "Quito"
+  },
+  {
+    "nome": "Atene",
+    "coords": [
+      37.9838,
+      23.7275
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Grecia - Atene",
+    "immagine": "/static/jpeg/destinazioni/Grecia_Atene.jpeg",
+    "paese": "Grecia",
+    "citta": "Atene"
+  },
+  {
+    "nome": "Patrasso",
+    "coords": [
+      38.2466,
+      21.7346
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Grecia - Patrasso",
+    "immagine": "/static/jpeg/destinazioni/Grecia_Patrasso.jpeg",
+    "paese": "Grecia",
+    "citta": "Patrasso"
+  },
+  {
+    "nome": "Salonicco",
+    "coords": [
+      40.6401,
+      22.9444
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Grecia - Salonicco",
+    "immagine": "/static/jpeg/destinazioni/Grecia_Salonicco.jpeg",
+    "paese": "Grecia",
+    "citta": "Salonicco"
+  },
+  {
+    "nome": "Allahabad",
+    "coords": [
+      25.4358,
+      81.8463
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "India - Allahabad",
+    "immagine": "/static/jpeg/destinazioni/India_Allahabad.jpeg",
+    "paese": "India",
+    "citta": "Allahabad"
+  },
+  {
+    "nome": "Bombay",
+    "coords": [
+      19.076,
+      72.8777
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "India - Bombay",
+    "immagine": "/static/jpeg/destinazioni/India_Bombay 1.jpeg",
+    "paese": "India",
+    "citta": "Bombay"
+  },
+  {
+    "nome": "Bombay",
+    "coords": [
+      19.076,
+      72.8777
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "India - Bombay",
+    "immagine": "/static/jpeg/destinazioni/India_Bombay 2.jpeg",
+    "paese": "India",
+    "citta": "Bombay"
+  },
+  {
+    "nome": "Bombay",
+    "coords": [
+      19.076,
+      72.8777
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "India - Bombay",
+    "immagine": "/static/jpeg/destinazioni/India_Bombay.jpeg",
+    "paese": "India",
+    "citta": "Bombay"
+  },
+  {
+    "nome": "Madras",
+    "coords": [
+      13.0827,
+      80.2707
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "India - Madras",
+    "immagine": "/static/jpeg/destinazioni/India_Madras.jpeg",
+    "paese": "India",
+    "citta": "Madras"
+  },
+  {
+    "nome": "Istanbul",
+    "coords": [
+      41.0082,
+      28.9784
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Istanbul",
+    "immagine": "/static/jpeg/destinazioni/Istanbul.jpeg",
+    "paese": "Istanbul",
+    "citta": null
+  },
+  {
+    "nome": "Nairobi",
+    "coords": [
+      1.2921,
+      36.8219
+    ],
+    "tipo": "coloniale",
+    "descrizione": "Kenya - Nairobi",
+    "immagine": "/static/jpeg/destinazioni/Kenya_Nairobi.jpeg",
+    "paese": "Kenya",
+    "citta": "Nairobi"
+  },
+  {
+    "nome": "Riga",
+    "coords": [
+      56.9496,
+      24.1052
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Lettonia - Riga",
+    "immagine": "/static/jpeg/destinazioni/Lettonia_Riga.jpg",
+    "paese": "Lettonia",
+    "citta": "Riga"
+  },
+  {
+    "nome": "Bengasi",
+    "coords": [
+      32.1191,
+      20.0869
+    ],
+    "tipo": "coloniale",
+    "descrizione": "Libia - Bengasi",
+    "immagine": "/static/jpeg/destinazioni/Libia_Bengasi.jpeg",
+    "paese": "Libia",
+    "citta": "Bengasi"
+  },
+  {
+    "nome": "Liechtenstein",
+    "coords": [
+      47.166,
+      9.5554
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Liechtenstein",
+    "immagine": "/static/jpeg/destinazioni/Liechtenstein.jpeg",
+    "paese": "Liechtenstein",
+    "citta": null
+  },
+  {
+    "nome": "La Valletta",
+    "coords": [
+      35.8989,
+      14.5146
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Malta - La Valletta",
+    "immagine": "/static/jpeg/destinazioni/Malta_La_Valletta.jpeg",
+    "paese": "Malta",
+    "citta": "La_Valletta"
+  },
+  {
+    "nome": "Zinder",
+    "coords": [
+      13.8069,
+      8.9881
+    ],
+    "tipo": "coloniale",
+    "descrizione": "Nigeria - Zinder",
+    "immagine": "/static/jpeg/destinazioni/Nigeria_Zinder.jpeg",
+    "paese": "Nigeria",
+    "citta": "Zinder"
+  },
+  {
+    "nome": "Kristania",
+    "coords": [
+      59.9139,
+      10.7522
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Norvegia - Kristania",
+    "immagine": "/static/jpeg/destinazioni/Norvegia_Kristania.jpeg",
+    "paese": "Norvegia",
+    "citta": "Kristania"
+  },
+  {
+    "nome": "Wellington",
+    "coords": [
+      -41.2865,
+      174.7762
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "NuovaZelanda - Wellington",
+    "immagine": "/static/jpeg/destinazioni/NuovaZelanda_Wellington.jpg",
+    "paese": "NuovaZelanda",
+    "citta": "Wellington"
+  },
+  {
+    "nome": "Karachi",
+    "coords": [
+      24.8607,
+      67.0011
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Pakistan - Karachi",
+    "immagine": "/static/jpeg/destinazioni/Pakistan_Karachi.jpeg",
+    "paese": "Pakistan",
+    "citta": "Karachi"
+  },
+  {
+    "nome": "Palestina",
+    "coords": [
+      31.9522,
+      35.2332
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Palestina",
+    "immagine": "/static/jpeg/destinazioni/Palestina.jpeg",
+    "paese": "Palestina",
+    "citta": null
+  },
+  {
+    "nome": "Haifa",
+    "coords": [
+      32.794,
+      34.9896
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Palestina - Haifa",
+    "immagine": "/static/jpeg/destinazioni/Palestina_Haifa.jpeg",
+    "paese": "Palestina",
+    "citta": "Haifa"
+  },
+  {
+    "nome": "Tel Aviv ",
+    "coords": [
+      31.9522,
+      35.2332
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Palestina - Tel Aviv ",
+    "immagine": "/static/jpeg/destinazioni/Palestina_Tel_Aviv_1939.jpeg",
+    "paese": "Palestina",
+    "citta": "Tel_Aviv_"
+  },
+  {
+    "nome": "Callao",
+    "coords": [
+      -12.0566,
+      -77.1181
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Peru - Callao",
+    "immagine": "/static/jpeg/destinazioni/Peru_Callao.jpeg",
+    "paese": "Peru",
+    "citta": "Callao"
+  },
+  {
+    "nome": "Porzan",
+    "coords": [
+      52.4064,
+      16.9252
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Polonia - Porzan",
+    "immagine": "/static/jpeg/destinazioni/Polonia_Porzan.jpeg",
+    "paese": "Polonia",
+    "citta": "Porzan"
+  },
+  {
+    "nome": "SanMarino",
+    "coords": [
+      43.9424,
+      12.4578
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "SanMarino",
+    "immagine": "/static/jpeg/destinazioni/SanMarino.jpeg",
+    "paese": "SanMarino",
+    "citta": null
+  },
+  {
+    "nome": "Dakar",
+    "coords": [
+      14.6937,
+      -17.4441
+    ],
+    "tipo": "coloniale",
+    "descrizione": "Senegal - Dakar",
+    "immagine": "/static/jpeg/destinazioni/Senegal_Dakar.jpeg",
+    "paese": "Senegal",
+    "citta": "Dakar"
+  },
+  {
+    "nome": "Barcellona",
+    "coords": [
+      41.3851,
+      2.1734
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Spagna - Barcellona",
+    "immagine": "/static/jpeg/destinazioni/Spagna_Barcellona.jpeg",
+    "paese": "Spagna",
+    "citta": "Barcellona"
+  },
+  {
+    "nome": "Lund",
+    "coords": [
+      55.7047,
+      13.191
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Svezia - Lund",
+    "immagine": "/static/jpeg/destinazioni/Svezia_Lund.jpeg",
+    "paese": "Svezia",
+    "citta": "Lund"
+  },
+  {
+    "nome": "Stoccolma",
+    "coords": [
+      59.3293,
+      18.0686
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Svezia - Stoccolma",
+    "immagine": "/static/jpeg/destinazioni/Svezia_Stoccolma.jpeg",
+    "paese": "Svezia",
+    "citta": "Stoccolma"
+  },
+  {
+    "nome": "Ankara",
+    "coords": [
+      39.9334,
+      32.8597
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Turchia - Ankara",
+    "immagine": "/static/jpeg/destinazioni/Turchia_Ankara.jpeg",
+    "paese": "Turchia",
+    "citta": "Ankara"
+  },
+  {
+    "nome": "Chio",
+    "coords": [
+      38.3677,
+      26.136
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Turchia - Chio",
+    "immagine": "/static/jpeg/destinazioni/Turchia_Chio.png",
+    "paese": "Turchia",
+    "citta": "Chio"
+  },
+  {
+    "nome": "Costantinopoli",
+    "coords": [
+      41.0082,
+      28.9784
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Turchia - Costantinopoli",
+    "immagine": "/static/jpeg/destinazioni/Turchia_Costantinopoli.jpeg",
+    "paese": "Turchia",
+    "citta": "Costantinopoli"
+  },
+  {
+    "nome": "Istanbul",
+    "coords": [
+      41.0082,
+      28.9784
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Turchia - Istanbul",
+    "immagine": "/static/jpeg/destinazioni/Turchia_Istanbul.jpeg",
+    "paese": "Turchia",
+    "citta": "Istanbul"
+  },
+  {
+    "nome": "Smirne",
+    "coords": [
+      38.4237,
+      27.1428
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Turchia - Smirne",
+    "immagine": "/static/jpeg/destinazioni/Turchia_Smirne.jpeg",
+    "paese": "Turchia",
+    "citta": "Smirne"
+  },
+  {
+    "nome": "Berkley",
+    "coords": [
+      37.8715,
+      -122.273
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "USA - Berkley",
+    "immagine": "/static/jpeg/destinazioni/USA_Berkley.jpeg",
+    "paese": "USA",
+    "citta": "Berkley"
+  },
+  {
+    "nome": "Chicago",
+    "coords": [
+      41.8781,
+      -87.6298
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "USA - Chicago",
+    "immagine": "/static/jpeg/destinazioni/USA_Chicago.jpeg",
+    "paese": "USA",
+    "citta": "Chicago"
+  },
+  {
+    "nome": "Easton",
+    "coords": [
+      40.6884,
+      -75.2207
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "USA - Easton",
+    "immagine": "/static/jpeg/destinazioni/USA_Easton.jpeg",
+    "paese": "USA",
+    "citta": "Easton"
+  },
+  {
+    "nome": "NewYork",
+    "coords": [
+      40.7128,
+      -74.006
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "USA - NewYork",
+    "immagine": "/static/jpeg/destinazioni/USA_NewYork 1.jpeg",
+    "paese": "USA",
+    "citta": "NewYork"
+  },
+  {
+    "nome": "NewYork",
+    "coords": [
+      40.7128,
+      -74.006
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "USA - NewYork",
+    "immagine": "/static/jpeg/destinazioni/USA_NewYork.jpeg",
+    "paese": "USA",
+    "citta": "NewYork"
+  },
+  {
+    "nome": "New York",
+    "coords": [
+      40.7128,
+      -74.006
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "USA - New York",
+    "immagine": "/static/jpeg/destinazioni/USA_New_York.jpeg",
+    "paese": "USA",
+    "citta": "New_York"
+  },
+  {
+    "nome": "Newtonville",
+    "coords": [
+      42.337,
+      -71.2092
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "USA - Newtonville",
+    "immagine": "/static/jpeg/destinazioni/USA_Newtonville.jpeg",
+    "paese": "USA",
+    "citta": "Newtonville"
+  },
+  {
+    "nome": "Fiume",
+    "coords": [
+      45.3271,
+      14.4422
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Ungheria - Fiume",
+    "immagine": "/static/jpeg/destinazioni/Ungheria_Fiume.jpeg",
+    "paese": "Ungheria",
+    "citta": "Fiume"
+  },
+  {
+    "nome": "Montevideo",
+    "coords": [
+      -34.9011,
+      -56.1645
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Uruguay - Montevideo",
+    "immagine": "/static/jpeg/destinazioni/Uruguay_Montevideo.jpeg",
+    "paese": "Uruguay",
+    "citta": "Montevideo"
+  },
+  {
+    "nome": "Vaticano",
+    "coords": [
+      41.9029,
+      12.4534
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Vaticano",
+    "immagine": "/static/jpeg/destinazioni/Vaticano.jpeg",
+    "paese": "Vaticano",
+    "citta": null
+  },
+  {
+    "nome": "Vaticano",
+    "coords": [
+      41.9029,
+      12.4534
+    ],
+    "tipo": "estero_mondo",
+    "descrizione": "Vaticano",
+    "immagine": "/static/jpeg/destinazioni/Vaticano_1926.jpeg",
+    "paese": "Vaticano",
+    "citta": ""
+  },
+  {
+    "nome": "Zagabria",
+    "coords": [
+      45.815,
+      15.9819
+    ],
+    "tipo": "estero_europa",
+    "descrizione": "Yugoslavia - Zagabria",
+    "immagine": "/static/jpeg/destinazioni/Yugoslavia_Zagabria.jpeg",
+    "paese": "Yugoslavia",
+    "citta": "Zagabria"
+  }
+]
