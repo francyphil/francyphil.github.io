@@ -197,7 +197,7 @@
         padding: 12px 18px 8px 18px;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-between;
       }
 
       .controlli-box legend {
@@ -206,6 +206,29 @@
         font-size: 14px;
         color: #666;
         background: #fff;
+      }
+
+      .loading-indicator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: auto;
+        font-size: 13px;
+        color: #666;
+      }
+
+      .spinner {
+        width: 16px;
+        height: 16px;
+        border: 2px solid #f3f3f3;
+        border-top: 2px solid #666;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
 
       .controlli-wrapper {
@@ -244,6 +267,10 @@
             <option value="ornaghi_tipo">Ornaghi Tipo</option>
           </select>
         </label>
+      </div>
+      <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+        <div class="spinner"></div>
+        <span>Caricamento...</span>
       </div>
     </fieldset>
 
@@ -481,14 +508,18 @@
 
       // ----- Aggiorna visualizzazione -----
       async function aggiornaVisualizzazione(records) {
-        const vista = document.getElementById("vistaSelezionata").value;
+        const loadingIndicator = document.getElementById("loadingIndicator");
+        loadingIndicator.style.display = "flex";
         
-        // Applica lo schema di catalogazione prima di visualizzare
-        records = await applicaSchema(records, vista);
-        
-        const maxRecords = document.getElementById("maxRecords").value;
-        let max = maxRecords === "all" ? records.length : parseInt(maxRecords),
-          mostrati = records.slice(0, max);
+        try {
+          const vista = document.getElementById("vistaSelezionata").value;
+          
+          // Applica lo schema di catalogazione prima di visualizzare
+          records = await applicaSchema(records, vista);
+          
+          const maxRecords = document.getElementById("maxRecords").value;
+          let max = maxRecords === "all" ? records.length : parseInt(maxRecords),
+            mostrati = records.slice(0, max);
         const cardContainer = document.getElementById("cardContainer"),
           tbody = document.querySelector("#tabellaFiltri tbody");
 
@@ -514,6 +545,9 @@
 
         applicaLarghezzeMinime(records);
         aggiornaGrafico(records);
+        } finally {
+          loadingIndicator.style.display = "none";
+        }
       }
 
       // ----- Mostra tabella -----

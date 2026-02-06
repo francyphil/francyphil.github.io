@@ -1,7 +1,4 @@
-- Barra di controllo nel catalogo che raggruppi le box sopra la tabella
-- statistiche sito
 - pulsante torna al catalogo nelle pagine dettaglio e ufficio dettaglio
-- breadcrumb nelle pagine 
 - link esterni con icona (e.g. in bibliografia)
 - responsive card con lazy loading
 - Card responsive
@@ -14,5 +11,4 @@
     @media (max-width: 480px) {
     .category-card { width: 100%; } /* 1 per riga */
     }
-- Aggiungere visualizzazione solo per Targhetta Tipo
 - Aggiungere selezione numerazione differenti cataloghi Ornaghi Bartolomasi, Moschetti, etc
