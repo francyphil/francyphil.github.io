@@ -657,6 +657,7 @@
           const imgPath = `jpg/prev_${r["Targhetta Ufficio"]}.jpeg`;
           img.src = imgPath;
           img.alt = r.tipo || "Annullo";
+          img.loading = "lazy"; // Lazy loading nativo
           
           // Gestisce l'errore di caricamento dell'immagine
           img.onerror = () => {

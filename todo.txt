@@ -1,6 +1,6 @@
 - pulsante torna al catalogo nelle pagine dettaglio e ufficio dettaglio
 - link esterni con icona (e.g. in bibliografia)
-- responsive card con lazy loading
+- responsive card  
 - Card responsive
     Problema: Le card hanno width: calc((100% - 40px) / 3) fisso
     Proposta: Aggiungere media queries:
@@ -12,3 +12,4 @@
     .category-card { width: 100%; } /* 1 per riga */
     }
 - Aggiungere selezione numerazione differenti cataloghi Ornaghi Bartolomasi, Moschetti, etc
+- export dati
