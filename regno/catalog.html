@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <title>Catalogo Regno</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/navbar.css">
-    <link rel="stylesheet" href="/breadcrumb.css">
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb.css" />
     <style>
       body {
         font-family: sans-serif;
@@ -24,7 +24,7 @@
       /* Tabella */
       table {
         border-collapse: collapse;
-        width:1200px;
+        width: 1200px;
         table-layout: fixed;
       }
       th,
@@ -97,13 +97,13 @@
         font-weight: 600;
         width: 100%;
       }
-      
+
       /* Contenitore dettagli card */
       .card-details {
         width: 100%;
         flex-grow: 1;
       }
-      
+
       .card p {
         margin: 3px 0;
         font-size: 13px;
@@ -261,8 +261,12 @@
       }
 
       @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
 
       .controlli-wrapper {
@@ -283,7 +287,8 @@
     <fieldset class="controlli-box">
       <legend>Controlli</legend>
       <div class="controlli-wrapper">
-        <label>Max record:
+        <label
+          >Max record:
           <select id="maxRecords">
             <option value="100">100</option>
             <option value="200">200</option>
@@ -291,21 +296,27 @@
             <option value="all">Tutti</option>
           </select>
         </label>
-        <label>Vista:
+        <label
+          >Vista:
           <select id="vistaSelezionata">
             <option value="tabella">Tabella</option>
             <option value="card">Card</option>
             <option value="tabella_card">Tabella + Card</option>
           </select>
         </label>
-        <label>Schema di catalogazione:
+        <label
+          >Schema di catalogazione:
           <select id="schemaCatalogazione">
             <option value="ornaghi_ufficio">Ornaghi Ufficio</option>
             <option value="ornaghi_tipo">Ornaghi Tipo</option>
           </select>
         </label>
       </div>
-      <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+      <div
+        id="loadingIndicator"
+        class="loading-indicator"
+        style="display: none"
+      >
         <div class="spinner"></div>
         <span>Caricamento...</span>
       </div>
@@ -350,7 +361,9 @@
           calcolaLarghezzeFisse(data);
           costruisciFiltri(data);
           aggiornaVisualizzazione(data);
-          window.addEventListener("resize", () => aggiornaVisualizzazione(filtraDati(data)));
+          window.addEventListener("resize", () =>
+            aggiornaVisualizzazione(filtraDati(data)),
+          );
         });
 
       // ----- Larghezza massima colonna -----
@@ -399,11 +412,9 @@
           });
         document.querySelectorAll("#tabellaFiltri tbody tr").forEach((tr) => {
           const tds = tr.querySelectorAll("td");
-          Object.keys(larghezze).forEach(
-            (c, i) => {
-              if (tds[i]) tds[i].style.minWidth = larghezze[c] + "px";
-            }
-          );
+          Object.keys(larghezze).forEach((c, i) => {
+            if (tds[i]) tds[i].style.minWidth = larghezze[c] + "px";
+          });
         });
       }
 
@@ -419,7 +430,7 @@
         if (!records.length) return;
         // Ottiene i nomi dei campi (colonne), escludendo i campi tecnici
         const campi = Object.keys(records[0]).filter(
-          (c) => (c !== "linkTarghetta" && c !== "linkDatario"),
+          (c) => c !== "linkTarghetta" && c !== "linkDatario",
         );
         // Crea la riga dei titoli delle colonne
         const trTitoli = document.createElement("tr");
@@ -501,15 +512,15 @@
             if (!gruppi[tipo]) gruppi[tipo] = [];
             gruppi[tipo].push(r);
           });
-          
+
           // Se siamo in modalità solo tabella, usa semplicemente il primo record
           const soloTabella = vistaSelezionata === "tabella";
-          
+
           // Per ogni gruppo, seleziona il record preferibilmente con immagine disponibile
           const risultato = [];
           for (const tipo in gruppi) {
             const gruppo = gruppi[tipo];
-            
+
             if (soloTabella) {
               // Nessuna verifica immagine, usa il primo
               risultato.push(gruppo[0]);
@@ -524,7 +535,7 @@
                   img.src = imgPath;
                 });
               };
-              
+
               // Cerca il primo record con immagine disponibile
               let recordSelezionato = gruppo[0]; // default: primo record
               for (const record of gruppo) {
@@ -534,7 +545,7 @@
                   break;
                 }
               }
-              
+
               risultato.push(recordSelezionato);
             }
           }
@@ -547,41 +558,44 @@
       async function aggiornaVisualizzazione(records) {
         const loadingIndicator = document.getElementById("loadingIndicator");
         loadingIndicator.style.display = "flex";
-        
+
         try {
           const vista = document.getElementById("vistaSelezionata").value;
-          
+
           // Applica lo schema di catalogazione prima di visualizzare
           records = await applicaSchema(records, vista);
-          
+
           const maxRecords = document.getElementById("maxRecords").value;
-          let max = maxRecords === "all" ? records.length : parseInt(maxRecords),
+          let max =
+              maxRecords === "all" ? records.length : parseInt(maxRecords),
             mostrati = records.slice(0, max);
-        const cardContainer = document.getElementById("cardContainer"),
-          tbody = document.querySelector("#tabellaFiltri tbody");
+          const cardContainer = document.getElementById("cardContainer"),
+            tbody = document.querySelector("#tabellaFiltri tbody");
 
-        // La tabella è sempre visibile, header e filtri sempre presenti
-        if (vista === "tabella" || vista === "tabella_card") {
-          mostraTabella(mostrati);
-        } else {
-          // Se non è vista tabella, mostra solo header e filtri, svuota tbody
-          mostraTabella([]);
-        }
-        // Card come prima
-        if (vista === "card" || vista === "tabella_card") {
-          cardContainer.style.display = "flex";
-          mostraCard(mostrati);
-        } else cardContainer.style.display = "none";
-        // Larghezza fissa per card, grafico e controlli-box
-        const tableWidth = larghezzaTabellaFissa || document.getElementById("tabellaFiltri").offsetWidth;
-        cardContainer.style.width = tableWidth + "px";
-        const graficoWrapper = document.getElementById("graficoWrapper");
-        graficoWrapper.style.width = tableWidth + "px";
-        const controlliBox = document.querySelector(".controlli-box");
-        if (controlliBox) controlliBox.style.width = tableWidth + "px";
+          // La tabella è sempre visibile, header e filtri sempre presenti
+          if (vista === "tabella" || vista === "tabella_card") {
+            mostraTabella(mostrati);
+          } else {
+            // Se non è vista tabella, mostra solo header e filtri, svuota tbody
+            mostraTabella([]);
+          }
+          // Card come prima
+          if (vista === "card" || vista === "tabella_card") {
+            cardContainer.style.display = "flex";
+            mostraCard(mostrati);
+          } else cardContainer.style.display = "none";
+          // Larghezza fissa per card, grafico e controlli-box
+          const tableWidth =
+            larghezzaTabellaFissa ||
+            document.getElementById("tabellaFiltri").offsetWidth;
+          cardContainer.style.width = tableWidth + "px";
+          const graficoWrapper = document.getElementById("graficoWrapper");
+          graficoWrapper.style.width = tableWidth + "px";
+          const controlliBox = document.querySelector(".controlli-box");
+          if (controlliBox) controlliBox.style.width = tableWidth + "px";
 
-        applicaLarghezzeMinime(records);
-        aggiornaGrafico(records);
+          applicaLarghezzeMinime(records);
+          aggiornaGrafico(records);
         } finally {
           loadingIndicator.style.display = "none";
         }
@@ -591,13 +605,15 @@
       function mostraTabella(records) {
         // Seleziona il corpo della tabella (dove andranno le righe)
         const tbody = document.querySelector("#tabellaFiltri tbody");
-        
+
         // Pulisce il corpo della tabella (rimuove righe vecchie)
         tbody.innerHTML = "";
-        
+
         // Estrae i nomi dei campi dai dati, escludendo "linkTarghetta" e "linkDatario"
-        const campi = Object.keys(data[0]).filter((c) => (c !== "linkTarghetta" && c !== "linkDatario"));
-        
+        const campi = Object.keys(data[0]).filter(
+          (c) => c !== "linkTarghetta" && c !== "linkDatario",
+        );
+
         // Se non ci sono record da mostrare, mostra solo la riga "Nessun risultato" ma lascia header e filtri
         if (!records.length) {
           //const tr = document.createElement("tr");
@@ -608,35 +624,35 @@
           //tbody.appendChild(tr);
           return;
         }
-        
+
         // Ciclo su ogni record da visualizzare
         records.forEach((r) => {
           const tr = document.createElement("tr");
           campi.forEach((c, idx) => {
-            const td = document.createElement("td");  // Crea una cella
-            let val = r[c];  // Ottiene il valore del campo
-            
+            const td = document.createElement("td"); // Crea una cella
+            let val = r[c]; // Ottiene il valore del campo
+
             // Se il valore è un array, lo converte in stringa (es: ["a", "b"] → "a, b")
             if (Array.isArray(val)) val = val.join(", ");
-            
+
             // Se è la colonna "Targhetta Tipo" o "Descrizione" e ha un link, crea un link
             if (
               (c === "Targhetta Tipo" || c === "Descrizione") &&
               r.linkTarghetta &&
               r.linkTarghetta !== ""
             ) {
-              const a = document.createElement("a");    // Crea un elemento <a>
+              const a = document.createElement("a"); // Crea un elemento <a>
               const link = `targhetteTipo/${r.linkTarghetta}`;
-              a.href = link;                 // Imposta l'URL del link
-              a.textContent = val;                      // Imposta il testo del link
-              td.appendChild(a);                        // Aggiunge il link alla cella
-            } 
+              a.href = link; // Imposta l'URL del link
+              a.textContent = val; // Imposta il testo del link
+              td.appendChild(a); // Aggiunge il link alla cella
+            }
             // Se è la colonna "Denominazione ufficio", crea un link con combinazione Denominazione+Localita
             else if (c === "Denominazione ufficio") {
               const a = document.createElement("a");
               const params = new URLSearchParams({
                 denominazione: r["Denominazione ufficio"],
-                localita: r["Località"]
+                localita: r["Località"],
               });
               a.href = `ufficioDettaglio.html?${params.toString()}`;
               a.textContent = val;
@@ -646,21 +662,20 @@
             else if (c === "Località") {
               const a = document.createElement("a");
               const params = new URLSearchParams({
-                localita: r["Località"]
+                localita: r["Località"],
               });
               a.href = `cittaDettaglio.html?${params.toString()}`;
               a.textContent = val;
               td.appendChild(a);
-            }
-            else {
+            } else {
               // Altrimenti, semplicemente inserisce il testo nella cella
               td.textContent = val;
             }
-            
+
             // Aggiunge la cella alla riga
             tr.appendChild(td);
           });
-          
+
           // Aggiunge la riga completata al corpo della tabella
           tbody.appendChild(tr);
         });
@@ -675,62 +690,62 @@
         // Seleziona il contenitore delle card e lo svuota
         const container = document.getElementById("cardContainer");
         container.innerHTML = "";
-        
+
         // Resetta l'array delle immagini per il lightbox
         immagini = [];
-        
+
         // Ciclo su ogni record da visualizzare
         records.forEach((r, i) => {
           // Crea l'elemento card
           const card = document.createElement("div");
           card.className = "card";
-          
+
           // Crea il container fisso per l'immagine
           const imgContainer = document.createElement("div");
           imgContainer.className = "card-image-container";
-          
+
           // Crea l'elemento immagine
           const img = document.createElement("img");
           const imgPath = `jpg/prev_${r["Targhetta Ufficio"]}.jpeg`;
           img.src = imgPath;
           img.alt = r.tipo || "Annullo";
           img.loading = "lazy"; // Lazy loading nativo
-          
+
           // Gestisce l'errore di caricamento dell'immagine
           img.onerror = () => {
-            img.style.display = "none";  // Nasconde l'immagine
+            img.style.display = "none"; // Nasconde l'immagine
             const span = document.createElement("span");
             span.textContent = "Immagine non ancora presente";
             span.style.fontSize = "12px";
             span.style.color = "#999";
-            imgContainer.appendChild(span);  // Mostra messaggio di fallback nel container
+            imgContainer.appendChild(span); // Mostra messaggio di fallback nel container
           };
-          
+
           // Al click sull'immagine, apre il lightbox
           img.onclick = () => apriLightbox(i);
           imgContainer.appendChild(img);
           card.appendChild(imgContainer);
-          
+
           // Crea il titolo della card
           const newCard = document.createElement("h3");
 
           card.appendChild(newCard);
-          
+
           // Crea il contenitore per i dettagli
           const detailsContainer = document.createElement("div");
           detailsContainer.className = "card-details";
-          
+
           // Ciclo su tutti i campi del record per creare i paragrafi con i dettagli
           Object.keys(r).forEach((c) => {
             // Salta i campi tecnici (link)
-            if ((c === "linkTarghetta") || (c === "linkDatario")) return;
-            
+            if (c === "linkTarghetta" || c === "linkDatario") return;
+
             const p = document.createElement("p");
             let val = r[c];
-            
+
             // Se il valore è un array, lo converte in stringa separata da virgole
             if (Array.isArray(val)) val = val.join(", ");
-            
+
             // Se è il campo Descrizione e ha un link associato, crea un link cliccabile
             if (
               c === "Descrizione" &&
@@ -746,17 +761,17 @@
               // Altrimenti mostra semplicemente il testo
               p.textContent = `${c}: ${val}`;
             }
-            
+
             // Aggiunge il paragrafo al contenitore dettagli
             detailsContainer.appendChild(p);
           });
-          
+
           // Aggiunge il contenitore dettagli alla card
           card.appendChild(detailsContainer);
-          
+
           // Aggiunge la card completata al contenitore
           container.appendChild(card);
-          
+
           // Aggiunge il percorso dell'immagine all'array per il lightbox
           immagini.push(imgPath);
         });
@@ -815,10 +830,10 @@
               beginAtZero: true,
               ticks: {
                 stepSize: 1,
-                callback: function(value) {
+                callback: function (value) {
                   return Math.floor(value);
-                }
-              }
+                },
+              },
             },
           },
         },
@@ -861,14 +876,14 @@
           aggiornaVisualizzazione(filtraDati(data)),
         );
     </script>
-    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/footer.css" />
     <script src="/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('footerContainer').innerHTML = html;
+      fetch("/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footerContainer").innerHTML = html;
         });
     </script>
   </body>
