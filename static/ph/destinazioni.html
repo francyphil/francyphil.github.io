@@ -1,19 +1,109 @@
 <!doctype html>
 <html lang="it">
   <head>
-      <link rel="stylesheet" href="/common-bg.css" />
+    <link rel="stylesheet" href="/common-bg.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Destinazioni</title>
     <script src="/favicon-loader.js"></script>
     <link rel="stylesheet" href="/navbar.css">
     <link rel="stylesheet" href="/breadcrumb.css">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
     <style>
       body {
         font-family: sans-serif;
         margin: 0;
         padding: 0;
         margin-top: 55px;
+      }
+
+      #map {
+        height: 600px;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        margin: 30px 0;
+      }
+
+      .map-intro {
+        text-align: center;
+        color: #666;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .legend {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+
+      .legend h3 {
+        margin-top: 0;
+        color: #0066cc;
+        font-size: 18px;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+      }
+
+      .legend-marker {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: white;
+        font-size: 12px;
+      }
+
+      .marker-nazionale { background: #3498db; }
+      .marker-estero { background: #e74c3c; }
+      .marker-coloniale { background: #f39c12; }
+
+      .leaflet-popup-content-wrapper {
+        border-radius: 8px;
+      }
+
+      .popup-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #0066cc;
+        margin-bottom: 8px;
+      }
+
+      .popup-info {
+        font-size: 14px;
+        color: #666;
+        margin: 5px 0;
+      }
+
+      .popup-type-badge {
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: bold;
+        margin-top: 8px;
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        #map {
+          height: 400px;
+        }
       }
     </style>
   </head>
@@ -25,6 +115,28 @@
     <div class="content-container">
       <h1>Destinazioni</h1>
 
+      <p class="map-intro">
+        Esplora le destinazioni della corrispondenza postale dal Regno d'Italia. 
+        La mappa mostra le principali rotte e destinazioni nazionali, estere e coloniali.
+      </p>
+
+      <div id="map"></div>
+
+      <div class="legend">
+        <h3>Legenda Destinazioni</h3>
+        <div class="legend-item">
+          <div class="legend-marker marker-nazionale">N</div>
+          <span>Destinazioni Nazionali</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-marker marker-estero">E</div>
+          <span>Destinazioni Estere (Europa e Mondo)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-marker marker-coloniale">C</div>
+          <span>Colonie e Territori</span>
+        </div>
+      </div>
  
     </div>
     
@@ -37,6 +149,142 @@
         .then(html => {
           document.getElementById('footerContainer').innerHTML = html;
         });
+    </script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+      // Aspetta che il DOM sia caricato
+      window.addEventListener('DOMContentLoaded', function() {
+        // Inizializza la mappa centrata sull'Italia
+        const map = L.map('map').setView([42.5, 12.5], 5);
+
+        // Aggiungi il layer OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          maxZoom: 18
+        }).addTo(map);
+
+        // Dati delle destinazioni
+        const destinazioni = [
+          // Destinazioni Nazionali (principali città italiane)
+          { nome: 'Roma', coords: [41.9028, 12.4964], tipo: 'nazionale', descrizione: 'Capitale del Regno' },
+          { nome: 'Milano', coords: [45.4642, 9.1900], tipo: 'nazionale', descrizione: 'Centro commerciale e industriale' },
+          { nome: 'Napoli', coords: [40.8518, 14.2681], tipo: 'nazionale', descrizione: 'Principale città del Sud' },
+          { nome: 'Torino', coords: [45.0703, 7.6869], tipo: 'nazionale', descrizione: 'Prima capitale del Regno' },
+          { nome: 'Palermo', coords: [38.1157, 13.3615], tipo: 'nazionale', descrizione: 'Centro siciliano' },
+          { nome: 'Genova', coords: [44.4056, 8.9463], tipo: 'nazionale', descrizione: 'Porto principale' },
+          { nome: 'Venezia', coords: [45.4408, 12.3155], tipo: 'nazionale', descrizione: 'Porto adriatico' },
+          { nome: 'Firenze', coords: [43.7696, 11.2558], tipo: 'nazionale', descrizione: 'Centro culturale' },
+          
+          // Destinazioni Estere Europee
+          { nome: 'Parigi', coords: [48.8566, 2.3522], tipo: 'estero', descrizione: 'Francia - Capitale europea' },
+          { nome: 'Londra', coords: [51.5074, -0.1278], tipo: 'estero', descrizione: 'Regno Unito - Centro finanziario' },
+          { nome: 'Vienna', coords: [48.2082, 16.3738], tipo: 'estero', descrizione: 'Austria - Impero austro-ungarico' },
+          { nome: 'Berlino', coords: [52.5200, 13.4050], tipo: 'estero', descrizione: 'Germania - Capitale imperiale' },
+          { nome: 'Zurigo', coords: [47.3769, 8.5417], tipo: 'estero', descrizione: 'Svizzera - Centro finanziario' },
+          { nome: 'Madrid', coords: [40.4168, -3.7038], tipo: 'estero', descrizione: 'Spagna - Capitale' },
+          { nome: 'Bruxelles', coords: [50.8503, 4.3517], tipo: 'estero', descrizione: 'Belgio - Centro amministrativo' },
+          { nome: 'Amsterdam', coords: [52.3676, 4.9041], tipo: 'estero', descrizione: 'Paesi Bassi - Porto commerciale' },
+          
+          // Destinazioni Extraeuropee
+          { nome: 'New York', coords: [40.7128, -74.0060], tipo: 'estero', descrizione: 'USA - Emigrazione italiana' },
+          { nome: 'Buenos Aires', coords: [-34.6037, -58.3816], tipo: 'estero', descrizione: 'Argentina - Grande comunità italiana' },
+          { nome: 'San Paolo', coords: [-23.5505, -46.6333], tipo: 'estero', descrizione: 'Brasile - Emigrazione italiana' },
+          { nome: 'Il Cairo', coords: [30.0444, 31.2357], tipo: 'estero', descrizione: 'Egitto - Collegamenti mediterranei' },
+          { nome: 'Costantinopoli', coords: [41.0082, 28.9784], tipo: 'estero', descrizione: 'Impero Ottomano - Rotte orientali' },
+          
+          // Colonie Italiane
+          { nome: 'Tripoli', coords: [32.8872, 13.1913], tipo: 'coloniale', descrizione: 'Libia - Colonia italiana dal 1911' },
+          { nome: 'Bengasi', coords: [32.1191, 20.0869], tipo: 'coloniale', descrizione: 'Libia - Cirenaica' },
+          { nome: 'Asmara', coords: [15.3229, 38.9251], tipo: 'coloniale', descrizione: 'Eritrea - Colonia dal 1890' },
+          { nome: 'Mogadiscio', coords: [2.0469, 45.3182], tipo: 'coloniale', descrizione: 'Somalia - Colonia italiana' },
+          { nome: 'Rodi', coords: [36.4341, 28.2176], tipo: 'coloniale', descrizione: 'Dodecaneso - Possedimento dal 1912' }
+        ];
+
+        // Icone personalizzate
+        const icone = {
+          nazionale: L.divIcon({
+            html: '<div style="background: #3498db; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3); font-size: 12px;">N</div>',
+            className: '',
+            iconSize: [28, 28],
+            iconAnchor: [14, 28],
+            popupAnchor: [0, -28]
+          }),
+          estero: L.divIcon({
+            html: '<div style="background: #e74c3c; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3); font-size: 12px;">E</div>',
+            className: '',
+            iconSize: [28, 28],
+            iconAnchor: [14, 28],
+            popupAnchor: [0, -28]
+          }),
+          coloniale: L.divIcon({
+            html: '<div style="background: #f39c12; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3); font-size: 12px;">C</div>',
+            className: '',
+            iconSize: [28, 28],
+            iconAnchor: [14, 28],
+            popupAnchor: [0, -28]
+          })
+        };
+
+        // Colori per badge
+        const colori = {
+          'nazionale': '#3498db',
+          'estero': '#e74c3c',
+          'coloniale': '#f39c12'
+        };
+
+        const etichette = {
+          'nazionale': 'Nazionale',
+          'estero': 'Estero',
+          'coloniale': 'Coloniale'
+        };
+
+        // Aggiungi marker alla mappa
+        destinazioni.forEach(dest => {
+          const marker = L.marker(dest.coords, {
+            icon: icone[dest.tipo]
+          }).addTo(map);
+
+          const popupContent = `
+            <div class="popup-title">${dest.nome}</div>
+            <div class="popup-info">${dest.descrizione}</div>
+            <span class="popup-type-badge" style="background: ${colori[dest.tipo]}">${etichette[dest.tipo]}</span>
+          `;
+
+          marker.bindPopup(popupContent, {
+            maxWidth: 250
+          });
+        });
+
+        // Aggiungi linee di collegamento da Roma verso alcune destinazioni principali
+        const roma = [41.9028, 12.4964];
+        const collegamentiPrincipali = [
+          { nome: 'Parigi', coords: [48.8566, 2.3522], colore: '#e74c3c' },
+          { nome: 'Londra', coords: [51.5074, -0.1278], colore: '#e74c3c' },
+          { nome: 'Vienna', coords: [48.2082, 16.3738], colore: '#e74c3c' },
+          { nome: 'New York', coords: [40.7128, -74.0060], colore: '#e74c3c' },
+          { nome: 'Buenos Aires', coords: [-34.6037, -58.3816], colore: '#e74c3c' },
+          { nome: 'Tripoli', coords: [32.8872, 13.1913], colore: '#f39c12' },
+          { nome: 'Asmara', coords: [15.3229, 38.9251], colore: '#f39c12' }
+        ];
+
+        collegamentiPrincipali.forEach(dest => {
+          L.polyline([roma, dest.coords], {
+            color: dest.colore,
+            weight: 2,
+            opacity: 0.4,
+            dashArray: '5, 10'
+          }).addTo(map);
+        });
+
+        // Aggiungi controllo scala
+        L.control.scale({
+          imperial: false,
+          metric: true
+        }).addTo(map);
+      });
     </script>
   </body>
 </html>
