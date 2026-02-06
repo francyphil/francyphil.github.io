@@ -11,7 +11,7 @@
        body {
         font-family: sans-serif;
         padding: 20px;
-        margin-top: 50px;
+        margin-top: 55px;
       }
 
       /* Wrapper tabella scrollabile */
@@ -274,7 +274,9 @@
     </style>
   </head>
   <body>
+    <script src="/navbar.js"></script>
     <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb.js"></script>
 
     <h1></h1>
     <fieldset class="controlli-box">
@@ -858,7 +860,6 @@
           aggiornaVisualizzazione(filtraDati(data)),
         );
     </script>
-    <script src="/breadcrumb.js"></script>
     <link rel="stylesheet" href="/footer.css">
     <script src="/footer.js"></script>
     <div id="footerContainer"></div>
@@ -869,6 +870,5 @@
           document.getElementById('footerContainer').innerHTML = html;
         });
     </script>
-    <script src="/navbar.js"></script>
   </body>
 </html>

@@ -14,13 +14,22 @@
   }
 
   function initBreadcrumb() {
-    // Crea il breadcrumb container direttamente
-    const breadcrumbHTML = '<div class="breadcrumb-container"><nav class="breadcrumb" id="breadcrumb"></nav></div>';
+    // Cerca il container esistente
+    let breadcrumbContainer = document.getElementById('breadcrumbContainer');
     
-    // Appendi al body (essendo position fixed, la posizione nel DOM non importa)
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = breadcrumbHTML;
-    document.body.appendChild(tempDiv.firstElementChild);
+    if (breadcrumbContainer) {
+      // Usa il container esistente e aggiungi il breadcrumb
+      breadcrumbContainer.className = 'breadcrumb-container';
+      breadcrumbContainer.innerHTML = '<nav class="breadcrumb" id="breadcrumb"></nav>';
+    } else {
+      // Se non esiste, crea il breadcrumb container direttamente
+      const breadcrumbHTML = '<div class="breadcrumb-container"><nav class="breadcrumb" id="breadcrumb"></nav></div>';
+      
+      // Appendi al body (essendo position fixed, la posizione nel DOM non importa)
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = breadcrumbHTML;
+      document.body.appendChild(tempDiv.firstElementChild);
+    }
     
     // Usa setTimeout per assicurarsi che il DOM sia aggiornato
     setTimeout(() => {

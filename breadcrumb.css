@@ -5,9 +5,7 @@
   font-size: 0.85em;
   display: block;
   width: 100%;
-  position: fixed;
-  top: 50px;
-  left: 0;
+  position: relative;
   z-index: 2;
   box-sizing: border-box;
   line-height: 1;
