@@ -123,6 +123,49 @@
           opacity: 1;
         }
       }
+      
+      .stats-container {
+        max-width: 900px;
+        margin: 50px auto;
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      
+      .stat-box {
+        background: white;
+        border-radius: 15px;
+        padding: 30px 40px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        text-align: center;
+        flex: 1;
+        min-width: 200px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .stat-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(76,175,80,0.2);
+      }
+      
+      .stat-number {
+        font-size: 3em;
+        font-weight: 700;
+        color: #4CAF50;
+        margin: 0;
+        line-height: 1.2;
+      }
+      
+      .stat-label {
+        font-size: 1em;
+        color: #5a6c7d;
+        margin-top: 8px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
       .catalog-img-link {
         display: inline-block;
         border-radius: 50%;
@@ -151,7 +194,6 @@
   <body>
     <h1>Annulli Meccanici</h1>
     <p>Benvenuto nel catalogo degli annulli meccanici Italiani!</p>
-
 
     <div class="catalog-row">
       <div class="catalog-box">
@@ -183,6 +225,21 @@
       <p>
   Si parte dagli annulli in uso nel Regno d'Italia, il periodo che consideriamo più interessante, con l'intenzione di estendere gradualmente il lavoro anche agli altri periodi</p>
     </div>
+
+    <div class="stats-container">
+      <div class="stat-box">
+        <div class="stat-number" id="targhette-count">0</div>
+        <div class="stat-label">Targhette Catalogate</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" id="localita-count">0</div>
+        <div class="stat-label">Località</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" id="anni-span">0</div>
+        <div class="stat-label">Pagine del Sito</div>
+      </div>
+    </div>
     
     <link rel="stylesheet" href="/footer.css">
     <script src="/footer.js"></script>
@@ -195,5 +252,43 @@
         });
     </script>
     <script src="/navbar.js"></script>
+    <script>
+      // Carica le statistiche dal file generato da Python
+      fetch('/site_stats.json')
+        .then(res => res.json())
+        .then(stats => {
+          // Anima i contatori con i dati dal file
+          animateCounter('targhette-count', stats.total_targhette, 2000);
+          animateCounter('localita-count', stats.total_localita, 2000);
+          animateCounter('anni-span', stats.total_pages, 2000);
+        })
+        .catch(err => console.error('Errore nel caricamento delle statistiche:', err));
+      
+      // Funzione per animare i contatori
+      function animateCounter(elementId, targetValue, duration) {
+        const element = document.getElementById(elementId);
+        const startTime = performance.now();
+        const startValue = 0;
+        
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          // Easing function (easeOutQuad)
+          const easeProgress = progress * (2 - progress);
+          const currentValue = Math.floor(startValue + (targetValue - startValue) * easeProgress);
+          
+          element.textContent = currentValue;
+          
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            element.textContent = targetValue;
+          }
+        }
+        
+        requestAnimationFrame(updateCounter);
+      }
+    </script>
   </body>
 </html>

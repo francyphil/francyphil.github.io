@@ -1,0 +1,62 @@
+.breadcrumb-container {
+  background: #fff !important;
+  padding: 5px 0px;
+  margin: 0;
+  font-size: 0.85em;
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  line-height: 1;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.breadcrumb {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #333 !important;
+  position: relative;
+  z-index: 1;
+  padding: 2px 0;
+  height: auto;
+  line-height: 1.2;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.breadcrumb span,
+.breadcrumb a {
+  color: #333 !important;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  margin: 0;
+  padding: 5px 5px;  /* Regola il padding della breadcrumb qui!*/
+  display: inline;
+}
+
+.breadcrumb a:hover {
+  color: red !important;
+  text-decoration: underline;
+  background: none !important;
+}
+
+.breadcrumb-separator {
+  color: #350d92 !important;
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: #333 !important;
+  font-weight: 500;
+}
+
+/* Aggiungi padding al body per compensare breadcrumb fisso */
+body {
+  padding-top: 10px  
+}
