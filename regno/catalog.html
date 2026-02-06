@@ -188,6 +188,38 @@
         box-sizing: border-box;
       }
 
+      /* Stili uniformi per tutti i select */
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 6px 30px 6px 10px;
+        font-size: 14px;
+        font-family: inherit;
+        cursor: pointer;
+        background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"%3E%3Cpath fill="%23333" d="M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z"/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+        background-size: 12px;
+      }
+
+      select:hover {
+        border-color: #999;
+      }
+
+      select:focus {
+        outline: none;
+        border-color: #666;
+        box-shadow: 0 0 0 2px rgba(102, 102, 102, 0.1);
+      }
+
+      .controlli-wrapper select {
+        min-width: 150px;
+      }
+
       .controlli-box {
         width: 1200px;
         margin: 0 0 10px 0;
