@@ -101,7 +101,7 @@
       items.push({ text: 'Info', link: null });
       items.push({ text: 'Credits', link: null });
     } else if (path.includes('/static/ph/')) {
-      items.push({ text: 'Storia Postale', link: null });
+      items.push({ text: 'Storia Postale', link: '/static/ph/phindex.html' });
       if (path.includes('phindex.html')) {
         items.push({ text: 'Indice', link: null });
       } else if (path.includes('cartolina.html')) {
@@ -116,6 +116,8 @@
         items.push({ text: 'Lettera', link: null });
       } else if (path.includes('usiEstero.html')) {
         items.push({ text: 'Usi Estero', link: null });
+      } else if (path.includes('mecIntro.html')) {
+        items.push({ text: 'Introduzione Meccanici', link: null });
       }
     } else if (path.includes('/static/catalogo/')) {
       items.push({ text: 'Catalogo', link: null });
