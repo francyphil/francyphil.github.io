@@ -425,7 +425,7 @@
       }
 
       // ----- Applica schema di catalogazione -----
-      async function applicaSchema(records) {
+      async function applicaSchema(records, vistaSelezionata) {
         const schema = document.getElementById("schemaCatalogazione").value;
         if (schema === "ornaghi_ufficio") {
           return records;
@@ -438,33 +438,41 @@
             gruppi[tipo].push(r);
           });
           
+          // Se siamo in modalità solo tabella, usa semplicemente il primo record
+          const soloTabella = vistaSelezionata === "tabella";
+          
           // Per ogni gruppo, seleziona il record preferibilmente con immagine disponibile
           const risultato = [];
           for (const tipo in gruppi) {
             const gruppo = gruppi[tipo];
             
-            // Funzione per verificare se un'immagine esiste
-            const verificaImmagine = (record) => {
-              return new Promise((resolve) => {
-                const img = new Image();
-                const imgPath = `jpg/prev_${record["Targhetta Ufficio"]}.jpeg`;
-                img.onload = () => resolve(true);
-                img.onerror = () => resolve(false);
-                img.src = imgPath;
-              });
-            };
-            
-            // Cerca il primo record con immagine disponibile
-            let recordSelezionato = gruppo[0]; // default: primo record
-            for (const record of gruppo) {
-              const hasImage = await verificaImmagine(record);
-              if (hasImage) {
-                recordSelezionato = record;
-                break;
+            if (soloTabella) {
+              // Nessuna verifica immagine, usa il primo
+              risultato.push(gruppo[0]);
+            } else {
+              // Funzione per verificare se un'immagine esiste
+              const verificaImmagine = (record) => {
+                return new Promise((resolve) => {
+                  const img = new Image();
+                  const imgPath = `jpg/prev_${record["Targhetta Ufficio"]}.jpeg`;
+                  img.onload = () => resolve(true);
+                  img.onerror = () => resolve(false);
+                  img.src = imgPath;
+                });
+              };
+              
+              // Cerca il primo record con immagine disponibile
+              let recordSelezionato = gruppo[0]; // default: primo record
+              for (const record of gruppo) {
+                const hasImage = await verificaImmagine(record);
+                if (hasImage) {
+                  recordSelezionato = record;
+                  break;
+                }
               }
+              
+              risultato.push(recordSelezionato);
             }
-            
-            risultato.push(recordSelezionato);
           }
           return risultato;
         }
@@ -473,11 +481,12 @@
 
       // ----- Aggiorna visualizzazione -----
       async function aggiornaVisualizzazione(records) {
-        // Applica lo schema di catalogazione prima di visualizzare
-        records = await applicaSchema(records);
+        const vista = document.getElementById("vistaSelezionata").value;
         
-        const maxRecords = document.getElementById("maxRecords").value,
-          vista = document.getElementById("vistaSelezionata").value;
+        // Applica lo schema di catalogazione prima di visualizzare
+        records = await applicaSchema(records, vista);
+        
+        const maxRecords = document.getElementById("maxRecords").value;
         let max = maxRecords === "all" ? records.length : parseInt(maxRecords),
           mostrati = records.slice(0, max);
         const cardContainer = document.getElementById("cardContainer"),
