@@ -1,6 +1,6 @@
 .breadcrumb-container {
   background: #fff !important;
-  padding: 5px 0px;
+  padding: 5px 0px 5px 10px; /* Nessun padding a sinistra */
   margin: 0;
   font-size: 0.85em;
   display: block;
@@ -15,8 +15,7 @@
 }
 
 .breadcrumb {
-  max-width: 1200px;
-  margin: 0 auto;
+  /* max-width e margin rimossi per allineamento a sinistra */
   display: flex;
   align-items: center;
   gap: 2px;
