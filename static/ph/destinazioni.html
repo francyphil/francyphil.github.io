@@ -36,43 +36,6 @@
         line-height: 1.6;
       }
 
-      .legend {
-        background: white;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
-      }
-
-      .legend h3 {
-        margin-top: 0;
-        color: #0066cc;
-        font-size: 18px;
-      }
-
-      .legend-item {
-        display: flex;
-        align-items: center;
-        margin: 8px 0;
-      }
-
-      .legend-marker {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: white;
-        font-size: 12px;
-      }
-
-      .marker-estero_europa { background: #3498db; }
-      .marker-estero_mondo { background: #e74c3c; }
-      .marker-coloniale { background: #f39c12; }
-
       .leaflet-popup-content-wrapper {
         border-radius: 8px;
       }
@@ -88,16 +51,6 @@
         font-size: 14px;
         color: #666;
         margin: 5px 0;
-      }
-
-      .popup-type-badge {
-        display: inline-block;
-        padding: 3px 10px;
-        border-radius: 12px;
-        font-size: 11px;
-        font-weight: bold;
-        margin-top: 8px;
-        color: white;
       }
 
       .popup-image {
@@ -135,22 +88,6 @@
       </p>
 
       <div id="map"></div>
-
-      <div class="legend">
-        <h3>Legenda Destinazioni</h3>
-        <div class="legend-item">
-          <div class="legend-marker marker-estero_europa">EU</div>
-          <span>Europa</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-marker marker-estero_mondo">M</div>
-          <span>Americhe, Asia, Oceania</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-marker marker-coloniale">C</div>
-          <span>Colonie e Africa</span>
-        </div>
-      </div>
  
     </div>
     
@@ -182,43 +119,14 @@
           maxZoom: 18
         }).addTo(map);
 
-        // Icone personalizzate per tipo
-        const icone = {
-          estero_europa: L.divIcon({
-            html: '<div style="background: #3498db; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3); font-size: 10px;">EU</div>',
-            className: '',
-            iconSize: [28, 28],
-            iconAnchor: [14, 28],
-            popupAnchor: [0, -28]
-          }),
-          estero_mondo: L.divIcon({
-            html: '<div style="background: #e74c3c; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3); font-size: 12px;">M</div>',
-            className: '',
-            iconSize: [28, 28],
-            iconAnchor: [14, 28],
-            popupAnchor: [0, -28]
-          }),
-          coloniale: L.divIcon({
-            html: '<div style="background: #f39c12; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3); font-size: 12px;">C</div>',
-            className: '',
-            iconSize: [28, 28],
-            iconAnchor: [14, 28],
-            popupAnchor: [0, -28]
-          })
-        };
-
-        // Colori per badge
-        const colori = {
-          'estero_europa': '#3498db',
-          'estero_mondo': '#e74c3c',
-          'coloniale': '#f39c12'
-        };
-
-        const etichette = {
-          'estero_europa': 'Europa',
-          'estero_mondo': 'Extra-Europa',
-          'coloniale': 'Coloniale'
-        };
+        // Icona bandierina unica per tutti i marker
+        const iconaBandiera = L.divIcon({
+          html: '<div style="font-size: 28px; line-height: 1; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🚩</div>',
+          className: '',
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        });
 
         // Carica i dati delle destinazioni dal JSON
         fetch('/destinazioni_data.json')
@@ -234,19 +142,21 @@
             // Aggiungi marker alla mappa
             destinazioni.forEach(dest => {
               const marker = L.marker(dest.coords, {
-                icon: icone[dest.tipo]
+                icon: iconaBandiera
               }).addTo(map);
+
+              // Crea descrizione: Paese - Città (o solo Paese se non c'è città)
+              const descrizione = dest.citta ? `${dest.paese} - ${dest.citta}` : dest.paese;
 
               // Crea popup con immagine
               const popupContent = `
                 <div class="popup-title">${dest.nome}</div>
                 <img src="${dest.immagine}" 
-                     alt="${dest.descrizione}" 
+                     alt="${descrizione}" 
                      class="popup-image"
                      onclick="window.open('${dest.immagine}', '_blank')"
                      onerror="this.style.display='none'">
-                <div class="popup-info">${dest.descrizione}</div>
-                <span class="popup-type-badge" style="background: ${colori[dest.tipo]}">${etichette[dest.tipo]}</span>
+                <div class="popup-info">${descrizione}</div>
               `;
 
               marker.bindPopup(popupContent, {

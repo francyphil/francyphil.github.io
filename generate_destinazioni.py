@@ -17,11 +17,17 @@ COORDINATE_DB = {
     'Hankow': [30.5928, 114.3055],
     'Shanghai': [31.2304, 121.4737],
     'Tiensin': [39.1422, 117.1767],
+    'Tianjin': [39.1422, 117.1767],
     'Allahabad': [25.4358, 81.8463],
     'Bombay': [19.0760, 72.8777],
     'Ceylon': [7.8731, 80.7718],
     'Madras': [13.0827, 80.2707],
     'Karachi': [24.8607, 67.0011],
+    'Java': [-7.6145, 110.7122],
+    'Giappone': [35.6762, 139.6503],
+    'Tokyo': [35.6762, 139.6503],
+    'Afghanistan': [34.5553, 69.2075],
+    'Iraq': [33.3152, 44.3661],
     
     # Medio Oriente
     'Istanbul': [41.0082, 28.9784],
@@ -49,6 +55,10 @@ COORDINATE_DB = {
     'Zagabria': [45.8150, 15.9819],
     'Fiume': [45.3271, 14.4422],
     'Barcellona': [41.3851, 2.1734],
+    'Estonia': [59.4370, 24.7536],
+    'Finlandia': [60.1699, 24.9384],
+    'Albania': [41.3275, 19.8187],
+    'Ungheria': [47.4979, 19.0402],
     
     # Africa
     'Bengasi': [32.1191, 20.0869],
@@ -59,6 +69,15 @@ COORDINATE_DB = {
     'Elisabethville': [-11.6795, 27.5069],
     'CapeTown': [-33.9249, 18.4241],
     'Zinder': [13.8069, 8.9881],
+    'Tunisia': [36.8065, 10.1815],
+    'Sfay': [34.7406, 10.7603],
+    'Togoland': [6.1256, 1.2318],
+    'Gold_Coast': [5.6037, -0.1870],
+    'Africa': [1.2921, 36.8219],
+    'Nigeria': [9.0820, 8.6753],
+    'Senegal': [14.6937, -17.4441],
+    'Congo_Belga': [-4.3276, 15.3136],
+    'SudAfrica': [-30.5595, 22.9375],
     
     # Americhe
     'BuenosAires': [-34.6037, -58.3816],
@@ -74,19 +93,52 @@ COORDINATE_DB = {
     'Newtonville': [42.3370, -71.2092],
     'Ontario': [43.6532, -79.3832],
     'Winnipeg': [49.8951, -97.1384],
+    'Canada': [45.4215, -75.6972],
+    'USA': [40.7128, -74.0060],
+    'Argentina': [-34.6037, -58.3816],
+    'Uruguay': [-34.9011, -56.1645],
+    'Peru': [-12.0464, -77.0428],
+    'Equador': [-0.1807, -78.4678],
+    'Cile': [-33.4489, -70.6693],
+    'Santiago': [-33.4489, -70.6693],
+    'Messico': [19.4326, -99.1332],
+    'Mexico': [19.4326, -99.1332],
     
     # Oceania
     'Perth': [-31.9505, 115.8605],
     'Wellington': [-41.2865, 174.7762],
+    'Australia': [-33.8688, 151.2093],
+    'Sydney': [-33.8688, 151.2093],
+    'NuovaZelanda': [-41.2865, 174.7762],
     
     # Europa (aggiunte)
     'LasPalmas': [28.1235, -15.4363],
+    'Las_Palmas': [28.1235, -15.4363],
+    'Canaria': [28.1235, -15.4363],
     'La_Valletta': [35.8989, 14.5146],
     'Malta': [35.8989, 14.5146],
     'Cipro': [35.1264, 33.4299],
     'Vaticano': [41.9029, 12.4534],
     'SanMarino': [43.9424, 12.4578],
     'Liechtenstein': [47.1660, 9.5554],
+    'Polonia': [52.2297, 21.0122],
+    'Yugoslavia': [44.7866, 20.4489],
+    'Lettonia': [56.9496, 24.1052],
+    'Bulgaria': [42.6977, 23.3219],
+    'Grecia': [37.9838, 23.7275],
+    'Norvegia': [59.9139, 10.7522],
+    'Svezia': [59.3293, 18.0686],
+    'Spagna': [40.4168, -3.7038],
+    'Principato_di_Monaco': [43.7384, 7.4246],
+    'Turchia': [39.9334, 32.8597],
+    'Russia': [59.9311, 30.3609],
+    'San_Pietroburgo': [59.9311, 30.3609],
+    'Pakistan': [24.8607, 67.0011],
+    'India': [28.7041, 77.1025],
+    'Cina': [31.2304, 121.4737],
+    'Egitto': [30.0444, 31.2357],
+    'Libia': [32.8872, 13.1913],
+    'Kenya': [1.2921, 36.8219],
 }
 
 # Tipo di destinazione in base alla regione
@@ -111,14 +163,21 @@ def parse_filename(filename):
     # Rimuovi estensione
     name = os.path.splitext(filename)[0]
     
+    # Gestisci casi speciali con spazi
+    name = name.replace(' ', '_')
+    
     # Pattern: Paese_Città.ext o Paese.ext
     parts = name.split('_')
     
     if len(parts) >= 2:
         paese = parts[0]
         # Rimuovi numeri e altre info dalla città
-        citta = re.sub(r'\s*\d+$', '', '_'.join(parts[1:]))
-        citta = re.sub(r'\s+', '', citta)
+        citta = re.sub(r'\d+$', '', '_'.join(parts[1:]))
+        citta = citta.strip('_')
+        
+        # Casi speciali
+        if citta == '':
+            citta = None
     else:
         paese = parts[0]
         citta = None
@@ -127,11 +186,35 @@ def parse_filename(filename):
 
 def get_coordinate(paese, citta):
     """Cerca le coordinate nel database"""
-    # Prova prima con la città
-    if citta and citta in COORDINATE_DB:
-        return COORDINATE_DB[citta]
+    # Casi speciali per parsing complesso
+    special_cases = {
+        '1938': 'Iraq',
+        'estonia': 'Estonia',
+        '1924Montecarlo': 'Montecarlo',
+        '1934': 'Monaco',
+        '1937': 'Monaco',
+        'Belga': 'Congo_Belga',
+        'Principato': 'Monaco'
+    }
     
-    # Poi col paese
+    # Prova prima con la città
+    if citta:
+        # Controlla se citta contiene un caso speciale
+        for key, value in special_cases.items():
+            if key in str(citta):
+                if value in COORDINATE_DB:
+                    return COORDINATE_DB[value]
+        
+        if citta in COORDINATE_DB:
+            return COORDINATE_DB[citta]
+    
+    # Controlla casi speciali nel paese
+    if paese in special_cases:
+        lookup = special_cases[paese]
+        if lookup in COORDINATE_DB:
+            return COORDINATE_DB[lookup]
+    
+    # Poi col paese normale
     if paese in COORDINATE_DB:
         return COORDINATE_DB[paese]
     
@@ -162,21 +245,17 @@ def main():
         # Crea nome leggibile
         if citta:
             nome_display = citta.replace('_', ' ')
-            descrizione = f"{paese.replace('_', ' ')} - {citta.replace('_', ' ')}"
+            paese_display = paese.replace('_', ' ')
         else:
             nome_display = paese.replace('_', ' ')
-            descrizione = paese.replace('_', ' ')
-        
-        tipo = get_tipo_destinazione(paese, citta)
+            paese_display = paese.replace('_', ' ')
         
         destinazione = {
             'nome': nome_display,
             'coords': coords,
-            'tipo': tipo,
-            'descrizione': descrizione,
             'immagine': f'/static/jpeg/destinazioni/{filename}',
-            'paese': paese,
-            'citta': citta
+            'paese': paese_display,
+            'citta': citta.replace('_', ' ') if citta else None
         }
         
         destinazioni.append(destinazione)
