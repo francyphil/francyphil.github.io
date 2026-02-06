@@ -6,11 +6,12 @@
     <title>Catalogo Regno</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/breadcrumb.css">
     <style>
        body {
         font-family: sans-serif;
         padding: 20px;
-        margin-top: 55px;
+        margin-top: 50px;
       }
 
       /* Wrapper tabella scrollabile */
@@ -241,6 +242,7 @@
     </style>
   </head>
   <body>
+    <div id="breadcrumbContainer"></div>
 
     <h1></h1>
     <fieldset class="controlli-box">
@@ -824,6 +826,7 @@
           aggiornaVisualizzazione(filtraDati(data)),
         );
     </script>
+    <script src="/breadcrumb.js"></script>
     <link rel="stylesheet" href="/footer.css">
     <script src="/footer.js"></script>
     <div id="footerContainer"></div>
