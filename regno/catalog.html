@@ -238,6 +238,12 @@
             <option value="tabella_card">Tabella + Card</option>
           </select>
         </label>
+        <label>Schema di catalogazione:
+          <select id="schemaCatalogazione">
+            <option value="ornaghi_ufficio">Ornaghi Ufficio</option>
+            <option value="ornaghi_tipo">Ornaghi Tipo</option>
+          </select>
+        </label>
       </div>
     </fieldset>
 
@@ -418,8 +424,58 @@
         });
       }
 
+      // ----- Applica schema di catalogazione -----
+      async function applicaSchema(records) {
+        const schema = document.getElementById("schemaCatalogazione").value;
+        if (schema === "ornaghi_ufficio") {
+          return records;
+        } else if (schema === "ornaghi_tipo") {
+          // Raggruppa per Targhetta Tipo
+          const gruppi = {};
+          records.forEach((r) => {
+            const tipo = r["Targhetta Tipo"];
+            if (!gruppi[tipo]) gruppi[tipo] = [];
+            gruppi[tipo].push(r);
+          });
+          
+          // Per ogni gruppo, seleziona il record preferibilmente con immagine disponibile
+          const risultato = [];
+          for (const tipo in gruppi) {
+            const gruppo = gruppi[tipo];
+            
+            // Funzione per verificare se un'immagine esiste
+            const verificaImmagine = (record) => {
+              return new Promise((resolve) => {
+                const img = new Image();
+                const imgPath = `jpg/prev_${record["Targhetta Ufficio"]}.jpeg`;
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = imgPath;
+              });
+            };
+            
+            // Cerca il primo record con immagine disponibile
+            let recordSelezionato = gruppo[0]; // default: primo record
+            for (const record of gruppo) {
+              const hasImage = await verificaImmagine(record);
+              if (hasImage) {
+                recordSelezionato = record;
+                break;
+              }
+            }
+            
+            risultato.push(recordSelezionato);
+          }
+          return risultato;
+        }
+        return records;
+      }
+
       // ----- Aggiorna visualizzazione -----
-      function aggiornaVisualizzazione(records) {
+      async function aggiornaVisualizzazione(records) {
+        // Applica lo schema di catalogazione prima di visualizzare
+        records = await applicaSchema(records);
+        
         const maxRecords = document.getElementById("maxRecords").value,
           vista = document.getElementById("vistaSelezionata").value;
         let max = maxRecords === "all" ? records.length : parseInt(maxRecords),
@@ -715,6 +771,11 @@
         );
       document
         .getElementById("vistaSelezionata")
+        .addEventListener("change", () =>
+          aggiornaVisualizzazione(filtraDati(data)),
+        );
+      document
+        .getElementById("schemaCatalogazione")
         .addEventListener("change", () =>
           aggiornaVisualizzazione(filtraDati(data)),
         );
