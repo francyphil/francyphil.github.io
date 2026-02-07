@@ -61,13 +61,99 @@
         avuto alcun utilizzo postale ed essendo state create su iniziativa
         privata. Si consiglia di considerarle solo come curiosità
       </p>
-      <h2>Riproduzioni moderne</h2>
+
+      
+ 
+      <section id="falsi-gallery">
+        <h3></h3>
+        <div class="falsi-grid" id="falsiGrid"></div>
+      </section>
+
+     <h2>Riproduzioni moderne</h2>
       <p>
         Queste riproduzioni invece sono state fatte con lo scopo di frodare il
         collezionista.
-      </p>
-      <p></p>
+      </p>      
     </div>
+
+    <style>
+      .falsi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin: 18px 0 40px;
+      }
+      .falso-card {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .falso-card img {
+        max-width: 100%;
+        height: 140px;
+        object-fit: contain;
+        border-radius: 4px;
+      }
+      .falso-caption {
+        margin-top: 8px;
+        font-size: 0.95em;
+        color: #333;
+        text-align: center;
+      }
+      @media (max-width: 900px) {
+        .falsi-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 480px) {
+        .falsi-grid { grid-template-columns: repeat(1, 1fr); }
+      }
+    </style>
+
+    <script>
+      (function() {
+        const images = [
+          "Picture 1.jpg",
+          "falsoCGAnsaldo.jpg",
+          "falsoCGBarison.jpg",
+          "falsoCGBianchelli.jpg",
+          "falsoCGDigerini.jpg",
+          "falsoCGGomma.jpg",
+          "falsoCGLivorno.jpg",
+          "falsoCGMArsala.png",
+          "falsoCGMataHari.jpg",
+          "falsoCGMeta.jpg",
+          "falsoCGPavia1.jpg",
+          "falsoCGPavia2.jpg",
+          "falsoCGRatto.jpg",
+          "falsoCGRinascente.jpg",
+          "falsoCGSalso.jpg",
+          "falsoCGSalso2.jpg",
+          "falsoCGStanzieri.jpg",
+          "falsoCGVagonetto.jpg",
+          "falsoCGVerona.jpg"
+        ];
+
+        const container = document.getElementById('falsiGrid');
+        images.forEach((name) => {
+          const card = document.createElement('div');
+          card.className = 'falso-card';
+          const img = document.createElement('img');
+          img.src = '/static/jpeg/falsi/' + encodeURIComponent(name);
+          img.alt = name;
+          img.loading = 'lazy';
+          const cap = document.createElement('div');
+          cap.className = 'falso-caption';
+   
+          card.appendChild(img);
+          card.appendChild(cap);
+          container.appendChild(card);
+        });
+      })();
+    </script>
 
     <link rel="stylesheet" href="/footer.css" />
     <script src="/footer.js"></script>
