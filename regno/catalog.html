@@ -41,15 +41,11 @@
       th {
         background-color: #f0f0f0;
       }
-      /* Larghezze colonne desktop (hardcoded) */
-      .col-tipo     { width: 60px; }
-      .col-ufficio  { width: 60px; }
-      .col-extra    { width: 50px; }
-      .col-desc     { width: 200px; }
-      .col-anno     { width: 60px; }
-      .col-localita { width: 140px; }
-      .col-denom    { width: 160px; }
-      .col-datario  { width: 80px; }
+      /* Riga filtri: overflow visibile per i dropdown */
+      #trFiltri th {
+        overflow: visible;
+        position: relative;
+      }
 
       /* Card container allineata alla tabella */
       .card-container {
@@ -202,7 +198,7 @@
         box-sizing: border-box;
       }
 
-      /* Stili uniformi per tutti i select */
+      /* Stili uniformi per tutti i select (controlli, non filtri) */
       select {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -228,6 +224,107 @@
         outline: none;
         border-color: #666;
         box-shadow: 0 0 0 2px rgba(102, 102, 102, 0.1);
+      }
+
+      /* ===== Multi-select dropdown ===== */
+      .multi-select {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+      .multi-select-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 5px 8px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 13px;
+        font-family: inherit;
+        cursor: pointer;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-height: 28px;
+      }
+      .multi-select-btn:hover { border-color: #999; }
+      .multi-select-btn .ms-arrow {
+        flex-shrink: 0;
+        margin-left: 4px;
+        font-size: 10px;
+        color: #666;
+      }
+      .multi-select-btn .ms-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .multi-select-btn.has-selection {
+        background: #e8f4fd;
+        border-color: #3498db;
+      }
+      .multi-select-panel {
+        display: none;
+        position: fixed;
+        min-width: 200px;
+        max-height: 280px;
+        overflow-y: auto;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
+        padding: 4px 0;
+      }
+      .multi-select-panel.open { display: block; }
+      .multi-select-panel .ms-search {
+        width: calc(100% - 12px);
+        margin: 4px 6px;
+        padding: 5px 8px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        font-size: 12px;
+        box-sizing: border-box;
+      }
+      .multi-select-panel .ms-actions {
+        display: flex;
+        gap: 4px;
+        padding: 4px 6px;
+        border-bottom: 1px solid #eee;
+      }
+      .multi-select-panel .ms-actions button {
+        flex: 1;
+        padding: 3px 6px;
+        font-size: 11px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        background: #f8f8f8;
+        cursor: pointer;
+        color: #555;
+      }
+      .multi-select-panel .ms-actions button:hover {
+        background: #eee;
+      }
+      .multi-select-panel label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 8px;
+        font-size: 12px;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .multi-select-panel label:hover {
+        background: #f0f7ff;
+      }
+      .multi-select-panel label.ms-hidden {
+        display: none;
+      }
+      .multi-select-panel input[type="checkbox"] {
+        margin: 0;
+        cursor: pointer;
       }
 
       .controlli-wrapper select {
@@ -365,6 +462,23 @@
         #mobileFilterPanel select {
           width: 100%;
           padding: 8px 30px 8px 10px;
+          font-size: 14px;
+        }
+        #mobileFilterPanel .multi-select-btn {
+          padding: 8px 10px;
+          font-size: 14px;
+          min-height: 36px;
+        }
+        #mobileFilterPanel .multi-select-panel {
+          position: relative;
+          box-shadow: none;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          margin-top: 4px;
+          max-height: 200px;
+        }
+        #mobileFilterPanel .multi-select-panel label {
+          padding: 6px 10px;
           font-size: 14px;
         }
         #mobileFilterPanel .mobile-panel-controls {
@@ -604,15 +718,202 @@
         .then((res) => res.json())
         .then((json) => {
           data = json;
+          calcolaLarghezzeFisse(data);
           costruisciFiltri(data);
           costruisciFiltriMobile(data);
           aggiornaVisualizzazione(data);
-          window.addEventListener("resize", () =>
-            aggiornaVisualizzazione(filtraDati(data)),
-          );
+          window.addEventListener("resize", () => {
+            calcolaLarghezzeFisse(data);
+            aggiornaVisualizzazione(filtraDati(data));
+          });
         });
 
-      // ----- Costruisci filtri (solo la riga select, i titoli sono nell'HTML) -----
+      // ----- Crea un multi-select dropdown -----
+      function creaMultiSelect(campo, valoriOrdinati, onChange) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'multi-select';
+        wrapper.dataset.campo = campo;
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'multi-select-btn';
+        btn.innerHTML = '<span class="ms-label">Tutti</span><span class="ms-arrow">▼</span>';
+
+        const panel = document.createElement('div');
+        panel.className = 'multi-select-panel';
+
+        // Barra di ricerca
+        const search = document.createElement('input');
+        search.type = 'text';
+        search.className = 'ms-search';
+        search.placeholder = 'Cerca…';
+        search.addEventListener('input', () => {
+          const q = search.value.toLowerCase();
+          panel.querySelectorAll('label.ms-option').forEach(lbl => {
+            lbl.classList.toggle('ms-hidden', q && !lbl.textContent.toLowerCase().includes(q));
+          });
+        });
+        panel.appendChild(search);
+
+        // Azioni: seleziona tutto / deseleziona tutto
+        const actions = document.createElement('div');
+        actions.className = 'ms-actions';
+        const btnAll = document.createElement('button');
+        btnAll.type = 'button';
+        btnAll.textContent = 'Tutti';
+        btnAll.addEventListener('click', () => {
+          panel.querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = true);
+          aggiornaMultiSelectLabel(wrapper);
+          onChange();
+        });
+        const btnNone = document.createElement('button');
+        btnNone.type = 'button';
+        btnNone.textContent = 'Nessuno';
+        btnNone.addEventListener('click', () => {
+          panel.querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = false);
+          aggiornaMultiSelectLabel(wrapper);
+          onChange();
+        });
+        actions.appendChild(btnAll);
+        actions.appendChild(btnNone);
+        panel.appendChild(actions);
+
+        // Checkbox per ogni valore
+        valoriOrdinati.forEach(v => {
+          const lbl = document.createElement('label');
+          lbl.className = 'ms-option';
+          const cb = document.createElement('input');
+          cb.type = 'checkbox';
+          cb.value = v;
+          cb.addEventListener('change', () => {
+            aggiornaMultiSelectLabel(wrapper);
+            onChange();
+          });
+          lbl.appendChild(cb);
+          lbl.appendChild(document.createTextNode(String(v)));
+          panel.appendChild(lbl);
+        });
+
+        wrapper.appendChild(btn);
+        // Pannello va nel body per evitare clipping da overflow dei contenitori
+        document.body.appendChild(panel);
+        wrapper._panel = panel; // riferimento per getMultiSelectValues e aggiornaOpzioniFiltri
+
+        // Posiziona il pannello sotto il bottone
+        function posizionaPannello() {
+          const rect = btn.getBoundingClientRect();
+          panel.style.top = rect.bottom + 'px';
+          panel.style.left = rect.left + 'px';
+          panel.style.minWidth = Math.max(200, rect.width) + 'px';
+        }
+
+        // Toggle panel al click sul bottone
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          // Chiudi tutti gli altri pannelli aperti
+          document.querySelectorAll('.multi-select-panel.open').forEach(p => {
+            if (p !== panel) p.classList.remove('open');
+          });
+          panel.classList.toggle('open');
+          if (panel.classList.contains('open')) {
+            posizionaPannello();
+            search.value = '';
+            search.dispatchEvent(new Event('input'));
+            search.focus();
+          }
+        });
+
+        // Riposiziona se si scrolla o ridimensiona
+        window.addEventListener('scroll', () => {
+          if (panel.classList.contains('open')) posizionaPannello();
+        }, true);
+        window.addEventListener('resize', () => {
+          if (panel.classList.contains('open')) posizionaPannello();
+        });
+
+        return wrapper;
+      }
+
+      // Aggiorna la label del bottone multi-select
+      function aggiornaMultiSelectLabel(wrapper) {
+        const btn = wrapper.querySelector('.ms-label');
+        const panel = wrapper._panel || wrapper.querySelector('.multi-select-panel');
+        if (!panel) return;
+        const checkboxes = panel.querySelectorAll('.ms-option input[type=checkbox]');
+        const checked = Array.from(checkboxes).filter(cb => cb.checked);
+        const btnEl = wrapper.querySelector('.multi-select-btn');
+        if (checked.length === 0 || checked.length === checkboxes.length) {
+          btn.textContent = 'Tutti';
+          btnEl.classList.remove('has-selection');
+        } else if (checked.length === 1) {
+          btn.textContent = checked[0].value;
+          btnEl.classList.add('has-selection');
+        } else {
+          btn.textContent = checked.length + ' selezionati';
+          btnEl.classList.add('has-selection');
+        }
+      }
+
+      // Ottieni i valori selezionati da un multi-select
+      function getMultiSelectValues(wrapper) {
+        const panel = wrapper._panel || wrapper.querySelector('.multi-select-panel');
+        if (!panel) return [];
+        const checkboxes = panel.querySelectorAll('.ms-option input[type=checkbox]');
+        const checked = Array.from(checkboxes).filter(cb => cb.checked);
+        // Se nessuno o tutti selezionati → nessun filtro
+        if (checked.length === 0 || checked.length === checkboxes.length) return [];
+        return checked.map(cb => cb.value);
+      }
+
+      // Chiudi i pannelli multi-select quando si clicca fuori
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.multi-select') && !e.target.closest('.multi-select-panel')) {
+          document.querySelectorAll('.multi-select-panel.open').forEach(p => p.classList.remove('open'));
+        }
+      });
+
+      // ----- Calcola larghezze fisse colonne dal JSON -----
+      function calcolaLarghezzeFisse(records) {
+        if (isMobile()) return; // su mobile le larghezze sono gestite dalle media query
+        const campi = getCampi();
+        const thList = document.querySelectorAll('#trTitoli th');
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.font = '14px sans-serif'; // stessa font della tabella
+
+        const MIN_WIDTH = 50;
+        const PADDING = 30; // padding celle + margine
+
+        const larghezze = campi.map((campo, i) => {
+          // Larghezza header
+          let maxW = ctx.measureText(thList[i].textContent).width;
+
+          // Larghezza massima dei valori (campione: primi 500 record)
+          const campione = records.slice(0, 500);
+          campione.forEach(r => {
+            let val = r[campo];
+            if (val == null) return;
+            if (Array.isArray(val)) val = val.join(', ');
+            const w = ctx.measureText(String(val)).width;
+            if (w > maxW) maxW = w;
+          });
+
+          return Math.max(MIN_WIDTH, Math.ceil(maxW + PADDING));
+        });
+
+        // Applica le larghezze via style
+        let totalWidth = 0;
+        thList.forEach((th, i) => {
+          th.style.width = larghezze[i] + 'px';
+          totalWidth += larghezze[i];
+        });
+
+        // Imposta larghezza totale tabella
+        const tabella = document.getElementById('tabellaFiltri');
+        tabella.style.width = totalWidth + 'px';
+      }
+
+      // ----- Costruisci filtri (solo la riga multi-select, i titoli sono nell'HTML) -----
       function costruisciFiltri(records) {
         const trFiltri = document.getElementById("trFiltri");
         trFiltri.innerHTML = "";
@@ -621,13 +922,6 @@
         const campi = getCampi();
         campi.forEach((campo) => {
           const th = document.createElement("th");
-          const select = document.createElement("select");
-          select.dataset.campo = campo;
-
-          const optTutti = document.createElement("option");
-          optTutti.value = "";
-          optTutti.textContent = "Tutti";
-          select.appendChild(optTutti);
 
           const valori = new Set();
           records.forEach((r) => {
@@ -636,21 +930,14 @@
             else if (v != null) valori.add(v);
           });
 
-          Array.from(valori)
-            .sort()
-            .forEach((v) => {
-              const opt = document.createElement("option");
-              opt.value = v;
-              opt.textContent = v;
-              select.appendChild(opt);
-            });
+          const valoriOrdinati = Array.from(valori).sort((a, b) => String(a).localeCompare(String(b)));
+          const ms = creaMultiSelect(campo, valoriOrdinati, () => {
+            aggiornaOpzioniFiltri();
+            aggiornaVisualizzazione(filtraDati(data));
+          });
 
-          th.appendChild(select);
+          th.appendChild(ms);
           trFiltri.appendChild(th);
-
-          select.addEventListener("change", () =>
-            aggiornaVisualizzazione(filtraDati(data)),
-          );
         });
       }
 
@@ -674,37 +961,20 @@
           // Salta campi con troppi valori unici o un solo valore
           if (valori.size > 500 || valori.size <= 1) return;
 
-          const label = document.createElement("label");
-          label.textContent = thList[idx].textContent; // etichetta visibile dall'HTML
-          const select = document.createElement("select");
-          select.dataset.campo = campo;
+          const fieldLabel = document.createElement("label");
+          fieldLabel.textContent = thList[idx].textContent;
 
-          const optTutti = document.createElement("option");
-          optTutti.value = "";
-          optTutti.textContent = "Tutti";
-          select.appendChild(optTutti);
-
-          Array.from(valori)
-            .sort()
-            .forEach((v) => {
-              const opt = document.createElement("option");
-              opt.value = v;
-              opt.textContent = v;
-              select.appendChild(opt);
-            });
-
-          select.addEventListener("change", () => {
-            // Sincronizza con il filtro nella thead della tabella
-            const theadSelect = document.querySelector(
-              `#theadFiltri select[data-campo="${campo}"]`,
-            );
-            if (theadSelect) theadSelect.value = select.value;
+          const valoriOrdinati = Array.from(valori).sort((a, b) => String(a).localeCompare(String(b)));
+          const ms = creaMultiSelect(campo, valoriOrdinati, () => {
+            // Sincronizza con il filtro desktop
+            sincronizzaFiltri(campo, 'mobile');
+            aggiornaOpzioniFiltri();
             updateFilterBadge();
             aggiornaVisualizzazione(filtraDati(data));
           });
 
-          label.appendChild(select);
-          panel.appendChild(label);
+          fieldLabel.appendChild(ms);
+          panel.appendChild(fieldLabel);
         });
 
         // Controlli mobile: Max record + Schema
@@ -751,13 +1021,13 @@
         resetBtn.className = "reset-filters";
         resetBtn.textContent = "Azzera filtri";
         resetBtn.addEventListener("click", () => {
-          panel.querySelectorAll("select").forEach((s) => {
-            if (s.id !== "mobileMaxRecords" && s.id !== "mobileSchemaCatalogazione")
-              s.value = "";
+          // Azzera tutti i multi-select (mobile + desktop)
+          document.querySelectorAll('.multi-select').forEach(ms => {
+            const p = ms._panel || ms.querySelector('.multi-select-panel');
+            if (p) p.querySelectorAll('.ms-option input[type=checkbox]').forEach(cb => cb.checked = false);
+            aggiornaMultiSelectLabel(ms);
           });
-          document
-            .querySelectorAll("#theadFiltri select")
-            .forEach((s) => (s.value = ""));
+          aggiornaOpzioniFiltri();
           updateFilterBadge();
           aggiornaVisualizzazione(filtraDati(data));
         });
@@ -773,11 +1043,10 @@
 
       function updateFilterBadge() {
         const panel = document.getElementById("mobileFilterPanel");
-        const selects = panel.querySelectorAll("select");
+        const multiSelects = panel.querySelectorAll('.multi-select');
         let activeCount = 0;
-        selects.forEach((s) => {
-          if (s.id === "mobileMaxRecords" || s.id === "mobileSchemaCatalogazione") return;
-          if (s.value !== "") activeCount++;
+        multiSelects.forEach(ms => {
+          if (getMultiSelectValues(ms).length > 0) activeCount++;
         });
         const badge = document.getElementById("filterBadge");
         if (activeCount > 0) {
@@ -788,19 +1057,124 @@
         }
       }
 
+      // ----- Sincronizza filtri tra desktop e mobile -----
+      function sincronizzaFiltri(campo, sorgente) {
+        const desktopMs = document.querySelector(`#trFiltri .multi-select[data-campo="${campo}"]`);
+        const mobileMs = document.querySelector(`#mobileFilterPanel .multi-select[data-campo="${campo}"]`);
+        if (!desktopMs || !mobileMs) return;
+
+        const [src, dst] = sorgente === 'mobile' ? [mobileMs, desktopMs] : [desktopMs, mobileMs];
+        const srcChecked = new Set(getMultiSelectValues(src));
+
+        const dstPanel = dst._panel || dst.querySelector('.multi-select-panel');
+        if (!dstPanel) return;
+        dstPanel.querySelectorAll('.ms-option input[type=checkbox]').forEach(cb => {
+          cb.checked = srcChecked.has(cb.value);
+        });
+        aggiornaMultiSelectLabel(dst);
+      }
+
       // ----- Filtra dati -----
       function filtraDati(records) {
-        const selects = document.querySelectorAll("#trFiltri select"),
-          filtri = {};
-        selects.forEach((s) => {
-          if (s.value !== "") filtri[s.dataset.campo] = s.value;
+        const multiSelects = document.querySelectorAll('#trFiltri .multi-select');
+        const filtri = {};
+        multiSelects.forEach(ms => {
+          const vals = getMultiSelectValues(ms);
+          if (vals.length > 0) filtri[ms.dataset.campo] = vals;
         });
         return records.filter((r) => {
-          for (const [c, v] of Object.entries(filtri)) {
-            const val = r[c];
-            if (Array.isArray(val) ? !val.includes(v) : val != v) return false;
+          for (const [campo, valoriAccettati] of Object.entries(filtri)) {
+            const val = r[campo];
+            if (Array.isArray(val)) {
+              if (!val.some(v => valoriAccettati.includes(String(v)))) return false;
+            } else {
+              if (!valoriAccettati.includes(String(val))) return false;
+            }
           }
           return true;
+        });
+      }
+
+      // ----- Aggiorna opzioni filtri a cascata -----
+      function aggiornaOpzioniFiltri() {
+        const desktopMultiSelects = Array.from(document.querySelectorAll('#trFiltri .multi-select'));
+
+        // Raccogli tutti i filtri attivi dal desktop
+        const filtriAttivi = {};
+        desktopMultiSelects.forEach(ms => {
+          const vals = getMultiSelectValues(ms);
+          if (vals.length > 0) filtriAttivi[ms.dataset.campo] = vals;
+        });
+
+        // Per ogni multi-select desktop, calcola i valori possibili
+        desktopMultiSelects.forEach(ms => {
+          const campo = ms.dataset.campo;
+
+          // Filtra i dati usando tutti i filtri TRANNE quello corrente
+          const recordFiltrati = data.filter(r => {
+            for (const [c, valoriAccettati] of Object.entries(filtriAttivi)) {
+              if (c === campo) continue;
+              const val = r[c];
+              if (Array.isArray(val)) {
+                if (!val.some(v => valoriAccettati.includes(String(v)))) return false;
+              } else {
+                if (!valoriAccettati.includes(String(val))) return false;
+              }
+            }
+            return true;
+          });
+
+          // Calcola i valori possibili
+          const valoriPossibili = new Set();
+          recordFiltrati.forEach(r => {
+            const v = r[campo];
+            if (Array.isArray(v)) v.forEach(x => valoriPossibili.add(String(x)));
+            else if (v != null) valoriPossibili.add(String(v));
+          });
+
+          // Nasconde le opzioni non possibili
+          const msPanel = ms._panel || ms.querySelector('.multi-select-panel');
+          if (!msPanel) return;
+          msPanel.querySelectorAll('.ms-option').forEach(lbl => {
+            const cb = lbl.querySelector('input[type=checkbox]');
+            const possibile = valoriPossibili.has(cb.value);
+            lbl.style.display = possibile ? '' : 'none';
+            // Se era selezionato ma non più possibile, deseleziona
+            if (!possibile && cb.checked) {
+              cb.checked = false;
+            }
+          });
+          aggiornaMultiSelectLabel(ms);
+        });
+
+        // Sincronizza i filtri mobile con quelli desktop
+        const mobileMultiSelects = document.querySelectorAll('#mobileFilterPanel .multi-select');
+        mobileMultiSelects.forEach(mMs => {
+          const campo = mMs.dataset.campo;
+          const dMs = document.querySelector(`#trFiltri .multi-select[data-campo="${campo}"]`);
+          if (!dMs) return;
+
+          // Copia stato checked e visibilità dal desktop
+          const dPanel = dMs._panel || dMs.querySelector('.multi-select-panel');
+          if (!dPanel) return;
+          const dCheckboxes = dPanel.querySelectorAll('.ms-option input[type=checkbox]');
+          const dStates = {};
+          const dVisible = {};
+          dCheckboxes.forEach(cb => {
+            dStates[cb.value] = cb.checked;
+            dVisible[cb.value] = cb.closest('.ms-option').style.display;
+          });
+
+          const mPanel = mMs._panel || mMs.querySelector('.multi-select-panel');
+          if (!mPanel) return;
+          mPanel.querySelectorAll('.ms-option').forEach(lbl => {
+            const cb = lbl.querySelector('input[type=checkbox]');
+            if (cb.value in dStates) {
+              cb.checked = dStates[cb.value];
+              lbl.style.display = dVisible[cb.value];
+            }
+          });
+          aggiornaMultiSelectLabel(mMs);
         });
       }
 
