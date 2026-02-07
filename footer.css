@@ -34,3 +34,18 @@ body {
   font-size: 24px;
   transition: opacity 0.3s;
 }
+
+@media (max-width: 768px) {
+  .site-footer {
+    font-size: 0.85em;
+    padding: 15px 10px;
+  }
+
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}

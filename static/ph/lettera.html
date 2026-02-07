@@ -15,6 +15,37 @@
         padding: 0;
         margin-top: 55px;
       }
+
+      table {
+        border-collapse: collapse;
+        margin: 30px auto;
+        width: auto;
+      }
+
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      th {
+        background-color: #f0f0f0;
+      }
+
+      /* Mobile: tabelle scrollabili */
+      @media (max-width: 768px) {
+        .table-scroll {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          margin: 20px 0;
+        }
+
+        th, td {
+          padding: 6px 8px;
+          font-size: 0.85em;
+        }
+      }
     </style>
   </head>
   <body>
@@ -25,7 +56,8 @@
     <div class="content-container">
       <h1>Lettere e Biglietti postali</h1>
 
-     <table border="1" style="margin: 30px auto; border-collapse: collapse;">
+     <div class="table-scroll">
+     <table>
       <thead>
         <tr>
           <th></th>          
@@ -45,9 +77,11 @@
         </tr>            
       </tbody>
     </table>
+    </div>
     <p>15 gr per ogni porto</p>
 
-         <table border="1" style="margin: 30px auto; border-collapse: collapse;">
+         <div class="table-scroll">
+         <table>
       <thead>
         <tr>
           <th></th>          
@@ -67,9 +101,11 @@
         </tr>            
       </tbody>
     </table>
+    </div>
     <p>15 gr per ogni porto</p>
 
-         <table border="1" style="margin: 30px auto; border-collapse: collapse;">
+         <div class="table-scroll">
+         <table>
       <thead>
         <tr>
           <th></th>          
@@ -87,6 +123,7 @@
         </tr>            
       </tbody>
     </table>
+    </div>
     <p>15 gr per ogni porto</p>
     </div>
 

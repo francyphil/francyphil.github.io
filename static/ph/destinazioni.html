@@ -118,6 +118,21 @@
       @media (max-width: 768px) {
         #map {
           height: 400px;
+          border-radius: 4px;
+        }
+
+        .map-intro {
+          font-size: 14px;
+        }
+
+        .popup-image {
+          max-width: 200px;
+        }
+
+        #lightbox-close {
+          padding: 20px 20px;
+          font-size: 18px;
+          bottom: 20px;
         }
       }
     </style>
@@ -235,9 +250,11 @@
                 <div class="popup-info">${descrizione}</div>
               `;
 
+              // Dimensioni popup responsive
+              const isMobile = window.innerWidth <= 768;
               marker.bindPopup(popupContent, {
-                maxWidth: 350,
-                minWidth: 250
+                maxWidth: isMobile ? 220 : 350,
+                minWidth: isMobile ? 150 : 250
               });
             });
 

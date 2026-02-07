@@ -93,6 +93,43 @@
       .category-arrow {
         display: none;
       }
+
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 1.4em !important;
+          margin: 25px 15px 30px 15px;
+        }
+
+        .categories-container {
+          gap: 12px;
+          padding: 0 15px;
+        }
+
+        .category-card {
+          width: calc((100% - 12px) / 2);
+          aspect-ratio: auto;
+          padding: 15px 10px;
+        }
+
+        .category-icon {
+          width: 45px;
+          height: 45px;
+          font-size: 24px;
+          border-radius: 10px;
+          margin-bottom: 8px;
+        }
+
+        .category-title {
+          font-size: 1em;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .category-card {
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>

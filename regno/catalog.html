@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="/common-bg.css" />
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catalogo Regno</title>
     <script src="/favicon-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -276,6 +277,72 @@
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
+      }
+
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        table {
+          width: 100% !important;
+          table-layout: auto;
+          font-size: 12px;
+        }
+
+        th, td {
+          padding: 4px 6px;
+          white-space: normal;
+          word-break: break-word;
+        }
+
+        .controlli-box {
+          width: 100% !important;
+          padding: 10px 12px;
+        }
+
+        .controlli-wrapper {
+          gap: 10px;
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .controlli-wrapper select {
+          min-width: 0;
+          width: 100% !important;
+        }
+
+        .card {
+          width: calc(50% - 10px);
+        }
+
+        .card-container {
+          width: 100% !important;
+        }
+
+        #graficoWrapper {
+          width: 100% !important;
+        }
+
+        #grafico {
+          height: 300px;
+        }
+
+        #lightboxOverlay .controls button {
+          padding: 20px 20px;
+          font-size: 18px;
+        }
+
+        #lightboxOverlay .controls button:nth-child(1) {
+          left: 5px;
+        }
+
+        #lightboxOverlay .controls button:nth-child(3) {
+          right: 5px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .card {
+          width: 100%;
+        }
       }
     </style>
   </head>

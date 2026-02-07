@@ -16,4 +16,22 @@ h1 {
   .content-container {
     padding: 0 10px;
   }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  /* Tabelle: scrollabili orizzontalmente */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  /* Immagini: mai più larghe del contenitore */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
