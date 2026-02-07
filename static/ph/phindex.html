@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="it">
   <head>
-      <link rel="stylesheet" href="/common-bg.css" />
+    <link rel="stylesheet" href="/common-bg.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Storia Postale</title>
     <script src="/favicon-loader.js"></script>
-    <link rel="stylesheet" href="/navbar.css">
-    <link rel="stylesheet" href="/breadcrumb.css">
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb.css" />
     <style>
       body {
         font-family: sans-serif;
@@ -24,36 +24,70 @@
 
     <div class="content-container">
       <h1>Storia Postale</h1>
+      <p>
+        L’annullo meccanico, al pari di qualsiasi altra forma di annullamento,
+        rientra pienamente nella storia postale. Lo studio degli annulli postali
+        prende il nome di <em>marcofilia</em>.
+      </p>
 
-    <li><a href="mecIntro.html">Introduzione storico postale allo studio degli annullii meccanici</a></li>   
-    
-    <h2>Oggetti Postali e relative tariffe</h2>
-    <ul>
-      <li><a href="lettera.html">Lettera</a></li>   
-      <li><a href="cartolina.html">Cartolina</a></li>         
-      <li><a href="stampe.html">Stampe</a></li>            
-      <li><a href="campioni.html">Campioni</a></li>
-      <li><a href="espresso.html">Espresso</a></li>
-      <li><a href="postaAerea.html">Posta Aerea</a></li>
-      <li><a href="raccomandata.html">Raccomandata</a></li>
-    </ul>
-    <h2>Storia Postale</h2>
-       <ul>
-      <li><a href="destinazioni.html">Destinazioni</a></li>
-      <li><a href="usiEstero.html">Usi Estero</a></li>
-      <li><a href="intrusi.html">Intrusi</a></li>
+      <p>
+        Prima di entrare nello specifico, ritengo utile richiamare brevemente i
+        concetti fondamentali legati alla storia postale di un documento di
+        spedizione, soffermandosi sui tre elementi principali che ne guidano
+        l’analisi: tariffa, affrancatura e annullo.
+      </p>
 
-    </ul>
+      <p>
+        La tariffa corrisponde all’importo pagato per effettuare la spedizione;
+        l’affrancatura è rappresentata dai francobolli applicati per coprire
+        tale importo; l’annullo ha invece la funzione di rendere inutilizzabili
+        i francobolli, evitando che possano essere riutilizzati. Sul documento
+        possono inoltre comparire altri elementi utili all’identificazione della
+        spedizione, come etichette e bolli accessori, che cambiano denominazione
+        e funzione in base al periodo storico di riferimento.
+      </p>
+
+      <p>
+        Questa breve introduzione serve a chiarire il metodo di analisi
+        normalmente seguito dallo storico postale: si parte dall’esame della
+        tariffa, si passa poi all’affrancatura e infine si valuta l’annullo
+        presente. L’attenzione è rivolta in particolare a eventuali anomalie,
+        come una tariffa non corretta, un’affrancatura inconsueta o un annullo
+        che presenta caratteristiche poco convincenti.
+      </p>
+
+      <li>
+        <a href="mecIntro.html"
+          >Introduzione storico postale allo studio degli annullii meccanici</a
+        >
+      </li>
+
+      <h2>Oggetti Postali e relative tariffe</h2>
+      <ul>
+        <li><a href="lettera.html">Lettera</a></li>
+        <li><a href="cartolina.html">Cartolina</a></li>
+        <li><a href="stampe.html">Stampe</a></li>
+        <li><a href="campioni.html">Campioni</a></li>
+        <li><a href="espresso.html">Espresso</a></li>
+        <li><a href="postaAerea.html">Posta Aerea</a></li>
+        <li><a href="raccomandata.html">Raccomandata</a></li>
+      </ul>
+      <h2>Storia Postale</h2>
+      <ul>
+        <li><a href="destinazioni.html">Destinazioni</a></li>
+        <li><a href="usiEstero.html">Usi Estero</a></li>
+        <li><a href="intrusi.html">Intrusi</a></li>
+      </ul>
     </div>
-    
-    <link rel="stylesheet" href="/footer.css">
+
+    <link rel="stylesheet" href="/footer.css" />
     <script src="/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('footerContainer').innerHTML = html;
+      fetch("/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footerContainer").innerHTML = html;
         });
     </script>
   </body>
