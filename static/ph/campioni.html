@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campioni</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/breadcrumb.css">
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        margin-top: 55px;
+      }
+      .coming-soon {
+        text-align: center;
+        padding: 80px 20px;
+      }
+      .coming-soon .icon {
+        font-size: 4em;
+        margin-bottom: 20px;
+      }
+      .coming-soon p {
+        font-size: 1.2em;
+        color: #5a6c7d;
+        max-width: 500px;
+        margin: 15px auto;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb.js"></script>
+
+    <div class="content-container">
+      <h1>Campioni</h1>
+      <div class="coming-soon">
+        <div class="icon">🚧</div>
+        <p>Questa sezione è in fase di preparazione.<br>Le informazioni sulle tariffe e gli usi postali dei campioni saranno disponibili prossimamente.</p>
+      </div>
+    </div>
+
+    <link rel="stylesheet" href="/footer.css">
+    <script src="/footer.js"></script>
+    <div id="footerContainer"></div>
+    <script>
+      fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('footerContainer').innerHTML = html;
+        });
+    </script>
+  </body>
+</html>

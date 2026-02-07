@@ -82,6 +82,26 @@
         const fileName = path.split('/').pop().replace('.html', '');
         items.push({ text: 'Targhette', link: null });
       }
+    } else if (path.includes('catalog-colonie.html') || path.includes('onde-colonie.html') || path.includes('barre-colonie.html')) {
+      items.push({ text: 'Catalogo', link: null });
+      items.push({ text: 'Colonie', link: null });
+      if (path.includes('catalog-colonie.html')) {
+        items.push({ text: 'Targhette', link: null });
+      } else if (path.includes('onde-colonie.html')) {
+        items.push({ text: 'Onde', link: null });
+      } else if (path.includes('barre-colonie.html')) {
+        items.push({ text: 'Barre', link: null });
+      }
+    } else if (path.includes('catalog-trieste.html') || path.includes('onde-trieste.html') || path.includes('barre-trieste.html')) {
+      items.push({ text: 'Catalogo', link: null });
+      items.push({ text: 'Trieste A', link: null });
+      if (path.includes('catalog-trieste.html')) {
+        items.push({ text: 'Targhette', link: null });
+      } else if (path.includes('onde-trieste.html')) {
+        items.push({ text: 'Onde', link: null });
+      } else if (path.includes('barre-trieste.html')) {
+        items.push({ text: 'Barre', link: null });
+      }
     } else if (path.includes('/static/info/')) {
       items.push({ text: 'Info', link: null });
       if (path.includes('biblio.html')) {
@@ -110,6 +130,14 @@
         items.push({ text: 'Usi Estero', link: null });
       } else if (path.includes('mecIntro.html')) {
         items.push({ text: 'Introduzione Meccanici', link: null });
+      } else if (path.includes('stampe.html')) {
+        items.push({ text: 'Stampe', link: null });
+      } else if (path.includes('campioni.html')) {
+        items.push({ text: 'Campioni', link: null });
+      } else if (path.includes('postaAerea.html')) {
+        items.push({ text: 'Posta Aerea', link: null });
+      } else if (path.includes('raccomandata.html')) {
+        items.push({ text: 'Raccomandata', link: null });
       }
     } else if (path.includes('/static/catalogo/')) {
       items.push({ text: 'Catalogo', link: null });
