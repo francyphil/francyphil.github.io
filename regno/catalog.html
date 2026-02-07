@@ -914,6 +914,13 @@
         tabella.style.width = '100%';
       }
 
+      // Ordinamento intelligente: numerico per numeri, alfabetico per testo
+      function smartSort(a, b) {
+        const na = Number(a), nb = Number(b);
+        if (!isNaN(na) && !isNaN(nb)) return na - nb;
+        return String(a).localeCompare(String(b), 'it');
+      }
+
       // ----- Costruisci filtri (solo la riga multi-select, i titoli sono nell'HTML) -----
       function costruisciFiltri(records) {
         const trFiltri = document.getElementById("trFiltri");
@@ -931,7 +938,7 @@
             else if (v != null) valori.add(v);
           });
 
-          const valoriOrdinati = Array.from(valori).sort((a, b) => String(a).localeCompare(String(b)));
+          const valoriOrdinati = Array.from(valori).sort(smartSort);
           const ms = creaMultiSelect(campo, valoriOrdinati, () => {
             aggiornaOpzioniFiltri();
             aggiornaVisualizzazione(filtraDati(data));
@@ -965,7 +972,7 @@
           const fieldLabel = document.createElement("label");
           fieldLabel.textContent = thList[idx].textContent;
 
-          const valoriOrdinati = Array.from(valori).sort((a, b) => String(a).localeCompare(String(b)));
+          const valoriOrdinati = Array.from(valori).sort(smartSort);
           const ms = creaMultiSelect(campo, valoriOrdinati, () => {
             // Sincronizza con il filtro desktop
             sincronizzaFiltri(campo, 'mobile');
