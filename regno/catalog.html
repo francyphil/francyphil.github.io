@@ -290,14 +290,12 @@
         display: none;
       }
 
-      /* ===== Mobile responsive ===== */
+      /* ===== Mobile: stili comuni (portrait + landscape) ===== */
       @media (max-width: 768px) {
-        /* Hide desktop UI */
+        /* Nasconde controlli desktop */
         .controlli-box { display: none !important; }
-        .table-wrapper { display: none !important; }
-        .card-container { display: none !important; }
 
-        /* Show mobile UI */
+        /* Mostra pannello filtri mobile */
         #mobileFilterToggle {
           display: flex;
           align-items: center;
@@ -334,7 +332,6 @@
           transform: rotate(180deg);
         }
 
-        /* Mobile filter panel */
         #mobileFilterPanel.open {
           display: flex;
           flex-direction: column;
@@ -372,7 +369,6 @@
           min-width: 100px;
         }
         #mobileFilterPanel .reset-filters {
-          align-self: center;
           background: none;
           border: 1px solid #ccc;
           border-radius: 6px;
@@ -387,96 +383,69 @@
           background: #f0f0f0;
         }
 
-        /* Mobile list container */
-        #mobileListContainer {
-          display: block;
-        }
-        .mobile-results-count {
-          font-size: 12px;
-          color: #999;
-          margin-bottom: 8px;
-        }
-        .mobile-list-item {
-          display: flex;
-          gap: 12px;
-          padding: 10px;
-          border: 1px solid #e0e0e0;
-          border-radius: 8px;
-          margin-bottom: 8px;
-          background: #fff;
-          align-items: flex-start;
-          cursor: pointer;
-          transition: background 0.15s;
-        }
-        .mobile-list-item:active {
-          background: #f5f5f5;
-        }
-        .mobile-list-item .item-thumb {
-          width: 70px;
-          height: 55px;
-          flex-shrink: 0;
-          border-radius: 4px;
-          overflow: hidden;
-          background: #f0f0f0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .mobile-list-item .item-thumb img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-        }
-        .mobile-list-item .item-thumb .no-img {
-          font-size: 18px;
-          color: #ccc;
-        }
-        .mobile-list-item .item-info {
-          flex: 1;
-          min-width: 0;
-        }
-        .mobile-list-item .item-title {
-          font-weight: 600;
-          font-size: 14px;
-          color: #333;
-          margin-bottom: 3px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-        .mobile-list-item .item-title a {
-          color: inherit;
-          text-decoration: none;
-        }
-        .mobile-list-item .item-meta {
-          font-size: 12px;
-          color: #777;
-          line-height: 1.4;
-        }
-        .mobile-list-item .item-meta .sep {
-          margin: 0 4px;
-          color: #ccc;
+        /* Nasconde filtri inline nella thead */
+        #theadFiltri tr:nth-child(2) {
+          display: none;
         }
 
         /* Grafico mobile */
-        #graficoWrapper {
-          width: 100% !important;
-        }
-        #grafico {
-          height: 250px;
-        }
+        #graficoWrapper { width: 100% !important; }
+        #grafico { height: 250px; }
 
         /* Lightbox mobile */
         #lightboxOverlay .controls button {
           padding: 20px;
           font-size: 18px;
         }
-        #lightboxOverlay .controls button:nth-child(1) {
-          left: 5px;
+        #lightboxOverlay .controls button:nth-child(1) { left: 5px; }
+        #lightboxOverlay .controls button:nth-child(3) { right: 5px; }
+      }
+
+      /* ===== Mobile PORTRAIT: card ===== */
+      @media (max-width: 768px) and (orientation: portrait) {
+        .table-wrapper { display: none !important; }
+        #mobileListContainer { display: none !important; }
+
+        .card-container {
+          display: flex !important;
+          width: 100% !important;
         }
-        #lightboxOverlay .controls button:nth-child(3) {
-          right: 5px;
+        .card {
+          width: calc(50% - 10px) !important;
         }
+      }
+      @media (max-width: 480px) and (orientation: portrait) {
+        .card {
+          width: 100% !important;
+        }
+      }
+
+      /* ===== Mobile LANDSCAPE: tabella con colonne ridotte ===== */
+      @media (max-width: 768px) and (orientation: landscape),
+             (max-height: 500px) and (orientation: landscape) {
+        .card-container { display: none !important; }
+        #mobileListContainer { display: none !important; }
+
+        .table-wrapper {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        table {
+          width: 100% !important;
+          table-layout: auto !important;
+        }
+        th, td {
+          padding: 4px 6px !important;
+          font-size: 12px !important;
+          white-space: nowrap;
+        }
+        /* Nascondi: 1=Targhetta Tipo, 3=extra, 8=Datario */
+        #tabellaFiltri th:nth-child(1),
+        #tabellaFiltri td:nth-child(1) { display: none; }
+        #tabellaFiltri th:nth-child(3),
+        #tabellaFiltri td:nth-child(3) { display: none; }
+        #tabellaFiltri th:nth-child(8),
+        #tabellaFiltri td:nth-child(8) { display: none; }
       }
     </style>
   </head>
@@ -921,13 +890,25 @@
               maxRecords === "all" ? records.length : parseInt(maxRecords),
             mostrati = records.slice(0, max);
 
-          // ===== MOBILE: lista compatta =====
+          // ===== MOBILE =====
           if (isMobile()) {
             // Pulisci eventuali width inline da sessione desktop
             document.getElementById("graficoWrapper").style.width = "";
             const cb = document.querySelector(".controlli-box");
             if (cb) cb.style.width = "";
-            mostraListaCompatta(mostrati);
+            document.getElementById("cardContainer").style.width = "";
+
+            const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+
+            if (isLandscape) {
+              // Landscape: tabella con colonne ridotte (CSS nasconde le colonne)
+              mostraTabella(mostrati);
+            } else {
+              // Portrait: card
+              mostraTabella([]);
+              document.getElementById("cardContainer").style.display = "flex";
+              mostraCard(mostrati);
+            }
             aggiornaGrafico(records);
             return;
           }

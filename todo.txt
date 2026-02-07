@@ -14,3 +14,4 @@
 - Aggiungere selezione numerazione differenti cataloghi Ornaghi Bartolomasi, Moschetti, etc
 - export dati
 - per velocizzare vista quando seleziono targhetta tipo può convenire fare un json file che ha già fatto l'operazione. Altrimenti richiede migliaia di richieste e impiega un po'
+- i filtri del catalogo. Quando seleziono un filtro voglio vedere negli altri le sole possibilità rimanenti. cosi è piu semplice e veloce 
