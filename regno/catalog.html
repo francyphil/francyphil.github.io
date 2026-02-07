@@ -26,7 +26,7 @@
       /* Tabella */
       table {
         border-collapse: collapse;
-        width: 1200px;
+        width: 100%;
         table-layout: fixed;
       }
       th,
@@ -35,10 +35,21 @@
         padding: 5px 10px;
         text-align: left;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       th {
         background-color: #f0f0f0;
       }
+      /* Larghezze colonne desktop (hardcoded) */
+      .col-tipo     { width: 60px; }
+      .col-ufficio  { width: 60px; }
+      .col-extra    { width: 50px; }
+      .col-desc     { width: 200px; }
+      .col-anno     { width: 60px; }
+      .col-localita { width: 140px; }
+      .col-denom    { width: 160px; }
+      .col-datario  { width: 80px; }
 
       /* Card container allineata alla tabella */
       .card-container {
@@ -116,7 +127,7 @@
       #graficoWrapper {
         display: block;
         margin-top: 20px;
-        width: fit-content; /* larghezza basata su tabella */
+        width: 100%;
       }
       #grafico {
         width: 100% !important;
@@ -224,7 +235,7 @@
       }
 
       .controlli-box {
-        width: 1200px;
+        width: auto;
         margin: 0 0 10px 0;
         background: transparent;
         border: 1px solid #ccc;
@@ -291,7 +302,7 @@
       }
 
       /* ===== Mobile: stili comuni (portrait + landscape) ===== */
-      @media (max-width: 768px) {
+      @media (max-width: 768px), (max-height: 500px) and (orientation: landscape) {
         /* Nasconde controlli desktop */
         .controlli-box { display: none !important; }
 
@@ -389,7 +400,6 @@
         }
 
         /* Grafico mobile */
-        #graficoWrapper { width: 100% !important; }
         #grafico { height: 250px; }
 
         /* Lightbox mobile */
@@ -421,31 +431,65 @@
       }
 
       /* ===== Mobile LANDSCAPE: tabella con colonne ridotte ===== */
-      @media (max-width: 768px) and (orientation: landscape),
-             (max-height: 500px) and (orientation: landscape) {
+      @media (max-height: 500px) and (orientation: landscape) {
+        html, body {
+          overflow-x: hidden !important;
+          max-width: 100vw !important;
+        }
         .card-container { display: none !important; }
         #mobileListContainer { display: none !important; }
 
-        .table-wrapper {
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
+        /* Forza contenitore a larghezza schermo */
+        .content-container {
+          width: auto !important;
+          max-width: calc(100vw - 20px) !important;
+          padding: 0 10px !important;
+          box-sizing: border-box;
         }
+
+        /* Tabella: table, non block, con layout fisso */
         table {
+          display: table !important;
+          table-layout: fixed !important;
           width: 100% !important;
-          table-layout: auto !important;
+          max-width: 100% !important;
+        }
+        .table-wrapper {
+          overflow-x: hidden;
+          max-width: 100%;
         }
         th, td {
-          padding: 4px 6px !important;
-          font-size: 12px !important;
+          padding: 2px 4px !important;
+          font-size: 11px !important;
           white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
-        /* Nascondi: 1=Targhetta Tipo, 3=extra, 8=Datario */
+        /* Nascondi colonne: Tipo(1), Extra(3), Datario(8) — th E td */
         #tabellaFiltri th:nth-child(1),
-        #tabellaFiltri td:nth-child(1) { display: none; }
+        #tabellaFiltri td:nth-child(1),
         #tabellaFiltri th:nth-child(3),
-        #tabellaFiltri td:nth-child(3) { display: none; }
+        #tabellaFiltri td:nth-child(3),
         #tabellaFiltri th:nth-child(8),
-        #tabellaFiltri td:nth-child(8) { display: none; }
+        #tabellaFiltri td:nth-child(8) { display: none !important; }
+        /* Colonne visibili: percentuali su 5 colonne = 100% */
+        #tabellaFiltri th:nth-child(2),
+        #tabellaFiltri td:nth-child(2) { width: 10%; }   /* Ufficio */
+        #tabellaFiltri th:nth-child(4),
+        #tabellaFiltri td:nth-child(4) { width: 50%; }  /* Descrizione */
+        #tabellaFiltri th:nth-child(5),
+        #tabellaFiltri td:nth-child(5) { width: 10%; }  /* Anno */
+        #tabellaFiltri th:nth-child(6),
+        #tabellaFiltri td:nth-child(6) { width: 15%; }  /* Località */
+        #tabellaFiltri th:nth-child(7),
+        #tabellaFiltri td:nth-child(7) { width: 15%; }  /* Den. Ufficio */
+
+        /* Grafico: non eccedere schermo */
+        #graficoWrapper {
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box;
+        }
       }
     </style>
   </head>
@@ -505,7 +549,19 @@
 
     <div class="table-wrapper">
       <table id="tabellaFiltri">
-        <thead id="theadFiltri"></thead>
+        <thead id="theadFiltri">
+          <tr id="trTitoli">
+            <th class="col-tipo" data-campo="Targhetta Tipo">Tipo</th>
+            <th class="col-ufficio" data-campo="Targhetta Ufficio">Ufficio</th>
+            <th class="col-extra" data-campo="extra">Extra</th>
+            <th class="col-desc" data-campo="Descrizione">Descrizione</th>
+            <th class="col-anno" data-campo="Anno">Anno</th>
+            <th class="col-localita" data-campo="Località">Località</th>
+            <th class="col-denom" data-campo="Denominazione ufficio">Den. Ufficio</th>
+            <th class="col-datario" data-campo="Datario">Datario</th>
+          </tr>
+          <tr id="trFiltri"></tr>
+        </thead>
         <tbody></tbody>
       </table>
     </div>
@@ -530,20 +586,24 @@
     <script>
       let data = [],
         immagini = [],
-        lightboxIndex = 0,
-        larghezzeColonneFisse = {};
+        lightboxIndex = 0;
+
+      // Mapping colonne: legge dall'HTML hardcoded
+      function getCampi() {
+        return Array.from(document.querySelectorAll("#trTitoli th")).map(th => th.dataset.campo);
+      }
 
       function isMobile() {
-        return window.innerWidth <= 768;
+        // In portrait: width è il lato corto. In landscape: height è il lato corto.
+        // Un telefono ha il lato corto <= 500px
+        return Math.min(window.innerWidth, window.innerHeight) <= 500;
       }
 
       // ----- Carica JSON -----
-      let larghezzaTabellaFissa = null;
       fetch("targhetteRegno.json")
         .then((res) => res.json())
         .then((json) => {
           data = json;
-          calcolaLarghezzeFisse(data);
           costruisciFiltri(data);
           costruisciFiltriMobile(data);
           aggiornaVisualizzazione(data);
@@ -552,99 +612,30 @@
           );
         });
 
-      // ----- Larghezza massima colonna -----
-      function calcolaLarghezzeFisse(records) {
-        if (!records.length) return;
-        const campi = Object.keys(records[0]),
-          larghezze = {};
-        const canvas = document.createElement("canvas"),
-          ctx = canvas.getContext("2d");
-        ctx.font =
-          window.getComputedStyle(document.body).font || "16px sans-serif";
-        campi.forEach((c) => {
-          let maxW = ctx.measureText(c).width;
-          records.forEach((r) => {
-            let val = r[c];
-            if (Array.isArray(val)) val = val.join(", ");
-            if (val != null) {
-              const w = ctx.measureText(val.toString()).width;
-              if (w > maxW) maxW = w;
-            }
-          });
-          larghezze[c] = maxW + 20;
-        });
-        larghezzeColonneFisse = larghezze;
-      }
-
-      // ----- Applica larghezze minime -----
-      function applicaLarghezzeMinime(records) {
-        // Usa sempre le larghezze calcolate all'avvio, una per colonna
-        const larghezze = larghezzeColonneFisse;
-        document
-          .querySelectorAll("#theadFiltri tr:nth-child(1) th")
-          .forEach((th) => {
-            const c = th.textContent;
-            if (larghezze[c]) th.style.minWidth = larghezze[c] + "px";
-          });
-        document
-          .querySelectorAll("#theadFiltri tr:nth-child(2) th")
-          .forEach((th) => {
-            const select = th.querySelector("select");
-            if (select) {
-              const c = select.dataset.campo;
-              th.style.minWidth = larghezze[c] + "px";
-              select.style.width = larghezze[c] + "px";
-            }
-          });
-        document.querySelectorAll("#tabellaFiltri tbody tr").forEach((tr) => {
-          const tds = tr.querySelectorAll("td");
-          Object.keys(larghezze).forEach((c, i) => {
-            if (tds[i]) tds[i].style.minWidth = larghezze[c] + "px";
-          });
-        });
-      }
-
-      // ----- Costruisci filtri -----
-      /**
-       * Costruisce l'header della tabella con i titoli delle colonne e i filtri a discesa.
-       * @param {Array} records - Array di oggetti dati da cui estrarre i campi e i valori per i filtri
-       */
+      // ----- Costruisci filtri (solo la riga select, i titoli sono nell'HTML) -----
       function costruisciFiltri(records) {
-        // Seleziona l'elemento thead della tabella e lo svuota
-        const thead = document.getElementById("theadFiltri");
-        thead.innerHTML = "";
+        const trFiltri = document.getElementById("trFiltri");
+        trFiltri.innerHTML = "";
         if (!records.length) return;
-        // Ottiene i nomi dei campi (colonne), escludendo i campi tecnici
-        const campi = Object.keys(records[0]).filter(
-          (c) => c !== "linkTarghetta" && c !== "linkDatario",
-        );
-        // Crea la riga dei titoli delle colonne
-        const trTitoli = document.createElement("tr");
-        campi.forEach((c) => {
+
+        const campi = getCampi();
+        campi.forEach((campo) => {
           const th = document.createElement("th");
-          th.textContent = c; // Nome della colonna
-          th.style.width = larghezzeColonneFisse[c] + "px"; // Larghezza minima calcolata
-          trTitoli.appendChild(th);
-        });
-        // Crea la riga dei filtri (select per ogni colonna)
-        const trFiltri = document.createElement("tr");
-        campi.forEach((c) => {
-          const th = document.createElement("th"),
-            select = document.createElement("select");
-          select.dataset.campo = c; // Attributo per sapere a quale campo si riferisce
-          // Opzione "Tutti" per non filtrare
+          const select = document.createElement("select");
+          select.dataset.campo = campo;
+
           const optTutti = document.createElement("option");
           optTutti.value = "";
           optTutti.textContent = "Tutti";
           select.appendChild(optTutti);
-          // Raccoglie tutti i valori distinti per questa colonna
+
           const valori = new Set();
           records.forEach((r) => {
-            const v = r[c];
+            const v = r[campo];
             if (Array.isArray(v)) v.forEach((x) => valori.add(x));
             else if (v != null) valori.add(v);
           });
-          // Aggiunge le opzioni ordinate
+
           Array.from(valori)
             .sort()
             .forEach((v) => {
@@ -653,18 +644,14 @@
               opt.textContent = v;
               select.appendChild(opt);
             });
+
           th.appendChild(select);
           trFiltri.appendChild(th);
-          // Imposta la larghezza del filtro uguale alla colonna
-          select.style.width = larghezzeColonneFisse[c] + "px";
-          // Aggiorna la visualizzazione quando cambia il filtro
+
           select.addEventListener("change", () =>
             aggiornaVisualizzazione(filtraDati(data)),
           );
         });
-        // Aggiunge le due righe all'header della tabella
-        thead.appendChild(trTitoli);
-        thead.appendChild(trFiltri);
       }
 
       // ----- Costruisci filtri mobile -----
@@ -673,14 +660,14 @@
         panel.innerHTML = "";
         if (!records.length) return;
 
-        const campi = Object.keys(records[0]).filter(
-          (c) => c !== "linkTarghetta" && c !== "linkDatario",
-        );
+        // Usa i nomi dei campi dal mapping e le etichette dall'HTML
+        const thList = document.querySelectorAll("#trTitoli th");
+        const campi = getCampi();
 
-        campi.forEach((c) => {
+        campi.forEach((campo, idx) => {
           const valori = new Set();
           records.forEach((r) => {
-            const v = r[c];
+            const v = r[campo];
             if (Array.isArray(v)) v.forEach((x) => valori.add(x));
             else if (v != null) valori.add(v);
           });
@@ -688,9 +675,9 @@
           if (valori.size > 500 || valori.size <= 1) return;
 
           const label = document.createElement("label");
-          label.textContent = c;
+          label.textContent = thList[idx].textContent; // etichetta visibile dall'HTML
           const select = document.createElement("select");
-          select.dataset.campo = c;
+          select.dataset.campo = campo;
 
           const optTutti = document.createElement("option");
           optTutti.value = "";
@@ -709,7 +696,7 @@
           select.addEventListener("change", () => {
             // Sincronizza con il filtro nella thead della tabella
             const theadSelect = document.querySelector(
-              `#theadFiltri select[data-campo="${c}"]`,
+              `#theadFiltri select[data-campo="${campo}"]`,
             );
             if (theadSelect) theadSelect.value = select.value;
             updateFilterBadge();
@@ -803,9 +790,7 @@
 
       // ----- Filtra dati -----
       function filtraDati(records) {
-        const selects = document.querySelectorAll(
-            "#theadFiltri tr:nth-child(2) select",
-          ),
+        const selects = document.querySelectorAll("#trFiltri select"),
           filtri = {};
         selects.forEach((s) => {
           if (s.value !== "") filtri[s.dataset.campo] = s.value;
@@ -892,12 +877,6 @@
 
           // ===== MOBILE =====
           if (isMobile()) {
-            // Pulisci eventuali width inline da sessione desktop
-            document.getElementById("graficoWrapper").style.width = "";
-            const cb = document.querySelector(".controlli-box");
-            if (cb) cb.style.width = "";
-            document.getElementById("cardContainer").style.width = "";
-
             const isLandscape = window.matchMedia("(orientation: landscape)").matches;
 
             if (isLandscape) {
@@ -929,17 +908,7 @@
             cardContainer.style.display = "flex";
             mostraCard(mostrati);
           } else cardContainer.style.display = "none";
-          // Larghezza fissa per card, grafico e controlli-box
-          const tableWidth =
-            larghezzaTabellaFissa ||
-            document.getElementById("tabellaFiltri").offsetWidth;
-          cardContainer.style.width = tableWidth + "px";
-          const graficoWrapper = document.getElementById("graficoWrapper");
-          graficoWrapper.style.width = tableWidth + "px";
-          const controlliBox = document.querySelector(".controlli-box");
-          if (controlliBox) controlliBox.style.width = tableWidth + "px";
 
-          applicaLarghezzeMinime(records);
           aggiornaGrafico(records);
         } finally {
           loadingIndicator.style.display = "none";
@@ -948,52 +917,31 @@
 
       // ----- Mostra tabella -----
       function mostraTabella(records) {
-        // Seleziona il corpo della tabella (dove andranno le righe)
         const tbody = document.querySelector("#tabellaFiltri tbody");
-
-        // Pulisce il corpo della tabella (rimuove righe vecchie)
         tbody.innerHTML = "";
 
-        // Estrae i nomi dei campi dai dati, escludendo "linkTarghetta" e "linkDatario"
-        const campi = Object.keys(data[0]).filter(
-          (c) => c !== "linkTarghetta" && c !== "linkDatario",
-        );
+        const campi = getCampi();
 
-        // Se non ci sono record da mostrare, mostra solo la riga "Nessun risultato" ma lascia header e filtri
-        if (!records.length) {
-          //const tr = document.createElement("tr");
-          //const td = document.createElement("td");
-          //td.colSpan = campi.length;
-          //td.textContent = "Nessun risultato";
-          //tr.appendChild(td);
-          //tbody.appendChild(tr);
-          return;
-        }
+        if (!records.length) return;
 
-        // Ciclo su ogni record da visualizzare
         records.forEach((r) => {
           const tr = document.createElement("tr");
-          campi.forEach((c, idx) => {
-            const td = document.createElement("td"); // Crea una cella
-            let val = r[c]; // Ottiene il valore del campo
+          campi.forEach((c) => {
+            const td = document.createElement("td");
+            let val = r[c];
 
-            // Se il valore è un array, lo converte in stringa (es: ["a", "b"] → "a, b")
             if (Array.isArray(val)) val = val.join(", ");
 
-            // Se è la colonna "Targhetta Tipo" o "Descrizione" e ha un link, crea un link
             if (
               (c === "Targhetta Tipo" || c === "Descrizione") &&
               r.linkTarghetta &&
               r.linkTarghetta !== ""
             ) {
-              const a = document.createElement("a"); // Crea un elemento <a>
-              const link = `targhetteTipo/${r.linkTarghetta}`;
-              a.href = link; // Imposta l'URL del link
-              a.textContent = val; // Imposta il testo del link
-              td.appendChild(a); // Aggiunge il link alla cella
-            }
-            // Se è la colonna "Denominazione ufficio", crea un link con combinazione Denominazione+Localita
-            else if (c === "Denominazione ufficio") {
+              const a = document.createElement("a");
+              a.href = `targhetteTipo/${r.linkTarghetta}`;
+              a.textContent = val;
+              td.appendChild(a);
+            } else if (c === "Denominazione ufficio") {
               const a = document.createElement("a");
               const params = new URLSearchParams({
                 denominazione: r["Denominazione ufficio"],
@@ -1002,9 +950,7 @@
               a.href = `ufficioDettaglio.html?${params.toString()}`;
               a.textContent = val;
               td.appendChild(a);
-            }
-            // Se è la colonna "Localita", crea un link solo con la localita
-            else if (c === "Località") {
+            } else if (c === "Località") {
               const a = document.createElement("a");
               const params = new URLSearchParams({
                 localita: r["Località"],
@@ -1013,15 +959,11 @@
               a.textContent = val;
               td.appendChild(a);
             } else {
-              // Altrimenti, semplicemente inserisce il testo nella cella
               td.textContent = val;
             }
 
-            // Aggiunge la cella alla riga
             tr.appendChild(td);
           });
-
-          // Aggiunge la riga completata al corpo della tabella
           tbody.appendChild(tr);
         });
       }
@@ -1032,92 +974,75 @@
        * @param {Array} records - Array di oggetti dati da visualizzare come card
        */
       function mostraCard(records) {
-        // Seleziona il contenitore delle card e lo svuota
         const container = document.getElementById("cardContainer");
         container.innerHTML = "";
-
-        // Resetta l'array delle immagini per il lightbox
         immagini = [];
 
-        // Ciclo su ogni record da visualizzare
+        // Prepara mapping campo→etichetta dall'HTML
+        const thList = document.querySelectorAll("#trTitoli th");
+        const campi = getCampi();
+        const etichette = {};
+        thList.forEach(th => { etichette[th.dataset.campo] = th.textContent; });
+
         records.forEach((r, i) => {
-          // Crea l'elemento card
           const card = document.createElement("div");
           card.className = "card";
 
-          // Crea il container fisso per l'immagine
           const imgContainer = document.createElement("div");
           imgContainer.className = "card-image-container";
 
-          // Crea l'elemento immagine
           const img = document.createElement("img");
           const imgPath = `jpg/prev_${r["Targhetta Ufficio"]}.jpeg`;
           img.src = imgPath;
-          img.alt = r.tipo || "Annullo";
-          img.loading = "lazy"; // Lazy loading nativo
+          img.alt = r["Descrizione"] || "Annullo";
+          img.loading = "lazy";
 
-          // Gestisce l'errore di caricamento dell'immagine
           img.onerror = () => {
-            img.style.display = "none"; // Nasconde l'immagine
+            img.style.display = "none";
             const span = document.createElement("span");
             span.textContent = "Immagine non ancora presente";
             span.style.fontSize = "12px";
             span.style.color = "#999";
-            imgContainer.appendChild(span); // Mostra messaggio di fallback nel container
+            imgContainer.appendChild(span);
           };
 
-          // Al click sull'immagine, apre il lightbox
           img.onclick = () => apriLightbox(i);
           imgContainer.appendChild(img);
           card.appendChild(imgContainer);
 
-          // Crea il titolo della card
           const newCard = document.createElement("h3");
-
           card.appendChild(newCard);
 
-          // Crea il contenitore per i dettagli
           const detailsContainer = document.createElement("div");
           detailsContainer.className = "card-details";
 
-          // Ciclo su tutti i campi del record per creare i paragrafi con i dettagli
-          Object.keys(r).forEach((c) => {
-            // Salta i campi tecnici (link)
-            if (c === "linkTarghetta" || c === "linkDatario") return;
-
+          // Usa i campi dal mapping hardcoded
+          campi.forEach((campo) => {
             const p = document.createElement("p");
-            let val = r[c];
+            let val = r[campo];
 
-            // Se il valore è un array, lo converte in stringa separata da virgole
             if (Array.isArray(val)) val = val.join(", ");
 
-            // Se è il campo Descrizione e ha un link associato, crea un link cliccabile
+            const label = etichette[campo] || campo;
+
             if (
-              c === "Descrizione" &&
+              campo === "Descrizione" &&
               r.linkTarghetta &&
               r.linkTarghetta !== ""
             ) {
               const a = document.createElement("a");
-              const link = `targhetteTipo/${r.linkTarghetta}`;
-              a.href = link;
-              a.textContent = `${c}: ${val}`;
+              a.href = `targhetteTipo/${r.linkTarghetta}`;
+              a.textContent = `${label}: ${val}`;
               p.appendChild(a);
             } else {
-              // Altrimenti mostra semplicemente il testo
-              p.textContent = `${c}: ${val}`;
+              p.textContent = `${label}: ${val}`;
             }
 
-            // Aggiunge il paragrafo al contenitore dettagli
             detailsContainer.appendChild(p);
           });
 
-          // Aggiunge il contenitore dettagli alla card
           card.appendChild(detailsContainer);
-
-          // Aggiunge la card completata al contenitore
           container.appendChild(card);
-
-          // Aggiunge il percorso dell'immagine all'array per il lightbox
           immagini.push(imgPath);
         });
       }
