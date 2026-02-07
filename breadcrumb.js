@@ -39,14 +39,6 @@
 
   function populateBreadcrumb() {
     const breadcrumb = document.getElementById('breadcrumb');
-    if (!breadcrumb) {
-      console.log('Breadcrumb element not found');
-      return;
-    }
-    
-    console.log('Breadcrumb element found:', breadcrumb);
-    console.log('Breadcrumb parent:', breadcrumb.parentElement);
-
     const path = window.location.pathname;
     const search = window.location.search;
     const items = [{ text: '&#127968;', link: '/' }];
@@ -141,12 +133,6 @@
     }).join('');
     
     breadcrumb.innerHTML = breadcrumbHTML;
-    
-    // Log del testo e HTML della breadcrumb
-    const breadcrumbText = items.map(item => item.text).join(' > ');
-    console.log('Breadcrumb text:', breadcrumbText);
-    console.log('Breadcrumb HTML:', breadcrumbHTML);
-    console.log('Final breadcrumb element:', breadcrumb);
-    console.log('Final breadcrumb outerHTML:', breadcrumb.outerHTML);
+
   }
 })();
