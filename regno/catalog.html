@@ -901,16 +901,17 @@
           return Math.max(MIN_WIDTH, Math.ceil(maxW + PADDING));
         });
 
-        // Applica le larghezze via style
-        let totalWidth = 0;
+        // Applica le larghezze come percentuali proporzionali al contenuto
+        // La tabella resta width:100% del container (come grafico e controlli)
+        const totalWidth = larghezze.reduce((s, w) => s + w, 0);
+
         thList.forEach((th, i) => {
-          th.style.width = larghezze[i] + 'px';
-          totalWidth += larghezze[i];
+          th.style.width = ((larghezze[i] / totalWidth) * 100).toFixed(2) + '%';
         });
 
-        // Imposta larghezza totale tabella
+        // Tabella al 100% del container, come tutto il resto
         const tabella = document.getElementById('tabellaFiltri');
-        tabella.style.width = totalWidth + 'px';
+        tabella.style.width = '100%';
       }
 
       // ----- Costruisci filtri (solo la riga multi-select, i titoli sono nell'HTML) -----
