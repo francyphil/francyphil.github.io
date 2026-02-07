@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Introduzione storico postale allo studio degli annullii meccanici
+      Introduzione storico postale allo studio degli annulli meccanici
     </title>
     <script src="/favicon-loader.js"></script>
     <link rel="stylesheet" href="/navbar.css" />
@@ -18,23 +18,83 @@
         margin-top: 55px;
       }
 
+      h2 {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      h3 {
+        margin-top: 30px;
+        color: #2c3e50;
+      }
+
       figcaption {
         text-align: center;
         font-style: italic;
         margin-top: 8px;
         color: #666;
+        font-size: 0.9em;
+        line-height: 1.4;
+      }
+
+      figure {
+        margin: 25px 0;
+      }
+
+      figure img {
+        margin: 0 auto;
+        max-height: 300px;
+        height: auto;
+        max-width: 100%;
+        display: block;
       }
 
       .figure-row {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        margin: 20px 0;
+        margin: 25px 0;
       }
 
       .figure-row figure {
         flex: 1 1 300px;
         margin: 0;
+      }
+
+      /* Griglia per figure con molte immagini affiancate */
+      .figure-grid {
+        margin: 25px 0;
+      }
+
+      .figure-grid .grid-images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .figure-grid .grid-images img {
+        flex: 1 1 200px;
+        max-width: calc(50% - 10px);
+        max-height: 250px;
+        object-fit: contain;
+        margin: 0;
+      }
+
+      .figure-grid figcaption {
+        margin-top: 12px;
+      }
+
+      @media (max-width: 768px) {
+        .figure-row {
+          flex-direction: column;
+        }
+
+        .figure-grid .grid-images img {
+          max-width: 100%;
+          flex: 1 1 100%;
+        }
       }
     </style>
   </head>
@@ -44,234 +104,401 @@
     <script src="/breadcrumb.js"></script>
 
     <div class="content-container">
-      <h1>Introduzione storico postale allo studio degli annullii meccanici</h1>
+      <h1>Introduzione storico postale allo studio degli annulli meccanici</h1>
 
-    <h1>Dai precursori all’arrivo del primo annullo meccanico</h1>
+      <h2>Dai precursori all'arrivo del primo annullo meccanico</h2>
 
-    <p>
-      La storia postale italiana è stata caratterizzata da una notevole varietà
-      di situazioni, conseguenza diretta dei numerosi eventi storici che si sono
-      succeduti nel tempo. Questo contesto ha favorito il proliferare delle più
-      diverse tipologie di annullamenti postali sul territorio nazionale,
-      dall’introduzione del francobollo fino all’età contemporanea.
-    </p>
+      <p>
+        La storia postale italiana è stata caratterizzata da una notevole
+        varietà di situazioni, conseguenza diretta dei numerosi eventi storici
+        che si sono succeduti nel tempo. Questo contesto ha favorito il
+        proliferare delle più diverse tipologie di annullamenti postali sul
+        territorio nazionale, dall’introduzione del francobollo fino all’età
+        contemporanea.
+      </p>
 
-    <p>
-      Tra le innovazioni tecniche che hanno lasciato un segno profondo nella
-      storia degli annulli postali italiani va certamente ricordata
-      l’introduzione delle macchine annullatrici.
-    </p>
+      <p>
+        Tra le innovazioni tecniche che hanno lasciato un segno profondo nella
+        storia degli annulli postali italiani va certamente ricordata
+        l’introduzione delle macchine annullatrici.
+      </p>
 
-    <p>
-      Il primo passo verso l’automazione postale, partendo dalla semplice
-      bollatura manuale, fu l’impiego delle bollatrici manuali. In Italia il
-      primo strumento utilizzato fu una bollatrice a leva modello C modificato,
-      di produzione della ditta inglese Pearson Hill. Queste macchine, impiegate
-      per un breve periodo a Firenze e a Torino negli anni Sessanta
-      dell’Ottocento, servivano da ausilio all’addetto postale nella timbratura
-      del datario. Dopo una fase sostanzialmente sperimentale, tale sistema non
-      venne adottato stabilmente.
-    </p>
+      <p>
+        Il primo passo verso l’automazione postale, partendo dalla semplice
+        bollatura manuale, fu l’impiego delle bollatrici manuali. In Italia il
+        primo strumento utilizzato fu una bollatrice a leva modello C
+        modificato, di produzione della ditta inglese Pearson Hill. Queste
+        macchine, impiegate per un breve periodo a Firenze e a Torino negli anni
+        Sessanta dell’Ottocento, servivano da ausilio all’addetto postale nella
+        timbratura del datario. Dopo una fase sostanzialmente sperimentale, tale
+        sistema non venne adottato stabilmente.
+      </p>
 
-    <div class="figure-row">
+      <div class="figure-row">
+        <figure>
+          <img
+            src="/static/jpeg/sperTo.jpg"
+            alt="Bollatrice a mano Pearson Hill modello C modificato"
+          />
+          <figcaption>
+            Annullo della bollatrice a mano di Torino del 21 aprile 1864
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="/static/jpeg/sperFi.jpg"
+            alt="Bollatrice a mano Pearson Hill modello C modificato"
+          />
+          <figcaption>
+            Annullo della bollatrice a mano di Firenze del 14 maggio 1869
+          </figcaption>
+        </figure>
+      </div>
+
+      <p>
+        Il problema di annullare la corrispondenza in modo efficiente,
+        garantendo al contempo un’impronta che rendesse inutilizzabile il
+        francobollo e un bollo datario facilmente leggibile, rimaneva tuttavia
+        irrisolto.
+      </p>
+
+      <p>
+        Gli annulli numerali a punti, introdotti già da circa un decennio, non
+        rappresentavano una soluzione definitiva quando, nel 1876, il Ministero
+        delle Poste commissionò all’Officina Enrico Dani (O.E.D.) di Firenze la
+        realizzazione di una bollatrice meccanica di nuova concezione. Questa
+        macchina doveva essere dotata di un nuovo tipo di annullo, il numerale a
+        sbarre, segnando così il primo vero passo verso l’automazione postale.
+      </p>
+
+      <p>
+        Dopo un breve periodo di utilizzo sperimentale a Firenze e a Roma, tra
+        la fine del 1876 e l’inizio del 1877, il disegno dell’annullo venne
+        modificato, passando da 6 a 13 barre. Negli anni successivi, la versione
+        definitiva della macchina annullatrice fu distribuita agli uffici
+        principali insieme al relativo annullo numerale a sbarre, raggiungendo
+        oltre 50 uffici postali in tutto il Regno.
+      </p>
+      <div class="figure-row">
+        <figure>
+          <img
+            src="/static/jpeg/daniFirenzeDettaglio.png"
+            alt="Impronta della bollatrice Dani sperimentale usata a Firenze nel 1876"
+          />
+          <figcaption>
+            Impronta della bollatrice Dani sperimentale usata a Firenze nel 1876
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/static/jpeg/daniMacchina.png"
+            alt="Impronta della bollatrice Dani sperimentale usata a Firenze nel 1876"
+          />
+          <figcaption>
+            Bollatrice Dani conservata presso il Museo dei Tasso (BG)
+          </figcaption>
+        </figure>
+      </div>
+      <p>
+        La O.E.D. rimase in funzione per diversi anni anche dopo l’introduzione
+        delle prime annullatrici elettromeccaniche, fino al definitivo abbandono
+        intorno agli anni Dieci del Novecento. Gli annulli realizzati con questo
+        sistema sono noti come <strong>duplex</strong>. Probabilmente esistevano
+        almeno due tipologie di blocchetti: uno ad elementi indipendenti,
+        caratterizzato da una maggiore spaziatura, e uno ad elementi uniti, con
+        una spaziatura più ridotta tra i due elementi.
+      </p>
+      <div class="figure-row">
+        <figure>
+          <img
+            src="/static/jpeg/duplex.png"
+            alt="Impronta del duplex di Avellino"
+          />
+          <figcaption>Esempio di impronta del duplex di Avellino</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/static/jpeg/duplexExpo.png"
+            alt="Impronta del duplex di Avellino"
+          />
+          <figcaption>
+            Impronta di una delle due macchine O.E.D. usate durante
+            l’Esposizione Internazionale del 1906 a Milano
+          </figcaption>
+        </figure>
+      </div>
+      <p>
+        Nonostante questi dispositivi rendessero più agevole ed efficiente la
+        fase di timbratura, si trattava ancora di macchine azionate manualmente.
+        Verso la fine del XIX secolo, molte amministrazioni postali nel mondo
+        iniziarono a sperimentare annullatrici elettromeccaniche, decisamente
+        più rapide e automatizzate.
+      </p>
+
+      <p>
+        Nel 1901 le Regie Poste acquistarono alcune bollatrici canadesi
+        Bickerdike, capaci di obliterare fino a 250 missive al minuto, dando
+        così avvio alla meccanizzazione postale in Italia. Queste macchine
+        avevano lo scopo di velocizzare il lavoro di obliterazione, fino ad
+        allora svolto esclusivamente a mano. Visti gli eccellenti risultati
+        ottenuti in termini di tempi e costi, la diffusione di questa
+        innovazione fu molto rapida.
+      </p>
+
+      <p>
+        La prima macchina annullatrice elettromeccanica venne introdotta
+        nell’ottobre del 1901 presso l’ufficio postale di Roma Ferrovia, che
+        svolse un ruolo di apripista. Successivamente, macchine analoghe furono
+        installate nei principali centri di lavorazione postale: Napoli, e poi
+        nel 1902 Genova, Torino e Milano.
+      </p>
+
       <figure>
         <img
-          src="/static/jpeg/sperTo.jpg"
-          alt="Bollatrice a mano Pearson Hill modello C modificato"
-          style="
-            margin: 0 auto;
-            max-height: 300px;
-            height: auto;
-            max-width: 100%;
-            display: block;
-          "
+          src="/static/jpeg/bickerdicke.png"
+          alt="Macchina annullatrice elettromeccanica Bickerdike"
         />
         <figcaption>
-          Annullo della bollatrice a mano di Torino del 21 aprile 1864
+          Macchina annullatrice elettromeccanica Bickerdike
         </figcaption>
       </figure>
 
+      <p>
+        La prima targhetta montata sulle Bickerdike aveva la forma di una
+        bandiera contenente le lettere <strong>V E III</strong>, in onore del
+        nuovo sovrano Vittorio Emanuele III, da pochi mesi salito al trono.
+      </p>
+
       <figure>
         <img
-          src="/static/jpeg/sperFi.jpg"
-          alt="Bollatrice a mano Pearson Hill modello C modificato"
-          style="
-            margin: 0 auto;
-            max-height: 300px;
-            height: auto;
-            max-width: 100%;
-            display: block;
-          "
+          src="/static/jpeg/bandiera.png"
+          alt="Bandiera VEIII"
         />
         <figcaption>
-          Annullo della bollatrice a mano di Firenze del 14 maggio 1869
+          Esempio di bandiera usata a Napoli nel dicembre 1901
         </figcaption>
       </figure>
-    </div>
-
-    <p>
-      Il problema di annullare la corrispondenza in modo efficiente, garantendo
-      al contempo un’impronta che rendesse inutilizzabile il francobollo e un
-      bollo datario facilmente leggibile, rimaneva tuttavia irrisolto.
-    </p>
-
-    <p>
-      Gli annulli numerali a punti, introdotti già da circa un decennio, non
-      rappresentavano una soluzione definitiva quando, nel 1876, il Ministero
-      delle Poste commissionò all’Officina Enrico Dani (O.E.D.) di Firenze la
-      realizzazione di una bollatrice meccanica di nuova concezione. Questa
-      macchina doveva essere dotata di un nuovo tipo di annullo, il numerale a
-      sbarre, segnando così il primo vero passo verso l’automazione postale.
-    </p>
-
-    <p>
-      Dopo un breve periodo di utilizzo sperimentale a Firenze e a Roma, tra la
-      fine del 1876 e l’inizio del 1877, il disegno dell’annullo venne
-      modificato, passando da 6 a 13 barre. Negli anni successivi, la versione
-      definitiva della macchina annullatrice fu distribuita agli uffici
-      principali insieme al relativo annullo numerale a sbarre, raggiungendo
-      oltre 50 uffici postali in tutto il Regno.
-    </p>
-    <div class="figure-row">
-      <figure>
-        <img
-          src="/static/jpeg/daniFirenzeDettaglio.png"
-          alt="Impronta della bollatrice Dani sperimentale usata a Firenze nel 1876"
-          style="
-            margin: 0 auto;
-            max-height: 300px;
-            height: auto;
-            max-width: 100%;
-            display: block;
-          "
-        />
-        <figcaption>
-          Impronta della bollatrice Dani sperimentale usata a Firenze nel 1876
-        </figcaption>
-      </figure>
-      <figure>
-        <img
-          src="/static/jpeg/daniMacchina.png"
-          alt="Impronta della bollatrice Dani sperimentale usata a Firenze nel 1876"
-          style="
-            margin: 0 auto;
-            max-height: 300px;
-            height: auto;
-            max-width: 100%;
-            display: block;
-          "
-        />
-        <figcaption>
-          Bollatrice Dani conservata presso il Museo dei Tasso (BG)
-        </figcaption>
-      </figure>
-    </div>
-    <p>
-      La O.E.D. rimase in funzione per diversi anni anche dopo l’introduzione
-      delle prime annullatrici elettromeccaniche, fino al definitivo abbandono
-      intorno agli anni Dieci del Novecento. Gli annulli realizzati con questo
-      sistema sono noti come <strong>duplex</strong>. Probabilmente esistevano
-      almeno due tipologie di blocchetti: uno ad elementi indipendenti,
-      caratterizzato da una maggiore spaziatura, e uno ad elementi uniti, con
-      una spaziatura più ridotta tra i due elementi.
-    </p>
-    <div class="figure-row">
-      <figure>
-        <img
-          src="/static/jpeg/duplex.png"
-          alt="Impronta del duplex di Avellino"
-          style="
-            margin: 0 auto;
-            max-height: 300px;
-            height: auto;
-            max-width: 100%;
-            display: block;
-          "
-        />
-        <figcaption>Esempio di impronta del duplex di Avellino</figcaption>
-      </figure>
-      <figure>
-        <img
-          src="/static/jpeg/duplexExpo.png"
-          alt="Impronta del duplex di Avellino"
-          style="
-            margin: 0 auto;
-            max-height: 300px;
-            height: auto;
-            max-width: 100%;
-            display: block;
-          "
-        />
-        <figcaption>
-          Impronta di una delle due macchine O.E.D. usate durante l’Esposizione
-          Internazionale del 1906 a Milano
-        </figcaption>
-      </figure>
-    </div>
-    <p>
-      Nonostante questi dispositivi rendessero più agevole ed efficiente la fase
-      di timbratura, si trattava ancora di macchine azionate manualmente. Verso
-      la fine del XIX secolo, molte amministrazioni postali nel mondo iniziarono
-      a sperimentare annullatrici elettromeccaniche, decisamente più rapide e
-      automatizzate.
-    </p>
-
-    <p>
-      Nel 1901 le Regie Poste acquistarono alcune bollatrici canadesi
-      Bickerdike, capaci di obliterare fino a 250 missive al minuto, dando così
-      avvio alla meccanizzazione postale in Italia. Queste macchine avevano lo
-      scopo di velocizzare il lavoro di obliterazione, fino ad allora svolto
-      esclusivamente a mano. Visti gli eccellenti risultati ottenuti in termini
-      di tempi e costi, la diffusione di questa innovazione fu molto rapida.
-    </p>
-
-    <p>
-      La prima macchina annullatrice elettromeccanica venne introdotta
-      nell’ottobre del 1901 presso l’ufficio postale di Roma Ferrovia, che
-      svolse un ruolo di apripista. Successivamente, macchine analoghe furono
-      installate nei principali centri di lavorazione postale: Napoli, e poi nel
-      1902 Genova, Torino e Milano.
-    </p>
-
-    <figure>
-      <img
-        src="/static/jpeg/bickerdicke.png"
-        alt="Macchina annullatrice elettromeccanica Bickerdike"
-        style="
-          margin: 0 auto;
-          max-height: 300px;
-          height: auto;
-          max-width: 100%;
-          display: block;
-        "
-      />
-      <figcaption>Macchina annullatrice elettromeccanica Bickerdike</figcaption>
-    </figure>
-
-    <p>
-      La prima targhetta montata sulle Bickerdike aveva la forma di una bandiera
-      contenente le lettere <strong>V E III</strong>, in onore del nuovo sovrano
-      Vittorio Emanuele III, da pochi mesi salito al trono.
-    </p>
-
-    <figure>
-      <img
-        src="/static/jpeg/bandiera.png"
-        alt="Bandiera VEIII"
-        style="
-          margin: 0 auto;
-          max-height: 300px;
-          height: auto;
-          max-width: 100%;
-          display: block;
-        "
-      />
-      <figcaption>
-        Esempio di bandiera usata a Napoli nel dicembre 1901
-      </figcaption>
-    </figure>
 
       <p>Inizia così l'era dell'annullo meccanico in Italia.</p>
+
+      <h2>La diffusione della meccanizzazione postale in Italia</h2>
+
+      <p>
+        Fin dall’introduzione della prima macchina nel 1901 si comprese
+        l’importanza dell’impiego di dispositivi meccanici per la timbratura
+        automatica della corrispondenza. La prima macchina, la
+        <strong>Bickerdike</strong>, fu utilizzata in soli sette uffici
+        distribuiti in sei città differenti; tuttavia, già intorno agli anni
+        Quaranta oltre <strong>150 uffici</strong>, in più di
+        <strong>90 città</strong>, erano dotati di una macchina annullatrice.
+      </p>
+
+      <p>
+        Nel corso degli anni la diffusione delle macchine annullatrici negli
+        uffici postali non è stata omogenea ed è possibile suddividerla in
+        <strong>quattro fasi principali</strong>.
+      </p>
+
+      <h2>Prima fase (1901–1920)</h2>
+
+      <p>
+        In questa fase compaiono le prime macchine annullatrici e le targhette.
+        Le macchine vengono inizialmente installate in pochi grandi centri,
+        ciascuno dotato di una sola annullatrice.
+      </p>
+
+      <p>
+        Già in questo periodo sono presenti in Italia le tre tipologie di
+        macchine che caratterizzeranno l’uso degli annulli meccanici
+        pubblicitari e la meccanizzazione postale in generale: le
+        <strong>Bickerdike</strong>, le <strong>Krag</strong> e le
+        <strong>Flier</strong>.
+      </p>
+
+      <h3>Le macchine Krag</h3>
+
+      <p>
+        Le macchine <strong>Krag</strong> sono caratterizzate da una bollatura
+        di tipo continuo, detta “senza fine”. Con la prima fornitura del 1908
+        vennero equipaggiati alcuni uffici romani.
+      </p>
+
+      <figure>
+        <img
+          src="/static/jpeg/krag1.png"
+          alt="Prima fornitura di macchine Krag in Italia"
+        />
+        <figcaption>Prima fornitura di macchine Krag in Italia</figcaption>
+      </figure>
+
+      <p>
+        Negli anni immediatamente successivi furono sperimentate diverse
+        macchine Krag con impronte differenti, tutte utilizzate per brevi
+        periodi.
+      </p>
+
+      <div class="figure-row">
+        <figure>
+          <img src="/static/jpeg/krag2.png" alt="Impronte sperimentali di macchine Krag" />
+        </figure>
+        <figure>
+          <img src="/static/jpeg/krag3.jpg" alt="Impronte sperimentali di macchine Krag" />
+          <figcaption>
+            Esempi di impronte di macchine Krag differenti rispetto al modello poi
+            scelto in uso sperimentale tra il 1911 e il 1912 a Torino e Roma
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="figure-row">
+        <figure>
+          <img src="/static/jpeg/krag4.jpg" alt="Impronta Krag con datario sperimentale" />
+          <figcaption>
+            Esempio di impronta di macchina Krag del tipo scelto e datario
+            sperimentale
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="/static/jpeg/krag5.jpg" alt="Impronta Krag con datario definitivo" />
+          <figcaption>
+            Esempio di impronta Krag con datario definitivo e annullo a tratteggio,
+            probabilmente consegnato insieme alla macchina in quanto lo si trova
+            anche su macchine estere
+          </figcaption>
+        </figure>
+      </div>
+
+      <figure>
+        <img
+          src="/static/jpeg/krag6.jpg"
+          alt="Impronta Krag ad onde"
+        />
+        <figcaption>
+          Esempio di impronta di macchina Krag definitiva ad onde
+        </figcaption>
+      </figure>
+
+      <p>
+        Le bollatrici Krag furono ampiamente utilizzate in questo primo periodo
+        sia per la posta in partenza sia per quella in arrivo.
+      </p>
+
+      <h3>Le macchine Flier</h3>
+
+      <p>
+        Le <strong>Flier</strong> sono bollatrici a impronta singola prodotte
+        dalla statunitense <em>International Postal Supply</em> (IPS) e
+        successivamente realizzate anche in Italia su concessione. La prima
+        città a utilizzarle fu <strong>Milano nel 1910</strong>.
+      </p>
+
+      <figure>
+        <img
+          src="/static/jpeg/flier1.jpg"
+          alt="Impronta ondulata macchina Flier"
+        />
+        <figcaption>
+          Esempio di impronta ondulata con lettera di macchina Flier
+        </figcaption>
+      </figure>
+
+      <p>
+        L’uso delle Flier fu riservato quasi esclusivamente alla posta in
+        partenza. Unica eccezione nota è la targhetta dell’
+        <strong
+          >Esposizione Internazionale dello Sport di Vercelli (1913)</strong
+        >.
+      </p>
+
+      <figure>
+        <img
+          src="/static/jpeg/vercFlier.jpg"
+          alt="Targhetta Esposizione Internazionale di Vercelli 1913"
+        />
+        <figcaption>
+          Esposizione Internazionale di Vercelli, prima targhetta rettangolare
+          d’Italia, nota sia in partenza che in arrivo
+        </figcaption>
+      </figure>
+
+      <h2>Seconda fase (1920–1925)</h2>
+
+      <p>
+        La seconda fase è legata alla diffusione massiccia delle
+        <strong>targhette figurate</strong>, resa possibile dall’introduzione
+        della pubblicità privata negli annulli. Il 1924 rappresenta il periodo
+        di massimo splendore.
+      </p>
+
+      <figure class="figure-grid">
+        <div class="grid-images">
+          <img src="/static/jpeg/targhFiler1.jpg" alt="Annullo figurato pubblicitario Flier 1" />
+          <img src="/static/jpeg/targFlier2.jpg" alt="Annullo figurato pubblicitario Flier 2" />
+          <img src="/static/jpeg/targFlier3.jpg" alt="Annullo figurato pubblicitario Flier 3" />
+          <img src="/static/jpeg/targFlier4.jpg" alt="Annullo figurato pubblicitario Flier 4" />
+        </div>
+        <figcaption>
+          Esempi di annulli figurati pubblicitari a targhetta per macchine Flier
+        </figcaption>
+      </figure>
+
+      <h2>Terza fase (1925–1933)</h2>
+
+      <p>
+        Dalla seconda metà degli anni Venti il numero delle targhette
+        diminuisce, ma aumenta il numero degli uffici e delle macchine. Molte
+        località risultano dotate unicamente di macchine Krag.
+      </p>
+
+      <figure class="figure-grid">
+        <div class="grid-images">
+          <img src="/static/jpeg/targFlier5.jpg" alt="Annullo Salsomaggiore" />
+          <img src="/static/jpeg/targFlier6.jpg" alt="Annullo Battaglia del Grano" />
+        </div>
+        <figcaption>
+          Esempi di annulli su Salsomaggiore e sulla Battaglia del Grano
+        </figcaption>
+      </figure>
+
+      <h2>Quarta fase (seconda metà degli anni ’30)</h2>
+
+      <p>
+        La meccanizzazione si estende a numerosi uffici periferici, senza però
+        una corrispondente diffusione delle targhette pubblicitarie.
+      </p>
+
+      <div class="figure-row">
+        <figure>
+          <img src="/static/jpeg/kraganni30.jpg" alt="Uso sperimentale nuova Krag 1932" />
+          <figcaption>Esempio di uso sperimentale della nuova Krag nel 1932</figcaption>
+        </figure>
+        <figure>
+          <img src="/static/jpeg/kraganni302.png" alt="Krag in centro minore" />
+          <figcaption>Esempio di uso della bollatrice Krag in un centro minore</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        Dal 1943 l’uso degli annulli meccanici diventa sempre più raro. A Milano
+        viene adottato un annullo ad <strong>onde fitte</strong> per sopperire
+        alla mancanza di targhette.
+      </p>
+
+      <div class="figure-row">
+        <figure>
+          <img src="/static/jpeg/flier1940.jpg" alt="Flier in centro minore" />
+          <figcaption>a) Uso della nuova bollatrice Flier in un centro minore privo di targhette</figcaption>
+        </figure>
+        <figure>
+          <img src="/static/jpeg/flier19402.jpg" alt="Annulli ad onde fitte Milano" />
+          <figcaption>b) Annullo ad onde fitte usato a Milano nel periodo della RSI e della Luogotenenza</figcaption>
+        </figure>
+        <figure>
+          <img src="/static/jpeg/flier19403.jpg" alt="Annullo riutilizzato periodo luogotenenziale" />
+          <figcaption>c) Annullo usato nei primi anni ’30 e riutilizzato in periodo luogotenenziale</figcaption>
+        </figure>
+      </div>
     </div>
 
     <link rel="stylesheet" href="/footer.css" />
