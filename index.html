@@ -340,6 +340,10 @@
         <div class="stat-number" id="anni-span">0</div>
         <div class="stat-label">Pagine nel Sito</div>
       </div>
+      <div class="stat-box">
+        <div class="stat-number" id="immagini-count">0</div>
+        <div class="stat-label">Immagini</div>
+      </div>
     </div>
 
     <link rel="stylesheet" href="/footer.css" />
@@ -362,6 +366,7 @@
           animateCounter("targhette-count", stats.total_targhette, 2000);
           animateCounter("localita-count", stats.total_localita, 2000);
           animateCounter("anni-span", stats.total_pages, 2000);
+          animateCounter("immagini-count", stats.total_images, 2000);
         })
         .catch((err) =>
           console.error("Errore nel caricamento delle statistiche:", err),

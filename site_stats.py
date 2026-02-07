@@ -63,6 +63,18 @@ def count_catalog_stats(root_dir):
         'total_localita': len(localita_set)
     }
 
+def count_images(root_dir):
+    """Conta tutti i file immagine nel progetto"""
+    image_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.svg', '.webp', '.bmp', '.tiff', '.tif'}
+    image_count = 0
+    
+    # Trova tutti i file con estensioni immagine ricorsivamente
+    for file_path in Path(root_dir).rglob("*"):
+        if file_path.suffix.lower() in image_extensions:
+            image_count += 1
+    
+    return image_count
+
 def main():
     # Directory del progetto (dove si trova questo script)
     project_dir = Path(__file__).parent
@@ -73,11 +85,15 @@ def main():
     # Conta statistiche catalogo
     catalog_stats = count_catalog_stats(project_dir)
     
+    # Conta le immagini
+    total_images = count_images(project_dir)
+    
     # Crea il dizionario con tutte le statistiche
     stats = {
         'total_pages': total_pages,
         'total_targhette': catalog_stats['total_targhette'],
-        'total_localita': catalog_stats['total_localita']
+        'total_localita': catalog_stats['total_localita'],
+        'total_images': total_images
     }
     
     # Salva in site_stats.json
@@ -89,6 +105,7 @@ def main():
     print(f"✓ Pagine totali: {stats['total_pages']}")
     print(f"✓ Targhette catalogate: {stats['total_targhette']}")
     print(f"✓ Località uniche: {stats['total_localita']}")
+    print(f"✓ Immagini totali: {stats['total_images']}")
     print(f"✓ Risultato salvato in: {output_file.name}")
 
 if __name__ == '__main__':
