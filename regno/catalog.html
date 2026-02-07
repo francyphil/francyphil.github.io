@@ -398,6 +398,54 @@
         display: none;
       }
 
+      /* ===== Pagination (globale) ===== */
+      .pagination {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        margin: 18px 0;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .page-dot {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        height: 44px;
+        padding: 8px 12px;
+        border-radius: 22px;
+        background: #fff;
+        border: 1px solid #ddd;
+        color: #333;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .page-dot.active {
+        background: #4caf50;
+        color: #fff;
+        border-color: #4caf50;
+      }
+      .page-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 48px;
+        height: 44px;
+        border-radius: 6px;
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      .page-arrow.disabled {
+        opacity: 0.4;
+        pointer-events: none;
+      }
+
       /* ===== Mobile: stili comuni (portrait + landscape) ===== */
       @media (max-width: 768px), (max-height: 500px) and (orientation: landscape) {
         /* Nasconde controlli desktop */
@@ -604,6 +652,52 @@
           max-width: 100% !important;
           box-sizing: border-box;
         }
+        /* Pagination styles */
+        .pagination {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          justify-content: center;
+          margin: 18px 0;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        .page-dot {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 34px;
+          height: 34px;
+          padding: 6px 10px;
+          border-radius: 18px;
+          background: #fff;
+          border: 1px solid #ddd;
+          color: #333;
+          cursor: pointer;
+          font-weight: 600;
+        }
+        .page-dot.active {
+          background: #4caf50;
+          color: #fff;
+          border-color: #4caf50;
+        }
+        .page-arrow {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 40px;
+          height: 34px;
+          border-radius: 6px;
+          background: #f5f5f5;
+          border: 1px solid #ddd;
+          cursor: pointer;
+          font-size: 16px;
+        }
+        .page-arrow.disabled {
+          opacity: 0.4;
+          pointer-events: none;
+        }
       }
     </style>
   </head>
@@ -682,6 +776,9 @@
 
     <div class="card-container" id="cardContainer"></div>
 
+    <!-- Pagination controls: numeri + frecce -->
+    <div id="pagination" class="pagination" aria-label="Paginazione"></div>
+
     <!-- Grafico wrapper uguale tabella -->
     <div id="graficoWrapper">
       <canvas id="grafico" height="400"></canvas>
@@ -700,7 +797,8 @@
     <script>
       let data = [],
         immagini = [],
-        lightboxIndex = 0;
+        lightboxIndex = 0,
+        currentPage = 1;
 
       // Mapping colonne: legge dall'HTML hardcoded
       function getCampi() {
@@ -1253,9 +1351,18 @@
           records = await applicaSchema(records, vista);
 
           const maxRecords = document.getElementById("maxRecords").value;
-          let max =
-              maxRecords === "all" ? records.length : parseInt(maxRecords),
-            mostrati = records.slice(0, max);
+          let perPage = maxRecords === "all" ? records.length : parseInt(maxRecords);
+
+          // Calcola paginazione
+          const totalPages = perPage === 0 ? 1 : Math.max(1, Math.ceil(records.length / perPage));
+          if (currentPage > totalPages) currentPage = totalPages;
+
+          const start = perPage === records.length ? 0 : (currentPage - 1) * perPage;
+          const end = perPage === records.length ? records.length : start + perPage;
+          let mostrati = records.slice(start, end);
+
+          // Renderizza controlli di paginazione
+          renderPagination(records.length, perPage, currentPage);
 
           // ===== MOBILE =====
           if (isMobile()) {
@@ -1298,6 +1405,86 @@
       }
 
       // ----- Mostra tabella -----
+      
+      // ----- Paginazione -----
+      function renderPagination(totalItems, perPage, page) {
+        const container = document.getElementById('pagination');
+        container.innerHTML = '';
+
+        if (!perPage || perPage >= totalItems) {
+          // Nascondi paginazione se tutto è mostrato o non necessario
+          container.style.display = 'none';
+          return;
+        }
+        container.style.display = 'flex';
+
+        const totalPages = Math.max(1, Math.ceil(totalItems / perPage));
+
+        const createArrow = (dir) => {
+          const btn = document.createElement('button');
+          btn.className = 'page-arrow';
+          btn.textContent = dir === 'prev' ? '⟨' : '⟩';
+          if ((dir === 'prev' && page <= 1) || (dir === 'next' && page >= totalPages)) {
+            btn.classList.add('disabled');
+          }
+          btn.addEventListener('click', () => {
+            if (dir === 'prev') prevPage(totalPages); else nextPage(totalPages);
+          });
+          return btn;
+        };
+
+        container.appendChild(createArrow('prev'));
+
+        // Mostra una finestra di pagine centrata su page
+        const maxDots = 11;
+        let startPage = Math.max(1, page - Math.floor(maxDots / 2));
+        let endPage = Math.min(totalPages, startPage + maxDots - 1);
+        if (endPage - startPage < maxDots - 1) startPage = Math.max(1, endPage - maxDots + 1);
+
+        for (let p = startPage; p <= endPage; p++) {
+          const dot = document.createElement('button');
+          dot.className = 'page-dot' + (p === page ? ' active' : '');
+          dot.textContent = p;
+          dot.addEventListener('click', () => gotoPage(p));
+          container.appendChild(dot);
+        }
+
+        container.appendChild(createArrow('next'));
+        // Centra il pallino attivo nella vista orizzontale quando presente
+        const active = container.querySelector('.page-dot.active');
+        if (active && container.scrollWidth > container.clientWidth) {
+          // usa smooth solo se supportato
+          try {
+            active.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          } catch (e) {
+            active.scrollIntoView();
+          }
+        }
+      }
+
+      function gotoPage(p) {
+        currentPage = p;
+        aggiornaVisualizzazione(filtraDati(data));
+      }
+
+      function prevPage(totalPages) {
+        if (currentPage > 1) {
+          currentPage--;
+          aggiornaVisualizzazione(filtraDati(data));
+        }
+      }
+
+      function nextPage(totalPages) {
+        if (currentPage < totalPages) {
+          currentPage++;
+          aggiornaVisualizzazione(filtraDati(data));
+        }
+      }
+
+      // Reset pagina quando cambia il numero per pagina o vista
+      document.getElementById('maxRecords').addEventListener('change', () => { currentPage = 1; aggiornaVisualizzazione(filtraDati(data)); });
+      document.getElementById('vistaSelezionata').addEventListener('change', () => { currentPage = 1; aggiornaVisualizzazione(filtraDati(data)); });
+
       function mostraTabella(records) {
         const tbody = document.querySelector("#tabellaFiltri tbody");
         tbody.innerHTML = "";
