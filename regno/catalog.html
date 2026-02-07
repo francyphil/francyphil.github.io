@@ -279,69 +279,203 @@
         width: 100%;
       }
 
-      /* Mobile responsive */
+      /* ===== Mobile filter toggle button ===== */
+      #mobileFilterToggle {
+        display: none;
+      }
+      #mobileFilterPanel {
+        display: none;
+      }
+      #mobileListContainer {
+        display: none;
+      }
+
+      /* ===== Mobile responsive ===== */
       @media (max-width: 768px) {
-        table {
-          width: 100% !important;
-          table-layout: auto;
+        /* Hide desktop UI */
+        .controlli-box { display: none !important; }
+        .table-wrapper { display: none !important; }
+        .card-container { display: none !important; }
+
+        /* Show mobile UI */
+        #mobileFilterToggle {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 12px 16px;
+          background: #f5f5f5;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          font-size: 15px;
+          font-weight: 600;
+          color: #333;
+          cursor: pointer;
+          margin-bottom: 0;
+          box-sizing: border-box;
+        }
+        #mobileFilterToggle.open {
+          border-radius: 8px 8px 0 0;
+          border-bottom: none;
+        }
+        #mobileFilterToggle .filter-badge {
+          background: #3498db;
+          color: white;
+          border-radius: 12px;
+          padding: 2px 8px;
+          font-size: 12px;
+          margin-left: 6px;
+        }
+        #mobileFilterToggle .filter-arrow {
+          transition: transform 0.3s;
           font-size: 12px;
         }
-
-        th, td {
-          padding: 4px 6px;
-          white-space: normal;
-          word-break: break-word;
+        #mobileFilterToggle.open .filter-arrow {
+          transform: rotate(180deg);
         }
 
-        .controlli-box {
-          width: 100% !important;
-          padding: 10px 12px;
-        }
-
-        .controlli-wrapper {
-          gap: 10px;
+        /* Mobile filter panel */
+        #mobileFilterPanel.open {
+          display: flex;
           flex-direction: column;
-          align-items: stretch;
+          gap: 10px;
+          padding: 14px;
+          background: #fafafa;
+          border: 1px solid #ddd;
+          border-top: 1px solid #eee;
+          border-radius: 0 0 8px 8px;
+          margin-bottom: 12px;
+        }
+        #mobileFilterPanel label {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          font-size: 13px;
+          font-weight: 600;
+          color: #555;
+        }
+        #mobileFilterPanel select {
+          width: 100%;
+          padding: 8px 30px 8px 10px;
+          font-size: 14px;
+        }
+        #mobileFilterPanel .mobile-panel-controls {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          padding-top: 6px;
+          border-top: 1px solid #eee;
+          flex-wrap: wrap;
+        }
+        #mobileFilterPanel .mobile-panel-controls label {
+          flex: 1 1 auto;
+          min-width: 100px;
+        }
+        #mobileFilterPanel .reset-filters {
+          align-self: center;
+          background: none;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          padding: 8px 20px;
+          color: #666;
+          cursor: pointer;
+          font-size: 13px;
+          margin-top: 4px;
+          width: 100%;
+        }
+        #mobileFilterPanel .reset-filters:hover {
+          background: #f0f0f0;
         }
 
-        .controlli-wrapper select {
+        /* Mobile list container */
+        #mobileListContainer {
+          display: block;
+        }
+        .mobile-results-count {
+          font-size: 12px;
+          color: #999;
+          margin-bottom: 8px;
+        }
+        .mobile-list-item {
+          display: flex;
+          gap: 12px;
+          padding: 10px;
+          border: 1px solid #e0e0e0;
+          border-radius: 8px;
+          margin-bottom: 8px;
+          background: #fff;
+          align-items: flex-start;
+          cursor: pointer;
+          transition: background 0.15s;
+        }
+        .mobile-list-item:active {
+          background: #f5f5f5;
+        }
+        .mobile-list-item .item-thumb {
+          width: 70px;
+          height: 55px;
+          flex-shrink: 0;
+          border-radius: 4px;
+          overflow: hidden;
+          background: #f0f0f0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .mobile-list-item .item-thumb img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+        .mobile-list-item .item-thumb .no-img {
+          font-size: 18px;
+          color: #ccc;
+        }
+        .mobile-list-item .item-info {
+          flex: 1;
           min-width: 0;
-          width: 100% !important;
+        }
+        .mobile-list-item .item-title {
+          font-weight: 600;
+          font-size: 14px;
+          color: #333;
+          margin-bottom: 3px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .mobile-list-item .item-title a {
+          color: inherit;
+          text-decoration: none;
+        }
+        .mobile-list-item .item-meta {
+          font-size: 12px;
+          color: #777;
+          line-height: 1.4;
+        }
+        .mobile-list-item .item-meta .sep {
+          margin: 0 4px;
+          color: #ccc;
         }
 
-        .card {
-          width: calc(50% - 10px);
-        }
-
-        .card-container {
-          width: 100% !important;
-        }
-
+        /* Grafico mobile */
         #graficoWrapper {
           width: 100% !important;
         }
-
         #grafico {
-          height: 300px;
+          height: 250px;
         }
 
+        /* Lightbox mobile */
         #lightboxOverlay .controls button {
-          padding: 20px 20px;
+          padding: 20px;
           font-size: 18px;
         }
-
         #lightboxOverlay .controls button:nth-child(1) {
           left: 5px;
         }
-
         #lightboxOverlay .controls button:nth-child(3) {
           right: 5px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .card {
-          width: 100%;
         }
       }
     </style>
@@ -353,6 +487,15 @@
 
     <div class="content-container">
       <h1></h1>
+
+    <!-- Mobile: filter toggle + panel + compact list -->
+    <button id="mobileFilterToggle">
+      <span>🔍 Filtri <span id="filterBadge" class="filter-badge" style="display:none"></span></span>
+      <span class="filter-arrow">▼</span>
+    </button>
+    <div id="mobileFilterPanel"></div>
+    <div id="mobileListContainer"></div>
+
     <fieldset class="controlli-box">
       <legend>Controlli</legend>
       <div class="controlli-wrapper">
@@ -421,6 +564,10 @@
         lightboxIndex = 0,
         larghezzeColonneFisse = {};
 
+      function isMobile() {
+        return window.innerWidth <= 768;
+      }
+
       // ----- Carica JSON -----
       let larghezzaTabellaFissa = null;
       fetch("targhetteRegno.json")
@@ -429,6 +576,7 @@
           data = json;
           calcolaLarghezzeFisse(data);
           costruisciFiltri(data);
+          costruisciFiltriMobile(data);
           aggiornaVisualizzazione(data);
           window.addEventListener("resize", () =>
             aggiornaVisualizzazione(filtraDati(data)),
@@ -550,6 +698,140 @@
         thead.appendChild(trFiltri);
       }
 
+      // ----- Costruisci filtri mobile -----
+      function costruisciFiltriMobile(records) {
+        const panel = document.getElementById("mobileFilterPanel");
+        panel.innerHTML = "";
+        if (!records.length) return;
+
+        const campi = Object.keys(records[0]).filter(
+          (c) => c !== "linkTarghetta" && c !== "linkDatario",
+        );
+
+        campi.forEach((c) => {
+          const valori = new Set();
+          records.forEach((r) => {
+            const v = r[c];
+            if (Array.isArray(v)) v.forEach((x) => valori.add(x));
+            else if (v != null) valori.add(v);
+          });
+          // Salta campi con troppi valori unici o un solo valore
+          if (valori.size > 500 || valori.size <= 1) return;
+
+          const label = document.createElement("label");
+          label.textContent = c;
+          const select = document.createElement("select");
+          select.dataset.campo = c;
+
+          const optTutti = document.createElement("option");
+          optTutti.value = "";
+          optTutti.textContent = "Tutti";
+          select.appendChild(optTutti);
+
+          Array.from(valori)
+            .sort()
+            .forEach((v) => {
+              const opt = document.createElement("option");
+              opt.value = v;
+              opt.textContent = v;
+              select.appendChild(opt);
+            });
+
+          select.addEventListener("change", () => {
+            // Sincronizza con il filtro nella thead della tabella
+            const theadSelect = document.querySelector(
+              `#theadFiltri select[data-campo="${c}"]`,
+            );
+            if (theadSelect) theadSelect.value = select.value;
+            updateFilterBadge();
+            aggiornaVisualizzazione(filtraDati(data));
+          });
+
+          label.appendChild(select);
+          panel.appendChild(label);
+        });
+
+        // Controlli mobile: Max record + Schema
+        const controlsDiv = document.createElement("div");
+        controlsDiv.className = "mobile-panel-controls";
+
+        const maxLabel = document.createElement("label");
+        maxLabel.textContent = "Max record";
+        const maxSelect = document.createElement("select");
+        maxSelect.id = "mobileMaxRecords";
+        ["100", "200", "500", "all"].forEach((v) => {
+          const opt = document.createElement("option");
+          opt.value = v;
+          opt.textContent = v === "all" ? "Tutti" : v;
+          maxSelect.appendChild(opt);
+        });
+        maxSelect.addEventListener("change", () => {
+          document.getElementById("maxRecords").value = maxSelect.value;
+          aggiornaVisualizzazione(filtraDati(data));
+        });
+        maxLabel.appendChild(maxSelect);
+        controlsDiv.appendChild(maxLabel);
+
+        const schemaLabel = document.createElement("label");
+        schemaLabel.textContent = "Schema";
+        const schemaSelect = document.createElement("select");
+        schemaSelect.id = "mobileSchemaCatalogazione";
+        [{v: "ornaghi_ufficio", t: "Ornaghi Ufficio"}, {v: "ornaghi_tipo", t: "Ornaghi Tipo"}].forEach((o) => {
+          const opt = document.createElement("option");
+          opt.value = o.v;
+          opt.textContent = o.t;
+          schemaSelect.appendChild(opt);
+        });
+        schemaSelect.addEventListener("change", () => {
+          document.getElementById("schemaCatalogazione").value = schemaSelect.value;
+          aggiornaVisualizzazione(filtraDati(data));
+        });
+        schemaLabel.appendChild(schemaSelect);
+        controlsDiv.appendChild(schemaLabel);
+        panel.appendChild(controlsDiv);
+
+        // Pulsante azzera
+        const resetBtn = document.createElement("button");
+        resetBtn.className = "reset-filters";
+        resetBtn.textContent = "Azzera filtri";
+        resetBtn.addEventListener("click", () => {
+          panel.querySelectorAll("select").forEach((s) => {
+            if (s.id !== "mobileMaxRecords" && s.id !== "mobileSchemaCatalogazione")
+              s.value = "";
+          });
+          document
+            .querySelectorAll("#theadFiltri select")
+            .forEach((s) => (s.value = ""));
+          updateFilterBadge();
+          aggiornaVisualizzazione(filtraDati(data));
+        });
+        panel.appendChild(resetBtn);
+      }
+
+      function toggleMobileFilters() {
+        const btn = document.getElementById("mobileFilterToggle");
+        const panel = document.getElementById("mobileFilterPanel");
+        btn.classList.toggle("open");
+        panel.classList.toggle("open");
+      }
+
+      function updateFilterBadge() {
+        const panel = document.getElementById("mobileFilterPanel");
+        const selects = panel.querySelectorAll("select");
+        let activeCount = 0;
+        selects.forEach((s) => {
+          if (s.id === "mobileMaxRecords" || s.id === "mobileSchemaCatalogazione") return;
+          if (s.value !== "") activeCount++;
+        });
+        const badge = document.getElementById("filterBadge");
+        if (activeCount > 0) {
+          badge.textContent = activeCount;
+          badge.style.display = "inline";
+        } else {
+          badge.style.display = "none";
+        }
+      }
+
       // ----- Filtra dati -----
       function filtraDati(records) {
         const selects = document.querySelectorAll(
@@ -638,6 +920,19 @@
           let max =
               maxRecords === "all" ? records.length : parseInt(maxRecords),
             mostrati = records.slice(0, max);
+
+          // ===== MOBILE: lista compatta =====
+          if (isMobile()) {
+            // Pulisci eventuali width inline da sessione desktop
+            document.getElementById("graficoWrapper").style.width = "";
+            const cb = document.querySelector(".controlli-box");
+            if (cb) cb.style.width = "";
+            mostraListaCompatta(mostrati);
+            aggiornaGrafico(records);
+            return;
+          }
+
+          // ===== DESKTOP: comportamento invariato =====
           const cardContainer = document.getElementById("cardContainer"),
             tbody = document.querySelector("#tabellaFiltri tbody");
 
@@ -846,6 +1141,79 @@
         });
       }
 
+      // ----- Lista compatta mobile -----
+      function mostraListaCompatta(records) {
+        const container = document.getElementById("mobileListContainer");
+        container.innerHTML = "";
+        immagini = [];
+
+        // Contatore risultati
+        const countDiv = document.createElement("div");
+        countDiv.className = "mobile-results-count";
+        countDiv.textContent = records.length + " risultat" + (records.length === 1 ? "o" : "i");
+        container.appendChild(countDiv);
+
+        records.forEach((r, i) => {
+          const item = document.createElement("div");
+          item.className = "mobile-list-item";
+
+          // Miniatura
+          const thumb = document.createElement("div");
+          thumb.className = "item-thumb";
+          const imgPath = `jpg/prev_${r["Targhetta Ufficio"]}.jpeg`;
+          const img = document.createElement("img");
+          img.src = imgPath;
+          img.loading = "lazy";
+          img.onerror = () => {
+            img.style.display = "none";
+            const noImg = document.createElement("span");
+            noImg.className = "no-img";
+            noImg.textContent = "\uD83D\uDDBC";
+            thumb.appendChild(noImg);
+          };
+          thumb.appendChild(img);
+
+          // Info
+          const info = document.createElement("div");
+          info.className = "item-info";
+
+          const title = document.createElement("div");
+          title.className = "item-title";
+          const desc = r["Descrizione"] || "Tipo " + r["Targhetta Tipo"];
+          if (r.linkTarghetta && r.linkTarghetta !== "") {
+            const a = document.createElement("a");
+            a.href = `targhetteTipo/${r.linkTarghetta}`;
+            a.textContent = desc;
+            title.appendChild(a);
+          } else {
+            title.textContent = desc;
+          }
+
+          const meta = document.createElement("div");
+          meta.className = "item-meta";
+          const parts = [];
+          if (r["Località"]) parts.push(r["Località"]);
+          if (r["Denominazione ufficio"]) parts.push(r["Denominazione ufficio"]);
+          if (r["Anno"]) parts.push(r["Anno"]);
+          meta.innerHTML = parts.join('<span class="sep">·</span>');
+
+          info.appendChild(title);
+          info.appendChild(meta);
+
+          item.appendChild(thumb);
+          item.appendChild(info);
+
+          // Tap sulla riga apre il lightbox
+          item.addEventListener("click", (e) => {
+            if (e.target.tagName === "A") return;
+            apriLightbox(i);
+          });
+
+          container.appendChild(item);
+          immagini.push(imgPath);
+        });
+      }
+
       // ----- Lightbox -----
       function apriLightbox(index) {
         lightboxIndex = index;
@@ -944,6 +1312,18 @@
         .addEventListener("change", () =>
           aggiornaVisualizzazione(filtraDati(data)),
         );
+
+      // ----- Mobile: toggle filtri -----
+      document
+        .getElementById("mobileFilterToggle")
+        .addEventListener("click", toggleMobileFilters);
+
+      // Chiudi lightbox con Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") chiudiLightbox();
+        if (e.key === "ArrowLeft") prevImage();
+        if (e.key === "ArrowRight") nextImage();
+      });
     </script>
     </div>
 
