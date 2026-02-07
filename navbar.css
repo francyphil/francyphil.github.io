@@ -191,11 +191,11 @@ nav a.active {
     display: none;
   }
 
-  .dropdown-content.sub-open {
-    display: flex;
+  .dropdown > .dropdown-content.sub-open {
+    display: flex !important;
   }
 
-  .dropdown-content-sub.sub-open {
-    display: flex;
+  .dropdown-submenu > .dropdown-content-sub.sub-open {
+    display: flex !important;
   }
 }
