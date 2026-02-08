@@ -193,7 +193,11 @@
               tdAnno.textContent = item.Anno;
               
               const tdDenominazione = document.createElement('td');
-              tdDenominazione.textContent = item['Denominazione ufficio'];
+              const officeName = item['Denominazione ufficio'] || '';
+              const officeLink = document.createElement('a');
+              officeLink.href = `ufficioDettaglio.html?denominazione=${encodeURIComponent(officeName)}&localita=${encodeURIComponent(localita)}`;
+              officeLink.textContent = officeName;
+              tdDenominazione.appendChild(officeLink);
               
               const tdTipo = document.createElement('td');
               tdTipo.textContent = item['Targhetta Tipo'];
@@ -220,7 +224,7 @@
             document.getElementById('noResults').style.display = 'none';
             document.getElementById('tableTarghette').style.display = 'table';
               // render chart for denominazioni ufficio
-              renderChart(filtered);
+              renderChart(filtered, localita);
           }
         } catch (error) {
           console.error('Errore caricamento dati:', error);
@@ -230,8 +234,8 @@
 
       
 
-      // Render simple SVG chart: years (x) × datari (y)
-      function renderChart(records) {
+      // Render simple SVG chart: years (x) × offices (y)
+      function renderChart(records, localita) {
         const chartContainer = document.getElementById('datariChart');
         chartContainer.innerHTML = '';
           const officeSet = new Set();
@@ -288,13 +292,17 @@
             line.setAttribute('stroke-width', '2');
             svg.appendChild(line);
 
-            // office label on left
+            // office label on left (clickable)
             const text = document.createElementNS(svgNS, 'text');
             text.setAttribute('x', left-10);
             text.setAttribute('y', y + cell/2 + 5);
             text.setAttribute('font-size', '12');
             text.setAttribute('text-anchor', 'end');
             text.textContent = d;
+            // make label clickable to office page
+            text.style.cursor = 'pointer';
+            const officeUrl = `ufficioDettaglio.html?denominazione=${encodeURIComponent(d)}&localita=${encodeURIComponent(localita||'')}`;
+            text.addEventListener('click', () => { window.location.href = officeUrl; });
             svg.appendChild(text);
           });
 
