@@ -99,7 +99,7 @@
       <div id="datariBlock" style="display: none; margin-bottom: 18px">
         <strong>Datari usati per gli annulli:</strong>
         <div
-          id="datariList"
+            id="datariList"
           style="
             margin-top: 8px;
             display: flex;
@@ -107,7 +107,7 @@
             flex-wrap: wrap;
             align-items: center;
             align-content: flex-start;
-            justify-content: flex-start;
+            justify-content: center;
           "
         ></div>
       </div>
@@ -270,8 +270,10 @@
             const img = document.createElement("img");
             img.src = `imgDatariRegno/${circleName}`;
             img.alt = link;
-            img.style.height = "200px";
-            img.style.display = "block";
+              img.style.height = "200px";
+              img.style.maxWidth = "200px";
+              img.style.display = "block";
+              img.style.margin = "0 auto";
             img.style.borderRadius = "100px"; /*L'immagine è di 200px, ci metto un contorno da 100 in modo da far vedere solo il datario*/
             img.style.border = "1px solid #ddd";
             img.style.objectFit = "contain";
