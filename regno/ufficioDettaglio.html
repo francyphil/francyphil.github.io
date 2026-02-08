@@ -112,6 +112,12 @@
         ></div>
       </div>
 
+      <!-- Contenitore grafico: anni x datari -->
+      <div id="datariChartBlock" style="display:none; margin-top:18px; text-align:center;">
+        <strong>Uso dei datari nel tempo</strong>
+        <div id="datariChart" style="margin-top:8px; text-align:center;"></div>
+      </div>
+
       <div class="stats">
         <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
       </div>
@@ -221,6 +227,8 @@
 
             // Mostra i datari usati per gli annulli (se presenti)
             renderDatari(filtered);
+            // Disegna anche il grafico anni x datari
+            renderChart(filtered);
           } catch (error) {
             console.error("Errore caricamento dati:", error);
             document.getElementById("officeTitle").textContent =
@@ -301,6 +309,121 @@
             block.style.display = "none";
           }
         }
+
+            // Disegna la griglia anni x datari: quadratino se il datario è stato usato in quell'anno
+            function renderChart(records) {
+              const chartBlock = document.getElementById('datariChartBlock');
+              const container = document.getElementById('datariChart');
+              container.innerHTML = '';
+
+              // ricava codici Datario unici e gli anni
+              const datari = Array.from(new Set(records.map(r => (r.Datario||'').trim()).filter(Boolean))).sort();
+              let yearsPresent = Array.from(new Set(records.map(r => r.Anno).filter(y => Number.isFinite(y)))).sort((a,b)=>a-b);
+              // assicurati di includere tutti gli anni compresi tra primo e ultimo
+              let years = [];
+              if (yearsPresent.length > 0) {
+                const minY = yearsPresent[0];
+                const maxY = yearsPresent[yearsPresent.length-1];
+                for (let y = minY; y <= maxY; y++) years.push(y);
+              }
+
+              if (datari.length === 0 || years.length === 0) {
+                chartBlock.style.display = 'none';
+                return;
+              }
+              chartBlock.style.display = 'block';
+
+              const cell = 16;
+              const left = 140;
+              const top = 20;
+              const gridWidth = years.length * cell;
+              const gridHeight = datari.length * cell;
+              const width = left + gridWidth + 20;
+              const height = top + gridHeight + 60;
+
+              const svgNS = 'http://www.w3.org/2000/svg';
+              const svg = document.createElementNS(svgNS, 'svg');
+              svg.setAttribute('width', width);
+              svg.setAttribute('height', height);
+              svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+              svg.setAttribute('style', 'display:block; margin:0 auto;');
+
+              // y labels (datari)
+              datari.forEach((d, i) => {
+                const y = top + i * cell + cell/2 + 4;
+                const text = document.createElementNS(svgNS, 'text');
+                text.setAttribute('x', left - 8);
+                text.setAttribute('y', y);
+                text.setAttribute('text-anchor', 'end');
+                text.setAttribute('font-size', '15px');
+                text.textContent = d;
+                svg.appendChild(text);
+              });
+
+              // disegna griglia verticale (linee sottili) e orizzontale (più spesse)
+              // verticali
+              for (let j=0;j<=years.length;j++){
+                const xline = left + j*cell;
+                const line = document.createElementNS(svgNS,'line');
+                line.setAttribute('x1', xline);
+                line.setAttribute('y1', top);
+                line.setAttribute('x2', xline);
+                line.setAttribute('y2', top + gridHeight);
+                line.setAttribute('stroke', '#ddd');
+                line.setAttribute('stroke-width', '1');
+                svg.appendChild(line);
+              }
+              // orizzontali (più spesse)
+              for (let i=0;i<=datari.length;i++){
+                const yline = top + i*cell;
+                const hline = document.createElementNS(svgNS,'line');
+                hline.setAttribute('x1', left);
+                hline.setAttribute('y1', yline);
+                hline.setAttribute('x2', left + gridWidth);
+                hline.setAttribute('y2', yline);
+                hline.setAttribute('stroke', '#bbb');
+                hline.setAttribute('stroke-width', '2');
+                svg.appendChild(hline);
+              }
+
+              // x labels (years) - include anche gli anni vuoti
+              years.forEach((yr, j) => {
+                const x = left + j * cell + cell/2;
+                const baseY = top + datari.length * cell + 20 + 12;
+                const text = document.createElementNS(svgNS, 'text');
+                text.setAttribute('x', 0);
+                text.setAttribute('y', 0);
+                text.setAttribute('transform', `translate(${x} ${baseY}) rotate(-90)`);
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('font-size', '15px');
+                text.textContent = yr;
+                svg.appendChild(text);
+              });
+
+              // draw squares
+              datari.forEach((d, i) => {
+                years.forEach((yr, j) => {
+                  const used = records.some(r => ((r.Datario||'').trim() === d) && r.Anno === yr);
+                  if (used) {
+                    const rect = document.createElementNS(svgNS, 'rect');
+                    const x = left + j * cell;
+                    const y = top + i * cell;
+                    rect.setAttribute('x', x + 2);
+                    rect.setAttribute('y', y + 2);
+                    rect.setAttribute('width', cell - 4);
+                    rect.setAttribute('height', cell - 4);
+                    rect.setAttribute('fill', '#2b8cbe');
+                    rect.setAttribute('stroke', '#185a8a');
+                    rect.setAttribute('rx', 2);
+                    rect.setAttribute('ry', 2);
+                    rect.setAttribute('title', `${d} • ${yr}`);
+                    svg.appendChild(rect);
+                  }
+                });
+              });
+
+              container.appendChild(svg);
+            }
 
         // Carica quando il DOM è pronto
         document.addEventListener("DOMContentLoaded", loadOfficeDetails);
