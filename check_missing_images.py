@@ -35,7 +35,6 @@ def main():
     args = p.parse_args()
 
     if not os.path.exists(args.json):
-        print(f'JSON file not found: {args.json}')
         return
 
     with open(args.json, 'r', encoding='utf-8') as fh:
@@ -55,9 +54,8 @@ def main():
     img_dir = args.img_dir
     available = set(os.listdir(img_dir)) if os.path.isdir(img_dir) else set()
 
-    # If directory doesn't exist, report and exit
+    # If directory doesn't exist, exit silently
     if not os.path.isdir(img_dir):
-        print(f'Image directory not found: {img_dir}')
         return
 
     missing = {}
@@ -80,25 +78,11 @@ def main():
     total_records = len(data)
     total_missing_records = sum(len(v) for v in missing.values())
 
-    print('Scan summary:')
-    print('  JSON records:        ', total_records)
-    print('  Unique expected img: ', total_unique)
-    print('  Missing filenames:   ', total_missing)
-    print('  Records affected:    ', total_missing_records)
-
-    if total_missing:
-        print('\nMissing filenames (first 200 chars of sample record):')
-        for fname, recs in sorted(missing.items()):
-            sample = recs[0]['record']
-            desc = sample.get('Descrizione') or sample.get('Targhetta Tipo') or ''
-            print(f' - {fname}  ({len(recs)} record(s))  sample: {str(desc)[:200]}')
-
     if args.out:
         out = args.out
         if out.lower().endswith('.json'):
             with open(out, 'w', encoding='utf-8') as fh:
                 json.dump({k: [r['record'] for r in v] for k, v in missing.items()}, fh, ensure_ascii=False, indent=2)
-            print(f'Wrote missing records to {out}')
         else:
             # write simple CSV
             import csv
@@ -108,7 +92,7 @@ def main():
                 for k, v in missing.items():
                     sample = v[0]['record']
                     writer.writerow([k, len(v), sample.get('Descrizione') or ''])
-            print(f'Wrote missing records to {out}')
+    # Silent: do not print anything to stdout
 
 
 if __name__ == '__main__':

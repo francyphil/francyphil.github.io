@@ -5,6 +5,16 @@ echo "Esecuzione script di rilascio"
 echo "========================================"
 
 echo ""
+echo "Eseguendo Check immagini mancanti check_missing_images.py..."
+# Run checker and write CSV; capture exit code immediately
+python3 check_missing_images.py --try-exts --out missing_images.csv
+rc=$?
+if [ $rc -ne 0 ]; then
+    echo "ERRORE: check_missing_images.py fallito con codice $rc"
+    exit $rc
+fi
+
+echo ""
 echo "Eseguendo site_stats.py..."
 python3 site_stats.py
 
