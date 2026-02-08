@@ -37,9 +37,11 @@
         margin-top: 20px;
       }
 
+      /* rendi la tabella larga quanto il contenitore permette */
       table {
         border-collapse: collapse;
-        width: 1200px;
+        width: 100%;
+        max-width: 100%;
         table-layout: fixed;
       }
 
@@ -122,8 +124,16 @@
         <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
       </div>
 
+   
+
       <div class="table-wrapper">
         <table id="tableTarghette">
+          <colgroup>
+              <col id="colAnno" style="width:16%">
+              <col id="colTipo" style="width:12%">
+              <col id="colUfficio" style="width:12%">
+              <col id="colDescr" style="width:60%">
+          </colgroup>
           <thead>
             <tr>
               <th>Anno</th>
@@ -429,6 +439,29 @@
 
         // Carica quando il DOM è pronto
         document.addEventListener("DOMContentLoaded", loadOfficeDetails);
+
+        // Inizializza i controlli della tabella
+        document.addEventListener('DOMContentLoaded', () => {
+          const apply = document.getElementById('applyPct');
+          apply.addEventListener('click', applyTableWidths);
+        });
+
+        function applyTableWidths() {
+          const a = Number(document.getElementById('pctAnno').value) || 0;
+          const t = Number(document.getElementById('pctTipo').value) || 0;
+          const u = Number(document.getElementById('pctUfficio').value) || 0;
+          const d = Number(document.getElementById('pctDescr').value) || 0;
+          const sum = a + t + u + d;
+          // se la somma è 0, evita divisione per 0
+          if (sum <= 0) return;
+          // normalizza perchè la tabella usa percentuali rispetto al container
+          const norm = (v) => Math.round((v / sum) * 10000) / 100; // due decimali
+
+          document.getElementById('colAnno').style.width = norm(a) + '%';
+          document.getElementById('colTipo').style.width = norm(t) + '%';
+          document.getElementById('colUfficio').style.width = norm(u) + '%';
+          document.getElementById('colDescr').style.width = norm(d) + '%';
+        }
       </script>
     </div>
 
