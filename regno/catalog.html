@@ -1314,7 +1314,7 @@
               const verificaImmagine = (record) => {
                 return new Promise((resolve) => {
                   const img = new Image();
-                  const imgPath = `jpg/prev_${record["Targhetta Ufficio"]}.jpeg`;
+                  const imgPath = `jpg/prev_${record["Targhetta Ufficio"]}${(record["extra"]) ? ('_' + (record["extra"]).toString().trim()) : ''}.jpeg`;
                   img.onload = () => resolve(true);
                   img.onerror = () => resolve(false);
                   img.src = imgPath;
@@ -1561,7 +1561,7 @@
           imgContainer.className = "card-image-container";
 
           const img = document.createElement("img");
-          const imgPath = `jpg/prev_${r["Targhetta Ufficio"]}.jpeg`;
+          const imgPath = `jpg/prev_${r["Targhetta Ufficio"]}${(r["extra"]) ? ('_' + (r["extra"]).toString().trim()) : ''}.jpeg`;
           img.src = imgPath;
           img.alt = r["Descrizione"] || "Annullo";
           img.loading = "lazy";
@@ -1635,7 +1635,7 @@
           // Miniatura
           const thumb = document.createElement("div");
           thumb.className = "item-thumb";
-          const imgPath = `jpg/prev_${r["Targhetta Ufficio"]}.jpeg`;
+          const imgPath = `jpg/prev_${r["Targhetta Ufficio"]}${(r["extra"]) ? ('_' + (r["extra"]).toString().trim()) : ''}.jpeg`;
           const img = document.createElement("img");
           img.src = imgPath;
           img.loading = "lazy";
