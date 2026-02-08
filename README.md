@@ -1,5 +1,7 @@
 # francyphil.github.io
-demosite
-test
+Demosite
 
-run site_stats.py to update site statistics
+Before to commit/release run release.sh batch file. It:
+- update site statistics running site_stats.py
+- update destination map points with generate_destinazioni.py
+
