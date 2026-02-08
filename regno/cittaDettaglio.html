@@ -252,7 +252,9 @@
           for (let y=minY;y<=maxY;y++) fullYears.push(y);
 
           const cell = 16;
-          const left = 140;
+          const left = 180;
+          chartContainer.style.paddingRight = left + 'px';
+          chartContainer.style.boxSizing = 'content-box';
           const top = 20;
           const w = left + fullYears.length*cell + 40;
           const h = top + offices.length*cell + 40;
