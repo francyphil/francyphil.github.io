@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-      <link rel="stylesheet" href="/common-bg.css" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dettagli Ufficio</title>
     <script src="/favicon-loader.js"></script>
-    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/navbar.css" />
     <style>
       body {
         font-family: sans-serif;
@@ -43,7 +43,8 @@
         table-layout: fixed;
       }
 
-      th, td {
+      th,
+      td {
         border: 1px solid #ccc;
         padding: 5px 10px;
         text-align: left;
@@ -86,139 +87,235 @@
         border-radius: 4px;
       }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="content-container">
       <div class="office-header">
-      <h1 id="officeTitle">Ufficio</h1>
-      <p id="officeInfo"></p>
-    </div>
+        <h1 id="officeTitle">Ufficio</h1>
+        <p id="officeInfo"></p>
+      </div>
 
-    <div class="stats">
-      <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
-    </div>
+      <!-- Blocchetto: Datari usati (icone _circle) -->
+      <div id="datariBlock" style="display: none; margin-bottom: 18px">
+        <strong>Datari usati per gli annulli:</strong>
+        <div
+          id="datariList"
+          style="
+            margin-top: 8px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: flex-start;
+            justify-content: flex-start;
+          "
+        ></div>
+      </div>
 
-    <div class="table-wrapper">
-      <table id="tableTarghette">
-        <thead>
-          <tr>
-            <th>Anno</th>
-            <th>Targhetta Tipo</th>
-            <th>Targhetta Ufficio</th>
-            <th>Descrizione</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-        </tbody>
-      </table>
-    </div>
+      <div class="stats">
+        <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
+      </div>
 
-    <div id="noResults" class="no-results" style="display:none;">
-      Nessuna targhetta trovata per questo ufficio.
-    </div>
+      <div class="table-wrapper">
+        <table id="tableTarghette">
+          <thead>
+            <tr>
+              <th>Anno</th>
+              <th>Targhetta Tipo</th>
+              <th>Targhetta Ufficio</th>
+              <th>Descrizione</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
 
-    <script src="/navbar.js"></script>
-    <script>
-      // Estrae i parametri dall'URL
-      function getURLParams() {
-        const params = new URLSearchParams(window.location.search);
-        return {
-          denominazione: params.get('denominazione'),
-          localita: params.get('localita')
-        };
-      }
+      <div id="noResults" class="no-results" style="display: none">
+        Nessuna targhetta trovata per questo ufficio.
+      </div>
 
-      // Carica e filtra i dati
-      async function loadOfficeDetails() {
-        const { denominazione, localita } = getURLParams();
-
-        if (!denominazione || !localita) {
-          document.getElementById('officeTitle').textContent = 'Ufficio non trovato';
-          return;
+      <script src="/navbar.js"></script>
+      <script>
+        // Estrae i parametri dall'URL
+        function getURLParams() {
+          const params = new URLSearchParams(window.location.search);
+          return {
+            denominazione: params.get("denominazione"),
+            localita: params.get("localita"),
+          };
         }
 
-        // Aggiorna titolo
-        document.getElementById('officeTitle').textContent = `${denominazione} - ${localita}`;
-        document.getElementById('officeInfo').textContent = `Elenco targhette ordinate per anno`;
+        // Carica e filtra i dati
+        async function loadOfficeDetails() {
+          const { denominazione, localita } = getURLParams();
 
-        try {
-          // Carica il JSON
-          const response = await fetch('targhetteRegno.json');
-          const data = await response.json();
+          if (!denominazione || !localita) {
+            document.getElementById("officeTitle").textContent =
+              "Ufficio non trovato";
+            return;
+          }
 
-          // Filtra per denominazione e localita
-          const filtered = data.filter(item => 
-            item['Denominazione ufficio'] === denominazione && 
-            item['Località'] === localita
-          );
+          // Aggiorna titolo
+          document.getElementById("officeTitle").textContent =
+            `${denominazione} - ${localita}`;
+          document.getElementById("officeInfo").textContent =
+            `Elenco targhette ordinate per anno`;
 
-          // Ordina per anno (ascendente)
-          filtered.sort((a, b) => {
-            if (a.Anno === b.Anno) {
-              return a['Targhetta Ufficio'] - b['Targhetta Ufficio'];
-            }
-            return a.Anno - b.Anno;
-          });
+          try {
+            // Carica il JSON
+            const response = await fetch("targhetteRegno.json");
+            const data = await response.json();
 
-          // Mostra risultati
-          if (filtered.length === 0) {
-            document.getElementById('noResults').style.display = 'block';
-            document.getElementById('tableTarghette').style.display = 'none';
-            document.getElementById('statsCount').textContent = '0';
-          } else {
-            const tbody = document.getElementById('tableBody');
-            tbody.innerHTML = '';
+            // Filtra per denominazione e localita
+            const filtered = data.filter(
+              (item) =>
+                item["Denominazione ufficio"] === denominazione &&
+                item["Località"] === localita,
+            );
 
-            filtered.forEach(item => {
-              const tr = document.createElement('tr');
-              
-              const tdAnno = document.createElement('td');
-              tdAnno.textContent = item.Anno;
-              
-              const tdTipo = document.createElement('td');
-              tdTipo.textContent = item['Targhetta Tipo'];
-              
-              const tdUfficio = document.createElement('td');
-              tdUfficio.textContent = item['Targhetta Ufficio'];
-              
-              const tdDescrizione = document.createElement('td');
-              tdDescrizione.textContent = item['Descrizione'];
-              
- 
-              
-              tr.appendChild(tdAnno);
-              tr.appendChild(tdTipo);
-              tr.appendChild(tdUfficio);
-              tr.appendChild(tdDescrizione);
- 
-              
-              tbody.appendChild(tr);
+            // Ordina per anno (ascendente)
+            filtered.sort((a, b) => {
+              if (a.Anno === b.Anno) {
+                return a["Targhetta Ufficio"] - b["Targhetta Ufficio"];
+              }
+              return a.Anno - b.Anno;
             });
 
-            document.getElementById('statsCount').textContent = filtered.length;
-            document.getElementById('noResults').style.display = 'none';
-            document.getElementById('tableTarghette').style.display = 'table';
-          }
-        } catch (error) {
-          console.error('Errore caricamento dati:', error);
-          document.getElementById('officeTitle').textContent = 'Errore caricamento dati';
-        }
-      }
+            // Mostra risultati
+            if (filtered.length === 0) {
+              document.getElementById("noResults").style.display = "block";
+              document.getElementById("tableTarghette").style.display = "none";
+              document.getElementById("statsCount").textContent = "0";
+            } else {
+              const tbody = document.getElementById("tableBody");
+              tbody.innerHTML = "";
 
-      // Carica quando il DOM è pronto
-      document.addEventListener('DOMContentLoaded', loadOfficeDetails);
-    </script>
+              filtered.forEach((item) => {
+                const tr = document.createElement("tr");
+
+                const tdAnno = document.createElement("td");
+                tdAnno.textContent = item.Anno;
+
+                const tdTipo = document.createElement("td");
+                tdTipo.textContent = item["Targhetta Tipo"];
+
+                const tdUfficio = document.createElement("td");
+                tdUfficio.textContent = item["Targhetta Ufficio"];
+
+                const tdDescrizione = document.createElement("td");
+                tdDescrizione.textContent = item["Descrizione"];
+
+                tr.appendChild(tdAnno);
+                tr.appendChild(tdTipo);
+                tr.appendChild(tdUfficio);
+                tr.appendChild(tdDescrizione);
+
+                tbody.appendChild(tr);
+              });
+
+              document.getElementById("statsCount").textContent =
+                filtered.length;
+              document.getElementById("noResults").style.display = "none";
+              document.getElementById("tableTarghette").style.display = "table";
+            }
+
+            // Mostra i datari usati per gli annulli (se presenti)
+            renderDatari(filtered);
+          } catch (error) {
+            console.error("Errore caricamento dati:", error);
+            document.getElementById("officeTitle").textContent =
+              "Errore caricamento dati";
+          }
+        }
+
+        // Mostra i datari unici usati nel set filtrato. Usa la cartella regno/imgDatariRegno
+        function renderDatari(records) {
+          const listContainer = document.getElementById("datariList");
+          const block = document.getElementById("datariBlock");
+          listContainer.innerHTML = "";
+
+          const seen = new Set();
+          records.forEach((r) => {
+            const link = (r.linkDatario || "").trim();
+            if (!link) return;
+            if (seen.has(link)) return;
+            seen.add(link);
+
+            // costruisci nome con _circle prima dell'estensione
+            const m = link.match(/^(.*)\.(jpeg|jpg|png)$/i);
+            let circleName = link;
+            if (m) {
+              circleName = `${m[1]}_circle.${m[2]}`;
+            } else {
+              circleName = `${link}_circle`;
+            }
+
+            // wrapper verticale per immagine + label
+            const wrapper = document.createElement("div");
+            wrapper.style.display = "flex";
+            wrapper.style.flexDirection = "column";
+            wrapper.style.alignItems = "center";
+            wrapper.style.maxWidth = "200px";
+            wrapper.style.margin = "0"; /* spacing controlled by container gap */
+            wrapper.style.flex = "0 0 auto";
+
+            const img = document.createElement("img");
+            img.src = `imgDatariRegno/${circleName}`;
+            img.alt = link;
+            img.style.height = "200px";
+            img.style.display = "block";
+            img.style.borderRadius = "100px"; /*L'immagine è di 200px, ci metto un contorno da 100 in modo da far vedere solo il datario*/
+            img.style.border = "1px solid #ddd";
+            img.style.objectFit = "contain";
+
+            // se l'immagine non esiste, rimuoviamo l'intero wrapper
+            img.onerror = () => wrapper.remove();
+
+            // click apre la versione completa (senza _circle) se presente
+            const a = document.createElement("a");
+            a.href = `imgDatariRegno/${link}`;
+            a.target = "_blank";
+            a.appendChild(img);
+
+            // label con il codice Datario (se presente)
+            const datarioCode = (r.Datario || "").trim();
+            if (datarioCode) {
+              const lbl = document.createElement("div");
+              lbl.textContent = datarioCode;
+              lbl.style.marginTop = "6px";
+              lbl.style.fontSize = "20px"; /* aumentata del 30% rispetto a 12px */
+              lbl.style.color = "#333";
+              lbl.style.textAlign = "center";
+              wrapper.appendChild(a);
+              wrapper.appendChild(lbl);
+            } else {
+              wrapper.appendChild(a);
+            }
+
+            listContainer.appendChild(wrapper);
+          });
+
+          if (seen.size > 0) {
+            block.style.display = "block";
+          } else {
+            block.style.display = "none";
+          }
+        }
+
+        // Carica quando il DOM è pronto
+        document.addEventListener("DOMContentLoaded", loadOfficeDetails);
+      </script>
     </div>
 
-    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/footer.css" />
     <script src="/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('footerContainer').innerHTML = html;
+      fetch("/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footerContainer").innerHTML = html;
         });
     </script>
-</body>
+  </body>
 </html>
