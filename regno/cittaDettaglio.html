@@ -94,18 +94,11 @@
       <p id="localityInfo"></p>
     </div>
 
-    <!-- Blocchetto: Datari usati (icone _circle) -->
-    <div id="datariBlock" style="display: none; margin-bottom: 18px">
-      <strong>Datari usati per gli annulli:</strong>
-      <div
-        id="datariList"
-        style="margin-top:8px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center; align-content:flex-start;"
-      ></div>
-    </div>
+    <!-- (datari images removed) -->
 
-    <!-- Contenitore grafico: anni x datari -->
+    <!-- Contenitore grafico: anni x denominazioni ufficio -->
     <div id="datariChartBlock" style="display:none; margin-top:18px; text-align:center;">
-      <strong>Uso dei datari nel tempo</strong>
+      <strong>Uso delle denominazioni ufficio nel tempo</strong>
       <div id="datariChart" style="margin-top:8px; text-align:center;"></div>
     </div>
 
@@ -226,8 +219,7 @@
             document.getElementById('statsCount').textContent = filtered.length;
             document.getElementById('noResults').style.display = 'none';
             document.getElementById('tableTarghette').style.display = 'table';
-              // render datari thumbnails and chart
-              renderDatari(filtered);
+              // render chart for denominazioni ufficio
               renderChart(filtered);
           }
         } catch (error) {
@@ -236,148 +228,106 @@
         }
       }
 
-      // Render thumbnails for datari (use _circle variant)
-      function renderDatari(records) {
-        const datariList = document.getElementById('datariList');
-        datariList.innerHTML = '';
-        const seen = new Set();
-        const uniques = [];
-        records.forEach(r => {
-          if (r.linkDatario && !seen.has(r.linkDatario)) {
-            seen.add(r.linkDatario);
-            uniques.push(r);
-          }
-        });
-        if (uniques.length === 0) {
-          document.getElementById('datariBlock').style.display = 'none';
-          return;
-        }
-        uniques.forEach(r => {
-          const link = r.linkDatario;
-          const circleName = link.replace(/(\.[^.]+)$/, '_circle$1');
-          const wrapper = document.createElement('div');
-          wrapper.style.flex = '0 0 auto';
-          wrapper.style.textAlign = 'center';
-          const a = document.createElement('a');
-          a.href = 'imgDatariRegno/' + link;
-          a.target = '_blank';
-          const img = document.createElement('img');
-          img.src = 'imgDatariRegno/' + circleName;
-          img.style.height = '64px';
-          img.style.display = 'block';
-          img.style.margin = '0 auto';
-          img.alt = r.Datario || '';
-          img.onerror = function() { wrapper.remove(); };
-          a.appendChild(img);
-          wrapper.appendChild(a);
-          const cap = document.createElement('div');
-          cap.textContent = r.Datario || '';
-          cap.style.fontSize = '15px';
-          cap.style.marginTop = '6px';
-          wrapper.appendChild(cap);
-          datariList.appendChild(wrapper);
-        });
-        document.getElementById('datariBlock').style.display = 'block';
-      }
+      
 
       // Render simple SVG chart: years (x) × datari (y)
       function renderChart(records) {
         const chartContainer = document.getElementById('datariChart');
         chartContainer.innerHTML = '';
-        const datariSet = new Set();
-        const yearSet = new Set();
-        records.forEach(r => {
-          if (r.Datario) datariSet.add(r.Datario);
-          if (r.Anno) yearSet.add(Number(r.Anno));
-        });
-        const datari = Array.from(datariSet).sort();
-        if (datari.length === 0 || yearSet.size === 0) {
-          document.getElementById('datariChartBlock').style.display = 'none';
-          return;
-        }
-        const years = Array.from(yearSet).sort((a,b)=>a-b);
-        const minY = years[0];
-        const maxY = years[years.length-1];
-        const fullYears = [];
-        for (let y=minY;y<=maxY;y++) fullYears.push(y);
-
-        const cell = 16;
-        const left = 140;
-        const top = 20;
-        const w = left + fullYears.length*cell + 40;
-        const h = top + datari.length*cell + 40;
-        const svgNS = 'http://www.w3.org/2000/svg';
-        const svg = document.createElementNS(svgNS, 'svg');
-        svg.setAttribute('width', w);
-        svg.setAttribute('height', h);
-
-        // vertical grid lines (years)
-        fullYears.forEach((yr, i) => {
-          const x = left + i*cell;
-          const line = document.createElementNS(svgNS, 'line');
-          line.setAttribute('x1', x);
-          line.setAttribute('y1', top-6);
-          line.setAttribute('x2', x);
-          line.setAttribute('y2', top + datari.length*cell);
-          line.setAttribute('stroke', '#ddd');
-          line.setAttribute('stroke-width', '1');
-          svg.appendChild(line);
-        });
-
-        // horizontal grid lines (datari)
-        datari.forEach((d, j) => {
-          const y = top + j*cell;
-          const line = document.createElementNS(svgNS, 'line');
-          line.setAttribute('x1', left-6);
-          line.setAttribute('y1', y);
-          line.setAttribute('x2', left + fullYears.length*cell);
-          line.setAttribute('y2', y);
-          line.setAttribute('stroke', '#bbb');
-          line.setAttribute('stroke-width', '2');
-          svg.appendChild(line);
-
-          // datario label on left
-          const text = document.createElementNS(svgNS, 'text');
-          text.setAttribute('x', left-10);
-          text.setAttribute('y', y + cell/2 + 5);
-          text.setAttribute('font-size', '12');
-          text.setAttribute('text-anchor', 'end');
-          text.textContent = d;
-          svg.appendChild(text);
-        });
-
-        // year labels rotated
-        fullYears.forEach((yr, i) => {
-          const x = left + i*cell + cell/2;
-          const text = document.createElementNS(svgNS, 'text');
-          text.setAttribute('x', x);
-          text.setAttribute('y', top + datari.length*cell + 28);
-          text.setAttribute('font-size', '12');
-          text.setAttribute('transform', `rotate(-90 ${x} ${top + datari.length*cell + 28})`);
-          text.textContent = yr;
-          svg.appendChild(text);
-        });
-
-        // squares for usages
-        datari.forEach((d, j) => {
-          fullYears.forEach((yr, i) => {
-            const found = records.some(r => (r.Datario === d) && Number(r.Anno) === yr);
-            if (found) {
-              const rect = document.createElementNS(svgNS, 'rect');
-              const x = left + i*cell + 1;
-              const y = top + j*cell + 1;
-              rect.setAttribute('x', x);
-              rect.setAttribute('y', y);
-              rect.setAttribute('width', cell-2);
-              rect.setAttribute('height', cell-2);
-              rect.setAttribute('fill', '#333');
-              svg.appendChild(rect);
-            }
+          const officeSet = new Set();
+          const yearSet = new Set();
+          records.forEach(r => {
+            if (r['Denominazione ufficio']) officeSet.add(r['Denominazione ufficio']);
+            if (r.Anno) yearSet.add(Number(r.Anno));
           });
-        });
+          const offices = Array.from(officeSet).sort();
+          if (offices.length === 0 || yearSet.size === 0) {
+            document.getElementById('datariChartBlock').style.display = 'none';
+            return;
+          }
+          const years = Array.from(yearSet).sort((a,b)=>a-b);
+          const minY = years[0];
+          const maxY = years[years.length-1];
+          const fullYears = [];
+          for (let y=minY;y<=maxY;y++) fullYears.push(y);
 
-        chartContainer.appendChild(svg);
-        document.getElementById('datariChartBlock').style.display = 'block';
+          const cell = 16;
+          const left = 140;
+          const top = 20;
+          const w = left + fullYears.length*cell + 40;
+          const h = top + offices.length*cell + 40;
+          const svgNS = 'http://www.w3.org/2000/svg';
+          const svg = document.createElementNS(svgNS, 'svg');
+          svg.setAttribute('width', w);
+          svg.setAttribute('height', h);
+
+          // vertical grid lines (years)
+          fullYears.forEach((yr, i) => {
+            const x = left + i*cell;
+            const line = document.createElementNS(svgNS, 'line');
+            line.setAttribute('x1', x);
+            line.setAttribute('y1', top-6);
+            line.setAttribute('x2', x);
+            line.setAttribute('y2', top + offices.length*cell);
+            line.setAttribute('stroke', '#ddd');
+            line.setAttribute('stroke-width', '1');
+            svg.appendChild(line);
+          });
+
+          // horizontal grid lines (offices)
+          offices.forEach((d, j) => {
+            const y = top + j*cell;
+            const line = document.createElementNS(svgNS, 'line');
+            line.setAttribute('x1', left-6);
+            line.setAttribute('y1', y);
+            line.setAttribute('x2', left + fullYears.length*cell);
+            line.setAttribute('y2', y);
+            line.setAttribute('stroke', '#bbb');
+            line.setAttribute('stroke-width', '2');
+            svg.appendChild(line);
+
+            // office label on left
+            const text = document.createElementNS(svgNS, 'text');
+            text.setAttribute('x', left-10);
+            text.setAttribute('y', y + cell/2 + 5);
+            text.setAttribute('font-size', '12');
+            text.setAttribute('text-anchor', 'end');
+            text.textContent = d;
+            svg.appendChild(text);
+          });
+
+          // year labels rotated
+          fullYears.forEach((yr, i) => {
+            const x = left + i*cell + cell/2;
+            const text = document.createElementNS(svgNS, 'text');
+            text.setAttribute('x', x);
+            text.setAttribute('y', top + offices.length*cell + 28);
+            text.setAttribute('font-size', '12');
+            text.setAttribute('transform', `rotate(-90 ${x} ${top + offices.length*cell + 28})`);
+            text.textContent = yr;
+            svg.appendChild(text);
+          });
+
+          // squares for usages (office x year)
+          offices.forEach((office, j) => {
+            fullYears.forEach((yr, i) => {
+              const found = records.some(r => (r['Denominazione ufficio'] === office) && Number(r.Anno) === yr);
+              if (found) {
+                const rect = document.createElementNS(svgNS, 'rect');
+                const x = left + i*cell + 1;
+                const y = top + j*cell + 1;
+                rect.setAttribute('x', x);
+                rect.setAttribute('y', y);
+                rect.setAttribute('width', cell-2);
+                rect.setAttribute('height', cell-2);
+                rect.setAttribute('fill', '#333');
+                svg.appendChild(rect);
+              }
+            });
+          });
+
+          chartContainer.appendChild(svg);
+          document.getElementById('datariChartBlock').style.display = 'block';
       }
 
       // Carica quando il DOM è pronto
