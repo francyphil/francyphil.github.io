@@ -418,16 +418,13 @@
                   const used = records.some(r => ((r.Datario||'').trim() === d) && r.Anno === yr);
                   if (used) {
                     const rect = document.createElementNS(svgNS, 'rect');
-                    const x = left + j * cell;
-                    const y = top + i * cell;
-                    rect.setAttribute('x', x + 2);
-                    rect.setAttribute('y', y + 2);
-                    rect.setAttribute('width', cell - 4);
-                    rect.setAttribute('height', cell - 4);
-                    rect.setAttribute('fill', '#2b8cbe');
-                    rect.setAttribute('stroke', '#185a8a');
-                    rect.setAttribute('rx', 2);
-                    rect.setAttribute('ry', 2);
+                    const x = left + j * cell + 1;
+                    const y = top + i * cell + 1;
+                    rect.setAttribute('x', x );
+                    rect.setAttribute('y', y );
+                    rect.setAttribute('width', cell - 2);
+                    rect.setAttribute('height', cell - 2);
+                    rect.setAttribute('fill', '#333');
                     rect.setAttribute('title', `${d} • ${yr}`);
                     svg.appendChild(rect);
                   }
