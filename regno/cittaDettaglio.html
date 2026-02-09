@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-      <link rel="stylesheet" href="/common-bg.css" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dettagli Località</title>
     <script src="/favicon-loader.js"></script>
-    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/navbar.css" />
     <style>
       body {
         font-family: sans-serif;
@@ -44,7 +44,8 @@
         table-layout: fixed;
       }
 
-      th, td {
+      th,
+      td {
         border: 1px solid #ccc;
         padding: 5px 10px;
         text-align: left;
@@ -86,234 +87,254 @@
         border-radius: 4px;
       }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="content-container">
       <div class="locality-header">
-      <h1 id="localityTitle">Località</h1>
-      <p id="localityInfo"></p>
-    </div>
+        <h1 id="localityTitle">Località</h1>
+        <p id="localityInfo"></p>
+      </div>
 
-    <!-- (datari images removed) -->
+      <!-- (datari images removed) -->
 
-    <!-- Contenitore grafico: anni x denominazioni ufficio -->
-    <div id="datariChartBlock" style="display:none; margin-top:18px; text-align:center;">
-      <strong>Uso delle denominazioni ufficio nel tempo</strong>
-      <div id="datariChart" style="margin-top:8px; text-align:center;"></div>
-    </div>
+      <!-- Contenitore grafico: anni x denominazioni ufficio -->
+      <div
+        id="datariChartBlock"
+        style="display: none; margin-top: 18px; text-align: center"
+      >
+        <strong>Uso delle denominazioni ufficio nel tempo</strong>
+        <div id="datariChart" style="margin-top: 8px; text-align: center"></div>
+      </div>
 
-    <div class="stats">
-      <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
-    </div>
+      <div class="stats">
+        <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
+      </div>
 
-    <div class="table-wrapper">
-      <table id="tableTarghette">
-        <colgroup>
-          <col style="width:8%">
-          <col style="width:16%">
-          <col style="width:12%">
-          <col style="width:12%">
-          <col style="width:50%">
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Anno</th>
-            <th>Denominazione Ufficio</th>
-            <th>Targhetta Tipo</th>
-            <th>Targhetta Ufficio</th>
-            <th>Descrizione</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-        </tbody>
-      </table>
-    </div>
+      <div class="table-wrapper">
+        <table id="tableTarghette">
+          <colgroup>
+            <col style="width: 8%" />
+            <col style="width: 16%" />
+            <col style="width: 12%" />
+            <col style="width: 12%" />
+            <col style="width: 50%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Anno</th>
+              <th>Denominazione Ufficio</th>
+              <th>Targhetta Tipo</th>
+              <th>Targhetta Ufficio</th>
+              <th>Descrizione</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
 
-    <div id="noResults" class="no-results" style="display:none;">
-      Nessuna targhetta trovata per questa località.
-    </div>
+      <div id="noResults" class="no-results" style="display: none">
+        Nessuna targhetta trovata per questa località.
+      </div>
 
-    <script src="/navbar.js"></script>
-    <script>
-      // Estrae i parametri dall'URL
-      function getURLParams() {
-        const params = new URLSearchParams(window.location.search);
-        return {
-          localita: params.get('localita')
-        };
-      }
-
-      // Carica e filtra i dati
-      async function loadLocalityDetails() {
-        const { localita } = getURLParams();
-
-        if (!localita) {
-          document.getElementById('localityTitle').textContent = 'Località non trovata';
-          return;
+      <script src="/navbar.js"></script>
+      <script>
+        // Estrae i parametri dall'URL
+        function getURLParams() {
+          const params = new URLSearchParams(window.location.search);
+          return {
+            localita: params.get("localita"),
+          };
         }
 
-        // Aggiorna titolo
-        document.getElementById('localityTitle').textContent = `${localita}`;
-        document.getElementById('localityInfo').textContent = `Tutte le targhette di questa località, ordinate per anno`;
+        // Carica e filtra i dati
+        async function loadLocalityDetails() {
+          const { localita } = getURLParams();
 
-        try {
-          // Carica il JSON
-          const response = await fetch('targhetteRegno.json');
-          const data = await response.json();
+          if (!localita) {
+            document.getElementById("localityTitle").textContent =
+              "Località non trovata";
+            return;
+          }
 
-          // Filtra solo per localita (indipendentemente dall'ufficio)
-          const filtered = data.filter(item => 
-            item['Località'] === localita
-          );
+          // Aggiorna titolo
+          document.getElementById("localityTitle").textContent = `${localita}`;
+          document.getElementById("localityInfo").textContent =
+            `Tutte le targhette di questa località, ordinate per anno`;
 
-          // Ordina per anno (ascendente), poi per ufficio
-          filtered.sort((a, b) => {
-            if (a.Anno === b.Anno) {
-              if (a['Denominazione ufficio'] === b['Denominazione ufficio']) {
-                return a['Targhetta Ufficio'] - b['Targhetta Ufficio'];
+          try {
+            // Carica il JSON
+            const response = await fetch("targhetteRegno.json");
+            const data = await response.json();
+
+            // Filtra solo per localita (indipendentemente dall'ufficio)
+            const filtered = data.filter(
+              (item) => item["Località"] === localita,
+            );
+
+            // Ordina per anno (ascendente), poi per ufficio
+            filtered.sort((a, b) => {
+              if (a.Anno === b.Anno) {
+                if (a["Denominazione ufficio"] === b["Denominazione ufficio"]) {
+                  return a["Targhetta Ufficio"] - b["Targhetta Ufficio"];
+                }
+                return a["Denominazione ufficio"].localeCompare(
+                  b["Denominazione ufficio"],
+                );
               }
-              return a['Denominazione ufficio'].localeCompare(b['Denominazione ufficio']);
-            }
-            return a.Anno - b.Anno;
-          });
-
-          // Mostra risultati
-          if (filtered.length === 0) {
-            document.getElementById('noResults').style.display = 'block';
-            document.getElementById('tableTarghette').style.display = 'none';
-            document.getElementById('statsCount').textContent = '0';
-          } else {
-            const tbody = document.getElementById('tableBody');
-            tbody.innerHTML = '';
-
-            filtered.forEach(item => {
-              const tr = document.createElement('tr');
-              
-              const tdAnno = document.createElement('td');
-              tdAnno.textContent = item.Anno;
-              
-              const tdDenominazione = document.createElement('td');
-              const officeName = item['Denominazione ufficio'] || '';
-              const officeLink = document.createElement('a');
-              officeLink.href = `ufficioDettaglio.html?denominazione=${encodeURIComponent(officeName)}&localita=${encodeURIComponent(localita)}`;
-              officeLink.textContent = officeName;
-              tdDenominazione.appendChild(officeLink);
-              
-              const tdTipo = document.createElement('td');
-              tdTipo.textContent = item['Targhetta Tipo'];
-              
-              const tdUfficio = document.createElement('td');
-              tdUfficio.textContent = item['Targhetta Ufficio'];
-              
-              const tdDescrizione = document.createElement('td');
-              tdDescrizione.textContent = item['Descrizione'];
-              
- 
-              
-              tr.appendChild(tdAnno);
-              tr.appendChild(tdDenominazione);
-              tr.appendChild(tdTipo);
-              tr.appendChild(tdUfficio);
-              tr.appendChild(tdDescrizione);
-
-              
-              tbody.appendChild(tr);
+              return a.Anno - b.Anno;
             });
 
-            document.getElementById('statsCount').textContent = filtered.length;
-            document.getElementById('noResults').style.display = 'none';
-            document.getElementById('tableTarghette').style.display = 'table';
+            // Mostra risultati
+            if (filtered.length === 0) {
+              document.getElementById("noResults").style.display = "block";
+              document.getElementById("tableTarghette").style.display = "none";
+              document.getElementById("statsCount").textContent = "0";
+            } else {
+              const tbody = document.getElementById("tableBody");
+              tbody.innerHTML = "";
+
+              filtered.forEach((item) => {
+                const tr = document.createElement("tr");
+
+                const tdAnno = document.createElement("td");
+                tdAnno.textContent = item.Anno;
+
+                const tdDenominazione = document.createElement("td");
+                const officeName = item["Denominazione ufficio"] || "";
+                const officeLink = document.createElement("a");
+                officeLink.href = `ufficioDettaglio.html?denominazione=${encodeURIComponent(officeName)}&localita=${encodeURIComponent(localita)}`;
+                officeLink.textContent = officeName;
+                tdDenominazione.appendChild(officeLink);
+
+                const tdTipo = document.createElement("td");
+                tdTipo.textContent = item["Targhetta Tipo"];
+
+                const tdUfficio = document.createElement("td");
+                tdUfficio.textContent = item["Targhetta Ufficio"];
+
+                const tdDescrizione = document.createElement("td");
+                tdDescrizione.textContent = item["Descrizione"];
+
+                tr.appendChild(tdAnno);
+                tr.appendChild(tdDenominazione);
+                tr.appendChild(tdTipo);
+                tr.appendChild(tdUfficio);
+                tr.appendChild(tdDescrizione);
+
+                tbody.appendChild(tr);
+              });
+
+              document.getElementById("statsCount").textContent =
+                filtered.length;
+              document.getElementById("noResults").style.display = "none";
+              document.getElementById("tableTarghette").style.display = "table";
               // render chart for denominazioni ufficio
               renderChart(filtered, localita);
+            }
+          } catch (error) {
+            console.error("Errore caricamento dati:", error);
+            document.getElementById("localityTitle").textContent =
+              "Errore caricamento dati";
           }
-        } catch (error) {
-          console.error('Errore caricamento dati:', error);
-          document.getElementById('localityTitle').textContent = 'Errore caricamento dati';
         }
-      }
 
-      
-
-      // Render simple SVG chart: years (x) × offices (y)
-      function renderChart(records, localita) {
-        const chartContainer = document.getElementById('datariChart');
-        chartContainer.innerHTML = '';
+        // Render simple SVG chart: years (x) × offices (y)
+        function renderChart(records, localita) {
+          const chartContainer = document.getElementById("datariChart");
+          chartContainer.innerHTML = "";
           const officeSet = new Set();
           const yearSet = new Set();
-          records.forEach(r => {
-            if (r['Denominazione ufficio']) officeSet.add(r['Denominazione ufficio']);
+          records.forEach((r) => {
+            if (r["Denominazione ufficio"])
+              officeSet.add(r["Denominazione ufficio"]);
             if (r.Anno) yearSet.add(Number(r.Anno));
           });
           const offices = Array.from(officeSet).sort();
           if (offices.length === 0 || yearSet.size === 0) {
-            document.getElementById('datariChartBlock').style.display = 'none';
+            document.getElementById("datariChartBlock").style.display = "none";
             return;
           }
-          const years = Array.from(yearSet).sort((a,b)=>a-b);
+          const years = Array.from(yearSet).sort((a, b) => a - b);
           const minY = years[0];
-          const maxY = years[years.length-1];
+          const maxY = years[years.length - 1];
           const fullYears = [];
-          for (let y=minY;y<=maxY;y++) fullYears.push(y);
+          for (let y = minY; y <= maxY; y++) fullYears.push(y);
 
           const cell = 16;
           const left = 180;
-          chartContainer.style.paddingRight = left + 'px';
-          chartContainer.style.boxSizing = 'content-box';
+          chartContainer.style.paddingRight = left + "px";
+          chartContainer.style.boxSizing = "content-box";
           const top = 20;
-          const w = left + fullYears.length*cell + 40;
-          const h = top + offices.length*cell + 40;
-          const svgNS = 'http://www.w3.org/2000/svg';
-          const svg = document.createElementNS(svgNS, 'svg');
-          svg.setAttribute('width', w);
-          svg.setAttribute('height', h);
+          const w = left + fullYears.length * cell + 40;
+          const h = top + offices.length * cell + 40;
+          const svgNS = "http://www.w3.org/2000/svg";
+          const svg = document.createElementNS(svgNS, "svg");
+          svg.setAttribute("width", w);
+          svg.setAttribute("height", h);
 
           // vertical grid lines (years)
           fullYears.forEach((yr, i) => {
-            const x = left + i*cell;
-            const line = document.createElementNS(svgNS, 'line');
-            line.setAttribute('x1', x);
-            line.setAttribute('y1', top-6);
-            line.setAttribute('x2', x);
-            line.setAttribute('y2', top + offices.length*cell);
-            line.setAttribute('stroke', '#ddd');
-            line.setAttribute('stroke-width', '1');
+            const x = left + i * cell;
+            const line = document.createElementNS(svgNS, "line");
+            line.setAttribute("x1", x);
+            line.setAttribute("y1", top - 6);
+            line.setAttribute("x2", x);
+            line.setAttribute("y2", top + offices.length * cell);
+            line.setAttribute("stroke", "#ddd");
+            line.setAttribute("stroke-width", "1");
             svg.appendChild(line);
           });
 
           // horizontal grid lines (offices)
           offices.forEach((d, j) => {
-            const y = top + j*cell;
-            const line = document.createElementNS(svgNS, 'line');
-            line.setAttribute('x1', left-6);
-            line.setAttribute('y1', y);
-            line.setAttribute('x2', left + fullYears.length*cell);
-            line.setAttribute('y2', y);
-            line.setAttribute('stroke', '#bbb');
-            line.setAttribute('stroke-width', '2');
+            const y = top + j * cell;
+            const line = document.createElementNS(svgNS, "line");
+            line.setAttribute("x1", left - 6);
+            line.setAttribute("y1", y);
+            line.setAttribute("x2", left + fullYears.length * cell);
+            line.setAttribute("y2", y);
+            line.setAttribute("stroke", "#bbb");
+            line.setAttribute("stroke-width", "2");
             svg.appendChild(line);
 
             // office label on left (clickable)
-            const text = document.createElementNS(svgNS, 'text');
-            text.setAttribute('x', left-10);
-            text.setAttribute('y', y + cell/2 + 5);
-            text.setAttribute('font-size', '12');
-            text.setAttribute('text-anchor', 'end');
+            const text = document.createElementNS(svgNS, "text");
+            text.setAttribute("x", left - 10);
+            text.setAttribute("y", y + cell / 2 + 3);
+            text.setAttribute("font-size", "12");
+            text.setAttribute("text-anchor", "end");
             text.textContent = d;
             // make label clickable to office page
-            text.style.cursor = 'pointer';
-            const officeUrl = `ufficioDettaglio.html?denominazione=${encodeURIComponent(d)}&localita=${encodeURIComponent(localita||'')}`;
-            text.addEventListener('click', () => { window.location.href = officeUrl; });
+            text.style.cursor = "pointer";
+            const officeUrl = `ufficioDettaglio.html?denominazione=${encodeURIComponent(d)}&localita=${encodeURIComponent(localita || "")}`;
+            text.addEventListener("click", () => {
+              window.location.href = officeUrl;
+            });
             svg.appendChild(text);
           });
 
-          // year labels rotated
+          // linea orizzontale finale sotto l'ultimo elemento
+          const bottomY = top + offices.length * cell;
+          const bottomLine = document.createElementNS(svgNS, "line");
+          bottomLine.setAttribute("x1", left - 6);
+          bottomLine.setAttribute("y1", bottomY);
+          bottomLine.setAttribute("x2", left + fullYears.length * cell);
+          bottomLine.setAttribute("y2", bottomY);
+          bottomLine.setAttribute("stroke", "#bbb");
+          bottomLine.setAttribute("stroke-width", "2");
+          svg.appendChild(bottomLine);
+
+          // year labels rotated (centered under cells)
           fullYears.forEach((yr, i) => {
-            const x = left + i*cell + cell/2;
-            const text = document.createElementNS(svgNS, 'text');
-            text.setAttribute('x', x);
-            text.setAttribute('y', top + offices.length*cell + 28);
-            text.setAttribute('font-size', '12');
-            text.setAttribute('transform', `rotate(-90 ${x} ${top + offices.length*cell + 28})`);
+            const x = left + i * cell + cell / 2;
+            const baseY = top + offices.length * cell + cell / 2;
+            const text = document.createElementNS(svgNS, "text");
+            text.setAttribute("x", x - 12);
+            text.setAttribute("y", baseY);
+            text.setAttribute("font-size", "12");
+            text.setAttribute("text-anchor", "middle");
+            text.setAttribute("dominant-baseline", "middle");
+            text.setAttribute("transform", `rotate(-90 ${x} ${baseY})`);
             text.textContent = yr;
             svg.appendChild(text);
           });
@@ -321,39 +342,43 @@
           // squares for usages (office x year)
           offices.forEach((office, j) => {
             fullYears.forEach((yr, i) => {
-              const found = records.some(r => (r['Denominazione ufficio'] === office) && Number(r.Anno) === yr);
+              const found = records.some(
+                (r) =>
+                  r["Denominazione ufficio"] === office &&
+                  Number(r.Anno) === yr,
+              );
               if (found) {
-                const rect = document.createElementNS(svgNS, 'rect');
-                const x = left + i*cell + 1;
-                const y = top + j*cell + 1;
-                rect.setAttribute('x', x);
-                rect.setAttribute('y', y);
-                rect.setAttribute('width', cell-2);
-                rect.setAttribute('height', cell-2);
-                rect.setAttribute('fill', '#333');
+                const rect = document.createElementNS(svgNS, "rect");
+                const x = left + i * cell + 1;
+                const y = top + j * cell + 1;
+                rect.setAttribute("x", x);
+                rect.setAttribute("y", y);
+                rect.setAttribute("width", cell - 2);
+                rect.setAttribute("height", cell - 2);
+                rect.setAttribute("fill", "#333");
                 svg.appendChild(rect);
               }
             });
           });
 
           chartContainer.appendChild(svg);
-          document.getElementById('datariChartBlock').style.display = 'block';
-      }
+          document.getElementById("datariChartBlock").style.display = "block";
+        }
 
-      // Carica quando il DOM è pronto
-      document.addEventListener('DOMContentLoaded', loadLocalityDetails);
-    </script>
+        // Carica quando il DOM è pronto
+        document.addEventListener("DOMContentLoaded", loadLocalityDetails);
+      </script>
     </div>
 
-    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/footer.css" />
     <script src="/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('footerContainer').innerHTML = html;
+      fetch("/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footerContainer").innerHTML = html;
         });
     </script>
-</body>
+  </body>
 </html>
