@@ -77,10 +77,25 @@ def compute_section_stats(root_dir: Path, folder: str, json_filename: str, image
         # usa l'indice se disponibile per evitare ripetute rglob()
         found = False
         if image_index is not None:
+            # Normal lookup by expected filename
             entries = image_index.get(filename_l, [])
             if folder == 'triestea':
-                # limita ai percorsi che stanno nella cartella triestea/
-                found = any(p.startswith(f"{folder}/") for p in entries)
+                # First try exact trieste filename: prev_trieste_{uff}{extra}.jpeg
+                fname_tri = f"prev_trieste_{uff}{extra_part}.jpeg".lower()
+                entries_tri = image_index.get(fname_tri, [])
+                if entries_tri:
+                    found = any(p.startswith(f"{folder}/") for p in entries_tri)
+                else:
+                    # Fallback: look for any image basename that starts with prev_trieste_{uff}
+                    prefix = f"prev_trieste_{uff}"
+                    if extra and str(extra).strip() != "":
+                        prefix = f"{prefix}_{str(extra).strip()}"
+                    prefix = prefix.lower()
+                    for k, paths in image_index.items():
+                        if k.startswith(prefix):
+                            if any(p.startswith(f"{folder}/") for p in paths):
+                                found = True
+                                break
             else:
                 found = bool(entries)
         else:
@@ -118,9 +133,25 @@ def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict
             filename_l = filename.lower()
             # usa l'indice se disponibile per evitare ripetute rglob()
             if image_index is not None:
+                # Try exact expected filename first
                 entries = image_index.get(filename_l, [])
                 if folder == 'triestea':
-                    found = any(p.startswith(f"{folder}/") for p in entries)
+                    # supporta nomi del tipo prev_trieste_{uff}[_{extra}].jpeg
+                    fname_tri = f"prev_trieste_{uff}{extra_part}.jpeg".lower()
+                    entries_tri = image_index.get(fname_tri, [])
+                    if entries_tri:
+                        found = any(p.startswith(f"{folder}/") for p in entries_tri)
+                    else:
+                        # fallback: match per prefisso (prev_trieste_{uff}...)
+                        prefix = f"prev_trieste_{uff}"
+                        if extra and str(extra).strip() != "":
+                            prefix = f"{prefix}_{str(extra).strip()}"
+                        prefix = prefix.lower()
+                        for k, paths in image_index.items():
+                            if k.startswith(prefix):
+                                if any(p.startswith(f"{folder}/") for p in paths):
+                                    found = True
+                                    break
                 else:
                     found = bool(entries)
             else:

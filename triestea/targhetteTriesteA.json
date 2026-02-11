@@ -27,8 +27,8 @@
     },
     {
         "Targhetta Tipo": 2,
-        "Targhetta Ufficio": 3,
-        "extra": "",
+        "Targhetta Ufficio": 2,
+        "extra": "A",
         "Descrizione": "ERP a destra",
         "linkTarghetta": "",
         "Anno": 1950,
@@ -40,8 +40,8 @@
     },
     {
         "Targhetta Tipo": 2,
-        "Targhetta Ufficio": 4,
-        "extra": "",
+        "Targhetta Ufficio": 2,
+        "extra": "B",
         "Descrizione": "ERP capovolta a sinistra",
         "linkTarghetta": "",
         "Anno": 1950,
@@ -52,8 +52,21 @@
         "linkDatario": ""
     },
     {
+        "Targhetta Tipo": 2,
+        "Targhetta Ufficio": 2,
+        "extra": "C",
+        "Descrizione": "ERP capovolta a destra",
+        "linkTarghetta": "",
+        "Anno": 1950,
+        "Località": "Trieste",
+        "Denominazione ufficio": "Corrisp. Pacchi",
+        "Denominazione ufficio breve": "",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Targhetta Tipo": 3,
-        "Targhetta Ufficio": 5,
+        "Targhetta Ufficio": 3,
         "extra": "",
         "Descrizione": "Fiera di Trieste",
         "linkTarghetta": "",
@@ -66,7 +79,7 @@
     },
     {
         "Targhetta Tipo": 4,
-        "Targhetta Ufficio": 6,
+        "Targhetta Ufficio": 4,
         "extra": "",
         "Descrizione": "Donate il Sangue",
         "linkTarghetta": "",
@@ -79,7 +92,7 @@
     },
     {
         "Targhetta Tipo": 5,
-        "Targhetta Ufficio": 7,
+        "Targhetta Ufficio": 5,
         "extra": "",
         "Descrizione": "Fiera di Trieste 4 righe",
         "linkTarghetta": "",
@@ -92,7 +105,7 @@
     },
     {
         "Targhetta Tipo": 6,
-        "Targhetta Ufficio": 8,
+        "Targhetta Ufficio": 6,
         "extra": "",
         "Descrizione": "Fiera di Trieste 3 righe",
         "linkTarghetta": "",
@@ -105,7 +118,7 @@
     },
     {
         "Targhetta Tipo": 7,
-        "Targhetta Ufficio": 9,
+        "Targhetta Ufficio": 7,
         "extra": "",
         "Descrizione": "Giochi Firenze",
         "linkTarghetta": "",
@@ -118,7 +131,7 @@
     },
     {
         "Targhetta Tipo": 8,
-        "Targhetta Ufficio": 10,
+        "Targhetta Ufficio": 8,
         "extra": "",
         "Descrizione": "Il Censimento è segreto fornite dati esatti",
         "linkTarghetta": "",
@@ -131,7 +144,7 @@
     },
     {
         "Targhetta Tipo": 9,
-        "Targhetta Ufficio": 11,
+        "Targhetta Ufficio": 9,
         "extra": "",
         "Descrizione": "IV Fiera",
         "linkTarghetta": "",
@@ -144,7 +157,7 @@
     },
     {
         "Targhetta Tipo": 10,
-        "Targhetta Ufficio": 12,
+        "Targhetta Ufficio": 10,
         "extra": "",
         "Descrizione": "Campionati universitari",
         "linkTarghetta": "",
@@ -157,7 +170,7 @@
     },
     {
         "Targhetta Tipo": 11,
-        "Targhetta Ufficio": 13,
+        "Targhetta Ufficio": 11,
         "extra": "",
         "Descrizione": "Massaia",
         "linkTarghetta": "",
@@ -170,7 +183,7 @@
     },
     {
         "Targhetta Tipo": 12,
-        "Targhetta Ufficio": 14,
+        "Targhetta Ufficio": 12,
         "extra": "",
         "Descrizione": "Recapito Celere",
         "linkTarghetta": "",
@@ -183,7 +196,7 @@
     },
     {
         "Targhetta Tipo": 12,
-        "Targhetta Ufficio": 15,
+        "Targhetta Ufficio": 13,
         "extra": "",
         "Descrizione": "Recapito Celere",
         "linkTarghetta": "",
@@ -196,7 +209,7 @@
     },
     {
         "Targhetta Tipo": 13,
-        "Targhetta Ufficio": 16,
+        "Targhetta Ufficio": 14,
         "extra": "",
         "Descrizione": "VII° Congresso FIHP",
         "linkTarghetta": "",
@@ -209,7 +222,7 @@
     },
     {
         "Targhetta Tipo": 14,
-        "Targhetta Ufficio": 17,
+        "Targhetta Ufficio": 15,
         "extra": "",
         "Descrizione": "V Fiera di Trieste 25/6",
         "linkTarghetta": "",
@@ -222,7 +235,7 @@
     },
     {
         "Targhetta Tipo": 15,
-        "Targhetta Ufficio": 18,
+        "Targhetta Ufficio": 16,
         "extra": "",
         "Descrizione": "V Fiera di Trieste 27/6",
         "linkTarghetta": "",
@@ -235,7 +248,7 @@
     },
     {
         "Targhetta Tipo": 16,
-        "Targhetta Ufficio": 19,
+        "Targhetta Ufficio": 17,
         "extra": "",
         "Descrizione": "VI Fiera di Trieste 17/6",
         "linkTarghetta": "",
@@ -248,7 +261,7 @@
     },
     {
         "Targhetta Tipo": 17,
-        "Targhetta Ufficio": 20,
+        "Targhetta Ufficio": 18,
         "extra": "",
         "Descrizione": "4 Novembre Giornata forze armate",
         "linkTarghetta": "",
