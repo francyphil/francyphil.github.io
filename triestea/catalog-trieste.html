@@ -1710,10 +1710,10 @@
     <script src="/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
-      fetch("/footer.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("footerContainer").innerHTML = html;
+      fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('footerContainer').innerHTML = html;
         });
     </script>
   </body>
