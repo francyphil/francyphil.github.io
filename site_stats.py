@@ -34,6 +34,20 @@ def count_images(root_dir):
     return image_count
 
 
+def build_image_index(root_dir: Path):
+    """Scansiona il filesystem una sola volta e costruisce un indice delle immagini.
+    Ritorna un dict: basename -> list of relative paths (as Posix strings).
+    """
+    image_extensions = {".jpg", ".jpeg", ".png", ".gif", ".svg", ".webp", ".bmp", ".tiff", ".tif"}
+    index = {}
+    for p in root_dir.rglob("prev_*"):
+        if p.suffix.lower() in image_extensions and p.is_file():
+            name = p.name.lower()
+            rel = str(p.relative_to(root_dir))
+            index.setdefault(name, []).append(rel)
+    return index
+
+
 def exists_anywhere(root_dir: Path, filename: str) -> bool:
     for p in root_dir.rglob(filename):
         if p.is_file():
@@ -41,7 +55,7 @@ def exists_anywhere(root_dir: Path, filename: str) -> bool:
     return False
 
 
-def compute_section_stats(root_dir: Path, folder: str, json_filename: str):
+def compute_section_stats(root_dir: Path, folder: str, json_filename: str, image_index: dict = None):
     json_path = root_dir / folder / json_filename
     if not json_path.exists():
         return {"total_catalogati": 0, "images_present": 0, "images_pct": 0.0}
@@ -59,13 +73,28 @@ def compute_section_stats(root_dir: Path, folder: str, json_filename: str):
             continue
         extra_part = f"_{str(extra).strip()}" if extra and str(extra).strip() != "" else ""
         filename = f"prev_{uff}{extra_part}.jpeg"
-        if exists_anywhere(root_dir, filename):
+        filename_l = filename.lower()
+        # usa l'indice se disponibile per evitare ripetute rglob()
+        found = False
+        if image_index is not None:
+            entries = image_index.get(filename_l, [])
+            if folder == 'triestea':
+                # limita ai percorsi che stanno nella cartella triestea/
+                found = any(p.startswith(f"{folder}/") for p in entries)
+            else:
+                found = bool(entries)
+        else:
+            # fallback: ricerca filesystem (più lenta)
+            search_root = root_dir / folder if folder == 'triestea' else root_dir
+            found = any(search_root.rglob(filename))
+
+        if found:
             images_present += 1
     pct = round((images_present / total) * 100, 1) if total > 0 else 0.0
     return {"total_catalogati": total, "images_present": images_present, "images_pct": pct}
 
 
-def write_missing_images_report(root_dir: Path, out_csv: Path):
+def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict = None):
     """Scrive un CSV con le immagini attese dai JSON ma mancanti sul file system."""
     rows = []
     # Per ogni sezione JSON
@@ -86,8 +115,17 @@ def write_missing_images_report(root_dir: Path, out_csv: Path):
                 continue
             extra_part = f"_{str(extra).strip()}" if extra and str(extra).strip() != "" else ""
             filename = f"prev_{uff}{extra_part}.jpeg"
-            # cerca nel progetto
-            found = any(root_dir.rglob(filename))
+            filename_l = filename.lower()
+            # usa l'indice se disponibile per evitare ripetute rglob()
+            if image_index is not None:
+                entries = image_index.get(filename_l, [])
+                if folder == 'triestea':
+                    found = any(p.startswith(f"{folder}/") for p in entries)
+                else:
+                    found = bool(entries)
+            else:
+                search_root = root_dir / folder if folder == 'triestea' else root_dir
+                found = any(search_root.rglob(filename))
             if not found:
                 rows.append({
                     'section': section_name,
@@ -114,7 +152,7 @@ def write_missing_images_report(root_dir: Path, out_csv: Path):
             writer.writeheader()
 
 
-def write_unreferenced_regno_images(root_dir: Path, out_csv: Path):
+def write_unreferenced_regno_images(root_dir: Path, out_csv: Path, image_index: dict = None):
     """Scrive un CSV con immagini presenti nel progetto che non sono referenziate da targhetteRegno.json."""
     # raccogli nomi attesi da regno
     expected = set()
@@ -132,16 +170,19 @@ def write_unreferenced_regno_images(root_dir: Path, out_csv: Path):
                 continue
             extra_part = f"_{str(extra).strip()}" if extra and str(extra).strip() != "" else ""
             filename = f"prev_{uff}{extra_part}.jpeg"
-            expected.add(filename)
+            expected.add(filename.lower())
 
-    # trova file immagine prev_*.jpeg nel progetto
+    # trova file immagine prev_*.jpeg: preferisci l'indice se presente
     found_images = []
-    for p in root_dir.rglob('prev_*.jpeg'):
-        # usa basename
-        found_images.append(str(p.relative_to(root_dir)))
-
-    # Filtra quelli non in expected
-    unreferenced = [fp for fp in found_images if Path(fp).name not in expected]
+    if image_index is not None:
+        for basename, paths in image_index.items():
+            for rel in paths:
+                found_images.append(rel)
+    else:
+        for p in root_dir.rglob('prev_*.jpeg'):
+            found_images.append(str(p.relative_to(root_dir)))
+    # Filtra quelli non in expected (usa basename case-insensitive)
+    unreferenced = [fp for fp in found_images if Path(fp).name.lower() not in expected]
 
     # Scrivi CSV
     with open(out_csv, 'w', newline='', encoding='utf-8') as csvfile:
@@ -156,8 +197,11 @@ def main():
     project_dir = Path(__file__).parent
     total_pages = count_html_pages(project_dir)
     total_images = count_images(project_dir)
-    regno_stats = compute_section_stats(project_dir, "regno", "targhetteRegno.json")
-    trieste_stats = compute_section_stats(project_dir, "triestea", "targhetteTriesteA.json")
+    # costruisci un indice delle immagini una sola volta
+    image_index = build_image_index(project_dir)
+
+    regno_stats = compute_section_stats(project_dir, "regno", "targhetteRegno.json", image_index=image_index)
+    trieste_stats = compute_section_stats(project_dir, "triestea", "targhetteTriesteA.json", image_index=image_index)
     stats = {
         "total_pages": total_pages,
         "total_images": total_images,
@@ -200,8 +244,8 @@ def main():
     # Genera report CSV per immagini mancanti e non referenziate (Regno)
     missing_csv = project_dir / 'missing_images.csv'
     unref_csv = project_dir / 'unreferenced_regno_images.csv'
-    write_missing_images_report(project_dir, missing_csv)
-    write_unreferenced_regno_images(project_dir, unref_csv)
+    write_missing_images_report(project_dir, missing_csv, image_index=image_index)
+    write_unreferenced_regno_images(project_dir, unref_csv, image_index=image_index)
     print(f"✓ Report creati: {missing_csv.name}, {unref_csv.name}")
 
 
