@@ -6,6 +6,7 @@ e percentuale di completamento immagini.
 """
 
 import json
+import csv
 from pathlib import Path
 
 
@@ -64,6 +65,93 @@ def compute_section_stats(root_dir: Path, folder: str, json_filename: str):
     return {"total_catalogati": total, "images_present": images_present, "images_pct": pct}
 
 
+def write_missing_images_report(root_dir: Path, out_csv: Path):
+    """Scrive un CSV con le immagini attese dai JSON ma mancanti sul file system."""
+    rows = []
+    # Per ogni sezione JSON
+    for folder, json_file, section_name in [ ("regno", "targhetteRegno.json", "Regno"), ("triestea", "targhetteTriesteA.json", "Trieste A") ]:
+        p = root_dir / folder / json_file
+        if not p.exists():
+            continue
+        try:
+            with open(p, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except Exception:
+            data = []
+
+        for item in data:
+            uff = item.get("Targhetta Ufficio")
+            extra = item.get("extra", "")
+            if uff is None:
+                continue
+            extra_part = f"_{str(extra).strip()}" if extra and str(extra).strip() != "" else ""
+            filename = f"prev_{uff}{extra_part}.jpeg"
+            # cerca nel progetto
+            found = any(root_dir.rglob(filename))
+            if not found:
+                rows.append({
+                    'section': section_name,
+                    'expected_filename': filename,
+                    'Targhetta Ufficio': uff,
+                    'extra': extra,
+                    'Descrizione': item.get('Descrizione',''),
+                    'Località': item.get('Località','')
+                })
+
+    # Scrivi CSV
+    if rows:
+        with open(out_csv, 'w', newline='', encoding='utf-8') as csvfile:
+            fieldnames = ['section','expected_filename','Targhetta Ufficio','extra','Descrizione','Località']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for r in rows:
+                writer.writerow(r)
+    else:
+        # crea file vuoto con header
+        with open(out_csv, 'w', newline='', encoding='utf-8') as csvfile:
+            fieldnames = ['section','expected_filename','Targhetta Ufficio','extra','Descrizione','Località']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+
+
+def write_unreferenced_regno_images(root_dir: Path, out_csv: Path):
+    """Scrive un CSV con immagini presenti nel progetto che non sono referenziate da targhetteRegno.json."""
+    # raccogli nomi attesi da regno
+    expected = set()
+    p = root_dir / 'regno' / 'targhetteRegno.json'
+    if p.exists():
+        try:
+            with open(p, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except Exception:
+            data = []
+        for item in data:
+            uff = item.get('Targhetta Ufficio')
+            extra = item.get('extra','')
+            if uff is None:
+                continue
+            extra_part = f"_{str(extra).strip()}" if extra and str(extra).strip() != "" else ""
+            filename = f"prev_{uff}{extra_part}.jpeg"
+            expected.add(filename)
+
+    # trova file immagine prev_*.jpeg nel progetto
+    found_images = []
+    for p in root_dir.rglob('prev_*.jpeg'):
+        # usa basename
+        found_images.append(str(p.relative_to(root_dir)))
+
+    # Filtra quelli non in expected
+    unreferenced = [fp for fp in found_images if Path(fp).name not in expected]
+
+    # Scrivi CSV
+    with open(out_csv, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['image_path','basename']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        for fp in sorted(unreferenced):
+            writer.writerow({'image_path': fp, 'basename': Path(fp).name})
+
+
 def main():
     project_dir = Path(__file__).parent
     total_pages = count_html_pages(project_dir)
@@ -109,6 +197,12 @@ def main():
     print("✓ Sezioni:")
     for name, s in stats["sections"].items():
         print(f"  - {name}: catalogati={s['total_catalogati']}, immagini={s['images_present']}, {s['images_pct']}%")
+    # Genera report CSV per immagini mancanti e non referenziate (Regno)
+    missing_csv = project_dir / 'missing_images.csv'
+    unref_csv = project_dir / 'unreferenced_regno_images.csv'
+    write_missing_images_report(project_dir, missing_csv)
+    write_unreferenced_regno_images(project_dir, unref_csv)
+    print(f"✓ Report creati: {missing_csv.name}, {unref_csv.name}")
 
 
 if __name__ == "__main__":

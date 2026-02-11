@@ -2360,7 +2360,7 @@
         "linkTarghetta": "",
         "Anno": 1924,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -6462,6 +6462,19 @@
     },
     {
         "Targhetta Tipo": 55,
+        "Targhetta Ufficio": 454,
+        "extra": "R",
+        "Descrizione": "Salsomaggiore",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Bologna",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 55,
         "Targhetta Ufficio": 455,
         "extra": "",
         "Descrizione": "Salsomaggiore",
@@ -8444,7 +8457,7 @@
         "linkTarghetta": "",
         "Anno": 1925,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -12235,7 +12248,7 @@
     {
         "Targhetta Tipo": 100,
         "Targhetta Ufficio": 848,
-        "extra": "",
+        "extra": "A",
         "Descrizione": "Sottoscrivete al prestito del littorio",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -13059,7 +13072,7 @@
         "linkTarghetta": "",
         "Anno": 1927,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -13137,7 +13150,7 @@
         "linkTarghetta": "",
         "Anno": 1927,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -13345,7 +13358,7 @@
         "linkTarghetta": "",
         "Anno": 1927,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -13449,7 +13462,7 @@
         "linkTarghetta": "",
         "Anno": 1927,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -13873,7 +13886,7 @@
     {
         "Targhetta Tipo": 108,
         "Targhetta Ufficio": 969,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "montecatini - stomaco fegato intestino",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -13886,7 +13899,7 @@
     {
         "Targhetta Tipo": 108,
         "Targhetta Ufficio": 970,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "montecatini - stomaco fegato intestino",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -13952,6 +13965,19 @@
         "Targhetta Tipo": 108,
         "Targhetta Ufficio": 975,
         "extra": "",
+        "Descrizione": "montecatini - stomaco fegato intestino",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Roma",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 108,
+        "Targhetta Ufficio": 975,
+        "extra": "R",
         "Descrizione": "montecatini - stomaco fegato intestino",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -15529,7 +15555,7 @@
         "linkTarghetta": "",
         "Anno": 1927,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -15802,7 +15828,7 @@
         "linkTarghetta": "",
         "Anno": 1927,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -16810,6 +16836,19 @@
     },
     {
         "Targhetta Tipo": 49,
+        "Targhetta Ufficio": 1186,
+        "extra": "R",
+        "Descrizione": "Salsomaggiore",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Ancona",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 49,
         "Targhetta Ufficio": 1187,
         "extra": "",
         "Descrizione": "Salsomaggiore",
@@ -16955,6 +16994,19 @@
         "Targhetta Tipo": 128,
         "Targhetta Ufficio": 1198,
         "extra": "",
+        "Descrizione": "Salsomaggiore",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Genova",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 128,
+        "Targhetta Ufficio": 1198,
+        "extra": "R",
         "Descrizione": "Salsomaggiore",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -17176,6 +17228,19 @@
         "Targhetta Tipo": 127,
         "Targhetta Ufficio": 1215,
         "extra": "",
+        "Descrizione": "Salsomaggiore",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Messina",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 127,
+        "Targhetta Ufficio": 1215,
+        "extra": "R",
         "Descrizione": "Salsomaggiore",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -19000,7 +19065,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -19013,7 +19078,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -19026,7 +19091,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -19332,6 +19397,19 @@
     },
     {
         "Targhetta Tipo": 145,
+        "Targhetta Ufficio": 1368,
+        "extra": "A",
+        "Descrizione": "Torino 1928 esposizioni",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Roma",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 145,
         "Targhetta Ufficio": 1369,
         "extra": "",
         "Descrizione": "Torino 1928 esposizioni",
@@ -19477,6 +19555,19 @@
         "Targhetta Tipo": 133,
         "Targhetta Ufficio": 1380,
         "extra": "",
+        "Descrizione": "Salsomaggiore",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Centro Arrivi",
+        "Denominazione ufficio breve": "CentroArr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 133,
+        "Targhetta Ufficio": 1380,
+        "extra": "R",
         "Descrizione": "Salsomaggiore",
         "linkTarghetta": "",
         "Anno": 1928,
@@ -19994,6 +20085,19 @@
         "linkDatario": ""
     },
     {
+        "Targhetta Tipo": 119,
+        "Targhetta Ufficio": 1417,
+        "extra": "A",
+        "Descrizione": "Italiani visitate la tripolitania",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Targhetta Tipo": 111,
         "Targhetta Ufficio": 1418,
         "extra": "",
@@ -20222,7 +20326,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -20612,7 +20716,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -20699,6 +20803,19 @@
         "Targhetta Tipo": 164,
         "Targhetta Ufficio": 1471,
         "extra": "",
+        "Descrizione": "Questa vecchia terra italiana può dare il pane ..",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 164,
+        "Targhetta Ufficio": 1471,
+        "extra": "A",
         "Descrizione": "Questa vecchia terra italiana può dare il pane ..",
         "linkTarghetta": "",
         "Anno": 1928,
@@ -21294,6 +21411,19 @@
         "linkDatario": ""
     },
     {
+        "Targhetta Tipo": 141,
+        "Targhetta Ufficio": 1512,
+        "extra": "A",
+        "Descrizione": "San Remo regina della stazioni climatiche",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Trieste",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Targhetta Tipo": 146,
         "Targhetta Ufficio": 1513,
         "extra": "R",
@@ -21509,7 +21639,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -21522,7 +21652,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -21990,7 +22120,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -22666,7 +22796,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -23251,7 +23381,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -23472,7 +23602,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -23693,7 +23823,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -23992,7 +24122,7 @@
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -33651,7 +33781,7 @@
         "linkTarghetta": "",
         "Anno": 1931,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -34184,7 +34314,7 @@
         "linkTarghetta": "",
         "Anno": 1931,
         "Località": "Milano",
-        "Denominazione ufficio": "Arrivi",
+        "Denominazione ufficio": "Arrivi ",
         "Denominazione ufficio breve": "Arrivi",
         "Datario": "",
         "linkDatario": ""
@@ -48497,7 +48627,7 @@
         "linkTarghetta": "",
         "Anno": 1940,
         "Località": "Milano",
-        "Denominazione ufficio": "Centro Corrisp. pacchi",
+        "Denominazione ufficio": "Centro Corrisp. Pacchi",
         "Denominazione ufficio breve": "CentroCP2",
         "Datario": "",
         "linkDatario": ""
