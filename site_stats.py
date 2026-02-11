@@ -77,14 +77,16 @@ def compute_section_stats(root_dir: Path, folder: str, json_filename: str, image
         # usa l'indice se disponibile per evitare ripetute rglob()
         found = False
         if image_index is not None:
-            # Normal lookup by expected filename
+            # ensure folder is a posix path string for prefix checks
+            folder_prefix = Path(folder).as_posix()
+            # Normal lookup by expected filename limited to this folder
             entries = image_index.get(filename_l, [])
-            if folder == 'triestea':
+            if folder_prefix == 'triestea':
                 # First try exact trieste filename: prev_trieste_{uff}{extra}.jpeg
                 fname_tri = f"prev_trieste_{uff}{extra_part}.jpeg".lower()
                 entries_tri = image_index.get(fname_tri, [])
                 if entries_tri:
-                    found = any(p.startswith(f"{folder}/") for p in entries_tri)
+                    found = any(p.startswith(f"{folder_prefix}/") for p in entries_tri)
                 else:
                     # Fallback: look for any image basename that starts with prev_trieste_{uff}
                     prefix = f"prev_trieste_{uff}"
@@ -93,14 +95,39 @@ def compute_section_stats(root_dir: Path, folder: str, json_filename: str, image
                     prefix = prefix.lower()
                     for k, paths in image_index.items():
                         if k.startswith(prefix):
-                            if any(p.startswith(f"{folder}/") for p in paths):
+                            if any(p.startswith(f"{folder_prefix}/") for p in paths):
                                 found = True
                                 break
+            elif Path(folder_prefix).name == 'libia':
+                # Libia: supporta nomi prev_libia_{uff} o prev_tripoli_{uff}, con fallback per prefisso
+                fname_libia = f"prev_libia_{uff}{extra_part}.jpeg".lower()
+                fname_trip = f"prev_tripoli_{uff}{extra_part}.jpeg".lower()
+                entries_lib = image_index.get(fname_libia, [])
+                entries_trip = image_index.get(fname_trip, [])
+                if entries_lib:
+                    found = any(p.startswith(f"{folder_prefix}/") for p in entries_lib)
+                elif entries_trip:
+                    found = any(p.startswith(f"{folder_prefix}/") for p in entries_trip)
+                else:
+                    # fallback: search any basename starting with prev_libia_{uff} or prev_tripoli_{uff}
+                    prefixes = [f"prev_libia_{uff}", f"prev_tripoli_{uff}"]
+                    if extra and str(extra).strip() != "":
+                        prefixes = [p + f"_{str(extra).strip()}" for p in prefixes]
+                    for k, paths in image_index.items():
+                        for pref in prefixes:
+                            if k.startswith(pref.lower()):
+                                if any(p.startswith(f"{folder_prefix}/") for p in paths):
+                                    found = True
+                                    break
+                        if found:
+                            break
             else:
-                found = bool(entries)
+                if entries:
+                    # ensure at least one entry resides under the target folder
+                    found = any(p.startswith(f"{folder_prefix}/") for p in entries)
         else:
             # fallback: ricerca filesystem (più lenta)
-            search_root = root_dir / folder if folder == 'triestea' else root_dir
+            search_root = root_dir / folder
             found = any(search_root.rglob(filename))
 
         if found:
@@ -113,7 +140,7 @@ def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict
     """Scrive un CSV con le immagini attese dai JSON ma mancanti sul file system."""
     rows = []
     # Per ogni sezione JSON
-    for folder, json_file, section_name in [ ("regno", "targhetteRegno.json", "Regno"), ("triestea", "targhetteTriesteA.json", "Trieste A") ]:
+    for folder, json_file, section_name in [ ("regno", "targhetteRegno.json", "Regno"), ("triestea", "targhetteTriesteA.json", "Trieste A"), ("colonie/libia", "targhetteLibia.json", "Libia") ]:
         p = root_dir / folder / json_file
         if not p.exists():
             continue
@@ -133,14 +160,15 @@ def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict
             filename_l = filename.lower()
             # usa l'indice se disponibile per evitare ripetute rglob()
             if image_index is not None:
+                folder_prefix = Path(folder).as_posix()
                 # Try exact expected filename first
                 entries = image_index.get(filename_l, [])
-                if folder == 'triestea':
+                if folder_prefix == 'triestea':
                     # supporta nomi del tipo prev_trieste_{uff}[_{extra}].jpeg
                     fname_tri = f"prev_trieste_{uff}{extra_part}.jpeg".lower()
                     entries_tri = image_index.get(fname_tri, [])
                     if entries_tri:
-                        found = any(p.startswith(f"{folder}/") for p in entries_tri)
+                        found = any(p.startswith(f"{folder_prefix}/") for p in entries_tri)
                     else:
                         # fallback: match per prefisso (prev_trieste_{uff}...)
                         prefix = f"prev_trieste_{uff}"
@@ -149,11 +177,13 @@ def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict
                         prefix = prefix.lower()
                         for k, paths in image_index.items():
                             if k.startswith(prefix):
-                                if any(p.startswith(f"{folder}/") for p in paths):
+                                if any(p.startswith(f"{folder_prefix}/") for p in paths):
                                     found = True
                                     break
                 else:
-                    found = bool(entries)
+                    # ensure match is inside the target folder
+                    if entries:
+                        found = any(p.startswith(f"{folder_prefix}/") for p in entries)
             else:
                 search_root = root_dir / folder if folder == 'triestea' else root_dir
                 found = any(search_root.rglob(filename))
@@ -233,12 +263,14 @@ def main():
 
     regno_stats = compute_section_stats(project_dir, "regno", "targhetteRegno.json", image_index=image_index)
     trieste_stats = compute_section_stats(project_dir, "triestea", "targhetteTriesteA.json", image_index=image_index)
+    libia_stats = compute_section_stats(project_dir, Path("colonie") / "libia", "targhetteLibia.json", image_index=image_index) if True else compute_section_stats(project_dir, "colonie/libia", "targhetteLibia.json", image_index=image_index)
     stats = {
         "total_pages": total_pages,
         "total_images": total_images,
         "sections": {
             "Regno": regno_stats,
             "Trieste A": trieste_stats,
+            "Libia": libia_stats,
         },
     }
     # Retrocompatibilità: totale targhette = somma delle sezioni
@@ -248,7 +280,7 @@ def main():
 
     # Conta località uniche leggendo i JSON delle sezioni (se esistono)
     localita_set = set()
-    for folder, json_file in [("regno", "targhetteRegno.json"), ("triestea", "targhetteTriesteA.json")]:
+    for folder, json_file in [("regno", "targhetteRegno.json"), ("triestea", "targhetteTriesteA.json"), ("colonie/libia", "targhetteLibia.json")]:
         p = project_dir / folder / json_file
         if p.exists():
             try:
