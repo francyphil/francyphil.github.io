@@ -4,7 +4,7 @@ BUGS
 - in modalità mobile verticale a volte scompare tutto e non è possibile tornare indietro
 
 NECESSARI
-
+- fix navbar con la nuova disposizione di catalogo libia
 
 MIGLIORIE
 - pulsante torna al catalogo nelle pagine dettaglio e ufficio dettaglio
