@@ -4,7 +4,6 @@ BUGS
 - in modalità mobile verticale a volte scompare tutto e non è possibile tornare indietro
 
 NECESSARI
-- fix navbar con la nuova disposizione di catalogo libia
 
 MIGLIORIE
 - pulsante torna al catalogo nelle pagine dettaglio e ufficio dettaglio
@@ -18,6 +17,5 @@ MIGLIORIE
 - aggiungere nel catalogo anche la barra delle pagine in alto
 - aggiungere selezione anche meno di 100 targhette per pagina
 - modificare la box delle targhette scegliendo le info da mostrare
-- unificare la gestione dei cataloghi 
 - unformare la nomenclatura delle pagine
 

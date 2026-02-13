@@ -15,11 +15,11 @@ if [ $rc -ne 0 ]; then
 fi
 
 echo ""
-echo "Eseguendo site_stats.py..."
-python3 site_stats.py
+echo "Eseguendo static/statistics/site_stats.py..."
+python3 static/statistics/site_stats.py
 
 if [ $? -ne 0 ]; then
-    echo "ERRORE: site_stats.py fallito con codice $?"
+    echo "ERRORE: static/statistics/site_stats.py fallito con codice $?"
     exit $?
 fi
 

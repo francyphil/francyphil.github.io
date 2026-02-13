@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cartolina</title>
     <script src="/favicon-loader.js"></script>
-    <link rel="stylesheet" href="/navbar.css">
-    <link rel="stylesheet" href="/breadcrumb.css">
+    <link rel="stylesheet" href="/navbar/navbar.css">
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css">
     <style>
       body {
         font-family: sans-serif;
@@ -18,9 +18,9 @@
     </style>
   </head>
   <body>
-    <script src="/navbar.js"></script>
+    <script src="/navbar/navbar.js"></script>
     <div id="breadcrumbContainer"></div>
-    <script src="/breadcrumb.js"></script>
+    <script src="/breadcrumb/breadcrumb.js"></script>
 
     <div class="content-container">
       <h1>Cartolina</h1>
@@ -28,11 +28,11 @@
  
     </div>
     
-    <link rel="stylesheet" href="/footer.css">
-    <script src="/footer.js"></script>
+    <link rel="stylesheet" href="/footer/footer.css">
+    <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
-      fetch('/footer.html')
+      fetch('/footer/footer.html')
         .then(res => res.text())
         .then(html => {
           document.getElementById('footerContainer').innerHTML = html;

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Storia Postale</title>
     <script src="/favicon-loader.js"></script>
-    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/navbar/navbar.css" />
     <style>
       body {
         font-family: sans-serif;
@@ -187,16 +187,16 @@
       </a>
     </div>
 
-    <link rel="stylesheet" href="/footer.css" />
-    <script src="/footer.js"></script>
+    <link rel="stylesheet" href="/footer/footer.css" />
+    <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
-      fetch("/footer.html")
+      fetch("/footer/footer.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("footerContainer").innerHTML = html;
         });
     </script>
-    <script src="/navbar.js"></script>
+    <script src="/navbar/navbar.js"></script>
   </body>
 </html>

@@ -255,7 +255,7 @@ def write_unreferenced_regno_images(root_dir: Path, out_csv: Path, image_index: 
 
 
 def main():
-    project_dir = Path(__file__).parent
+    project_dir = Path(__file__).parent.parent.parent
     total_pages = count_html_pages(project_dir)
     total_images = count_images(project_dir)
     # costruisci un indice delle immagini una sola volta
@@ -295,7 +295,7 @@ def main():
 
     stats["total_targhette"] = total_targhette
     stats["total_localita"] = len(localita_set)
-    output_file = project_dir / "site_stats.json"
+    output_file = Path(__file__).parent / "site_stats.json"
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2, ensure_ascii=False)
     print("✓ Conteggio completato!")

@@ -16,7 +16,7 @@
   }
 
   function renderCatalogStats() {
-    fetch('/site_stats.json')
+    fetch('/static/statistics/site_stats.json')
       .then(res => {
         if (!res.ok) throw new Error('site_stats.json not found');
         return res.json();

@@ -8,7 +8,7 @@
     <script src="/favicon-loader.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/navbar/navbar.css" />
     <style>
       .catalog-row {
         display: flex;
@@ -345,21 +345,21 @@
     </div>
     <div id="catalogStatsContainer" class="catalog-stats-container"></div>
 
-    <link rel="stylesheet" href="/footer.css" />
-    <script src="/footer.js"></script>
+    <link rel="stylesheet" href="/footer/footer.css" />
+    <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
-      fetch("/footer.html")
+      fetch("/footer/footer.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("footerContainer").innerHTML = html;
         });
     </script>
-    <script src="/navbar.js"></script>
+    <script src="/navbar/navbar.js"></script>
     <script src="/catalog-stats.js"></script>
     <script>
       // Carica le statistiche dal file generato da Python
-      fetch("/site_stats.json")
+      fetch("/static/statistics/site_stats.json")
         .then((res) => res.json())
         .then((stats) => {
           // Anima i contatori con i dati dal file
