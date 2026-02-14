@@ -730,17 +730,14 @@
 
       container.appendChild(createArrow("next", page, totalPages));
 
+      // Centra il dot attivo orizzontalmente senza toccare lo scroll verticale
       const active = container.querySelector(".page-dot.active");
       if (active && container.scrollWidth > container.clientWidth) {
-        try {
-          active.scrollIntoView({
-            behavior: "smooth",
-            inline: "center",
-            block: "nearest",
-          });
-        } catch (e) {
-          active.scrollIntoView();
-        }
+        const containerRect = container.getBoundingClientRect();
+        const activeRect = active.getBoundingClientRect();
+        const offset = activeRect.left - containerRect.left
+                     - (containerRect.width / 2) + (activeRect.width / 2);
+        container.scrollLeft += offset;
       }
     });
   }

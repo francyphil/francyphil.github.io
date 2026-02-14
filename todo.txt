@@ -14,7 +14,6 @@ MIGLIORIE
 - per velocizzare vista quando seleziono targhetta tipo può convenire fare un json file che ha già fatto l'operazione. Altrimenti richiede migliaia di richieste e impiega un po'
 - forse i filtri fatti cosi non sono troppo comodi, magari nel mobile devono essere classici e questi si lasciano nella versione desktop
 - modificare logo regno
-- aggiungere nel catalogo anche la barra delle pagine in alto
 - aggiungere selezione anche meno di 100 targhette per pagina
 - modificare la box delle targhette scegliendo le info da mostrare
 - unformare la nomenclatura delle pagine
