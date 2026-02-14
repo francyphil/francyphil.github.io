@@ -28679,6 +28679,19 @@
     },
     {
         "Targhetta Tipo": 190,
+        "Targhetta Ufficio": 2008,
+        "extra": "R",
+        "Descrizione": "Fumatori di toscani provate …",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Milano",
+        "Denominazione ufficio": "Corrispondenze Centro P",
+        "Denominazione ufficio breve": "CorCentroP",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 190,
         "Targhetta Ufficio": 2009,
         "extra": "",
         "Descrizione": "Fumatori di toscani provate …",
@@ -28785,6 +28798,19 @@
         "Targhetta Tipo": 193,
         "Targhetta Ufficio": 2016,
         "extra": "",
+        "Descrizione": "Francobolli commemorativi di Montecassino",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Firenze",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 193,
+        "Targhetta Ufficio": 2016,
+        "extra": "A",
         "Descrizione": "Francobolli commemorativi di Montecassino",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -28966,7 +28992,7 @@
     {
         "Targhetta Tipo": 198,
         "Targhetta Ufficio": 2031,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "montecatini - opportuno continuare la cura …",
         "linkTarghetta": "",
         "Anno": 1930,
@@ -28979,7 +29005,7 @@
     {
         "Targhetta Tipo": 198,
         "Targhetta Ufficio": 2032,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "montecatini - opportuno continuare la cura …",
         "linkTarghetta": "",
         "Anno": 1930,
@@ -29031,7 +29057,7 @@
     {
         "Targhetta Tipo": 198,
         "Targhetta Ufficio": 2035,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "montecatini - opportuno continuare la cura …",
         "linkTarghetta": "",
         "Anno": 1930,
@@ -29044,7 +29070,7 @@
     {
         "Targhetta Tipo": 198,
         "Targhetta Ufficio": 2035,
-        "extra": "A",
+        "extra": "AR",
         "Descrizione": "montecatini - opportuno continuare la cura …",
         "linkTarghetta": "",
         "Anno": 1930,
@@ -29837,7 +29863,7 @@
     {
         "Targhetta Tipo": 189,
         "Targhetta Ufficio": 2082,
-        "extra": "",
+        "extra": "A",
         "Descrizione": "Fumatori di toscani provate …",
         "linkTarghetta": "",
         "Anno": 1930,
