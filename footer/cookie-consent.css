@@ -1,0 +1,65 @@
+#cookieConsentBanner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(25, 25, 25, 0.95);
+  color: #fff;
+  padding: 14px 18px;
+  display: none;
+  z-index: 99999;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+  font-size: 0.95em;
+}
+
+#cookieConsentBanner .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#cookieConsentBanner .message {
+  flex: 1 1 auto;
+  margin-right: 12px;
+}
+
+#cookieConsentBanner .actions {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#cookieConsentBanner button,
+#cookieConsentBanner a.button-link {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#cookieConsentBanner button.secondary {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+#cookieConsentBanner a.button-link {
+  display: inline-block;
+}
+
+@media (max-width: 700px) {
+  #cookieConsentBanner .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #cookieConsentBanner .actions {
+    justify-content: center;
+  }
+}
