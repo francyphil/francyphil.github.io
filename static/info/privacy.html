@@ -97,34 +97,50 @@
 
       <h2>3. Risorse di terze parti</h2>
       <p>
-        Il sito può caricare risorse esterne da servizi di terze parti per il
-        corretto funzionamento delle pagine. In tali casi, il browser dell'utente
-        si connette direttamente ai server di questi fornitori, i quali potrebbero
-        raccogliere dati tecnici (ad esempio l'indirizzo IP). I servizi attualmente
-        utilizzati includono:
+        Il sito può avvalersi di risorse esterne per funzionalità avanzate
+        (grafici, mappe, ecc.). Quando possibile le risorse vengono servite
+        localmente dal sito; quando ciò non è possibile il browser si connette
+        ai server dei fornitori esterni e questi potrebbero raccogliere dati
+        tecnici (ad esempio l'indirizzo IP).
       </p>
       <ul>
         <li>
-          <strong>Google Fonts</strong> (Google LLC) – per il caricamento di
-          caratteri tipografici. 
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy di Google</a>.
+          <strong>Font</strong> — La famiglia tipografica <em>Playfair Display</em>
+          è ora servita localmente dal sito (percorso: <code>/static/fonts/playfair/</code>).
+          I file dei font e la relativa licenza vengono conservati nel repository quando possibile.
         </li>
         <li>
-          <strong>jsDelivr / unpkg</strong> – CDN per librerie JavaScript
-          (Chart.js, Leaflet). 
-          <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net" target="_blank" rel="noopener noreferrer">Privacy Policy di jsDelivr</a>.
+          <strong>Chart.js</strong> — libreria usata per i grafici. Per rispetto della privacy
+          la libreria viene caricata dal CDN (jsDelivr) <em>solo dopo</em> che l'utente
+          ha dato il consenso ai cookie/terze parti; in assenza di consenso il sito
+          mostra un placeholder che invita ad accettare per attivare la funzione.
+        </li>
+        <li>
+          <strong>Leaflet</strong> — libreria per mappe interattive. Analogamente a Chart.js,
+          Leaflet viene caricato da CDN (unpkg) solamente dopo consenso esplicito; in caso
+          contrario la mappa è sostituita da un messaggio informativo con il pulsante per accettare.
         </li>
       </ul>
 
-      <h2>4. Cookie</h2>
+      <h2>4. Cookie e meccanismo di consenso</h2>
       <p>
-        Questo sito <strong>non utilizza cookie propri</strong> di alcun tipo
-        (né tecnici, né di profilazione, né analitici).
+        Questo sito <strong>non utilizza cookie propri</strong> per tracciare gli utenti.
+        Per ricordare la preferenza di consenso (accetta / rifiuta) il sito utilizza
+        il meccanismo di storage del browser: <strong>localStorage</strong>.
       </p>
       <p>
-        Le risorse di terze parti caricate (vedi punto 3) potrebbero impostare
-        cookie tecnici propri. Per maggiori informazioni, si rimanda alle
-        rispettive privacy policy linkate sopra.
+        Quando l'utente rifiuta l'uso di terze parti, il sito conserva la scelta
+        in <code>localStorage</code> (chiave: <code>cookie_consent_status</code>,
+        valori possibili: <code>accepted</code> o <code>rejected</code>) e non carica
+        automaticamente risorse esterne che trasferirebbero dati a terzi (es.
+        Chart.js, Leaflet). Se l'utente accetta, tali risorse vengono caricate e
+        le funzionalità corrispondenti si attivano.
+      </p>
+      <p>
+        Il banner di consenso è non intrusivo e compare fino a quando l'utente
+        non prende una decisione. Se l'utente rifiuta, il banner viene nascosto
+        e le funzionalità che richiedono risorse esterne rimangono disattivate
+        fino a nuova scelta.
       </p>
 
       <h2>5. Finalità del trattamento</h2>

@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="/navbar/navbar.css">
     <link rel="stylesheet" href="/breadcrumb/breadcrumb.css">
     
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet CSS (caricamento condizionale in base al consenso) -->
     
     <style>
       body {
@@ -175,8 +174,41 @@
         });
     </script>
 
-    <!-- Leaflet JS - deve caricare PRIMA dello script della mappa -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet JS - caricamento condizionale in base al consenso -->
+    <script>
+      (function(){
+        function loadCSS(href, cb){
+          var l = document.createElement('link'); l.rel='stylesheet'; l.href=href; l.onload = cb || function(){}; l.onerror=function(){console.error('leaflet css failed', href)}; document.head.appendChild(l);
+        }
+        function loadScript(src, cb){
+          var s = document.createElement('script'); s.src = src; s.onload = cb || function(){}; s.onerror=function(){console.error('leaflet js failed', src)}; document.body.appendChild(s);
+        }
+        var mapEl = document.getElementById('map');
+        function showPlaceholder(){
+          if(!mapEl) return;
+          mapEl.innerHTML = '<div class="third-party-placeholder">Servizio di terze parti: accetta l\'uso di cookie per attivarlo. <div><button id="acceptLeafletBtn">Accetta</button></div></div>';
+          var b = document.getElementById('acceptLeafletBtn');
+          if(b) b.addEventListener('click', function(){
+            try{ localStorage.setItem('cookie_consent_status','accepted'); }catch(e){}
+            injectAndInit();
+          });
+        }
+        function injectAndInit(){
+          loadCSS('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+          loadScript('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', function(){
+            if (typeof initMap === 'function') initMap();
+          });
+        }
+        try{
+          var consent = localStorage.getItem('cookie_consent_status');
+          if(consent === 'accepted'){
+            injectAndInit();
+          } else {
+            showPlaceholder();
+          }
+        }catch(e){ showPlaceholder(); }
+      })();
+    </script>
     
     <script>
       // Funzioni per il lightbox
@@ -270,18 +302,7 @@
           });
       }
 
-      // Aspetta che Leaflet sia caricato E che il DOM sia pronto
-      if (typeof L !== 'undefined') {
-        // Leaflet già caricato
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', initMap);
-        } else {
-          initMap();
-        }
-      } else {
-        // Aspetta che Leaflet si carichi
-        window.addEventListener('load', initMap);
-      }
+      // L'inizializzazione di `initMap` viene eseguita dal loader condizionale (vedi sopra)
     </script>
   </body>
 </html>

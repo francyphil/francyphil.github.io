@@ -1,0 +1,44 @@
+/* Self-hosted fonts stylesheet
+  Fonts are stored under /services/fonts/ in this repository.
+  Files present:
+    - PlayfairDisplay-Regular.ttf
+    - PlayfairDisplay-Bold.ttf
+    - PlayfairDisplay-Black.ttf
+
+  Recommended: convert to WOFF2 for smaller downloads and add those files
+  alongside the TTF. If you add WOFF2/WOFF files, update the src() order
+  to prefer WOFF2.
+*/
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display'),
+       url('/services/fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+       url('/services/fonts/PlayfairDisplay-Regular.woff') format('woff'),
+       url('/services/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Playfair Display Bold'),
+       url('/services/fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
+       url('/services/fonts/PlayfairDisplay-Bold.woff') format('woff'),
+       url('/services/fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Playfair Display Black'),
+       url('/services/fonts/PlayfairDisplay-Black.woff2') format('woff2'),
+       url('/services/fonts/PlayfairDisplay-Black.woff') format('woff'),
+       url('/services/fonts/Playfair_Display/static/PlayfairDisplay-Black.ttf') format('truetype');
+  font-display: swap;
+}

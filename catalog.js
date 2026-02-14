@@ -995,58 +995,110 @@
 
   // ── Grafico ──────────────────────────────────────────────────────────
 
-  const ctx = document.getElementById("grafico").getContext("2d");
-  let chart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: [],
-      datasets: [
-        {
-          label: "Numero annulli",
-          data: [],
-          backgroundColor: "rgba(54,162,235,0.6)",
-          borderColor: "rgba(54,162,235,1)",
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        x: { title: { display: true, text: "Anno" } },
-        y: {
-          title: { display: true, text: "Numero di annulli" },
-          beginAtZero: true,
-          ticks: {
-            stepSize: 1,
-            callback: function (value) {
-              return Math.floor(value);
+  // Grafico: viene inizializzato solo se la libreria Chart.js è disponibile.
+  let chart = null;
+
+  function createChartInstance() {
+    const canvas = document.getElementById("grafico");
+    if (!canvas) return null;
+    const ctx = canvas.getContext("2d");
+    return new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: [],
+        datasets: [
+          {
+            label: "Numero annulli",
+            data: [],
+            backgroundColor: "rgba(54,162,235,0.6)",
+            borderColor: "rgba(54,162,235,1)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: { title: { display: true, text: "Anno" } },
+          y: {
+            title: { display: true, text: "Numero di annulli" },
+            beginAtZero: true,
+            ticks: {
+              stepSize: 1,
+              callback: function (value) {
+                return Math.floor(value);
+              },
             },
           },
         },
       },
-    },
-  });
+    });
+  }
 
   function aggiornaGrafico(records) {
+    // Se chart non esiste, non fare nulla
+    if (!chart) return;
     const conteggio = {};
     records.forEach((r) => {
-      const y =
-        r && r.Anno !== undefined && r.Anno !== null ? r.Anno : null;
+      const y = r && r.Anno !== undefined && r.Anno !== null ? r.Anno : null;
       if (y !== null) {
         const key = String(y);
         conteggio[key] = (conteggio[key] || 0) + 1;
       }
     });
-    const anni = Object.keys(conteggio).sort(
-      (a, b) => Number(a) - Number(b),
-    );
+    const anni = Object.keys(conteggio).sort((a, b) => Number(a) - Number(b));
     const valori = anni.map((a) => conteggio[a]);
     chart.data.labels = anni;
     chart.data.datasets[0].data = valori;
     chart.update();
   }
+
+  // Controllo consenso e comportamento placeholder
+  function ensureChartAvailability() {
+    const wrapper = document.getElementById('graficoWrapper');
+    function showPlaceholder() {
+      if (!wrapper) return;
+      wrapper.innerHTML = '<div class="third-party-placeholder">Servizio di terze parti: accetta l\'uso di cookie per attivarlo. <button id="acceptChartBtn">Accetta</button></div>';
+      const btn = document.getElementById('acceptChartBtn');
+      if (btn) btn.addEventListener('click', function(){
+        try { localStorage.setItem('cookie_consent_status','accepted'); } catch(e){}
+        loadScript('https://cdn.jsdelivr.net/npm/chart.js', function(){
+          chart = createChartInstance();
+          aggiornaGrafico(data);
+        });
+      });
+    }
+
+    try {
+      const consent = localStorage.getItem('cookie_consent_status');
+      if (consent === 'accepted' && typeof Chart !== 'undefined') {
+        chart = createChartInstance();
+      } else if (consent === 'accepted' && typeof Chart === 'undefined') {
+        // load Chart.js then create
+        loadScript('https://cdn.jsdelivr.net/npm/chart.js', function(){
+          chart = createChartInstance();
+        });
+      } else {
+        // no consent -> show placeholder
+        showPlaceholder();
+      }
+    } catch(e) {
+      showPlaceholder();
+    }
+  }
+
+  // Utility per caricare script dinamicamente
+  function loadScript(src, cb) {
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = cb || function(){};
+    s.onerror = function(){ console.error('Failed to load script', src); };
+    document.body.appendChild(s);
+  }
+
+  // Avvia controllo disponibilità chart
+  ensureChartAvailability();
 
   // ── Eventi globali ───────────────────────────────────────────────────
 
