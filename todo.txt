@@ -1,5 +1,4 @@
 BUGS
-- se sono in modalità. mobile nel catalogo con il cellulare non riesco a scrollare perchè mi butta spesso in basso. 
 - a volte scompare tutto in modalità mobile. Penso rimanga incastrato in modalità tabella ma poi in verticale è nascosta ma non è selezionabile il tipo in verticale mobile!
 - in modalità mobile verticale a volte scompare tutto e non è possibile tornare indietro
 
