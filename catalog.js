@@ -676,24 +676,24 @@
   // ── Paginazione ──────────────────────────────────────────────────────
 
   function renderPagination(totalItems, perPage, page) {
-    const container = document.getElementById("pagination");
-    container.innerHTML = "";
+    // include any top pagination that may have an explicit id
+    const top = document.getElementById("pagination-top");
+    const cls = Array.from(document.querySelectorAll(".pagination"));
+    const containers = cls.slice();
+    if (top) containers.unshift(top);
+    if (!containers || containers.length === 0) return;
 
-    if (!perPage || perPage >= totalItems) {
-      container.style.display = "none";
-      return;
-    }
-    container.style.display = "flex";
+    const totalPages = perPage === 0 ? 1 : Math.max(1, Math.ceil(totalItems / perPage));
 
-    const totalPages = Math.max(1, Math.ceil(totalItems / perPage));
+    const maxDots = 11;
 
-    const createArrow = (dir) => {
+    const createArrow = (dir, currentPage, totalPages) => {
       const btn = document.createElement("button");
       btn.className = "page-arrow";
       btn.textContent = dir === "prev" ? "⟨" : "⟩";
       if (
-        (dir === "prev" && page <= 1) ||
-        (dir === "next" && page >= totalPages)
+        (dir === "prev" && currentPage <= 1) ||
+        (dir === "next" && currentPage >= totalPages)
       ) {
         btn.classList.add("disabled");
       }
@@ -704,36 +704,45 @@
       return btn;
     };
 
-    container.appendChild(createArrow("prev"));
+    containers.forEach((container) => {
+      container.innerHTML = "";
 
-    const maxDots = 11;
-    let startPage = Math.max(1, page - Math.floor(maxDots / 2));
-    let endPage = Math.min(totalPages, startPage + maxDots - 1);
-    if (endPage - startPage < maxDots - 1)
-      startPage = Math.max(1, endPage - maxDots + 1);
-
-    for (let p = startPage; p <= endPage; p++) {
-      const dot = document.createElement("button");
-      dot.className = "page-dot" + (p === page ? " active" : "");
-      dot.textContent = p;
-      dot.addEventListener("click", () => gotoPage(p));
-      container.appendChild(dot);
-    }
-
-    container.appendChild(createArrow("next"));
-
-    const active = container.querySelector(".page-dot.active");
-    if (active && container.scrollWidth > container.clientWidth) {
-      try {
-        active.scrollIntoView({
-          behavior: "smooth",
-          inline: "center",
-          block: "nearest",
-        });
-      } catch (e) {
-        active.scrollIntoView();
+      if (!perPage || perPage >= totalItems) {
+        container.style.display = "none";
+        return;
       }
-    }
+      container.style.display = "flex";
+
+      container.appendChild(createArrow("prev", page, totalPages));
+
+      let startPage = Math.max(1, page - Math.floor(maxDots / 2));
+      let endPage = Math.min(totalPages, startPage + maxDots - 1);
+      if (endPage - startPage < maxDots - 1)
+        startPage = Math.max(1, endPage - maxDots + 1);
+
+      for (let p = startPage; p <= endPage; p++) {
+        const dot = document.createElement("button");
+        dot.className = "page-dot" + (p === page ? " active" : "");
+        dot.textContent = p;
+        dot.addEventListener("click", () => gotoPage(p));
+        container.appendChild(dot);
+      }
+
+      container.appendChild(createArrow("next", page, totalPages));
+
+      const active = container.querySelector(".page-dot.active");
+      if (active && container.scrollWidth > container.clientWidth) {
+        try {
+          active.scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+            block: "nearest",
+          });
+        } catch (e) {
+          active.scrollIntoView();
+        }
+      }
+    });
   }
 
   function gotoPage(p) {
