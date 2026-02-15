@@ -31097,6 +31097,19 @@
     },
     {
         "Targhetta Tipo": 201,
+        "Targhetta Ufficio": 2166,
+        "extra": "R",
+        "Descrizione": "Servitevi dei pacchi postali urgenti",
+        "linkTarghetta": "",
+        "Anno": 1930,
+        "Località": "Palermo",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 201,
         "Targhetta Ufficio": 2167,
         "extra": "",
         "Descrizione": "Servitevi dei pacchi postali urgenti",
@@ -31266,8 +31279,8 @@
     },
     {
         "Targhetta Tipo": 203,
-        "Targhetta Ufficio": 2178,
-        "extra": "A",
+        "Targhetta Ufficio": 2179,
+        "extra": "",
         "Descrizione": "Servitevi dei pacchi postali urgenti",
         "linkTarghetta": "",
         "Anno": 1930,
@@ -31280,7 +31293,7 @@
     {
         "Targhetta Tipo": 203,
         "Targhetta Ufficio": 2179,
-        "extra": "",
+        "extra": "A",
         "Descrizione": "Servitevi dei pacchi postali urgenti",
         "linkTarghetta": "",
         "Anno": 1930,
