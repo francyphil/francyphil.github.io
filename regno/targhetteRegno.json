@@ -32006,6 +32006,19 @@
         "linkDatario": ""
     },
     {
+        "Targhetta Tipo": 208,
+        "Targhetta Ufficio": 2225,
+        "extra": "A",
+        "Descrizione": "L'olio d'oliva fa crescere sani e forti i bambini",
+        "linkTarghetta": "",
+        "Anno": 1930,
+        "Località": "Torino",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Targhetta Tipo": 209,
         "Targhetta Ufficio": 2226,
         "extra": "",
@@ -33294,7 +33307,7 @@
     },
     {
         "Targhetta Tipo": 190,
-        "Targhetta Ufficio": 2316,
+        "Targhetta Ufficio": 2315,
         "extra": "A",
         "Descrizione": "Fumatori di toscani provate …",
         "linkTarghetta": "",
@@ -33387,6 +33400,19 @@
         "Targhetta Tipo": 215,
         "Targhetta Ufficio": 2320,
         "extra": "",
+        "Descrizione": "Fumatori di toscani provate …",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Firenze",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 215,
+        "Targhetta Ufficio": 2320,
+        "extra": "A",
         "Descrizione": "Fumatori di toscani provate …",
         "linkTarghetta": "",
         "Anno": 1931,
@@ -33619,6 +33645,19 @@
     },
     {
         "Targhetta Tipo": 217,
+        "Targhetta Ufficio": 2335,
+        "extra": "R",
+        "Descrizione": "Utenti domandate l'apertura di un ….",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Genova",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 217,
         "Targhetta Ufficio": 2336,
         "extra": "",
         "Descrizione": "Utenti domandate l'apertura di un ….",
@@ -33640,6 +33679,19 @@
         "Località": "Genova",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 217,
+        "Targhetta Ufficio": 2337,
+        "extra": "R",
+        "Descrizione": "Utenti domandate l'apertura di un ….",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Genova",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "",
         "Datario": "",
         "linkDatario": ""
     },
@@ -33705,6 +33757,19 @@
         "Località": "Messina",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 217,
+        "Targhetta Ufficio": 2342,
+        "extra": "R",
+        "Descrizione": "Utenti domandate l'apertura di un ….",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Messina",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "",
         "Datario": "",
         "linkDatario": ""
     },
@@ -34160,6 +34225,19 @@
         "Località": "Roma",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 218,
+        "Targhetta Ufficio": 2376,
+        "extra": "A",
+        "Descrizione": "Gli uffici postali accettano per l'incasso a mezzo ..",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "",
         "Datario": "",
         "linkDatario": ""
     },
