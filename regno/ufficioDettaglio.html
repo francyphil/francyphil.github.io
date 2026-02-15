@@ -252,8 +252,22 @@
           const block = document.getElementById("datariBlock");
           listContainer.innerHTML = "";
 
-          const seen = new Set();
+          // Raccogli datari unici e ordinali per nome (Datario)
+          const uniqueMap = new Map();
           records.forEach((r) => {
+            const link = (r.linkDatario || "").trim();
+            if (!link) return;
+            if (uniqueMap.has(link)) return;
+            uniqueMap.set(link, r);
+          });
+          const sortedDatari = Array.from(uniqueMap.values()).sort((a, b) => {
+            const nameA = (a.Datario || "").trim().toLowerCase();
+            const nameB = (b.Datario || "").trim().toLowerCase();
+            return nameA.localeCompare(nameB);
+          });
+
+          const seen = new Set();
+          sortedDatari.forEach((r) => {
             const link = (r.linkDatario || "").trim();
             if (!link) return;
             if (seen.has(link)) return;
