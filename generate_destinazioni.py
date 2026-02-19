@@ -7,6 +7,7 @@ basandosi sulle immagini in static/jpeg/destinazioni
 import os
 import json
 import re
+from pathlib import Path
 
 # Database coordinate città principali
 COORDINATE_DB = {
@@ -139,7 +140,18 @@ COORDINATE_DB = {
     'Egitto': [30.0444, 31.2357],
     'Libia': [32.8872, 13.1913],
     'Kenya': [1.2921, 36.8219],
+    # Aggiunte per file recenti mancanti
+    'Etiopia': [8.9806, 38.7578],
+    'AddisAbeba': [8.9806, 38.7578],
+    'Romania': [44.4268, 26.1025],
+    'Bucarest': [44.4268, 26.1025],
+    'San': [43.9424, 12.4578],
+    'Marino': [43.9424, 12.4578],
+    'San_Marino': [43.9424, 12.4578],
 }
+
+# Mappa per lookup case-insensitive
+COORDINATE_DB_LOWER = {k.lower(): v for k, v in COORDINATE_DB.items()}
 
 # Tipo di destinazione in base alla regione
 def get_tipo_destinazione(paese, citta):
@@ -197,27 +209,48 @@ def get_coordinate(paese, citta):
         'Principato': 'Monaco'
     }
     
-    # Prova prima con la città
+    # Funzione helper per lookup case-insensitive
+    def lookup_key(key):
+        if not key:
+            return None
+        k = str(key).strip()
+        # try direct lowercased
+        if k.lower() in COORDINATE_DB_LOWER:
+            return COORDINATE_DB_LOWER[k.lower()]
+        # try title-cased / underscores replaced
+        k2 = k.replace('_', ' ').title().replace(' ', '_')
+        if k2.lower() in COORDINATE_DB_LOWER:
+            return COORDINATE_DB_LOWER[k2.lower()]
+        # try removing trailing digits
+        k3 = re.sub(r'\d+$', '', k)
+        if k3.lower() in COORDINATE_DB_LOWER:
+            return COORDINATE_DB_LOWER[k3.lower()]
+        return None
+
+    # Controlla casi speciali nella città
     if citta:
-        # Controlla se citta contiene un caso speciale
         for key, value in special_cases.items():
-            if key in str(citta):
-                if value in COORDINATE_DB:
-                    return COORDINATE_DB[value]
-        
-        if citta in COORDINATE_DB:
-            return COORDINATE_DB[citta]
-    
+            if key.lower() in str(citta).lower():
+                res = lookup_key(value)
+                if res:
+                    return res
+
+        res = lookup_key(citta)
+        if res:
+            return res
+
     # Controlla casi speciali nel paese
     if paese in special_cases:
         lookup = special_cases[paese]
-        if lookup in COORDINATE_DB:
-            return COORDINATE_DB[lookup]
-    
-    # Poi col paese normale
-    if paese in COORDINATE_DB:
-        return COORDINATE_DB[paese]
-    
+        res = lookup_key(lookup)
+        if res:
+            return res
+
+    # Poi col paese normale (case-insensitive)
+    res = lookup_key(paese)
+    if res:
+        return res
+
     return None
 
 def main():
@@ -230,16 +263,29 @@ def main():
     destinazioni = []
     files_without_coords = []
     
-    # Leggi tutti i file
-    files = [f for f in os.listdir(base_path) 
-             if f.lower().endswith(('.jpeg', '.jpg', '.png')) and not f.startswith('.')]
-    
-    for filename in sorted(files):
+    # Estensioni supportate (aggiungi altre se necessario)
+    SUPPORTED_EXT = ('.jpeg', '.jpg', '.png', '.gif', '.pdf', '.svg', '.tiff', '.webp')
+
+    # Scansione ricorsiva della directory per includere nuove immagini/underfolders
+    files = []
+    for root, dirs, filenames in os.walk(base_path):
+        # salta directory nascoste
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        for fn in filenames:
+            if fn.startswith('.'):
+                continue
+            if fn.lower().endswith(SUPPORTED_EXT):
+                full_path = os.path.join(root, fn)
+                rel_path = os.path.relpath(full_path, base_path)
+                files.append((full_path, rel_path))
+
+    for full_path, rel_path in sorted(files, key=lambda x: x[1]):
+        filename = os.path.basename(full_path)
         paese, citta = parse_filename(filename)
         coords = get_coordinate(paese, citta)
         
         if coords is None:
-            files_without_coords.append(filename)
+            files_without_coords.append(rel_path)
             continue
         
         # Crea nome leggibile
@@ -250,10 +296,13 @@ def main():
             nome_display = paese.replace('_', ' ')
             paese_display = paese.replace('_', ' ')
         
+        # costruisci l'URL relativo alla cartella static
+        image_url = f'/static/jpeg/destinazioni/{rel_path.replace(os.sep, "/")}'
+
         destinazione = {
             'nome': nome_display,
             'coords': coords,
-            'immagine': f'/static/jpeg/destinazioni/{filename}',
+            'immagine': image_url,
             'paese': paese_display,
             'citta': citta.replace('_', ' ') if citta else None
         }

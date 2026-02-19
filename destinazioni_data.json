@@ -20,6 +20,16 @@
     "citta": "Bagdad"
   },
   {
+    "nome": "Albania",
+    "coords": [
+      41.3275,
+      19.8187
+    ],
+    "immagine": "/static/jpeg/destinazioni/Albania.pdf",
+    "paese": "Albania",
+    "citta": null
+  },
+  {
     "nome": "BuenosAires",
     "coords": [
       -34.6037,
@@ -318,6 +328,16 @@
     "immagine": "/static/jpeg/destinazioni/Estonia_1938.jpeg",
     "paese": "Estonia",
     "citta": null
+  },
+  {
+    "nome": "AddisAbeba",
+    "coords": [
+      8.9806,
+      38.7578
+    ],
+    "immagine": "/static/jpeg/destinazioni/Etiopia_AddisAbeba.jpeg",
+    "paese": "Etiopia",
+    "citta": "AddisAbeba"
   },
   {
     "nome": "Finlandia",
@@ -740,6 +760,16 @@
     "citta": "di Monaco"
   },
   {
+    "nome": "Bucarest",
+    "coords": [
+      44.4268,
+      26.1025
+    ],
+    "immagine": "/static/jpeg/destinazioni/Romania_Bucarest.jpeg",
+    "paese": "Romania",
+    "citta": "Bucarest"
+  },
+  {
     "nome": "San Pietroburgo",
     "coords": [
       59.9311,
@@ -758,6 +788,16 @@
     "immagine": "/static/jpeg/destinazioni/SanMarino.jpeg",
     "paese": "SanMarino",
     "citta": null
+  },
+  {
+    "nome": "Marino",
+    "coords": [
+      43.9424,
+      12.4578
+    ],
+    "immagine": "/static/jpeg/destinazioni/San_Marino.jpeg",
+    "paese": "San",
+    "citta": "Marino"
   },
   {
     "nome": "Dakar",
@@ -848,6 +888,16 @@
     "immagine": "/static/jpeg/destinazioni/Tunisia.jpeg",
     "paese": "Tunisia",
     "citta": null
+  },
+  {
+    "nome": "Sfay",
+    "coords": [
+      34.7406,
+      10.7603
+    ],
+    "immagine": "/static/jpeg/destinazioni/Tunisia_Sfay.pdf",
+    "paese": "Tunisia",
+    "citta": "Sfay"
   },
   {
     "nome": "Ankara",
