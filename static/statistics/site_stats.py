@@ -158,6 +158,7 @@ def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict
             extra_part = f"_{str(extra).strip()}" if extra and str(extra).strip() != "" else ""
             filename = f"prev_{uff}{extra_part}.jpeg"
             filename_l = filename.lower()
+            found = False
             # usa l'indice se disponibile per evitare ripetute rglob()
             if image_index is not None:
                 folder_prefix = Path(folder).as_posix()

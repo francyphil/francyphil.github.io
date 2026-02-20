@@ -1,4 +1,733 @@
 section,expected_filename,Targhetta Ufficio,extra,Descrizione,Località
+Regno,prev_35.jpeg,35,,Bandiera VEIII,Roma
+Regno,prev_42.jpeg,42,,Bandiera VEIII,Napoli
+Regno,prev_52.jpeg,52,,Poste Italiane - Torino  ( Krag ),Torino
+Regno,prev_61_A.jpeg,61,A,Pregate i vostri corrispondenti    ( Krag ),Roma
+Regno,prev_74.jpeg,74,,Pregate i vostri corrispondenti,Genova
+Regno,prev_82_A.jpeg,82,A,Pregate i vostri corrispondenti,Torino
+Regno,prev_102_A.jpeg,102,A,Pregate i vostri corrispondenti,Bari
+Regno,prev_120_A.jpeg,120,A,Pregate i vostri corrispondenti,Torino
+Regno,prev_174.jpeg,174,,Rinascente - attualmente vendita del bianco,Firenze
+Regno,prev_176.jpeg,176,,Rinascente - attualmente vendita del bianco,Milano
+Regno,prev_189.jpeg,189,,tingete tende - lidos - super colore,Napoli
+Regno,prev_192_A.jpeg,192,A,tingete tende - lidos - super colore,Torino
+Regno,prev_212.jpeg,212,,Votate la lista nazionale,Caserta
+Regno,prev_218.jpeg,218,,Votate la lista nazionale,Firenze
+Regno,prev_220_A.jpeg,220,A,Votate la lista nazionale,Foggia
+Regno,prev_251.jpeg,251,,Votate la lista nazionale,Venezia
+Regno,prev_258_R.jpeg,258,R,Tende Ettore Moretti ( senza ombra ),Milano
+Regno,prev_267.jpeg,267,,Afro Ballari ( con linea divisoria ),Genova
+Regno,prev_268_A.jpeg,268,A,Afro Ballari ( con linea divisoria ),Genova
+Regno,prev_270.jpeg,270,,Afro Ballari ( con linea divisoria ),Genova
+Regno,prev_271.jpeg,271,,Afro Ballari ( con linea divisoria ),Genova
+Regno,prev_274_A.jpeg,274,A,Afro Ballari ( con linea divisoria ),Milano
+Regno,prev_276.jpeg,276,,Afro Ballari ( con linea divisoria ),Milano
+Regno,prev_277.jpeg,277,,Afro Ballari ( con linea divisoria ),Milano
+Regno,prev_280.jpeg,280,,Afro Ballari ( con linea divisoria ),Roma
+Regno,prev_283.jpeg,283,,Afro Ballari ( con linea divisoria ),Torino
+Regno,prev_295_A.jpeg,295,A,Tende Ettore Moretti ( con ombra ),Milano
+Regno,prev_297.jpeg,297,,Tende Ettore Moretti ( con ombra ),Milano
+Regno,prev_302_A.jpeg,302,A,Salsomaggiore - Le piu belle terme del Mondo - Tipo 2,Roma
+Regno,prev_305_R.jpeg,305,R,Salsomaggiore - Le piu belle terme del Mondo - Tipo 2,Torino
+Regno,prev_307.jpeg,307,,A La Rinascente novità di stagione ( rondini ),Bologna
+Regno,prev_322.jpeg,322,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Milano
+Regno,prev_323.jpeg,323,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Palermo
+Regno,prev_325.jpeg,325,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Torino
+Regno,prev_328.jpeg,328,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Venezia
+Regno,prev_329_A.jpeg,329,A,Catalogo auto Ansaldo,Roma
+Regno,prev_350.jpeg,350,,Linoleum - pavimento senza rivali,Torino
+Regno,prev_357.jpeg,357,,Linoleum - Pavimento moderno,Napoli
+Regno,prev_360.jpeg,360,,Linoleum - Pavimento moderno,Roma
+Regno,prev_362_A.jpeg,362,A,Mata hari,Alessandria
+Regno,prev_365.jpeg,365,,Mata hari,Bari
+Regno,prev_366.jpeg,366,,Mata hari,Bergamo
+Regno,prev_370.jpeg,370,,Mata hari,Cuneo
+Regno,prev_370_A.jpeg,370,A,Mata hari,Caserta
+Regno,prev_373_A.jpeg,373,A,Mata hari,Foggia
+Regno,prev_375_A.jpeg,375,A,Mata hari,Genova
+Regno,prev_376.jpeg,376,,Mata hari,Livorno
+Regno,prev_381.jpeg,381,,Mata hari,Modena
+Regno,prev_389_B.jpeg,389,B,Mata hari,Torino
+Regno,prev_393.jpeg,393,,Mata hari,Venezia
+Regno,prev_398.jpeg,398,,Mata hari ( col trattino prima e dopo 'pubblica' ),Genova
+Regno,prev_400.jpeg,400,,Mata hari ( col trattino prima e dopo 'pubblica' ),Milano
+Regno,prev_412.jpeg,412,,Gran premio Milano- San Siro,Milano
+Regno,prev_413_A.jpeg,413,A,Gran premio Milano- San Siro,Milano
+Regno,prev_414_A.jpeg,414,A,Gran premio Milano- San Siro,Milano
+Regno,prev_414_B.jpeg,414,B,Gran premio Milano- San Siro,Milano
+Regno,prev_416.jpeg,416,,Gran premio Milano- San Siro,Milano
+Regno,prev_417.jpeg,417,,Gran premio Milano- San Siro,Torino
+Regno,prev_418_B.jpeg,418,B,Gran premio Milano- San Siro,Torino
+Regno,prev_421.jpeg,421,,Recoaro,Torino
+Regno,prev_426_A.jpeg,426,A,Afro Ballari ( senza linea divisoria ),Genova
+Regno,prev_429_A.jpeg,429,A,Afro Ballari ( senza linea divisoria ),Milano
+Regno,prev_431.jpeg,431,,Afro Ballari ( senza linea divisoria ),Milano
+Regno,prev_435.jpeg,435,,Afro Ballari ( senza linea divisoria ),Roma
+Regno,prev_436_A.jpeg,436,A,Afro Ballari ( senza linea divisoria ),Roma
+Regno,prev_437.jpeg,437,,Afro Ballari ( senza linea divisoria ),Torino
+Regno,prev_438.jpeg,438,,Afro Ballari ( senza linea divisoria ),Torino
+Regno,prev_439_A.jpeg,439,A,Afro Ballari ( senza linea divisoria ),Torino
+Regno,prev_441_R.jpeg,441,R,Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 2,Torino
+Regno,prev_443.jpeg,443,,Salsomaggiore - Monumentali Terme Berzieri Maggio - Ottobre,Genova
+Regno,prev_446.jpeg,446,,Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 1,Genova
+Regno,prev_453.jpeg,453,,Salsomaggiore - Da e Ridà la vita,Torino
+Regno,prev_455.jpeg,455,,Salsomaggiore - Per chi ama la propria salute,Genova
+Regno,prev_457.jpeg,457,,Lingue - berlitz school,Milano
+Regno,prev_459.jpeg,459,,Salsomaggiore - Regi stabilimenti termali acque salso bromo jodiche,Firenze
+Regno,prev_461.jpeg,461,,Salsomaggiore - Regi stabilimenti termali acque salso bromo jodiche,Milano
+Regno,prev_462.jpeg,462,,Salsomaggiore - Regi stabilimenti termali acque salso bromo jodiche,Torino
+Regno,prev_462_R.jpeg,462,R,Salsomaggiore - Regi stabilimenti termali acque salso bromo jodiche,Torino
+Regno,prev_465_R.jpeg,465,R,Salsomaggiore - Per informazioni ufficio informaz. Terme,Torino
+Regno,prev_467_A.jpeg,467,A,Salsomaggiore - Acque salso bromo jodiche Marzo Novembre - Tipo 1,Roma
+Regno,prev_481_A.jpeg,481,A,Saldi La Rinascente - occasioni in tutti i riparti,Palermo
+Regno,prev_485.jpeg,485,,Salsomaggiore - Dove andare ? Salsomaggiore,Palermo
+Regno,prev_486.jpeg,486,,Arena nuova -  D'estate a Milano,Milano
+Regno,prev_487.jpeg,487,,Arena nuova -  D'estate a Milano,Milano
+Regno,prev_494.jpeg,494,,Articoli per la casa - La Rinascente ( casetta ),Bologna
+Regno,prev_496.jpeg,496,,Articoli per la casa - La Rinascente ( casetta ),Catania
+Regno,prev_497.jpeg,497,,Articoli per la casa - La Rinascente ( casetta ),Catania
+Regno,prev_498.jpeg,498,,Articoli per la casa - La Rinascente ( casetta ),Como
+Regno,prev_503.jpeg,503,,Articoli per la casa - La Rinascente ( casetta ),Napoli
+Regno,prev_508.jpeg,508,,Articoli per la casa - La Rinascente ( casetta ),Torino
+Regno,prev_509.jpeg,509,,Biscotti Digerini & Marinai - Firenze,Firenze
+Regno,prev_510_B.jpeg,510,B,Veglia la sveglia mondiale - acquistatela,Ancona
+Regno,prev_510_C.jpeg,510,C,Veglia la sveglia mondiale - acquistatela,Genova
+Regno,prev_513.jpeg,513,,Veglia la sveglia mondiale - acquistatela,Palermo
+Regno,prev_514.jpeg,514,,Veglia la sveglia mondiale - acquistatela,Pavia
+Regno,prev_518.jpeg,518,,Novità di stagione - La Rinascente ( trombettiere ),Catania
+Regno,prev_524.jpeg,524,,Novità di stagione - La Rinascente ( trombettiere ),Milano
+Regno,prev_525.jpeg,525,,Novità di stagione - La Rinascente ( trombettiere ),Milano
+Regno,prev_526.jpeg,526,,Novità di stagione - La Rinascente ( trombettiere ),Milano
+Regno,prev_532.jpeg,532,,Novità di stagione - La Rinascente ( trombettiere ),Torino
+Regno,prev_534.jpeg,534,,Steno dattilografia - Cosmopolita,Milano
+Regno,prev_542_A.jpeg,542,A,Pregate i vostri corrispondenti,Torino
+Regno,prev_545.jpeg,545,,Pregate i vostri corrispondenti,Genova
+Regno,prev_546_A.jpeg,546,A,Pregate i vostri corrispondenti,Genova
+Regno,prev_549.jpeg,549,,Pregate i vostri corrispondenti,Torino
+Regno,prev_550_A.jpeg,550,A,Pregate i vostri corrispondenti,Torino
+Regno,prev_551_A.jpeg,551,A,Pregate i vostri corrispondenti,Torino
+Regno,prev_552.jpeg,552,,Pregate i vostri corrispondenti,Torino
+Regno,prev_556.jpeg,556,,Fiera di Milano- Veglia - la regina delle sveglie,Genova
+Regno,prev_556_A.jpeg,556,A,Fiera di Milano- Veglia - la regina delle sveglie,Milano
+Regno,prev_556_B.jpeg,556,B,Fiera di Milano- Veglia - la regina delle sveglie,Napoli
+Regno,prev_558.jpeg,558,,Fiera di Milano- Veglia - la regina delle sveglie,Torino
+Regno,prev_559.jpeg,559,,Fiera di Milano- Veglia - la regina delle sveglie,Venezia
+Regno,prev_560.jpeg,560,,Fiera di Milano- Veglia - la regina delle sveglie,Firenze
+Regno,prev_561.jpeg,561,,Fiera di Milano- Veglia - la regina delle sveglie,Milano
+Regno,prev_562_A.jpeg,562,A,Fiera di Milano- Veglia - la regina delle sveglie,Milano
+Regno,prev_566.jpeg,566,,Acquistate i buoni postali - fruttiferi -,Alessandria
+Regno,prev_566_A.jpeg,566,A,Acquistate i buoni postali - fruttiferi -,Ancona
+Regno,prev_567.jpeg,567,,Acquistate i buoni postali - fruttiferi -,Bergamo
+Regno,prev_569.jpeg,569,,Acquistate i buoni postali - fruttiferi -,Bologna
+Regno,prev_570.jpeg,570,,Acquistate i buoni postali - fruttiferi -,Bologna
+Regno,prev_572_A.jpeg,572,A,Acquistate i buoni postali - fruttiferi -,Catania
+Regno,prev_572.jpeg,572,,Acquistate i buoni postali - fruttiferi -,Caserta
+Regno,prev_574.jpeg,574,,Acquistate i buoni postali - fruttiferi -,Firenze
+Regno,prev_575.jpeg,575,,Acquistate i buoni postali - fruttiferi -,Firenze
+Regno,prev_576.jpeg,576,,Acquistate i buoni postali - fruttiferi -,Firenze
+Regno,prev_577.jpeg,577,,Acquistate i buoni postali - fruttiferi -,Firenze
+Regno,prev_578.jpeg,578,,Acquistate i buoni postali - fruttiferi -,Firenze
+Regno,prev_583.jpeg,583,,Acquistate i buoni postali - fruttiferi -,Genova
+Regno,prev_584.jpeg,584,,Acquistate i buoni postali - fruttiferi -,Messina
+Regno,prev_585.jpeg,585,,Acquistate i buoni postali - fruttiferi -,Milano
+Regno,prev_587.jpeg,587,,Acquistate i buoni postali - fruttiferi -,Milano
+Regno,prev_589.jpeg,589,,Acquistate i buoni postali - fruttiferi -,Milano
+Regno,prev_590_A.jpeg,590,A,Acquistate i buoni postali - fruttiferi -,Milano
+Regno,prev_591.jpeg,591,,Acquistate i buoni postali - fruttiferi -,Milano
+Regno,prev_592.jpeg,592,,Acquistate i buoni postali - fruttiferi -,Milano
+Regno,prev_594.jpeg,594,,Acquistate i buoni postali - fruttiferi -,Milano
+Regno,prev_597.jpeg,597,,Acquistate i buoni postali - fruttiferi -,Napoli
+Regno,prev_598.jpeg,598,,Acquistate i buoni postali - fruttiferi -,Napoli
+Regno,prev_598_A.jpeg,598,A,Acquistate i buoni postali - fruttiferi -,Napoli
+Regno,prev_599.jpeg,599,,Acquistate i buoni postali - fruttiferi -,Napoli
+Regno,prev_603.jpeg,603,,Acquistate i buoni postali - fruttiferi -,Palermo
+Regno,prev_608.jpeg,608,,Acquistate i buoni postali - fruttiferi -,Roma
+Regno,prev_611.jpeg,611,,Acquistate i buoni postali - fruttiferi -,Salerno
+Regno,prev_613.jpeg,613,,Acquistate i buoni postali - fruttiferi -,Torino
+Regno,prev_614.jpeg,614,,Acquistate i buoni postali - fruttiferi -,Torino
+Regno,prev_615.jpeg,615,,Acquistate i buoni postali - fruttiferi -,Torino
+Regno,prev_616.jpeg,616,,Acquistate i buoni postali - fruttiferi -,Torino
+Regno,prev_617.jpeg,617,,Acquistate i buoni postali - fruttiferi -,Torino
+Regno,prev_620.jpeg,620,,Acquistate i buoni postali - fruttiferi -,Venezia
+Regno,prev_623.jpeg,623,,Acquistate i buoni postali - fruttiferi -,Verona
+Regno,prev_629.jpeg,629,,Acquistate i buoni postali fruttiferi,Bologna
+Regno,prev_632.jpeg,632,,Acquistate i buoni postali fruttiferi,Firenze
+Regno,prev_634.jpeg,634,,Acquistate i buoni postali fruttiferi,Firenze
+Regno,prev_635.jpeg,635,,Acquistate i buoni postali fruttiferi,Genova
+Regno,prev_635_R.jpeg,635,R,Acquistate i buoni postali fruttiferi,Genova
+Regno,prev_636.jpeg,636,,Acquistate i buoni postali fruttiferi,Genova
+Regno,prev_639.jpeg,639,,Acquistate i buoni postali fruttiferi,Messina
+Regno,prev_641.jpeg,641,,Acquistate i buoni postali fruttiferi,Milano
+Regno,prev_642.jpeg,642,,Acquistate i buoni postali fruttiferi,Napoli
+Regno,prev_643_B.jpeg,643,B,Acquistate i buoni postali fruttiferi,Napoli
+Regno,prev_643_A.jpeg,643,A,Acquistate i buoni postali fruttiferi,Napoli
+Regno,prev_648.jpeg,648,,Acquistate i buoni postali fruttiferi,Roma
+Regno,prev_650.jpeg,650,,Acquistate i buoni postali fruttiferi,Roma
+Regno,prev_651_A.jpeg,651,A,Acquistate i buoni postali fruttiferi,Roma
+Regno,prev_653.jpeg,653,,Acquistate i buoni postali fruttiferi,Torino
+Regno,prev_655.jpeg,655,,Acquistate i buoni postali fruttiferi,Torino
+Regno,prev_657_R.jpeg,657,R,Acquistate i buoni postali fruttiferi,Torino
+Regno,prev_663.jpeg,663,,Acquistate i buoni postali fruttiferi,Verona
+Regno,prev_666.jpeg,666,,Recoaro,Torino
+Regno,prev_673.jpeg,673,,Inaugurazione ippodromo del trotto a San Siro,Bologna
+Regno,prev_679.jpeg,679,,Inaugurazione ippodromo del trotto a San Siro,Monza
+Regno,prev_680.jpeg,680,,Pregate i vostri corrispondenti,Genova
+Regno,prev_690.jpeg,690,,Acquistate i buoni postali - fruttiferi -,Firenze
+Regno,prev_699.jpeg,699,,Acquistate i buoni postali - fruttiferi -,Napoli
+Regno,prev_711.jpeg,711,,Acquistate i buoni postali - fruttiferi -,Torino
+Regno,prev_714.jpeg,714,,Acquistate i buoni postali - fruttiferi -,Torino
+Regno,prev_723.jpeg,723,,Acquistate i buoni postali fruttiferi,Firenze
+Regno,prev_727.jpeg,727,,Acquistate i buoni postali fruttiferi,Messina
+Regno,prev_728_B.jpeg,728,B,Acquistate i buoni postali fruttiferi,Napoli
+Regno,prev_732.jpeg,732,,Acquistate i buoni postali fruttiferi,Roma
+Regno,prev_741_A.jpeg,741,A,Acquistate i buoni postali fruttiferi,Torino
+Regno,prev_743.jpeg,743,,Acquistate i buoni postali fruttiferi,Torino
+Regno,prev_746_A.jpeg,746,A,Pregate i vostri corrispondenti,Napoli
+Regno,prev_746.jpeg,746,,Pregate i vostri corrispondenti,Firenze
+Regno,prev_747.jpeg,747,,Pregate i vostri corrispondenti,Palermo
+Regno,prev_751.jpeg,751,,Pregate i vostri corrispondenti,Torino
+Regno,prev_752.jpeg,752,,Pregate i vostri corrispondenti,Torino
+Regno,prev_752_A.jpeg,752,A,Pregate i vostri corrispondenti,Torino
+Regno,prev_752_B.jpeg,752,B,Pregate i vostri corrispondenti,Torino
+Regno,prev_755.jpeg,755,,Pregate i vostri corrispondenti,Torino
+Regno,prev_758.jpeg,758,,Pregate i vostri corrispondenti,Genova
+Regno,prev_759.jpeg,759,,Livorno VI montenero automobilistica,Livorno
+Regno,prev_768.jpeg,768,,Sottoscrivete al prestito del littorio,Caserta
+Regno,prev_778_A.jpeg,778,A,Sottoscrivete al prestito del littorio,Milano
+Regno,prev_784.jpeg,784,,Sottoscrivete al prestito del littorio,Monza
+Regno,prev_794.jpeg,794,,Sottoscrivete al prestito del littorio,Roma
+Regno,prev_802_A.jpeg,802,A,Sottoscrivete al prestito del littorio,Torino
+Regno,prev_803.jpeg,803,,Sottoscrivete al prestito del littorio,Torino
+Regno,prev_803_A.jpeg,803,A,Sottoscrivete al prestito del littorio,Torino
+Regno,prev_816.jpeg,816,,Sottoscrivete al prestito del littorio,Alessandria
+Regno,prev_827.jpeg,827,,Sottoscrivete al prestito del littorio,Genova
+Regno,prev_830.jpeg,830,,Sottoscrivete al prestito del littorio,Messina
+Regno,prev_836.jpeg,836,,Sottoscrivete al prestito del littorio,Monza
+Regno,prev_839.jpeg,839,,Sottoscrivete al prestito del littorio,Novara
+Regno,prev_842.jpeg,842,,Sottoscrivete al prestito del littorio,Palermo
+Regno,prev_848_A.jpeg,848,A,Sottoscrivete al prestito del littorio,Torino
+Regno,prev_853.jpeg,853,,Sottoscrivete al prestito del littorio,Venezia
+Regno,prev_854.jpeg,854,,Sottoscrivete al prestito del littorio,Verona
+Regno,prev_858.jpeg,858,,Sottoscrivete al prestito del littorio,Roma
+Regno,prev_862.jpeg,862,,Acquistate i buoni postali fruttiferi,Bologna
+Regno,prev_867.jpeg,867,,Acquistate i buoni postali fruttiferi,Torino
+Regno,prev_871_A.jpeg,871,A,Acquistate i buoni postali - fruttiferi -,Roma
+Regno,prev_877.jpeg,877,,Pregate i vostri corrispondenti,Torino
+Regno,prev_878.jpeg,878,,Pregate i vostri corrispondenti,Torino
+Regno,prev_879.jpeg,879,,Pregate i vostri corrispondenti,Torino
+Regno,prev_886.jpeg,886,,Pregate i vostri corrispondenti,Torino
+Regno,prev_900.jpeg,900,,Preferite le sigarette Savoia Eva,Verona
+Regno,prev_901.jpeg,901,,Preferite le sigarette Savoia Eva,Verona
+Regno,prev_902.jpeg,902,,Preferite le sigarette Savoia Eva,Firenze
+Regno,prev_915.jpeg,915,,Preferite le sigarette Savoia Eva,Milano
+Regno,prev_926.jpeg,926,,Preferite le sigarette Savoia Eva,Verona
+Regno,prev_930_A.jpeg,930,A,Montecatini stabilimenti aperti il 1° Aprile,Milano
+Regno,prev_931.jpeg,931,,Montecatini stabilimenti aperti il 1° Aprile,Palermo
+Regno,prev_933.jpeg,933,,Montecatini stabilimenti aperti il 1° Aprile,Torino
+Regno,prev_934.jpeg,934,,Montecatini stabilimenti aperti il 1° Aprile,Verona
+Regno,prev_935.jpeg,935,,Montecatini stabilimenti aperti il 1° Aprile,Verona
+Regno,prev_937.jpeg,937,,Montecatini stabilimenti aperti il 1° Aprile,Milano
+Regno,prev_939.jpeg,939,,Montecatini stabilimenti aperti il 1° Aprile,Milano
+Regno,prev_940.jpeg,940,,Montecatini stabilimenti aperti il 1° Aprile,Milano
+Regno,prev_943.jpeg,943,,Montecatini stabilimenti aperti il 1° Aprile,Verona
+Regno,prev_946.jpeg,946,,Montecatini autunno - ottimo per cura e soggiorno,Milano
+Regno,prev_952.jpeg,952,,Montecatini autunno - ottimo per cura e soggiorno,Palermo
+Regno,prev_957.jpeg,957,,Montecatini autunno - ottimo per cura e soggiorno,Roma
+Regno,prev_961.jpeg,961,,Montecatini autunno - ottimo per cura e soggiorno,Verona
+Regno,prev_966.jpeg,966,,Montecatini - stomaco fegato intestino,Genova
+Regno,prev_967.jpeg,967,,Montecatini - stomaco fegato intestino,Milano
+Regno,prev_969_R.jpeg,969,R,Montecatini - stomaco fegato intestino,Milano
+Regno,prev_976.jpeg,976,,Montecatini - stomaco fegato intestino,Roma
+Regno,prev_978_R.jpeg,978,R,Montecatini - stomaco fegato intestino,Torino
+Regno,prev_981.jpeg,981,,Montecatini - stomaco fegato intestino,Verona
+Regno,prev_982.jpeg,982,,Montecatini - stomaco fegato intestino,Verona
+Regno,prev_985.jpeg,985,,Montecatini - stomaco fegato intestini,Milano
+Regno,prev_987.jpeg,987,,Montecatini - stomaco fegato intestini,Roma
+Regno,prev_989.jpeg,989,,Montecatini - stomaco fegato intestini,Torino
+Regno,prev_990.jpeg,990,,Montecatini autunno - ottimo per cura e soggiorno,Bologna
+Regno,prev_994.jpeg,994,,Montecatini autunno - ottimo per cura e soggiorno,Torino
+Regno,prev_995_A.jpeg,995,A,Visitate Tripoli e la sua espos campion. 1927,Alessandria
+Regno,prev_998.jpeg,998,,Visitate Tripoli e la sua espos campion. 1927,Bologna
+Regno,prev_999_A.jpeg,999,A,Visitate Tripoli e la sua espos campion. 1927,Bologna
+Regno,prev_1007_A.jpeg,1007,A,Visitate Tripoli e la sua espos campion. 1927,Messina
+Regno,prev_1023.jpeg,1023,,Visitate Tripoli e la sua espos campion. 1927,Torino
+Regno,prev_1034.jpeg,1034,,Anno V - secondo anno della battaglia del grano,Verona
+Regno,prev_1036.jpeg,1036,,Agricoltori bisogna vincere la battaglia del grano,Bari
+Regno,prev_1041.jpeg,1041,,Agricoltori bisogna vincere la battaglia del grano,Firenze
+Regno,prev_1042.jpeg,1042,,Agricoltori bisogna vincere la battaglia del grano,Foggia
+Regno,prev_1043.jpeg,1043,,Agricoltori bisogna vincere la battaglia del grano,Messina
+Regno,prev_1045.jpeg,1045,,Agricoltori bisogna vincere la battaglia del grano,Milano
+Regno,prev_1046.jpeg,1046,,Agricoltori bisogna vincere la battaglia del grano,Monza
+Regno,prev_1059.jpeg,1059,,Dovunque è possibile aumentare…..,Foggia
+Regno,prev_1060.jpeg,1060,,Dovunque è possibile aumentare…..,Genova
+Regno,prev_1064_A.jpeg,1064,A,Dovunque è possibile aumentare…..,Palermo
+Regno,prev_1065.jpeg,1065,,Dovunque è possibile aumentare…..,Palermo
+Regno,prev_1066.jpeg,1066,,Dovunque è possibile aumentare…..,Pavia
+Regno,prev_1069.jpeg,1069,,Dovunque è possibile aumentare…..,Verona
+Regno,prev_1078.jpeg,1078,,Agricoltori raccogliete il comandamento del duce,Milano
+Regno,prev_1080.jpeg,1080,,Agricoltori raccogliete il comandamento del duce,Pavia
+Regno,prev_1089.jpeg,1089,,E' dovere di tutti gli agricoltori contribuire ..,Genova
+Regno,prev_1094.jpeg,1094,,E' dovere di tutti gli agricoltori contribuire ..,Milano
+Regno,prev_1100.jpeg,1100,,E' dovere di tutti gli agricoltori contribuire ..,La Spezia
+Regno,prev_1103.jpeg,1103,,Concorso nazionale per la vittoria del grano,Bari
+Regno,prev_1110.jpeg,1110,,Concorso nazionale per la vittoria del grano,Genova
+Regno,prev_1128.jpeg,1128,,Agricoltori coltivate razionalmente - vincerete,Bari
+Regno,prev_1133.jpeg,1133,,Agricoltori coltivate razionalmente - vincerete,Catania
+Regno,prev_1137.jpeg,1137,,Agricoltori coltivate razionalmente - vincerete,Napoli
+Regno,prev_1143.jpeg,1143,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Roma
+Regno,prev_1146.jpeg,1146,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Alessandria
+Regno,prev_1150.jpeg,1150,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Brescia
+Regno,prev_1162.jpeg,1162,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Padova
+Regno,prev_1169.jpeg,1169,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Torino
+Regno,prev_1172.jpeg,1172,,Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 1,Brescia
+Regno,prev_1173.jpeg,1173,,Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 1,Milano
+Regno,prev_1177.jpeg,1177,,Salsomaggiore - Regi stabilimenti termali acque salso bromo jodiche,Caserta
+Regno,prev_1180.jpeg,1180,,Salsomaggiore - Da e ridà la vita - Tipo 2,Genova
+Regno,prev_1182.jpeg,1182,,Salsomaggiore - Da e ridà la vita - Tipo 2,Venezia
+Regno,prev_1190.jpeg,1190,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 2,Roma
+Regno,prev_1196.jpeg,1196,,Salsomaggiore - Periodo di cura Marzo - Novembre ,Bologna
+Regno,prev_1211.jpeg,1211,,Salsomaggiore - Monumentali Terme Berzieri Maggio - Ottobre - Tipo 2,Roma
+Regno,prev_1212.jpeg,1212,,Salsomaggiore - dove andare ? a Salsomaggiore ,Milano
+Regno,prev_1219.jpeg,1219,,Salsomaggiore - Per i vostri cari non trascurate Salsomaggiore,Milano
+Regno,prev_1226_A.jpeg,1226,A,Salsomaggiore - Monumentali Terme Berzieri Maggio Ottobre,Roma
+Regno,prev_1236.jpeg,1236,,Salsomaggiore - Periodo di cura Marzo Novembre,Firenze
+Regno,prev_1244.jpeg,1244,,Salsomaggiore - Marzo Novembre tutto il mondo elegante ,Roma
+Regno,prev_1246_A.jpeg,1246,A,Salsomaggiore - Sclerotici curatevi a Salsomaggiore,Catania
+Regno,prev_1248_A.jpeg,1248,A,Visitare la Tripolitania è un dovere nazionale,Alessandria
+Regno,prev_1250.jpeg,1250,,Visitare la Tripolitania è un dovere nazionale,Bari
+Regno,prev_1256.jpeg,1256,,Visitare la Tripolitania è un dovere nazionale,Foggia
+Regno,prev_1257.jpeg,1257,,Visitare la Tripolitania è un dovere nazionale,Genova
+Regno,prev_1265.jpeg,1265,,Visitare la Tripolitania è un dovere nazionale,Palermo
+Regno,prev_1268.jpeg,1268,,Visitare la Tripolitania è un dovere nazionale,Torino
+Regno,prev_1270.jpeg,1270,,Visitare la Tripolitania è un dovere nazionale,Venezia
+Regno,prev_1282.jpeg,1282,,Italiani visitate la tripolitania,Livorno
+Regno,prev_1285.jpeg,1285,,Italiani visitate la tripolitania,Modena
+Regno,prev_1286_A.jpeg,1286,A,Italiani visitate la tripolitania,Napoli
+Regno,prev_1287.jpeg,1287,,Italiani visitate la tripolitania,Napoli
+Regno,prev_1292.jpeg,1292,,Italiani visitate la tripolitania,Pisa
+Regno,prev_1298.jpeg,1298,,Italiani visitate la tripolitania,Venezia
+Regno,prev_1309.jpeg,1309,,San Remo regina della stazioni climatiche,Milano
+Regno,prev_1314.jpeg,1314,,San Remo regina della stazioni climatiche,Torino
+Regno,prev_1317.jpeg,1317,,Usate i pacchi postali urgenti,Alessandria
+Regno,prev_1320.jpeg,1320,,Usate i pacchi postali urgenti,La Spezia
+Regno,prev_1321.jpeg,1321,,Usate i pacchi postali urgenti,Venezia
+Regno,prev_1322.jpeg,1322,,Usate i pacchi postali urgenti,Ancona
+Regno,prev_1323.jpeg,1323,,Usate i pacchi postali urgenti,Brescia
+Regno,prev_1333.jpeg,1333,,Torino 1928 esposizioni,Napoli
+Regno,prev_1344.jpeg,1344,,Torino 1928 esposizioni,Milano
+Regno,prev_1347.jpeg,1347,,Torino 1928 esposizioni,Milano
+Regno,prev_1348.jpeg,1348,,Torino 1928 esposizioni,Milano
+Regno,prev_1350.jpeg,1350,,Torino 1928 esposizioni,Milano
+Regno,prev_1354.jpeg,1354,,Torino 1928 esposizioni,Milano
+Regno,prev_1355.jpeg,1355,,Torino 1928 esposizioni,Milano
+Regno,prev_1385.jpeg,1385,,Salsomaggiore - Salsomaggiore spendendo poco ? ,Roma
+Regno,prev_1393_A.jpeg,1393,A,Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 2,Milano
+Regno,prev_1400.jpeg,1400,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Novara
+Regno,prev_1413.jpeg,1413,,Italiani visitate la tripolitania,Pavia
+Regno,prev_1414_A.jpeg,1414,A,Italiani visitate la tripolitania,Verona
+Regno,prev_1420.jpeg,1420,,Agricoltori bisogna vincere la battaglia del grano,Ancona
+Regno,prev_1425.jpeg,1425,,Anno VI - terzo anno della battaglia del grano,Bologna
+Regno,prev_1428.jpeg,1428,,Anno VI - terzo anno della battaglia del grano,Genova
+Regno,prev_1429.jpeg,1429,,Anno VI - terzo anno della battaglia del grano,Genova
+Regno,prev_1441.jpeg,1441,,IL grano diventi ovunque è possibile una …,Milano
+Regno,prev_1443.jpeg,1443,,IL grano diventi ovunque è possibile una …,Milano
+Regno,prev_1445.jpeg,1445,,IL grano diventi ovunque è possibile una …,Palermo
+Regno,prev_1450.jpeg,1450,,Agricoltori bisogna vincere la battaglia del grano,Monza
+Regno,prev_1465.jpeg,1465,,Questa vecchia terra italiana può dare il pane ..,Milano
+Regno,prev_1470.jpeg,1470,,Questa vecchia terra italiana può dare il pane ..,Milano
+Regno,prev_1472.jpeg,1472,,Questa vecchia terra italiana può dare il pane ..,Milano
+Regno,prev_1474.jpeg,1474,,Questa vecchia terra italiana può dare il pane ..,Milano
+Regno,prev_1474_A.jpeg,1474,A,Questa vecchia terra italiana può dare il pane ..,Milano
+Regno,prev_1480.jpeg,1480,,Dovunque è possibile aumentare…..,Verona
+Regno,prev_1481.jpeg,1481,,Dovunque è possibile aumentare…..,Genova
+Regno,prev_1485.jpeg,1485,,Dovunque è possibile aumentare…..,Verona
+Regno,prev_1491.jpeg,1491,,Dovunque è possibile aumentare…..,Milano
+Regno,prev_1494.jpeg,1494,,Dovunque è possibile aumentare…..,Milano
+Regno,prev_1513_R.jpeg,1513,R,San Remo regina della stazioni climatiche,Torino
+Regno,prev_1514_CR.jpeg,1514,CR,San Remo regina della stazioni climatiche,Torino
+Regno,prev_1516.jpeg,1516,,Acquistate i buoni postali - fruttiferi -,Napoli
+Regno,prev_1523.jpeg,1523,,Montecatini - stomaco fegato intestino,Bologna
+Regno,prev_1528.jpeg,1528,,Montecatini - stomaco fegato intestino,Milano
+Regno,prev_1529.jpeg,1529,,Montecatini - stomaco fegato intestino,Milano
+Regno,prev_1530.jpeg,1530,,Montecatini - stomaco fegato intestino,Milano
+Regno,prev_1531_A.jpeg,1531,A,Montecatini - stomaco fegato intestino,Palermo
+Regno,prev_1533.jpeg,1533,,Montecatini - stomaco fegato intestino,Torino
+Regno,prev_1534.jpeg,1534,,Montecatini - stomaco fegato intestino,Torino
+Regno,prev_1535.jpeg,1535,,Montecatini - stomaco fegato intestino,Verona
+Regno,prev_1540.jpeg,1540,,Montecatini - ottimo per cura e soggiorno,Bologna
+Regno,prev_1542.jpeg,1542,,Montecatini - ottimo per cura e soggiorno,Genova
+Regno,prev_1544.jpeg,1544,,Montecatini - ottimo per cura e soggiorno,Milano
+Regno,prev_1547.jpeg,1547,,Montecatini - ottimo per cura e soggiorno,Milano
+Regno,prev_1548.jpeg,1548,,Montecatini - ottimo per cura e soggiorno,Milano
+Regno,prev_1556.jpeg,1556,,Montecatini - opportuno continuare cura a domicilio,Torino
+Regno,prev_1557.jpeg,1557,,Montecatini - opportuno continuare cura a domicilio,Verona
+Regno,prev_1558.jpeg,1558,,Preferite le sigarette Eja Savoia Eva,Firenze
+Regno,prev_1567.jpeg,1567,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1568_A.jpeg,1568,A,Preferite le sigarette Eja Savoia Eva,Napoli
+Regno,prev_1572.jpeg,1572,,Preferite le sigarette Eja Savoia Eva,Palermo
+Regno,prev_1574.jpeg,1574,,Preferite le sigarette Eja Savoia Eva,Roma
+Regno,prev_1582.jpeg,1582,,Preferite le sigarette Eja Savoia Eva,Verona
+Regno,prev_1607.jpeg,1607,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1609.jpeg,1609,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1610.jpeg,1610,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1613.jpeg,1613,,Preferite le sigarette Eja Savoia Eva,Palermo
+Regno,prev_1614.jpeg,1614,,Preferite le sigarette Eja Savoia Eva,Roma
+Regno,prev_1616.jpeg,1616,,Preferite le sigarette Eja Savoia Eva,Venezia
+Regno,prev_1617.jpeg,1617,,Preferite le sigarette Eja Savoia Eva,Venezia
+Regno,prev_1619.jpeg,1619,,Preferite le sigarette Eja Savoia Eva,Verona
+Regno,prev_1976.jpeg,1976,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1585.jpeg,1585,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1586.jpeg,1586,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1589.jpeg,1589,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1597.jpeg,1597,,Preferite le sigarette Eja Savoia Eva,Palermo
+Regno,prev_1601.jpeg,1601,,Preferite le sigarette Eja Savoia Eva,Venezia
+Regno,prev_1604.jpeg,1604,,Preferite le sigarette Eja Savoia Eva,Verona
+Regno,prev_1625.jpeg,1625,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1626.jpeg,1626,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1626_R.jpeg,1626,R,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1629_R.jpeg,1629,R,Preferite le sigarette Eja Savoia Eva,Venezia
+Regno,prev_2057.jpeg,2057,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1633.jpeg,1633,,Preferite le sigarette Eja Savoia Eva,Milano
+Regno,prev_1647.jpeg,1647,,IL chinino è il farmaco sovrano per ...,Milano
+Regno,prev_1658.jpeg,1658,,IL dispensario è buona guida alla profilassi ..,Genova
+Regno,prev_1663.jpeg,1663,,IL dispensario è buona guida alla profilassi ..,Milano
+Regno,prev_1690.jpeg,1690,,Mosche e zanzare apportano malattie ..,Napoli
+Regno,prev_1696.jpeg,1696,,L'alcoolismo avvia alla tubercolosi …,Alessandria
+Regno,prev_1700.jpeg,1700,,L'alcoolismo avvia alla tubercolosi …,Milano
+Regno,prev_1711.jpeg,1711,,L'alcoolismo avvia alla tubercolosi …,Napoli
+Regno,prev_1719_B.jpeg,1719,B,Pregate i vostri corrispondenti,Torino
+Regno,prev_1720.jpeg,1720,,Pregate i vostri corrispondenti,Firenze
+Regno,prev_1727.jpeg,1727,,Usate i pacchi postali urgenti,Firenze
+Regno,prev_1733.jpeg,1733,,Usate i pacchi postali urgenti,Salerno
+Regno,prev_1734.jpeg,1734,,Usate i pacchi postali urgenti,La Spezia
+Regno,prev_1735_A.jpeg,1735,A,Usate i pacchi postali urgenti,Torino
+Regno,prev_1737.jpeg,1737,,Usate i pacchi postali urgenti,Venezia
+Regno,prev_1741.jpeg,1741,,Usate i pacchi postali urgenti,Como
+Regno,prev_1758.jpeg,1758,,O.N. Dopolavoro ,Napoli
+Regno,prev_1760.jpeg,1760,,O.N. Dopolavoro ,Palermo
+Regno,prev_1765.jpeg,1765,,O.N. Dopolavoro ,Venezia
+Regno,prev_1767_A.jpeg,1767,A,O.N. Dopolavoro ,Firenze
+Regno,prev_1769_A.jpeg,1769,A,O.N. Dopolavoro ,Milano
+Regno,prev_1773_A.jpeg,1773,A,O.N. Dopolavoro ,Venezia
+Regno,prev_1777.jpeg,1777,,Agricoltori raccogliete il comandamento del duce,Roma
+Regno,prev_1782.jpeg,1782,,Agricoltori bisogna vincere la battaglia del grano,Bologna
+Regno,prev_1789.jpeg,1789,,IL grano diventi ovunque è possibile una …,Genova
+Regno,prev_1795.jpeg,1795,,IL grano diventi ovunque è possibile una …,Roma
+Regno,prev_1795_A.jpeg,1795,A,Questa vecchia terra italiana può dare il pane ..,Catania
+Regno,prev_1796.jpeg,1796,,Questa vecchia terra italiana può dare il pane ..,Catania
+Regno,prev_1797_A.jpeg,1797,A,Questa vecchia terra italiana può dare il pane ..,Verona
+Regno,prev_1798.jpeg,1798,,Questa vecchia terra italiana può dare il pane ..,Palermo
+Regno,prev_1803.jpeg,1803,,Agricoltori coltivate razionalmente - vincerete,Genova
+Regno,prev_1807.jpeg,1807,,E' dovere di tutti gli agricoltori italiani ….,Firenze
+Regno,prev_1809_A.jpeg,1809,A,E' dovere di tutti gli agricoltori italiani ….,Firenze
+Regno,prev_1811_A.jpeg,1811,A,E' dovere di tutti gli agricoltori italiani ….,Firenze
+Regno,prev_1814.jpeg,1814,,E' dovere di tutti gli agricoltori italiani ….,Napoli
+Regno,prev_1830.jpeg,1830,,Dovunque è possibile aumentare…..,Roma
+Regno,prev_1831.jpeg,1831,,Dovunque è possibile aumentare…..,Roma
+Regno,prev_1843.jpeg,1843,,E' dovere di tutti gli agricoltori italiani ….,Palermo
+Regno,prev_1844.jpeg,1844,,Agricoltori bisogna vincere la battaglia del grano,Venezia
+Regno,prev_1861.jpeg,1861,,Un  altro quintale in più di media e …,Milano
+Regno,prev_1862.jpeg,1862,,Un  altro quintale in più di media e …,Milano
+Regno,prev_1865.jpeg,1865,,Un  altro quintale in più di media e …,Milano
+Regno,prev_1881.jpeg,1881,,Il problema del grano investe il problema …,Roma
+Regno,prev_1903.jpeg,1903,,Usate i pacchi postali urgenti,Roma
+Regno,prev_1906.jpeg,1906,,Usate i pacchi postali urgenti,Salerno
+Regno,prev_1912.jpeg,1912,,Usate i pacchi postali urgenti,Bologna
+Regno,prev_1916.jpeg,1916,,Usate i pacchi postali urgenti,La Spezia
+Regno,prev_1918.jpeg,1918,,Usate i pacchi postali urgenti,Venezia
+Regno,prev_1920.jpeg,1920,,Acquistate i buoni postali fruttiferi,Verona
+Regno,prev_1925.jpeg,1925,,Montecatini - ottimo per cura e soggiorno,Palermo
+Regno,prev_1926.jpeg,1926,,Montecatini - ottimo per cura e soggiorno,Roma
+Regno,prev_1940.jpeg,1940,,Montecatini - opportuno continuare cura a domicilio,Bologna
+Regno,prev_1942.jpeg,1942,,Montecatini - opportuno continuare cura a domicilio,Milano
+Regno,prev_1946_A.jpeg,1946,A,Montecatini - opportuno continuare cura a domicilio,Roma
+Regno,prev_1948_A.jpeg,1948,A,Montecatini stabilimenti aperti dal 1° Aprile,Bologna
+Regno,prev_1960_A.jpeg,1960,A,Montecatini - ottimo per cura e soggiorno,Bologna
+Regno,prev_1966_A.jpeg,1966,A,Pregate i vostri corrispondenti,Torino
+Regno,prev_1966_B.jpeg,1966,B,Pregate i vostri corrispondenti,Torino
+Regno,prev_1639.jpeg,1639,,Preferite le sigarette Eja Savoia Eva,Roma
+Regno,prev_1986.jpeg,1986,,Preferite le sigarette orientali Eva - Eja,Verona
+Regno,prev_1988_A.jpeg,1988,A,Preferite le sigarette orientali Eva - Eja,Verona
+Regno,prev_2002_A.jpeg,2002,A,Fumatori di toscani provate …,Palermo
+Regno,prev_2007.jpeg,2007,,Fumatori di toscani provate …,Milano
+Regno,prev_2029.jpeg,2029,,Agricoltori bisogna vincere la battaglia del grano,Genova
+Regno,prev_2030.jpeg,2030,,Agricoltori bisogna vincere la battaglia del grano,Genova
+Regno,prev_2053.jpeg,2053,,Montecatini - stomaco fegato intestino,Genova
+Regno,prev_1995_A.jpeg,1995,A,Preferite le sigarette orientali Eva - Eja,Roma
+Regno,prev_2064_A.jpeg,2064,A,Preferite le sigarette orientali Eva - Eja,Milano
+Regno,prev_2065_B.jpeg,2065,B,Preferite le sigarette orientali Eva - Eja,Milano
+Regno,prev_2072_R.jpeg,2072,R,provate la sigaretta regina,Palermo
+Regno,prev_2075.jpeg,2075,,provate la sigaretta regina,Roma
+Regno,prev_2087_A.jpeg,2087,A,Fumatori di toscani provate …,Milano
+Regno,prev_2091.jpeg,2091,,Fumatori di toscani provate …,Palermo
+Regno,prev_2096.jpeg,2096,,Fumatori di toscani provate …,Milano
+Regno,prev_2108.jpeg,2108,,Usate i pacchi postali urgenti,Roma
+Regno,prev_2109.jpeg,2109,,Usate i pacchi postali urgenti,Roma
+Regno,prev_2114.jpeg,2114,,Usate i pacchi postali urgenti,Venezia
+Regno,prev_2116.jpeg,2116,,Acquistate i buoni postali fruttiferi,Verona
+Regno,prev_2130.jpeg,2130,,Tutti gli uffici postali eseguono il servizio ...,Monza
+Regno,prev_2139.jpeg,2139,,Tutti gli uffici postali eseguono il servizio ...,Roma
+Regno,prev_2149.jpeg,2149,,Pregate i vostri corrispondenti,Torino
+Regno,prev_2150.jpeg,2150,,Pregate i vostri corrispondenti,Firenze
+Regno,prev_2152.jpeg,2152,,Servitevi dei pacchi postali urgenti,Firenze
+Regno,prev_2159.jpeg,2159,,Servitevi dei pacchi postali urgenti,Milano
+Regno,prev_2170_A.jpeg,2170,A,Servitevi dei pacchi postali urgenti,Firenze
+Regno,prev_2187_B.jpeg,2187,B,Servitevi dei pacchi postali urgenti,Torino
+Regno,prev_2203.jpeg,2203,,L'olio d'oliva è il condimento più ricco di vitamine,Milano
+Regno,prev_2233.jpeg,2233,,L'olio d'oliva italiano è il migliore del mondo,Novara
+Regno,prev_2234.jpeg,2234,,L'olio d'oliva italiano è il migliore del mondo,Palermo
+Regno,prev_2236.jpeg,2236,,L'olio d'oliva italiano è il migliore del mondo,La Spezia
+Regno,prev_2253.jpeg,2253,,Tutti gli uffici postali eseguono il servizio ...,Genova
+Regno,prev_2265.jpeg,2265,,Provate la sigaretta regina,Milano
+Regno,prev_2266_A.jpeg,2266,A,Provate la sigaretta regina,Milano
+Regno,prev_2279_A.jpeg,2279,A,Provate la sigaretta regina,Verona
+Regno,prev_2290.jpeg,2290,,Servitevi dei pacchi postali urgenti,Milano
+Regno,prev_2327.jpeg,2327,,Pregate i vostri corrispondenti,Parma
+Regno,prev_2337.jpeg,2337,,Utenti domandate l'apertura di un ….,Genova
+Regno,prev_2353.jpeg,2353,,Correntisti postali usate il postagiro …,Milano
+Regno,prev_2360.jpeg,2360,,Gli uffici postali accettano per l'incasso a mezzo ..,Bergamo
+Regno,prev_2363.jpeg,2363,,Gli uffici postali accettano per l'incasso a mezzo ..,Milano
+Regno,prev_2371.jpeg,2371,,Gli uffici postali accettano per l'incasso a mezzo ..,Palermo
+Regno,prev_2374.jpeg,2374,,Gli uffici postali accettano per l'incasso a mezzo ..,Roma
+Regno,prev_2375.jpeg,2375,,Gli uffici postali accettano per l'incasso a mezzo ..,Roma
+Regno,prev_2378.jpeg,2378,,Gli uffici postali accettano per l'incasso a mezzo ..,Salerno
+Regno,prev_2381.jpeg,2381,,Chiedete agli uffici postali la guida pratica …,Bari
+Regno,prev_2406.jpeg,2406,,Presso tutti gli uffici postali pagamenti …,Milano
+Regno,prev_2431_B.jpeg,2431,B,Utenti domandate l'apertura di un ….,Ancona
+Regno,prev_2436.jpeg,2436,,Utenti domandate l'apertura di un ….,Torino
+Regno,prev_2438.jpeg,2438,,Utenti domandate l'apertura di un ….,Trieste
+Regno,prev_2452.jpeg,2452,,Gli uffici postali accettano per l'incasso a mezzo ..,Roma
+Regno,prev_2461.jpeg,2461,,Correntisti postali usate il postagiro …,Roma
+Regno,prev_2462.jpeg,2462,,Presso tutti gli uffici postali pagamenti …,Como
+Regno,prev_2474.jpeg,2474,,Servitevi dei pacchi postali urgenti,Bari
+Regno,prev_2475.jpeg,2475,,Servitevi dei pacchi postali urgenti,Firenze
+Regno,prev_2476.jpeg,2476,,Servitevi dei pacchi postali urgenti,Milano
+Regno,prev_2516.jpeg,2516,,Mostra rivoluzione fascista,Torino
+Regno,prev_2519.jpeg,2519,,Mostra rivoluzione fascista,Verona
+Regno,prev_2600.jpeg,2600,,Chiedete agli uffici postali la guida pratica …,Torino
+Regno,prev_2608.jpeg,2608,,Estate livornese,Livorno
+Regno,prev_2647.jpeg,2647,,Mostra rivoluzione fascista,Torino
+Regno,prev_2649.jpeg,2649,,Mostra rivoluzione fascista,Trieste
+Regno,prev_2658.jpeg,2658,,Utenti domandate l'apertura di un ….,Messina
+Regno,prev_2659.jpeg,2659,,Tutti gli uffici postali eseguono il servizio ...,Milano
+Regno,prev_2660.jpeg,2660,,Tutti gli uffici postali eseguono il servizio ...,Milano
+Regno,prev_2661.jpeg,2661,,Pregate i vostri corrispondenti,Torino
+Regno,prev_2663.jpeg,2663,,Chiedete agli uffici postali la guida pratica …,Bergamo
+Regno,prev_2673.jpeg,2673,,Servitevi dei pacchi postali urgenti,Milano
+Regno,prev_2715.jpeg,2715,,La lotteria di Merano vi farà milionari,Napoli
+Regno,prev_2717.jpeg,2717,,La lotteria di Merano vi farà milionari,Palermo
+Regno,prev_2723.jpeg,2723,,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_2727.jpeg,2727,,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_2730_A.jpeg,2730,A,La lotteria di Merano vi farà milionari,Trieste
+Regno,prev_2817.jpeg,2817,,Prestito nazionale rendita 5%,Roma
+Regno,prev_2818.jpeg,2818,,Prestito nazionale rendita 5%,Roma
+Regno,prev_2840.jpeg,2840,,Lotteria automobilistica di Tripoli,Milano
+Regno,prev_2842.jpeg,2842,,Lotteria automobilistica di Tripoli,Milano
+Regno,prev_2850.jpeg,2850,,Lotteria automobilistica di Tripoli,Napoli
+Regno,prev_2867.jpeg,2867,,La lotteria di Merano vi farà milionari,Bologna
+Regno,prev_2881.jpeg,2881,,La lotteria di Merano vi farà milionari,Milano
+Regno,prev_2882.jpeg,2882,,La lotteria di Merano vi farà milionari,Napoli
+Regno,prev_2883.jpeg,2883,,La lotteria di Merano vi farà milionari,Napoli
+Regno,prev_2884.jpeg,2884,,La lotteria di Merano vi farà milionari,Napoli
+Regno,prev_2885.jpeg,2885,,La lotteria di Merano vi farà milionari,Padova
+Regno,prev_2888.jpeg,2888,,La lotteria di Merano vi farà milionari,Palermo
+Regno,prev_2891.jpeg,2891,,La lotteria di Merano vi farà milionari,Roma
+Regno,prev_2897_A.jpeg,2897,A,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_2897_B.jpeg,2897,B,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_2898_E.jpeg,2898,E,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_2898.jpeg,2898,,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_2901.jpeg,2901,,La lotteria di Merano vi farà milionari,Trieste
+Regno,prev_2916.jpeg,2916,,Tutti gli uffici postali eseguono il servizio ...,Trento
+Regno,prev_2938.jpeg,2938,,Lotteria automobilistica di Tripoli,Milano
+Regno,prev_2946_A.jpeg,2946,A,Lotteria automobilistica di Tripoli,Roma
+Regno,prev_2949.jpeg,2949,,Lotteria automobilistica di Tripoli,Torino
+Regno,prev_2951.jpeg,2951,,Lotteria automobilistica di Tripoli,Torino
+Regno,prev_3013.jpeg,3013,,Visitate l'Italia,Torino
+Regno,prev_3015.jpeg,3015,,Visitate l'Italia,Trieste
+Regno,prev_3022.jpeg,3022,,Cesenatico la spiaggia ideale,Treviso
+Regno,prev_3026.jpeg,3026,,Chiedete agli uffici postali la guida pratica …,Torino
+Regno,prev_3027.jpeg,3027,,Correntisti postali usate il postagiro …,Trento
+Regno,prev_3043.jpeg,3043,,La lotteria di Merano vi farà milionari,Milano
+Regno,prev_3044.jpeg,3044,,La lotteria di Merano vi farà milionari,Milano
+Regno,prev_3047.jpeg,3047,,La lotteria di Merano vi farà milionari,Napoli
+Regno,prev_3048_A.jpeg,3048,A,La lotteria di Merano vi farà milionari,Palermo
+Regno,prev_3049.jpeg,3049,,La lotteria di Merano vi farà milionari,Palermo
+Regno,prev_3050.jpeg,3050,,La lotteria di Merano vi farà milionari,Roma
+Regno,prev_3051.jpeg,3051,,La lotteria di Merano vi farà milionari,Roma
+Regno,prev_3052.jpeg,3052,,La lotteria di Merano vi farà milionari,Roma
+Regno,prev_3053.jpeg,3053,,La lotteria di Merano vi farà milionari,Roma
+Regno,prev_3054.jpeg,3054,,La lotteria di Merano vi farà milionari,Roma
+Regno,prev_3054_A.jpeg,3054,A,La lotteria di Merano vi farà milionari,Roma
+Regno,prev_3055.jpeg,3055,,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_3056.jpeg,3056,,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_3057.jpeg,3057,,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_3058.jpeg,3058,,La lotteria di Merano vi farà milionari,Venezia
+Regno,prev_3059.jpeg,3059,,Lotteria di Merano oggi stesso acquistate …,Roma
+Regno,prev_3060.jpeg,3060,,Lotteria di Merano oggi stesso acquistate …,Venezia
+Regno,prev_3061.jpeg,3061,,Merano lotteria dei milioni - un biglietto L 12,Firenze
+Regno,prev_3062.jpeg,3062,,Merano lotteria dei milioni - un biglietto L 12,Roma
+Regno,prev_3063.jpeg,3063,,Viaggiando servitevi dei telegrammi treno,Genova
+Regno,prev_3064.jpeg,3064,,Viaggiando servitevi dei telegrammi treno,Milano
+Regno,prev_3065.jpeg,3065,,Viaggiando servitevi dei telegrammi treno,Napoli
+Regno,prev_3066.jpeg,3066,,Viaggiando servitevi dei telegrammi treno,Roma
+Regno,prev_3067.jpeg,3067,,Viaggiando servitevi dei telegrammi treno,Torino
+Regno,prev_3068.jpeg,3068,,Viaggiando servitevi dei telegrammi treno,Genova
+Regno,prev_3069.jpeg,3069,,Viaggiando servitevi dei telegrammi treno,Milano
+Regno,prev_3070.jpeg,3070,,Viaggiando servitevi dei telegrammi treno,Milano
+Regno,prev_3071.jpeg,3071,,Viaggiando servitevi dei telegrammi treno,Napoli
+Regno,prev_3072.jpeg,3072,,Viaggiando servitevi dei telegrammi treno,Roma
+Regno,prev_3073.jpeg,3073,,Visitate l'Italia,Ancona
+Regno,prev_3074.jpeg,3074,,Visitate l'Italia,Bari
+Regno,prev_3075.jpeg,3075,,Visitate l'Italia,Bergamo
+Regno,prev_3076.jpeg,3076,,Visitate l'Italia,Bergamo
+Regno,prev_3076_A.jpeg,3076,A,Visitate l'Italia,Bologna
+Regno,prev_3077.jpeg,3077,,Visitate l'Italia,Catania
+Regno,prev_3077.jpeg,3077,,Visitate l'Italia,Bologna
+Regno,prev_3078.jpeg,3078,,Visitate l'Italia,Genova
+Regno,prev_3079.jpeg,3079,,Visitate l'Italia,Genova
+Regno,prev_3080.jpeg,3080,,Visitate l'Italia,La Spezia
+Regno,prev_3081.jpeg,3081,,Visitate l'Italia,Livorno
+Regno,prev_3082.jpeg,3082,,Visitate l'Italia,Livorno
+Regno,prev_3082_A.jpeg,3082,A,Visitate l'Italia,Livorno
+Regno,prev_3083.jpeg,3083,,Visitate l'Italia,Merano
+Regno,prev_3084.jpeg,3084,,Visitate l'Italia,Messina
+Regno,prev_3085.jpeg,3085,,Visitate l'Italia,Messina
+Regno,prev_3086.jpeg,3086,,Visitate l'Italia,Milano
+Regno,prev_3087.jpeg,3087,,Visitate l'Italia,Milano
+Regno,prev_3088.jpeg,3088,,Visitate l'Italia,Milano
+Regno,prev_3089.jpeg,3089,,Visitate l'Italia,Milano
+Regno,prev_3090.jpeg,3090,,Visitate l'Italia,Milano
+Regno,prev_3091.jpeg,3091,,Visitate l'Italia,Milano
+Regno,prev_3092.jpeg,3092,,Visitate l'Italia,Modena
+Regno,prev_3092_A.jpeg,3092,A,Visitate l'Italia,Napoli
+Regno,prev_3093.jpeg,3093,,Visitate l'Italia,Napoli
+Regno,prev_3094.jpeg,3094,,Visitate l'Italia,Novara
+Regno,prev_3095.jpeg,3095,,Visitate l'Italia,Novara
+Regno,prev_3096.jpeg,3096,,Visitate l'Italia,Padova
+Regno,prev_3096_B.jpeg,3096,B,Visitate l'Italia,Padova
+Regno,prev_3096_C.jpeg,3096,C,Visitate l'Italia,Padova
+Regno,prev_3097.jpeg,3097,,Visitate l'Italia,Palermo
+Regno,prev_3098.jpeg,3098,,Visitate l'Italia,Palermo
+Regno,prev_3098_A.jpeg,3098,A,Visitate l'Italia,Palermo
+Regno,prev_3099.jpeg,3099,,Visitate l'Italia,Parma
+Regno,prev_3113.jpeg,3113,,Lotteria automobilistica di Tripoli,Bologna
+Regno,prev_3115.jpeg,3115,,Lotteria automobilistica di Tripoli,Livorno
+Regno,prev_3133.jpeg,3133,,La lotteria di Tripoli vi farà milionari,Pisa
+Regno,prev_3139.jpeg,3139,,Lotteria automobilistica di Tripoli,Napoli
+Regno,prev_3180.jpeg,3180,,La lotteria di Merano vi farà milionari,Bologna
+Regno,prev_3196.jpeg,3196,,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_3216.jpeg,3216,,La lotteria E 42 vi farà milionari,Torino
+Regno,prev_3219.jpeg,3219,,La lotteria E 42 vi farà milionari,Bari
+Regno,prev_3234.jpeg,3234,,Visitate l'Italia,Bergamo
+Regno,prev_3242.jpeg,3242,,Visitate l'Italia,Genova
+Regno,prev_3249.jpeg,3249,,Visitate l'Italia,Milano
+Regno,prev_3250.jpeg,3250,,Visitate l'Italia,Milano
+Regno,prev_3271_C.jpeg,3271,C,Visitate l'Italia,Roma
+Regno,prev_3280.jpeg,3280,,Viaggiando servitevi dei telegrammi treno,Milano
+Regno,prev_3290.jpeg,3290,,Lotteria automobilistica di Tripoli,Torino
+Regno,prev_3329.jpeg,3329,,La lotteria di Merano vi farà milionari,Bologna
+Regno,prev_3338.jpeg,3338,,La lotteria di Merano vi farà milionari,Milano
+Regno,prev_3354.jpeg,3354,,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_3398_B.jpeg,3398,B,Visitate l'Italia,Napoli
+Regno,prev_3415.jpeg,3415,,La lotteria E 42 vi farà milionari,Torino
+Regno,prev_3416.jpeg,3416,,La lotteria E 42 vi farà milionari,Venezia
+Regno,prev_3447.jpeg,3447,,Lotteria automobilistica di Tripoli,Genova
+Regno,prev_3451.jpeg,3451,,Lotteria automobilistica di Tripoli,Milano
+Regno,prev_3452.jpeg,3452,,Lotteria automobilistica di Tripoli,Milano
+Regno,prev_3453.jpeg,3453,,Lotteria automobilistica di Tripoli,Milano
+Regno,prev_3454.jpeg,3454,,Lotteria automobilistica di Tripoli,Milano
+Regno,prev_3455.jpeg,3455,,Lotteria automobilistica di Tripoli,Pisa
+Regno,prev_3456.jpeg,3456,,Lotteria automobilistica di Tripoli,Roma
+Regno,prev_3457.jpeg,3457,,Lotteria automobilistica di Tripoli,Roma
+Regno,prev_3457_A.jpeg,3457,A,Lotteria automobilistica di Tripoli,Venezia
+Regno,prev_3458.jpeg,3458,,Triennale d'oltremare - Napoli 8 maggio 15 ottobre,Bologna
+Regno,prev_3459.jpeg,3459,,Triennale d'oltremare - Napoli 8 maggio 15 ottobre,Bologna
+Regno,prev_3460.jpeg,3460,,Triennale d'oltremare - Napoli 8 maggio 15 ottobre,Firenze
+Regno,prev_3461.jpeg,3461,,Triennale d'oltremare - Napoli 8 maggio 15 ottobre,Livorno
+Regno,prev_3462.jpeg,3462,,Triennale d'oltremare - Napoli 8 maggio 15 ottobre,Milano
+Regno,prev_3463.jpeg,3463,,Triennale d'oltremare - Napoli 8 maggio 15 ottobre,Roma
+Regno,prev_3464.jpeg,3464,,Triennale d'oltremare - Napoli 8 maggio 15 ottobre,Roma
+Regno,prev_3464_A.jpeg,3464,A,Triennale d'oltremare - Napoli 8 maggio 15 ottobre,Torino
+Regno,prev_3465.jpeg,3465,,Triennale d'oltremare - Napoli 8 maggio 15 ottobre,Napoli
+Regno,prev_3466.jpeg,3466,,Triennale d'oltremare - Napoli 9 maggio 15 ottobre,Bari
+Regno,prev_3480.jpeg,3480,,Giornata della tecnica - 2 giugno XVIII,Pisa
+Regno,prev_3481.jpeg,3481,,Giornata della tecnica - 2 giugno XVIII,Varese
+Regno,prev_3484.jpeg,3484,,La lotteria di Merano vi farà milionari,Bologna
+Regno,prev_3485.jpeg,3485,,La lotteria di Merano vi farà milionari,Bologna
+Regno,prev_3492_A.jpeg,3492,A,La lotteria di Merano vi farà milionari,Milano
+Regno,prev_3492_B.jpeg,3492,B,La lotteria di Merano vi farà milionari,Milano
+Regno,prev_3503.jpeg,3503,,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_3514.jpeg,3514,,La lotteria esposizione Romavi farà milionari,Firenze
+Regno,prev_3534.jpeg,3534,,Visitate l'Italia,Alessandria
+Regno,prev_3539.jpeg,3539,,Visitate l'Italia,Catania
+Regno,prev_3541_B.jpeg,3541,B,Visitate l'Italia,Genova
+Regno,prev_3545.jpeg,3545,,Visitate l'Italia,Milano
+Regno,prev_3548.jpeg,3548,,Visitate l'Italia,Milano
+Regno,prev_3550.jpeg,3550,,Visitate l'Italia,Milano
+Regno,prev_3561.jpeg,3561,,Visitate l'Italia,Pisa
+Regno,prev_3561_A.jpeg,3561,A,Visitate l'Italia,Pisa
+Regno,prev_3562.jpeg,3562,,Visitate l'Italia,Roma
+Regno,prev_3562_A.jpeg,3562,A,Visitate l'Italia,Roma
+Regno,prev_3562_B.jpeg,3562,B,Visitate l'Italia,Roma
+Regno,prev_3563.jpeg,3563,,Visitate l'Italia,Trento
+Regno,prev_3597.jpeg,3597,,La lotteria di Tripoli vi farà milionari,Milano
+Regno,prev_3598.jpeg,3598,,La lotteria di Tripoli vi farà milionari,Milano
+Regno,prev_3599.jpeg,3599,,La lotteria di Tripoli vi farà milionari,Napoli
+Regno,prev_3604.jpeg,3604,,La lotteria di Tripoli vi farà milionari,Trieste
+Regno,prev_3605_A.jpeg,3605,A,Lotteria automobilistica di Tripoli,Roma
+Regno,prev_3607.jpeg,3607,,La lotteria di Merano vi farà milionari,Bologna
+Regno,prev_3610.jpeg,3610,,La lotteria di Merano vi farà milionari,Genova
+Regno,prev_3612.jpeg,3612,,La lotteria di Merano vi farà milionari,Milano
+Regno,prev_3615.jpeg,3615,,La lotteria di Merano vi farà milionari,Palermo
+Regno,prev_3616_A.jpeg,3616,A,La lotteria di Merano vi farà milionari,Roma
+Regno,prev_3617_A.jpeg,3617,A,La lotteria di Merano vi farà milionari,Trieste
+Regno,prev_3617_B.jpeg,3617,B,La lotteria di Merano vi farà milionari,Venezia
+Regno,prev_3617.jpeg,3617,,La lotteria di Merano vi farà milionari,Torino
+Regno,prev_3619.jpeg,3619,,La lotteria di Merano vi farà milionari,Verona
+Regno,prev_3619_A.jpeg,3619,A,La lotteria di Merano vi farà milionari,Verona
+Regno,prev_3621.jpeg,3621,,Usate i pacchi postali urgenti,Napoli
+Regno,prev_3622_A.jpeg,3622,A,Visitate l'Italia,Bologna
+Regno,prev_3625_A.jpeg,3625,A,Visitate l'Italia,Milano
+Regno,prev_3625_B.jpeg,3625,B,Visitate l'Italia,Milano
+Regno,prev_3626_A.jpeg,3626,A,Visitate l'Italia,Padova
+Regno,prev_3630.jpeg,3630,,Visitate l'Italia,Roma
+Regno,prev_3630_A.jpeg,3630,A,Visitate l'Italia,Roma
+Regno,prev_3630_B.jpeg,3630,B,Visitate l'Italia,Roma
+Regno,prev_3641.jpeg,3641,,Lotteria automobilistica di Tripoli,Milano
+Regno,prev_3649.jpeg,3649,,Lotteria automobilistica di Tripoli,Roma
+Regno,prev_3652.jpeg,3652,,Lotteria automobilistica di Tripoli,Torino
+Regno,prev_3654_A.jpeg,3654,A,Lotteria automobilistica di Tripoli,Venezia
+Regno,prev_3657.jpeg,3657,,Usate i pacchi postali urgenti,Napoli
+Regno,prev_3658.jpeg,3658,,La lotteria di Merano vi farà milionari,Bologna
+Regno,prev_3660.jpeg,3660,,La lotteria di Merano vi farà milionari,Firenze
+Regno,prev_3662.jpeg,3662,,La lotteria di Merano vi farà milionari,Genova
+Regno,prev_3667.jpeg,3667,,La lotteria di Merano vi farà milionari,Milano
+Regno,prev_3672.jpeg,3672,,La lotteria di Merano vi farà milionari,Palermo
+Regno,prev_3673.jpeg,3673,,La lotteria di Merano vi farà milionari,Roma
+Regno,prev_3676.jpeg,3676,,La lotteria di Merano vi farà milionari,Roma
+Regno,prev_3677.jpeg,3677,,La lotteria di Merano vi farà milionari,Venezia
+Regno,prev_3684.jpeg,3684,,Viaggiando servitevi dei telegrammi treno,Milano
+Regno,prev_3686.jpeg,3686,,XIX giornata filatelica nazionale,Verona
+Regno,prev_3695.jpeg,3695,,La lotteria di Merano vi farà milionari,Napoli
+Regno,prev_3700.jpeg,3700,,La lotteria di Merano vi farà milionari,Verona
+Regno,prev_3700_A.jpeg,3700,A,Correntisti postali usate il postagiro …,Catania
+Regno,prev_3701_D.jpeg,3701,D,La lotteria di Merano vi farà milionari,Firenze
+Regno,prev_3702_B.jpeg,3702,B,La lotteria di Merano vi farà milionari,Venezia
+Regno,prev_3703_A.jpeg,3703,A,Taci ! Ogni notizia giova al nemico,Roma
+Regno,prev_3704_A.jpeg,3704,A,La lotteria di Merano vi farà milionari,Bologna
+Regno,prev_3705.jpeg,3705,,La lotteria di Merano vi farà milionari,Roma
+Regno,prev_3706_A.jpeg,3706,A,La lotteria di Merano vi farà milionari,Venezia
+Regno,prev_3728.jpeg,3728,,Chiedete agli uffici postali la guida pratica …,Torino
+Regno,prev_3729.jpeg,3729,,Mostra della meccanica - Torino,Torino
+Regno,prev_3730.jpeg,3730,,Mostra della meccanica - Torino,Torino
+Regno,prev_3731.jpeg,3731,,Mostra della meccanica - Torino,Torino
+Regno,prev_3732.jpeg,3732,,La lotteria della solidarietà nazionale …,Bari
+Regno,prev_3733.jpeg,3733,,La lotteria della solidarietà nazionale …,Bologna
+Regno,prev_3734.jpeg,3734,,La lotteria della solidarietà nazionale …,Catania
+Regno,prev_3735.jpeg,3735,,La lotteria della solidarietà nazionale …,Firenze
+Regno,prev_3736.jpeg,3736,,La lotteria della solidarietà nazionale …,Napoli
+Regno,prev_3737.jpeg,3737,,La lotteria della solidarietà nazionale …,Roma
+Regno,prev_3738.jpeg,3738,,La lotteria della solidarietà nazionale …,Torino
 Libia,prev_1.jpeg,1,,I Fiera Campionaria,Tripoli
 Libia,prev_2.jpeg,2,,Italiani visitate la tripolitania,Tripoli
 Libia,prev_3.jpeg,3,,Visitare la tripolitania,Tripoli
