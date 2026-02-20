@@ -1088,5 +1088,15 @@
     "immagine": "/static/jpeg/destinazioni/estonia_1935.jpeg",
     "paese": "estonia",
     "citta": null
+  },
+  {
+    "nome": "vaticano3",
+    "coords": [
+      41.9029,
+      12.4534
+    ],
+    "immagine": "/static/jpeg/destinazioni/vaticano3.jpeg",
+    "paese": "vaticano3",
+    "citta": null
   }
 ]
