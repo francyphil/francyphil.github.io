@@ -3272,8 +3272,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 43,
@@ -3324,8 +3324,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 43,
@@ -5443,8 +5443,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 70,
@@ -5469,8 +5469,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 70,
@@ -5566,15 +5566,15 @@
     {
         "Targhetta Tipo": 71,
         "Targhetta Ufficio": 395,
-        "extra": "",
+        "extra": "A",
         "Descrizione": "Mata hari ( col trattino tra Mata ed Hari )",
         "linkTarghetta": "",
         "Anno": 1924,
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 71,
@@ -8823,8 +8823,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -8875,8 +8875,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -9382,8 +9382,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -10279,8 +10279,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -10617,8 +10617,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -11488,8 +11488,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 100,
@@ -11566,8 +11566,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 100,
@@ -12242,8 +12242,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 100,
@@ -12541,8 +12541,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -12645,8 +12645,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -14673,8 +14673,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 104,
@@ -16584,8 +16584,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 48,
@@ -18417,8 +18417,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 119,
@@ -21589,8 +21589,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -21628,8 +21628,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Pisa_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -24748,8 +24748,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 143,
@@ -27231,8 +27231,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 143,
@@ -30273,8 +30273,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 143,
@@ -31638,8 +31638,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 207,
@@ -31651,8 +31651,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 211,
@@ -32938,8 +32938,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 203,
@@ -33068,8 +33068,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 204,
@@ -34264,8 +34264,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 218,
@@ -34329,8 +34329,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 218,
@@ -34342,8 +34342,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "Stella",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_Stella_D1.jpeg"
     },
     {
         "Targhetta Tipo": 218,
@@ -35395,8 +35395,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 218,
@@ -35421,8 +35421,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 218,
@@ -36201,8 +36201,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 229,
@@ -36955,8 +36955,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 229,
@@ -37059,8 +37059,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 229,
@@ -38034,8 +38034,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 229,
@@ -38060,8 +38060,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "treStelle",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
     {
         "Targhetta Tipo": 229,
@@ -38073,8 +38073,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "Stella",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_Stella_D1.jpeg"
     },
     {
         "Targhetta Tipo": 229,
@@ -38476,8 +38476,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 220,
@@ -38515,8 +38515,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 218,
@@ -38528,8 +38528,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "Stella",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_Stella_D1.jpeg"
     },
     {
         "Targhetta Tipo": 243,
@@ -38606,8 +38606,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 219,
@@ -38775,8 +38775,8 @@
         "Località": "Salerno",
         "Denominazione ufficio": "Stella",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Salerno_Stella_D1.jpeg"
     },
     {
         "Targhetta Tipo": 247,
@@ -38788,8 +38788,8 @@
         "Località": "Teramo",
         "Denominazione ufficio": "Stella",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Teramo_Stella_D1.jpeg"
     },
     {
         "Targhetta Tipo": 248,
@@ -39737,8 +39737,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -39958,8 +39958,8 @@
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "SanRemo_Imperia_D1.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -40569,8 +40569,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -40855,8 +40855,8 @@
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "SanRemo_Imperia_D1.jpeg"
     },
     {
         "Targhetta Tipo": 252,
@@ -42064,8 +42064,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 217,
@@ -42220,8 +42220,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 258,
@@ -42545,8 +42545,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 252,
@@ -43442,8 +43442,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -43650,8 +43650,8 @@
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "SanRemo_Imperia_D1.jpeg"
     },
     {
         "Targhetta Tipo": 259,
@@ -44885,8 +44885,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Pisa_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -44898,8 +44898,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -45509,8 +45509,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 265,
@@ -46081,8 +46081,8 @@
         "Località": "Teramo",
         "Denominazione ufficio": "Stella",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Teramo_Stella_D1.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -46445,8 +46445,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 254,
@@ -46471,8 +46471,8 @@
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "SanRemo_Imperia_D1.jpeg"
     },
     {
         "Targhetta Tipo": 274,
@@ -47446,8 +47446,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Pisa_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -48018,8 +48018,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Pisa_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 217,
@@ -48057,8 +48057,8 @@
         "Località": "San Remo",
         "Denominazione ufficio": "Stella",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "SanRemo_Stella_D1.jpeg"
     },
     {
         "Targhetta Tipo": 283,
@@ -48590,8 +48590,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Pisa_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -49461,8 +49461,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Pisa_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -49474,8 +49474,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Pisa_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -49773,8 +49773,8 @@
         "Località": "San Remo",
         "Denominazione ufficio": "Stella",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "SanRemo_Stella_D1.jpeg"
     },
     {
         "Targhetta Tipo": 292,
@@ -50267,8 +50267,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Pisa_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 252,
@@ -50618,8 +50618,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Pisa_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 295,
@@ -52841,8 +52841,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Pisa_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -53036,8 +53036,8 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Pisa_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 252,
