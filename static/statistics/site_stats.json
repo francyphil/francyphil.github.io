@@ -5,17 +5,23 @@
     "Regno": {
       "total_catalogati": 4197,
       "images_present": 3828,
-      "images_pct": 91.2
+      "images_pct": 91.2,
+      "datario_present": 108,
+      "datario_pct": 2.6
     },
     "Trieste A": {
       "total_catalogati": 21,
       "images_present": 21,
-      "images_pct": 100.0
+      "images_pct": 100.0,
+      "datario_present": 0,
+      "datario_pct": 0.0
     },
     "Libia": {
       "total_catalogati": 24,
       "images_present": 16,
-      "images_pct": 66.7
+      "images_pct": 66.7,
+      "datario_present": 0,
+      "datario_pct": 0.0
     }
   },
   "total_targhette": 4242,

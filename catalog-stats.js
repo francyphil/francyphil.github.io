@@ -28,6 +28,9 @@
           const pct = Number(s.images_pct || 0);
           const pctDisplay = (Math.round(pct * 10) / 10).toFixed(pct % 1 === 0 ? 0 : 1);
           const pctSafe = Math.max(0, Math.min(100, pct));
+          const datPct = Number(s.datario_pct || 0);
+          const datPctDisplay = (Math.round(datPct * 10) / 10).toFixed(datPct % 1 === 0 ? 0 : 1);
+          const datPctSafe = Math.max(0, Math.min(100, datPct));
           return `<tr>
             <td>${name}</td>
             <td>${s.total_catalogati || 0}</td>
@@ -38,10 +41,17 @@
                 <div class="progress-text">${pctDisplay}%</div>
               </div>
             </td>
+            <td>${s.datario_present || 0}</td>
+            <td class="pct">
+              <div class="progress" aria-valuenow="${datPctSafe}" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: ${datPctSafe}%;"></div>
+                <div class="progress-text">${datPctDisplay}%</div>
+              </div>
+            </td>
           </tr>`;
         }).join('');
         const table = `<table class="catalog-stats">
-          <thead><tr><th>Sezione</th><th>Catalogati</th><th>Immagini</th><th>% immagini</th></tr></thead>
+          <thead><tr><th>Sezione</th><th>Catalogati</th><th>Immagini</th><th>% immagini</th><th>Datari</th><th>% datari</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>`;
         let container = document.getElementById('catalogStatsContainer');

@@ -66,6 +66,7 @@ def compute_section_stats(root_dir: Path, folder: str, json_filename: str, image
             data = []
     total = len(data)
     images_present = 0
+    datario_present = 0
     for item in data:
         uff = item.get("Targhetta Ufficio")
         extra = item.get("extra", "")
@@ -132,8 +133,13 @@ def compute_section_stats(root_dir: Path, folder: str, json_filename: str, image
 
         if found:
             images_present += 1
+        # Controlla se l'annullo ha un datario (linkDatario non vuoto)
+        link_datario = item.get("linkDatario", "")
+        if link_datario and str(link_datario).strip() != "":
+            datario_present += 1
     pct = round((images_present / total) * 100, 1) if total > 0 else 0.0
-    return {"total_catalogati": total, "images_present": images_present, "images_pct": pct}
+    datario_pct = round((datario_present / total) * 100, 1) if total > 0 else 0.0
+    return {"total_catalogati": total, "images_present": images_present, "images_pct": pct, "datario_present": datario_present, "datario_pct": datario_pct}
 
 
 def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict = None):
@@ -304,7 +310,7 @@ def main():
     print(f"✓ Immagini totali: {stats['total_images']}")
     print("✓ Sezioni:")
     for name, s in stats["sections"].items():
-        print(f"  - {name}: catalogati={s['total_catalogati']}, immagini={s['images_present']}, {s['images_pct']}%")
+        print(f"  - {name}: catalogati={s['total_catalogati']}, immagini={s['images_present']}, {s['images_pct']}%, datari={s['datario_present']}, {s['datario_pct']}%")
     # Genera report CSV per immagini mancanti e non referenziate (Regno)
     missing_csv = project_dir / 'missing_images.csv'
     unref_csv = project_dir / 'unreferenced_regno_images.csv'
