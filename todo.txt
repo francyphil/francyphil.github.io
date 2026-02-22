@@ -16,4 +16,5 @@ MIGLIORIE
 - aggiungere selezione anche meno di 100 targhette per pagina
 - modificare la box delle targhette scegliendo le info da mostrare
 - unformare la nomenclatura delle pagine
+- nella catalogazione dei datari mettere anche una flag del tipo di fregio in modo da poter mostrare datari simili in fila, ad esempio prima tutti quelli stella, poi tutti quelli con il trattino, poi il fregio 1 etc
 
