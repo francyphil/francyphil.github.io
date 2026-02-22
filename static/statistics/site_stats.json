@@ -1,6 +1,6 @@
 {
-  "total_pages": 41,
-  "total_images": 4457,
+  "total_pages": 42,
+  "total_images": 4466,
   "sections": {
     "Regno": {
       "total_catalogati": 4197,
@@ -18,10 +18,10 @@
     },
     "Libia": {
       "total_catalogati": 24,
-      "images_present": 16,
-      "images_pct": 66.7,
-      "datario_present": 0,
-      "datario_pct": 0.0
+      "images_present": 18,
+      "images_pct": 75.0,
+      "datario_present": 18,
+      "datario_pct": 75.0
     }
   },
   "total_targhette": 4242,

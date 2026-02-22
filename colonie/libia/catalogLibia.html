@@ -109,6 +109,20 @@
         jsonFile: "targhetteLibia.json",
         getImgPath: function(r) {
           return "img/prev_tripoli_" + r["Targhetta Ufficio"] + ((r["extra"]) ? ("_" + (r["extra"]).toString().trim()) : "") + ".jpeg";
+        },
+        customCell: function(td, campo, val, r) {
+          if (campo === "Denominazione ufficio") {
+            var a = document.createElement("a");
+            var params = new URLSearchParams({
+              denominazione: r["Denominazione ufficio"],
+              localita: r["Località"],
+            });
+            a.href = "ufficioDettaglioLibia.html?" + params.toString();
+            a.textContent = val;
+            td.appendChild(a);
+            return true;
+          }
+          return false;
         }
       };
     </script>
