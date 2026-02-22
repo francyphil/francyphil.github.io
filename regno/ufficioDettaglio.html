@@ -247,6 +247,19 @@
         }
 
         // Mostra i datari unici usati nel set filtrato. Usa la cartella regno/imgDatariRegno
+        // Confronto naturale per codici datario (es. D1 < D2 < D10)
+        function naturalDatariCompare(a, b) {
+          const re = /^([A-Za-z]*)(\d+)$/;
+          const ma = a.match(re);
+          const mb = b.match(re);
+          if (ma && mb) {
+            const cmp = ma[1].localeCompare(mb[1]);
+            if (cmp !== 0) return cmp;
+            return parseInt(ma[2], 10) - parseInt(mb[2], 10);
+          }
+          return a.localeCompare(b);
+        }
+
         function renderDatari(records) {
           const listContainer = document.getElementById("datariList");
           const block = document.getElementById("datariBlock");
@@ -261,9 +274,9 @@
             uniqueMap.set(link, r);
           });
           const sortedDatari = Array.from(uniqueMap.values()).sort((a, b) => {
-            const nameA = (a.Datario || "").trim().toLowerCase();
-            const nameB = (b.Datario || "").trim().toLowerCase();
-            return nameA.localeCompare(nameB);
+            const nameA = (a.Datario || "").trim();
+            const nameB = (b.Datario || "").trim();
+            return naturalDatariCompare(nameA, nameB);
           });
 
           const seen = new Set();
@@ -343,7 +356,7 @@
               container.innerHTML = '';
 
               // ricava codici Datario unici e gli anni
-              const datari = Array.from(new Set(records.map(r => (r.Datario||'').trim()).filter(Boolean))).sort();
+              const datari = Array.from(new Set(records.map(r => (r.Datario||'').trim()).filter(Boolean))).sort(naturalDatariCompare);
               let yearsPresent = Array.from(new Set(records.map(r => r.Anno).filter(y => Number.isFinite(y)))).sort((a,b)=>a-b);
               // assicurati di includere tutti gli anni compresi tra primo e ultimo
               let years = [];
