@@ -10,11 +10,11 @@
       "datario_pct": 34.5
     },
     "Trieste A": {
-      "total_catalogati": 21,
+      "total_catalogati": 22,
       "images_present": 21,
-      "images_pct": 100.0,
-      "datario_present": 0,
-      "datario_pct": 0.0
+      "images_pct": 95.5,
+      "datario_present": 20,
+      "datario_pct": 90.9
     },
     "Libia": {
       "total_catalogati": 24,
@@ -24,6 +24,6 @@
       "datario_pct": 75.0
     }
   },
-  "total_targhette": 4242,
+  "total_targhette": 4243,
   "total_localita": 51
 }
