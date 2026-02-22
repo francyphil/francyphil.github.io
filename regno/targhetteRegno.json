@@ -19241,6 +19241,19 @@
     },
     {
         "Targhetta Tipo": 145,
+        "Targhetta Ufficio": 1352,
+        "extra": "A",
+        "Descrizione": "Torino 1928 esposizioni",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Corrispondenze Centro A",
+        "Denominazione ufficio breve": "CorCentroA",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 145,
         "Targhetta Ufficio": 1353,
         "extra": "",
         "Descrizione": "Torino 1928 esposizioni",
@@ -41836,19 +41849,6 @@
     {
         "Targhetta Tipo": 249,
         "Targhetta Ufficio": 2898,
-        "extra": "E",
-        "Descrizione": "La lotteria di Merano vi farà milionari",
-        "linkTarghetta": "",
-        "Anno": 1936,
-        "Località": "Torino",
-        "Denominazione ufficio": "Ferrovia",
-        "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
-    },
-    {
-        "Targhetta Tipo": 249,
-        "Targhetta Ufficio": 2898,
         "extra": "",
         "Descrizione": "La lotteria di Merano vi farà milionari",
         "linkTarghetta": "",
@@ -41902,19 +41902,6 @@
         "Targhetta Tipo": 249,
         "Targhetta Ufficio": 2899,
         "extra": "C",
-        "Descrizione": "La lotteria di Merano vi farà milionari",
-        "linkTarghetta": "",
-        "Anno": 1936,
-        "Località": "Torino",
-        "Denominazione ufficio": "Ferrovia",
-        "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
-    },
-    {
-        "Targhetta Tipo": 249,
-        "Targhetta Ufficio": 2899,
-        "extra": "D",
         "Descrizione": "La lotteria di Merano vi farà milionari",
         "linkTarghetta": "",
         "Anno": 1936,
@@ -51482,7 +51469,7 @@
     {
         "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3541,
-        "extra": "B",
+        "extra": "A",
         "Descrizione": "Visitate l'Italia",
         "linkTarghetta": "",
         "Anno": 1941,
