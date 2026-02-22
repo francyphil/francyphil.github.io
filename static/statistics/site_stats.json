@@ -1,13 +1,13 @@
 {
   "total_pages": 41,
-  "total_images": 4119,
+  "total_images": 4137,
   "sections": {
     "Regno": {
       "total_catalogati": 4197,
-      "images_present": 3827,
+      "images_present": 3826,
       "images_pct": 91.2,
-      "datario_present": 310,
-      "datario_pct": 7.4
+      "datario_present": 372,
+      "datario_pct": 8.9
     },
     "Trieste A": {
       "total_catalogati": 21,
