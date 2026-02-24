@@ -6,14 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Regno Annulli Onde</title>
     <script src="/favicon-loader.js"></script>
-    <link rel="stylesheet" href="/navbar/navbar.css">
-    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css">
+    <link rel="stylesheet" href="/navbar/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
     <style>
       body {
         font-family: sans-serif;
         margin: 0;
         padding: 0;
         margin-top: 55px;
+      }
+      .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+        align-items: flex-start; /* evita che le immagini vengano allungate in altezza */
+      }
+      .image-gallery img {
+ 
+        max-height: 200px; /* limita l'altezza massima mantenendo le proporzioni */
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        border: 1px solid #ddd;
+        padding: 4px;
+        background: #fff;
       }
     </style>
   </head>
@@ -25,17 +43,84 @@
     <div class="content-container">
       <h1>Regno Annulli Onde</h1>
 
- 
+      <p>
+        Una classificazione puntuale degli annulli ad onde dettagliando le piu
+        piccle differenze porterebbe rapidamente ad ottenere una lunga lista di
+        targhette tipo di probabile poco interesse. Ad esempio alcune targhette 
+        ad onde si sono danneggiate nel tempo per usura deformando le onde per 
+        poi perderne alcune. Elencare quindi tutte le possibili varianti potrebbe non essere utile. 
+        Di seguito viene proposta una classificazione piu generale che tiene conto di alcune
+        caratteristiche principali degli annulli ad onde.
+      </p>
+
+      <p>
+        A partire dal 1910 sono stati usati in piu uffici ed in modo discontinuo
+        annulli meccanici di produzione americana (dalla ditta International
+        Postal Supply di NewYork) del tipo ad onde con lettere. Le lettere
+        possibili sono C, D, R e T. Idealmente secondo il costruttore, le
+        lettere differenti dovevano indicare usi differenti della macchina
+        annullatrice, in particolare C per la fase di raccolta della posta
+        (Collected), D per indicarne lo stato di deposito (Deposited), R per
+        l’annullamento in arrivo (Recived) e T per gli annulli di transito
+        (Transited). In nessun ufficio sembra sia stato seguito alcun ordine per
+        l’utilizzo. Da notare che la stessa ditta ha fornito a molte altre
+        amministrazioni postali lo stesso tipo di annullo. Dopo questa prima
+        fornitura negli anni furono realizzate altre targhette annulli ad onde,
+        sempre con queste lettere, di lunghezza differente per essere adattati
+        alle nuove macchine. Sono state utilizzate anche per posta militare.
+        Sono inoltre state trovate impronte con lettere difettose o mancanti.
+      </p>
+      <ul>
+        <li>Annulli a 7 onde con lunghezza di circa 45 mm</li>
+        <div class="image-gallery">
+        <img src="../static/jpeg/onde/Onde_C.jpeg" alt="Onde C" />
+        </div>
+        <li>Annulli a 7 onde con lunghezza di circa 55 mm</li>
+        <div class="image-gallery">
+        <img src="../static/jpeg/onde/Onde_L.jpeg" alt="Onde L" />
+        </div>        
+        <li>Annulli a 7 onde con lunghezza di circa 45 mm e con lettera C, T, R e D</li>
+        <div class="image-gallery">
+        <img src="../static/jpeg/onde/Onde_Let_C_C.jpeg" alt="Onde Let C C" />
+        <img src="../static/jpeg/onde/Onde_Let_C_D.jpeg" alt="Onde Let C D" />
+        <img src="../static/jpeg/onde/Onde_Let_C_R.jpeg" alt="Onde Let C R" />
+        <img src="../static/jpeg/onde/Onde_Let_C_T.jpeg" alt="Onde Let C T" />
+        </div>         
+        <li>Annulli a 7 onde con lunghezza di circa 55 mm e con lettera C, T, R e D</li>
+        <div class="image-gallery">     
+        <img src="../static/jpeg/onde/Onde_Let_L_C.jpeg" alt="Onde Let L C" />
+        <img src="../static/jpeg/onde/Onde_Let_L_D.jpeg" alt="Onde Let L D" />
+        <img src="../static/jpeg/onde/Onde_Let_L_R.jpeg" alt="Onde Let L R" />
+        <img src="../static/jpeg/onde/Onde_Let_L_T.jpeg" alt="Onde Let L T" />
+        </div>
+        <li>Annulli a onde molto accentuate</li>
+        <div class="image-gallery">
+        <img src="../static/jpeg/onde/Onde_fitte.jpeg" alt="Onde fitte" />
+        </div>   
+        <li>Annulli a onde poco accentuate</li>
+
+        <li>Annulli a 9 onde</li>
+        <div class="image-gallery">
+        <img src="../static/jpeg/onde/Onde9.jpeg" alt="Onde 9" />
+        </div>        
+      </ul>
+      <h2>Galleria</h2>
+      <div class="image-gallery">
+
+
+
+
+      </div>
     </div>
-    
-    <link rel="stylesheet" href="/footer/footer.css">
+
+    <link rel="stylesheet" href="/footer/footer.css" />
     <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
-      fetch('/footer/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('footerContainer').innerHTML = html;
+      fetch("/footer/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footerContainer").innerHTML = html;
         });
     </script>
   </body>
