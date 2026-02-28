@@ -10578,8 +10578,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D3",
-        "linkDatario": "Napoli_Centro_D3.jpeg"
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 94,
@@ -11397,8 +11397,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 100,
@@ -12151,8 +12151,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 100,
@@ -12931,8 +12931,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 102,
@@ -13165,8 +13165,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 102,
@@ -13334,8 +13334,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 103,
@@ -14608,8 +14608,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 104,
@@ -15960,8 +15960,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 116,
@@ -16233,8 +16233,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 115,
@@ -17481,8 +17481,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 132,
@@ -18326,8 +18326,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 119,
@@ -18937,8 +18937,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 144,
@@ -19743,8 +19743,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 140,
@@ -20354,8 +20354,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 160,
@@ -21115,7 +21115,7 @@
         "Targhetta Tipo": 162,
         "Targhetta Ufficio": 1487,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "IL grano diventi ovunque è possibile una …",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Roma",
@@ -21128,7 +21128,7 @@
         "Targhetta Tipo": 162,
         "Targhetta Ufficio": 1488,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "IL grano diventi ovunque è possibile una …",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Roma",
@@ -21141,7 +21141,7 @@
         "Targhetta Tipo": 162,
         "Targhetta Ufficio": 1489,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "IL grano diventi ovunque è possibile una …",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Roma",
@@ -21154,7 +21154,7 @@
         "Targhetta Tipo": 158,
         "Targhetta Ufficio": 1490,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "E' dovere di tutti gli agricoltori italiani ….",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Firenze",
@@ -21167,7 +21167,7 @@
         "Targhetta Tipo": 158,
         "Targhetta Ufficio": 1491,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "E' dovere di tutti gli agricoltori italiani ….",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
@@ -21180,7 +21180,7 @@
         "Targhetta Tipo": 158,
         "Targhetta Ufficio": 1492,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "E' dovere di tutti gli agricoltori italiani ….",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
@@ -21193,7 +21193,7 @@
         "Targhetta Tipo": 158,
         "Targhetta Ufficio": 1493,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "E' dovere di tutti gli agricoltori italiani ….",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
@@ -21206,7 +21206,7 @@
         "Targhetta Tipo": 158,
         "Targhetta Ufficio": 1494,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "E' dovere di tutti gli agricoltori italiani ….",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Milano",
@@ -21219,7 +21219,7 @@
         "Targhetta Tipo": 158,
         "Targhetta Ufficio": 1495,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "E' dovere di tutti gli agricoltori italiani ….",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Napoli",
@@ -21232,7 +21232,7 @@
         "Targhetta Tipo": 158,
         "Targhetta Ufficio": 1496,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "E' dovere di tutti gli agricoltori italiani ….",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Roma",
@@ -21245,7 +21245,7 @@
         "Targhetta Tipo": 158,
         "Targhetta Ufficio": 1497,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "E' dovere di tutti gli agricoltori italiani ….",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Roma",
@@ -21258,7 +21258,7 @@
         "Targhetta Tipo": 158,
         "Targhetta Ufficio": 1498,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "E' dovere di tutti gli agricoltori italiani ….",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Roma",
@@ -21271,7 +21271,7 @@
         "Targhetta Tipo": 158,
         "Targhetta Ufficio": 1499,
         "extra": "",
-        "Descrizione": "Dovunque è possibile aumentare…..",
+        "Descrizione": "E' dovere di tutti gli agricoltori italiani ….",
         "linkTarghetta": "",
         "Anno": 1928,
         "Località": "Roma",
@@ -22681,8 +22681,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 151,
@@ -24098,8 +24098,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 154,
@@ -24410,8 +24410,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D4",
-        "linkDatario": "Napoli_Centro_D4.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Napoli_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 156,
