@@ -1108,16 +1108,7 @@
 
   // ── Eventi globali ───────────────────────────────────────────────────
 
-  document
-    .getElementById("maxRecords")
-    .addEventListener("change", () =>
-      aggiornaVisualizzazione(filtraDati(data)),
-    );
-  document
-    .getElementById("vistaSelezionata")
-    .addEventListener("change", () =>
-      aggiornaVisualizzazione(filtraDati(data)),
-    );
+  // maxRecords e vistaSelezionata listeners già registrati sopra (con reset currentPage)
   document
     .getElementById("schemaCatalogazione")
     .addEventListener("change", () =>
