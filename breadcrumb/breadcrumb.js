@@ -51,12 +51,14 @@
       if (path.includes('catalog.html')) {
         items.push({ text: 'Targhette', link: null });
       } else if (path.includes('cittaDettaglio.html')) {
+        items.push({ text: 'Targhette', link: '/regno/catalog.html' });
         const params = new URLSearchParams(search);
         const localita = params.get('localita');
         if (localita) {
           items.push({ text: localita, link: null });
         }
       } else if (path.includes('ufficioDettaglio.html')) {
+        items.push({ text: 'Targhette', link: '/regno/catalog.html' });
         const params = new URLSearchParams(search);
         const localita = params.get('localita');
         const denominazione = params.get('denominazione');
