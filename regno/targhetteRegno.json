@@ -10591,8 +10591,8 @@
         "Località": "Napoli",
         "Denominazione ufficio": "Distribuzione",
         "Denominazione ufficio breve": "Distr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Napoli_Distr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -47262,10 +47262,10 @@
         "linkTarghetta": "",
         "Anno": 1939,
         "Località": "Milano",
-        "Denominazione ufficio": "Ferrovia Corr.",
-        "Denominazione ufficio breve": "FerCor3",
-        "Datario": "",
-        "linkDatario": ""
+        "Denominazione ufficio": "Ferr. Corr.",
+        "Denominazione ufficio breve": "FerCor1",
+        "Datario": "D1",
+        "linkDatario": "Milano_FerCor1_D1.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -47901,8 +47901,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferr. Corr.",
         "Denominazione ufficio breve": "FerCor1",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Milano_FerCor1_D1.jpeg"
     },
     {
         "Targhetta Tipo": 265,
@@ -49305,8 +49305,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia Corrisp.",
         "Denominazione ufficio breve": "FerCor4",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Milano_FerCor4_D1.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -49812,8 +49812,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia Corrisp.",
         "Denominazione ufficio breve": "FerCor4",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Milano_FerCor4_D1.jpeg"
     },
     {
         "Targhetta Tipo": 292,
@@ -49825,8 +49825,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia Corrisp.",
         "Denominazione ufficio breve": "FerCor4",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Milano_FerCor4_D1.jpeg"
     },
     {
         "Targhetta Tipo": 292,
@@ -50241,8 +50241,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia Corrisp.",
         "Denominazione ufficio breve": "FerCor4",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Milano_FerCor4_D1.jpeg"
     },
     {
         "Targhetta Tipo": 252,
@@ -50358,8 +50358,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia Corrisp.",
         "Denominazione ufficio breve": "FerCor4",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Milano_FerCor4_D1.jpeg"
     },
     {
         "Targhetta Tipo": 291,
@@ -50579,8 +50579,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia Corrisp.",
         "Denominazione ufficio breve": "FerCor4",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Milano_FerCor4_D1.jpeg"
     },
     {
         "Targhetta Tipo": 295,
@@ -53400,8 +53400,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia Corrisp.",
         "Denominazione ufficio breve": "FerCor4",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Milano_FerCor4_D1.jpeg"
     },
     {
         "Targhetta Tipo": 249,
