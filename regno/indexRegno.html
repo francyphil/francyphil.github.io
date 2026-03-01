@@ -7,6 +7,7 @@
     <title>Storia Postale</title>
     <script src="/favicon-loader.js"></script>
     <link rel="stylesheet" href="/navbar/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
     <style>
       body {
         font-family: sans-serif;
@@ -134,6 +135,9 @@
     </style>
   </head>
   <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
     <h1>Catalogo annulli meccanici del Regno d'Italia 1901-1946</h1>
 
     <div class="categories-container">
@@ -197,6 +201,5 @@
           document.getElementById("footerContainer").innerHTML = html;
         });
     </script>
-    <script src="/navbar/navbar.js"></script>
   </body>
 </html>

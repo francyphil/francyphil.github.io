@@ -46,9 +46,15 @@
     // Determina il percorso in base all'URL
     if (path.includes('/regno/')) {
       items.push({ text: 'Catalogo', link: null });
-      items.push({ text: 'Regno', link: '/regno/indexRegno.html' });
+      if (path.includes('indexRegno.html')) {
+        items.push({ text: 'Regno', link: null });
+      } else {
+        items.push({ text: 'Regno', link: '/regno/indexRegno.html' });
+      }
 
-      if (path.includes('catalog.html')) {
+      if (path.includes('indexRegno.html')) {
+        // voce corrente già aggiunta sopra
+      } else if (path.includes('catalog.html')) {
         items.push({ text: 'Targhette', link: null });
       } else if (path.includes('cittaDettaglio.html')) {
         items.push({ text: 'Targhette', link: '/regno/catalog.html' });
@@ -81,28 +87,46 @@
       } else if (path.includes('regnofalsi.html')) {
         items.push({ text: 'Falsi', link: null });
       } else if (path.includes('/targhetteTipo/')) {
-        const fileName = path.split('/').pop().replace('.html', '');
         items.push({ text: 'Targhette', link: null });
       }
-    } else if (path.includes('catalog-colonie.html') || path.includes('onde-colonie.html') || path.includes('barre-colonie.html')) {
+    } else if (path.includes('/colonie/libia/')) {
       items.push({ text: 'Catalogo', link: null });
-      items.push({ text: 'Colonie', link: null });
-      if (path.includes('catalog-colonie.html')) {
-        items.push({ text: 'Targhette', link: null });
-      } else if (path.includes('onde-colonie.html')) {
-        items.push({ text: 'Onde', link: null });
-      } else if (path.includes('barre-colonie.html')) {
-        items.push({ text: 'Barre', link: null });
+      if (path.includes('indexLibia.html')) {
+        items.push({ text: 'Libia', link: null });
+      } else {
+        items.push({ text: 'Libia', link: '/colonie/libia/indexLibia.html' });
+        if (path.includes('catalogLibia.html')) {
+          items.push({ text: 'Targhette', link: null });
+        } else if (path.includes('ondeLibia.html')) {
+          items.push({ text: 'Onde', link: null });
+        } else if (path.includes('barreLibia.html')) {
+          items.push({ text: 'Barre', link: null });
+        } else if (path.includes('ufficioDettaglioLibia.html')) {
+          items.push({ text: 'Targhette', link: '/colonie/libia/catalogLibia.html' });
+          const params = new URLSearchParams(search);
+          const localita = params.get('localita');
+          const denominazione = params.get('denominazione');
+          if (localita) {
+            items.push({ text: localita, link: null });
+          }
+          if (denominazione) {
+            items.push({ text: denominazione, link: null });
+          }
+        }
       }
-    } else if (path.includes('catalog-trieste.html') || path.includes('onde-trieste.html') || path.includes('barre-trieste.html')) {
+    } else if (path.includes('/triestea/')) {
       items.push({ text: 'Catalogo', link: null });
-      items.push({ text: 'Trieste A', link: null });
-      if (path.includes('catalog-trieste.html')) {
-        items.push({ text: 'Targhette', link: null });
-      } else if (path.includes('onde-trieste.html')) {
-        items.push({ text: 'Onde', link: null });
-      } else if (path.includes('barre-trieste.html')) {
-        items.push({ text: 'Barre', link: null });
+      if (path.includes('indexTriestea.html')) {
+        items.push({ text: 'Trieste A', link: null });
+      } else {
+        items.push({ text: 'Trieste A', link: '/triestea/indexTriestea.html' });
+        if (path.includes('catalog-trieste.html')) {
+          items.push({ text: 'Targhette', link: null });
+        } else if (path.includes('onde-trieste.html')) {
+          items.push({ text: 'Onde', link: null });
+        } else if (path.includes('barre-trieste.html')) {
+          items.push({ text: 'Barre', link: null });
+        }
       }
     } else if (path.includes('/static/info/')) {
       items.push({ text: 'Info', link: null });
