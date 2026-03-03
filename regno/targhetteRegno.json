@@ -1322,6 +1322,19 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
+        "Datario": "D2",
+        "linkDatario": "Roma_Centro_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": 16,
+        "Targhetta Ufficio": 100,
+        "extra": "A",
+        "Descrizione": "Pregate i vostri corrispondenti",
+        "linkTarghetta": "",
+        "Anno": 1921,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
         "Datario": "",
         "linkDatario": ""
     },
