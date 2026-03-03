@@ -619,7 +619,7 @@
         "Anno": 1912,
         "Località": "Brescia",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Brescia_Stella_D1.jpeg"
     },
@@ -645,7 +645,7 @@
         "Anno": 1913,
         "Località": "Vercelli",
         "Denominazione ufficio": "Novara",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Novara",
         "Datario": "D1",
         "linkDatario": "Vercelli_Novara_D1.jpeg"
     },
@@ -736,7 +736,7 @@
         "Anno": 1917,
         "Località": "Brescia",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Brescia_Stella_D1.jpeg"
     },
@@ -749,7 +749,7 @@
         "Anno": 1918,
         "Località": "Brescia",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Brescia_Stella_D1.jpeg"
     },
@@ -776,8 +776,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "DK1",
+        "linkDatario": "Roma_Centro_DK1.jpeg"
     },
     {
         "Targhetta Tipo": 13,
@@ -802,8 +802,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "DK2",
+        "linkDatario": "Roma_Centro_DK2.jpeg"
     },
     {
         "Targhetta Tipo": 13,
@@ -828,8 +828,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "DK3",
+        "linkDatario": "Roma_Centro_DK3.jpeg"
     },
     {
         "Targhetta Tipo": 11,
@@ -855,7 +855,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
-        "linkDatario": "Milano_CE_D1.jpeg"
+        "linkDatario": "Milano_Centro_D1.jpeg"
     },
     {
         "Targhetta Tipo": 14,
@@ -907,7 +907,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
-        "linkDatario": "Milano_CE_D1.jpeg"
+        "linkDatario": "Milano_Centro_D1.jpeg"
     },
     {
         "Targhetta Tipo": 20,
@@ -998,7 +998,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
-        "linkDatario": "Milano_CE_D1.jpeg"
+        "linkDatario": "Milano_Centro_D1.jpeg"
     },
     {
         "Targhetta Tipo": 17,
@@ -1036,8 +1036,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Roma_Centro_D1.jpeg"
     },
     {
         "Targhetta Tipo": 15,
@@ -1049,8 +1049,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Roma_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 15,
@@ -1154,7 +1154,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
-        "linkDatario": "Milano_CE_D1.jpeg"
+        "linkDatario": "Milano_Centro_D1.jpeg"
     },
     {
         "Targhetta Tipo": 17,
@@ -1244,8 +1244,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Roma_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 15,
@@ -1271,7 +1271,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
-        "linkDatario": "Milano_CE_D1.jpeg"
+        "linkDatario": "Milano_Centro_D1.jpeg"
     },
     {
         "Targhetta Tipo": 23,
@@ -1281,10 +1281,10 @@
         "linkTarghetta": "",
         "Anno": 1921,
         "Località": "Milano",
-        "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "Centro",
+        "Denominazione ufficio": "3 Partenza 3",
+        "Denominazione ufficio breve": "Part3",
         "Datario": "D1",
-        "linkDatario": "Milano_CE_D1.jpeg"
+        "linkDatario": "Milano_Part3_D1.jpeg"
     },
     {
         "Targhetta Tipo": 16,
@@ -1414,7 +1414,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
-        "linkDatario": "Milano_CE_D1.jpeg"
+        "linkDatario": "Milano_Centro_D1.jpeg"
     },
     {
         "Targhetta Tipo": 17,
@@ -1427,7 +1427,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D2",
-        "linkDatario": "Milano_CE_D2.jpeg"
+        "linkDatario": "Milano_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 17,
@@ -1569,8 +1569,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Roma_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 16,
@@ -1582,8 +1582,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Roma_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 16,
@@ -1843,7 +1843,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D2",
-        "linkDatario": "Milano_CE_D2.jpeg"
+        "linkDatario": "Milano_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 29,
@@ -1868,8 +1868,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D4",
+        "linkDatario": "Roma_Centro_D4.jpeg"
     },
     {
         "Targhetta Tipo": 29,
@@ -1881,8 +1881,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D5",
+        "linkDatario": "Roma_Centro_D5.jpeg"
     },
     {
         "Targhetta Tipo": 29,
@@ -1894,8 +1894,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D6",
+        "linkDatario": "Roma_Centro_D6.jpeg"
     },
     {
         "Targhetta Tipo": 29,
@@ -1907,8 +1907,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Roma_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 29,
@@ -1920,8 +1920,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Roma_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 30,
@@ -1934,7 +1934,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D2",
-        "linkDatario": "Milano_CE_D2.jpeg"
+        "linkDatario": "Milano_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 30,
@@ -2024,8 +2024,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D5",
+        "linkDatario": "Roma_Centro_D5.jpeg"
     },
     {
         "Targhetta Tipo": 29,
@@ -2037,8 +2037,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Roma_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 17,
@@ -2519,7 +2519,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D2",
-        "linkDatario": "Milano_CE_D2.jpeg"
+        "linkDatario": "Milano_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 44,
@@ -2583,8 +2583,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Centro_D7.jpeg"
     },
     {
         "Targhetta Tipo": 44,
@@ -2752,8 +2752,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Centro_D7.jpeg"
     },
     {
         "Targhetta Tipo": 37,
@@ -3013,7 +3013,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 43,
@@ -3091,7 +3091,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 43,
@@ -3285,8 +3285,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Centro_D7.jpeg"
     },
     {
         "Targhetta Tipo": 43,
@@ -3298,8 +3298,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D8",
+        "linkDatario": "Roma_Centro_D8.jpeg"
     },
     {
         "Targhetta Tipo": 43,
@@ -3323,7 +3323,7 @@
         "Anno": 1924,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -3453,7 +3453,7 @@
         "Anno": 1924,
         "Località": "Verona",
         "Denominazione ufficio": "Ferr. 68 - 112 ( A )",
-        "Denominazione ufficio breve": "FerFraz68113",
+        "Denominazione ufficio breve": "FerFraz68112",
         "Datario": "D1",
         "linkDatario": "Verona_FerFraz68112_D1.jpeg"
     },
@@ -3468,7 +3468,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 45,
@@ -3505,7 +3505,7 @@
         "Anno": 1924,
         "Località": "Milano",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Milano_Stella_D1.jpeg"
     },
@@ -3518,7 +3518,7 @@
         "Anno": 1924,
         "Località": "Milano",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Milano_Stella_D1.jpeg"
     },
@@ -3533,7 +3533,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 46,
@@ -3546,7 +3546,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 46,
@@ -3559,7 +3559,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 46,
@@ -3728,7 +3728,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 32,
@@ -3741,7 +3741,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 32,
@@ -3818,8 +3818,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D8",
+        "linkDatario": "Roma_Centro_D8.jpeg"
     },
     {
         "Targhetta Tipo": 32,
@@ -3831,8 +3831,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Centro_D7.jpeg"
     },
     {
         "Targhetta Tipo": 32,
@@ -3947,7 +3947,7 @@
         "Anno": 1924,
         "Località": "Milano",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Milano_Stella_D1.jpeg"
     },
@@ -3960,7 +3960,7 @@
         "Anno": 1924,
         "Località": "Milano",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Milano_Stella_D1.jpeg"
     },
@@ -3975,7 +3975,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 47,
@@ -3988,7 +3988,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 47,
@@ -4156,8 +4156,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Centro_D7.jpeg"
     },
     {
         "Targhetta Tipo": 49,
@@ -4169,8 +4169,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Centro_D7.jpeg"
     },
     {
         "Targhetta Tipo": 49,
@@ -4417,7 +4417,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 48,
@@ -4533,8 +4533,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D5",
+        "linkDatario": "Roma_Centro_D5.jpeg"
     },
     {
         "Targhetta Tipo": 64,
@@ -4546,8 +4546,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D8",
+        "linkDatario": "Roma_Centro_D8.jpeg"
     },
     {
         "Targhetta Tipo": 64,
@@ -4664,7 +4664,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 67,
@@ -4715,8 +4715,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Centro_D7.jpeg"
     },
     {
         "Targhetta Tipo": 67,
@@ -4728,8 +4728,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D5",
+        "linkDatario": "Roma_Centro_D5.jpeg"
     },
     {
         "Targhetta Tipo": 67,
@@ -4781,7 +4781,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 66,
@@ -4806,8 +4806,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D8",
+        "linkDatario": "Roma_Centro_D8.jpeg"
     },
     {
         "Targhetta Tipo": 66,
@@ -4858,8 +4858,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D8",
+        "linkDatario": "Roma_Centro_D8.jpeg"
     },
     {
         "Targhetta Tipo": 68,
@@ -5210,7 +5210,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 70,
@@ -5301,7 +5301,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 70,
@@ -5456,8 +5456,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Centro_D7.jpeg"
     },
     {
         "Targhetta Tipo": 70,
@@ -5468,7 +5468,7 @@
         "Anno": 1924,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -5626,7 +5626,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 72,
@@ -5651,8 +5651,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D5",
+        "linkDatario": "Roma_Centro_D5.jpeg"
     },
     {
         "Targhetta Tipo": 73,
@@ -5691,7 +5691,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 74,
@@ -5754,7 +5754,7 @@
         "Anno": 1924,
         "Località": "Milano",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Milano_Stella_D1.jpeg"
     },
@@ -5767,7 +5767,7 @@
         "Anno": 1924,
         "Località": "Milano",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Milano_Stella_D1.jpeg"
     },
@@ -5782,7 +5782,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 75,
@@ -5795,7 +5795,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 75,
@@ -6094,7 +6094,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 33,
@@ -6107,7 +6107,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 33,
@@ -6120,7 +6120,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 33,
@@ -6210,8 +6210,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Centro_D7.jpeg"
     },
     {
         "Targhetta Tipo": 33,
@@ -6406,7 +6406,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 50,
@@ -6560,7 +6560,7 @@
         "Anno": 1924,
         "Località": "Milano",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Milano_Stella_D1.jpeg"
     },
@@ -6588,7 +6588,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
-        "linkDatario": "Milano_CE_D3.jpeg"
+        "linkDatario": "Milano_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 57,
@@ -6820,7 +6820,7 @@
         "Anno": 1924,
         "Località": "Milano",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Milano_Stella_D1.jpeg"
     },
@@ -6886,8 +6886,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D5",
+        "linkDatario": "Roma_Centro_D5.jpeg"
     },
     {
         "Targhetta Tipo": 39,
@@ -7276,8 +7276,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D8",
+        "linkDatario": "Roma_Centro_D8.jpeg"
     },
     {
         "Targhetta Tipo": 41,
@@ -7368,7 +7368,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D2",
-        "linkDatario": "Milano_CE_D2.jpeg"
+        "linkDatario": "Milano_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 83,
@@ -7548,7 +7548,7 @@
         "Anno": 1924,
         "Località": "Milano",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Milano_Stella_D1.jpeg"
     },
@@ -7666,8 +7666,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Roma_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 42,
@@ -7744,8 +7744,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D8",
+        "linkDatario": "Roma_Centro_D8.jpeg"
     },
     {
         "Targhetta Tipo": 87,
@@ -7784,7 +7784,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D4",
-        "linkDatario": "Milano_CE_D4.jpeg"
+        "linkDatario": "Milano_Centro_D4.jpeg"
     },
     {
         "Targhetta Tipo": 84,
@@ -7809,8 +7809,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D9",
+        "linkDatario": "Roma_Centro_D9.jpeg"
     },
     {
         "Targhetta Tipo": 89,
@@ -7822,8 +7822,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D9",
+        "linkDatario": "Roma_Centro_D9.jpeg"
     },
     {
         "Targhetta Tipo": 16,
@@ -8108,8 +8108,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D9",
+        "linkDatario": "Roma_Centro_D9.jpeg"
     },
     {
         "Targhetta Tipo": 92,
@@ -8200,7 +8200,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D4",
-        "linkDatario": "Milano_CE_D4.jpeg"
+        "linkDatario": "Milano_Centro_D4.jpeg"
     },
     {
         "Targhetta Tipo": 95,
@@ -8460,7 +8460,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -8525,7 +8525,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D6",
-        "linkDatario": "Milano_CE_D6.jpeg"
+        "linkDatario": "Milano_Centro_D6.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -8836,8 +8836,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Roma_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -8874,7 +8874,7 @@
         "Anno": 1925,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -9292,7 +9292,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D4",
-        "linkDatario": "Milano_CE_D4.jpeg"
+        "linkDatario": "Milano_Centro_D4.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -9395,8 +9395,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D9",
+        "linkDatario": "Roma_Centro_D9.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -9408,8 +9408,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Roma_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -9421,8 +9421,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Roma_Centro_D3.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -9434,8 +9434,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D10",
+        "linkDatario": "Roma_Centro_D10.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -9447,8 +9447,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D11",
+        "linkDatario": "Roma_Centro_D11.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -9641,7 +9641,7 @@
         "Anno": 1925,
         "Località": "Verona",
         "Denominazione ufficio": "Ferr. 68 - 112 ( A )",
-        "Denominazione ufficio breve": "FerFraz68115",
+        "Denominazione ufficio breve": "FerFraz68112",
         "Datario": "D1",
         "linkDatario": "Verona_FerFraz68112_D1.jpeg"
     },
@@ -9721,7 +9721,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D4",
-        "linkDatario": "Milano_CE_D4.jpeg"
+        "linkDatario": "Milano_Centro_D4.jpeg"
     },
     {
         "Targhetta Tipo": 96,
@@ -9798,8 +9798,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D6",
-        "linkDatario": "Milano_CE_D6.jpeg"
+        "Datario": "D5",
+        "linkDatario": "Milano_Centro_D5.jpeg"
     },
     {
         "Targhetta Tipo": 98,
@@ -10072,7 +10072,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -10085,7 +10085,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -10214,8 +10214,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D11",
+        "linkDatario": "Roma_Centro_D11.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -10227,8 +10227,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Centro_D7.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -10240,8 +10240,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D10",
+        "linkDatario": "Roma_Centro_D10.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -10278,7 +10278,7 @@
         "Anno": 1926,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -10501,7 +10501,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -10630,8 +10630,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D10",
+        "linkDatario": "Roma_Centro_D10.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -10656,8 +10656,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Centro_D7.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -10669,8 +10669,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -10682,8 +10682,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D11",
+        "linkDatario": "Roma_Centro_D11.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -11280,8 +11280,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D5",
-        "linkDatario": "Milano_CE_D5.jpeg"
+        "Datario": "D6",
+        "linkDatario": "Milano_Centro_D6.jpeg"
     },
     {
         "Targhetta Tipo": 100,
@@ -11501,8 +11501,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D11",
+        "linkDatario": "Roma_Centro_D11.jpeg"
     },
     {
         "Targhetta Tipo": 100,
@@ -11514,8 +11514,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 100,
@@ -11565,7 +11565,7 @@
         "Anno": 1926,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -12086,8 +12086,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D5",
-        "linkDatario": "Milano_CE_D5.jpeg"
+        "Datario": "D6",
+        "linkDatario": "Milano_Centro_D6.jpeg"
     },
     {
         "Targhetta Tipo": 100,
@@ -12255,8 +12255,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D11",
+        "linkDatario": "Roma_Centro_D11.jpeg"
     },
     {
         "Targhetta Tipo": 100,
@@ -12268,8 +12268,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 100,
@@ -12554,8 +12554,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D11",
+        "linkDatario": "Roma_Centro_D11.jpeg"
     },
     {
         "Targhetta Tipo": 94,
@@ -12619,8 +12619,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 93,
@@ -12644,7 +12644,7 @@
         "Anno": 1927,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -12866,8 +12866,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D5",
-        "linkDatario": "Milano_CE_D5.jpeg"
+        "Datario": "D6",
+        "linkDatario": "Milano_Centro_D6.jpeg"
     },
     {
         "Targhetta Tipo": 102,
@@ -12957,8 +12957,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D11",
+        "linkDatario": "Roma_Centro_D11.jpeg"
     },
     {
         "Targhetta Tipo": 102,
@@ -12970,8 +12970,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 102,
@@ -13269,8 +13269,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 102,
@@ -13347,8 +13347,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 103,
@@ -13464,8 +13464,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 105,
@@ -13699,7 +13699,7 @@
         "Denominazione ufficio": "Distribuzione",
         "Denominazione ufficio breve": "Distr",
         "Datario": "D2",
-        "linkDatario": "Milano_Distr_D1.jpeg"
+        "linkDatario": "Milano_Distr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 106,
@@ -13750,8 +13750,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 106,
@@ -13763,8 +13763,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 106,
@@ -13776,8 +13776,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 106,
@@ -14010,8 +14010,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 108,
@@ -14023,8 +14023,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 108,
@@ -14036,8 +14036,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 108,
@@ -14049,8 +14049,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 108,
@@ -14062,8 +14062,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 108,
@@ -14205,8 +14205,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 109,
@@ -14530,8 +14530,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D5",
-        "linkDatario": "Milano_CE_D5.jpeg"
+        "Datario": "D6",
+        "linkDatario": "Milano_Centro_D6.jpeg"
     },
     {
         "Targhetta Tipo": 104,
@@ -14543,8 +14543,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D5",
-        "linkDatario": "Milano_CE_D5.jpeg"
+        "Datario": "D6",
+        "linkDatario": "Milano_Centro_D6.jpeg"
     },
     {
         "Targhetta Tipo": 104,
@@ -14842,8 +14842,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 114,
@@ -14960,7 +14960,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 110,
@@ -15024,8 +15024,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D11",
+        "linkDatario": "Roma_Centro_D11.jpeg"
     },
     {
         "Targhetta Tipo": 110,
@@ -15037,8 +15037,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 110,
@@ -15050,8 +15050,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 110,
@@ -15194,7 +15194,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 113,
@@ -15726,8 +15726,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 112,
@@ -16012,8 +16012,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 116,
@@ -16025,8 +16025,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 116,
@@ -16038,8 +16038,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 116,
@@ -16298,8 +16298,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 48,
@@ -16597,8 +16597,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 48,
@@ -16610,8 +16610,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 48,
@@ -16623,8 +16623,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 48,
@@ -16636,8 +16636,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 48,
@@ -16649,8 +16649,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 48,
@@ -16662,8 +16662,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D15",
+        "linkDatario": "Roma_Centro_D15.jpeg"
     },
     {
         "Targhetta Tipo": 48,
@@ -17105,7 +17105,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 124,
@@ -17234,8 +17234,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 122,
@@ -17286,8 +17286,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 127,
@@ -17455,8 +17455,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 130,
@@ -17468,8 +17468,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 132,
@@ -17494,8 +17494,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 132,
@@ -17507,8 +17507,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 133,
@@ -17572,8 +17572,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 136,
@@ -18040,8 +18040,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 118,
@@ -18430,8 +18430,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 119,
@@ -18677,8 +18677,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 141,
@@ -19418,8 +19418,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 145,
@@ -19431,8 +19431,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 145,
@@ -20133,8 +20133,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 119,
@@ -20237,8 +20237,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 110,
@@ -20250,8 +20250,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 160,
@@ -21121,8 +21121,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 162,
@@ -21355,8 +21355,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 141,
@@ -21368,8 +21368,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 141,
@@ -21601,7 +21601,7 @@
         "Anno": 1928,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -22382,8 +22382,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 149,
@@ -22746,8 +22746,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 151,
@@ -22759,8 +22759,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 151,
@@ -23019,8 +23019,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 150,
@@ -23838,8 +23838,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 157,
@@ -23851,8 +23851,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 157,
@@ -24697,7 +24697,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 143,
@@ -24760,7 +24760,7 @@
         "Anno": 1928,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -25684,8 +25684,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 162,
@@ -25697,8 +25697,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 164,
@@ -26763,8 +26763,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 181,
@@ -26867,8 +26867,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 184,
@@ -26880,8 +26880,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D16",
+        "linkDatario": "Roma_Centro_D16.jpeg"
     },
     {
         "Targhetta Tipo": 184,
@@ -27140,8 +27140,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D14",
+        "linkDatario": "Roma_Centro_D14.jpeg"
     },
     {
         "Targhetta Tipo": 143,
@@ -27243,7 +27243,7 @@
         "Anno": 1929,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -27464,7 +27464,7 @@
         "Anno": 1929,
         "Località": "Verona",
         "Denominazione ufficio": "Centro ( A )",
-        "Denominazione ufficio breve": "Centro",
+        "Denominazione ufficio breve": "CentroA",
         "Datario": "D1",
         "linkDatario": "Verona_CentroA_D1.jpeg"
     },
@@ -28518,8 +28518,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 192,
@@ -29688,8 +29688,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D16",
+        "linkDatario": "Roma_Centro_D16.jpeg"
     },
     {
         "Targhetta Tipo": 192,
@@ -29701,8 +29701,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 192,
@@ -29805,8 +29805,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D16",
+        "linkDatario": "Roma_Centro_D16.jpeg"
     },
     {
         "Targhetta Tipo": 214,
@@ -29974,8 +29974,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 189,
@@ -30117,8 +30117,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 190,
@@ -30285,7 +30285,7 @@
         "Anno": 1930,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -30638,7 +30638,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 202,
@@ -30767,8 +30767,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 202,
@@ -30780,8 +30780,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D17",
+        "linkDatario": "Roma_Centro_D17.jpeg"
     },
     {
         "Targhetta Tipo": 202,
@@ -30793,8 +30793,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
         "Targhetta Tipo": 202,
@@ -30806,8 +30806,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D18",
+        "linkDatario": "Roma_Centro_D18.jpeg"
     },
     {
         "Targhetta Tipo": 202,
@@ -31404,8 +31404,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D16",
+        "linkDatario": "Roma_Centro_D16.jpeg"
     },
     {
         "Targhetta Tipo": 203,
@@ -31417,8 +31417,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D18",
+        "linkDatario": "Roma_Centro_D18.jpeg"
     },
     {
         "Targhetta Tipo": 203,
@@ -31663,7 +31663,7 @@
         "Anno": 1930,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -32015,8 +32015,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D17",
+        "linkDatario": "Roma_Centro_D17.jpeg"
     },
     {
         "Targhetta Tipo": 208,
@@ -32028,8 +32028,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D18",
+        "linkDatario": "Roma_Centro_D18.jpeg"
     },
     {
         "Targhetta Tipo": 208,
@@ -32041,8 +32041,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D16",
+        "linkDatario": "Roma_Centro_D16.jpeg"
     },
     {
         "Targhetta Tipo": 208,
@@ -32587,8 +32587,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D18",
+        "linkDatario": "Roma_Centro_D18.jpeg"
     },
     {
         "Targhetta Tipo": 202,
@@ -32950,7 +32950,7 @@
         "Anno": 1931,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -33276,8 +33276,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D16",
+        "linkDatario": "Roma_Centro_D16.jpeg"
     },
     {
         "Targhetta Tipo": 189,
@@ -34069,8 +34069,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D16",
+        "linkDatario": "Roma_Centro_D16.jpeg"
     },
     {
         "Targhetta Tipo": 216,
@@ -34187,7 +34187,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D4",
-        "linkDatario": "Milano_CE_D4.jpeg"
+        "linkDatario": "Milano_Centro_D4.jpeg"
     },
     {
         "Targhetta Tipo": 218,
@@ -34341,7 +34341,7 @@
         "Anno": 1931,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -34354,7 +34354,7 @@
         "Anno": 1931,
         "Località": "Salerno",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Salerno_Stella_D1.jpeg"
     },
@@ -34498,8 +34498,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D16",
+        "linkDatario": "Roma_Centro_D16.jpeg"
     },
     {
         "Targhetta Tipo": 219,
@@ -34588,7 +34588,7 @@
         "Anno": 1931,
         "Località": "Verona",
         "Denominazione ufficio": "Ferr. 68 - 112 ( A )",
-        "Denominazione ufficio breve": "FerFraz68116",
+        "Denominazione ufficio breve": "FerFraz68112",
         "Datario": "D1",
         "linkDatario": "Verona_FerFraz68112_D1.jpeg"
     },
@@ -34668,7 +34668,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 220,
@@ -35291,8 +35291,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D16",
+        "linkDatario": "Roma_Centro_D16.jpeg"
     },
     {
         "Targhetta Tipo": 219,
@@ -35433,7 +35433,7 @@
         "Anno": 1932,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -35642,8 +35642,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D16",
+        "linkDatario": "Roma_Centro_D16.jpeg"
     },
     {
         "Targhetta Tipo": 202,
@@ -36007,7 +36007,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 229,
@@ -36227,8 +36227,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D19",
+        "linkDatario": "Roma_Centro_D19.jpeg"
     },
     {
         "Targhetta Tipo": 229,
@@ -36343,7 +36343,7 @@
         "Anno": 1932,
         "Località": "Verona",
         "Denominazione ufficio": "Ferr. 68 - 112 ( A )",
-        "Denominazione ufficio breve": "FerFraz68117",
+        "Denominazione ufficio breve": "FerFraz68112",
         "Datario": "D1",
         "linkDatario": "Verona_FerFraz68112_D1.jpeg"
     },
@@ -36566,7 +36566,7 @@
         "Denominazione ufficio": "Ferrovia ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622",
         "Datario": "D1",
-        "linkDatario": "Foggia_FerrFraz_D1.jpeg"
+        "linkDatario": "Foggia_FerFraz2622_D1.jpeg"
     },
     {
         "Targhetta Tipo": 229,
@@ -36981,8 +36981,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D19",
+        "linkDatario": "Roma_Centro_D19.jpeg"
     },
     {
         "Targhetta Tipo": 229,
@@ -37071,7 +37071,7 @@
         "Anno": 1933,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -37240,7 +37240,7 @@
         "Anno": 1933,
         "Località": "Verona",
         "Denominazione ufficio": "Ferr. 68 - 112 ( A )",
-        "Denominazione ufficio breve": "FerFraz68118",
+        "Denominazione ufficio breve": "FerFraz68112",
         "Datario": "D1",
         "linkDatario": "Verona_FerFraz68112_D1.jpeg"
     },
@@ -38060,8 +38060,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D19",
+        "linkDatario": "Roma_Centro_D19.jpeg"
     },
     {
         "Targhetta Tipo": 229,
@@ -38072,7 +38072,7 @@
         "Anno": 1934,
         "Località": "Salerno",
         "Denominazione ufficio": "3 stelle",
-        "Denominazione ufficio breve": "treStelle",
+        "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
         "linkDatario": "Salerno_TreStelle_D1.jpeg"
     },
@@ -38085,7 +38085,7 @@
         "Anno": 1934,
         "Località": "Salerno",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Salerno_Stella_D1.jpeg"
     },
@@ -38540,7 +38540,7 @@
         "Anno": 1934,
         "Località": "Salerno",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Salerno_Stella_D1.jpeg"
     },
@@ -38723,8 +38723,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D18",
+        "linkDatario": "Roma_Centro_D18.jpeg"
     },
     {
         "Targhetta Tipo": 245,
@@ -38787,7 +38787,7 @@
         "Anno": 1935,
         "Località": "Salerno",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Salerno_Stella_D1.jpeg"
     },
@@ -38800,7 +38800,7 @@
         "Anno": 1935,
         "Località": "Teramo",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Teramo_Stella_D1.jpeg"
     },
@@ -38878,7 +38878,7 @@
         "Anno": 1935,
         "Località": "Bolzano",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Bolzano_Stella_D1.jpeg"
     },
@@ -39087,8 +39087,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D13",
+        "linkDatario": "Roma_Centro_D13.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -39763,8 +39763,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D20",
+        "linkDatario": "Roma_Centro_D20.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -39970,7 +39970,7 @@
         "Anno": 1935,
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Imperia",
         "Datario": "",
         "linkDatario": ""
     },
@@ -40412,7 +40412,7 @@
         "Anno": 1936,
         "Località": "Monza",
         "Denominazione ufficio": "Milano",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Milano",
         "Datario": "",
         "linkDatario": ""
     },
@@ -40595,8 +40595,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D20",
+        "linkDatario": "Roma_Centro_D20.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -40724,7 +40724,7 @@
         "Anno": 1936,
         "Località": "Roma",
         "Denominazione ufficio": "Nomentano",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Nomentano",
         "Datario": "D1",
         "linkDatario": "Roma_Nomentano_D1.jpeg"
     },
@@ -40737,7 +40737,7 @@
         "Anno": 1936,
         "Località": "Roma",
         "Denominazione ufficio": "Ostiense",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Ostiense",
         "Datario": "D1",
         "linkDatario": "Roma_Ostiense_D1.jpeg"
     },
@@ -40750,7 +40750,7 @@
         "Anno": 1936,
         "Località": "Roma",
         "Denominazione ufficio": "Prati",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Prati",
         "Datario": "D1",
         "linkDatario": "Roma_Prati_D1.jpeg"
     },
@@ -40867,7 +40867,7 @@
         "Anno": 1936,
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Imperia",
         "Datario": "D1",
         "linkDatario": "SanRemo_Imperia_D1.jpeg"
     },
@@ -41167,8 +41167,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D20",
+        "linkDatario": "Roma_Centro_D20.jpeg"
     },
     {
         "Targhetta Tipo": 252,
@@ -41337,7 +41337,7 @@
         "Denominazione ufficio": "Belluno",
         "Denominazione ufficio breve": "Belluno",
         "Datario": "D1",
-        "linkDatario": "Cortina_D1.jpeg"
+        "linkDatario": "Cortina_Belluno_D1.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -41674,8 +41674,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D20",
+        "linkDatario": "Roma_Centro_D20.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -41985,7 +41985,7 @@
         "Anno": 1936,
         "Località": "Roma",
         "Denominazione ufficio": "Ostiense",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Ostiense",
         "Datario": "D1",
         "linkDatario": "Roma_Ostiense_D1.jpeg"
     },
@@ -41998,7 +41998,7 @@
         "Anno": 1936,
         "Località": "Roma",
         "Denominazione ufficio": "Prati",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Prati",
         "Datario": "D1",
         "linkDatario": "Roma_Prati_D1.jpeg"
     },
@@ -42011,7 +42011,7 @@
         "Anno": 1936,
         "Località": "Roma",
         "Denominazione ufficio": "Nomentano",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Nomentano",
         "Datario": "D1",
         "linkDatario": "Roma_Nomentano_D1.jpeg"
     },
@@ -42156,7 +42156,7 @@
         "Denominazione ufficio": "Belluno",
         "Denominazione ufficio breve": "Belluno",
         "Datario": "D1",
-        "linkDatario": "Cortina_D1.jpeg"
+        "linkDatario": "Cortina_Belluno_D1.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -42180,7 +42180,7 @@
         "Anno": 1937,
         "Località": "Monza",
         "Denominazione ufficio": "Milano",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Milano",
         "Datario": "D1",
         "linkDatario": "Monza_Milano_D1.jpeg"
     },
@@ -42545,8 +42545,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D20",
+        "linkDatario": "Roma_Centro_D20.jpeg"
     },
     {
         "Targhetta Tipo": 252,
@@ -42804,7 +42804,7 @@
         "Anno": 1937,
         "Località": "Roma",
         "Denominazione ufficio": "Nomentano",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Nomentano",
         "Datario": "D1",
         "linkDatario": "Roma_Nomentano_D1.jpeg"
     },
@@ -42817,7 +42817,7 @@
         "Anno": 1937,
         "Località": "Roma",
         "Denominazione ufficio": "Ostiense",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Ostiense",
         "Datario": "D1",
         "linkDatario": "Roma_Ostiense_D1.jpeg"
     },
@@ -42830,7 +42830,7 @@
         "Anno": 1937,
         "Località": "Roma",
         "Denominazione ufficio": "Prati",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Prati",
         "Datario": "D1",
         "linkDatario": "Roma_Prati_D1.jpeg"
     },
@@ -43298,7 +43298,7 @@
         "Anno": 1937,
         "Località": "Monza",
         "Denominazione ufficio": "Milano",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Milano",
         "Datario": "D1",
         "linkDatario": "Monza_Milano_D1.jpeg"
     },
@@ -43442,8 +43442,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D19",
+        "linkDatario": "Roma_Centro_D19.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -43532,7 +43532,7 @@
         "Anno": 1937,
         "Località": "Roma",
         "Denominazione ufficio": "Prati",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Prati",
         "Datario": "D1",
         "linkDatario": "Roma_Prati_D1.jpeg"
     },
@@ -43597,7 +43597,7 @@
         "Anno": 1937,
         "Località": "Trieste",
         "Denominazione ufficio": "C.P.",
-        "Denominazione ufficio breve": "CPpunt",
+        "Denominazione ufficio breve": "CPPunt",
         "Datario": "",
         "linkDatario": ""
     },
@@ -43636,7 +43636,7 @@
         "Anno": 1937,
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Imperia",
         "Datario": "D1",
         "linkDatario": "SanRemo_Imperia_D1.jpeg"
     },
@@ -43649,7 +43649,7 @@
         "Anno": 1937,
         "Località": "Cremona",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Cremona_Stella_D1.jpeg"
     },
@@ -43688,7 +43688,7 @@
         "Anno": 1937,
         "Località": "Treviso",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "",
         "linkDatario": ""
     },
@@ -43768,7 +43768,7 @@
         "Denominazione ufficio": "Belluno",
         "Denominazione ufficio breve": "Belluno",
         "Datario": "D1",
-        "linkDatario": "Cortina_D1.jpeg"
+        "linkDatario": "Cortina_Belluno_D1.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -44105,8 +44105,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D19",
+        "linkDatario": "Roma_Centro_D19.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -44950,13 +44950,13 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D19",
+        "linkDatario": "Roma_Centro_D19.jpeg"
     },
     {
         "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3103,
-        "extra": "",
+        "extra": "A",
         "Descrizione": "Visitate l'Italia",
         "linkTarghetta": "",
         "Anno": 1938,
@@ -45014,7 +45014,7 @@
         "Anno": 1938,
         "Località": "Trieste",
         "Denominazione ufficio": "C.P.",
-        "Denominazione ufficio breve": "CPpunt",
+        "Denominazione ufficio breve": "CPPunt",
         "Datario": "D1",
         "linkDatario": "Trieste_CPPunt_D1.jpeg"
     },
@@ -45081,7 +45081,7 @@
         "Denominazione ufficio": "Belluno",
         "Denominazione ufficio breve": "Belluno",
         "Datario": "D1",
-        "linkDatario": "Cortina_D1.jpeg"
+        "linkDatario": "Cortina_Belluno_D1.jpeg"
     },
     {
         "Targhetta Tipo": 264,
@@ -45509,8 +45509,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D19",
+        "linkDatario": "Roma_Centro_D19.jpeg"
     },
     {
         "Targhetta Tipo": 265,
@@ -45547,7 +45547,7 @@
         "Anno": 1938,
         "Località": "Trieste",
         "Denominazione ufficio": "C.P.",
-        "Denominazione ufficio breve": "CPpunt",
+        "Denominazione ufficio breve": "CPPunt",
         "Datario": "D1",
         "linkDatario": "Trieste_CPPunt_D1.jpeg"
     },
@@ -45573,7 +45573,7 @@
         "Anno": 1938,
         "Località": "Cremona",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Cremona_Stella_D1.jpeg"
     },
@@ -45678,8 +45678,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D19",
+        "linkDatario": "Roma_Centro_D19.jpeg"
     },
     {
         "Targhetta Tipo": 267,
@@ -45794,7 +45794,7 @@
         "Anno": 1938,
         "Località": "Roma",
         "Denominazione ufficio": "Nomentano",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Nomentano",
         "Datario": "D1",
         "linkDatario": "Roma_Nomentano_D1.jpeg"
     },
@@ -45807,7 +45807,7 @@
         "Anno": 1938,
         "Località": "Roma",
         "Denominazione ufficio": "Ostiense",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Ostiense",
         "Datario": "D2",
         "linkDatario": "Roma_Ostiense_D2.jpeg"
     },
@@ -45820,7 +45820,7 @@
         "Anno": 1938,
         "Località": "Roma",
         "Denominazione ufficio": "Prati",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Prati",
         "Datario": "D2",
         "linkDatario": "Roma_Prati_D2.jpeg"
     },
@@ -45872,7 +45872,7 @@
         "Anno": 1938,
         "Località": "Mantova",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Mantova_Stella_D1.jpeg"
     },
@@ -45885,7 +45885,7 @@
         "Anno": 1938,
         "Località": "Treviso",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Treviso_Stella_D1.jpeg"
     },
@@ -46067,7 +46067,7 @@
         "Anno": 1938,
         "Località": "Teramo",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Teramo_Stella_D1.jpeg"
     },
@@ -46263,8 +46263,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D19",
+        "linkDatario": "Roma_Centro_D19.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -46379,7 +46379,7 @@
         "Anno": 1938,
         "Località": "Trieste",
         "Denominazione ufficio": "C.P.",
-        "Denominazione ufficio breve": "CPpunt",
+        "Denominazione ufficio breve": "CPPunt",
         "Datario": "D1",
         "linkDatario": "Trieste_CPPunt_D1.jpeg"
     },
@@ -46457,7 +46457,7 @@
         "Anno": 1938,
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Imperia",
         "Datario": "D1",
         "linkDatario": "SanRemo_Imperia_D1.jpeg"
     },
@@ -46470,7 +46470,7 @@
         "Anno": 1938,
         "Località": "Cattolica",
         "Denominazione ufficio": "Forlì",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Forli",
         "Datario": "D1",
         "linkDatario": "Cattolica_Forli_D1"
     },
@@ -46498,7 +46498,7 @@
         "Denominazione ufficio": "Belluno",
         "Denominazione ufficio breve": "Belluno",
         "Datario": "D1",
-        "linkDatario": "Cortina_D1.jpeg"
+        "linkDatario": "Cortina_Belluno_D1.jpeg"
     },
     {
         "Targhetta Tipo": 277,
@@ -46652,7 +46652,7 @@
         "Anno": 1938,
         "Località": "Trieste",
         "Denominazione ufficio": "C.P.",
-        "Denominazione ufficio breve": "CPpunt",
+        "Denominazione ufficio breve": "CPPunt",
         "Datario": "D1",
         "linkDatario": "Trieste_CPPunt_D1.jpeg"
     },
@@ -46886,7 +46886,7 @@
         "Anno": 1939,
         "Località": "Trieste",
         "Denominazione ufficio": "C.P.",
-        "Denominazione ufficio breve": "CPpunt",
+        "Denominazione ufficio breve": "CPPunt",
         "Datario": "D1",
         "linkDatario": "Trieste_CPPunt_D1.jpeg"
     },
@@ -47446,8 +47446,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D19",
+        "linkDatario": "Roma_Centro_D19.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -47575,7 +47575,7 @@
         "Anno": 1939,
         "Località": "Trieste",
         "Denominazione ufficio": "C.P.",
-        "Denominazione ufficio breve": "CPpunt",
+        "Denominazione ufficio breve": "CPPunt",
         "Datario": "D1",
         "linkDatario": "Trieste_CPPunt_D1.jpeg"
     },
@@ -47953,8 +47953,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D18",
+        "linkDatario": "Roma_Centro_D18.jpeg"
     },
     {
         "Targhetta Tipo": 265,
@@ -47991,7 +47991,7 @@
         "Anno": 1939,
         "Località": "Trieste",
         "Denominazione ufficio": "C.P.",
-        "Denominazione ufficio breve": "CPpunt",
+        "Denominazione ufficio breve": "CPPunt",
         "Datario": "D1",
         "linkDatario": "Trieste_CPPunt_D1.jpeg"
     },
@@ -48030,7 +48030,7 @@
         "Anno": 1939,
         "Località": "Cremona",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Cremona_Stella_D1.jpeg"
     },
@@ -48043,7 +48043,7 @@
         "Anno": 1939,
         "Località": "San Remo",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "SanRemo_Stella_D1.jpeg"
     },
@@ -48590,8 +48590,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D18",
+        "linkDatario": "Roma_Centro_D18.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -48693,7 +48693,7 @@
         "Anno": 1939,
         "Località": "Trieste",
         "Denominazione ufficio": "C.P.",
-        "Denominazione ufficio breve": "CPpunt",
+        "Denominazione ufficio breve": "CPPunt",
         "Datario": "D1",
         "linkDatario": "Trieste_CPPunt_D1.jpeg"
     },
@@ -48760,7 +48760,7 @@
         "Denominazione ufficio": "Belluno",
         "Denominazione ufficio breve": "Belluno",
         "Datario": "D1",
-        "linkDatario": "Cortina_D1.jpeg"
+        "linkDatario": "Cortina_Belluno_D1.jpeg"
     },
     {
         "Targhetta Tipo": 274,
@@ -48771,7 +48771,7 @@
         "Anno": 1939,
         "Località": "Cattolica",
         "Denominazione ufficio": "Forlì",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Forli",
         "Datario": "D1",
         "linkDatario": "Cattolica_Forli_D1"
     },
@@ -48994,7 +48994,7 @@
         "Denominazione ufficio": "Belluno",
         "Denominazione ufficio breve": "Belluno",
         "Datario": "D1",
-        "linkDatario": "Cortina_D1.jpeg"
+        "linkDatario": "Cortina_Belluno_D1.jpeg"
     },
     {
         "Targhetta Tipo": 258,
@@ -49564,7 +49564,7 @@
         "Anno": 1940,
         "Località": "Trieste",
         "Denominazione ufficio": "C.P.",
-        "Denominazione ufficio breve": "CPpunt",
+        "Denominazione ufficio breve": "CPPunt",
         "Datario": "D1",
         "linkDatario": "Trieste_CPPunt_D1.jpeg"
     },
@@ -49759,7 +49759,7 @@
         "Anno": 1940,
         "Località": "San Remo",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "SanRemo_Stella_D1.jpeg"
     },
@@ -49994,8 +49994,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D18",
+        "linkDatario": "Roma_Centro_D18.jpeg"
     },
     {
         "Targhetta Tipo": 265,
@@ -50500,7 +50500,7 @@
         "Anno": 1940,
         "Località": "Cremona",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Cremona_Stella_D1.jpeg"
     },
@@ -50539,7 +50539,7 @@
         "Anno": 1940,
         "Località": "Roma",
         "Denominazione ufficio": "Ostiense",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Ostiense",
         "Datario": "D3",
         "linkDatario": "Roma_Ostiense_D3.jpeg"
     },
@@ -50643,7 +50643,7 @@
         "Anno": 1940,
         "Località": "Cattolica",
         "Denominazione ufficio": "Forlì",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Forli",
         "Datario": "D1",
         "linkDatario": "Cattolica_Forli_D1"
     },
@@ -50917,8 +50917,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D18",
+        "linkDatario": "Roma_Centro_D18.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -51020,7 +51020,7 @@
         "Anno": 1940,
         "Località": "Roma",
         "Denominazione ufficio": "Prati",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Prati",
         "Datario": "D3",
         "linkDatario": "Roma_Prati_D3.jpeg"
     },
@@ -51035,7 +51035,7 @@
         "Denominazione ufficio": "Belluno",
         "Denominazione ufficio breve": "Belluno",
         "Datario": "D1",
-        "linkDatario": "Cortina_D1.jpeg"
+        "linkDatario": "Cortina_Belluno_D1.jpeg"
     },
     {
         "Targhetta Tipo": 299,
@@ -51841,7 +51841,7 @@
         "Denominazione ufficio": "Belluno",
         "Denominazione ufficio breve": "Belluno",
         "Datario": "D1",
-        "linkDatario": "Cortina_D1.jpeg"
+        "linkDatario": "Cortina_Belluno_D1.jpeg"
     },
     {
         "Targhetta Tipo": 302,
@@ -51995,7 +51995,7 @@
         "Anno": 1941,
         "Località": "Roma",
         "Denominazione ufficio": "Ostiense",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Ostiense",
         "Datario": "D3",
         "linkDatario": "Roma_Ostiense_D3.jpeg"
     },
@@ -52034,7 +52034,7 @@
         "Anno": 1941,
         "Località": "Cremona",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Cremona_Stella_D1.jpeg"
     },
@@ -52047,7 +52047,7 @@
         "Anno": 1941,
         "Località": "Cremona",
         "Denominazione ufficio": "Stella",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Stella",
         "Datario": "D1",
         "linkDatario": "Cremona_Stella_D1.jpeg"
     },
@@ -52398,7 +52398,7 @@
         "Anno": 1941,
         "Località": "Cattolica",
         "Denominazione ufficio": "Forlì",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Forli",
         "Datario": "D2",
         "linkDatario": "Cattolica_Forli_D2"
     },
@@ -52582,7 +52582,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D9",
-        "linkDatario": "Venezia_Centro_D8.jpeg"
+        "linkDatario": "Venezia_Centro_D9.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -53504,8 +53504,8 @@
         "Località": "Venezia",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D10",
+        "linkDatario": "Venezia_Centro_D10.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -53542,7 +53542,7 @@
         "Anno": 1942,
         "Località": "Cattolica",
         "Denominazione ufficio": "Forlì",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Forli",
         "Datario": "D2",
         "linkDatario": "Cattolica_Forli_D2"
     },
@@ -53620,7 +53620,7 @@
         "Anno": 1943,
         "Località": "Cattolica",
         "Denominazione ufficio": "Forlì",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Forli",
         "Datario": "D2",
         "linkDatario": "Cattolica_Forli_D2"
     },
@@ -53804,7 +53804,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D9",
-        "linkDatario": "Venezia_Centro_D8.jpeg"
+        "linkDatario": "Venezia_Centro_D9.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -54063,8 +54063,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D21",
+        "linkDatario": "Roma_Centro_D21.jpeg"
     },
     {
         "Targhetta Tipo": 308,
@@ -54088,7 +54088,7 @@
         "Anno": 1943,
         "Località": "Roma",
         "Denominazione ufficio": "Nomentano",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Nomentano",
         "Datario": "D2",
         "linkDatario": "Roma_Nomentano_D2.jpeg"
     },
@@ -54101,7 +54101,7 @@
         "Anno": 1943,
         "Località": "Roma",
         "Denominazione ufficio": "Ostiense",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Ostiense",
         "Datario": "D4",
         "linkDatario": "Roma_Ostiense_D4.jpeg"
     },
@@ -54114,7 +54114,7 @@
         "Anno": 1943,
         "Località": "Roma",
         "Denominazione ufficio": "Prati",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Prati",
         "Datario": "D3",
         "linkDatario": "Roma_Prati_D3.jpeg"
     },
@@ -54167,8 +54167,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D21",
+        "linkDatario": "Roma_Centro_D21.jpeg"
     },
     {
         "Targhetta Tipo": 308,
@@ -54192,7 +54192,7 @@
         "Anno": 1944,
         "Località": "Roma",
         "Denominazione ufficio": "Nomentano",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Nomentano",
         "Datario": "D2",
         "linkDatario": "Roma_Nomentano_D2.jpeg"
     },
@@ -54205,7 +54205,7 @@
         "Anno": 1944,
         "Località": "Roma",
         "Denominazione ufficio": "Ostiense",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Ostiense",
         "Datario": "D4",
         "linkDatario": "Roma_Ostiense_D4.jpeg"
     },
@@ -54218,7 +54218,7 @@
         "Anno": 1944,
         "Località": "Roma",
         "Denominazione ufficio": "Ostiense",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Ostiense",
         "Datario": "D5",
         "linkDatario": "Roma_Ostiense_D5.jpeg"
     },
@@ -54231,7 +54231,7 @@
         "Anno": 1944,
         "Località": "Roma",
         "Denominazione ufficio": "Prati",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Prati",
         "Datario": "D3",
         "linkDatario": "Roma_Prati_D3.jpeg"
     },
@@ -54297,8 +54297,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D18",
+        "linkDatario": "Roma_Centro_D18.jpeg"
     },
     {
         "Targhetta Tipo": 308,
@@ -54310,8 +54310,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D22",
+        "linkDatario": "Roma_Centro_D22.jpeg"
     },
     {
         "Targhetta Tipo": 308,
@@ -54323,8 +54323,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D21",
+        "linkDatario": "Roma_Centro_D21.jpeg"
     },
     {
         "Targhetta Tipo": 308,
@@ -54348,7 +54348,7 @@
         "Anno": 1944,
         "Località": "Roma",
         "Denominazione ufficio": "Prati",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Prati",
         "Datario": "D3",
         "linkDatario": "Roma_Prati_D3.jpeg"
     },
