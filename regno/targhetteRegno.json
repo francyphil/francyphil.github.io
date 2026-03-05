@@ -495,6 +495,19 @@
     },
     {
         "Targhetta Tipo": 1,
+        "Targhetta Ufficio": 40,
+        "extra": "R",
+        "Descrizione": "Bandiera VEIII",
+        "linkTarghetta": "bandieraVEIII.html",
+        "Anno": 1908,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 1,
         "Targhetta Ufficio": 41,
         "extra": "",
         "Descrizione": "Bandiera VEIII",
@@ -789,8 +802,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "DK2",
+        "linkDatario": "Roma_Centro_DK2.jpeg"
     },
     {
         "Targhetta Tipo": 13,
