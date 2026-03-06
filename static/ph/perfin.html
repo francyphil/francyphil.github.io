@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="it">
+  <head>
+      <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfin</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css">
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css">
+ <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        margin-top: 55px;
+      }
+      /* Layout per immagini affiancate */
+      .two-up {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .two-up img {
+        width: calc(50% - 0.5rem);
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      /* su schermi piccoli, impila le immagini */
+      @media (max-width: 700px) {
+        .two-up img { width: 100%; }
+      }
+    </style>
+ 
+  </head>
+  <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
+
+    <div class="content-container">
+      <h1>Perfin</h1>
+      <p>In Inghilterra verso la fine del 1800 naque l'idea di perforare i francobolli per identificare le aziende o gli enti che li utilizzavano in modo da prevenire
+        possibili utilizzi fraudolenti da parte degli impiegati creando così i cosiddetti "perfin". Qualche anno dopo troviamo i primi utilizzi anche in Italia dove la situazione
+    viene autorizzata a partire dal 1882 e successivamente definito l'utilizzo dal Codice postale.
+    L'utilizzo previsto era inerente alla perforazione di  francobolli, interi o altre carte valori postali.</p>
+        <div class="two-up">
+<img src="/static/jpeg/perfin/Perfin_M&K.jpeg" alt="Perfin" style="max-width: 100%; height: auto;">
+<img src="/static/jpeg/perfin/Perfin_ACC_Cartolina_postale.jpeg" alt="Perfin" style="max-width: 100%; height: auto;">
+</div>
+    <p>Nonostante l'utilizzo previsto fosse limitato alla corrispondenza aziendale, è possibile trovare anche utilizzi su corrispondenza privata, sebbene in questo caso si tratti
+        di un utilizzo non ufficiale e non autorizzato.</p>
+        <div class="two-up">
+<img src="/static/jpeg/perfin/Perfin 1.jpeg" alt="Perfin" style="max-width: 100%; height: auto;">
+</div>
+    </div>
+    
+    <link rel="stylesheet" href="/footer/footer.css">
+    <script src="/footer/footer.js"></script>
+    <div id="footerContainer"></div>
+    <script>
+      fetch('/footer/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('footerContainer').innerHTML = html;
+        });
+    </script>
+  </body>
+</html>
