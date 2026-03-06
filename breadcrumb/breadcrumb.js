@@ -76,6 +76,8 @@
         }
       } else if (path.includes('regnobarre.html')) {
         items.push({ text: 'Barre', link: null });
+      } else if (path.includes('recapitoAutorizzato.html')) {
+        items.push({ text: 'Recapito autorizzato', link: null });
       } else if (path.includes('regnoonde.html')) {
         items.push({ text: 'Onde', link: null });
       } else if (path.includes('regnocontinui.html')) {
@@ -164,6 +166,8 @@
         items.push({ text: 'Posta Aerea', link: null });
       } else if (path.includes('raccomandata.html')) {
         items.push({ text: 'Raccomandata', link: null });
+      } else if (path.includes('perfin.html')) {
+        items.push({ text: 'Perfin', link: null });
       }
     } else if (path.includes('/static/catalogo/')) {
       items.push({ text: 'Catalogo', link: null });
