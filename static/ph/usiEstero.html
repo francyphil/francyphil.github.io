@@ -15,6 +15,23 @@
         padding: 0;
         margin-top: 55px;
       }
+      /* Layout per immagini affiancate */
+      .two-up {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .two-up img {
+        width: calc(50% - 0.5rem);
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      /* su schermi piccoli, impila le immagini */
+      @media (max-width: 700px) {
+        .two-up img { width: 100%; }
+      }
     </style>
   </head>
   <body>
@@ -24,8 +41,41 @@
 
     <div class="content-container">
       <h1>Usi Estero</h1>
+    <p>In generale ogni amministrazione postale provvede ad annullare e considerare come validi solo le carte valori emesse dal proprio paese. 
+      Esistono però anche alcune eccezzioni che portano ad un ad un riconoscimento reciproco tra le amministrazioni postali di alcuni paesi o 
+      modi di postalizzazione particolari che portano ad avere annulli di paesi differenti da quello di emissione della carta valore.
+      Tralasciamo quindi tutti i casi di errori, frodi o timbrature in arrivo per sopperire a mancanze che, benchè spesso divertenti, 
+      sono frutto della casualità o di una pratica non ufficiale.
 
- 
+      Le condizioni per cui una carta valore Italiana può essere annullata da un altro paese sono:
+      <ul>
+        <li>Interi postali con risposta verso l'estero</li>
+        <li>Pasquebot</li>
+        <li>Corrispondenza diplomatica</li>
+        <li>Ambulanti svizzeri di confine sulla linea ferroviaria di Domodossola</li>
+      </ul>
+
+      L'ultimo caso è riportato per completezza in quanto gli annulli utilizzati sono stati solo manuali e, perlomeno per il momento, nessun annullo meccanico è noto.
+
+      Per gli altri casi sono noti utilizzi sia di annulli italiani su valori postali esteri che di annulli esteri su valori postali italiani.
+    </p>
+
+    <h2>Interi postali con risposta verso l'estero</h2>
+
+    <div class="two-up">
+      <img src="/static/jpeg/usiEstero/CP_risposta_francia.jpeg" alt="Intero postale con risposta verso l'estero">
+      <img src="/static/jpeg/usiEstero/CP_risposta_da_Svizzera.jpeg" alt="Intero postale con risposta verso l'estero">
+    </div>
+
+     <h2>Pasquebot</h2>
+    <div class="two-up">
+      <img src="/static/jpeg/usiEstero/Paquebot.jpeg" alt="Pasquebot" style="max-width: 100%; height: auto;">
+          </div>
+      <h2>Corrispondenza diplomatica</h2>
+          <div class="two-up">
+ <img src="/static/jpeg/usiEstero/Posta_Consolare 1.jpeg" alt="Corrispondenza diplomatica" style="max-width: 100%; height: auto;">
+          </div>
+     
     </div>
     
     <link rel="stylesheet" href="/footer/footer.css">
