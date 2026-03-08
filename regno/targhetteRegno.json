@@ -35847,11 +35847,11 @@
         "Descrizione": "viaggio inaugurale Genova- New York",
         "linkTarghetta": "",
         "Anno": 1932,
-        "Località": "GE - New York",
-        "Denominazione ufficio": "Piroscafo Rex",
-        "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Località": "P.fo Rex",
+        "Denominazione ufficio": "Genova - New York",
+        "Denominazione ufficio breve": "GENY",
+        "Datario": "D1",
+        "linkDatario": "Rex_GENY_D1.jpeg"
     },
     {
         "Targhetta Tipo": 226,
@@ -35860,11 +35860,11 @@
         "Descrizione": "viaggio inaugurale Genova- New York",
         "linkTarghetta": "",
         "Anno": 1932,
-        "Località": "GE - New York",
-        "Denominazione ufficio": "Piroscafo Conte di Savoia",
-        "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Località": "P.fo Conte Savoia",
+        "Denominazione ufficio": "Genova - New York",
+        "Denominazione ufficio breve": "GENY",
+        "Datario": "D1",
+        "linkDatario": "Conte_GENY_D1.jpeg"
     },
     {
         "Targhetta Tipo": 227,
@@ -35873,11 +35873,11 @@
         "Descrizione": "primo viaggio New York - Genova",
         "linkTarghetta": "",
         "Anno": 1932,
-        "Località": "New York - GE",
-        "Denominazione ufficio": "Piroscafo Rex",
-        "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Località": "P.fo Conte Savoia",
+        "Denominazione ufficio": "New York - Genova",
+        "Denominazione ufficio breve": "NYGE",
+        "Datario": "D1",
+        "linkDatario": "Rex_NYGE_D1.jpeg"
     },
     {
         "Targhetta Tipo": 227,
@@ -35886,11 +35886,11 @@
         "Descrizione": "primo viaggio New York - Genova",
         "linkTarghetta": "",
         "Anno": 1932,
-        "Località": "New York - GE",
-        "Denominazione ufficio": "Piroscafo Conte di Savoia",
-        "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Località": "P.fo Rex",
+        "Denominazione ufficio": "New York - Genova",
+        "Denominazione ufficio breve": "NYGE",
+        "Datario": "D1",
+        "linkDatario": "Conte_NYGE_D1.jpeg"
     },
     {
         "Targhetta Tipo": 228,
@@ -53907,8 +53907,8 @@
         "Località": "Bolzano",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Bolzano_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -54453,8 +54453,8 @@
         "Località": "Torino",
         "Denominazione ufficio": "Arrivi Distribuzione",
         "Denominazione ufficio breve": "ArrDistr4",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Torino_ArrDistr4_D1.jpeg"
     },
     {
         "Targhetta Tipo": 309,
@@ -54466,8 +54466,8 @@
         "Località": "Torino",
         "Denominazione ufficio": "Arrivi Distribuzione",
         "Denominazione ufficio breve": "ArrDistr4",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Torino_ArrDistr4_D1.jpeg"
     },
     {
         "Targhetta Tipo": 309,

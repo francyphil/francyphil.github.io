@@ -15,6 +15,15 @@ if [ $rc -ne 0 ]; then
 fi
 
 echo ""
+echo "Eseguendo Check uffici senza datario check_missing_datari.py..."
+python3 check_missing_datari.py
+rc=$?
+if [ $rc -ne 0 ]; then
+    echo "ERRORE: check_missing_datari.py fallito con codice $rc"
+    exit $rc
+fi
+
+echo ""
 echo "Eseguendo static/statistics/site_stats.py..."
 python3 static/statistics/site_stats.py
 
