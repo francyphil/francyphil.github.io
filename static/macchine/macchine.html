@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Macchine - Annulli Meccanici</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        margin-top: 55px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
+
+    <div class="content-container">
+      <h1>Macchine</h1>
+      <p>Questa sezione è dedicata alle macchine utilizzate per l'applicazione degli annulli meccanici: descrizioni tecniche, esempi fotografici e note storiche. Aggiungi qui immagini, schede tecniche e riferimenti bibliografici.</p>
+
+      <h2>Tipologie</h2>
+      <ul>
+        <li>Bieckerdike</li>
+        <li>Flyer</li>
+        <li>Krag</li>
+        <li>Universal</li>
+      </ul>
+
+      <h2>Materiali</h2>
+      <p>Inserisci qui link a documenti, immagini e schede tecniche delle macchine.</p>
+    </div>
+
+    <link rel="stylesheet" href="/footer/footer.css" />
+    <script src="/footer/footer.js"></script>
+    <div id="footerContainer"></div>
+    <script>
+      fetch('/footer/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('footerContainer').innerHTML = html;
+        });
+    </script>
+  </body>
+</html>
