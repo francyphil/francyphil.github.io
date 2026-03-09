@@ -377,6 +377,24 @@ select:focus {
   width: 100%;
 }
 
+/* Pulsante azzera filtri desktop */
+.reset-filters-desktop {
+  margin-left: auto;
+  padding: 6px 16px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+.reset-filters-desktop:hover {
+  background-color: #c0392b;
+}
+
 /* ===== Mobile filter toggle button ===== */
 #mobileFilterToggle {
   display: none;

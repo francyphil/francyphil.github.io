@@ -761,6 +761,32 @@
     }
   }
 
+  // ── Pulsante "Azzera filtri" desktop ──────────────────────────────
+  (function creaResetFiltriDesktop() {
+    const wrapper = document.querySelector(".controlli-wrapper");
+    if (!wrapper) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.id = "resetFiltriDesktop";
+    btn.className = "reset-filters-desktop";
+    btn.textContent = "Azzera filtri";
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".multi-select").forEach((ms) => {
+        const p = ms._panel || ms.querySelector(".multi-select-panel");
+        if (p)
+          p.querySelectorAll(".ms-option input[type=checkbox]").forEach(
+            (cb) => (cb.checked = false),
+          );
+        aggiornaMultiSelectLabel(ms);
+      });
+      aggiornaOpzioniFiltri();
+      updateFilterBadge();
+      currentPage = 1;
+      aggiornaVisualizzazione(filtraDati(data));
+    });
+    wrapper.appendChild(btn);
+  })();
+
   // Reset pagina quando cambia il numero per pagina o vista
   document.getElementById("maxRecords").addEventListener("change", () => {
     currentPage = 1;
