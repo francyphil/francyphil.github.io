@@ -209,7 +209,7 @@
               return a.Anno - b.Anno;
             });
 
-            // Mostra risultati
+            // Mostra risultati tabella (solo targhette)
             if (filtered.length === 0) {
               document.getElementById("noResults").style.display = "block";
               document.getElementById("tableTarghette").style.display = "none";
@@ -248,8 +248,9 @@
             }
 
             // Mostra i datari usati per gli annulli (se presenti)
-            renderDatari(filtered);
-            // Disegna anche il grafico anni x datari
+            // Se non ci sono targhette, usa i dati onde per mostrare i datari
+            renderDatari(filtered.length > 0 ? filtered : ondeFiltered);
+            // Disegna sempre il grafico (mostra targhette e/o onde)
             renderChart(filtered, ondeFiltered);
           } catch (error) {
             console.error("Errore caricamento dati:", error);

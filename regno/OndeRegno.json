@@ -544,5 +544,70 @@
         "Denominazione ufficio breve": "",
         "Datario": "",
         "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "Anno": 1932,
+        "Località": "Arezzo",
+        "Denominazione ufficio": "Stella",
+        "Denominazione ufficio breve": "",
+        "Datario": "D1",
+        "linkDatario": "Arezzo_Stella_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "Anno": 1934,
+        "Località": "Arezzo",
+        "Denominazione ufficio": "Stella",
+        "Denominazione ufficio breve": "",
+        "Datario": "D1",
+        "linkDatario": "Arezzo_Stella_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "Anno": 1939,
+        "Località": "Apuania",
+        "Denominazione ufficio": "Carrara",
+        "Denominazione ufficio breve": "",
+        "Datario": "D1",
+        "linkDatario": "Apuania_Carrara_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "Anno": 1932,
+        "Località": "Ascoli Piceno",
+        "Denominazione ufficio": "Stella",
+        "Denominazione ufficio breve": "",
+        "Datario": "D1",
+        "linkDatario": "Ascoli_Piceno_Stella_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "Anno": 1943,
+        "Località": "Avellino",
+        "Denominazione ufficio": "Stella",
+        "Denominazione ufficio breve": "",
+        "Datario": "D1",
+        "linkDatario": "Avellino_Stella_D1.jpeg"
     }
 ]

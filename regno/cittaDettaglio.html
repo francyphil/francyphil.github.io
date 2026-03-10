@@ -194,7 +194,7 @@
               return a.Anno - b.Anno;
             });
 
-            // Mostra risultati
+            // Mostra risultati tabella (solo targhette)
             if (filtered.length === 0) {
               document.getElementById("noResults").style.display = "block";
               document.getElementById("tableTarghette").style.display = "none";
@@ -238,9 +238,10 @@
                 filtered.length;
               document.getElementById("noResults").style.display = "none";
               document.getElementById("tableTarghette").style.display = "table";
-              // render chart for denominazioni ufficio
-              renderChart(filtered, localita, ondeFiltered);
             }
+
+            // Disegna sempre il grafico (mostra targhette e/o onde)
+            renderChart(filtered, localita, ondeFiltered);
           } catch (error) {
             console.error("Errore caricamento dati:", error);
             document.getElementById("localityTitle").textContent =
