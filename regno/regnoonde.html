@@ -33,6 +33,23 @@
         padding: 4px;
         background: #fff;
       }
+      .onde-table {
+        border-collapse: collapse;
+        margin-top: 18px;
+        width: auto;
+      }
+      .onde-table th, .onde-table td {
+        border: 1px solid #bbb;
+        padding: 6px 14px;
+        text-align: left;
+      }
+      .onde-table th {
+        background-color: #f0f0f0;
+      }
+      .onde-table td:last-child {
+        text-align: center;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
@@ -122,11 +139,45 @@
         <div class="image-gallery">
         <img src="../static/jpeg/onde/RomaAD1932.jpeg" alt="Roma Arrivi Distribuzione 1932" />
         </div> 
-      <h2>Galleria</h2>
-      <div class="image-gallery">
 
+      <h2>Uffici con annulli ad onde</h2>
+      <table id="ondeTable" class="onde-table">
+        <thead>
+          <tr>
+            <th>Città</th>
+            <th>Ufficio</th>
+            <th>Onde</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
 
-
+      <script>
+        fetch("OndeRegno.json")
+          .then(res => res.json())
+          .then(data => {
+            const seen = new Set();
+            const unique = [];
+            data.forEach(item => {
+              const key = item["Località"] + "|" + item["Denominazione ufficio"];
+              if (!seen.has(key)) {
+                seen.add(key);
+                unique.push({ citta: item["Località"], ufficio: item["Denominazione ufficio"] });
+              }
+            });
+            unique.sort((a, b) => a.citta.localeCompare(b.citta) || a.ufficio.localeCompare(b.ufficio));
+            const tbody = document.querySelector("#ondeTable tbody");
+            unique.forEach(u => {
+              const tr = document.createElement("tr");
+              const cittaLink = "cittaDettaglio.html?localita=" + encodeURIComponent(u.citta);
+              const ufficioLink = "ufficioDettaglio.html?localita=" + encodeURIComponent(u.citta) + "&denominazione=" + encodeURIComponent(u.ufficio);
+              tr.innerHTML = '<td><a href="' + cittaLink + '">' + u.citta + '</a></td>'
+                           + '<td><a href="' + ufficioLink + '">' + u.ufficio + '</a></td>'
+                           + '<td>V</td>';
+              tbody.appendChild(tr);
+            });
+          });
+      </script>
 
       </div>
     </div>
