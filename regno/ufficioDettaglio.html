@@ -248,8 +248,8 @@
             }
 
             // Mostra i datari usati per gli annulli (se presenti)
-            // Se non ci sono targhette, usa i dati onde per mostrare i datari
-            renderDatari(filtered.length > 0 ? filtered : ondeFiltered);
+            // Unisce entrambe le fonti (targhette e onde) per mostrare tutti i datari
+            renderDatari([...filtered, ...ondeFiltered]);
             // Disegna sempre il grafico (mostra targhette e/o onde)
             renderChart(filtered, ondeFiltered);
           } catch (error) {
