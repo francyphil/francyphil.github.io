@@ -1,5 +1,5 @@
 {
-  "total_pages": 45,
+  "total_pages": 46,
   "total_images": 4118,
   "sections": {
     "Regno": {
@@ -26,6 +26,6 @@
   },
   "total_targhette": 4245,
   "total_localita": 51,
-  "total_onde": 211,
-  "total_datari": 573
+  "total_datari": 573,
+  "total_onde": 222
 }
