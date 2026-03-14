@@ -30,7 +30,10 @@ def count_images(root_dir):
     image_count = 0
     for file_path in Path(root_dir).rglob("*"):
         if file_path.suffix.lower() in image_extensions:
-            image_count += 1
+            # Escludi varianti _square e _circle
+            stem = file_path.stem.lower()
+            if "_square" not in stem and "_circle" not in stem:
+                image_count += 1
     return image_count
 
 
@@ -302,6 +305,34 @@ def main():
 
     stats["total_targhette"] = total_targhette
     stats["total_localita"] = len(localita_set)
+
+    # Conta datari univoci (linkDatario distinti non vuoti)
+    datari_set = set()
+    for folder, json_file in [("regno", "targhetteRegno.json"), ("triestea", "targhetteTriesteA.json"), ("colonie/libia", "targhetteLibia.json")]:
+        p = project_dir / folder / json_file
+        if p.exists():
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                for item in data:
+                    d = item.get("linkDatario", "")
+                    if d and str(d).strip():
+                        datari_set.add(str(d).strip())
+            except Exception:
+                pass
+    stats["total_datari"] = len(datari_set)
+
+    # Conta onde classificate
+    onde_json = project_dir / "regno" / "OndeRegno.json"
+    total_onde = 0
+    if onde_json.exists():
+        try:
+            with open(onde_json, "r", encoding="utf-8") as f:
+                total_onde = len(json.load(f))
+        except Exception:
+            pass
+    stats["total_onde"] = total_onde
+
     output_file = Path(__file__).parent / "site_stats.json"
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2, ensure_ascii=False)
@@ -311,6 +342,7 @@ def main():
     print("✓ Sezioni:")
     for name, s in stats["sections"].items():
         print(f"  - {name}: catalogati={s['total_catalogati']}, immagini={s['images_present']}, {s['images_pct']}%, datari={s['datario_present']}, {s['datario_pct']}%")
+    print(f"✓ Onde classificate: {stats['total_onde']}")
     # Genera report CSV per immagini mancanti e non referenziate (Regno)
     missing_csv = project_dir / 'missing_images.csv'
     unref_csv = project_dir / 'unreferenced_regno_images.csv'
