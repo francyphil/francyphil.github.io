@@ -1,6 +1,6 @@
 [
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -14,7 +14,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -28,7 +28,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -42,7 +42,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -56,7 +56,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -70,7 +70,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -84,7 +84,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -98,7 +98,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -112,7 +112,21 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "R.R. Poste T.S. (con riquadro)",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "RR_POSTE_TS_Milano_Centro_Corrisp_e_Pacchi_1939.jpeg",
+        "Anno": 1939,
+        "Località": "Milano",
+        "Denominazione ufficio": "Centro Corrisp. e pacchi",
+        "Denominazione ufficio breve": "",
+        "Datario": "D6",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -126,7 +140,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -140,7 +154,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -154,7 +168,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -168,7 +182,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -182,7 +196,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -196,7 +210,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -210,7 +224,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -224,7 +238,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -238,7 +252,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP2",
+        "Targhetta Tipo": "TS2",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (senza riquadro)",
@@ -252,7 +266,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP2",
+        "Targhetta Tipo": "TS2",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (senza riquadro)",
@@ -266,7 +280,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -280,7 +294,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP2",
+        "Targhetta Tipo": "TS2",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (senza riquadro)",
@@ -294,7 +308,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP2",
+        "Targhetta Tipo": "TS2",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (senza riquadro)",
@@ -308,7 +322,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -322,7 +336,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -336,7 +350,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
@@ -350,12 +364,12 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
         "linkTarghetta": "",
-        "linkImgTarghetta": "",
+        "linkImgTarghetta": "RR_POSTE_TS_Roma_Ferrovia_1935.jpeg",
         "Anno": 1935,
         "Località": "Roma",
         "Denominazione ufficio": "Ferrovia",
@@ -364,12 +378,12 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
         "linkTarghetta": "",
-        "linkImgTarghetta": "",
+        "linkImgTarghetta": "RR_POSTE_TS_Roma_Ferrovia_1936.jpeg",
         "Anno": 1936,
         "Località": "Roma",
         "Denominazione ufficio": "Ferrovia",
@@ -378,12 +392,12 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
         "linkTarghetta": "",
-        "linkImgTarghetta": "",
+        "linkImgTarghetta": "RR_POSTE_TS_Roma_Ferrovia_1937.jpeg",
         "Anno": 1937,
         "Località": "Roma",
         "Denominazione ufficio": "Ferrovia",
@@ -392,12 +406,12 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
         "linkTarghetta": "",
-        "linkImgTarghetta": "",
+        "linkImgTarghetta": "RR_POSTE_TS_Roma_Ferrovia_1938.jpeg",
         "Anno": 1938,
         "Località": "Roma",
         "Denominazione ufficio": "Ferrovia",
@@ -406,12 +420,12 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
         "linkTarghetta": "",
-        "linkImgTarghetta": "",
+        "linkImgTarghetta": "RR_POSTE_TS_Roma_Ferrovia_1940.jpeg",
         "Anno": 1940,
         "Località": "Roma",
         "Denominazione ufficio": "Ferrovia",
@@ -420,7 +434,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "RP1",
+        "Targhetta Tipo": "TS1",
         "Targhetta Ufficio": "",
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
