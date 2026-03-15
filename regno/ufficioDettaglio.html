@@ -402,7 +402,14 @@
               const top = 20;
               const gridWidth = years.length * cell;
               const gridHeight = datari.length * cell;
-              const width = left + gridWidth + 20;
+              // calcola larghezza legenda
+              const legendItems = [
+                { color: '#333', label: 'Solo targhette' },
+                { color: '#f5c542', label: 'Solo onde' },
+                { color: null, label: 'Targhette e onde' }
+              ];
+              const legendTotalW = legendItems.reduce((acc, item) => acc + 16 + item.label.length * 6.5 + 14, 0) - 14;
+              const width = Math.max(left + gridWidth + 20, legendTotalW + 40);
               const height = top + gridHeight + 80;
 
               const svgNS = 'http://www.w3.org/2000/svg';
@@ -506,14 +513,10 @@
                 });
               });
 
-              // Legenda
+              // Legenda centrata
               const legendY = height - 14;
-              const items = [
-                { color: '#333', label: 'Solo targhette' },
-                { color: '#f5c542', label: 'Solo onde' },
-                { color: null, label: 'Targhette e onde' }
-              ];
-              let lx = left;
+              const items = legendItems;
+              let lx = (width - legendTotalW) / 2;
               items.forEach(item => {
                 if (item.color) {
                   const r = document.createElementNS(svgNS, 'rect');

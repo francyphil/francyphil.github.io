@@ -279,15 +279,21 @@
 
           const cell = 16;
           const left = 180;
-          chartContainer.style.paddingRight = left + "px";
-          chartContainer.style.boxSizing = "content-box";
           const top = 20;
-          const w = left + fullYears.length * cell + 40;
+          // calcola larghezza legenda
+          const legendItems = [
+            { color: '#333', label: 'Solo targhette' },
+            { color: '#f5c542', label: 'Solo onde' },
+            { color: null, label: 'Targhette e onde' }
+          ];
+          const legendTotalW = legendItems.reduce((acc, item) => acc + 16 + item.label.length * 6.5 + 14, 0) - 14;
+          const w = Math.max(left + fullYears.length * cell + 40, legendTotalW + 40);
           const h = top + offices.length * cell + 60;
           const svgNS = "http://www.w3.org/2000/svg";
           const svg = document.createElementNS(svgNS, "svg");
           svg.setAttribute("width", w);
           svg.setAttribute("height", h);
+          svg.setAttribute("style", "display:block; margin:0 auto;");
 
           // vertical grid lines (years)
           fullYears.forEach((yr, i) => {
@@ -402,14 +408,10 @@
             });
           });
 
-          // Legenda
+          // Legenda centrata
           const legendY = h - 14;
-          const items = [
-            { color: '#333', label: 'Solo targhette' },
-            { color: '#f5c542', label: 'Solo onde' },
-            { color: null, label: 'Targhette e onde' }
-          ];
-          let lx = left;
+          const items = legendItems;
+          let lx = (w - legendTotalW) / 2;
           items.forEach(item => {
             if (item.color) {
               const r = document.createElementNS(svgNS, 'rect');
