@@ -333,6 +333,17 @@ def main():
             pass
     stats["total_onde"] = total_onde
 
+    # Conta barre classificate
+    barre_json = project_dir / "regno" / "BarreRegno.json"
+    total_barre = 0
+    if barre_json.exists():
+        try:
+            with open(barre_json, "r", encoding="utf-8") as f:
+                total_barre = len(json.load(f))
+        except Exception:
+            pass
+    stats["total_barre"] = total_barre
+
     output_file = Path(__file__).parent / "site_stats.json"
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2, ensure_ascii=False)
@@ -343,6 +354,7 @@ def main():
     for name, s in stats["sections"].items():
         print(f"  - {name}: catalogati={s['total_catalogati']}, immagini={s['images_present']}, {s['images_pct']}%, datari={s['datario_present']}, {s['datario_pct']}%")
     print(f"✓ Onde classificate: {stats['total_onde']}")
+    print(f"✓ Barre classificate: {stats['total_barre']}")
     # Genera report CSV per immagini mancanti e non referenziate (Regno)
     missing_csv = project_dir / 'missing_images.csv'
     unref_csv = project_dir / 'unreferenced_regno_images.csv'

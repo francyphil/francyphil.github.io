@@ -15,6 +15,40 @@
         padding: 0;
         margin-top: 55px;
       }
+      .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+        align-items: flex-start;
+      }
+      .image-gallery img {
+        max-height: 200px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        border: 1px solid #ddd;
+        padding: 4px;
+        background: #fff;
+      }
+      .barre-table {
+        border-collapse: collapse;
+        margin-top: 18px;
+        width: auto;
+      }
+      .barre-table th, .barre-table td {
+        border: 1px solid #bbb;
+        padding: 6px 14px;
+        text-align: left;
+      }
+      .barre-table th {
+        background-color: #f0f0f0;
+      }
+      .barre-table td:last-child {
+        text-align: center;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
@@ -24,8 +58,55 @@
 
     <div class="content-container">
       <h1>Regno Annulli Barre</h1>
-    <h2>Tipologie di annulli</h2>
-    <p>Gli annulli meccanici si possono ricondurre a due tipologie differenti a seconda del tipo di impronta:</p>      
+
+      <p>
+        Gli annulli a barre sono stati usati in diversi uffici postali italiani.
+        Si tratta di impronte composte da linee parallele diritte, a differenza
+        degli annulli ad onde che presentano linee sinuose. Le barre potevano
+        essere di diversa lunghezza e numero a seconda della macchina e del
+        periodo di utilizzo.
+      </p>
+
+      <h2>Uffici con annulli a barre</h2>
+      <table id="barreTable" class="barre-table">
+        <thead>
+          <tr>
+            <th>Città</th>
+            <th>Ufficio</th>
+            <th>Barre</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <script>
+        fetch("BarreRegno.json")
+          .then(res => res.json())
+          .then(data => {
+            const seen = new Set();
+            const unique = [];
+            data.forEach(item => {
+              const key = item["Località"] + "|" + item["Denominazione ufficio"];
+              if (!seen.has(key)) {
+                seen.add(key);
+                unique.push({ citta: item["Località"], ufficio: item["Denominazione ufficio"] });
+              }
+            });
+            unique.sort((a, b) => a.citta.localeCompare(b.citta) || a.ufficio.localeCompare(b.ufficio));
+            const tbody = document.querySelector("#barreTable tbody");
+            unique.forEach(u => {
+              const tr = document.createElement("tr");
+              const cittaLink = "cittaDettaglio.html?localita=" + encodeURIComponent(u.citta);
+              const ufficioLink = "ufficioDettaglio.html?localita=" + encodeURIComponent(u.citta) + "&denominazione=" + encodeURIComponent(u.ufficio);
+              tr.innerHTML = '<td><a href="' + cittaLink + '">' + u.citta + '</a></td>'
+                           + '<td><a href="' + ufficioLink + '">' + u.ufficio + '</a></td>'
+                           + '<td>V</td>';
+              tbody.appendChild(tr);
+            });
+          });
+      </script>
+
+      </div>
     </div>
 
     <link rel="stylesheet" href="/footer/footer.css" />
