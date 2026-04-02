@@ -89,6 +89,22 @@
         border-left: 4px solid #0066cc;
         border-radius: 4px;
       }
+
+      details {
+        margin-top: 20px;
+        border-bottom: 2px solid #0066cc;
+      }
+
+      details summary {
+        cursor: pointer;
+        padding: 8px 0;
+        font-size: 1.17em;
+        font-weight: bold;
+      }
+
+      details summary:hover {
+        color: #0066cc;
+      }
     </style>
   </head>
   <body>
@@ -118,9 +134,9 @@
       </div>
 
       <!-- Contenitore grafico: anni x datari -->
-      <div id="datariChartBlock" style="display:none; margin-top:18px; text-align:center;">
-        <strong>Uso dei datari nel tempo</strong>
-        <div id="datariChart" style="margin-top:8px; text-align:center;"></div>
+      <div id="datariChartBlock" style="display:none; margin-top:18px;">
+        <div style="text-align:center;"><strong>Uso dei datari nel tempo</strong></div>
+        <div id="datariChart" style="margin-top:8px; display:flex; justify-content:center; overflow-x:auto;"></div>
       </div>
 
       <div class="stats">
@@ -129,25 +145,7 @@
 
    
 
-      <div class="table-wrapper">
-        <table id="tableTarghette">
-          <colgroup>
-              <col id="colAnno" style="width:16%">
-              <col id="colTipo" style="width:12%">
-              <col id="colUfficio" style="width:12%">
-              <col id="colDescr" style="width:60%">
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Anno</th>
-              <th>Targhetta Tipo</th>
-              <th>Targhetta Ufficio</th>
-              <th>Descrizione</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody"></tbody>
-        </table>
-      </div>
+      <div id="tablesContainer"></div>
 
       <div id="noResults" class="no-results" style="display: none">
         Nessuna targhetta trovata per questo ufficio.
@@ -181,13 +179,15 @@
             `Elenco targhette ordinate per anno`;
 
           try {
-            // Carica entrambi i JSON
-            const [response, ondeResponse] = await Promise.all([
+            // Carica i tre JSON
+            const [response, ondeResponse, barreResponse] = await Promise.all([
               fetch("targhetteRegno.json"),
-              fetch("OndeRegno.json")
+              fetch("OndeRegno.json"),
+              fetch("BarreRegno.json")
             ]);
             const data = await response.json();
             const ondeData = await ondeResponse.json();
+            const barreData = await barreResponse.json();
 
             // Filtra per denominazione e localita
             const filtered = data.filter(
@@ -196,6 +196,11 @@
                 item["Località"] === localita,
             );
             const ondeFiltered = ondeData.filter(
+              (item) =>
+                item["Denominazione ufficio"] === denominazione &&
+                item["Località"] === localita,
+            );
+            const barreFiltered = barreData.filter(
               (item) =>
                 item["Denominazione ufficio"] === denominazione &&
                 item["Località"] === localita,
@@ -209,49 +214,94 @@
               return a.Anno - b.Anno;
             });
 
-            // Mostra risultati tabella (solo targhette)
+            // Mostra risultati tabella (una tabella per datario)
             if (filtered.length === 0) {
               document.getElementById("noResults").style.display = "block";
-              document.getElementById("tableTarghette").style.display = "none";
+              document.getElementById("tablesContainer").innerHTML = "";
               document.getElementById("statsCount").textContent = "0";
             } else {
-              const tbody = document.getElementById("tableBody");
-              tbody.innerHTML = "";
+              const container = document.getElementById("tablesContainer");
+              container.innerHTML = "";
 
+              // Raggruppa per Datario
+              const groups = new Map();
               filtered.forEach((item) => {
-                const tr = document.createElement("tr");
+                const key = (item.Datario || "").trim();
+                if (!groups.has(key)) groups.set(key, []);
+                groups.get(key).push(item);
+              });
 
-                const tdAnno = document.createElement("td");
-                tdAnno.textContent = item.Anno;
+              // Itera i gruppi nell'ordine di inserimento (segue l'ordine della tabella per Anno)
+              groups.forEach((items, datarioName) => {
 
-                const tdTipo = document.createElement("td");
-                tdTipo.textContent = item["Targhetta Tipo"];
+                // Sezione collassabile
+                const details = document.createElement("details");
+                const summary = document.createElement("summary");
+                summary.textContent = datarioName || "(senza datario)";
+                details.appendChild(summary);
 
-                const tdUfficio = document.createElement("td");
-                tdUfficio.textContent = item["Targhetta Ufficio"];
+                // Wrapper + tabella
+                const wrapper = document.createElement("div");
+                wrapper.className = "table-wrapper";
+                const table = document.createElement("table");
 
-                const tdDescrizione = document.createElement("td");
-                tdDescrizione.textContent = item["Descrizione"];
+                const colgroup = document.createElement("colgroup");
+                ["16%", "12%", "12%", "60%"].forEach((w) => {
+                  const col = document.createElement("col");
+                  col.style.width = w;
+                  colgroup.appendChild(col);
+                });
+                table.appendChild(colgroup);
 
-                tr.appendChild(tdAnno);
-                tr.appendChild(tdTipo);
-                tr.appendChild(tdUfficio);
-                tr.appendChild(tdDescrizione);
+                const thead = document.createElement("thead");
+                const headRow = document.createElement("tr");
+                ["Anno", "Targhetta Tipo", "Targhetta Ufficio", "Descrizione"].forEach((text) => {
+                  const th = document.createElement("th");
+                  th.textContent = text;
+                  headRow.appendChild(th);
+                });
+                thead.appendChild(headRow);
+                table.appendChild(thead);
 
-                tbody.appendChild(tr);
+                const tbody = document.createElement("tbody");
+                items.forEach((item) => {
+                  const tr = document.createElement("tr");
+
+                  const tdAnno = document.createElement("td");
+                  tdAnno.textContent = item.Anno;
+
+                  const tdTipo = document.createElement("td");
+                  tdTipo.textContent = item["Targhetta Tipo"];
+
+                  const tdUfficio = document.createElement("td");
+                  tdUfficio.textContent = item["Targhetta Ufficio"];
+
+                  const tdDescrizione = document.createElement("td");
+                  tdDescrizione.textContent = item["Descrizione"];
+
+                  tr.appendChild(tdAnno);
+                  tr.appendChild(tdTipo);
+                  tr.appendChild(tdUfficio);
+                  tr.appendChild(tdDescrizione);
+
+                  tbody.appendChild(tr);
+                });
+                table.appendChild(tbody);
+                wrapper.appendChild(table);
+                details.appendChild(wrapper);
+                container.appendChild(details);
               });
 
               document.getElementById("statsCount").textContent =
                 filtered.length;
               document.getElementById("noResults").style.display = "none";
-              document.getElementById("tableTarghette").style.display = "table";
             }
 
             // Mostra i datari usati per gli annulli (se presenti)
-            // Unisce entrambe le fonti (targhette e onde) per mostrare tutti i datari
-            renderDatari([...filtered, ...ondeFiltered]);
-            // Disegna sempre il grafico (mostra targhette e/o onde)
-            renderChart(filtered, ondeFiltered);
+            // Unisce tutte e tre le fonti (targhette, onde, barre) per mostrare tutti i datari
+            renderDatari([...filtered, ...ondeFiltered, ...barreFiltered]);
+            // Disegna sempre il grafico (mostra targhette, onde e/o barre)
+            renderChart(filtered, ondeFiltered, barreFiltered);
           } catch (error) {
             console.error("Errore caricamento dati:", error);
             document.getElementById("officeTitle").textContent =
@@ -363,12 +413,12 @@
         }
 
             // Disegna la griglia anni x datari: quadratino se il datario è stato usato in quell'anno
-            function renderChart(records, ondeRecords) {
+            function renderChart(records, ondeRecords, barreRecords) {
               const chartBlock = document.getElementById('datariChartBlock');
               const container = document.getElementById('datariChart');
               container.innerHTML = '';
 
-              // ricava codici Datario unici e gli anni da entrambe le fonti
+              // ricava codici Datario unici e gli anni da tutte e tre le fonti
               const datariSet = new Set();
               const yearSetAll = new Set();
               records.forEach(r => {
@@ -377,6 +427,11 @@
                 if (Number.isFinite(r.Anno)) yearSetAll.add(r.Anno);
               });
               ondeRecords.forEach(r => {
+                const d = (r.Datario||'').trim();
+                if (d) datariSet.add(d);
+                if (Number.isFinite(r.Anno)) yearSetAll.add(r.Anno);
+              });
+              barreRecords.forEach(r => {
                 const d = (r.Datario||'').trim();
                 if (d) datariSet.add(d);
                 if (Number.isFinite(r.Anno)) yearSetAll.add(r.Anno);
@@ -404,20 +459,27 @@
               const gridHeight = datari.length * cell;
               // calcola larghezza legenda
               const legendItems = [
-                { color: '#333', label: 'Solo targhette' },
-                { color: '#f5c542', label: 'Solo onde' },
-                { color: null, label: 'Targhette e onde' }
+                { type: 'solid', color: '#333', label: 'Solo targhette' },
+                { type: 'solid', color: '#f5c542', label: 'Solo onde' },
+                { type: 'solid', color: '#2266cc', label: 'Solo barre' },
+                { type: 'half', colors: ['#333', '#f5c542'], label: 'Targhette e onde' },
+                { type: 'half', colors: ['#333', '#2266cc'], label: 'Targhette e barre' },
+                { type: 'half', colors: ['#f5c542', '#2266cc'], label: 'Onde e barre' },
+                { type: 'thirds', colors: ['#333', '#f5c542', '#2266cc'], label: 'Targhette, onde e barre' }
               ];
               const legendTotalW = legendItems.reduce((acc, item) => acc + 16 + item.label.length * 6.5 + 14, 0) - 14;
-              const width = Math.max(left + gridWidth + 20, legendTotalW + 40);
-              const height = top + gridHeight + 80;
+              const row1LegendW = legendItems.slice(0, 3).reduce((acc, item) => acc + 16 + item.label.length * 6.5 + 14, 0) - 14;
+              const row2LegendW = legendItems.slice(3).reduce((acc, item) => acc + 16 + item.label.length * 6.5 + 14, 0) - 14;
+              const maxLegendW = Math.max(row1LegendW, row2LegendW);
+              const width = Math.max(left + gridWidth + 20, maxLegendW + 40);
+              const height = top + gridHeight + 100;
 
               const svgNS = 'http://www.w3.org/2000/svg';
               const svg = document.createElementNS(svgNS, 'svg');
               svg.setAttribute('width', width);
               svg.setAttribute('height', height);
               svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
-              svg.setAttribute('style', 'display:block; margin:0 auto;');
+              svg.setAttribute('style', 'flex-shrink:0;');
 
               // y labels (datari) - vertically centered in cell
               datari.forEach((d, i) => {
@@ -478,11 +540,30 @@
                 years.forEach((yr, j) => {
                   const hasTarghette = records.some(r => ((r.Datario||'').trim() === d) && r.Anno === yr);
                   const hasOnde = ondeRecords.some(r => ((r.Datario||'').trim() === d) && r.Anno === yr);
+                  const hasBarre = barreRecords.some(r => ((r.Datario||'').trim() === d) && r.Anno === yr);
                   const x = left + j * cell + 1;
                   const y = top + i * cell + 1;
                   const s = cell - 2;
-                  if (hasTarghette && hasOnde) {
-                    // diagonale: triangolo alto-sx giallo (onde), basso-dx scuro (targhette)
+
+                  if (hasTarghette && hasOnde && hasBarre) {
+                    // Tre terzi verticali: nero, giallo, blu
+                    const third = s / 3;
+                    const r1 = document.createElementNS(svgNS, 'rect');
+                    r1.setAttribute('x', x); r1.setAttribute('y', y);
+                    r1.setAttribute('width', third); r1.setAttribute('height', s);
+                    r1.setAttribute('fill', '#333');
+                    svg.appendChild(r1);
+                    const r2 = document.createElementNS(svgNS, 'rect');
+                    r2.setAttribute('x', x + third); r2.setAttribute('y', y);
+                    r2.setAttribute('width', third); r2.setAttribute('height', s);
+                    r2.setAttribute('fill', '#f5c542');
+                    svg.appendChild(r2);
+                    const r3 = document.createElementNS(svgNS, 'rect');
+                    r3.setAttribute('x', x + 2 * third); r3.setAttribute('y', y);
+                    r3.setAttribute('width', third); r3.setAttribute('height', s);
+                    r3.setAttribute('fill', '#2266cc');
+                    svg.appendChild(r3);
+                  } else if (hasTarghette && hasOnde) {
                     const triOnde = document.createElementNS(svgNS, 'polygon');
                     triOnde.setAttribute('points', `${x},${y} ${x+s},${y} ${x},${y+s}`);
                     triOnde.setAttribute('fill', '#f5c542');
@@ -491,6 +572,30 @@
                     triTarg.setAttribute('points', `${x+s},${y} ${x+s},${y+s} ${x},${y+s}`);
                     triTarg.setAttribute('fill', '#333');
                     svg.appendChild(triTarg);
+                  } else if (hasTarghette && hasBarre) {
+                    const half = s / 2;
+                    const r1 = document.createElementNS(svgNS, 'rect');
+                    r1.setAttribute('x', x); r1.setAttribute('y', y);
+                    r1.setAttribute('width', half); r1.setAttribute('height', s);
+                    r1.setAttribute('fill', '#333');
+                    svg.appendChild(r1);
+                    const r2 = document.createElementNS(svgNS, 'rect');
+                    r2.setAttribute('x', x + half); r2.setAttribute('y', y);
+                    r2.setAttribute('width', half); r2.setAttribute('height', s);
+                    r2.setAttribute('fill', '#2266cc');
+                    svg.appendChild(r2);
+                  } else if (hasOnde && hasBarre) {
+                    const half = s / 2;
+                    const r1 = document.createElementNS(svgNS, 'rect');
+                    r1.setAttribute('x', x); r1.setAttribute('y', y);
+                    r1.setAttribute('width', half); r1.setAttribute('height', s);
+                    r1.setAttribute('fill', '#f5c542');
+                    svg.appendChild(r1);
+                    const r2 = document.createElementNS(svgNS, 'rect');
+                    r2.setAttribute('x', x + half); r2.setAttribute('y', y);
+                    r2.setAttribute('width', half); r2.setAttribute('height', s);
+                    r2.setAttribute('fill', '#2266cc');
+                    svg.appendChild(r2);
                   } else if (hasTarghette) {
                     const rect = document.createElementNS(svgNS, 'rect');
                     rect.setAttribute('x', x);
@@ -498,7 +603,6 @@
                     rect.setAttribute('width', s);
                     rect.setAttribute('height', s);
                     rect.setAttribute('fill', '#333');
-                    rect.setAttribute('title', `${d} • ${yr}`);
                     svg.appendChild(rect);
                   } else if (hasOnde) {
                     const rect = document.createElementNS(svgNS, 'rect');
@@ -507,36 +611,75 @@
                     rect.setAttribute('width', s);
                     rect.setAttribute('height', s);
                     rect.setAttribute('fill', '#f5c542');
-                    rect.setAttribute('title', `${d} • ${yr} (onde)`);
+                    svg.appendChild(rect);
+                  } else if (hasBarre) {
+                    const rect = document.createElementNS(svgNS, 'rect');
+                    rect.setAttribute('x', x);
+                    rect.setAttribute('y', y);
+                    rect.setAttribute('width', s);
+                    rect.setAttribute('height', s);
+                    rect.setAttribute('fill', '#2266cc');
                     svg.appendChild(rect);
                   }
                 });
               });
 
-              // Legenda centrata
-              const legendY = height - 14;
-              const items = legendItems;
-              let lx = (width - legendTotalW) / 2;
-              items.forEach(item => {
-                if (item.color) {
-                  const r = document.createElementNS(svgNS, 'rect');
-                  r.setAttribute('x', lx); r.setAttribute('y', legendY - 10);
-                  r.setAttribute('width', 12); r.setAttribute('height', 12);
-                  r.setAttribute('fill', item.color);
-                  svg.appendChild(r);
-                } else {
-                  const ly = legendY - 10;
-                  const triL1 = document.createElementNS(svgNS, 'polygon');
-                  triL1.setAttribute('points', `${lx},${ly} ${lx+12},${ly} ${lx},${ly+12}`);
-                  triL1.setAttribute('fill', '#f5c542');
-                  svg.appendChild(triL1);
-                  const triL2 = document.createElementNS(svgNS, 'polygon');
-                  triL2.setAttribute('points', `${lx+12},${ly} ${lx+12},${ly+12} ${lx},${ly+12}`);
-                  triL2.setAttribute('fill', '#333');
-                  svg.appendChild(triL2);
-                }
+              // Legenda centrata (due righe)
+              const legendY = height - 30;
+              // Prima riga: singoli
+              const row1 = legendItems.slice(0, 3);
+              const row1W = row1.reduce((acc, item) => acc + 16 + item.label.length * 6.5 + 14, 0) - 14;
+              let lx = (width - row1W) / 2;
+              row1.forEach(item => {
+                const r = document.createElementNS(svgNS, 'rect');
+                r.setAttribute('x', lx); r.setAttribute('y', legendY - 10);
+                r.setAttribute('width', 12); r.setAttribute('height', 12);
+                r.setAttribute('fill', item.color);
+                svg.appendChild(r);
                 const t = document.createElementNS(svgNS, 'text');
                 t.setAttribute('x', lx + 16); t.setAttribute('y', legendY);
+                t.setAttribute('font-size', '11'); t.setAttribute('fill', '#333');
+                t.textContent = item.label;
+                svg.appendChild(t);
+                lx += 16 + item.label.length * 6.5 + 14;
+              });
+              // Seconda riga: combinazioni
+              const legendY2 = legendY + 16;
+              const row2 = legendItems.slice(3);
+              const row2W = row2.reduce((acc, item) => acc + 16 + item.label.length * 6.5 + 14, 0) - 14;
+              lx = (width - row2W) / 2;
+              row2.forEach(item => {
+                const ly = legendY2 - 10;
+                if (item.type === 'half') {
+                  const r1 = document.createElementNS(svgNS, 'rect');
+                  r1.setAttribute('x', lx); r1.setAttribute('y', ly);
+                  r1.setAttribute('width', 6); r1.setAttribute('height', 12);
+                  r1.setAttribute('fill', item.colors[0]);
+                  svg.appendChild(r1);
+                  const r2 = document.createElementNS(svgNS, 'rect');
+                  r2.setAttribute('x', lx + 6); r2.setAttribute('y', ly);
+                  r2.setAttribute('width', 6); r2.setAttribute('height', 12);
+                  r2.setAttribute('fill', item.colors[1]);
+                  svg.appendChild(r2);
+                } else if (item.type === 'thirds') {
+                  const r1 = document.createElementNS(svgNS, 'rect');
+                  r1.setAttribute('x', lx); r1.setAttribute('y', ly);
+                  r1.setAttribute('width', 4); r1.setAttribute('height', 12);
+                  r1.setAttribute('fill', item.colors[0]);
+                  svg.appendChild(r1);
+                  const r2 = document.createElementNS(svgNS, 'rect');
+                  r2.setAttribute('x', lx + 4); r2.setAttribute('y', ly);
+                  r2.setAttribute('width', 4); r2.setAttribute('height', 12);
+                  r2.setAttribute('fill', item.colors[1]);
+                  svg.appendChild(r2);
+                  const r3 = document.createElementNS(svgNS, 'rect');
+                  r3.setAttribute('x', lx + 8); r3.setAttribute('y', ly);
+                  r3.setAttribute('width', 4); r3.setAttribute('height', 12);
+                  r3.setAttribute('fill', item.colors[2]);
+                  svg.appendChild(r3);
+                }
+                const t = document.createElementNS(svgNS, 'text');
+                t.setAttribute('x', lx + 16); t.setAttribute('y', legendY2);
                 t.setAttribute('font-size', '11'); t.setAttribute('fill', '#333');
                 t.textContent = item.label;
                 svg.appendChild(t);
@@ -548,29 +691,6 @@
 
         // Carica quando il DOM è pronto
         document.addEventListener("DOMContentLoaded", loadOfficeDetails);
-
-        // Inizializza i controlli della tabella
-        document.addEventListener('DOMContentLoaded', () => {
-          const apply = document.getElementById('applyPct');
-          apply.addEventListener('click', applyTableWidths);
-        });
-
-        function applyTableWidths() {
-          const a = Number(document.getElementById('pctAnno').value) || 0;
-          const t = Number(document.getElementById('pctTipo').value) || 0;
-          const u = Number(document.getElementById('pctUfficio').value) || 0;
-          const d = Number(document.getElementById('pctDescr').value) || 0;
-          const sum = a + t + u + d;
-          // se la somma è 0, evita divisione per 0
-          if (sum <= 0) return;
-          // normalizza perchè la tabella usa percentuali rispetto al container
-          const norm = (v) => Math.round((v / sum) * 10000) / 100; // due decimali
-
-          document.getElementById('colAnno').style.width = norm(a) + '%';
-          document.getElementById('colTipo').style.width = norm(t) + '%';
-          document.getElementById('colUfficio').style.width = norm(u) + '%';
-          document.getElementById('colDescr').style.width = norm(d) + '%';
-        }
       </script>
     </div>
 
