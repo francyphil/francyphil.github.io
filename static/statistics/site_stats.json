@@ -6,8 +6,8 @@
       "total_catalogati": 4200,
       "images_present": 3845,
       "images_pct": 91.5,
-      "datario_present": 3332,
-      "datario_pct": 79.3
+      "datario_present": 3361,
+      "datario_pct": 80.0
     },
     "Trieste A": {
       "total_catalogati": 22,
@@ -26,7 +26,7 @@
   },
   "total_targhette": 4246,
   "total_localita": 51,
-  "total_datari": 573,
+  "total_datari": 584,
   "total_onde": 842,
   "total_barre": 44
 }
