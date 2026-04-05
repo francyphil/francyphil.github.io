@@ -496,11 +496,53 @@
         "Descrizione": "Barre",
         "linkTarghetta": "",
         "linkImgTarghetta": "",
+        "Anno": 1925,
+        "Località": "Venezia",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "",
+        "Datario": "D1",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
         "Anno": 1926,
         "Località": "Venezia",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "",
-        "Datario": "",
+        "Datario": "D1",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1927,
+        "Località": "Venezia",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "",
+        "Datario": "D1",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1928,
+        "Località": "Venezia",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "",
+        "Datario": "D1",
         "linkDatario": ""
     },
     {
@@ -514,7 +556,7 @@
         "Località": "Verona",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
+        "Datario": "D1",
         "linkDatario": ""
     },
     {
