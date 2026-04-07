@@ -9024,10 +9024,10 @@
         "linkImgTarghetta": "",
         "Anno": 1921,
         "Località": "Salerno",
-        "Denominazione ufficio": "Tre Stelle",
+        "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
-        "linkDatario": "Salerno_TreStelle_D1.jpeg"
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": "",
@@ -9038,10 +9038,10 @@
         "linkImgTarghetta": "",
         "Anno": 1923,
         "Località": "Salerno",
-        "Denominazione ufficio": "Tre Stelle",
+        "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
-        "linkDatario": "Salerno_TreStelle_D1.jpeg"
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": "",
@@ -9052,10 +9052,10 @@
         "linkImgTarghetta": "",
         "Anno": 1924,
         "Località": "Salerno",
-        "Denominazione ufficio": "Tre Stelle",
+        "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
-        "linkDatario": "Salerno_TreStelle_D1.jpeg"
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": "",
@@ -9066,10 +9066,10 @@
         "linkImgTarghetta": "",
         "Anno": 1925,
         "Località": "Salerno",
-        "Denominazione ufficio": "Tre Stelle",
+        "Denominazione ufficio": "3 stelle",
         "Denominazione ufficio breve": "TreStelle",
         "Datario": "D1",
-        "linkDatario": "Salerno_TreStelle_D1.jpeg"
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": "",
@@ -12276,5 +12276,33 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D54",
         "linkDatario": "Roma_Ferr_D54.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde corte",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1925,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D8",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde corte",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1925,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D7",
+        "linkDatario": ""
     }
 ]
