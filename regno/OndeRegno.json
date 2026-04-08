@@ -14348,5 +14348,61 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D5",
         "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1935,
+        "Località": "Roma",
+        "Denominazione ufficio": "Posta Aerea",
+        "Denominazione ufficio breve": "Aerea",
+        "Datario": "D2",
+        "linkDatario": "Roma_Aerea_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1936,
+        "Località": "Roma",
+        "Denominazione ufficio": "Posta Aerea",
+        "Denominazione ufficio breve": "Aerea",
+        "Datario": "D2",
+        "linkDatario": "Roma_Aerea_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1940,
+        "Località": "Roma",
+        "Denominazione ufficio": "Posta Aerea",
+        "Denominazione ufficio breve": "Aerea",
+        "Datario": "D2",
+        "linkDatario": "Roma_Aerea_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1941,
+        "Località": "Roma",
+        "Denominazione ufficio": "Posta Aerea",
+        "Denominazione ufficio breve": "Aerea",
+        "Datario": "D2",
+        "linkDatario": "Roma_Aerea_D2.jpeg"
     }
 ]
