@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regno Solo Darario</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        margin-top: 55px;
+      }
+      .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+        align-items: flex-start;
+      }
+      .image-gallery img {
+        max-height: 200px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        border: 1px solid #ddd;
+        padding: 4px;
+        background: #fff;
+      }
+      .solodaratio-table {
+        border-collapse: collapse;
+        margin-top: 18px;
+        width: auto;
+      }
+      .solodaratio-table th, .solodaratio-table td {
+        border: 1px solid #bbb;
+        padding: 6px 14px;
+        text-align: left;
+      }
+      .solodaratio-table th {
+        background-color: #f0f0f0;
+      }
+      .solodaratio-table td:last-child {
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
+
+    <div class="content-container">
+      <h1>Regno Solo Darario</h1>
+
+      <h2>Uffici con annulli solo darario</h2>
+      <table id="solodaratioTable" class="solodaratio-table">
+        <thead>
+          <tr>
+            <th>Città</th>
+            <th>Ufficio</th>
+            <th>Solo Darario</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <script>
+        fetch("SoloDatarioRegno.json")
+          .then(res => res.json())
+          .then(data => {
+            const seen = new Set();
+            const unique = [];
+            data.forEach(item => {
+              const key = item["Località"] + "|" + item["Denominazione ufficio"];
+              if (!seen.has(key)) {
+                seen.add(key);
+                unique.push({ citta: item["Località"], ufficio: item["Denominazione ufficio"] });
+              }
+            });
+            unique.sort((a, b) => a.citta.localeCompare(b.citta) || a.ufficio.localeCompare(b.ufficio));
+            const tbody = document.querySelector("#solodaratioTable tbody");
+            unique.forEach(u => {
+              const tr = document.createElement("tr");
+              const cittaLink = "cittaDettaglio.html?localita=" + encodeURIComponent(u.citta);
+              const ufficioLink = "ufficioDettaglio.html?localita=" + encodeURIComponent(u.citta) + "&denominazione=" + encodeURIComponent(u.ufficio);
+              tr.innerHTML = '<td><a href="' + cittaLink + '">' + u.citta + '</a></td>'
+                           + '<td><a href="' + ufficioLink + '">' + u.ufficio + '</a></td>'
+                           + '<td>V</td>';
+              tbody.appendChild(tr);
+            });
+          });
+      </script>
+
+      </div>
+    </div>
+
+    <link rel="stylesheet" href="/footer/footer.css" />
+    <script src="/footer/footer.js"></script>
+    <div id="footerContainer"></div>
+    <script>
+      fetch("/footer/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footerContainer").innerHTML = html;
+        });
+    </script>
+  </body>
+</html>
