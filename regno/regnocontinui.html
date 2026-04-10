@@ -15,6 +15,111 @@
         padding: 0;
         margin-top: 55px;
       }
+
+      h1 {
+        text-align: center !important;
+        color: #2c3e50;
+        font-size: 2.2em;
+        margin: 40px 0 50px 0;
+        font-weight: 600;
+      }
+
+      .categories-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .category-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 20px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: inherit;
+        border: 2px solid #e0e0e0;
+        width: 320px;
+        aspect-ratio: 2 / 1;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .category-card:hover {
+        box-shadow: 0 6px 20px rgba(76, 175, 80, 0.25);
+        border-color: #4caf50;
+      }
+
+      .category-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+
+      .category-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .category-title {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #2c3e50;
+        margin: 0 0 5px 0;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 1.4em !important;
+          margin: 25px 15px 30px 15px;
+        }
+
+        .categories-container {
+          gap: 12px;
+          padding: 0 15px;
+        }
+
+        .category-card {
+          width: calc((100% - 12px) / 2);
+          aspect-ratio: auto;
+          padding: 15px 10px;
+        }
+
+        .category-icon {
+          width: 45px;
+          height: 45px;
+          font-size: 24px;
+          border-radius: 10px;
+          margin-bottom: 8px;
+        }
+
+        .category-title {
+          font-size: 1em;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .category-card {
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -22,10 +127,29 @@
     <div id="breadcrumbContainer"></div>
     <script src="/breadcrumb/breadcrumb.js"></script>
 
-    <div class="content-container">
-      <h1>Regno Annulli Continui</h1>
+    <h1>Regno Annulli Continui</h1>
 
- 
+    <div class="categories-container">
+      <a href="/regno/continuikrag1.html" class="category-card">
+        <div class="category-icon">①</div>
+        <div class="category-content">
+          <div class="category-title">Continui Krag primo tipo</div>
+        </div>
+      </a>
+
+      <a href="/regno/continuikrag2.html" class="category-card">
+        <div class="category-icon">②</div>
+        <div class="category-content">
+          <div class="category-title">Continui Krag secondo tipo</div>
+        </div>
+      </a>
+
+      <a href="/regno/continuikrag1datario.html" class="category-card">
+        <div class="category-icon">🕐</div>
+        <div class="category-content">
+          <div class="category-title">Continui Krag primo tipo solo datario</div>
+        </div>
+      </a>
     </div>
     
     <link rel="stylesheet" href="/footer/footer.css">

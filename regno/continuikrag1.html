@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Continui Krag primo tipo</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        margin-top: 55px;
+      }
+      .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+        align-items: flex-start;
+      }
+      .image-gallery img {
+        max-height: 200px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        border: 1px solid #ddd;
+        padding: 4px;
+        background: #fff;
+      }
+      .continui-table {
+        border-collapse: collapse;
+        margin-top: 18px;
+        width: auto;
+      }
+      .continui-table th, .continui-table td {
+        border: 1px solid #bbb;
+        padding: 6px 14px;
+        text-align: left;
+      }
+      .continui-table th {
+        background-color: #f0f0f0;
+      }
+      .continui-table td:last-child {
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
+
+    <div class="content-container">
+      <h1>Continui Krag primo tipo</h1>
+
+    </div>
+
+    <link rel="stylesheet" href="/footer/footer.css" />
+    <script src="/footer/footer.js"></script>
+    <div id="footerContainer"></div>
+    <script>
+      fetch("/footer/footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footerContainer").innerHTML = html;
+        });
+    </script>
+  </body>
+</html>

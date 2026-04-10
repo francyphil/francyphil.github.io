@@ -19,6 +19,7 @@ MIGLIORIE
 - aggiungere targhette colorate: bandiera genova, cortina, visitate l'italia e taci in blu, corrispondenti messina in rosso
 - RRPOste TS: cambiare nome da RPx a TSx
 
+- rivedere grafici, ho aggiunto le barre, le onde i continui etc,, nn sono cosi sicuro che sia la visualizzazione MIGLIORIE
 PRIMA DELLA PUBBLICAZIONE
 - creare sitemaps.xml
 - Gestione SEO
