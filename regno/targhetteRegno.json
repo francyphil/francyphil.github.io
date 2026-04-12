@@ -13048,8 +13048,8 @@
         "Località": "Venezia",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D13",
-        "linkDatario": "Roma_Ferr_D13.jpeg"
+        "Datario": "D1",
+        "linkDatario": "Venezia_Centro_D1.jpeg"
     },
     {
         "Targhetta Tipo": 102,
@@ -13061,8 +13061,8 @@
         "Località": "Venezia",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "D13",
-        "linkDatario": "Roma_Ferr_D13.jpeg"
+        "Datario": "D3",
+        "linkDatario": "Venezia_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 102,
@@ -34739,6 +34739,19 @@
         "Targhetta Tipo": 220,
         "Targhetta Ufficio": 2401,
         "extra": "",
+        "Descrizione": "Presso tutti gli uffici postali pagamenti …",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "La Spezia",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "D4",
+        "linkDatario": "Spezia_Centro_D4.jpeg"
+    },
+    {
+        "Targhetta Tipo": 220,
+        "Targhetta Ufficio": 2401,
+        "extra": "R",
         "Descrizione": "Presso tutti gli uffici postali pagamenti …",
         "linkTarghetta": "",
         "Anno": 1931,

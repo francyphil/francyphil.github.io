@@ -323,14 +323,15 @@ def main():
     stats["total_datari"] = len(datari_set)
 
     # Conta onde classificate
-    onde_json = project_dir / "regno" / "OndeRegno.json"
     total_onde = 0
-    if onde_json.exists():
-        try:
-            with open(onde_json, "r", encoding="utf-8") as f:
-                total_onde = len(json.load(f))
-        except Exception:
-            pass
+    for onde_folder, onde_file in [("regno", "OndeRegno.json"), ("colonie/libia", "ondeLibia.json")]:
+        onde_json = project_dir / onde_folder / onde_file
+        if onde_json.exists():
+            try:
+                with open(onde_json, "r", encoding="utf-8") as f:
+                    total_onde += len(json.load(f))
+            except Exception:
+                pass
     stats["total_onde"] = total_onde
 
     # Conta barre classificate
