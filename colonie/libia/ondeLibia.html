@@ -4,33 +4,12 @@
     <link rel="stylesheet" href="/common-bg.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Onde Colonie</title>
+    <title>Onde Libia</title>
     <script src="/favicon-loader.js"></script>
-    <link rel="stylesheet" href="/navbar/navbar.css">
-    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css">
-    <style>
-      body {
-        font-family: sans-serif;
-        margin: 0;
-        padding: 0;
-        margin-top: 55px;
-      }
-      .coming-soon {
-        text-align: center;
-        padding: 80px 20px;
-      }
-      .coming-soon .icon {
-        font-size: 4em;
-        margin-bottom: 20px;
-      }
-      .coming-soon p {
-        font-size: 1.2em;
-        color: #5a6c7d;
-        max-width: 500px;
-        margin: 15px auto;
-        line-height: 1.6;
-      }
-    </style>
+    <!-- Chart.js will be caricato condizionalmente in base al consenso -->
+    <link rel="stylesheet" href="/navbar/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
+    <link rel="stylesheet" href="/catalog.css" />
   </head>
   <body>
     <script src="/navbar/navbar.js"></script>
@@ -38,20 +17,125 @@
     <script src="/breadcrumb/breadcrumb.js"></script>
 
     <div class="content-container">
-      <h1>Onde Colonie</h1>
-      <div class="coming-soon">
-        <div class="icon">🚧</div>
-        <p>Questa sezione è in fase di preparazione.<br>Il catalogo degli annulli ad onde delle Colonie sarà disponibile prossimamente.</p>
+      <h1>Onde Libia</h1>
+
+    <!-- Mobile: filter toggle + panel + compact list -->
+    <button id="mobileFilterToggle">
+      <span>🔍 Filtri <span id="filterBadge" class="filter-badge" style="display:none"></span></span>
+      <span class="filter-arrow">▼</span>
+    </button>
+    <div id="mobileFilterPanel"></div>
+    <div id="mobileListContainer"></div>
+
+    <fieldset class="controlli-box">
+      <legend>Controlli</legend>
+      <div class="controlli-wrapper">
+        <label
+          >Max record:
+          <select id="maxRecords">
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="500">500</option>
+            <option value="all">Tutti</option>
+          </select>
+        </label>
+        <label
+          >Vista:
+          <select id="vistaSelezionata">
+            <option value="tabella">Tabella</option>
+            <option value="card">Card</option>
+            <option value="tabella_card">Tabella + Card</option>
+          </select>
+        </label>
+        <label
+          >Schema di catalogazione:
+          <select id="schemaCatalogazione">
+            <option value="ornaghi_ufficio">Ornaghi Ufficio</option>
+            <option value="ornaghi_tipo">Ornaghi Tipo</option>
+          </select>
+        </label>
+      </div>
+      <div
+        id="loadingIndicator"
+        class="loading-indicator"
+        style="display: none"
+      >
+        <div class="spinner"></div>
+        <span>Caricamento...</span>
+      </div>
+    </fieldset>
+
+    <div id="pagination-top" class="pagination" aria-label="Paginazione"></div>
+
+    <div class="table-wrapper">
+      <table id="tabellaFiltri">
+        <thead id="theadFiltri">
+          <tr id="trTitoli">
+            <th class="col-tipo" data-campo="Targhetta Tipo">Tipo</th>
+            <th class="col-ufficio" data-campo="Targhetta Ufficio">Ufficio</th>
+            <th class="col-extra" data-campo="extra">Extra</th>
+            <th class="col-desc" data-campo="Descrizione">Descrizione</th>
+            <th class="col-anno" data-campo="Anno">Anno</th>
+            <th class="col-localita" data-campo="Località">Località</th>
+            <th class="col-denom" data-campo="Denominazione ufficio">Den. Ufficio</th>
+            <th class="col-datario" data-campo="Datario">Datario</th>
+          </tr>
+          <tr id="trFiltri"></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="card-container" id="cardContainer"></div>
+
+    <div id="pagination" class="pagination" aria-label="Paginazione"></div>
+
+    <div id="graficoWrapper">
+      <canvas id="grafico" height="400"></canvas>
+    </div>
+
+    <div id="lightboxOverlay">
+      <img id="lightboxImage" />
+      <div id="fallbackText"></div>
+      <div class="controls">
+        <button onclick="prevImage()">⟨</button>
+        <button onclick="chiudiLightbox()">✕</button>
+        <button onclick="nextImage()">⟩</button>
       </div>
     </div>
 
-    <link rel="stylesheet" href="/footer/footer.css">
+    <script>
+      var CATALOG_CONFIG = {
+        jsonFile: "ondeLibia.json",
+        getImgPath: function(r) {
+          return "img/prev_tripoli_" + r["Targhetta Ufficio"] + ((r["extra"]) ? ("_" + (r["extra"]).toString().trim()) : "") + ".jpeg";
+        },
+        customCell: function(td, campo, val, r) {
+          if (campo === "Denominazione ufficio") {
+            var a = document.createElement("a");
+            var params = new URLSearchParams({
+              denominazione: r["Denominazione ufficio"],
+              localita: r["Località"],
+            });
+            a.href = "ufficioDettaglioLibia.html?" + params.toString();
+            a.textContent = val;
+            td.appendChild(a);
+            return true;
+          }
+          return false;
+        }
+      };
+    </script>
+    <script src="/catalog.js"></script>
+    </div>
+
+    <link rel="stylesheet" href="/footer/footer.css" />
     <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
       fetch('/footer/footer.html')
-        .then(res => res.text())
-        .then(html => {
+        .then(function(res) { return res.text(); })
+        .then(function(html) {
           document.getElementById('footerContainer').innerHTML = html;
         });
     </script>

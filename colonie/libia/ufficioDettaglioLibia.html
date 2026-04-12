@@ -89,6 +89,22 @@
         border-left: 4px solid #0066cc;
         border-radius: 4px;
       }
+
+      details {
+        margin-top: 20px;
+        border-bottom: 2px solid #0066cc;
+      }
+
+      details summary {
+        cursor: pointer;
+        padding: 8px 0;
+        font-size: 1.17em;
+        font-weight: bold;
+      }
+
+      details summary:hover {
+        color: #0066cc;
+      }
     </style>
   </head>
   <body>
@@ -119,34 +135,16 @@
       </div>
 
       <!-- Contenitore grafico: anni x datari -->
-      <div id="datariChartBlock" style="display:none; margin-top:18px; text-align:center;">
-        <strong>Uso dei datari nel tempo</strong>
-        <div id="datariChart" style="margin-top:8px; text-align:center;"></div>
+      <div id="datariChartBlock" style="display:none; margin-top:18px;">
+        <div style="text-align:center;"><strong>Uso dei datari nel tempo</strong></div>
+        <div id="datariChart" style="margin-top:8px; display:flex; justify-content:center; overflow-x:auto;"></div>
       </div>
 
       <div class="stats">
         <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
       </div>
 
-      <div class="table-wrapper">
-        <table id="tableTarghette">
-          <colgroup>
-              <col id="colAnno" style="width:16%">
-              <col id="colTipo" style="width:12%">
-              <col id="colUfficio" style="width:12%">
-              <col id="colDescr" style="width:60%">
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Anno</th>
-              <th>Targhetta Tipo</th>
-              <th>Targhetta Ufficio</th>
-              <th>Descrizione</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody"></tbody>
-        </table>
-      </div>
+      <div id="tablesContainer"></div>
 
       <div id="noResults" class="no-results" style="display: none">
         Nessuna targhetta trovata per questo ufficio.
@@ -179,12 +177,21 @@
             `Elenco targhette ordinate per anno`;
 
           try {
-            // Carica il JSON
-            const response = await fetch("targhetteLibia.json");
+            // Carica i JSON
+            const [response, ondeResponse] = await Promise.all([
+              fetch("targhetteLibia.json"),
+              fetch("ondeLibia.json")
+            ]);
             const data = await response.json();
+            const ondeData = await ondeResponse.json();
 
             // Filtra per denominazione e localita
             const filtered = data.filter(
+              (item) =>
+                item["Denominazione ufficio"] === denominazione &&
+                item["Località"] === localita,
+            );
+            const ondeFiltered = ondeData.filter(
               (item) =>
                 item["Denominazione ufficio"] === denominazione &&
                 item["Località"] === localita,
@@ -198,48 +205,94 @@
               return a.Anno - b.Anno;
             });
 
-            // Mostra risultati
+            // Mostra risultati tabella (una tabella per datario)
             if (filtered.length === 0) {
               document.getElementById("noResults").style.display = "block";
-              document.getElementById("tableTarghette").style.display = "none";
+              document.getElementById("tablesContainer").innerHTML = "";
               document.getElementById("statsCount").textContent = "0";
             } else {
-              const tbody = document.getElementById("tableBody");
-              tbody.innerHTML = "";
+              const container = document.getElementById("tablesContainer");
+              container.innerHTML = "";
 
+              // Raggruppa per Datario
+              const groups = new Map();
               filtered.forEach((item) => {
-                const tr = document.createElement("tr");
+                const key = (item.Datario || "").trim();
+                if (!groups.has(key)) groups.set(key, []);
+                groups.get(key).push(item);
+              });
 
-                const tdAnno = document.createElement("td");
-                tdAnno.textContent = item.Anno;
+              // Itera i gruppi nell'ordine di inserimento (segue l'ordine della tabella per Anno)
+              groups.forEach((items, datarioName) => {
 
-                const tdTipo = document.createElement("td");
-                tdTipo.textContent = item["Targhetta Tipo"];
+                // Sezione collassabile
+                const details = document.createElement("details");
+                const summary = document.createElement("summary");
+                summary.textContent = datarioName || "(senza datario)";
+                details.appendChild(summary);
 
-                const tdUfficio = document.createElement("td");
-                tdUfficio.textContent = item["Targhetta Ufficio"];
+                // Wrapper + tabella
+                const wrapper = document.createElement("div");
+                wrapper.className = "table-wrapper";
+                const table = document.createElement("table");
 
-                const tdDescrizione = document.createElement("td");
-                tdDescrizione.textContent = item["Descrizione"];
+                const colgroup = document.createElement("colgroup");
+                ["16%", "12%", "12%", "60%"].forEach((w) => {
+                  const col = document.createElement("col");
+                  col.style.width = w;
+                  colgroup.appendChild(col);
+                });
+                table.appendChild(colgroup);
 
-                tr.appendChild(tdAnno);
-                tr.appendChild(tdTipo);
-                tr.appendChild(tdUfficio);
-                tr.appendChild(tdDescrizione);
+                const thead = document.createElement("thead");
+                const headRow = document.createElement("tr");
+                ["Anno", "Targhetta Tipo", "Targhetta Ufficio", "Descrizione"].forEach((text) => {
+                  const th = document.createElement("th");
+                  th.textContent = text;
+                  headRow.appendChild(th);
+                });
+                thead.appendChild(headRow);
+                table.appendChild(thead);
 
-                tbody.appendChild(tr);
+                const tbody = document.createElement("tbody");
+                items.forEach((item) => {
+                  const tr = document.createElement("tr");
+
+                  const tdAnno = document.createElement("td");
+                  tdAnno.textContent = item.Anno;
+
+                  const tdTipo = document.createElement("td");
+                  tdTipo.textContent = item["Targhetta Tipo"];
+
+                  const tdUfficio = document.createElement("td");
+                  tdUfficio.textContent = item["Targhetta Ufficio"];
+
+                  const tdDescrizione = document.createElement("td");
+                  tdDescrizione.textContent = item["Descrizione"];
+
+                  tr.appendChild(tdAnno);
+                  tr.appendChild(tdTipo);
+                  tr.appendChild(tdUfficio);
+                  tr.appendChild(tdDescrizione);
+
+                  tbody.appendChild(tr);
+                });
+                table.appendChild(tbody);
+                wrapper.appendChild(table);
+                details.appendChild(wrapper);
+                container.appendChild(details);
               });
 
               document.getElementById("statsCount").textContent =
                 filtered.length;
               document.getElementById("noResults").style.display = "none";
-              document.getElementById("tableTarghette").style.display = "table";
             }
 
             // Mostra i datari usati per gli annulli (se presenti)
-            renderDatari(filtered);
-            // Disegna anche il grafico anni x datari
-            renderChart(filtered);
+            // Unisce tutte le fonti (targhette, onde) per mostrare tutti i datari
+            renderDatari([...filtered, ...ondeFiltered]);
+            // Disegna sempre il grafico (mostra targhette e onde)
+            renderChart(filtered, ondeFiltered);
           } catch (error) {
             console.error("Errore caricamento dati:", error);
             document.getElementById("officeTitle").textContent =
@@ -350,14 +403,29 @@
         }
 
             // Disegna la griglia anni x datari: quadratino se il datario è stato usato in quell'anno
-            function renderChart(records) {
+            function renderChart(records, ondeRecords) {
               const chartBlock = document.getElementById('datariChartBlock');
               const container = document.getElementById('datariChart');
               container.innerHTML = '';
 
-              // ricava codici Datario unici e gli anni
-              const datari = Array.from(new Set(records.map(r => (r.Datario||'').trim()).filter(Boolean))).sort(naturalDatariCompare);
-              let yearsPresent = Array.from(new Set(records.map(r => r.Anno).filter(y => Number.isFinite(y)))).sort((a,b)=>a-b);
+              // definizione fonti con colori
+              const sources = [
+                { records: records, color: '#333', label: 'Targhette' },
+                { records: ondeRecords, color: '#f5c542', label: 'Onde' }
+              ];
+
+              // ricava codici Datario unici e gli anni da tutte le fonti
+              const datariSet = new Set();
+              const yearSetAll = new Set();
+              sources.forEach(src => {
+                src.records.forEach(r => {
+                  const d = (r.Datario||'').trim();
+                  if (d) datariSet.add(d);
+                  if (Number.isFinite(r.Anno)) yearSetAll.add(r.Anno);
+                });
+              });
+              const datari = Array.from(datariSet).sort(naturalDatariCompare);
+              let yearsPresent = Array.from(yearSetAll).sort((a,b)=>a-b);
               // assicurati di includere tutti gli anni compresi tra primo e ultimo
               let years = [];
               if (yearsPresent.length > 0) {
@@ -377,15 +445,17 @@
               const top = 20;
               const gridWidth = years.length * cell;
               const gridHeight = datari.length * cell;
-              const width = left + gridWidth + 20;
-              const height = top + gridHeight + 60;
+              // calcola larghezza legenda
+              const legendRowW = sources.reduce((acc, item) => acc + 16 + item.label.length * 6.5 + 14, 0) - 14;
+              const width = Math.max(left + gridWidth + 20, legendRowW + 40);
+              const height = top + gridHeight + 80;
 
               const svgNS = 'http://www.w3.org/2000/svg';
               const svg = document.createElementNS(svgNS, 'svg');
               svg.setAttribute('width', width);
               svg.setAttribute('height', height);
               svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
-              svg.setAttribute('style', 'display:block; margin:0 auto;');
+              svg.setAttribute('style', 'flex-shrink:0;');
 
               // y labels (datari) - vertically centered in cell
               datari.forEach((d, i) => {
@@ -400,7 +470,8 @@
                 svg.appendChild(text);
               });
 
-              // disegna griglia verticale e orizzontale
+              // disegna griglia verticale (linee sottili) e orizzontale (più spesse)
+              // verticali
               for (let j=0;j<=years.length;j++){
                 const xline = left + j*cell;
                 const line = document.createElementNS(svgNS,'line');
@@ -412,6 +483,7 @@
                 line.setAttribute('stroke-width', '1');
                 svg.appendChild(line);
               }
+              // orizzontali (più spesse)
               for (let i=0;i<=datari.length;i++){
                 const yline = top + i*cell;
                 const hline = document.createElementNS(svgNS,'line');
@@ -424,7 +496,7 @@
                 svg.appendChild(hline);
               }
 
-              // x labels (years)
+              // x labels (years) - include anche gli anni vuoti, centered in cell
               years.forEach((yr, j) => {
                 const x = left + j * cell + cell/2;
                 const baseY = top + datari.length * cell + cell/2;
@@ -439,23 +511,44 @@
                 svg.appendChild(text);
               });
 
-              // draw squares
+              // draw squares — strisce verticali per ogni fonte attiva
               datari.forEach((d, i) => {
                 years.forEach((yr, j) => {
-                  const used = records.some(r => ((r.Datario||'').trim() === d) && r.Anno === yr);
-                  if (used) {
+                  const activeColors = sources
+                    .filter(src => src.records.some(r => ((r.Datario||'').trim() === d) && r.Anno === yr))
+                    .map(src => src.color);
+                  if (activeColors.length === 0) return;
+                  const x = left + j * cell + 1;
+                  const y = top + i * cell + 1;
+                  const s = cell - 2;
+                  const w = s / activeColors.length;
+                  activeColors.forEach((color, idx) => {
                     const rect = document.createElementNS(svgNS, 'rect');
-                    const x = left + j * cell + 1;
-                    const y = top + i * cell + 1;
-                    rect.setAttribute('x', x );
-                    rect.setAttribute('y', y );
-                    rect.setAttribute('width', cell - 2);
-                    rect.setAttribute('height', cell - 2);
-                    rect.setAttribute('fill', '#333');
-                    rect.setAttribute('title', `${d} • ${yr}`);
+                    rect.setAttribute('x', x + idx * w);
+                    rect.setAttribute('y', y);
+                    rect.setAttribute('width', w);
+                    rect.setAttribute('height', s);
+                    rect.setAttribute('fill', color);
                     svg.appendChild(rect);
-                  }
+                  });
                 });
+              });
+
+              // Legenda centrata
+              const legendY = height - 20;
+              let lx = (width - legendRowW) / 2;
+              sources.forEach(item => {
+                const r = document.createElementNS(svgNS, 'rect');
+                r.setAttribute('x', lx); r.setAttribute('y', legendY - 10);
+                r.setAttribute('width', 12); r.setAttribute('height', 12);
+                r.setAttribute('fill', item.color);
+                svg.appendChild(r);
+                const t = document.createElementNS(svgNS, 'text');
+                t.setAttribute('x', lx + 16); t.setAttribute('y', legendY);
+                t.setAttribute('font-size', '11'); t.setAttribute('fill', '#333');
+                t.textContent = item.label;
+                svg.appendChild(t);
+                lx += 16 + item.label.length * 6.5 + 14;
               });
 
               container.appendChild(svg);
