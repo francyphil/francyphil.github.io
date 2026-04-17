@@ -793,6 +793,19 @@
         "linkDatario": ""
     },
     {
+        "Targhetta Tipo": "11A",
+        "Targhetta Ufficio": 59,
+        "extra": "A",
+        "Descrizione": "Sottoscrivete al prestito    ( Krag )",
+        "linkTarghetta": "",
+        "Anno": 1918,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Targhetta Tipo": 12,
         "Targhetta Ufficio": 60,
         "extra": "",
@@ -2068,6 +2081,19 @@
     },
     {
         "Targhetta Tipo": 29,
+        "Targhetta Ufficio": 151,
+        "extra": "A",
+        "Descrizione": "Spazio riservato alla pubblicità",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Roma",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 29,
         "Targhetta Ufficio": 152,
         "extra": "",
         "Descrizione": "Spazio riservato alla pubblicità",
@@ -2078,6 +2104,19 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D2",
         "linkDatario": "Roma_Centro_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": 29,
+        "Targhetta Ufficio": 152,
+        "extra": "A",
+        "Descrizione": "Spazio riservato alla pubblicità",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Roma",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 17,
@@ -4538,6 +4577,19 @@
     },
     {
         "Targhetta Tipo": 48,
+        "Targhetta Ufficio": 326,
+        "extra": "R",
+        "Descrizione": "Salsomaggiore - Le piu belle terme del Mondo - Tipo 1",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Trento",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 48,
         "Targhetta Ufficio": 327,
         "extra": "",
         "Descrizione": "Salsomaggiore - Le piu belle terme del Mondo - Tipo 1",
@@ -4847,6 +4899,19 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D8",
         "linkDatario": "Roma_Centro_D8.jpeg"
+    },
+    {
+        "Targhetta Tipo": 66,
+        "Targhetta Ufficio": 348,
+        "extra": "A",
+        "Descrizione": "Linoleum - pavimento senza rivali",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Roma",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 66,
@@ -5539,6 +5604,19 @@
     },
     {
         "Targhetta Tipo": 70,
+        "Targhetta Ufficio": 390,
+        "extra": "A",
+        "Descrizione": "Mata hari",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Torino",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 70,
         "Targhetta Ufficio": 391,
         "extra": "",
         "Descrizione": "Mata hari",
@@ -5630,6 +5708,19 @@
     },
     {
         "Targhetta Tipo": 71,
+        "Targhetta Ufficio": 396,
+        "extra": "R",
+        "Descrizione": "Mata hari ( col trattino tra Mata ed Hari )",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 71,
         "Targhetta Ufficio": 397,
         "extra": "",
         "Descrizione": "Mata hari ( col trattino tra Mata ed Hari )",
@@ -5644,7 +5735,7 @@
     {
         "Targhetta Tipo": 72,
         "Targhetta Ufficio": 398,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Mata hari ( col trattino prima e dopo 'pubblica' )",
         "linkTarghetta": "",
         "Anno": 1924,
@@ -7347,7 +7438,7 @@
     {
         "Targhetta Tipo": 41,
         "Targhetta Ufficio": 508,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Articoli per la casa - La Rinascente ( casetta )",
         "linkTarghetta": "",
         "Anno": 1924,
@@ -7632,6 +7723,19 @@
     },
     {
         "Targhetta Tipo": 42,
+        "Targhetta Ufficio": 524,
+        "extra": "A",
+        "Descrizione": "Novità di stagione - La Rinascente ( trombettiere )",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Milano",
+        "Denominazione ufficio": "Centro Arrivi",
+        "Denominazione ufficio breve": "CentroArr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 42,
         "Targhetta Ufficio": 525,
         "extra": "",
         "Descrizione": "Novità di stagione - La Rinascente ( trombettiere )",
@@ -7711,6 +7815,19 @@
     {
         "Targhetta Tipo": 42,
         "Targhetta Ufficio": 530,
+        "extra": "A",
+        "Descrizione": "Novità di stagione - La Rinascente ( trombettiere )",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Roma",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 42,
+        "Targhetta Ufficio": 530,
         "extra": "",
         "Descrizione": "Novità di stagione - La Rinascente ( trombettiere )",
         "linkTarghetta": "",
@@ -7750,7 +7867,7 @@
     {
         "Targhetta Tipo": 85,
         "Targhetta Ufficio": 533,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Steno dattilografia - Cosmopolita",
         "linkTarghetta": "",
         "Anno": 1924,
@@ -7814,6 +7931,19 @@
     },
     {
         "Targhetta Tipo": 87,
+        "Targhetta Ufficio": 537,
+        "extra": "A",
+        "Descrizione": "Bottega della gomma",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Milano",
+        "Denominazione ufficio": "Centro Arrivi",
+        "Denominazione ufficio breve": "CentroArr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 87,
         "Targhetta Ufficio": 538,
         "extra": "",
         "Descrizione": "Bottega della gomma",
@@ -7850,6 +7980,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
         "linkDatario": "Milano_Ferr_D4.jpeg"
+    },
+    {
+        "Targhetta Tipo": 84,
+        "Targhetta Ufficio": 540,
+        "extra": "A",
+        "Descrizione": "Veglia la strenna più gradita",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 89,
@@ -9427,7 +9570,7 @@
     {
         "Targhetta Tipo": 94,
         "Targhetta Ufficio": 645,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Acquistate i buoni postali fruttiferi",
         "linkTarghetta": "",
         "Anno": 1925,
@@ -10570,6 +10713,19 @@
     },
     {
         "Targhetta Tipo": 94,
+        "Targhetta Ufficio": 725,
+        "extra": "R",
+        "Descrizione": "Acquistate i buoni postali fruttiferi",
+        "linkTarghetta": "",
+        "Anno": 1926,
+        "Località": "Genova",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 94,
         "Targhetta Ufficio": 726,
         "extra": "",
         "Descrizione": "Acquistate i buoni postali fruttiferi",
@@ -10671,6 +10827,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D1",
         "linkDatario": "Pisa_Ferr_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": 94,
+        "Targhetta Ufficio": 730,
+        "extra": "R",
+        "Descrizione": "Acquistate i buoni postali fruttiferi",
+        "linkTarghetta": "",
+        "Anno": 1926,
+        "Località": "Pisa",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 94,
@@ -11638,6 +11807,19 @@
         "Targhetta Tipo": 100,
         "Targhetta Ufficio": 800,
         "extra": "",
+        "Descrizione": "Sottoscrivete al prestito del littorio",
+        "linkTarghetta": "",
+        "Anno": 1926,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 100,
+        "Targhetta Ufficio": 800,
+        "extra": "R",
         "Descrizione": "Sottoscrivete al prestito del littorio",
         "linkTarghetta": "",
         "Anno": 1926,
@@ -12647,6 +12829,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D2",
         "linkDatario": "Verona_Ferr_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": 94,
+        "Targhetta Ufficio": 869,
+        "extra": "A",
+        "Descrizione": "Acquistate i buoni postali fruttiferi",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Verona",
+        "Denominazione ufficio": "Ferr. 68 - 112 ( A )",
+        "Denominazione ufficio breve": "FerFraz68112",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 93,
@@ -13677,6 +13872,19 @@
     },
     {
         "Targhetta Tipo": 106,
+        "Targhetta Ufficio": 944,
+        "extra": "A",
+        "Descrizione": "Montecatini autunno - ottimo per cura e soggiorno",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Bologna",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 106,
         "Targhetta Ufficio": 945,
         "extra": "",
         "Descrizione": "Montecatini autunno - ottimo per cura e soggiorno",
@@ -13817,6 +14025,19 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D12",
         "linkDatario": "Roma_Centro_D12.jpeg"
+    },
+    {
+        "Targhetta Tipo": 106,
+        "Targhetta Ufficio": 955,
+        "extra": "A",
+        "Descrizione": "Montecatini autunno - ottimo per cura e soggiorno",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Roma",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 106,
@@ -13963,6 +14184,19 @@
     },
     {
         "Targhetta Tipo": 108,
+        "Targhetta Ufficio": 965,
+        "extra": "A",
+        "Descrizione": "Montecatini - stomaco fegato intestino",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Genova",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 108,
         "Targhetta Ufficio": 966,
         "extra": "",
         "Descrizione": "Montecatini - stomaco fegato intestino",
@@ -13973,6 +14207,19 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D8",
         "linkDatario": "Genova_Centro_D8.jpeg"
+    },
+    {
+        "Targhetta Tipo": 108,
+        "Targhetta Ufficio": 966,
+        "extra": "R",
+        "Descrizione": "Montecatini - stomaco fegato intestino",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Genova",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 108,
@@ -14420,19 +14667,6 @@
         "Targhetta Tipo": 104,
         "Targhetta Ufficio": 999,
         "extra": "",
-        "Descrizione": "Visitate Tripoli e la sua espos campion. 1927",
-        "linkTarghetta": "",
-        "Anno": 1927,
-        "Località": "Bologna",
-        "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
-    },
-    {
-        "Targhetta Tipo": 104,
-        "Targhetta Ufficio": 999,
-        "extra": "A",
         "Descrizione": "Visitate Tripoli e la sua espos campion. 1927",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -16354,6 +16588,19 @@
         "linkDatario": "Roma_Centro_D12.jpeg"
     },
     {
+        "Targhetta Tipo": 115,
+        "Targhetta Ufficio": 1141,
+        "extra": "A",
+        "Descrizione": "Agricoltori coltivate razionalmente - vincerete",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Trieste",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Targhetta Tipo": 48,
         "Targhetta Ufficio": 1142,
         "extra": "",
@@ -16783,6 +17030,19 @@
         "linkDatario": "Milano_Ferr_D9.jpeg"
     },
     {
+        "Targhetta Tipo": 50,
+        "Targhetta Ufficio": 1173,
+        "extra": "R",
+        "Descrizione": "Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 1",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Targhetta Tipo": 55,
         "Targhetta Ufficio": 1174,
         "extra": "",
@@ -16914,6 +17174,19 @@
     },
     {
         "Targhetta Tipo": 52,
+        "Targhetta Ufficio": 1183,
+        "extra": "R",
+        "Descrizione": "Salsomaggiore - Monumentali Terme Berzieri Maggio - Ottobre",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Bologna",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 52,
         "Targhetta Ufficio": 1184,
         "extra": "",
         "Descrizione": "Salsomaggiore - Monumentali Terme Berzieri Maggio - Ottobre",
@@ -17019,7 +17292,7 @@
     {
         "Targhetta Tipo": 49,
         "Targhetta Ufficio": 1191,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Salsomaggiore - Le piu belle terme del Mondo - Tipo 2",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -17175,7 +17448,7 @@
     {
         "Targhetta Tipo": 124,
         "Targhetta Ufficio": 1202,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Salsomaggiore - RR stabilimenti termali Salsomaggiore Marzo Novembre",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -17461,7 +17734,7 @@
     {
         "Targhetta Tipo": 129,
         "Targhetta Ufficio": 1223,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Salsomaggiore - Cure a domicilio chiedere prodotti direz.",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -17902,6 +18175,19 @@
     },
     {
         "Targhetta Tipo": 118,
+        "Targhetta Ufficio": 1252,
+        "extra": "A",
+        "Descrizione": "Visitare la Tripolitania è un dovere nazionale",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Bologna",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 118,
         "Targhetta Ufficio": 1253,
         "extra": "",
         "Descrizione": "Visitare la Tripolitania è un dovere nazionale",
@@ -17949,6 +18235,19 @@
         "Località": "Foggia",
         "Denominazione ufficio": "Ferr ( 26 - 22 )",
         "Denominazione ufficio breve": "FerFraz2622_2",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 118,
+        "Targhetta Ufficio": 1256,
+        "extra": "A",
+        "Descrizione": "Visitare la Tripolitania è un dovere nazionale",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Genova",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
         "Datario": "",
         "linkDatario": ""
     },
@@ -18006,6 +18305,19 @@
     },
     {
         "Targhetta Tipo": 118,
+        "Targhetta Ufficio": 1260,
+        "extra": "A",
+        "Descrizione": "Visitare la Tripolitania è un dovere nazionale",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Milano",
+        "Denominazione ufficio": "Centro Arrivi",
+        "Denominazione ufficio breve": "CentroArr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 118,
         "Targhetta Ufficio": 1261,
         "extra": "",
         "Descrizione": "Visitare la Tripolitania è un dovere nazionale",
@@ -18055,6 +18367,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
         "linkDatario": "Napoli_Ferr_D4.jpeg"
+    },
+    {
+        "Targhetta Tipo": 118,
+        "Targhetta Ufficio": 1263,
+        "extra": "A",
+        "Descrizione": "Visitare la Tripolitania è un dovere nazionale",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Napoli",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 118,
@@ -18112,6 +18437,19 @@
         "Targhetta Tipo": 118,
         "Targhetta Ufficio": 1268,
         "extra": "",
+        "Descrizione": "Visitare la Tripolitania è un dovere nazionale",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 118,
+        "Targhetta Ufficio": 1268,
+        "extra": "A",
         "Descrizione": "Visitare la Tripolitania è un dovere nazionale",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -18515,6 +18853,19 @@
         "Targhetta Tipo": 119,
         "Targhetta Ufficio": 1296,
         "extra": "",
+        "Descrizione": "Italiani visitate la tripolitania",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 119,
+        "Targhetta Ufficio": 1296,
+        "extra": "A",
         "Descrizione": "Italiani visitate la tripolitania",
         "linkTarghetta": "",
         "Anno": 1927,
@@ -19358,6 +19709,19 @@
     },
     {
         "Targhetta Tipo": 145,
+        "Targhetta Ufficio": 1356,
+        "extra": "A",
+        "Descrizione": "Torino 1928 esposizioni",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 145,
         "Targhetta Ufficio": 1357,
         "extra": "",
         "Descrizione": "Torino 1928 esposizioni",
@@ -19368,6 +19732,19 @@
         "Denominazione ufficio breve": "Distr",
         "Datario": "D1",
         "linkDatario": "Milano_Distr_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": 145,
+        "Targhetta Ufficio": 1357,
+        "extra": "A",
+        "Descrizione": "Torino 1928 esposizioni",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 145,
@@ -19384,6 +19761,19 @@
     },
     {
         "Targhetta Tipo": 145,
+        "Targhetta Ufficio": 1358,
+        "extra": "A",
+        "Descrizione": "Torino 1928 esposizioni",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 145,
         "Targhetta Ufficio": 1359,
         "extra": "",
         "Descrizione": "Torino 1928 esposizioni",
@@ -19394,6 +19784,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D11",
         "linkDatario": "Milano_Ferr_D11.jpeg"
+    },
+    {
+        "Targhetta Tipo": 145,
+        "Targhetta Ufficio": 1359,
+        "extra": "A",
+        "Descrizione": "Torino 1928 esposizioni",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 145,
@@ -19459,6 +19862,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D2",
         "linkDatario": "Palermo_Ferr_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": 145,
+        "Targhetta Ufficio": 1363,
+        "extra": "B",
+        "Descrizione": "Torino 1928 esposizioni",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Palermo",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 145,
@@ -19576,6 +19992,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D17",
         "linkDatario": "Roma_Ferr_D17.jpeg"
+    },
+    {
+        "Targhetta Tipo": 145,
+        "Targhetta Ufficio": 1371,
+        "extra": "A",
+        "Descrizione": "Torino 1928 esposizioni",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 145,
@@ -21660,7 +22089,7 @@
     {
         "Targhetta Tipo": 93,
         "Targhetta Ufficio": 1518,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Acquistate i buoni postali - fruttiferi -",
         "linkTarghetta": "",
         "Anno": 1928,
@@ -21815,6 +22244,19 @@
     },
     {
         "Targhetta Tipo": 172,
+        "Targhetta Ufficio": 1529,
+        "extra": "A",
+        "Descrizione": "Montecatini - stomaco fegato intestino",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Corrispondenze Centro A",
+        "Denominazione ufficio breve": "CorCentroA",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 172,
         "Targhetta Ufficio": 1530,
         "extra": "",
         "Descrizione": "Montecatini - stomaco fegato intestino",
@@ -21825,6 +22267,19 @@
         "Denominazione ufficio breve": "Distr",
         "Datario": "D1",
         "linkDatario": "Milano_Distr_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": 172,
+        "Targhetta Ufficio": 1530,
+        "extra": "A",
+        "Descrizione": "Montecatini - stomaco fegato intestino",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 172,
@@ -21851,6 +22306,19 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
         "linkDatario": "Palermo_Centro_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": 172,
+        "Targhetta Ufficio": 1531,
+        "extra": "AR",
+        "Descrizione": "Montecatini - stomaco fegato intestino",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Palermo",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 172,
@@ -22127,6 +22595,19 @@
     },
     {
         "Targhetta Tipo": 174,
+        "Targhetta Ufficio": 1551,
+        "extra": "A",
+        "Descrizione": "Montecatini - ottimo per cura e soggiorno",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 174,
         "Targhetta Ufficio": 1552,
         "extra": "",
         "Descrizione": "Montecatini - ottimo per cura e soggiorno",
@@ -22141,7 +22622,7 @@
     {
         "Targhetta Tipo": 195,
         "Targhetta Ufficio": 1553,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1928,
@@ -22161,13 +22642,26 @@
         "Località": "Genova",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 175,
+        "Targhetta Ufficio": 1554,
+        "extra": "R",
+        "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Genova",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
         "Datario": "D8",
         "linkDatario": "Genova_Centro_D8.jpeg"
     },
     {
         "Targhetta Tipo": 175,
         "Targhetta Ufficio": 1555,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1928,
@@ -22180,7 +22674,7 @@
     {
         "Targhetta Tipo": 175,
         "Targhetta Ufficio": 1555,
-        "extra": "A",
+        "extra": "AR",
         "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1928,
@@ -22193,7 +22687,7 @@
     {
         "Targhetta Tipo": 175,
         "Targhetta Ufficio": 1556,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1928,
@@ -22725,6 +23219,19 @@
     },
     {
         "Targhetta Tipo": 151,
+        "Targhetta Ufficio": 1592,
+        "extra": "R",
+        "Descrizione": "Preferite le sigarette Eja Savoia Eva",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 151,
         "Targhetta Ufficio": 1593,
         "extra": "",
         "Descrizione": "Preferite le sigarette Eja Savoia Eva",
@@ -23032,6 +23539,19 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 150,
+        "Targhetta Ufficio": 1611,
+        "extra": "R",
+        "Descrizione": "Preferite le sigarette Eja Savoia Eva",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
         "Datario": "D15",
         "linkDatario": "Milano_Ferr_D15.jpeg"
     },
@@ -23324,7 +23844,7 @@
     {
         "Targhetta Tipo": 152,
         "Targhetta Ufficio": 1630,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Preferite le sigarette Eja Savoia Eva",
         "linkTarghetta": "",
         "Anno": 1928,
@@ -23427,6 +23947,19 @@
     },
     {
         "Targhetta Tipo": 153,
+        "Targhetta Ufficio": 1635,
+        "extra": "R",
+        "Descrizione": "Preferite le sigarette Eja Savoia Eva",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 153,
         "Targhetta Ufficio": 1636,
         "extra": "",
         "Descrizione": "Preferite le sigarette Eja Savoia Eva",
@@ -23441,7 +23974,7 @@
     {
         "Targhetta Tipo": 153,
         "Targhetta Ufficio": 1637,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Preferite le sigarette Eja Savoia Eva",
         "linkTarghetta": "",
         "Anno": 1928,
@@ -24649,6 +25182,19 @@
     },
     {
         "Targhetta Tipo": 17,
+        "Targhetta Ufficio": 1720,
+        "extra": "A",
+        "Descrizione": "Pregate i vostri corrispondenti",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Torino",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 17,
         "Targhetta Ufficio": 1721,
         "extra": "",
         "Descrizione": "Pregate i vostri corrispondenti",
@@ -25034,6 +25580,19 @@
         "Località": "Venezia",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 142,
+        "Targhetta Ufficio": 1747,
+        "extra": "AR",
+        "Descrizione": "Usate i pacchi postali urgenti",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Venezia",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
         "linkDatario": "Venezia_Centro_D1.jpeg"
     },
@@ -25364,7 +25923,7 @@
     },
     {
         "Targhetta Tipo": 178,
-        "Targhetta Ufficio": 1769,
+        "Targhetta Ufficio": 1768,
         "extra": "A",
         "Descrizione": "O.N. Dopolavoro ",
         "linkTarghetta": "",
@@ -26507,6 +27066,19 @@
         "linkDatario": "Genova_Centro_D10.jpeg"
     },
     {
+        "Targhetta Tipo": 110,
+        "Targhetta Ufficio": 1846,
+        "extra": "A",
+        "Descrizione": "Agricoltori bisogna vincere la battaglia del grano",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Genova",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Targhetta Tipo": 185,
         "Targhetta Ufficio": 1847,
         "extra": "",
@@ -27457,6 +28029,19 @@
     },
     {
         "Targhetta Tipo": 142,
+        "Targhetta Ufficio": 1916,
+        "extra": "R",
+        "Descrizione": "Usate i pacchi postali urgenti",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Spezia",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 142,
         "Targhetta Ufficio": 1917,
         "extra": "",
         "Descrizione": "Usate i pacchi postali urgenti",
@@ -27472,6 +28057,19 @@
         "Targhetta Tipo": 142,
         "Targhetta Ufficio": 1918,
         "extra": "",
+        "Descrizione": "Usate i pacchi postali urgenti",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Venezia",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 142,
+        "Targhetta Ufficio": 1918,
+        "extra": "R",
         "Descrizione": "Usate i pacchi postali urgenti",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -27510,7 +28108,7 @@
     {
         "Targhetta Tipo": 93,
         "Targhetta Ufficio": 1921,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Acquistate i buoni postali - fruttiferi -",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -27545,6 +28143,19 @@
         "Denominazione ufficio breve": "CorCentroA",
         "Datario": "D2",
         "linkDatario": "Milano_CorCentroA_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": 174,
+        "Targhetta Ufficio": 1923,
+        "extra": "A",
+        "Descrizione": "Montecatini - ottimo per cura e soggiorno",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Milano",
+        "Denominazione ufficio": "Corrispondenze Centro A",
+        "Denominazione ufficio breve": "CorCentroA",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 174,
@@ -27678,6 +28289,19 @@
     },
     {
         "Targhetta Tipo": 174,
+        "Targhetta Ufficio": 1932,
+        "extra": "A",
+        "Descrizione": "Montecatini - ottimo per cura e soggiorno",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 174,
         "Targhetta Ufficio": 1933,
         "extra": "",
         "Descrizione": "Montecatini - ottimo per cura e soggiorno",
@@ -27718,7 +28342,7 @@
     {
         "Targhetta Tipo": 195,
         "Targhetta Ufficio": 1936,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -27731,7 +28355,7 @@
     {
         "Targhetta Tipo": 195,
         "Targhetta Ufficio": 1937,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -27744,7 +28368,7 @@
     {
         "Targhetta Tipo": 195,
         "Targhetta Ufficio": 1938,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -27757,7 +28381,7 @@
     {
         "Targhetta Tipo": 175,
         "Targhetta Ufficio": 1939,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -27809,7 +28433,7 @@
     {
         "Targhetta Tipo": 175,
         "Targhetta Ufficio": 1943,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -27822,7 +28446,7 @@
     {
         "Targhetta Tipo": 175,
         "Targhetta Ufficio": 1944,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -27835,7 +28459,7 @@
     {
         "Targhetta Tipo": 175,
         "Targhetta Ufficio": 1945,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -27883,6 +28507,19 @@
         "Denominazione ufficio breve": "Distr",
         "Datario": "D7",
         "linkDatario": "Roma_Distr_D7.jpeg"
+    },
+    {
+        "Targhetta Tipo": 175,
+        "Targhetta Ufficio": 1947,
+        "extra": "R",
+        "Descrizione": "Montecatini - opportuno continuare cura a domicilio",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Roma",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 196,
@@ -28069,7 +28706,7 @@
     {
         "Targhetta Tipo": 197,
         "Targhetta Ufficio": 1960,
-        "extra": "A",
+        "extra": "AR",
         "Descrizione": "Montecatini - ottimo per cura e soggiorno",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -28082,7 +28719,7 @@
     {
         "Targhetta Tipo": 198,
         "Targhetta Ufficio": 1961,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare la cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -28095,7 +28732,7 @@
     {
         "Targhetta Tipo": 198,
         "Targhetta Ufficio": 1962,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare la cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -28108,7 +28745,7 @@
     {
         "Targhetta Tipo": 198,
         "Targhetta Ufficio": 1963,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare la cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -28121,7 +28758,7 @@
     {
         "Targhetta Tipo": 198,
         "Targhetta Ufficio": 1964,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare la cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -28133,8 +28770,21 @@
     },
     {
         "Targhetta Tipo": 198,
+        "Targhetta Ufficio": 1964,
+        "extra": "AR",
+        "Descrizione": "Montecatini - opportuno continuare la cura a domicilio",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 198,
         "Targhetta Ufficio": 1965,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Montecatini - opportuno continuare la cura a domicilio",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -28290,7 +28940,7 @@
     {
         "Targhetta Tipo": 150,
         "Targhetta Ufficio": 1975,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Preferite le sigarette Eja Savoia Eva",
         "linkTarghetta": "",
         "Anno": 1929,
@@ -28458,6 +29108,19 @@
     },
     {
         "Targhetta Tipo": 191,
+        "Targhetta Ufficio": 1987,
+        "extra": "R",
+        "Descrizione": "Preferite le sigarette orientali Eva - Eja",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Verona",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 191,
         "Targhetta Ufficio": 1988,
         "extra": "",
         "Descrizione": "Preferite le sigarette orientali Eva - Eja",
@@ -28523,6 +29186,19 @@
     },
     {
         "Targhetta Tipo": 192,
+        "Targhetta Ufficio": 1991,
+        "extra": "A",
+        "Descrizione": "Preferite le sigarette orientali Eva - Eja",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Milano",
+        "Denominazione ufficio": "Corrispondenze Centro A",
+        "Denominazione ufficio breve": "CorCentroA",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 192,
         "Targhetta Ufficio": 1992,
         "extra": "",
         "Descrizione": "Preferite le sigarette orientali Eva - Eja",
@@ -28559,6 +29235,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D17",
         "linkDatario": "Milano_Ferr_D17.jpeg"
+    },
+    {
+        "Targhetta Tipo": 192,
+        "Targhetta Ufficio": 1994,
+        "extra": "A",
+        "Descrizione": "Preferite le sigarette orientali Eva - Eja",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 192,
@@ -28874,6 +29563,19 @@
     },
     {
         "Targhetta Tipo": 190,
+        "Targhetta Ufficio": 2011,
+        "extra": "A",
+        "Descrizione": "Fumatori di toscani provate …",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 190,
         "Targhetta Ufficio": 2012,
         "extra": "",
         "Descrizione": "Fumatori di toscani provate …",
@@ -28897,6 +29599,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D16",
         "linkDatario": "Milano_Ferr_D16.jpeg"
+    },
+    {
+        "Targhetta Tipo": 190,
+        "Targhetta Ufficio": 2012,
+        "extra": "B",
+        "Descrizione": "Fumatori di toscani provate …",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 190,
@@ -29513,6 +30228,19 @@
         "Targhetta Tipo": 200,
         "Targhetta Ufficio": 2055,
         "extra": "",
+        "Descrizione": "Montecatini - stomaco fegato intestino",
+        "linkTarghetta": "",
+        "Anno": 1930,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 200,
+        "Targhetta Ufficio": 2055,
+        "extra": "A",
         "Descrizione": "Montecatini - stomaco fegato intestino",
         "linkTarghetta": "",
         "Anno": 1930,
@@ -31111,7 +31839,7 @@
     {
         "Targhetta Tipo": 201,
         "Targhetta Ufficio": 2156,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Servitevi dei pacchi postali urgenti",
         "linkTarghetta": "",
         "Anno": 1930,
@@ -31968,6 +32696,19 @@
     },
     {
         "Targhetta Tipo": 208,
+        "Targhetta Ufficio": 2212,
+        "extra": "A",
+        "Descrizione": "L'olio d'oliva fa crescere sani e forti i bambini",
+        "linkTarghetta": "",
+        "Anno": 1930,
+        "Località": "Genova",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 208,
         "Targhetta Ufficio": 2213,
         "extra": "",
         "Descrizione": "L'olio d'oliva fa crescere sani e forti i bambini",
@@ -32173,6 +32914,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D25",
         "linkDatario": "Torino_Ferr_D25.jpeg"
+    },
+    {
+        "Targhetta Tipo": 208,
+        "Targhetta Ufficio": 2225,
+        "extra": "B",
+        "Descrizione": "L'olio d'oliva fa crescere sani e forti i bambini",
+        "linkTarghetta": "",
+        "Anno": 1930,
+        "Località": "Torino",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 209,
@@ -32461,6 +33215,19 @@
         "linkDatario": "Livorno_SezRiu2_D2.jpeg"
     },
     {
+        "Targhetta Tipo": 212,
+        "Targhetta Ufficio": 2243,
+        "extra": "A",
+        "Descrizione": "Livorno 27 luglio coppa del mare - 3 agosto ….",
+        "linkTarghetta": "",
+        "Anno": 1930,
+        "Località": "Livorno",
+        "Denominazione ufficio": "Sezioni riunite",
+        "Denominazione ufficio breve": "SezRiu2",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Targhetta Tipo": 213,
         "Targhetta Ufficio": 2244,
         "extra": "",
@@ -32654,6 +33421,19 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D18",
         "linkDatario": "Roma_Centro_D18.jpeg"
+    },
+    {
+        "Targhetta Tipo": 202,
+        "Targhetta Ufficio": 2257,
+        "extra": "A",
+        "Descrizione": "Tutti gli uffici postali eseguono il servizio ...",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 202,
@@ -35258,6 +36038,19 @@
     {
         "Targhetta Tipo": 217,
         "Targhetta Ufficio": 2435,
+        "extra": "R",
+        "Descrizione": "Utenti domandate l'apertura di un ….",
+        "linkTarghetta": "",
+        "Anno": 1932,
+        "Località": "Messina",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 217,
+        "Targhetta Ufficio": 2435,
         "extra": "A",
         "Descrizione": "Utenti domandate l'apertura di un ….",
         "linkTarghetta": "",
@@ -35271,7 +36064,7 @@
     {
         "Targhetta Tipo": 217,
         "Targhetta Ufficio": 2436,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Utenti domandate l'apertura di un ….",
         "linkTarghetta": "",
         "Anno": 1932,
@@ -35297,7 +36090,7 @@
     {
         "Targhetta Tipo": 217,
         "Targhetta Ufficio": 2438,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Utenti domandate l'apertura di un ….",
         "linkTarghetta": "",
         "Anno": 1932,
@@ -36177,6 +36970,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D27",
         "linkDatario": "Milano_Ferr_D27.jpeg"
+    },
+    {
+        "Targhetta Tipo": 229,
+        "Targhetta Ufficio": 2501,
+        "extra": "A",
+        "Descrizione": "Mostra rivoluzione fascista",
+        "linkTarghetta": "",
+        "Anno": 1932,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 229,
@@ -38039,6 +38845,19 @@
     },
     {
         "Targhetta Tipo": 229,
+        "Targhetta Ufficio": 2635,
+        "extra": "A",
+        "Descrizione": "Mostra rivoluzione fascista",
+        "linkTarghetta": "",
+        "Anno": 1934,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 229,
         "Targhetta Ufficio": 2636,
         "extra": "",
         "Descrizione": "Mostra rivoluzione fascista",
@@ -39223,7 +40042,7 @@
     {
         "Targhetta Tipo": 249,
         "Targhetta Ufficio": 2722,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "La lotteria di Merano vi farà milionari",
         "linkTarghetta": "",
         "Anno": 1935,
@@ -39763,6 +40582,19 @@
         "Località": "Modena",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 250,
+        "Targhetta Ufficio": 2757,
+        "extra": "A",
+        "Descrizione": "Prestito nazionale rendita 5%",
+        "linkTarghetta": "",
+        "Anno": 1935,
+        "Località": "Monza",
+        "Denominazione ufficio": "Milano",
+        "Denominazione ufficio breve": "",
         "Datario": "",
         "linkDatario": ""
     },
@@ -42263,6 +43095,19 @@
         "linkDatario": "Monza_Milano_D1.jpeg"
     },
     {
+        "Targhetta Tipo": 250,
+        "Targhetta Ufficio": 2918,
+        "extra": "A",
+        "Descrizione": "Prestito nazionale rendita 5%",
+        "linkTarghetta": "",
+        "Anno": 1937,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ostiense",
+        "Denominazione ufficio breve": "Ostiense",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Targhetta Tipo": 217,
         "Targhetta Ufficio": 2919,
         "extra": "",
@@ -42651,6 +43496,19 @@
         "Denominazione ufficio breve": "Distr",
         "Datario": "D15",
         "linkDatario": "Roma_Distr_D15.jpeg"
+    },
+    {
+        "Targhetta Tipo": 252,
+        "Targhetta Ufficio": 2944,
+        "extra": "R",
+        "Descrizione": "Lotteria automobilistica di Tripoli",
+        "linkTarghetta": "",
+        "Anno": 1937,
+        "Località": "Roma",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 252,
@@ -44254,7 +45112,7 @@
     {
         "Targhetta Tipo": 249,
         "Targhetta Ufficio": 3057,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "La lotteria di Merano vi farà milionari",
         "linkTarghetta": "",
         "Anno": 1937,
@@ -44263,6 +45121,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D27",
         "linkDatario": "Torino_Ferr_D27.jpeg"
+    },
+    {
+        "Targhetta Tipo": 249,
+        "Targhetta Ufficio": 3057,
+        "extra": "A",
+        "Descrizione": "La lotteria di Merano vi farà milionari",
+        "linkTarghetta": "",
+        "Anno": 1937,
+        "Località": "Torino",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 249,
@@ -44458,6 +45329,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D44",
         "linkDatario": "Roma_Ferr_D44.jpeg"
+    },
+    {
+        "Targhetta Tipo": 263,
+        "Targhetta Ufficio": 3072,
+        "extra": "A",
+        "Descrizione": "Viaggiando servitevi dei telegrammi treno",
+        "linkTarghetta": "",
+        "Anno": 1938,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 256,
@@ -44679,6 +45563,19 @@
         "Denominazione ufficio breve": "ArrDistr4",
         "Datario": "D12",
         "linkDatario": "Milano_ArrDistr4_D12.jpeg"
+    },
+    {
+        "Targhetta Tipo": 256,
+        "Targhetta Ufficio": 3086,
+        "extra": "A",
+        "Descrizione": "Visitate l'Italia",
+        "linkTarghetta": "",
+        "Anno": 1938,
+        "Località": "Milano",
+        "Denominazione ufficio": "Arrivi Distribuzione",
+        "Denominazione ufficio breve": "ArrDistr4",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 256,
@@ -47165,6 +48062,19 @@
     },
     {
         "Targhetta Tipo": 256,
+        "Targhetta Ufficio": 3243,
+        "extra": "A",
+        "Descrizione": "Visitate l'Italia",
+        "linkTarghetta": "",
+        "Anno": 1939,
+        "Località": "La Spezia",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3244,
         "extra": "",
         "Descrizione": "Visitate l'Italia",
@@ -49647,6 +50557,19 @@
         "linkDatario": "Trieste_CPPunt_D1.jpeg"
     },
     {
+        "Targhetta Tipo": 256,
+        "Targhetta Ufficio": 3410,
+        "extra": "B",
+        "Descrizione": "Visitate l'Italia",
+        "linkTarghetta": "",
+        "Anno": 1940,
+        "Località": "Trieste",
+        "Denominazione ufficio": "Corrisp. Pacchi",
+        "Denominazione ufficio breve": "",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Targhetta Tipo": 277,
         "Targhetta Ufficio": 3411,
         "extra": "",
@@ -50156,7 +51079,7 @@
     {
         "Targhetta Tipo": 265,
         "Targhetta Ufficio": 3442,
-        "extra": "",
+        "extra": "R",
         "Descrizione": "Lotteria automobilistica di Tripoli",
         "linkTarghetta": "",
         "Anno": 1940,
@@ -52104,6 +53027,19 @@
         "linkDatario": "Venezia_Ferr_D11.jpeg"
     },
     {
+        "Targhetta Tipo": 217,
+        "Targhetta Ufficio": 3579,
+        "extra": "A",
+        "Descrizione": "Utenti domandate l'apertura di un ….",
+        "linkTarghetta": "",
+        "Anno": 1941,
+        "Località": "Trento",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D3",
+        "linkDatario": "Trento_Ferr_D3.jpeg"
+    },
+    {
         "Targhetta Tipo": 305,
         "Targhetta Ufficio": 3580,
         "extra": "",
@@ -52303,19 +53239,6 @@
         "Targhetta Ufficio": 3595,
         "extra": "",
         "Descrizione": "Taci ! Ogni notizia giova al nemico",
-        "linkTarghetta": "",
-        "Anno": 1941,
-        "Località": "Trento",
-        "Denominazione ufficio": "Ferrovia",
-        "Denominazione ufficio breve": "Ferr",
-        "Datario": "D3",
-        "linkDatario": "Trento_Ferr_D3.jpeg"
-    },
-    {
-        "Targhetta Tipo": 217,
-        "Targhetta Ufficio": 3595,
-        "extra": "A",
-        "Descrizione": "Utenti domandate l'apertura di un ….",
         "linkTarghetta": "",
         "Anno": 1941,
         "Località": "Trento",
@@ -53717,6 +54640,19 @@
     },
     {
         "Targhetta Tipo": 307,
+        "Targhetta Ufficio": 3686,
+        "extra": "R",
+        "Descrizione": "XIX giornata filatelica nazionale",
+        "linkTarghetta": "",
+        "Anno": 1943,
+        "Località": "Verona",
+        "Denominazione ufficio": "Centro ( A )",
+        "Denominazione ufficio breve": "CentroA",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 307,
         "Targhetta Ufficio": 3687,
         "extra": "",
         "Descrizione": "XIX giornata filatelica nazionale",
@@ -53727,6 +54663,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "",
         "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 216,
+        "Targhetta Ufficio": 3687,
+        "extra": "A",
+        "Descrizione": "Correntisti postali usate il postagiro …",
+        "linkTarghetta": "",
+        "Anno": 1943,
+        "Località": "Catania",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "D1",
+        "linkDatario": "Catania_Distr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 249,
@@ -53911,19 +54860,6 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": 216,
-        "Targhetta Ufficio": 3700,
-        "extra": "A",
-        "Descrizione": "Correntisti postali usate il postagiro …",
-        "linkTarghetta": "",
-        "Anno": 1943,
-        "Località": "Catania",
-        "Denominazione ufficio": "Distribuzione",
-        "Denominazione ufficio breve": "Distr",
-        "Datario": "D1",
-        "linkDatario": "Catania_Distr_D1.jpeg"
-    },
-    {
         "Targhetta Tipo": 249,
         "Targhetta Ufficio": 3700,
         "extra": "B",
@@ -54078,6 +55014,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D5",
         "linkDatario": "Modena_Ferr_D5.jpeg"
+    },
+    {
+        "Targhetta Tipo": 249,
+        "Targhetta Ufficio": 3703,
+        "extra": "A",
+        "Descrizione": "La lotteria di Merano vi farà milionari",
+        "linkTarghetta": "",
+        "Anno": 1943,
+        "Località": "Bolzano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 249,
@@ -54364,6 +55313,19 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D4",
         "linkDatario": "Bologna_Centro_D4.jpeg"
+    },
+    {
+        "Targhetta Tipo": 249,
+        "Targhetta Ufficio": 3722,
+        "extra": "A",
+        "Descrizione": "La lotteria di Merano vi farà milionari",
+        "linkTarghetta": "",
+        "Anno": 1944,
+        "Località": "Bologna",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 308,
