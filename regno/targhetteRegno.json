@@ -793,19 +793,6 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": "11A",
-        "Targhetta Ufficio": 59,
-        "extra": "A",
-        "Descrizione": "Sottoscrivete al prestito    ( Krag )",
-        "linkTarghetta": "",
-        "Anno": 1918,
-        "Località": "Torino",
-        "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
-    },
-    {
         "Targhetta Tipo": 12,
         "Targhetta Ufficio": 60,
         "extra": "",
@@ -43311,7 +43298,7 @@
         "Anno": 1937,
         "Località": "Milano",
         "Denominazione ufficio": "Centro Pacchi Corrisp",
-        "Denominazione ufficio breve": "PacchiCor",
+        "Denominazione ufficio breve": "CentroPC",
         "Datario": "D1",
         "linkDatario": "Milano_CentroPC_D1.jpeg"
     },
@@ -51026,6 +51013,19 @@
     },
     {
         "Targhetta Tipo": 265,
+        "Targhetta Ufficio": 3437,
+        "extra": "B",
+        "Descrizione": "Lotteria automobilistica di Tripoli",
+        "linkTarghetta": "",
+        "Anno": 1940,
+        "Località": "Roma",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "D19",
+        "linkDatario": "Roma_Distr_D19.jpeg"
+    },
+    {
+        "Targhetta Tipo": 265,
         "Targhetta Ufficio": 3438,
         "extra": "",
         "Descrizione": "Lotteria automobilistica di Tripoli",
@@ -51270,6 +51270,19 @@
         "Denominazione ufficio breve": "Distr",
         "Datario": "D23",
         "linkDatario": "Roma_Distr_D23.jpeg"
+    },
+    {
+        "Targhetta Tipo": 252,
+        "Targhetta Ufficio": 3456,
+        "extra": "A",
+        "Descrizione": "Lotteria automobilistica di Tripoli",
+        "linkTarghetta": "",
+        "Anno": 1940,
+        "Località": "Roma",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "D21",
+        "linkDatario": "Roma_Distr_D21.jpeg"
     },
     {
         "Targhetta Tipo": 252,
