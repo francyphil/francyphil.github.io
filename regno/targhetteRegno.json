@@ -43330,6 +43330,19 @@
     },
     {
         "Targhetta Tipo": 252,
+        "Targhetta Ufficio": 2936,
+        "extra": "A",
+        "Descrizione": "Lotteria automobilistica di Tripoli",
+        "linkTarghetta": "",
+        "Anno": 1937,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferr. Corrispondenze",
+        "Denominazione ufficio breve": "FerCor2",
+        "Datario": "D1",
+        "linkDatario": "Milano_FerCor2_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": 252,
         "Targhetta Ufficio": 2937,
         "extra": "",
         "Descrizione": "Lotteria automobilistica di Tripoli",
