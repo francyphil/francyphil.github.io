@@ -8,48 +8,7 @@
     <script src="/favicon-loader.js"></script>
     <link rel="stylesheet" href="/navbar/navbar.css" />
     <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
-    <style>
-      body {
-        font-family: sans-serif;
-        margin: 0;
-        padding: 0;
-        margin-top: 55px;
-      }
-      .image-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 18px;
-        align-items: flex-start;
-      }
-      .image-gallery img {
-        max-height: 200px;
-        width: auto;
-        height: auto;
-        object-fit: contain;
-        display: block;
-        border: 1px solid #ddd;
-        padding: 4px;
-        background: #fff;
-      }
-      .continui-table {
-        border-collapse: collapse;
-        margin-top: 18px;
-        width: auto;
-      }
-      .continui-table th, .continui-table td {
-        border: 1px solid #bbb;
-        padding: 6px 14px;
-        text-align: left;
-      }
-      .continui-table th {
-        background-color: #f0f0f0;
-      }
-      .continui-table td:last-child {
-        text-align: center;
-        font-weight: bold;
-      }
-    </style>
+    <link rel="stylesheet" href="/catalog.css" />
   </head>
   <body>
     <script src="/navbar/navbar.js"></script>
@@ -58,6 +17,113 @@
 
     <div class="content-container">
       <h1>Continui Krag primo tipo</h1>
+
+      <!-- Mobile: filter toggle + panel + compact list -->
+      <button id="mobileFilterToggle">
+        <span>🔍 Filtri <span id="filterBadge" class="filter-badge" style="display:none"></span></span>
+        <span class="filter-arrow">▼</span>
+      </button>
+      <div id="mobileFilterPanel"></div>
+      <div id="mobileListContainer"></div>
+
+      <fieldset class="controlli-box">
+        <legend>Controlli</legend>
+        <div class="controlli-wrapper">
+          <label>Max record:
+            <select id="maxRecords">
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="500">500</option>
+              <option value="all" selected>Tutti</option>
+            </select>
+          </label>
+          <label>Vista:
+            <select id="vistaSelezionata">
+              <option value="tabella">Tabella</option>
+              <option value="card">Card</option>
+              <option value="tabella_card">Tabella + Card</option>
+            </select>
+          </label>
+          <label>Schema di catalogazione:
+            <select id="schemaCatalogazione">
+              <option value="ornaghi_ufficio">Ornaghi Ufficio</option>
+              <option value="ornaghi_tipo">Ornaghi Tipo</option>
+            </select>
+          </label>
+        </div>
+        <div id="loadingIndicator" class="loading-indicator" style="display: none">
+          <div class="spinner"></div>
+          <span>Caricamento...</span>
+        </div>
+      </fieldset>
+
+      <div id="pagination-top" class="pagination" aria-label="Paginazione"></div>
+
+      <div class="table-wrapper">
+        <table id="tabellaFiltri">
+          <thead id="theadFiltri">
+            <tr id="trTitoli">
+              <th data-campo="Località">Località</th>
+              <th data-campo="Denominazione ufficio">Ufficio</th>
+              <th data-campo="Anno">Anno</th>
+            </tr>
+            <tr id="trFiltri"></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="card-container" id="cardContainer"></div>
+
+      <div id="pagination" class="pagination" aria-label="Paginazione"></div>
+
+      <div id="graficoWrapper">
+        <canvas id="grafico" height="400"></canvas>
+      </div>
+
+      <div id="lightboxOverlay">
+        <img id="lightboxImage" />
+        <div id="fallbackText"></div>
+        <div class="controls">
+          <button onclick="prevImage()">⟨</button>
+          <button onclick="chiudiLightbox()">✕</button>
+          <button onclick="nextImage()">⟩</button>
+        </div>
+      </div>
+
+      <script>
+        var CATALOG_CONFIG = {
+          jsonFile: "SingoloCerchio.json",
+          getImgPath: function(r) {
+            return r["linkDatario"] || "";
+          },
+          customCell: function(td, campo, val, r) {
+            if (campo === "Denominazione ufficio") {
+              var a = document.createElement("a");
+              var params = new URLSearchParams({
+                denominazione: r["Denominazione ufficio"],
+                localita: r["Località"],
+              });
+              a.href = "ufficioDettaglio.html?" + params.toString();
+              a.textContent = val;
+              td.appendChild(a);
+              return true;
+            }
+            if (campo === "Località") {
+              var a = document.createElement("a");
+              var params = new URLSearchParams({
+                localita: r["Località"],
+              });
+              a.href = "cittaDettaglio.html?" + params.toString();
+              a.textContent = val;
+              td.appendChild(a);
+              return true;
+            }
+            return false;
+          }
+        };
+      </script>
+      <script src="/catalog.js"></script>
 
     </div>
 
