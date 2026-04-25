@@ -62,6 +62,23 @@
         margin: 0;
       }
 
+      /* Uniforma l'altezza delle immagini nella riga selezionata senza ritagliarle */
+      .figure-row.equal-height figure img {
+        width: 100%;
+        height: 150px;
+        object-fit: contain;
+      }
+
+      .figure-row.shared-caption .shared-caption {
+        flex: 1 1 100%;
+        text-align: center;
+        font-style: italic;
+        margin: 8px 0 0;
+        color: #666;
+        font-size: 0.9em;
+        line-height: 1.4;
+      }
+
       /* Griglia per figure con molte immagini affiancate */
       .figure-grid {
         margin: 25px 0;
@@ -89,6 +106,10 @@
       @media (max-width: 768px) {
         .figure-row {
           flex-direction: column;
+        }
+
+        .figure-row.equal-height figure img {
+          height: 240px;
         }
 
         .figure-grid .grid-images img {
@@ -323,7 +344,7 @@
         di tipo continuo, detta “senza fine”. Con la prima fornitura del 1908
         vennero equipaggiati alcuni uffici romani.
       </p>
-
+      <div class="figure-row equal-height">
       <figure>
         <img
           src="/static/jpeg/krag1.png"
@@ -331,27 +352,27 @@
         />
         <figcaption>Prima fornitura di macchine Krag in Italia</figcaption>
       </figure>
-
+     </div>
       <p>
         Negli anni immediatamente successivi furono sperimentate diverse
         macchine Krag con impronte differenti, tutte utilizzate per brevi
         periodi.
       </p>
 
-      <div class="figure-row">
+      <div class="figure-row equal-height shared-caption">
         <figure>
           <img src="/static/jpeg/krag2.png" alt="Impronte sperimentali di macchine Krag" />
         </figure>
         <figure>
           <img src="/static/jpeg/krag3.jpg" alt="Impronte sperimentali di macchine Krag" />
-          <figcaption>
-            Esempi di impronte di macchine Krag differenti rispetto al modello poi
-            scelto in uso sperimentale tra il 1911 e il 1912 a Torino e Roma
-          </figcaption>
         </figure>
+        <figcaption class="shared-caption">
+          Esempi di impronte di macchine Krag differenti rispetto al modello poi
+          scelto in uso sperimentale tra il 1911 e il 1912 a Torino e Roma
+        </figcaption>
       </div>
 
-      <div class="figure-row">
+      <div class="figure-row equal-height">
         <figure>
           <img src="/static/jpeg/krag4.jpg" alt="Impronta Krag con datario sperimentale" />
           <figcaption>
@@ -368,17 +389,17 @@
           </figcaption>
         </figure>
       </div>
-
-      <figure>
-        <img
-          src="/static/jpeg/krag6.jpg"
-          alt="Impronta Krag ad onde"
-        />
-        <figcaption>
-          Esempio di impronta di macchina Krag definitiva ad onde
-        </figcaption>
-      </figure>
-
+      <div class="figure-row equal-height">
+        <figure>
+          <img
+            src="/static/jpeg/krag6.jpg"
+            alt="Impronta Krag ad onde"
+          />
+          <figcaption>
+            Esempio di impronta di macchina Krag definitiva ad onde
+          </figcaption>
+        </figure>
+      </div>
       <p>
         Le bollatrici Krag furono ampiamente utilizzate in questo primo periodo
         sia per la posta in partenza sia per quella in arrivo.
@@ -392,17 +413,17 @@
         successivamente realizzate anche in Italia su concessione. La prima
         città a utilizzarle fu <strong>Milano nel 1910</strong>.
       </p>
-
-      <figure>
-        <img
-          src="/static/jpeg/flier1.jpg"
-          alt="Impronta ondulata macchina Flier"
-        />
-        <figcaption>
-          Esempio di impronta ondulata con lettera di macchina Flier
-        </figcaption>
-      </figure>
-
+      <div class="figure-row equal-height">
+        <figure>
+          <img
+            src="/static/jpeg/flier1.jpg"
+            alt="Impronta ondulata macchina Flier"
+          />
+          <figcaption>
+            Esempio di impronta ondulata con lettera di macchina Flier
+          </figcaption>
+        </figure>
+      </div>
       <p>
         L’uso delle Flier fu riservato quasi esclusivamente alla posta in
         partenza. Unica eccezione nota è la targhetta dell’
@@ -468,7 +489,7 @@
         una corrispondente diffusione delle targhette pubblicitarie.
       </p>
 
-      <div class="figure-row">
+      <div class="figure-row equal-height">
         <figure>
           <img src="/static/jpeg/kraganni30.jpg" alt="Uso sperimentale nuova Krag 1932" />
           <figcaption>Esempio di uso sperimentale della nuova Krag nel 1932</figcaption>
@@ -485,7 +506,7 @@
         alla mancanza di targhette.
       </p>
 
-      <div class="figure-row">
+      <div class="figure-row equal-height">
         <figure>
           <img src="/static/jpeg/flier1940.jpg" alt="Flier in centro minore" />
           <figcaption>a) Uso della nuova bollatrice Flier in un centro minore privo di targhette</figcaption>
@@ -494,6 +515,10 @@
           <img src="/static/jpeg/flier19402.jpg" alt="Annulli ad onde fitte Milano" />
           <figcaption>b) Annullo ad onde fitte usato a Milano nel periodo della RSI e della Luogotenenza</figcaption>
         </figure>
+      </div>
+    </div>
+
+     <div class="figure-row">
         <figure>
           <img src="/static/jpeg/flier19403.jpg" alt="Annullo riutilizzato periodo luogotenenziale" />
           <figcaption>c) Annullo usato nei primi anni ’30 e riutilizzato in periodo luogotenenziale</figcaption>
