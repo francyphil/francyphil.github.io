@@ -16,21 +16,20 @@
         margin-top: 55px;
       }
       .image-gallery {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         gap: 12px;
         margin-top: 18px;
-        align-items: flex-start;
       }
       .image-gallery img {
-        max-height: 200px;
-        width: auto;
-        height: auto;
+        width: 100%;
+        height: 180px;
         object-fit: contain;
         display: block;
         border: 1px solid #ddd;
         padding: 4px;
         background: #fff;
+        box-sizing: border-box;
       }
       .barre-table {
         border-collapse: collapse;
@@ -60,12 +59,46 @@
       <h1>Regno Annulli Barre</h1>
 
       <p>
-        Gli annulli a barre sono stati usati in diversi uffici postali italiani.
-        Si tratta di impronte composte da linee parallele diritte, a differenza
-        degli annulli ad onde che presentano linee sinuose. Le barre potevano
-        essere di diversa lunghezza e numero a seconda della macchina e del
-        periodo di utilizzo.
+        Gli annulli a barre sono stati usati in un numero relativamente limitato di uffici postali del Regno d'Italia.
+        Una catalogazione puntuale dei differenti tipi porterebbe ad una lunga lista con differenze minime tra un tipo e l'altro, 
+        senza un reale valore aggiunto per il collezionista.
+        Di seguito viene proposta una classificazione più generale che tiene conto di alcune
+        caratteristiche principali degli annulli ad onde.         
       </p>
+
+      <h2>Tipologie di annulli a barre</h2>
+      <ul>
+        <li>
+          Annulli a sei barre
+          <div class="image-gallery">
+            <img src="../static/jpeg/barre/6Barre.jpeg" alt="Barre primo tipo" />
+          </div>
+        </li>
+        <li>
+          Annulli a sette barre Tipo I
+          <div class="image-gallery">
+            <img src="../static/jpeg/barre/7BarreTipo1.jpeg" alt="Barre sette barre Tipo I" />
+          </div>
+        </li>
+         <li>
+          Annulli a sette barre Tipo II
+          <div class="image-gallery">
+            <img src="../static/jpeg/barre/7BarreTipo2.jpeg" alt="Barre sette barre Tipo II" />
+          </div>
+        </li>
+         <li>
+          Annulli a sette barre Tipo III
+          <div class="image-gallery">
+            <img src="../static/jpeg/barre/7BarreTipo3.jpeg" alt="Barre sette barre Tipo III" />
+          </div>
+        </li>     
+         <li>
+          Annulli a sette barre macchina Universal
+          <div class="image-gallery">
+            <img src="../static/jpeg/barre/7BarreUniversal.jpeg" alt="Barre sette barre macchina Universal" />
+          </div>
+        </li>             
+      </ul>
 
       <h2>Uffici con annulli a barre</h2>
       <table id="barreTable" class="barre-table">
@@ -107,7 +140,6 @@
       </script>
 
       </div>
-    </div>
 
     <link rel="stylesheet" href="/footer/footer.css" />
     <script src="/footer/footer.js"></script>
