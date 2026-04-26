@@ -28505,8 +28505,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Distribuzione",
         "Denominazione ufficio breve": "Distr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D7",
+        "linkDatario": "Roma_Distr_D7.jpeg"
     },
     {
         "Targhetta Tipo": 196,
@@ -54822,6 +54822,19 @@
     },
     {
         "Targhetta Tipo": 249,
+        "Targhetta Ufficio": 3697,
+        "extra": "A",
+        "Descrizione": "La lotteria di Merano vi farà milionari",
+        "linkTarghetta": "",
+        "Anno": 1943,
+        "Località": "Roma",
+        "Denominazione ufficio": "Prati",
+        "Denominazione ufficio breve": "Prati",
+        "Datario": "D3",
+        "linkDatario": "Roma_Prati_D3.jpeg"
+    },
+    {
+        "Targhetta Tipo": 249,
         "Targhetta Ufficio": 3698,
         "extra": "",
         "Descrizione": "La lotteria di Merano vi farà milionari",
@@ -55092,6 +55105,19 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "",
         "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 249,
+        "Targhetta Ufficio": 3706,
+        "extra": "B",
+        "Descrizione": "La lotteria di Merano vi farà milionari",
+        "linkTarghetta": "",
+        "Anno": 1943,
+        "Località": "Venezia",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D10",
+        "linkDatario": "Venezia_Ferr_D10.jpeg"
     },
     {
         "Targhetta Tipo": 308,
