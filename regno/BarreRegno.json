@@ -23,7 +23,7 @@
         "Anno": 1938,
         "Località": "Asti",
         "Denominazione ufficio": "Corrispondenze",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Corr",
         "Datario": "D1",
         "linkDatario": "Asti_Corr_D1.jpeg"
     },
@@ -37,7 +37,7 @@
         "Anno": 1939,
         "Località": "Asti",
         "Denominazione ufficio": "Corrispondenze",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Corr",
         "Datario": "D1",
         "linkDatario": "Asti_Corr_D1.jpeg"
     },
@@ -51,7 +51,7 @@
         "Anno": 1940,
         "Località": "Asti",
         "Denominazione ufficio": "Corrispondenze",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Corr",
         "Datario": "D1",
         "linkDatario": "Asti_Corr_D1.jpeg"
     },
@@ -65,7 +65,7 @@
         "Anno": 1941,
         "Località": "Asti",
         "Denominazione ufficio": "Corrispondenze",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Corr",
         "Datario": "D1",
         "linkDatario": "Asti_Corr_D1.jpeg"
     },
@@ -79,7 +79,7 @@
         "Anno": 1942,
         "Località": "Asti",
         "Denominazione ufficio": "Corrispondenze",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Corr",
         "Datario": "D1",
         "linkDatario": "Asti_Corr_D1.jpeg"
     },
@@ -93,7 +93,7 @@
         "Anno": 1943,
         "Località": "Asti",
         "Denominazione ufficio": "Corrispondenze",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Corr",
         "Datario": "D1",
         "linkDatario": "Asti_Corr_D1.jpeg"
     },
@@ -107,7 +107,7 @@
         "Anno": 1944,
         "Località": "Asti",
         "Denominazione ufficio": "Corrispondenze",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Corr",
         "Datario": "D1",
         "linkDatario": "Asti_Corr_D1.jpeg"
     },
@@ -149,7 +149,7 @@
         "Anno": 1939,
         "Località": "Foligno",
         "Denominazione ufficio": "Perugia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Perugia",
         "Datario": "D1",
         "linkDatario": "Foligno_Perugia_D1.jpeg"
     },
@@ -163,7 +163,7 @@
         "Anno": 1940,
         "Località": "Foligno",
         "Denominazione ufficio": "Perugia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Perugia",
         "Datario": "D1",
         "linkDatario": "Foligno_Perugia_D1.jpeg"
     },
@@ -177,7 +177,7 @@
         "Anno": 1941,
         "Località": "Foligno",
         "Denominazione ufficio": "Perugia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Perugia",
         "Datario": "D1",
         "linkDatario": "Foligno_Perugia_D1.jpeg"
     },
@@ -471,7 +471,7 @@
         "Anno": 1941,
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Imperia",
         "Datario": "D2",
         "linkDatario": "SanRemo_Imperia_D2.jpeg"
     },
@@ -485,7 +485,7 @@
         "Anno": 1942,
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Imperia",
         "Datario": "D2",
         "linkDatario": "SanRemo_Imperia_D2.jpeg"
     },
@@ -499,7 +499,7 @@
         "Anno": 1943,
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Imperia",
         "Datario": "D2",
         "linkDatario": "SanRemo_Imperia_D2.jpeg"
     },
@@ -541,7 +541,7 @@
         "Anno": 1941,
         "Località": "Tortona",
         "Denominazione ufficio": "Alessandria",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Alessandria",
         "Datario": "D1",
         "linkDatario": "Tortona_Alessandria_D1.jpeg"
     },
@@ -625,7 +625,7 @@
         "Anno": 1940,
         "Località": "Voghera",
         "Denominazione ufficio": "Pavia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Pavia",
         "Datario": "D1",
         "linkDatario": "Voghera_Pavia_D1.jpeg"
     },
@@ -639,7 +639,7 @@
         "Anno": 1941,
         "Località": "Voghera",
         "Denominazione ufficio": "Pavia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Pavia",
         "Datario": "D1",
         "linkDatario": "Voghera_Pavia_D1.jpeg"
     },
@@ -653,7 +653,7 @@
         "Anno": 1942,
         "Località": "Voghera",
         "Denominazione ufficio": "Pavia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Pavia",
         "Datario": "D1",
         "linkDatario": "Voghera_Pavia_D1.jpeg"
     },
@@ -667,7 +667,7 @@
         "Anno": 1943,
         "Località": "Voghera",
         "Denominazione ufficio": "Pavia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Pavia",
         "Datario": "D1",
         "linkDatario": "Voghera_Pavia_D1.jpeg"
     }
