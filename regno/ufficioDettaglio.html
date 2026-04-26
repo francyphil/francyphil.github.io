@@ -139,6 +139,27 @@
         <div id="datariChart" style="margin-top:8px; display:flex; justify-content:center; overflow-x:auto;"></div>
       </div>
 
+      <!-- Controlli grafico datari -->
+      <div id="chartControls" style="display:none; margin-top:8px; padding:10px 16px; background:#f7f7f7; border:1px solid #ddd; border-radius:6px; text-align:center;">
+        <span style="font-weight:bold; margin-right:14px; font-size:14px;">Mostra nel grafico:</span>
+        <label style="margin-right:14px; cursor:pointer; font-size:14px;">
+          <input type="checkbox" id="chkTarghette" checked>
+          <span style="display:inline-block;width:10px;height:10px;background:#333;margin:0 4px 0 2px;vertical-align:middle;"></span>Targhette
+        </label>
+        <label style="margin-right:14px; cursor:pointer; font-size:14px;">
+          <input type="checkbox" id="chkOnde" checked>
+          <span style="display:inline-block;width:10px;height:10px;background:#f5c542;margin:0 4px 0 2px;vertical-align:middle;"></span>Onde
+        </label>
+        <label style="margin-right:14px; cursor:pointer; font-size:14px;">
+          <input type="checkbox" id="chkBarre" checked>
+          <span style="display:inline-block;width:10px;height:10px;background:#2266cc;margin:0 4px 0 2px;vertical-align:middle;"></span>Barre
+        </label>
+        <label style="cursor:pointer; font-size:14px;">
+          <input type="checkbox" id="chkSoloDatario" checked>
+          <span style="display:inline-block;width:10px;height:10px;background:#27ae60;margin:0 4px 0 2px;vertical-align:middle;"></span>Solo datario
+        </label>
+      </div>
+
       <div class="stats">
         <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
       </div>
@@ -161,6 +182,9 @@
             localita: params.get("localita"),
           };
         }
+
+        // Dati globali per ridisegno del grafico
+        let _chartFiltered = [], _chartOndeFiltered = [], _chartBarreFiltered = [], _chartSoloDatarioFiltered = [];
 
         // Carica e filtra i dati
         async function loadOfficeDetails() {
@@ -307,8 +331,19 @@
             // Mostra i datari usati per gli annulli (se presenti)
             // Unisce tutte e tre le fonti (targhette, onde, barre) per mostrare tutti i datari
             renderDatari([...filtered, ...ondeFiltered, ...barreFiltered, ...soloDatarioFiltered]);
+            // Salva i dati per il ridisegno del grafico
+            _chartFiltered = filtered;
+            _chartOndeFiltered = ondeFiltered;
+            _chartBarreFiltered = barreFiltered;
+            _chartSoloDatarioFiltered = soloDatarioFiltered;
             // Disegna sempre il grafico (mostra targhette, onde, barre e/o solo datario)
             renderChart(filtered, ondeFiltered, barreFiltered, soloDatarioFiltered);
+            // Collega i checkbox ai controlli del grafico
+            ['chkTarghette','chkOnde','chkBarre','chkSoloDatario'].forEach(id => {
+              document.getElementById(id)?.addEventListener('change', () => {
+                renderChart(_chartFiltered, _chartOndeFiltered, _chartBarreFiltered, _chartSoloDatarioFiltered);
+              });
+            });
           } catch (error) {
             console.error("Errore caricamento dati:", error);
             document.getElementById("officeTitle").textContent =
@@ -423,17 +458,39 @@
             function renderChart(records, ondeRecords, barreRecords, soloDatarioRecords) {
               const chartBlock = document.getElementById('datariChartBlock');
               const container = document.getElementById('datariChart');
+              const controlsBlock = document.getElementById('chartControls');
               container.innerHTML = '';
 
-              // definizione fonti con colori
-              const sources = [
-                { records: records, color: '#333', label: 'Targhette' },
-                { records: ondeRecords, color: '#f5c542', label: 'Onde' },
-                { records: barreRecords, color: '#2266cc', label: 'Barre' },
-                { records: soloDatarioRecords, color: '#27ae60', label: 'Solo datario' }
+              // definizione di tutte le fonti con colori
+              const allSources = [
+                { records: records, color: '#333', label: 'Targhette', chkId: 'chkTarghette' },
+                { records: ondeRecords, color: '#f5c542', label: 'Onde', chkId: 'chkOnde' },
+                { records: barreRecords, color: '#2266cc', label: 'Barre', chkId: 'chkBarre' },
+                { records: soloDatarioRecords, color: '#27ae60', label: 'Solo datario', chkId: 'chkSoloDatario' }
               ];
 
-              // ricava codici Datario unici e gli anni da tutte le fonti
+              // Controlla se esiste almeno un dato in qualsiasi fonte
+              const hasAnyData = allSources.some(s => s.records.some(r => (r.Datario||'').trim() && Number.isFinite(r.Anno)));
+              if (!hasAnyData) {
+                chartBlock.style.display = 'none';
+                if (controlsBlock) controlsBlock.style.display = 'none';
+                return;
+              }
+              chartBlock.style.display = 'block';
+              if (controlsBlock) controlsBlock.style.display = 'block';
+
+              // Filtra le fonti attive in base ai checkbox
+              const sources = allSources.filter(s => {
+                const el = document.getElementById(s.chkId);
+                return !el || el.checked;
+              });
+
+              if (sources.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:#999;padding:20px;">Seleziona almeno una categoria.</p>';
+                return;
+              }
+
+              // ricava codici Datario unici e gli anni dalle fonti attive
               const datariSet = new Set();
               const yearSetAll = new Set();
               sources.forEach(src => {
@@ -454,10 +511,9 @@
               }
 
               if (datari.length === 0 || years.length === 0) {
-                chartBlock.style.display = 'none';
+                container.innerHTML = '<p style="text-align:center;color:#999;padding:20px;">Nessun dato per la selezione corrente.</p>';
                 return;
               }
-              chartBlock.style.display = 'block';
 
               const cell = 16;
               const left = 140;
