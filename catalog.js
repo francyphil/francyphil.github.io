@@ -62,6 +62,7 @@
     .then((res) => res.json())
     .then((json) => {
       data = json;
+      popolaControlloPeriodo(data);
       calcolaLarghezzeFisse(data);
       costruisciFiltri(data);
       costruisciFiltriMobile(data);
@@ -212,6 +213,7 @@
   }
 
   function getMultiSelectValues(wrapper) {
+    if (!wrapper) return [];
     const panel =
       wrapper._panel || wrapper.querySelector(".multi-select-panel");
     if (!panel) return [];
@@ -268,6 +270,62 @@
     document.getElementById("tabellaFiltri").style.width = "100%";
   }
 
+  function setMultiSelectSelections(ms, selectedValues) {
+    if (!ms) return;
+    const selected = new Set((selectedValues || []).map(String));
+    const panel = ms._panel || ms.querySelector(".multi-select-panel");
+    if (!panel) return;
+    panel
+      .querySelectorAll(".ms-option input[type=checkbox]")
+      .forEach((cb) => {
+        cb.checked = selected.has(cb.value);
+      });
+    aggiornaMultiSelectLabel(ms);
+  }
+
+  function getDesktopPeriodoMultiSelect() {
+    const container = document.getElementById("periodoSelezionato");
+    return container ? container._periodoMultiSelect || null : null;
+  }
+
+  function getMobilePeriodoMultiSelect() {
+    const panel = document.getElementById("mobileFilterPanel");
+    return panel ? panel._mobilePeriodoMultiSelect || null : null;
+  }
+
+  function popolaControlloPeriodo(records) {
+    const container = document.getElementById("periodoSelezionato");
+    if (!container) return;
+
+    const currentValues = getMultiSelectValues(getDesktopPeriodoMultiSelect());
+    const periodi = Array.from(
+      new Set(
+        records
+          .map((r) => r.Periodo)
+          .filter((v) => v != null && String(v).trim() !== "")
+          .map((v) => String(v)),
+      ),
+    ).sort(smartSort);
+
+    const oldMs = getDesktopPeriodoMultiSelect();
+    if (oldMs && oldMs._panel && oldMs._panel.parentNode) {
+      oldMs._panel.parentNode.removeChild(oldMs._panel);
+    }
+
+    container.innerHTML = "";
+    const ms = creaMultiSelect("Periodo", periodi, () => {
+      const mobileMs = getMobilePeriodoMultiSelect();
+      setMultiSelectSelections(mobileMs, getMultiSelectValues(ms));
+      currentPage = 1;
+      updateFilterBadge();
+      aggiornaVisualizzazione(filtraDati(data));
+    });
+
+    container.appendChild(ms);
+    container._periodoMultiSelect = ms;
+    setMultiSelectSelections(ms, currentValues);
+  }
+
   // ── Filtri desktop ───────────────────────────────────────────────────
 
   function costruisciFiltri(records) {
@@ -277,6 +335,12 @@
 
     const campi = getCampi();
     campi.forEach((campo) => {
+      if (campo === "Periodo") {
+        const th = document.createElement("th");
+        trFiltri.appendChild(th);
+        return;
+      }
+
       const th = document.createElement("th");
       const valori = new Set();
       records.forEach((r) => {
@@ -307,6 +371,8 @@
     const campi = getCampi();
 
     campi.forEach((campo, idx) => {
+      if (campo === "Periodo") return;
+
       const valori = new Set();
       records.forEach((r) => {
         const v = r[campo];
@@ -371,6 +437,31 @@
     });
     schemaLabel.appendChild(schemaSelect);
     controlsDiv.appendChild(schemaLabel);
+
+    const periodoLabel = document.createElement("label");
+    periodoLabel.textContent = "Periodo";
+    const periodi = Array.from(
+      new Set(
+        records
+          .map((r) => r.Periodo)
+          .filter((v) => v != null && String(v).trim() !== "")
+          .map((v) => String(v)),
+      ),
+    ).sort(smartSort);
+
+    const periodoMs = creaMultiSelect("Periodo", periodi, () => {
+      const desktopMs = getDesktopPeriodoMultiSelect();
+      setMultiSelectSelections(desktopMs, getMultiSelectValues(periodoMs));
+      currentPage = 1;
+      updateFilterBadge();
+      aggiornaVisualizzazione(filtraDati(data));
+    });
+
+    panel._mobilePeriodoMultiSelect = periodoMs;
+    setMultiSelectSelections(periodoMs, getMultiSelectValues(getDesktopPeriodoMultiSelect()));
+
+    periodoLabel.appendChild(periodoMs);
+    controlsDiv.appendChild(periodoLabel);
     panel.appendChild(controlsDiv);
 
     // Pulsante azzera
@@ -386,6 +477,10 @@
           );
         aggiornaMultiSelectLabel(ms);
       });
+      const desktopMs = getDesktopPeriodoMultiSelect();
+      const mobileMs = getMobilePeriodoMultiSelect();
+      setMultiSelectSelections(desktopMs, []);
+      setMultiSelectSelections(mobileMs, []);
       aggiornaOpzioniFiltri();
       updateFilterBadge();
       aggiornaVisualizzazione(filtraDati(data));
@@ -402,11 +497,16 @@
 
   function updateFilterBadge() {
     const panel = document.getElementById("mobileFilterPanel");
+    const mobilePeriodoMs = getMobilePeriodoMultiSelect();
     const multiSelects = panel.querySelectorAll(".multi-select");
     let activeCount = 0;
     multiSelects.forEach((ms) => {
+      if (ms === mobilePeriodoMs) return; // già contato separatamente
       if (getMultiSelectValues(ms).length > 0) activeCount++;
     });
+    if (getMultiSelectValues(mobilePeriodoMs).length > 0) {
+      activeCount++;
+    }
     const badge = document.getElementById("filterBadge");
     if (activeCount > 0) {
       badge.textContent = activeCount;
@@ -455,7 +555,25 @@
       const vals = getMultiSelectValues(ms);
       if (vals.length > 0) filtri[ms.dataset.campo] = vals;
     });
+
+    const periodoSelezionatiDesktop = getMultiSelectValues(
+      getDesktopPeriodoMultiSelect(),
+    );
+    const periodoSelezionatiMobile = getMultiSelectValues(
+      getMobilePeriodoMultiSelect(),
+    );
+    const periodoSelezionati = periodoSelezionatiDesktop.length
+      ? periodoSelezionatiDesktop
+      : periodoSelezionatiMobile;
+
     return records.filter((r) => {
+      if (
+        periodoSelezionati.length > 0 &&
+        !periodoSelezionati.includes(String(r.Periodo || ""))
+      ) {
+        return false;
+      }
+
       for (const [campo, valoriAccettati] of Object.entries(filtri)) {
         const val = r[campo];
         if (Array.isArray(val)) {
@@ -779,6 +897,10 @@
           );
         aggiornaMultiSelectLabel(ms);
       });
+      const desktopMs = getDesktopPeriodoMultiSelect();
+      const mobileMs = getMobilePeriodoMultiSelect();
+      setMultiSelectSelections(desktopMs, []);
+      setMultiSelectSelections(mobileMs, []);
       aggiornaOpzioniFiltri();
       updateFilterBadge();
       currentPage = 1;
