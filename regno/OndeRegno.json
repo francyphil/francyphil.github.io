@@ -1420,6 +1420,20 @@
         "Descrizione": "Onde lunghe",
         "linkTarghetta": "",
         "linkImgTarghetta": "",
+        "Anno": 1924.0,
+        "Località": "Bologna",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "",
+        "Datario": "D4",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
         "Anno": 1925.0,
         "Località": "Bologna",
         "Denominazione ufficio": "Ferrovia",
@@ -18350,8 +18364,8 @@
         "Località": "Treviso",
         "Denominazione ufficio": "Stella",
         "Denominazione ufficio breve": "Stella",
-        "Datario": "D3",
-        "linkDatario": "Treviso_Stella_D3.jpeg"
+        "Datario": "D2",
+        "linkDatario": "Treviso_Stella_D2.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -18417,6 +18431,20 @@
         "linkTarghetta": "",
         "linkImgTarghetta": "",
         "Anno": 1941.0,
+        "Località": "Treviso",
+        "Denominazione ufficio": "Stella",
+        "Denominazione ufficio breve": "Stella",
+        "Datario": "D1",
+        "linkDatario": "Treviso_Stella_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1943.0,
         "Località": "Treviso",
         "Denominazione ufficio": "Stella",
         "Denominazione ufficio breve": "Stella",
