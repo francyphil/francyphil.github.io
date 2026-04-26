@@ -183,12 +183,13 @@ def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict
                     if entries and any(p.startswith(f"{folder_prefix}/") for p in entries):
                         found = True
                         break
-                    # fallback: match per prefisso
-                    search_prefix = (prefix + (f"_{str(extra).strip()}" if extra and str(extra).strip() else "")).lower()
-                    for k, paths in image_index.items():
-                        if k.startswith(search_prefix) and any(p.startswith(f"{folder_prefix}/") for p in paths):
-                            found = True
-                            break
+                    # fallback per prefisso solo per sezioni con naming diverso (Trieste, Libia)
+                    if folder_prefix in ('triestea',) or Path(folder_prefix).name == 'libia':
+                        search_prefix = (prefix + (f"_{str(extra).strip()}" if extra and str(extra).strip() else "")).lower()
+                        for k, paths in image_index.items():
+                            if k.startswith(search_prefix) and any(p.startswith(f"{folder_prefix}/") for p in paths):
+                                found = True
+                                break
                     if found:
                         break
             else:
