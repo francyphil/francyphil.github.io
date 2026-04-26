@@ -158,6 +158,11 @@
           <input type="checkbox" id="chkSoloDatario" checked>
           <span style="display:inline-block;width:10px;height:10px;background:#27ae60;margin:0 4px 0 2px;vertical-align:middle;"></span>Solo datario
         </label>
+        <span style="margin-left:20px; border-left:1px solid #ccc; padding-left:20px; font-weight:bold; font-size:14px;">Ordina per:</span>
+        <select id="chartSortOrder" style="margin-left:8px; font-size:14px; padding:2px 6px; cursor:pointer;">
+          <option value="numero">Numero datario</option>
+          <option value="anno">Anno</option>
+        </select>
       </div>
 
       <div class="stats">
@@ -338,11 +343,14 @@
             _chartSoloDatarioFiltered = soloDatarioFiltered;
             // Disegna sempre il grafico (mostra targhette, onde, barre e/o solo datario)
             renderChart(filtered, ondeFiltered, barreFiltered, soloDatarioFiltered);
-            // Collega i checkbox ai controlli del grafico
+            // Collega i checkbox e il selettore ordinamento ai controlli del grafico
             ['chkTarghette','chkOnde','chkBarre','chkSoloDatario'].forEach(id => {
               document.getElementById(id)?.addEventListener('change', () => {
                 renderChart(_chartFiltered, _chartOndeFiltered, _chartBarreFiltered, _chartSoloDatarioFiltered);
               });
+            });
+            document.getElementById('chartSortOrder')?.addEventListener('change', () => {
+              renderChart(_chartFiltered, _chartOndeFiltered, _chartBarreFiltered, _chartSoloDatarioFiltered);
             });
           } catch (error) {
             console.error("Errore caricamento dati:", error);
@@ -500,7 +508,36 @@
                   if (Number.isFinite(r.Anno)) yearSetAll.add(r.Anno);
                 });
               });
-              const datari = Array.from(datariSet).sort(naturalDatariCompare);
+              const sortOrder = (document.getElementById('chartSortOrder')?.value) || 'numero';
+
+              let datari;
+              if (sortOrder === 'anno') {
+                // Per ogni datario calcola il primo anno di apparizione in tutte le fonti attive
+                const firstYear = {};
+                sources.forEach(src => {
+                  src.records.forEach(r => {
+                    const d = (r.Datario||'').trim();
+                    if (!d || !Number.isFinite(r.Anno)) return;
+                    if (firstYear[d] === undefined || r.Anno < firstYear[d]) firstYear[d] = r.Anno;
+                  });
+                });
+                // Separa D... e DK... (DK = prefisso con K, es. DK1; D senza K = D1, D2...)
+                const allDatariArr = Array.from(datariSet);
+                const groupD  = allDatariArr.filter(d => !/^DK/i.test(d));
+                const groupDK = allDatariArr.filter(d =>  /^DK/i.test(d));
+                const byFirstYear = (a, b) => {
+                  const ya = firstYear[a] ?? 9999;
+                  const yb = firstYear[b] ?? 9999;
+                  if (ya !== yb) return ya - yb;
+                  return naturalDatariCompare(a, b);
+                };
+                groupD.sort(byFirstYear);
+                groupDK.sort(byFirstYear);
+                datari = [...groupD, ...groupDK];
+              } else {
+                datari = Array.from(datariSet).sort(naturalDatariCompare);
+              }
+
               let yearsPresent = Array.from(yearSetAll).sort((a,b)=>a-b);
               // assicurati di includere tutti gli anni compresi tra primo e ultimo
               let years = [];
