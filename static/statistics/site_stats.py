@@ -224,11 +224,19 @@ def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict
 
 
 def write_unreferenced_regno_images(root_dir: Path, out_csv: Path, image_index: dict = None):
-    """Scrive un CSV con immagini presenti nel progetto che non sono referenziate da targhetteRegno.json."""
-    # raccogli nomi attesi da regno
+    """Scrive un CSV con immagini presenti nel progetto che non sono referenziate da nessun JSON di targhette."""
+    # Sezioni con il prefisso del nome file usato da compute_section_stats
+    # prefixes: lista di prefissi di nome da aggiungere alle varianti attese
+    sections = [
+        {'json': root_dir / 'regno' / 'targhetteRegno.json',              'prefixes': ['prev']},
+        {'json': root_dir / 'triestea' / 'targhetteTriesteA.json',        'prefixes': ['prev_trieste']},
+        {'json': root_dir / 'colonie' / 'libia' / 'targhetteLibia.json',  'prefixes': ['prev_tripoli', 'prev_libia']},
+    ]
     expected = set()
-    p = root_dir / 'regno' / 'targhetteRegno.json'
-    if p.exists():
+    for sec in sections:
+        p = sec['json']
+        if not p.exists():
+            continue
         try:
             with open(p, 'r', encoding='utf-8') as f:
                 data = json.load(f)
@@ -236,12 +244,13 @@ def write_unreferenced_regno_images(root_dir: Path, out_csv: Path, image_index: 
             data = []
         for item in data:
             uff = item.get('Targhetta Ufficio')
-            extra = item.get('extra','')
+            extra = item.get('extra', '')
             if uff is None:
                 continue
             extra_part = f"_{str(extra).strip()}" if extra and str(extra).strip() != "" else ""
-            filename = f"prev_{uff}{extra_part}.jpeg"
-            expected.add(filename.lower())
+            for prefix in sec['prefixes']:
+                filename = f"{prefix}_{uff}{extra_part}.jpeg"
+                expected.add(filename.lower())
 
     # trova file immagine prev_*.jpeg: preferisci l'indice se presente
     found_images = []
