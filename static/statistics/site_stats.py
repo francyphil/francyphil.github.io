@@ -165,42 +165,53 @@ def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict
             if uff is None:
                 continue
             extra_part = f"_{str(extra).strip()}" if extra and str(extra).strip() != "" else ""
-            filename = f"prev_{uff}{extra_part}.jpeg"
-            filename_l = filename.lower()
             found = False
             # usa l'indice se disponibile per evitare ripetute rglob()
             if image_index is not None:
                 folder_prefix = Path(folder).as_posix()
-                # Try exact expected filename first
-                entries = image_index.get(filename_l, [])
                 if folder_prefix == 'triestea':
-                    # supporta nomi del tipo prev_trieste_{uff}[_{extra}].jpeg
-                    fname_tri = f"prev_trieste_{uff}{extra_part}.jpeg".lower()
-                    entries_tri = image_index.get(fname_tri, [])
-                    if entries_tri:
-                        found = any(p.startswith(f"{folder_prefix}/") for p in entries_tri)
-                    else:
-                        # fallback: match per prefisso (prev_trieste_{uff}...)
-                        prefix = f"prev_trieste_{uff}"
-                        if extra and str(extra).strip() != "":
-                            prefix = f"{prefix}_{str(extra).strip()}"
-                        prefix = prefix.lower()
-                        for k, paths in image_index.items():
-                            if k.startswith(prefix):
-                                if any(p.startswith(f"{folder_prefix}/") for p in paths):
-                                    found = True
-                                    break
+                    # nomi del tipo prev_trieste_{uff}[_{extra}].jpeg
+                    candidate_prefixes = [f"prev_trieste_{uff}"]
+                elif Path(folder_prefix).name == 'libia':
+                    # nomi del tipo prev_tripoli_{uff} o prev_libia_{uff}
+                    candidate_prefixes = [f"prev_tripoli_{uff}", f"prev_libia_{uff}"]
                 else:
-                    # ensure match is inside the target folder
-                    if entries:
-                        found = any(p.startswith(f"{folder_prefix}/") for p in entries)
+                    candidate_prefixes = [f"prev_{uff}"]
+                for prefix in candidate_prefixes:
+                    fname_candidate = f"{prefix}{extra_part}.jpeg".lower()
+                    entries = image_index.get(fname_candidate, [])
+                    if entries and any(p.startswith(f"{folder_prefix}/") for p in entries):
+                        found = True
+                        break
+                    # fallback: match per prefisso
+                    search_prefix = (prefix + (f"_{str(extra).strip()}" if extra and str(extra).strip() else "")).lower()
+                    for k, paths in image_index.items():
+                        if k.startswith(search_prefix) and any(p.startswith(f"{folder_prefix}/") for p in paths):
+                            found = True
+                            break
+                    if found:
+                        break
             else:
-                search_root = root_dir / folder if folder == 'triestea' else root_dir
-                found = any(search_root.rglob(filename))
+                search_root = root_dir / folder
+                # prova i possibili prefissi di nome file
+                if folder == 'triestea':
+                    candidate_names = [f"prev_trieste_{uff}{extra_part}.jpeg"]
+                elif folder == 'colonie/libia':
+                    candidate_names = [f"prev_tripoli_{uff}{extra_part}.jpeg", f"prev_libia_{uff}{extra_part}.jpeg"]
+                else:
+                    candidate_names = [f"prev_{uff}{extra_part}.jpeg"]
+                found = any(any(search_root.rglob(name)) for name in candidate_names)
             if not found:
+                # nome atteso da mostrare nel report (primo candidato)
+                if folder == 'triestea':
+                    display_filename = f"prev_trieste_{uff}{extra_part}.jpeg"
+                elif folder == 'colonie/libia':
+                    display_filename = f"prev_tripoli_{uff}{extra_part}.jpeg"
+                else:
+                    display_filename = f"prev_{uff}{extra_part}.jpeg"
                 rows.append({
                     'section': section_name,
-                    'expected_filename': filename,
+                    'expected_filename': display_filename,
                     'Targhetta Ufficio': uff,
                     'extra': extra,
                     'Descrizione': item.get('Descrizione',''),
