@@ -8401,7 +8401,7 @@
     },
     {
         "Targhetta Tipo": 42,
-        "Targhetta Ufficio": 530,
+        "Targhetta Ufficio": 529,
         "extra": "A",
         "Periodo": "Regno",
         "Descrizione": "Novità di stagione - La Rinascente ( trombettiere )",
@@ -8410,8 +8410,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Roma_Centro_D2.jpeg"
     },
     {
         "Targhetta Tipo": 42,
@@ -20088,6 +20088,20 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D2",
         "linkDatario": "Livorno_Ferr_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": 119,
+        "Targhetta Ufficio": 1282,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Italiani visitate la tripolitania",
+        "linkTarghetta": "",
+        "Anno": 1927,
+        "Località": "Livorno",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D1",
+        "linkDatario": "Livorno_Ferr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 119,
