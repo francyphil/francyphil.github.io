@@ -39533,7 +39533,7 @@
         "Denominazione ufficio": "New York - Genova",
         "Denominazione ufficio breve": "NYGE",
         "Datario": "D1",
-        "linkDatario": "Rex_NYGE_D1.jpeg"
+        "linkDatario": "Conte_NYGE_D1.jpeg"
     },
     {
         "Targhetta Tipo": 227,
@@ -39547,7 +39547,7 @@
         "Denominazione ufficio": "New York - Genova",
         "Denominazione ufficio breve": "NYGE",
         "Datario": "D1",
-        "linkDatario": "Conte_NYGE_D1.jpeg"
+        "linkDatario": "Rex_NYGE_D1.jpeg"
     },
     {
         "Targhetta Tipo": 228,
@@ -46393,7 +46393,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -47191,7 +47191,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -48843,7 +48843,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -50467,7 +50467,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 268,
@@ -51601,7 +51601,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -52861,7 +52861,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 280,
@@ -53603,7 +53603,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 287,
@@ -53729,7 +53729,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 287,
@@ -53855,7 +53855,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 258,
@@ -53982,6 +53982,20 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D7",
         "linkDatario": "Spezia_Centro_D7.jpeg"
+    },
+    {
+        "Targhetta Tipo": 258,
+        "Targhetta Ufficio": 3386,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Visitate l'Italia",
+        "linkTarghetta": "",
+        "Anno": 1940,
+        "Località": "La Spezia",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "D9",
+        "linkDatario": "Spezia_Centro_D9.jpeg"
     },
     {
         "Targhetta Tipo": 258,
@@ -55409,7 +55423,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 289,
@@ -56445,7 +56459,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -57201,7 +57215,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 301,
@@ -58083,7 +58097,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 301,
@@ -58797,7 +58811,7 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
-        "linkDatario": "Bari_Ferr_D4.jpef"
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 301,
