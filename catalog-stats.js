@@ -2,7 +2,7 @@
   function injectStyles() {
     const css = `
   .catalog-stats-container { margin-top: 16px; display: flex; justify-content: center; }
-  .catalog-stats { max-width: 720px; width: 100%; border-collapse: collapse; margin-top: 8px; margin-left: auto; margin-right: auto; }
+  .catalog-stats { max-width: 800px; width: 100%; border-collapse: collapse; margin-top: 8px; margin-left: auto; margin-right: auto; }
   .catalog-stats th, .catalog-stats td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: center; }
   .catalog-stats th { background: #f7f7f7; font-weight: 700; }
   .catalog-stats .pct { text-align: center; width: 180px; }
