@@ -86,10 +86,24 @@
         items.push({ text: 'Sperimentali', link: null });
       } else if (path.includes('regnomanuali.html')) {
         items.push({ text: 'Manuali', link: null });
+      } else if (path.includes('regnosolodatario.html')) {
+        items.push({ text: 'Solo Datario', link: null });
+      } else if (path.includes('rrposte.html')) {
+        items.push({ text: 'R.R. Poste T.S.', link: null });
       } else if (path.includes('regnofalsi.html')) {
         items.push({ text: 'Falsi', link: null });
+      } else if (path.includes('continuikrag1datario.html')) {
+        items.push({ text: 'Continui', link: '/regno/regnocontinui.html' });
+        items.push({ text: 'Krag 1° tipo solo datario', link: null });
+      } else if (path.includes('continuikrag1.html')) {
+        items.push({ text: 'Continui', link: '/regno/regnocontinui.html' });
+        items.push({ text: 'Krag 1° tipo', link: null });
+      } else if (path.includes('continuikrag2.html')) {
+        items.push({ text: 'Continui', link: '/regno/regnocontinui.html' });
+        items.push({ text: 'Krag 2° tipo', link: null });
       } else if (path.includes('/targhetteTipo/')) {
-        items.push({ text: 'Targhette', link: null });
+        items.push({ text: 'Targhette', link: '/regno/catalog.html' });
+        items.push({ text: document.title, link: null });
       }
     } else if (path.includes('/colonie/libia/')) {
       items.push({ text: 'Catalogo', link: null });
@@ -136,15 +150,15 @@
         items.push({ text: 'Bibliografia', link: null });
       } else if (path.includes('faq.html')) {
         items.push({ text: 'FAQ', link: null });
+      } else if (path.includes('privacy.html')) {
+        items.push({ text: 'Privacy Policy', link: null });
       }
     } else if (path.includes('/static/credits/')) {
       items.push({ text: 'Info', link: null });
       items.push({ text: 'Credits', link: null });
     } else if (path.includes('/static/ph/')) {
-      items.push({ text: 'Storia Postale', link: '/static/ph/phindex.html' });
-      if (path.includes('phindex.html')) {
-        items.push({ text: 'Indice', link: null });
-      } else if (path.includes('cartolina.html')) {
+      items.push({ text: 'Storia Postale', link: path.includes('phindex.html') ? null : '/static/ph/phindex.html' });
+      if (path.includes('cartolina.html')) {
         items.push({ text: 'Cartolina', link: null });
       } else if (path.includes('destinazioni.html')) {
         items.push({ text: 'Destinazioni', link: null });
@@ -174,6 +188,8 @@
       if (path.includes('intro.html')) {
         items.push({ text: 'Introduzione', link: null });
       }
+    } else if (path.includes('/static/macchine/')) {
+      items.push({ text: 'Macchine', link: null });
     }
 
     // Costruisci l'HTML del breadcrumb
