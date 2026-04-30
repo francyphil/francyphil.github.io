@@ -1,3 +1,8 @@
+/* Offset navbar fissa */
+body {
+  margin-top: 55px;
+}
+
 /* Stile globale per i titoli h1 */
 h1 {
   text-align: left;

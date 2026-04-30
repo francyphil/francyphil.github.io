@@ -1,3 +1,23 @@
+// Carica il footer HTML nel contenitore #footerContainer e poi inizializza
+// scroll-to-top e cookie consent.
+function loadFooter() {
+  var container = document.getElementById('footerContainer');
+  if (!container) return;
+  fetch('/footer/footer.html')
+    .then(function (res) { return res.text(); })
+    .then(function (html) {
+      container.innerHTML = html;
+      waitForFooterAndSetup();
+    })
+    .catch(function (e) { console.error('[footer] fetch error', e); });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadFooter);
+} else {
+  loadFooter();
+}
+
 // Bottone scroll to top
 
 // Gestione bottone scroll-to-top compatibile con caricamento dinamico
@@ -29,12 +49,6 @@ function waitForFooterAndSetup() {
       clearInterval(interval);
     }
   }, 100);
-}
-
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-  waitForFooterAndSetup();
-} else {
-  window.addEventListener('DOMContentLoaded', waitForFooterAndSetup);
 }
 
 // Dynamically add cookie consent CSS and JS after footer is present

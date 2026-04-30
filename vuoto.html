@@ -12,7 +12,6 @@
         font-family: sans-serif;
         margin: 0;
         padding: 20px;
-        margin-top: 55px;
       }
     </style>
     <link rel="stylesheet" href="/footer/footer.css" />
@@ -28,12 +27,5 @@
     
     <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
-    <script>
-      fetch('/footer/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('footerContainer').innerHTML = html;
-        });
-    </script>
   </body>
 </html>

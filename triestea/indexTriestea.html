@@ -13,7 +13,6 @@
         font-family: sans-serif;
         margin: 0;
         padding: 0;
-        margin-top: 55px;
       }
 
       h1 {
@@ -166,12 +165,5 @@
 
     <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
-    <script>
-      fetch("/footer/footer.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("footerContainer").innerHTML = html;
-        });
-    </script>
   </body>
 </html>

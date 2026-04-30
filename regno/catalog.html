@@ -147,12 +147,5 @@
 
     <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
-    <script>
-      fetch("/footer/footer.html")
-        .then(function(res) { return res.text(); })
-        .then(function(html) {
-          document.getElementById("footerContainer").innerHTML = html;
-        });
-    </script>
   </body>
 </html>

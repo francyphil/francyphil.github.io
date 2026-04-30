@@ -43,7 +43,6 @@
         font-family: sans-serif;
         margin: 0;
         padding: 20px;
-        margin-top: 55px;
 
         min-height: 100vh;
       }
@@ -360,13 +359,6 @@
 
     <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
-    <script>
-      fetch("/footer/footer.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("footerContainer").innerHTML = html;
-        });
-    </script>
     <script src="/navbar/navbar.js"></script>
     <script src="/catalog-stats.js"></script>
     <script>
