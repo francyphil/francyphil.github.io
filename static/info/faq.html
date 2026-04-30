@@ -32,8 +32,25 @@
         font-weight: 700;
         cursor: pointer;
         list-style: none;
-        outline: none;
         font-size: 1.02em;
+        padding-left: 1.4em;
+        position: relative;
+      }
+      .faq summary::before {
+        content: '▶';
+        position: absolute;
+        left: 0;
+        font-size: 0.75em;
+        top: 0.15em;
+        transition: transform 0.2s ease;
+      }
+      details[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      .faq summary:focus-visible {
+        outline: 2px solid #4caf50;
+        outline-offset: 3px;
+        border-radius: 3px;
       }
       .faq summary::-webkit-details-marker { display: none; }
       .faq .answer {
@@ -43,6 +60,7 @@
         font-size: 0.98em;
       }
     </style>
+    <link rel="stylesheet" href="/footer/footer.css" />
   </head>
   <body>
     <script src="/navbar/navbar.js"></script>
@@ -174,7 +192,6 @@
         </section>
     </div>
 
-    <link rel="stylesheet" href="/footer/footer.css">
     <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
     <script>
