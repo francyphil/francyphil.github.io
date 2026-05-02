@@ -1,6 +1,6 @@
 /* Offset navbar fissa */
 body {
-  margin-top: 55px;
+  margin-top: 55px !important;
 }
 
 /* Stile globale per i titoli h1 */
