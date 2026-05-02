@@ -328,8 +328,16 @@ def main():
     stats["total_localita"] = len(localita_set)
 
     # Conta datari univoci (linkDatario distinti non vuoti)
+    # Include targhette, onde, barre e solo-datario per tutte le sezioni
     datari_set = set()
-    for folder, json_file in [("regno", "targhetteRegno.json"), ("triestea", "targhetteTriesteA.json"), ("colonie/libia", "targhetteLibia.json")]:
+    for folder, json_file in [
+        ("regno", "targhetteRegno.json"),
+        ("triestea", "targhetteTriesteA.json"),
+        ("colonie/libia", "targhetteLibia.json"),
+        ("regno", "OndeRegno.json"),
+        ("regno", "BarreRegno.json"),
+        ("regno", "SoloDatarioRegno.json"),
+    ]:
         p = project_dir / folder / json_file
         if p.exists():
             try:
