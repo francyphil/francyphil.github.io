@@ -23,6 +23,7 @@ MIGLIORIE
 PRIMA DELLA PUBBLICAZIONE
 - creare sitemaps.xml
 - Gestione SEO
+- aggiornare cookie e privacy
 
 Immagini
 3398 A Modena Ferrovia con stella

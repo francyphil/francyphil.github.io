@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Policy - Annulli Meccanici</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .policy-container {
+        max-width: 900px;
+        margin: 20px auto 60px;
+        padding: 18px;
+        line-height: 1.7;
+        color: #333;
+      }
+      .policy-container h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .policy-container h2 {
+        color: #2c3e50;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+        border-bottom: 2px solid #4caf50;
+        padding-bottom: 5px;
+      }
+      .policy-container p,
+      .policy-container ul {
+        font-size: 0.98em;
+        margin-bottom: 12px;
+      }
+      .policy-container ul {
+        padding-left: 20px;
+      }
+      .policy-container ul li {
+        margin-bottom: 6px;
+      }
+      .policy-container a {
+        color: #4caf50;
+      }
+      .last-updated {
+        text-align: center;
+        color: #888;
+        font-size: 0.9em;
+        margin-bottom: 30px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.93em;
+        margin-bottom: 20px;
+      }
+      th {
+        background: #f0f0f0;
+        text-align: left;
+        padding: 8px 10px;
+        border: 1px solid #ddd;
+      }
+      td {
+        padding: 8px 10px;
+        border: 1px solid #ddd;
+        vertical-align: top;
+      }
+      tr:nth-child(even) td {
+        background: #fafafa;
+      }
+      .manage-btn {
+        display: inline-block;
+        margin-top: 6px;
+        background: #4caf50;
+        color: #fff;
+        border: none;
+        padding: 9px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.95em;
+        font-family: inherit;
+        font-weight: 600;
+      }
+      .manage-btn:hover {
+        background: #388e3c;
+      }
+    </style>
+    <link rel="stylesheet" href="/footer/footer.css" />
+  </head>
+  <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
+
+    <div class="policy-container">
+      <h1>Cookie Policy</h1>
+      <p class="last-updated">Ultimo aggiornamento: 3 maggio 2026</p>
+
+      <h2>1. Cosa sono i cookie e gli strumenti di storage</h2>
+      <p>
+        I cookie sono piccoli file di testo salvati sul dispositivo dell'utente dal browser durante la navigazione.
+        Il <strong>localStorage</strong> è un meccanismo analogo, ma non trasmette dati al server a ogni richiesta:
+        i dati rimangono nel browser dell'utente e vengono letti solo dal codice JavaScript della pagina.
+      </p>
+
+      <h2>2. Cosa usa questo sito</h2>
+      <p>
+        Il sito <strong>Annulli Meccanici</strong> è un sito statico.
+        <strong>Non utilizza cookie di profilazione né cookie di tracciamento</strong> propri.
+        Utilizza esclusivamente <strong>localStorage</strong> per ricordare la scelta di consenso dell'utente
+        riguardo alle risorse di terze parti.
+      </p>
+      <p>
+        <strong>Hosting attuale:</strong> il sito è ospitato su <strong>GitHub Pages</strong> (GitHub Inc., USA).<br>
+        <strong>Hosting futuro:</strong> il sito sarà migrato su un dominio personale ospitato da
+        <strong>Aruba S.p.A.</strong> (Italia, server in Unione Europea). La presente policy verrà
+        aggiornata contestualmente alla migrazione.
+      </p>
+
+      <h2>3. Dettaglio degli elementi di storage utilizzati</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Scopo</th>
+            <th>Durata</th>
+            <th>Prima parte / Terza parte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>cookie_consent_status</code></td>
+            <td>localStorage</td>
+            <td>Memorizza la preferenza di consenso dell'utente (<code>accepted</code> o <code>rejected</code>) per evitare di mostrare nuovamente il banner a ogni visita.</td>
+            <td>Persistente (fino alla cancellazione manuale o al reset delle preferenze)</td>
+            <td>Prima parte</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Risorse di terze parti caricate su consenso</h2>
+      <p>
+        Solo se l'utente accetta esplicitamente, vengono caricate le seguenti risorse esterne.
+        In assenza di consenso queste risorse <strong>non vengono caricate</strong> e le funzionalità
+        corrispondenti rimangono disattivate.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Risorsa</th>
+            <th>Fornitore</th>
+            <th>Scopo</th>
+            <th>Dati trasferiti</th>
+            <th>Privacy del fornitore</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chart.js (CDN jsDelivr)</td>
+            <td>jsDelivr / Cloudflare</td>
+            <td>Libreria JavaScript per la visualizzazione di grafici statistici</td>
+            <td>Indirizzo IP, User-Agent, timestamp della richiesta</td>
+            <td><a href="https://www.jsdelivr.com/privacy-policy-jsdelivr-net" target="_blank" rel="noopener noreferrer">jsDelivr Privacy Policy</a></td>
+          </tr>
+          <tr>
+            <td>Leaflet (CDN unpkg)</td>
+            <td>unpkg / Cloudflare</td>
+            <td>Libreria JavaScript per mappe interattive</td>
+            <td>Indirizzo IP, User-Agent, timestamp della richiesta</td>
+            <td><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Privacy Policy</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>5. Cookie tecnici del servizio di hosting</h2>
+      <p>
+        Il servizio di hosting può impostare cookie tecnici strettamente necessari per il funzionamento
+        dell'infrastruttura. Tali cookie non sono sotto il controllo del titolare di questo sito.
+      </p>
+      <ul>
+        <li>
+          <strong>GitHub Pages</strong> (hosting attuale) — può impostare cookie tecnici di infrastruttura.
+          I dati sono trattati da GitHub Inc. (USA) secondo la propria
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+             target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+        </li>
+        <li>
+          <strong>Aruba S.p.A.</strong> (hosting futuro, server in Italia/UE) — potrà impostare cookie
+          tecnici di infrastruttura. I dati resteranno all'interno dell'Unione Europea.
+          Per i dettagli si rimanda all'
+          <a href="https://www.aruba.it/documenti/doc/informativa_aruba_hosting.aspx"
+             target="_blank" rel="noopener noreferrer">Informativa Privacy Aruba</a>.
+        </li>
+      </ul>
+
+      <h2>6. Come gestire le preferenze</h2>
+      <p>
+        Puoi modificare la tua scelta in qualsiasi momento cliccando sul pulsante qui sotto.
+        Il banner apparirà nuovamente e potrai accettare o rifiutare le risorse di terze parti.
+      </p>
+      <p>
+        <button class="manage-btn" id="openConsentBannerBtn">Gestisci preferenze cookie</button>
+      </p>
+      <p>
+        Puoi inoltre eliminare i dati di localStorage dal tuo browser tramite le impostazioni dello strumento
+        di sviluppo (F12 → Application → Local Storage) oppure cancellando i dati di navigazione del browser.
+      </p>
+
+      <h2>7. Per maggiori informazioni</h2>
+      <p>
+        Per qualsiasi domanda relativa al trattamento dei dati personali, consulta la
+        <a href="/static/info/privacy.html">Privacy Policy</a> o contatta il titolare all'indirizzo:
+        <a href="mailto:catalogo.targhette@gmail.com">catalogo.targhette@gmail.com</a>.
+      </p>
+    </div>
+
+    <script src="/footer/footer.js"></script>
+    <div id="footerContainer"></div>
+
+    <script>
+      document.getElementById('openConsentBannerBtn').addEventListener('click', function() {
+        if (window._cookieConsent && window._cookieConsent.showPreferences) {
+          window._cookieConsent.showPreferences();
+        }
+      });
+    </script>
+  </body>
+</html>

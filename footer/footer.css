@@ -27,6 +27,21 @@
   text-decoration: underline;
 }
 
+.site-footer .footer-link-sep {
+  color: #aaa;
+  margin: 0 4px;
+  font-size: 0.85em;
+}
+
+.site-footer .footer-link-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.85em;
+}
+
 .site-footer .footer-copyright {
   width: 100%;
   text-align: center;

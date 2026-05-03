@@ -47,8 +47,18 @@
     }
   }
 
-  // Expose a function to reset consent (for debugging)
-  window._cookieConsent = { reset: function(){ localStorage.removeItem(STORAGE_KEY); location.reload(); } };
+  // Expose public API
+  window._cookieConsent = {
+    reset: function(){ localStorage.removeItem(STORAGE_KEY); location.reload(); },
+    showPreferences: function(){ showBanner(); }
+  };
+
+  // Wire up "Gestisci preferenze cookie" button in footer (loaded dynamically, use delegation)
+  document.addEventListener('click', function(e) {
+    if (e.target && e.target.id === 'manageCookieBtn') {
+      showBanner();
+    }
+  });
 
   init();
 })();
