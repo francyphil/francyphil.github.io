@@ -292,5 +292,19 @@
         "Denominazione ufficio breve": "Aerea",
         "Datario": "D2",
         "linkDatario": "Roma_Aerea_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Solo Datario",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1926,
+        "Località": "Milano",
+        "Denominazione ufficio": "Centro Arrivi",
+        "Denominazione ufficio breve": "CentroArr",
+        "Datario": "D8",
+        "linkDatario": ""
     }
 ]
