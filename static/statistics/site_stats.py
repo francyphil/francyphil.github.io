@@ -327,26 +327,37 @@ def main():
     stats["total_targhette"] = total_targhette
     stats["total_localita"] = len(localita_set)
 
-    # Conta datari univoci (linkDatario distinti non vuoti)
-    # Include targhette, onde, barre e solo-datario per tutte le sezioni
-    datari_set = set()
-    for folder, json_file in [
-        ("regno", "targhetteRegno.json"),
-        ("triestea", "targhetteTriesteA.json"),
+    # Conta datari univoci come terne (Località, Denominazione ufficio, Datario) distinte,
+    # considerando tutti i JSON catalogo. Il campo Datario deve essere non vuoto.
+    # Si usa "Denominazione ufficio" (nome) e non "Targhetta Ufficio" (ID numerico)
+    # perché lo stesso ufficio fisico può avere ID diversi nei vari file.
+    # Lo stesso datario fisico comparso in più file viene contato una sola volta.
+    ALL_CATALOG_JSONS = [
+        ("regno",         "targhetteRegno.json"),
+        ("regno",         "OndeRegno.json"),
+        ("regno",         "BarreRegno.json"),
+        ("regno",         "SoloDatarioRegno.json"),
+        ("regno",         "SingoloCerchio.json"),
+        ("regno",         "doppioCerchio.json"),
+        ("regno",         "RRPosteRegno.json"),
+        ("triestea",      "targhetteTriesteA.json"),
         ("colonie/libia", "targhetteLibia.json"),
-        ("regno", "OndeRegno.json"),
-        ("regno", "BarreRegno.json"),
-        ("regno", "SoloDatarioRegno.json"),
-    ]:
+        ("colonie/libia", "ondeLibia.json"),
+    ]
+    datari_set = set()
+    for folder, json_file in ALL_CATALOG_JSONS:
         p = project_dir / folder / json_file
         if p.exists():
             try:
                 with open(p, "r", encoding="utf-8") as f:
                     data = json.load(f)
                 for item in data:
-                    d = item.get("linkDatario", "")
-                    if d and str(d).strip():
-                        datari_set.add(str(d).strip())
+                    dat = (item.get("Datario") or "").strip()
+                    if not dat:
+                        continue
+                    loc = (item.get("Località") or "").strip()
+                    den = (item.get("Denominazione ufficio") or "").strip()
+                    datari_set.add((loc, den, dat))
             except Exception:
                 pass
     stats["total_datari"] = len(datari_set)
@@ -383,6 +394,7 @@ def main():
     print("✓ Sezioni:")
     for name, s in stats["sections"].items():
         print(f"  - {name}: catalogati={s['total_catalogati']}, immagini={s['images_present']}, {s['images_pct']}%, datari={s['datario_present']}, {s['datario_pct']}%")
+    print(f"✓ Datari univoci totali: {stats['total_datari']}")
     print(f"✓ Onde classificate: {stats['total_onde']}")
     print(f"✓ Barre classificate: {stats['total_barre']}")
     # Genera report CSV per immagini mancanti e non referenziate (Regno)
