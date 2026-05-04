@@ -46468,7 +46468,7 @@
     {
         "Targhetta Tipo": 250,
         "Targhetta Ufficio": 2918,
-        "extra": "A",
+        "extra": "B",
         "Periodo": "Regno",
         "Descrizione": "Prestito nazionale rendita 5%",
         "linkTarghetta": "",
@@ -54246,8 +54246,8 @@
         "Località": "Modena",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "D4",
-        "linkDatario": "Modena_Ferr_D4.jpeg"
+        "Datario": "D5",
+        "linkDatario": "Modena_Ferr_D5.jpeg"
     },
     {
         "Targhetta Tipo": 256,
@@ -54260,8 +54260,8 @@
         "Località": "Modena",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D4",
+        "linkDatario": "Modena_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 256,
