@@ -47251,6 +47251,20 @@
     },
     {
         "Targhetta Tipo": 256,
+        "Targhetta Ufficio": 2967,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Visitate l'Italia",
+        "linkTarghetta": "",
+        "Anno": 1937,
+        "Località": "Bari",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D4",
+        "linkDatario": "Bari_Ferr_D4.jpeg"
+    },
+    {
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 2968,
         "extra": "",
         "Periodo": "Regno",
