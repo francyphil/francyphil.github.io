@@ -53886,7 +53886,7 @@
         "linkDatario": "Cortina_Belluno_D1.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3378,
         "extra": "",
         "Periodo": "Regno",
@@ -53900,7 +53900,7 @@
         "linkDatario": "Ancona_Ferr_D3.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3379,
         "extra": "",
         "Periodo": "Regno",
@@ -53914,7 +53914,7 @@
         "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3380,
         "extra": "",
         "Periodo": "Regno",
@@ -53928,7 +53928,7 @@
         "linkDatario": "Bergamo_ArrPart1_D1.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3381,
         "extra": "",
         "Periodo": "Regno",
@@ -53942,7 +53942,7 @@
         "linkDatario": "Bologna_Centro_D4.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3382,
         "extra": "",
         "Periodo": "Regno",
@@ -53956,7 +53956,7 @@
         "linkDatario": "Bologna_Ferr_D19.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3383,
         "extra": "A",
         "Periodo": "Regno",
@@ -53970,7 +53970,7 @@
         "linkDatario": "Catania_Centro_D1.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3383,
         "extra": "B",
         "Periodo": "Regno",
@@ -53984,7 +53984,7 @@
         "linkDatario": "Catania_Distr_D3.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3383,
         "extra": "",
         "Periodo": "Regno",
@@ -53998,7 +53998,7 @@
         "linkDatario": "Bologna_Ferr_D20.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3384,
         "extra": "",
         "Periodo": "Regno",
@@ -54012,7 +54012,7 @@
         "linkDatario": "Genova_Corr_D3.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3385,
         "extra": "",
         "Periodo": "Regno",
@@ -54026,7 +54026,7 @@
         "linkDatario": "Genova_Ferr_D9.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3386,
         "extra": "",
         "Periodo": "Regno",
@@ -54040,7 +54040,7 @@
         "linkDatario": "Spezia_Centro_D7.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3386,
         "extra": "A",
         "Periodo": "Regno",
@@ -54054,7 +54054,7 @@
         "linkDatario": "Spezia_Centro_D9.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3387,
         "extra": "",
         "Periodo": "Regno",
@@ -54068,7 +54068,7 @@
         "linkDatario": "Livorno_Centro_D2.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3387,
         "extra": "A",
         "Periodo": "Regno",
@@ -54082,7 +54082,7 @@
         "linkDatario": "Livorno_Ferr_D3.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3388,
         "extra": "",
         "Periodo": "Regno",
@@ -54096,7 +54096,7 @@
         "linkDatario": "Merano_Bolzano_D2.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3389,
         "extra": "",
         "Periodo": "Regno",
@@ -54110,7 +54110,7 @@
         "linkDatario": "Messina_Distr_D3.jpeg"
     },
     {
-        "Targhetta Tipo": 258,
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3390,
         "extra": "",
         "Periodo": "Regno",
@@ -56757,6 +56757,20 @@
     },
     {
         "Targhetta Tipo": 256,
+        "Targhetta Ufficio": 3549,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Visitate l'Italia",
+        "linkTarghetta": "",
+        "Anno": 1941,
+        "Località": "Milano",
+        "Denominazione ufficio": "Centro Pacchi Corrisp",
+        "Denominazione ufficio breve": "CentroPC",
+        "Datario": "D1",
+        "linkDatario": "Milano_CentroPC_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3550,
         "extra": "",
         "Periodo": "Regno",
@@ -56765,9 +56779,9 @@
         "Anno": 1941,
         "Località": "Milano",
         "Denominazione ufficio": "Centro Corrisp. Pacchi",
-        "Denominazione ufficio breve": "CentroCP2",
-        "Datario": "D1",
-        "linkDatario": "Milano_CentroCP2_D1.jpeg"
+        "Denominazione ufficio breve": "",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 256,
@@ -56810,6 +56824,20 @@
         "Denominazione ufficio breve": "FerCor3",
         "Datario": "D10",
         "linkDatario": "Milano_FerCor3_D10.jpeg"
+    },
+    {
+        "Targhetta Tipo": 256,
+        "Targhetta Ufficio": 3553,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Visitate l'Italia",
+        "linkTarghetta": "",
+        "Anno": 1941,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia Corr.",
+        "Denominazione ufficio breve": "FerCor3",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 256,
