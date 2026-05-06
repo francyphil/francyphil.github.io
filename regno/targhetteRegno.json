@@ -55092,6 +55092,20 @@
     {
         "Targhetta Tipo": 265,
         "Targhetta Ufficio": 3442,
+        "extra": "",
+        "Periodo": "Regno",
+        "Descrizione": "Lotteria automobilistica di Tripoli",
+        "linkTarghetta": "",
+        "Anno": 1940,
+        "Località": "Torino",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D36",
+        "linkDatario": "Torino_Ferr_D36.jpeg"
+    },
+    {
+        "Targhetta Tipo": 265,
+        "Targhetta Ufficio": 3442,
         "extra": "R",
         "Periodo": "Regno",
         "Descrizione": "Lotteria automobilistica di Tripoli",
@@ -55706,7 +55720,7 @@
         "linkDatario": "Ancona_Ferr_D3.jpeg"
     },
     {
-        "Targhetta Tipo": 297,
+        "Targhetta Tipo": 274,
         "Targhetta Ufficio": 3483,
         "extra": "",
         "Periodo": "Regno",
@@ -58306,8 +58320,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia Corr.",
         "Denominazione ufficio breve": "FerCor3",
-        "Datario": "D13",
-        "linkDatario": "Milano_FerCor3_D13.jpeg"
+        "Datario": "D14",
+        "linkDatario": "Milano_FerCor3_D14.jpeg"
     },
     {
         "Targhetta Tipo": 257,
@@ -58320,8 +58334,22 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia Corr.",
         "Denominazione ufficio breve": "FerCor3",
-        "Datario": "D14",
-        "linkDatario": "Milano_FerCor3_D14.jpeg"
+        "Datario": "D13",
+        "linkDatario": "Milano_FerCor3_D13.jpeg"
+    },
+    {
+        "Targhetta Tipo": 257,
+        "Targhetta Ufficio": 3645,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "La lotteria di Tripoli vi farà milionari",
+        "linkTarghetta": "",
+        "Anno": 1942,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia Corr.",
+        "Denominazione ufficio breve": "FerCor3",
+        "Datario": "D10",
+        "linkDatario": "Milano_FerCor3_D10.jpeg"
     },
     {
         "Targhetta Tipo": 265,
