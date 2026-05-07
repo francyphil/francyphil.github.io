@@ -51059,6 +51059,20 @@
     },
     {
         "Targhetta Tipo": 249,
+        "Targhetta Ufficio": 3197,
+        "extra": "R",
+        "Periodo": "Regno",
+        "Descrizione": "La lotteria di Merano vi farà milionari",
+        "linkTarghetta": "",
+        "Anno": 1938,
+        "Località": "Torino",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D35",
+        "linkDatario": "Torino_Ferr_D35.jpeg"
+    },
+    {
+        "Targhetta Tipo": 249,
         "Targhetta Ufficio": 3198,
         "extra": "",
         "Periodo": "Regno",
