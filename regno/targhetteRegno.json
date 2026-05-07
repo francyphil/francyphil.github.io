@@ -43667,6 +43667,20 @@
     },
     {
         "Targhetta Tipo": 250,
+        "Targhetta Ufficio": 2752,
+        "extra": "B",
+        "Periodo": "Regno",
+        "Descrizione": "Prestito nazionale rendita 5%",
+        "linkTarghetta": "",
+        "Anno": 1935,
+        "Località": "Milano",
+        "Denominazione ufficio": "Arrivi Distribuzione",
+        "Denominazione ufficio breve": "ArrDistr4",
+        "Datario": "D8",
+        "linkDatario": "Milano_ArrDistr4_D8.jpeg"
+    },
+    {
+        "Targhetta Tipo": 250,
         "Targhetta Ufficio": 2753,
         "extra": "",
         "Periodo": "Regno",
@@ -43984,8 +43998,8 @@
         "Località": "Trento",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Trento_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -44068,8 +44082,8 @@
         "Località": "San Remo",
         "Denominazione ufficio": "Imperia",
         "Denominazione ufficio breve": "Imperia",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "SanRemo_Imperia_D1.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -44110,8 +44124,8 @@
         "Località": "Ancona",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Ancona_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -44138,8 +44152,22 @@
         "Località": "Bari",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Bari_Ferr_D3.jpeg"
+    },
+    {
+        "Targhetta Tipo": 250,
+        "Targhetta Ufficio": 2777,
+        "extra": "B",
+        "Periodo": "Regno",
+        "Descrizione": "Prestito nazionale rendita 5%",
+        "linkTarghetta": "",
+        "Anno": 1936,
+        "Località": "Bari",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D4",
+        "linkDatario": "Bari_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -44236,8 +44264,8 @@
         "Località": "Catania",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Catania_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 250,
@@ -49516,20 +49544,6 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D19",
         "linkDatario": "Roma_Centro_D19.jpeg"
-    },
-    {
-        "Targhetta Tipo": 256,
-        "Targhetta Ufficio": 3103,
-        "extra": "A",
-        "Periodo": "Regno",
-        "Descrizione": "Visitate l'Italia",
-        "linkTarghetta": "",
-        "Anno": 1938,
-        "Località": "Roma",
-        "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 256,
