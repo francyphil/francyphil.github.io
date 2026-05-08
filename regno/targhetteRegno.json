@@ -55945,6 +55945,20 @@
     },
     {
         "Targhetta Tipo": 249,
+        "Targhetta Ufficio": 3492,
+        "extra": "C",
+        "Periodo": "Regno",
+        "Descrizione": "La lotteria di Merano vi farà milionari",
+        "linkTarghetta": "",
+        "Anno": 1940,
+        "Località": "Milano",
+        "Denominazione ufficio": "Arrivi Distribuzione",
+        "Denominazione ufficio breve": "ArrDistr4",
+        "Datario": "D20",
+        "linkDatario": "Milano_ArrDistr4_D20.jpeg"
+    },
+    {
+        "Targhetta Tipo": 249,
         "Targhetta Ufficio": 3493,
         "extra": "",
         "Periodo": "Regno",
@@ -55996,8 +56010,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia Corr.",
         "Denominazione ufficio breve": "FerCor3",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D12",
+        "linkDatario": "Milano_FerCor3_D12.jpeg"
     },
     {
         "Targhetta Tipo": 249,
