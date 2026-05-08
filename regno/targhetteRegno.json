@@ -36205,6 +36205,20 @@
     },
     {
         "Targhetta Tipo": 214,
+        "Targhetta Ufficio": 2267,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Provate la sigaretta regina",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 214,
         "Targhetta Ufficio": 2268,
         "extra": "",
         "Periodo": "Regno",
@@ -37971,6 +37985,20 @@
         "Targhetta Tipo": 218,
         "Targhetta Ufficio": 2379,
         "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Gli uffici postali accettano per l'incasso a mezzo ..",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 218,
+        "Targhetta Ufficio": 2379,
+        "extra": "B",
         "Periodo": "Regno",
         "Descrizione": "Gli uffici postali accettano per l'incasso a mezzo ..",
         "linkTarghetta": "",
@@ -40083,6 +40111,20 @@
     },
     {
         "Targhetta Tipo": 229,
+        "Targhetta Ufficio": 2516,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Mostra rivoluzione fascista",
+        "linkTarghetta": "",
+        "Anno": 1932,
+        "Località": "Torino",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D29",
+        "linkDatario": "Torino_Ferr_D29.jpeg"
+    },
+    {
+        "Targhetta Tipo": 229,
         "Targhetta Ufficio": 2517,
         "extra": "",
         "Periodo": "Regno",
@@ -41956,6 +41998,20 @@
         "Denominazione ufficio breve": "Corr",
         "Datario": "D2",
         "linkDatario": "Padova_Corr_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": 229,
+        "Targhetta Ufficio": 2640,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Mostra rivoluzione fascista",
+        "linkTarghetta": "",
+        "Anno": 1934,
+        "Località": "Padova",
+        "Denominazione ufficio": "Corrispondenze",
+        "Denominazione ufficio breve": "Corr",
+        "Datario": "D1",
+        "linkDatario": "Padova_Corr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 229,
