@@ -24515,6 +24515,34 @@
     },
     {
         "Targhetta Tipo": 149,
+        "Targhetta Ufficio": 1562,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Preferite le sigarette Eja Savoia Eva",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D10",
+        "linkDatario": "Milano_Ferr_D10.jpeg"
+    },
+    {
+        "Targhetta Tipo": 149,
+        "Targhetta Ufficio": 1562,
+        "extra": "B",
+        "Periodo": "Regno",
+        "Descrizione": "Preferite le sigarette Eja Savoia Eva",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D10",
+        "linkDatario": "Milano_Ferr_D10.jpeg"
+    },
+    {
+        "Targhetta Tipo": 149,
         "Targhetta Ufficio": 1563,
         "extra": "",
         "Periodo": "Regno",
@@ -24554,6 +24582,20 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D11",
         "linkDatario": "Milano_Ferr_D11.jpeg"
+    },
+    {
+        "Targhetta Tipo": 149,
+        "Targhetta Ufficio": 1565,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Preferite le sigarette Eja Savoia Eva",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 149,
@@ -25324,6 +25366,20 @@
         "Denominazione ufficio breve": "Distr",
         "Datario": "D1",
         "linkDatario": "Milano_Distr_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": 150,
+        "Targhetta Ufficio": 1610,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Preferite le sigarette Eja Savoia Eva",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 150,
