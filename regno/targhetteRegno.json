@@ -22821,20 +22821,6 @@
     },
     {
         "Targhetta Tipo": 165,
-        "Targhetta Ufficio": 1458,
-        "extra": "",
-        "Periodo": "Regno",
-        "Descrizione": "Questa vecchia terra italiana può dare il pane ..",
-        "linkTarghetta": "",
-        "Anno": 1928,
-        "Località": "Palermo",
-        "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
-    },
-    {
-        "Targhetta Tipo": 165,
         "Targhetta Ufficio": 1459,
         "extra": "",
         "Periodo": "Regno",
@@ -22888,6 +22874,20 @@
         "Denominazione ufficio breve": "Distr",
         "Datario": "D2",
         "linkDatario": "Catania_Distr_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": 164,
+        "Targhetta Ufficio": 1462,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Questa vecchia terra italiana può dare il pane ..",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Catania",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "D1",
+        "linkDatario": "Catania_Distr_D1.jpeg"
     },
     {
         "Targhetta Tipo": 164,
@@ -23061,20 +23061,6 @@
         "Targhetta Tipo": 164,
         "Targhetta Ufficio": 1474,
         "extra": "",
-        "Periodo": "Regno",
-        "Descrizione": "Questa vecchia terra italiana può dare il pane ..",
-        "linkTarghetta": "",
-        "Anno": 1928,
-        "Località": "Milano",
-        "Denominazione ufficio": "Ferrovia",
-        "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
-    },
-    {
-        "Targhetta Tipo": 164,
-        "Targhetta Ufficio": 1474,
-        "extra": "A",
         "Periodo": "Regno",
         "Descrizione": "Questa vecchia terra italiana può dare il pane ..",
         "linkTarghetta": "",
