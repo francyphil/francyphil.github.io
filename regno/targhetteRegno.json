@@ -24683,6 +24683,20 @@
     },
     {
         "Targhetta Tipo": 149,
+        "Targhetta Ufficio": 1570,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Preferite le sigarette Eja Savoia Eva",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Palermo",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 149,
         "Targhetta Ufficio": 1571,
         "extra": "",
         "Periodo": "Regno",
@@ -29972,6 +29986,20 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D2",
         "linkDatario": "Livorno_Ferr_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": 143,
+        "Targhetta Ufficio": 1901,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Usate i pacchi postali urgenti",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Messina",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 143,
