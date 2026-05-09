@@ -1,10 +1,10 @@
 {
   "total_pages": 51,
-  "total_images": 4199,
+  "total_images": 4201,
   "sections": {
     "Regno": {
       "total_catalogati": 4306,
-      "images_present": 3918,
+      "images_present": 3920,
       "images_pct": 91.0,
       "datario_present": 3687,
       "datario_pct": 85.6
@@ -26,7 +26,7 @@
   },
   "total_targhette": 4352,
   "total_localita": 51,
-  "total_datari": 838,
+  "total_datari": 835,
   "total_onde": 1594,
   "total_barre": 48
 }
