@@ -31384,8 +31384,8 @@
         "Località": "Verona",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Verona_Ferr_D3.jpeg"
     },
     {
         "Targhetta Tipo": 192,
@@ -31713,20 +31713,6 @@
         "Targhetta Tipo": 189,
         "Targhetta Ufficio": 2005,
         "extra": "B",
-        "Periodo": "Regno",
-        "Descrizione": "Fumatori di toscani provate …",
-        "linkTarghetta": "",
-        "Anno": 1929,
-        "Località": "Roma",
-        "Denominazione ufficio": "Ferrovia",
-        "Denominazione ufficio breve": "Ferr",
-        "Datario": "D21",
-        "linkDatario": "Roma_Ferr_D21.jpeg"
-    },
-    {
-        "Targhetta Tipo": 189,
-        "Targhetta Ufficio": 2005,
-        "extra": "C",
         "Periodo": "Regno",
         "Descrizione": "Fumatori di toscani provate …",
         "linkTarghetta": "",
@@ -32677,6 +32663,20 @@
     },
     {
         "Targhetta Tipo": 191,
+        "Targhetta Ufficio": 2060,
+        "extra": "C",
+        "Periodo": "Regno",
+        "Descrizione": "Preferite le sigarette orientali Eva - Eja",
+        "linkTarghetta": "",
+        "Anno": 1930,
+        "Località": "Venezia",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "D1",
+        "linkDatario": "Venezia_Centro_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": 191,
         "Targhetta Ufficio": 2061,
         "extra": "",
         "Periodo": "Regno",
@@ -33136,6 +33136,20 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D3",
         "linkDatario": "Palermo_Ferr_D3.jpeg"
+    },
+    {
+        "Targhetta Tipo": 189,
+        "Targhetta Ufficio": 2082,
+        "extra": "B",
+        "Periodo": "Regno",
+        "Descrizione": "Fumatori di toscani provate …",
+        "linkTarghetta": "",
+        "Anno": 1930,
+        "Località": "Palermo",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D4",
+        "linkDatario": "Palermo_Ferr_D4.jpeg"
     },
     {
         "Targhetta Tipo": 189,
@@ -36578,8 +36592,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "D2",
-        "linkDatario": "Livorno_Ferr_D2.jpeg"
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": 205,
@@ -36695,6 +36709,20 @@
     },
     {
         "Targhetta Tipo": 189,
+        "Targhetta Ufficio": 2297,
+        "extra": "B",
+        "Periodo": "Regno",
+        "Descrizione": "Fumatori di toscani provate …",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Firenze",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "D10",
+        "linkDatario": "Firenze_Centro_D10.jpeg"
+    },
+    {
+        "Targhetta Tipo": 189,
         "Targhetta Ufficio": 2298,
         "extra": "",
         "Periodo": "Regno",
@@ -36762,6 +36790,20 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D26",
         "linkDatario": "Milano_Ferr_D26.jpeg"
+    },
+    {
+        "Targhetta Tipo": 189,
+        "Targhetta Ufficio": 2302,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Fumatori di toscani provate …",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D22",
+        "linkDatario": "Milano_Ferr_D22.jpeg"
     },
     {
         "Targhetta Tipo": 189,
