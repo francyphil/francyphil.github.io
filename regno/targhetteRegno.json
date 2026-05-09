@@ -33041,6 +33041,20 @@
     },
     {
         "Targhetta Tipo": 189,
+        "Targhetta Ufficio": 2078,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Fumatori di toscani provate …",
+        "linkTarghetta": "",
+        "Anno": 1930,
+        "Località": "Milano",
+        "Denominazione ufficio": "Corrispondenze Centro A",
+        "Denominazione ufficio breve": "CorCentroA",
+        "Datario": "D5",
+        "linkDatario": "Milano_CorCentroA_D5.jpeg"
+    },
+    {
+        "Targhetta Tipo": 189,
         "Targhetta Ufficio": 2079,
         "extra": "",
         "Periodo": "Regno",
@@ -36443,6 +36457,20 @@
     },
     {
         "Targhetta Tipo": 203,
+        "Targhetta Ufficio": 2282,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Servitevi dei pacchi postali urgenti",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Livorno",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 203,
         "Targhetta Ufficio": 2283,
         "extra": "",
         "Periodo": "Regno",
@@ -36550,8 +36578,8 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D2",
+        "linkDatario": "Livorno_Ferr_D2.jpeg"
     },
     {
         "Targhetta Tipo": 205,
