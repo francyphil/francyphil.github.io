@@ -9563,20 +9563,6 @@
     },
     {
         "Targhetta Tipo": 93,
-        "Targhetta Ufficio": 598,
-        "extra": "A",
-        "Periodo": "Regno",
-        "Descrizione": "Acquistate i buoni postali - fruttiferi -",
-        "linkTarghetta": "",
-        "Anno": 1925,
-        "Località": "Napoli",
-        "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
-    },
-    {
-        "Targhetta Tipo": 93,
         "Targhetta Ufficio": 599,
         "extra": "",
         "Periodo": "Regno",
@@ -15708,7 +15694,7 @@
         "linkDatario": ""
     },
     {
-        "Targhetta Tipo": 107,
+        "Targhetta Tipo": 104,
         "Targhetta Ufficio": 994,
         "extra": "A",
         "Periodo": "Regno",
@@ -23621,6 +23607,20 @@
         "Targhetta Tipo": 141,
         "Targhetta Ufficio": 1511,
         "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "San Remo regina della stazioni climatiche",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Torino",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": 141,
+        "Targhetta Ufficio": 1511,
+        "extra": "B",
         "Periodo": "Regno",
         "Descrizione": "San Remo regina della stazioni climatiche",
         "linkTarghetta": "",
