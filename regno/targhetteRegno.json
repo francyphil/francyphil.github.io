@@ -44661,6 +44661,20 @@
     },
     {
         "Targhetta Tipo": 250,
+        "Targhetta Ufficio": 2794,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Prestito nazionale rendita 5%",
+        "linkTarghetta": "",
+        "Anno": 1936,
+        "Località": "Milano",
+        "Denominazione ufficio": "Arrivi Distribuzione",
+        "Denominazione ufficio breve": "ArrDistr4",
+        "Datario": "D9",
+        "linkDatario": "Milano_ArrDistr4_D9.jpeg"
+    },
+    {
+        "Targhetta Tipo": 250,
         "Targhetta Ufficio": 2795,
         "extra": "",
         "Periodo": "Regno",
