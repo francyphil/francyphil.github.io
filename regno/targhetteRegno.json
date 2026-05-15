@@ -24692,8 +24692,8 @@
         "Località": "Palermo",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Palermo_Centro_D1.jpeg"
     },
     {
         "Targhetta Tipo": 149,
@@ -26472,6 +26472,20 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D17",
         "linkDatario": "Roma_Ferr_D17.jpeg"
+    },
+    {
+        "Targhetta Tipo": 157,
+        "Targhetta Ufficio": 1676,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "IL dispensario è buona guida alla profilassi ..",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D20",
+        "linkDatario": "Roma_Ferr_D20.jpeg"
     },
     {
         "Targhetta Tipo": 154,
@@ -40813,20 +40827,6 @@
         "Targhetta Tipo": 229,
         "Targhetta Ufficio": 2551,
         "extra": "A",
-        "Periodo": "Regno",
-        "Descrizione": "Mostra rivoluzione fascista",
-        "linkTarghetta": "",
-        "Anno": 1933,
-        "Località": "Monza",
-        "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
-    },
-    {
-        "Targhetta Tipo": 229,
-        "Targhetta Ufficio": 2551,
-        "extra": "B",
         "Periodo": "Regno",
         "Descrizione": "Mostra rivoluzione fascista",
         "linkTarghetta": "",
