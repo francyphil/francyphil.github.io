@@ -257,7 +257,7 @@
         "extra": "",
         "Descrizione": "R.R. Poste T.S. (con riquadro)",
         "linkTarghetta": "",
-        "linkImgTarghetta": "",
+        "linkImgTarghetta": "RR_POSTE_TS_Milano_Centro_Corrisp_e_Pacchi_1935.jpeg",
         "Anno": 1935,
         "Località": "Milano",
         "Denominazione ufficio": "Centro Corrisp. e pacchi",
@@ -459,6 +459,20 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D32",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "TS1",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "R.R. Poste T.S. (con riquadro)",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "RR_POSTE_TS_Milano_Ferrovia_1936_D38.jpeg",
+        "Anno": 1936,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D38",
         "linkDatario": ""
     },
     {
