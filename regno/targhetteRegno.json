@@ -3000,6 +3000,21 @@
         "linkDatario": "Milano_CentroArr_D1.jpeg"
     },
     {
+        "Ornaghi 1992": "187B",
+        "Targhetta Tipo": 44,
+        "Targhetta Ufficio": 187,
+        "extra": "B",
+        "Periodo": "Regno",
+        "Descrizione": "tingete tende - lidos - super colore",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Ornaghi 1992": 188,
         "Targhetta Tipo": 44,
         "Targhetta Ufficio": 188,
@@ -4783,6 +4798,21 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D3",
         "linkDatario": "Milano_Ferr_D3.jpeg"
+    },
+    {
+        "Ornaghi 1992": "296A",
+        "Targhetta Tipo": 47,
+        "Targhetta Ufficio": 296,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Tende Ettore Moretti ( con ombra )",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Ornaghi 1992": 297,
@@ -7230,6 +7260,21 @@
         "linkDatario": "Milano_Ferr_D3.jpeg"
     },
     {
+        "Ornaghi 1992": "430A",
+        "Targhetta Tipo": 33,
+        "Targhetta Ufficio": 430,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Afro Ballari ( senza linea divisoria )",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Ornaghi 1992": 431,
         "Targhetta Tipo": 33,
         "Targhetta Ufficio": 431,
@@ -7258,6 +7303,21 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D4",
         "linkDatario": "Milano_Ferr_D4.jpeg"
+    },
+    {
+        "Ornaghi 1992": "432A",
+        "Targhetta Tipo": 33,
+        "Targhetta Ufficio": 432,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Afro Ballari ( senza linea divisoria )",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Ornaghi 1992": 433,
@@ -7543,6 +7603,21 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D3",
         "linkDatario": "Milano_Centro_D3.jpeg"
+    },
+    {
+        "Ornaghi 1992": "447R",
+        "Targhetta Tipo": 50,
+        "Targhetta Ufficio": 447,
+        "extra": "R",
+        "Periodo": "Regno",
+        "Descrizione": "Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 1",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Milano",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Ornaghi 1992": 448,
@@ -7843,6 +7918,21 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D7",
         "linkDatario": "Roma_Ferr_D7.jpeg"
+    },
+    {
+        "Ornaghi 1992": "464A",
+        "Targhetta Tipo": 56,
+        "Targhetta Ufficio": 464,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Salsomaggiore - Per informazioni ufficio informaz. Terme",
+        "linkTarghetta": "",
+        "Anno": 1924,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Ornaghi 1992": "465R",
@@ -28260,6 +28350,21 @@
         "linkDatario": "Milano_Ferr_D11.jpeg"
     },
     {
+        "Ornaghi 1992": "1669A",
+        "Targhetta Tipo": 157,
+        "Targhetta Ufficio": 1669,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "IL dispensario è buona guida alla profilassi ..",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Ornaghi 1992": 1670,
         "Targhetta Tipo": 157,
         "Targhetta Ufficio": 1670,
@@ -40258,6 +40363,21 @@
         "Denominazione ufficio breve": "Distr",
         "Datario": "D1",
         "linkDatario": "Messina_Distr_D1.jpeg"
+    },
+    {
+        "Ornaghi 1992": "2341R",
+        "Targhetta Tipo": 217,
+        "Targhetta Ufficio": 2341,
+        "extra": "R",
+        "Periodo": "Regno",
+        "Descrizione": "Utenti domandate l'apertura di un ….",
+        "linkTarghetta": "",
+        "Anno": 1931,
+        "Località": "Messina",
+        "Denominazione ufficio": "Distribuzione",
+        "Denominazione ufficio breve": "Distr",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Ornaghi 1992": 2342,
@@ -52935,6 +53055,21 @@
         "linkDatario": "Merano_Bolzano_D2.jpeg"
     },
     {
+        "Ornaghi 1992": "3083A",
+        "Targhetta Tipo": 256,
+        "Targhetta Ufficio": 3083,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Visitate l'Italia",
+        "linkTarghetta": "",
+        "Anno": 1938,
+        "Località": "Merano",
+        "Denominazione ufficio": "Bolzano",
+        "Denominazione ufficio breve": "Bolzano",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Ornaghi 1992": 3084,
         "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3084,
@@ -63480,6 +63615,21 @@
         "linkDatario": "Cattolica_Forli_D2.jpeg"
     },
     {
+        "Ornaghi 1992": "3680A",
+        "Targhetta Tipo": 250,
+        "Targhetta Ufficio": 3680,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Prestito nazionale rendita 5%",
+        "linkTarghetta": "",
+        "Anno": 1942,
+        "Località": "Milano",
+        "Denominazione ufficio": "Arrivi Distribuzione",
+        "Denominazione ufficio breve": "ArrDistr4",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Ornaghi 1992": 3681,
         "Targhetta Tipo": 301,
         "Targhetta Ufficio": 3681,
@@ -64393,6 +64543,21 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D4",
         "linkDatario": "Bologna_Centro_D4.jpeg"
+    },
+    {
+        "Ornaghi 1992": "3722A",
+        "Targhetta Tipo": 249,
+        "Targhetta Ufficio": 3722,
+        "extra": "A",
+        "Periodo": "Repubblica Sociale Italiana",
+        "Descrizione": "La lotteria di Merano vi farà milionari",
+        "linkTarghetta": "",
+        "Anno": 1944,
+        "Località": "Bologna",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Ornaghi 1992": 3723,
