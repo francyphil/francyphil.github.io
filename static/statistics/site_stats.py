@@ -386,14 +386,15 @@ def main():
     stats["total_barre"] = total_barre
 
     # Conta targhette del Regno presenti nel catalogo Ornaghi 1992
+    # Non si filtra per Periodo perché il campo "Ornaghi 1992" indica già
+    # la presenza nel catalogo indipendentemente dal periodo (es. RSI, Luogotenenza, ecc.)
     regno_json_path = project_dir / "regno" / "targhetteRegno.json"
     ornaghi_count = 0
     if regno_json_path.exists():
         try:
             with open(regno_json_path, "r", encoding="utf-8") as f:
                 regno_data = json.load(f)
-            regno_items = [item for item in regno_data if item.get("Periodo") == "Regno"]
-            ornaghi_count = sum(1 for item in regno_items if item.get("Ornaghi 1992") not in (None, "", 0))
+            ornaghi_count = sum(1 for item in regno_data if item.get("Ornaghi 1992") not in (None, "", 0))
         except Exception:
             pass
     regno_catalogati = stats["sections"]["Regno"].get("total_catalogati", 0)
