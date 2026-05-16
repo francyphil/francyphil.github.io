@@ -34,6 +34,7 @@
 
   let data = [],
     immagini = [],
+    datiImmagini = [],
     lightboxIndex = 0,
     currentPage = 1;
 
@@ -971,6 +972,7 @@
     const container = document.getElementById("cardContainer");
     container.innerHTML = "";
     immagini = [];
+    datiImmagini = [];
 
     const thList = document.querySelectorAll("#trTitoli th");
     const campi = getCampi();
@@ -1004,6 +1006,7 @@
       img.onclick = () => apriLightbox(i);
       imgContainer.appendChild(img);
       card.appendChild(imgContainer);
+      datiImmagini.push(r);
 
       const newCard = document.createElement("h3");
       card.appendChild(newCard);
@@ -1046,6 +1049,7 @@
     const container = document.getElementById("mobileListContainer");
     container.innerHTML = "";
     immagini = [];
+    datiImmagini = [];
 
     const countDiv = document.createElement("div");
     countDiv.className = "mobile-results-count";
@@ -1111,6 +1115,7 @@
 
       container.appendChild(item);
       immagini.push(imgPath);
+      datiImmagini.push(r);
     });
   }
 
@@ -1121,6 +1126,7 @@
     const overlay = document.getElementById("lightboxOverlay");
     const img = document.getElementById("lightboxImage");
     const fallback = document.getElementById("fallbackText");
+    const info = document.getElementById("lightboxInfo");
     img.src = immagini[index];
     img.style.display = "block";
     fallback.textContent = "";
@@ -1128,6 +1134,14 @@
       img.style.display = "none";
       fallback.textContent = "Immagine non ancora presente";
     };
+    if (info && datiImmagini[index]) {
+      const r = datiImmagini[index];
+      let testo = "n.\u00a0" + r["Targhetta Ufficio"];
+      if (r["extra"] && r["extra"].toString().trim() !== "") {
+        testo += "\u00a0·\u00a0" + r["extra"].toString().trim();
+      }
+      info.textContent = testo;
+    }
     overlay.style.display = "flex";
   }
 

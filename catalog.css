@@ -146,6 +146,21 @@ th {
   margin-bottom: 10px;
 }
 
+#lightboxInfo {
+  position: fixed;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 18px;
+  padding: 10px 22px;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 1001;
+  white-space: nowrap;
+}
+
 #lightboxOverlay .controls {
   pointer-events: none;
 }
