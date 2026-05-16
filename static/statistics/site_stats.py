@@ -385,6 +385,21 @@ def main():
             pass
     stats["total_barre"] = total_barre
 
+    # Conta targhette del Regno presenti nel catalogo Ornaghi 1992
+    regno_json_path = project_dir / "regno" / "targhetteRegno.json"
+    ornaghi_count = 0
+    if regno_json_path.exists():
+        try:
+            with open(regno_json_path, "r", encoding="utf-8") as f:
+                regno_data = json.load(f)
+            regno_items = [item for item in regno_data if item.get("Periodo") == "Regno"]
+            ornaghi_count = sum(1 for item in regno_items if item.get("Ornaghi 1992") not in (None, "", 0))
+        except Exception:
+            pass
+    regno_catalogati = stats["sections"]["Regno"].get("total_catalogati", 0)
+    stats["sections"]["Regno"]["targhette_in_ornaghi_1992"] = ornaghi_count
+    stats["sections"]["Regno"]["targhette_nuove_vs_ornaghi_1992"] = regno_catalogati - ornaghi_count
+
     output_file = Path(__file__).parent / "site_stats.json"
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2, ensure_ascii=False)
@@ -397,6 +412,8 @@ def main():
     print(f"✓ Datari univoci totali: {stats['total_datari']}")
     print(f"✓ Onde classificate: {stats['total_onde']}")
     print(f"✓ Barre classificate: {stats['total_barre']}")
+    print(f"✓ Targhette in Ornaghi 1992: {stats['sections']['Regno']['targhette_in_ornaghi_1992']}")
+    print(f"✓ Targhette nuove vs Ornaghi 1992: {stats['sections']['Regno']['targhette_nuove_vs_ornaghi_1992']}")
     # Genera report CSV per immagini mancanti e non referenziate (Regno)
     missing_csv = project_dir / 'missing_images.csv'
     unref_csv = project_dir / 'unreferenced_regno_images.csv'
