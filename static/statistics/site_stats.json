@@ -1,15 +1,15 @@
 {
   "total_pages": 51,
-  "total_images": 4216,
+  "total_images": 4225,
   "sections": {
     "Regno": {
       "total_catalogati": 4324,
-      "images_present": 3933,
-      "images_pct": 91.0,
+      "images_present": 3941,
+      "images_pct": 91.1,
       "datario_present": 3698,
       "datario_pct": 85.5,
-      "targhette_in_ornaghi_1992": 3985,
-      "targhette_nuove_vs_ornaghi_1992": 339
+      "targhette_in_ornaghi_1992": 3984,
+      "targhette_nuove_vs_ornaghi_1992": 340
     },
     "Trieste A": {
       "total_catalogati": 22,
