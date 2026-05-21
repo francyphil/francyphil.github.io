@@ -203,26 +203,20 @@ def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict
                     candidate_names = [f"prev_{uff}{extra_part}.jpeg"]
                 found = any(any(search_root.rglob(name)) for name in candidate_names)
             if not found:
-                # nome atteso da mostrare nel report (primo candidato)
-                if folder == 'triestea':
-                    display_filename = f"prev_trieste_{uff}{extra_part}.jpeg"
-                elif folder == 'colonie/libia':
-                    display_filename = f"prev_tripoli_{uff}{extra_part}.jpeg"
-                else:
-                    display_filename = f"prev_{uff}{extra_part}.jpeg"
                 rows.append({
                     'section': section_name,
-                    'expected_filename': display_filename,
+                    'Anno': item.get('Anno',''),
                     'Targhetta Ufficio': uff,
                     'extra': extra,
                     'Descrizione': item.get('Descrizione',''),
-                    'Località': item.get('Località','')
+                    'Località': item.get('Località',''),
+                    'Denominazione ufficio': item.get('Denominazione ufficio','')
                 })
 
     # Scrivi CSV
     if rows:
         with open(out_csv, 'w', newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['section','expected_filename','Targhetta Ufficio','extra','Descrizione','Località']
+            fieldnames = ['section','Anno','Targhetta Ufficio','extra','Descrizione','Località','Denominazione ufficio']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             for r in rows:
@@ -230,7 +224,7 @@ def write_missing_images_report(root_dir: Path, out_csv: Path, image_index: dict
     else:
         # crea file vuoto con header
         with open(out_csv, 'w', newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['section','expected_filename','Targhetta Ufficio','extra','Descrizione','Località']
+            fieldnames = ['section','Anno','Targhetta Ufficio','extra','Descrizione','Località','Denominazione ufficio']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
 
