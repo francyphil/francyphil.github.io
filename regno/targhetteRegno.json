@@ -33506,8 +33506,8 @@
         "Località": "Genova",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "D7",
-        "linkDatario": "Genova_Centro_D7.jpeg"
+        "Datario": "",
+        "linkDatario": ""
     },
     {
         "Ornaghi 1992": 1968,
@@ -33583,6 +33583,21 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D7",
         "linkDatario": "Genova_Centro_D7.jpeg"
+    },
+    {
+        "Ornaghi 1992": "",
+        "Targhetta Tipo": 17,
+        "Targhetta Ufficio": 1972,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Pregate i vostri corrispondenti",
+        "linkTarghetta": "",
+        "Anno": 1929,
+        "Località": "Genova",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "D10",
+        "linkDatario": ""
     },
     {
         "Ornaghi 1992": 1973,
