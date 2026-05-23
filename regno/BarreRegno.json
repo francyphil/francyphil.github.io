@@ -6,20 +6,6 @@
         "Descrizione": "Barre",
         "linkTarghetta": "",
         "linkImgTarghetta": "",
-        "Anno": 1939,
-        "Località": "Massa Apuania",
-        "Denominazione ufficio": "Arr. E Part",
-        "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
-    },
-    {
-        "Targhetta Tipo": "",
-        "Targhetta Ufficio": "",
-        "extra": "",
-        "Descrizione": "Barre",
-        "linkTarghetta": "",
-        "linkImgTarghetta": "",
         "Anno": 1938,
         "Località": "Asti",
         "Denominazione ufficio": "Corrispondenze",
@@ -216,6 +202,20 @@
         "Descrizione": "Barre",
         "linkTarghetta": "",
         "linkImgTarghetta": "",
+        "Anno": 1939,
+        "Località": "Massa Apuania",
+        "Denominazione ufficio": "Arr. E Part",
+        "Denominazione ufficio breve": "",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
         "Anno": 1924,
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia",
@@ -234,7 +234,7 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia Corr.",
         "Denominazione ufficio breve": "",
-        "Datario": "",
+        "Datario": "D15",
         "linkDatario": ""
     },
     {
@@ -346,7 +346,7 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
+        "Datario": "D3",
         "linkDatario": ""
     },
     {
@@ -431,6 +431,20 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D10",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1926,
+        "Località": "Roma",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D12",
         "linkDatario": ""
     },
     {
@@ -528,7 +542,7 @@
         "Località": "Torino",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
+        "Datario": "D38",
         "linkDatario": ""
     },
     {
@@ -670,5 +684,19 @@
         "Denominazione ufficio breve": "Pavia",
         "Datario": "D1",
         "linkDatario": "Voghera_Pavia_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1923,
+        "Località": "Trieste",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "",
+        "Datario": "",
+        "linkDatario": ""
     }
 ]
