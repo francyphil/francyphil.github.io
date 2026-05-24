@@ -56535,21 +56535,6 @@
         "linkDatario": "Roma_Distr_D19.jpeg"
     },
     {
-        "Ornaghi 1992": "",
-        "Targhetta Tipo": 256,
-        "Targhetta Ufficio": 3271,
-        "extra": "C",
-        "Periodo": "Regno",
-        "Descrizione": "Visitate l'Italia",
-        "linkTarghetta": "",
-        "Anno": 1939,
-        "Località": "Roma",
-        "Denominazione ufficio": "Distribuzione",
-        "Denominazione ufficio breve": "Distr",
-        "Datario": "",
-        "linkDatario": ""
-    },
-    {
         "Ornaghi 1992": 3272,
         "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3272,
@@ -58378,6 +58363,21 @@
         "Denominazione ufficio breve": "Corr",
         "Datario": "D3",
         "linkDatario": "Genova_Corr_D3.jpeg"
+    },
+    {
+        "Ornaghi 1992": "",
+        "Targhetta Tipo": 256,
+        "Targhetta Ufficio": 3384,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Visitate l'Italia",
+        "linkTarghetta": "",
+        "Anno": 1940,
+        "Località": "Genova",
+        "Denominazione ufficio": "Corrispondenze",
+        "Denominazione ufficio breve": "Corr",
+        "Datario": "D4",
+        "linkDatario": "Genova_Corr_D4.jpeg"
     },
     {
         "Ornaghi 1992": 3385,
@@ -61080,6 +61080,21 @@
         "linkDatario": "Ancona_Ferr_D3.jpeg"
     },
     {
+        "Ornaghi 1992": "",
+        "Targhetta Tipo": 256,
+        "Targhetta Ufficio": 3534,
+        "extra": "B",
+        "Periodo": "Regno",
+        "Descrizione": "Visitate l'Italia",
+        "linkTarghetta": "",
+        "Anno": 1941,
+        "Località": "Ancona",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Ornaghi 1992": 3535,
         "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3535,
@@ -62644,6 +62659,21 @@
         "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3623,
         "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Visitate l'Italia",
+        "linkTarghetta": "",
+        "Anno": 1942,
+        "Località": "La Spezia",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
+        "Ornaghi 1992": "",
+        "Targhetta Tipo": 256,
+        "Targhetta Ufficio": 3623,
+        "extra": "B",
         "Periodo": "Regno",
         "Descrizione": "Visitate l'Italia",
         "linkTarghetta": "",
