@@ -537,6 +537,8 @@ select[multiple] {
     border-top: 1px solid #eee;
     border-radius: 0 0 8px 8px;
     margin-bottom: 12px;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
   #mobileFilterPanel label {
     display: flex;
@@ -563,10 +565,16 @@ select[multiple] {
     border-radius: 4px;
     margin-top: 4px;
     max-height: 200px;
-    overflow-x: hidden; /* previene scroll orizzontale */
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    touch-action: pan-y; /* blocca pan orizzontale su iOS */
   }
   #mobileFilterPanel .multi-select-panel .ms-search {
-    font-size: 16px; /* >= 16px previene auto-zoom iOS */
+    font-size: 16px !important; /* >= 16px previene auto-zoom iOS */
+    width: 100%;
+    box-sizing: border-box;
+    margin: 4px 0;
   }
   #mobileFilterPanel .multi-select-panel label {
     padding: 6px 10px;
@@ -575,7 +583,10 @@ select[multiple] {
     align-items: center;
     font-weight: normal;
     color: inherit;
-    white-space: normal; /* previene overflow orizzontale */
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
   }
   #mobileFilterPanel .mobile-panel-controls {
     display: flex;
