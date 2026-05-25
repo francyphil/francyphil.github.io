@@ -191,6 +191,32 @@ nav a.active {
     display: none;
   }
 
+  /* Chevron visivo per i link che aprono sottomenu */
+  .dropdown > a::after {
+    content: ' ›';
+    float: right;
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 0.25s;
+    display: inline-block;
+  }
+  .dropdown.sub-open-li > a::after,
+  .dropdown > .dropdown-content.sub-open ~ a::after {
+    transform: rotate(90deg);
+  }
+  /* Applica il chevron solo ai sotto-voci che hanno sub-submenu */
+  .dropdown-submenu.has-sub > a::after {
+    content: ' ›';
+    float: right;
+    font-size: 16px;
+    line-height: 1;
+    transition: transform 0.25s;
+    display: inline-block;
+  }
+  .dropdown-submenu.has-sub.sub-open-li > a::after {
+    transform: rotate(90deg);
+  }
+
   .dropdown > .dropdown-content.sub-open {
     display: flex !important;
   }

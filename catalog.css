@@ -567,6 +567,10 @@ select[multiple] {
   #mobileFilterPanel .multi-select-panel label {
     padding: 6px 10px;
     font-size: 14px;
+    flex-direction: row;
+    align-items: center;
+    font-weight: normal;
+    color: inherit;
   }
   #mobileFilterPanel .mobile-panel-controls {
     display: flex;

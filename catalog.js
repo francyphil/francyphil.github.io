@@ -157,6 +157,13 @@
     wrapper._panel = panel;
 
     function posizionaPannello() {
+      // Se il pannello e' dentro il wrapper (layout mobile), usa il normale flusso.
+      if (panel.parentNode !== document.body) {
+        panel.style.top = "";
+        panel.style.left = "";
+        panel.style.minWidth = "";
+        return;
+      }
       const rect = btn.getBoundingClientRect();
       panel.style.top = rect.bottom + "px";
       panel.style.left = rect.left + "px";
@@ -165,9 +172,19 @@
 
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
-      document.querySelectorAll(".multi-select-panel.open").forEach((p) => {
+      const inMobileFilterPanel = !!wrapper.closest("#mobileFilterPanel");
+
+      if (inMobileFilterPanel && panel.parentNode === document.body) {
+        wrapper.appendChild(panel);
+      }
+
+      const openPanels = inMobileFilterPanel
+        ? document.querySelectorAll("#mobileFilterPanel .multi-select-panel.open")
+        : document.querySelectorAll(".multi-select-panel.open");
+      openPanels.forEach((p) => {
         if (p !== panel) p.classList.remove("open");
       });
+
       panel.classList.toggle("open");
       if (panel.classList.contains("open")) {
         posizionaPannello();
@@ -1160,6 +1177,50 @@
     apriLightbox(lightboxIndex);
   };
   window.chiudiLightbox = chiudiLightbox;
+
+  // Swipe su mobile per navigare il lightbox.
+  let lightboxTouchStartX = null;
+  let lightboxTouchStartY = null;
+  const lightboxOverlayEl = document.getElementById("lightboxOverlay");
+  if (lightboxOverlayEl) {
+    lightboxOverlayEl.addEventListener(
+      "touchstart",
+      (e) => {
+        if (!e.touches || !e.touches.length) return;
+        lightboxTouchStartX = e.touches[0].clientX;
+        lightboxTouchStartY = e.touches[0].clientY;
+      },
+      { passive: true },
+    );
+
+    lightboxOverlayEl.addEventListener(
+      "touchend",
+      (e) => {
+        if (
+          lightboxTouchStartX == null ||
+          lightboxTouchStartY == null ||
+          !e.changedTouches ||
+          !e.changedTouches.length ||
+          !immagini.length
+        ) {
+          return;
+        }
+
+        const dx = e.changedTouches[0].clientX - lightboxTouchStartX;
+        const dy = e.changedTouches[0].clientY - lightboxTouchStartY;
+        const absDx = Math.abs(dx);
+        const absDy = Math.abs(dy);
+
+        lightboxTouchStartX = null;
+        lightboxTouchStartY = null;
+
+        if (absDx < 50 || absDx <= absDy) return;
+        if (dx < 0) window.nextImage();
+        else window.prevImage();
+      },
+      { passive: true },
+    );
+  }
 
   // ── Grafico ──────────────────────────────────────────────────────────
 

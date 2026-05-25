@@ -34,6 +34,13 @@ async function loadNavbar() {
 function setupMobileDropdowns() {
   const isMobile = () => window.innerWidth <= 768;
   
+  // Marca visivamente i link che hanno sotto-menu
+  document.querySelectorAll('.dropdown-submenu').forEach(li => {
+    if (li.querySelector(':scope > .dropdown-content-sub')) {
+      li.classList.add('has-sub');
+    }
+  });
+
   // Gestisci click sui link dropdown principali (Catalogo, Info)
   document.querySelectorAll('.dropdown > a').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -46,6 +53,7 @@ function setupMobileDropdowns() {
           if (el !== submenu) el.classList.remove('sub-open');
         });
         submenu.classList.toggle('sub-open');
+        link.parentElement.classList.toggle('sub-open-li', submenu.classList.contains('sub-open'));
       }
     });
   });
@@ -59,9 +67,13 @@ function setupMobileDropdowns() {
         e.preventDefault();
         // Chiudi gli altri sotto-sottomenu aperti
         document.querySelectorAll('.dropdown-content-sub.sub-open').forEach(el => {
-          if (el !== submenu) el.classList.remove('sub-open');
+          if (el !== submenu) {
+            el.classList.remove('sub-open');
+            el.parentElement.classList.remove('sub-open-li');
+          }
         });
         submenu.classList.toggle('sub-open');
+        this.parentElement.classList.toggle('sub-open-li', submenu.classList.contains('sub-open'));
       }
       // Se non ha sotto-sottomenu (es. Introduzione), lascia navigare normalmente
     });
