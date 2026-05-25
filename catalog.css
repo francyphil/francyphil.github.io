@@ -549,7 +549,7 @@ select[multiple] {
   #mobileFilterPanel select {
     width: 100%;
     padding: 8px 30px 8px 10px;
-    font-size: 14px;
+    font-size: 16px; /* >= 16px previene auto-zoom iOS */
   }
   #mobileFilterPanel .multi-select-btn {
     padding: 8px 10px;
@@ -563,6 +563,10 @@ select[multiple] {
     border-radius: 4px;
     margin-top: 4px;
     max-height: 200px;
+    overflow-x: hidden; /* previene scroll orizzontale */
+  }
+  #mobileFilterPanel .multi-select-panel .ms-search {
+    font-size: 16px; /* >= 16px previene auto-zoom iOS */
   }
   #mobileFilterPanel .multi-select-panel label {
     padding: 6px 10px;
@@ -571,6 +575,7 @@ select[multiple] {
     align-items: center;
     font-weight: normal;
     color: inherit;
+    white-space: normal; /* previene overflow orizzontale */
   }
   #mobileFilterPanel .mobile-panel-controls {
     display: flex;
