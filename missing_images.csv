@@ -10,7 +10,6 @@ Regno,1924,151,A,Spazio riservato alla pubblicità,Roma,Centro
 Regno,1924,176,,Rinascente - attualmente vendita del bianco,Milano,Arrivi 
 Regno,1924,187,B,tingete tende - lidos - super colore,Milano,Ferrovia
 Regno,1924,218,,Votate la lista nazionale,Firenze,Distribuzione
-Regno,1924,253,,Votate la lista nazionale,Verona,Centro ( A )
 Regno,1924,277,,Afro Ballari ( con linea divisoria ),Milano,Ferrovia
 Regno,1924,296,A,Tende Ettore Moretti ( con ombra ),Milano,Ferrovia
 Regno,1924,297,,Tende Ettore Moretti ( con ombra ),Milano,Portalettere
@@ -171,7 +170,7 @@ Regno,1928,1611,,Preferite le sigarette Eja Savoia Eva,Milano,Ferrovia
 Regno,1928,1613,,Preferite le sigarette Eja Savoia Eva,Palermo,Ferrovia
 Regno,1928,1625,,Preferite le sigarette Eja Savoia Eva,Milano,Corrispondenze Centro P
 Regno,1928,1629,R,Preferite le sigarette Eja Savoia Eva,Venezia,Centro
-Regno,1928,1635,R,Preferite le sigarette Eja Savoia Eva,Milano,Distribuzione
+Regno,1928,1635,,Preferite le sigarette Eja Savoia Eva,Milano,Distribuzione
 Regno,1928,1639,,Preferite le sigarette Eja Savoia Eva,Roma,Distribuzione
 Regno,1928,1647,,IL chinino è il farmaco sovrano per ...,Milano,Centro Arrivi
 Regno,1928,1669,A,IL dispensario è buona guida alla profilassi ..,Milano,Ferrovia
@@ -185,12 +184,10 @@ Regno,1929,1768,A,O.N. Dopolavoro ,Milano,Corrispondenze Centro A
 Regno,1929,1777,,Agricoltori raccogliete il comandamento del duce,Roma,Ferrovia
 Regno,1929,1789,,IL grano diventi ovunque è possibile una …,Genova,Centro
 Regno,1929,1803,,Agricoltori coltivate razionalmente - vincerete,Genova,Ferrovia
-Regno,1929,1807,,E' dovere di tutti gli agricoltori italiani ….,Firenze,Centro
 Regno,1929,1809,A,E' dovere di tutti gli agricoltori italiani ….,Firenze,Centro
 Regno,1929,1811,A,E' dovere di tutti gli agricoltori italiani ….,Firenze,Ferrovia
 Regno,1929,1814,,E' dovere di tutti gli agricoltori italiani ….,Napoli,Distribuzione
 Regno,1929,1843,,E' dovere di tutti gli agricoltori italiani ….,Palermo,Centro
-Regno,1929,1844,,Agricoltori bisogna vincere la battaglia del grano,Venezia,Centro
 Regno,1929,1862,,Un  altro quintale in più di media e …,Milano,Corrispondenze Centro P
 Regno,1929,1881,,Il problema del grano investe il problema …,Roma,Ferrovia
 Regno,1929,1906,,Usate i pacchi postali urgenti,Salerno,3 stelle
@@ -198,24 +195,19 @@ Regno,1929,1912,,Usate i pacchi postali urgenti,Bologna,Ferrovia
 Regno,1929,1916,,Usate i pacchi postali urgenti,Spezia,Centro
 Regno,1929,1916,R,Usate i pacchi postali urgenti,Spezia,Centro
 Regno,1929,1918,,Usate i pacchi postali urgenti,Venezia,Centro
-Regno,1929,1923,,Montecatini - ottimo per cura e soggiorno,Milano,Corrispondenze Centro A
 Regno,1929,1923,A,Montecatini - ottimo per cura e soggiorno,Milano,Corrispondenze Centro A
 Regno,1929,1925,,Montecatini - ottimo per cura e soggiorno,Palermo,Centro
 Regno,1929,1926,,Montecatini - ottimo per cura e soggiorno,Roma,Distribuzione
 Regno,1929,1932,A,Montecatini - ottimo per cura e soggiorno,Torino,Centro
 Regno,1929,1940,,Montecatini - opportuno continuare cura a domicilio,Bologna,Centro
-Regno,1929,1960,,Montecatini - ottimo per cura e soggiorno,Roma,Centro
-Regno,1929,1960,AR,Montecatini - ottimo per cura e soggiorno,Bologna,Centro
 Regno,1929,1964,AR,Montecatini - opportuno continuare la cura a domicilio,Torino,Centro
 Regno,1929,1967,,Pregate i vostri corrispondenti,Genova,Centro
 Regno,1929,1976,,Preferite le sigarette Eja Savoia Eva,Milano,Distribuzione
 Regno,1929,1986,,Preferite le sigarette orientali Eva - Eja,Verona,Centro ( A )
 Regno,1929,1987,R,Preferite le sigarette orientali Eva - Eja,Verona,Ferrovia
-Regno,1929,1994,A,Preferite le sigarette orientali Eva - Eja,Milano,Ferrovia
 Regno,1929,2002,A,Fumatori di toscani provate …,Palermo,Ferrovia
 Regno,1929,2007,,Fumatori di toscani provate …,Milano,Corrispondenze Centro A
 Regno,1929,2011,A,Fumatori di toscani provate …,Milano,Ferrovia
-Regno,1930,2027,,Il problema del grano investe il problema …,Roma,Ferrovia
 Regno,1930,2029,,Agricoltori bisogna vincere la battaglia del grano,Genova,Centro
 Regno,1930,2030,,Agricoltori bisogna vincere la battaglia del grano,Genova,Ferrovia
 Regno,1930,2038,,Montecatini stabilimenti aperti il 1° Aprile,Milano,Corrispondenze Centro P
@@ -305,7 +297,7 @@ Regno,1936,2888,,La lotteria di Merano vi farà milionari,Palermo,Ferrovia
 Regno,1936,2891,,La lotteria di Merano vi farà milionari,Roma,Distribuzione
 Regno,1936,2897,B,La lotteria di Merano vi farà milionari,Torino,Centro
 Regno,1936,2900,,La lotteria di Merano vi farà milionari,Trieste,Arrivi e partenze
-Regno,1936,2913,A,Correntisti postali usate il postagiro …,Torino,Centro
+Regno,1936,2913,B,Chiedete agli uffici postali la guida pratica …,Torino,Centro
 Regno,1937,2916,,Tutti gli uffici postali eseguono il servizio ...,Trento,Ferrovia
 Regno,1937,2918,B,Prestito nazionale rendita 5%,Roma,Ostiense
 Regno,1937,2938,,Lotteria automobilistica di Tripoli,Milano,Ferrovia
@@ -342,7 +334,7 @@ Regno,1939,3290,,Lotteria automobilistica di Tripoli,Torino,Ferrovia
 Regno,1939,3329,,La lotteria di Merano vi farà milionari,Bologna,Ferrovia
 Regno,1939,3338,,La lotteria di Merano vi farà milionari,Milano,Arrivi Distribuzione
 Regno,1939,3354,,La lotteria di Merano vi farà milionari,Torino,Ferrovia
-Regno,1940,3410,B,Visitate l'Italia,Trieste,Corrisp. Pacchi
+Regno,1940,3410,A,Visitate l'Italia,Trieste,C.P.
 Regno,1940,3416,,La lotteria E 42 vi farà milionari,Venezia,Ferrovia
 Regno,1940,3447,,Lotteria automobilistica di Tripoli,Genova,Corrispondenze
 Regno,1940,3451,,Lotteria automobilistica di Tripoli,Milano,Centro Corrisp. e pacchi
