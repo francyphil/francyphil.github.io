@@ -588,6 +588,9 @@ select[multiple] {
     overflow-wrap: anywhere;
     max-width: 100%;
   }
+  #mobileFilterPanel .multi-select-panel label.ms-hidden {
+    display: none;
+  }
   #mobileFilterPanel .mobile-panel-controls {
     display: flex;
     gap: 10px;
