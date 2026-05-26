@@ -399,13 +399,9 @@
       });
       if (valori.size > 500 || valori.size <= 1) return;
 
-      const fieldLabel = document.createElement("label");
+      const fieldLabel = document.createElement("div");
+      fieldLabel.className = "mobile-filter-label";
       fieldLabel.textContent = thList[idx].textContent;
-      // Impedisce che un click dentro il pannello multi-select (es. campo cerca)
-      // attivi la synthetic click sul button, comportamento nativo dei <label> in iOS.
-      fieldLabel.addEventListener("click", (e) => {
-        if (e.target.closest(".multi-select-panel")) e.preventDefault();
-      });
 
       const valoriOrdinati = Array.from(valori).sort(smartSort);
       const ms = creaMultiSelect(campo, valoriOrdinati, () => {

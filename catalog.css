@@ -540,7 +540,7 @@ select[multiple] {
     overflow-x: hidden;
     box-sizing: border-box;
   }
-  #mobileFilterPanel label {
+  #mobileFilterPanel .mobile-filter-label {
     display: flex;
     flex-direction: column;
     gap: 4px;
