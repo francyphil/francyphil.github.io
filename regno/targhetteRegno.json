@@ -27045,6 +27045,21 @@
         "linkDatario": ""
     },
     {
+        "Ornaghi 1992": "",
+        "Targhetta Tipo": 151,
+        "Targhetta Ufficio": 1597,
+        "extra": "A",
+        "Periodo": "Regno",
+        "Descrizione": "Preferite le sigarette Eja Savoia Eva",
+        "linkTarghetta": "",
+        "Anno": 1928,
+        "Località": "Palermo",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "",
+        "linkDatario": ""
+    },
+    {
         "Ornaghi 1992": 1598,
         "Targhetta Tipo": 151,
         "Targhetta Ufficio": 1598,
@@ -50146,24 +50161,9 @@
     },
     {
         "Ornaghi 1992": "2913A",
-        "Targhetta Tipo": 216,
+        "Targhetta Tipo": 219,
         "Targhetta Ufficio": 2913,
         "extra": "A",
-        "Periodo": "Regno",
-        "Descrizione": "Correntisti postali usate il postagiro …",
-        "linkTarghetta": "",
-        "Anno": 1936,
-        "Località": "Torino",
-        "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
-    },
-    {
-        "Ornaghi 1992": "",
-        "Targhetta Tipo": 216,
-        "Targhetta Ufficio": 2913,
-        "extra": "B",
         "Periodo": "Regno",
         "Descrizione": "Chiedete agli uffici postali la guida pratica …",
         "linkTarghetta": "",
@@ -58905,10 +58905,10 @@
         "linkDatario": "Trieste_CorrPacc1_D1.jpeg"
     },
     {
-        "Ornaghi 1992": "3410A",
+        "Ornaghi 1992": "3410B",
         "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3410,
-        "extra": "A",
+        "extra": "B",
         "Periodo": "Regno",
         "Descrizione": "Visitate l'Italia",
         "linkTarghetta": "",
@@ -58920,10 +58920,10 @@
         "linkDatario": "Trieste_CPPunt_D1.jpeg"
     },
     {
-        "Ornaghi 1992": "3410B",
+        "Ornaghi 1992": "3410A",
         "Targhetta Tipo": 256,
         "Targhetta Ufficio": 3410,
-        "extra": "B",
+        "extra": "A",
         "Periodo": "Regno",
         "Descrizione": "Visitate l'Italia",
         "linkTarghetta": "",

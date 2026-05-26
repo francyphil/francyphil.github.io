@@ -21,11 +21,10 @@ Regno,1924,357,,Linoleum - Pavimento moderno,Napoli,Distribuzione
 Regno,1924,360,,Linoleum - Pavimento moderno,Roma,Ferrovia
 Regno,1924,370,A,Mata hari,Caserta,Ferrovia
 Regno,1924,373,A,Mata hari,Foggia,Ferrovia ( 26 - 22 )
-Regno,1924,375,A,Mata hari,Genova,Ferr. 2 smistamento 2
 Regno,1924,380,,Mata hari,Milano,Ferrovia
+Regno,1924,388,,Mata hari,Pisa,Ferrovia
 Regno,1924,389,B,Mata hari,Torino,Centro
 Regno,1924,390,A,Mata hari,Torino,Ferrovia
-Regno,1924,395,A,Mata hari ( col trattino tra Mata ed Hari ),Pisa,Ferrovia
 Regno,1924,396,R,Mata hari ( col trattino tra Mata ed Hari ),Roma,Ferrovia
 Regno,1924,398,R,Mata hari ( col trattino prima e dopo 'pubblica' ),Genova,Centro
 Regno,1924,416,,Gran premio Milano- San Siro,Milano,Portalettere
@@ -41,7 +40,6 @@ Regno,1924,438,,Afro Ballari ( senza linea divisoria ),Torino,Centro
 Regno,1924,439,A,Afro Ballari ( senza linea divisoria ),Torino,Ferrovia
 Regno,1924,443,,Salsomaggiore - Monumentali Terme Berzieri Maggio - Ottobre,Genova,Ferr. 2 smistamento 2
 Regno,1924,446,,Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 1,Genova,Ferr. 2 smistamento 2
-Regno,1924,447,R,Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 1,Milano,Centro
 Regno,1924,457,,Lingue - berlitz school,Milano,Portalettere
 Regno,1924,459,,Salsomaggiore - Regi stabilimenti termali acque salso bromo jodiche,Firenze,Centro
 Regno,1924,462,,Salsomaggiore - Regi stabilimenti termali acque salso bromo jodiche,Torino,Centro
@@ -96,7 +94,6 @@ Regno,1927,867,,Acquistate i buoni postali fruttiferi,Torino,Ferrovia
 Regno,1927,869,A,Acquistate i buoni postali fruttiferi,Verona,Ferr. 68 - 112 ( A )
 Regno,1927,871,A,Acquistate i buoni postali - fruttiferi -,Roma,Centro
 Regno,1927,886,,Pregate i vostri corrispondenti,Torino,Centro
-Regno,1927,900,,Preferite le sigarette Savoia Eva,Verona,Centro ( A )
 Regno,1927,934,,Montecatini stabilimenti aperti il 1° Aprile,Verona,Centro ( A )
 Regno,1927,935,,Montecatini stabilimenti aperti il 1° Aprile,Verona,Centro ( A )
 Regno,1927,944,A,Montecatini autunno - ottimo per cura e soggiorno,Bologna,Centro
@@ -165,7 +162,6 @@ Regno,1928,1551,A,Montecatini - ottimo per cura e soggiorno,Torino,Centro
 Regno,1928,1554,,Montecatini - opportuno continuare cura a domicilio,Genova,Centro
 Regno,1928,1582,,Preferite le sigarette Eja Savoia Eva,Verona,Centro ( A )
 Regno,1928,1592,R,Preferite le sigarette Eja Savoia Eva,Milano,Ferrovia
-Regno,1928,1597,,Preferite le sigarette Eja Savoia Eva,Palermo,Ferrovia
 Regno,1928,1611,,Preferite le sigarette Eja Savoia Eva,Milano,Ferrovia
 Regno,1928,1613,,Preferite le sigarette Eja Savoia Eva,Palermo,Ferrovia
 Regno,1928,1625,,Preferite le sigarette Eja Savoia Eva,Milano,Corrispondenze Centro P
@@ -297,7 +293,6 @@ Regno,1936,2888,,La lotteria di Merano vi farà milionari,Palermo,Ferrovia
 Regno,1936,2891,,La lotteria di Merano vi farà milionari,Roma,Distribuzione
 Regno,1936,2897,B,La lotteria di Merano vi farà milionari,Torino,Centro
 Regno,1936,2900,,La lotteria di Merano vi farà milionari,Trieste,Arrivi e partenze
-Regno,1936,2913,B,Chiedete agli uffici postali la guida pratica …,Torino,Centro
 Regno,1937,2916,,Tutti gli uffici postali eseguono il servizio ...,Trento,Ferrovia
 Regno,1937,2918,B,Prestito nazionale rendita 5%,Roma,Ostiense
 Regno,1937,2938,,Lotteria automobilistica di Tripoli,Milano,Ferrovia
@@ -334,7 +329,7 @@ Regno,1939,3290,,Lotteria automobilistica di Tripoli,Torino,Ferrovia
 Regno,1939,3329,,La lotteria di Merano vi farà milionari,Bologna,Ferrovia
 Regno,1939,3338,,La lotteria di Merano vi farà milionari,Milano,Arrivi Distribuzione
 Regno,1939,3354,,La lotteria di Merano vi farà milionari,Torino,Ferrovia
-Regno,1940,3410,A,Visitate l'Italia,Trieste,C.P.
+Regno,1940,3410,A,Visitate l'Italia,Trieste,Corrisp. Pacchi
 Regno,1940,3416,,La lotteria E 42 vi farà milionari,Venezia,Ferrovia
 Regno,1940,3447,,Lotteria automobilistica di Tripoli,Genova,Corrispondenze
 Regno,1940,3451,,Lotteria automobilistica di Tripoli,Milano,Centro Corrisp. e pacchi
