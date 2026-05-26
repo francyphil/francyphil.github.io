@@ -587,9 +587,13 @@ select[multiple] {
     word-break: break-word;
     overflow-wrap: anywhere;
     max-width: 100%;
+    touch-action: manipulation; /* iOS: tratta i tap come click, non come pan */
   }
   #mobileFilterPanel .multi-select-panel label.ms-hidden {
     display: none;
+  }
+  #mobileFilterPanel .multi-select-panel .ms-actions button {
+    touch-action: manipulation;
   }
   #mobileFilterPanel .mobile-panel-controls {
     display: flex;

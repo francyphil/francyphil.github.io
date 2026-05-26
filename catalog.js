@@ -147,6 +147,14 @@
         aggiornaMultiSelectLabel(wrapper);
         onChange();
       });
+      // Handler esplicito per iOS: il relay nativo del <label> non è affidabile
+      // dentro container overflow-y:auto. Gestiamo noi il toggle.
+      lbl.addEventListener("click", (e) => {
+        if (e.target === cb) return; // click diretto sulla checkbox: lascia agire il browser
+        e.preventDefault();         // blocca il relay nativo del label
+        cb.checked = !cb.checked;
+        cb.dispatchEvent(new Event("change"));
+      });
       lbl.appendChild(cb);
       lbl.appendChild(document.createTextNode(String(v)));
       panel.appendChild(lbl);
