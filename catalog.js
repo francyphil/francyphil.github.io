@@ -1019,6 +1019,7 @@
       img.src = imgPath;
       img.alt = r["Descrizione"] || "Annullo";
       img.loading = "lazy";
+      img.decoding = "async";
 
       img.onerror = () => {
         img.style.display = "none";
@@ -1095,6 +1096,7 @@
       const img = document.createElement("img");
       img.src = imgPath;
       img.loading = "lazy";
+      img.decoding = "async";
       img.onerror = () => {
         img.style.display = "none";
         const noImg = document.createElement("span");

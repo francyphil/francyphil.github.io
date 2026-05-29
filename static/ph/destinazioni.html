@@ -269,6 +269,8 @@
                 <img src="${dest.immagine}" 
                      alt="${descrizione}" 
                      class="popup-image"
+                     loading="lazy"
+                     decoding="async"
                      onclick="openLightbox('${dest.immagine}'); event.stopPropagation();"
                      onerror="this.style.display='none'">
                 <div class="popup-info">${descrizione}</div>
