@@ -335,7 +335,7 @@ select[multiple] {
   background: #f0f7ff;
 }
 .multi-select-panel label.ms-hidden {
-  display: none;
+  display: none !important;
 }
 .multi-select-panel input[type="checkbox"] {
   margin: 0;
@@ -590,7 +590,7 @@ select[multiple] {
     touch-action: manipulation; /* iOS: tratta i tap come click, non come pan */
   }
   #mobileFilterPanel .multi-select-panel label.ms-hidden {
-    display: none;
+    display: none !important;
   }
   #mobileFilterPanel .multi-select-panel .ms-actions button {
     touch-action: manipulation;

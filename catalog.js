@@ -68,9 +68,14 @@
       costruisciFiltri(data);
       costruisciFiltriMobile(data);
       aggiornaVisualizzazione(data);
+      let lastWidth = window.innerWidth;
       window.addEventListener("resize", () => {
-        calcolaLarghezzeFisse(data);
-        aggiornaVisualizzazione(filtraDati(data));
+        const currentWidth = window.innerWidth;
+        if (currentWidth !== lastWidth) {
+          lastWidth = currentWidth;
+          calcolaLarghezzeFisse(data);
+          aggiornaVisualizzazione(filtraDati(data));
+        }
       });
     })
     .catch(() => {
@@ -98,15 +103,20 @@
     search.type = "text";
     search.className = "ms-search";
     search.placeholder = "Cerca…";
-    search.addEventListener("input", () => {
-      const q = search.value.toLowerCase();
+    
+    function filterOptions() {
+      const q = search.value.toLowerCase().trim();
       panel.querySelectorAll("label.ms-option").forEach((lbl) => {
-        lbl.classList.toggle(
-          "ms-hidden",
-          q && !lbl.textContent.toLowerCase().includes(q),
-        );
+        const valAttr = lbl.dataset.value || "";
+        const matches = valAttr.includes(q) || lbl.textContent.toLowerCase().includes(q);
+        lbl.classList.toggle("ms-hidden", q && !matches);
       });
-    });
+    }
+
+    search.addEventListener("input", filterOptions);
+    search.addEventListener("keyup", filterOptions);
+    search.addEventListener("change", filterOptions);
+    search.addEventListener("compositionend", filterOptions);
     panel.appendChild(search);
 
     // Azioni: seleziona tutto / deseleziona tutto
@@ -140,6 +150,7 @@
     valoriOrdinati.forEach((v) => {
       const lbl = document.createElement("label");
       lbl.className = "ms-option";
+      lbl.dataset.value = String(v).toLowerCase();
       const cb = document.createElement("input");
       cb.type = "checkbox";
       cb.value = v;
