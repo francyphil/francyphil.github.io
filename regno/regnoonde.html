@@ -14,22 +14,97 @@
         margin: 0;
         padding: 0;
       }
-      .image-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        gap: 12px;
-        margin-top: 18px;
+      .tipo-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-top: 24px;
       }
-      .image-gallery img {
-        width: 100%;
-        height: 180px;
-        object-fit: contain;
-        display: block;
-        border: 1px solid #ddd;
-        padding: 4px;
+
+      .tipo-card {
         background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        width: 340px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .tipo-card h3 {
+        margin: 0;
+        padding: 14px 16px 10px;
+        font-size: 1.05em;
+        color: #2c3e50;
+        border-bottom: 1px solid #eee;
+      }
+
+      .tipo-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: contain;
+        background: #f9f9f9;
+        display: block;
+        padding: 6px;
         box-sizing: border-box;
       }
+
+      .tipo-card-images {
+        position: relative;
+        background: #f9f9f9;
+        height: 160px;
+      }
+
+      .tipo-card-images img {
+        width: 100%;
+        height: 160px;
+        padding: 6px;
+        display: none;
+      }
+
+      .tipo-card-images img.active {
+        display: block;
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.3);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 4px 10px;
+        cursor: pointer;
+        font-size: 16px;
+        z-index: 1;
+        line-height: 1;
+      }
+
+      .carousel-btn:hover {
+        background: rgba(0,0,0,0.55);
+      }
+
+      .carousel-prev { left: 4px; }
+      .carousel-next { right: 4px; }
+
+      .carousel-counter {
+        position: absolute;
+        bottom: 4px;
+        right: 8px;
+        font-size: 0.75em;
+        color: #888;
+      }
+
+      .tipo-card-desc {
+        padding: 12px 16px;
+        font-size: 0.9em;
+        color: #555;
+        line-height: 1.5;
+        min-height: 60px;
+      }
+
       .onde-table {
         border-collapse: collapse;
         margin-top: 18px;
@@ -90,71 +165,88 @@
       </p>
 
       <h2>Flyer</h2>
-      <ul>
-        <li>
-          Annulli a 7 onde con lunghezza di circa 45 mm
-          <div class="image-gallery">
-            <img src="../static/jpeg/onde/Onde_C.jpeg" alt="Onde C" loading="lazy" decoding="async" />
-          </div>
-        </li>
-        <li>
-          Annulli a 7 onde con lunghezza di circa 55 mm
-          <div class="image-gallery">
-            <img src="../static/jpeg/onde/Onde_L.jpeg" alt="Onde L" loading="lazy" decoding="async" />
-          </div>
-        </li>
-        <li>
-          Annulli a 7 onde con lunghezza di circa 45 mm e con lettera C, T, R e D
-          <div class="image-gallery">
-            <img src="../static/jpeg/onde/Onde_Let_C_C.jpeg" alt="Onde Let C C" loading="lazy" decoding="async" />
+      <div class="tipo-cards">
+
+        <div class="tipo-card">
+          <h3>Annulli a 7 onde con lunghezza di circa 45 mm</h3>
+          <img src="../static/jpeg/onde/Onde_C.jpeg" alt="Onde C" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc"></div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Annulli a 7 onde con lunghezza di circa 55 mm</h3>
+          <img src="../static/jpeg/onde/Onde_L.jpeg" alt="Onde L" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc"></div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Annulli a 7 onde ~45 mm con lettera C, T, R e D</h3>
+          <div class="tipo-card-images">
+            <button class="carousel-btn carousel-prev" onclick="carouselPrev(this)">⟨</button>
+            <img src="../static/jpeg/onde/Onde_Let_C_C.jpeg" alt="Onde Let C C" loading="lazy" decoding="async" class="active" />
             <img src="../static/jpeg/onde/Onde_Let_C_D.jpeg" alt="Onde Let C D" loading="lazy" decoding="async" />
             <img src="../static/jpeg/onde/Onde_Let_C_R.jpeg" alt="Onde Let C R" loading="lazy" decoding="async" />
             <img src="../static/jpeg/onde/Onde_Let_C_T.jpeg" alt="Onde Let C T" loading="lazy" decoding="async" />
+            <button class="carousel-btn carousel-next" onclick="carouselNext(this)">⟩</button>
+            <span class="carousel-counter"></span>
           </div>
-        </li>
-        <li>
-          Annulli a 7 onde con lunghezza di circa 55 mm e con lettera C, T, R e D
-          <div class="image-gallery">
-            <img src="../static/jpeg/onde/Onde_Let_L_C.jpeg" alt="Onde Let L C" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc"></div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Annulli a 7 onde ~55 mm con lettera C, T, R e D</h3>
+          <div class="tipo-card-images">
+            <button class="carousel-btn carousel-prev" onclick="carouselPrev(this)">⟨</button>
+            <img src="../static/jpeg/onde/Onde_Let_L_C.jpeg" alt="Onde Let L C" loading="lazy" decoding="async" class="active" />
             <img src="../static/jpeg/onde/Onde_Let_L_D.jpeg" alt="Onde Let L D" loading="lazy" decoding="async" />
             <img src="../static/jpeg/onde/Onde_Let_L_R.jpeg" alt="Onde Let L R" loading="lazy" decoding="async" />
             <img src="../static/jpeg/onde/Onde_Let_L_T.jpeg" alt="Onde Let L T" loading="lazy" decoding="async" />
+            <button class="carousel-btn carousel-next" onclick="carouselNext(this)">⟩</button>
+            <span class="carousel-counter"></span>
           </div>
-        </li>
-        <li>
-          Annulli a onde molto accentuate
-          <div class="image-gallery">
-            <img src="../static/jpeg/onde/Onde_fitte.jpeg" alt="Onde fitte" loading="lazy" decoding="async" />
-          </div>
-        </li>
-        <li>Annulli a onde poco accentuate</li>
-        <li>
-          Annulli a 9 onde
-          <div class="image-gallery">
-            <img src="../static/jpeg/onde/Onde9.jpeg" alt="Onde 9" loading="lazy" decoding="async" />
-          </div>
-        </li>
-      </ul>
+          <div class="tipo-card-desc"></div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Annulli a onde molto accentuate</h3>
+          <img src="../static/jpeg/onde/Onde_fitte.jpeg" alt="Onde fitte" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc"></div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Annulli a onde poco accentuate</h3>
+          <div class="tipo-card-desc"></div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Annulli a 9 onde</h3>
+          <img src="../static/jpeg/onde/Onde9.jpeg" alt="Onde 9" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc"></div>
+        </div>
+
+      </div>
 
       <h2>Universal</h2>
-      <ul>
-        <li>
-          Annulli a 9 onde
-          <div class="image-gallery">
-            <img src="../static/jpeg/onde/RomaFerUniv.jpeg" alt="Roma Ferrovia Universal" loading="lazy" decoding="async" />
-          </div>
-        </li>
-      </ul>
+      <div class="tipo-cards">
+
+        <div class="tipo-card">
+          <h3>Annulli a 9 onde</h3>
+          <img src="../static/jpeg/onde/RomaFerUniv.jpeg" alt="Roma Ferrovia Universal" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc"></div>
+        </div>
+
+      </div>
 
       <h2>Macchina non nota</h2>
-      <ul>
-        <li>
-          Annulli a 9 onde
-          <div class="image-gallery">
-            <img src="../static/jpeg/onde/RomaAD1932.jpeg" alt="Roma Arrivi Distribuzione 1932" loading="lazy" decoding="async" />
-          </div>
-        </li>
-      </ul>
+      <div class="tipo-cards">
+
+        <div class="tipo-card">
+          <h3>Annulli a 9 onde</h3>
+          <img src="../static/jpeg/onde/RomaAD1932.jpeg" alt="Roma Arrivi Distribuzione 1932" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc"></div>
+        </div>
+
+      </div>
 
       <h2>Uffici con annulli ad onde</h2>
       <table id="ondeTable" class="onde-table">
@@ -196,6 +288,30 @@
       </script>
 
       </div>
+
+    <script>
+      function carouselNav(btn, dir) {
+        const container = btn.closest('.tipo-card-images');
+        const imgs = Array.from(container.querySelectorAll('img'));
+        const cur = imgs.findIndex(img => img.classList.contains('active'));
+        imgs[cur].classList.remove('active');
+        imgs[(cur + dir + imgs.length) % imgs.length].classList.add('active');
+        const counter = container.querySelector('.carousel-counter');
+        if (counter) {
+          const next = imgs.findIndex(img => img.classList.contains('active'));
+          counter.textContent = (next + 1) + ' / ' + imgs.length;
+        }
+      }
+      function carouselPrev(btn) { carouselNav(btn, -1); }
+      function carouselNext(btn) { carouselNav(btn, +1); }
+
+      // Inizializza i contatori
+      document.querySelectorAll('.tipo-card-images').forEach(c => {
+        const imgs = c.querySelectorAll('img');
+        const counter = c.querySelector('.carousel-counter');
+        if (counter && imgs.length > 1) counter.textContent = '1 / ' + imgs.length;
+      });
+    </script>
 
     <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>

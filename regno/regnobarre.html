@@ -14,22 +14,50 @@
         margin: 0;
         padding: 0;
       }
-      .image-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        gap: 12px;
-        margin-top: 18px;
+      .tipo-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-top: 24px;
       }
-      .image-gallery img {
+
+      .tipo-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        width: 340px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .tipo-card h3 {
+        margin: 0;
+        padding: 14px 16px 10px;
+        font-size: 1.05em;
+        color: #2c3e50;
+        border-bottom: 1px solid #eee;
+      }
+
+      .tipo-card img {
         width: 100%;
         height: 180px;
         object-fit: contain;
+        background: #f9f9f9;
         display: block;
-        border: 1px solid #ddd;
-        padding: 4px;
-        background: #fff;
+        padding: 8px;
         box-sizing: border-box;
       }
+
+      .tipo-card-desc {
+        padding: 12px 16px;
+        font-size: 0.9em;
+        color: #555;
+        line-height: 1.5;
+        min-height: 60px;
+      }
+
       .barre-table {
         border-collapse: collapse;
         margin-top: 18px;
@@ -66,38 +94,39 @@
       </p>
 
       <h2>Tipologie di annulli a barre</h2>
-      <ul>
-        <li>
-          Annulli a sei barre
-          <div class="image-gallery">
-            <img src="../static/jpeg/barre/6Barre.jpeg" alt="Barre primo tipo" loading="lazy" decoding="async" />
-          </div>
-        </li>
-        <li>
-          Annulli a sette barre Tipo I
-          <div class="image-gallery">
-            <img src="../static/jpeg/barre/7BarreTipo1.jpeg" alt="Barre sette barre Tipo I" loading="lazy" decoding="async" />
-          </div>
-        </li>
-         <li>
-          Annulli a sette barre Tipo II
-          <div class="image-gallery">
-            <img src="../static/jpeg/barre/7BarreTipo2.jpeg" alt="Barre sette barre Tipo II" loading="lazy" decoding="async" />
-          </div>
-        </li>
-         <li>
-          Annulli a sette barre Tipo III
-          <div class="image-gallery">
-            <img src="../static/jpeg/barre/7BarreTipo3.jpeg" alt="Barre sette barre Tipo III" loading="lazy" decoding="async" />
-          </div>
-        </li>     
-         <li>
-          Annulli a sette barre macchina Universal
-          <div class="image-gallery">
-            <img src="../static/jpeg/barre/7BarreUniversal.jpeg" alt="Barre sette barre macchina Universal" loading="lazy" decoding="async" />
-          </div>
-        </li>             
-      </ul>
+      <div class="tipo-cards">
+
+        <div class="tipo-card">
+          <h3>Annulli a sei barre</h3>
+          <img src="../static/jpeg/barre/6Barre.jpeg" alt="Barre sei barre" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc">Caratterizzato da barre di lunghezza circa 40mm e di spessore notevole. Tipicamente usato negli anni 20</div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Annulli a sette barre Tipo I</h3>
+          <img src="../static/jpeg/barre/7BarreTipo1.jpeg" alt="Barre sette barre Tipo I" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc">Caratterizzato da barre di lunghezza circa 40mm e di spessore medio. Tipicamente usato negli anni 20</div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Annulli a sette barre Tipo II</h3>
+          <img src="../static/jpeg/barre/7BarreTipo2.jpeg" alt="Barre sette barre Tipo II" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc">Caratterizzato da barre di lunghezza circa 40mm e di spessore medio. Tipicamente usato negli anni 30</div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Annulli a sette barre Tipo III</h3>
+          <img src="../static/jpeg/barre/7BarreTipo3.jpeg" alt="Barre sette barre Tipo III" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc">Caratterizzato da barre di lunghezza circa 50mm e di spessore medio. Tipicamente usato negli anni 30 e 40</div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Annulli a sette barre macchina Universal</h3>
+          <img src="../static/jpeg/barre/7BarreUniversal.jpeg" alt="Barre sette barre macchina Universal" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc">Caratterizzato da barre di lunghezza circa 30mm e di spessore fine. Usato solo a Trieste</div>
+        </div>
+
+      </div>
 
       <h2>Uffici con annulli a barre</h2>
       <table id="barreTable" class="barre-table">
