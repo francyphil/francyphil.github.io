@@ -2,68 +2,68 @@ section,Anno,Targhetta Ufficio,extra,Descrizione,Località,Denominazione ufficio
 Regno,1908,40,R,Bandiera VEIII,Roma,Ferrovia
 Regno,1910,42,,Bandiera VEIII,Napoli,Ferrovia
 Regno,1913,50,A,Regie Poste,Bologna,Ferrovia
-Regno,1913,52,,Poste Italiane - Torino  ( Krag ),Torino,Ferrovia
-Regno,1920,82,A,Pregate i vostri corrispondenti,Torino,Ferrovia
-Regno,1922,102,A,Pregate i vostri corrispondenti,Bari,Ferrovia
-Regno,1922,120,A,Pregate i vostri corrispondenti,Torino,Centro
-Regno,1924,151,A,Spazio riservato alla pubblicità,Roma,Centro
-Regno,1924,176,,Rinascente - attualmente vendita del bianco,Milano,Arrivi 
-Regno,1924,187,B,tingete tende - lidos - super colore,Milano,Ferrovia
+Regno,1913,52,,Poste Italiane,Torino,Ferrovia
+Regno,1920,82,A,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Torino,Ferrovia
+Regno,1922,102,A,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Bari,Ferrovia
+Regno,1922,120,A,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Torino,Centro
+Regno,1924,151,A,"Spazio riservato alla pubblicità Rivolgersi ""pubblicità"" via Uffici del Vicario 35 Roma",Roma,Centro
+Regno,1924,176,,Attualmente vendita del bianco La Rinascente,Milano,Arrivi 
+Regno,1924,187,B,Tingete in casa  Lidos  Super colore,Milano,Ferrovia
 Regno,1924,218,,Votate la lista nazionale,Firenze,Distribuzione
-Regno,1924,277,,Afro Ballari ( con linea divisoria ),Milano,Ferrovia
-Regno,1924,296,A,Tende Ettore Moretti ( con ombra ),Milano,Ferrovia
-Regno,1924,297,,Tende Ettore Moretti ( con ombra ),Milano,Portalettere
+Regno,1924,277,,Afro Ballari Milano via Serio 31 Binari Vagonetti (Con Linea divisoria),Milano,Ferrovia
+Regno,1924,296,A,Ettore Moretti Tende Impermeabili Copertoni Milano (Con Ombra),Milano,Ferrovia
+Regno,1924,297,,Ettore Moretti Tende Impermeabili Copertoni Milano (Con Ombra),Milano,Portalettere
 Regno,1924,307,,A La Rinascente novità di stagione ( rondini ),Bologna,Centro
-Regno,1924,323,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Palermo,Centro
-Regno,1924,325,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Torino,Ferrovia
-Regno,1924,326,R,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Trento,Ferrovia
+Regno,1924,323,,Le piu belle terme del Mondo Salsomaggiore Periodo di cura Marzo - Novembre - Tipo 1,Palermo,Centro
+Regno,1924,325,,Le piu belle terme del Mondo Salsomaggiore Periodo di cura Marzo - Novembre - Tipo 1,Torino,Ferrovia
+Regno,1924,326,R,Le piu belle terme del Mondo Salsomaggiore Periodo di cura Marzo - Novembre - Tipo 1,Trento,Ferrovia
 Regno,1924,357,,Linoleum - Pavimento moderno,Napoli,Distribuzione
 Regno,1924,360,,Linoleum - Pavimento moderno,Roma,Ferrovia
-Regno,1924,370,A,Mata hari,Caserta,Ferrovia
-Regno,1924,373,A,Mata hari,Foggia,Ferrovia ( 26 - 22 )
-Regno,1924,380,,Mata hari,Milano,Ferrovia
-Regno,1924,388,,Mata hari,Pisa,Ferrovia
-Regno,1924,389,B,Mata hari,Torino,Centro
-Regno,1924,390,A,Mata hari,Torino,Ferrovia
-Regno,1924,396,R,Mata hari ( col trattino tra Mata ed Hari ),Roma,Ferrovia
-Regno,1924,398,R,Mata hari ( col trattino prima e dopo 'pubblica' ),Genova,Centro
-Regno,1924,416,,Gran premio Milano- San Siro,Milano,Portalettere
-Regno,1924,417,,Gran premio Milano- San Siro,Torino,Centro
-Regno,1924,421,,Recoaro,Torino,Centro
-Regno,1924,429,A,Afro Ballari ( senza linea divisoria ),Milano,Ferrovia
-Regno,1924,430,A,Afro Ballari ( senza linea divisoria ),Milano,Ferrovia
-Regno,1924,431,,Afro Ballari ( senza linea divisoria ),Milano,Ferrovia
-Regno,1924,432,A,Afro Ballari ( senza linea divisoria ),Milano,Ferrovia
-Regno,1924,435,,Afro Ballari ( senza linea divisoria ),Roma,Ferrovia
-Regno,1924,436,A,Afro Ballari ( senza linea divisoria ),Roma,Ferrovia
-Regno,1924,438,,Afro Ballari ( senza linea divisoria ),Torino,Centro
-Regno,1924,439,A,Afro Ballari ( senza linea divisoria ),Torino,Ferrovia
+Regno,1924,370,A,Il corriere italiano pubblica Mata Hari nuovo romanzo di Guido da Verona (tipo 1),Caserta,Ferrovia
+Regno,1924,373,A,Il corriere italiano pubblica Mata Hari nuovo romanzo di Guido da Verona (tipo 1),Foggia,Ferrovia ( 26 - 22 )
+Regno,1924,380,,Il corriere italiano pubblica Mata Hari nuovo romanzo di Guido da Verona (tipo 1),Milano,Ferrovia
+Regno,1924,388,,Il corriere italiano pubblica Mata Hari nuovo romanzo di Guido da Verona (tipo 1),Pisa,Ferrovia
+Regno,1924,389,B,Il corriere italiano pubblica Mata Hari nuovo romanzo di Guido da Verona (tipo 1),Torino,Centro
+Regno,1924,390,A,Il corriere italiano pubblica Mata Hari nuovo romanzo di Guido da Verona (tipo 1),Torino,Ferrovia
+Regno,1924,396,R,Il corriere italiano pubblica Mata Hari nuovo romanzo di Guido da Verona (tipo 2),Roma,Ferrovia
+Regno,1924,398,R,Il corriere italiano pubblica Mata Hari nuovo romanzo di Guido da Verona (tipo 3),Genova,Centro
+Regno,1924,416,,Domenica 22 Giugno a S.Siro Gran premio Milano L 500.000,Milano,Portalettere
+Regno,1924,417,,Domenica 22 Giugno a S.Siro Gran premio Milano L 500.000,Torino,Centro
+Regno,1924,421,,Recoaro Le piu antiche e salutari acque ferruginose d'Italia Giugno - Settembre,Torino,Centro
+Regno,1924,429,A,Afro Ballari Milano via Serio 31 Binari Vagonetti (Senza linea divisoria),Milano,Ferrovia
+Regno,1924,430,A,Afro Ballari Milano via Serio 31 Binari Vagonetti (Senza linea divisoria),Milano,Ferrovia
+Regno,1924,431,,Afro Ballari Milano via Serio 31 Binari Vagonetti (Senza linea divisoria),Milano,Ferrovia
+Regno,1924,432,A,Afro Ballari Milano via Serio 31 Binari Vagonetti (Senza linea divisoria),Milano,Ferrovia
+Regno,1924,435,,Afro Ballari Milano via Serio 31 Binari Vagonetti (Senza linea divisoria),Roma,Ferrovia
+Regno,1924,436,A,Afro Ballari Milano via Serio 31 Binari Vagonetti (Senza linea divisoria),Roma,Ferrovia
+Regno,1924,438,,Afro Ballari Milano via Serio 31 Binari Vagonetti (Senza linea divisoria),Torino,Centro
+Regno,1924,439,A,Afro Ballari Milano via Serio 31 Binari Vagonetti (Senza linea divisoria),Torino,Ferrovia
 Regno,1924,443,,Salsomaggiore - Monumentali Terme Berzieri Maggio - Ottobre,Genova,Ferr. 2 smistamento 2
-Regno,1924,446,,Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 1,Genova,Ferr. 2 smistamento 2
-Regno,1924,457,,Lingue - berlitz school,Milano,Portalettere
+Regno,1924,446,,Periodo di cura Salsomaggiore Marzo - Novembre (Tipo 1),Genova,Ferr. 2 smistamento 2
+Regno,1924,457,,Lingue - berlitz school Tariffa estiva (senza linea ),Milano,Portalettere
 Regno,1924,459,,Salsomaggiore - Regi stabilimenti termali acque salso bromo jodiche,Firenze,Centro
 Regno,1924,462,,Salsomaggiore - Regi stabilimenti termali acque salso bromo jodiche,Torino,Centro
-Regno,1924,467,,Salsomaggiore - Acque salso bromo jodiche Marzo Novembre - Tipo 1,Roma,Ferrovia
-Regno,1924,483,,Salsomaggiore - Acque salso bromo jodiche Marzo Novembre - Tipo 2,Bologna,Ferrovia
-Regno,1924,486,,Arena nuova -  D'estate a Milano,Milano,Centro Arrivi
+Regno,1924,467,,Acque salso bromo jodiche Salsomaggiore Marzo Novembre - Tipo 1,Roma,Ferrovia
+Regno,1924,483,,Acque salso bromo jodiche Salsomaggiore Marzo Novembre - Tipo 2,Bologna,Ferrovia
+Regno,1924,486,,D'estare a milano preferite Arena nuova via Bramante 8 Ristorante di classe all'aperto,Milano,Centro Arrivi
 Regno,1924,498,,Articoli per la casa - La Rinascente ( casetta ),Como,Arrivi e partenze
-Regno,1924,509,,Biscotti Digerini & Marinai - Firenze,Firenze,Centro
-Regno,1924,510,B,Veglia la sveglia mondiale - acquistatela,Ancona,Ferrovia
-Regno,1924,513,,Veglia la sveglia mondiale - acquistatela,Palermo,Centro
-Regno,1924,514,,Veglia la sveglia mondiale - acquistatela,Pavia,Centro
+Regno,1924,509,,Biscotti - Cioccolata - Confetti Digerini Marinai & C. Firenze,Firenze,Centro
+Regno,1924,510,B,Veglia la sveglia mondiale acquistatela,Ancona,Ferrovia
+Regno,1924,513,,Veglia la sveglia mondiale acquistatela,Palermo,Centro
+Regno,1924,514,,Veglia la sveglia mondiale acquistatela,Pavia,Centro
 Regno,1924,524,,Novità di stagione - La Rinascente ( trombettiere ),Milano,Centro Arrivi
 Regno,1924,524,A,Novità di stagione - La Rinascente ( trombettiere ),Milano,Centro Arrivi
 Regno,1924,525,,Novità di stagione - La Rinascente ( trombettiere ),Milano,Portalettere
 Regno,1924,529,B,Novità di stagione - La Rinascente ( trombettiere ),Pavia,Centro
 Regno,1924,540,A,Veglia la strenna più gradita,Milano,Ferrovia
-Regno,1925,552,,Pregate i vostri corrispondenti,Torino,Ferrovia
-Regno,1925,556,,Fiera di Milano- Veglia - la regina delle sveglie,Genova,Centro
-Regno,1925,556,A,Fiera di Milano- Veglia - la regina delle sveglie,Milano,Ferrovia
-Regno,1925,556,B,Fiera di Milano- Veglia - la regina delle sveglie,Napoli,Centro
-Regno,1925,558,,Fiera di Milano- Veglia - la regina delle sveglie,Torino,Centro
-Regno,1925,559,,Fiera di Milano- Veglia - la regina delle sveglie,Venezia,Centro
-Regno,1925,560,,Fiera di Milano- Veglia - la regina delle sveglie,Firenze,Centro
-Regno,1925,561,,Fiera di Milano- Veglia - la regina delle sveglie,Milano,Ferrovia
+Regno,1925,552,,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Torino,Ferrovia
+Regno,1925,556,,Fiera di Milano - Veglia - la regina delle sveglie (Tipo 2),Genova,Centro
+Regno,1925,556,A,Fiera di Milano - Veglia - la regina delle sveglie (Tipo 2),Milano,Ferrovia
+Regno,1925,556,B,Fiera di Milano - Veglia - la regina delle sveglie (Tipo 2),Napoli,Centro
+Regno,1925,558,,Fiera di Milano - Veglia - la regina delle sveglie (Tipo 2),Torino,Centro
+Regno,1925,559,,Fiera di Milano - Veglia - la regina delle sveglie (Tipo 2),Venezia,Centro
+Regno,1925,560,,Fiera di Milano - Veglia - la regina delle sveglie (Tipo 1),Firenze,Centro
+Regno,1925,561,,Fiera di Milano - Veglia - la regina delle sveglie (Tipo 1),Milano,Ferrovia
 Regno,1925,585,,Acquistate i buoni postali - fruttiferi -,Milano,Arrivi 
 Regno,1925,589,,Acquistate i buoni postali - fruttiferi -,Milano,Centro Arrivi
 Regno,1925,613,,Acquistate i buoni postali - fruttiferi -,Torino,Centro
@@ -72,7 +72,7 @@ Regno,1925,623,,Acquistate i buoni postali - fruttiferi -,Verona,Ferr. 68 - 112 
 Regno,1925,634,,Acquistate i buoni postali fruttiferi,Firenze,Ferrovia
 Regno,1925,636,,Acquistate i buoni postali fruttiferi,Genova,Ferrovia
 Regno,1925,641,,Acquistate i buoni postali fruttiferi,Milano,Centro Arrivi
-Regno,1925,679,,Inaugurazione ippodromo del trotto a San Siro,Monza,Centro
+Regno,1925,679,,Domenica 15 Novembre Inaugurazione nuovo ippodromo del trotto a Milano,Monza,Centro
 Regno,1926,711,,Acquistate i buoni postali - fruttiferi -,Torino,Centro
 Regno,1926,723,,Acquistate i buoni postali fruttiferi,Firenze,Centro
 Regno,1926,725,R,Acquistate i buoni postali fruttiferi,Genova,Centro
@@ -80,111 +80,111 @@ Regno,1926,727,,Acquistate i buoni postali fruttiferi,Messina,Ferrovia
 Regno,1926,728,A,Acquistate i buoni postali fruttiferi,Napoli,Centro
 Regno,1926,730,R,Acquistate i buoni postali fruttiferi,Pisa,Ferrovia
 Regno,1926,743,,Acquistate i buoni postali fruttiferi,Torino,Ferrovia
-Regno,1926,746,A,Pregate i vostri corrispondenti,Napoli,Centro
-Regno,1926,759,,Livorno VI montenero automobilistica,Livorno,Ferrovia
-Regno,1926,768,,Sottoscrivete al prestito del littorio,Caserta,Ferrovia
-Regno,1926,800,R,Sottoscrivete al prestito del littorio,Torino,Centro
-Regno,1926,802,A,Sottoscrivete al prestito del littorio,Torino,Ferrovia
-Regno,1927,827,,Sottoscrivete al prestito del littorio,Genova,Ferrovia
-Regno,1927,830,,Sottoscrivete al prestito del littorio,Messina,Distribuzione
-Regno,1927,836,,Sottoscrivete al prestito del littorio,Monza,Centro
-Regno,1927,839,,Sottoscrivete al prestito del littorio,Novara,Ferrovia
-Regno,1927,842,,Sottoscrivete al prestito del littorio,Palermo,Ferrovia
+Regno,1926,746,A,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Napoli,Centro
+Regno,1926,759,,Livorno 15 Agosto VI montenero automobilistica,Livorno,Ferrovia
+Regno,1926,768,,Sottoscrivete al prestito del littorio (Tipo 1),Caserta,Ferrovia
+Regno,1926,800,R,Sottoscrivete al prestito del littorio (Tipo 1),Torino,Centro
+Regno,1926,802,A,Sottoscrivete al prestito del littorio (Tipo 1),Torino,Ferrovia
+Regno,1927,827,,Sottoscrivete al prestito del littorio (Tipo 1),Genova,Ferrovia
+Regno,1927,830,,Sottoscrivete al prestito del littorio (Tipo 1),Messina,Distribuzione
+Regno,1927,836,,Sottoscrivete al prestito del littorio (Tipo 1),Monza,Centro
+Regno,1927,839,,Sottoscrivete al prestito del littorio (Tipo 1),Novara,Ferrovia
+Regno,1927,842,,Sottoscrivete al prestito del littorio (Tipo 1),Palermo,Ferrovia
 Regno,1927,867,,Acquistate i buoni postali fruttiferi,Torino,Ferrovia
 Regno,1927,869,A,Acquistate i buoni postali fruttiferi,Verona,Ferr. 68 - 112 ( A )
 Regno,1927,871,A,Acquistate i buoni postali - fruttiferi -,Roma,Centro
-Regno,1927,886,,Pregate i vostri corrispondenti,Torino,Centro
+Regno,1927,886,,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Torino,Centro
 Regno,1927,934,,Montecatini stabilimenti aperti il 1° Aprile,Verona,Centro ( A )
 Regno,1927,935,,Montecatini stabilimenti aperti il 1° Aprile,Verona,Centro ( A )
-Regno,1927,944,A,Montecatini autunno - ottimo per cura e soggiorno,Bologna,Centro
-Regno,1927,955,A,Montecatini autunno - ottimo per cura e soggiorno,Roma,Centro
+Regno,1927,944,A,Montecatini autunno - ottimo per cura e soggiorno (Tipo 1),Bologna,Centro
+Regno,1927,955,A,Montecatini autunno - ottimo per cura e soggiorno (Tipo 1),Roma,Centro
 Regno,1927,965,A,Montecatini - stomaco fegato intestino,Genova,Centro
 Regno,1927,966,R,Montecatini - stomaco fegato intestino,Genova,Centro
 Regno,1927,981,,Montecatini - stomaco fegato intestino,Verona,Centro ( A )
 Regno,1927,985,,Montecatini - stomaco fegato intestini,Milano,Centro
-Regno,1927,990,,Montecatini autunno - ottimo per cura e soggiorno,Bologna,Centro
+Regno,1927,990,,Montecatini autunno - ottimo per cura e soggiorno (Tipo 2),Bologna,Centro
 Regno,1927,1034,,Anno V - secondo anno della battaglia del grano,Verona,Centro ( A )
 Regno,1927,1036,,Agricoltori bisogna vincere la battaglia del grano,Bari,Ferrovia
 Regno,1927,1041,,Agricoltori bisogna vincere la battaglia del grano,Firenze,Ferrovia
 Regno,1927,1042,,Agricoltori bisogna vincere la battaglia del grano,Foggia,Ferrovia ( 26 - 22 )
 Regno,1927,1046,,Agricoltori bisogna vincere la battaglia del grano,Monza,Centro
-Regno,1927,1059,,Dovunque è possibile aumentare…..,Foggia,Ferrovia ( 26 - 22 )
-Regno,1927,1065,,Dovunque è possibile aumentare…..,Palermo,Ferrovia
-Regno,1927,1066,,Dovunque è possibile aumentare…..,Pavia,Centro
-Regno,1927,1069,,Dovunque è possibile aumentare…..,Verona,Centro ( A )
-Regno,1927,1078,,Agricoltori raccogliete il comandamento del duce,Milano,Centro Arrivi
-Regno,1927,1100,,E' dovere di tutti gli agricoltori contribuire ..,Spezia,Centro
+Regno,1927,1059,,Dovunque è possibile aumentare il rendimento per ettaro del grano,Foggia,Ferrovia ( 26 - 22 )
+Regno,1927,1065,,Dovunque è possibile aumentare il rendimento per ettaro del grano,Palermo,Ferrovia
+Regno,1927,1066,,Dovunque è possibile aumentare il rendimento per ettaro del grano,Pavia,Centro
+Regno,1927,1069,,Dovunque è possibile aumentare il rendimento per ettaro del grano,Verona,Centro ( A )
+Regno,1927,1078,,Agricoltori raccogliete il comandamento del Duce per la battaglia del grano,Milano,Centro Arrivi
+Regno,1927,1100,,E' dovere di tutti gli agricoltori Italiani contribuire alla vittoria del grano,Spezia,Centro
 Regno,1927,1141,A,Agricoltori coltivate razionalmente - vincerete,Trieste,Centro
-Regno,1927,1146,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Alessandria,Ferrovia
-Regno,1927,1151,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Catania,Ferrovia
-Regno,1927,1162,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Padova,Centro
-Regno,1927,1169,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Torino,Centro
-Regno,1927,1173,R,Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 1,Milano,Ferrovia
-Regno,1927,1180,,Salsomaggiore - Da e ridà la vita - Tipo 2,Genova,Centro
-Regno,1927,1182,,Salsomaggiore - Da e ridà la vita - Tipo 2,Venezia,Centro
+Regno,1927,1146,,Le piu belle terme del Mondo Salsomaggiore Periodo di cura Marzo - Novembre - Tipo 1,Alessandria,Ferrovia
+Regno,1927,1151,,Le piu belle terme del Mondo Salsomaggiore Periodo di cura Marzo - Novembre - Tipo 1,Catania,Ferrovia
+Regno,1927,1162,,Le piu belle terme del Mondo Salsomaggiore Periodo di cura Marzo - Novembre - Tipo 1,Padova,Centro
+Regno,1927,1169,,Le piu belle terme del Mondo Salsomaggiore Periodo di cura Marzo - Novembre - Tipo 1,Torino,Centro
+Regno,1927,1173,R,Periodo di cura Salsomaggiore Marzo - Novembre (Tipo 1),Milano,Ferrovia
+Regno,1927,1180,,Salsomaggiore - Da e ridà la vita (Tipo 2),Genova,Centro
+Regno,1927,1182,,Salsomaggiore - Da e ridà la vita (Tipo 2),Venezia,Centro
 Regno,1927,1183,R,Salsomaggiore - Monumentali Terme Berzieri Maggio - Ottobre,Bologna,Centro
-Regno,1927,1190,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 2,Roma,Ferrovia
-Regno,1927,1196,,Salsomaggiore - Periodo di cura Marzo - Novembre ,Bologna,Ferrovia
-Regno,1927,1211,,Salsomaggiore - Da e ridà la vita - Tipo 2,Roma,Distribuzione
-Regno,1927,1212,,Salsomaggiore - dove andare ? a Salsomaggiore ,Milano,Ferrovia
-Regno,1927,1219,,Salsomaggiore - Per i vostri cari non trascurate Salsomaggiore,Milano,Ferrovia
-Regno,1927,1225,,Salsomaggiore - Dove andare ? Salsomaggiore,Roma,Centro
-Regno,1927,1236,,Salsomaggiore - Periodo di cura Marzo Novembre,Firenze,Ferrovia
-Regno,1927,1244,,Salsomaggiore - Salsomaggiore spendendo poco ? ,Roma,Centro
-Regno,1927,1246,A,Salsomaggiore - Sclerotici curatevi a Salsomaggiore,Catania,Distribuzione
+Regno,1927,1190,,Le piu belle terme del Mondo Salsomaggiore Periodo di cura Marzo - Novembre - Tipo 2,Roma,Ferrovia
+Regno,1927,1196,,Acque salso bromo iodiche Salsomaggiore Periodo di cura Marzo - Novembre ,Bologna,Ferrovia
+Regno,1927,1211,,Salsomaggiore - Da e ridà la vita (Tipo 2),Roma,Distribuzione
+Regno,1927,1212,,Dove andare ? a Salsomaggiore ufficio informazioni RR Terme,Milano,Ferrovia
+Regno,1927,1219,,Per i vostri cari non trascurate Salsomaggiore ufficio informazioni RR Terme,Milano,Ferrovia
+Regno,1927,1225,,Dove andare ? Salsomaggiore ufficio informazioni RR Terme,Roma,Centro
+Regno,1927,1236,,Periodo di cura Marzo Novembre ufficio informazioni RR Terme,Firenze,Ferrovia
+Regno,1927,1244,,A Salsomaggiore spendendo poco ? Alberghi termali ufficio informazioni RR Terme,Roma,Centro
+Regno,1927,1246,A,Sclerotici curatevi a Salsomaggiore ufficio inform. RR Terme,Catania,Distribuzione
 Regno,1927,1256,,Visitare la Tripolitania è un dovere nazionale,Foggia,Ferr ( 26 - 22 )
 Regno,1927,1256,A,Visitare la Tripolitania è un dovere nazionale,Genova,Ferrovia
 Regno,1927,1268,A,Visitare la Tripolitania è un dovere nazionale,Torino,Centro
-Regno,1927,1286,,Italiani visitate la tripolitania,Napoli,Centro
-Regno,1927,1296,,Italiani visitate la tripolitania,Torino,Centro
-Regno,1927,1298,,Italiani visitate la tripolitania,Venezia,Centro
+Regno,1927,1286,,Italiani visitate la tripolitania (Tipo 1),Napoli,Centro
+Regno,1927,1296,,Italiani visitate la tripolitania (Tipo 1),Torino,Centro
+Regno,1927,1298,,Italiani visitate la tripolitania (Tipo 1),Venezia,Centro
 Regno,1927,1321,,Usate i pacchi postali urgenti,Venezia,Centro
-Regno,1928,1358,A,Torino 1928 esposizioni,Milano,Ferrovia
-Regno,1928,1359,A,Torino 1928 esposizioni,Milano,Ferrovia
-Regno,1928,1363,B,Torino 1928 esposizioni,Palermo,Ferrovia
-Regno,1928,1385,,Salsomaggiore - Acque salso bromo jodiche Marzo Novembre - Tipo 3,Roma,Distribuzione
-Regno,1928,1393,A,Salsomaggiore - Periodo di cura Marzo Novembre - Tipo 2,Milano,Ferrovia
-Regno,1928,1400,,Salsomaggiore - Le piu belle terme del Mondo - Tipo 1,Novara,Ferrovia
-Regno,1928,1413,,Italiani visitate la tripolitania,Pavia,Centro
+Regno,1928,1358,A,Torino 1928 esposizioni Aprile - Ottobre (angoli aperti),Milano,Ferrovia
+Regno,1928,1359,A,Torino 1928 esposizioni Aprile - Ottobre (angoli aperti),Milano,Ferrovia
+Regno,1928,1363,B,Torino 1928 esposizioni Aprile - Ottobre (angoli aperti),Palermo,Ferrovia
+Regno,1928,1385,,Acque salso bromo jodiche Salsomaggiore Marzo Novembre (Tipo 3),Roma,Distribuzione
+Regno,1928,1393,A,Periodo di cura Salsomaggiore Marzo - Novembre (Tipo 2),Milano,Ferrovia
+Regno,1928,1400,,Le piu belle terme del Mondo Salsomaggiore Periodo di cura Marzo - Novembre - Tipo 1,Novara,Ferrovia
+Regno,1928,1413,,Italiani visitate la tripolitania (Tipo 2),Pavia,Centro
 Regno,1928,1420,,Agricoltori bisogna vincere la battaglia del grano,Ancona,Ferrovia
 Regno,1928,1425,,Anno VI - terzo anno della battaglia del grano,Bologna,Centro
 Regno,1928,1428,,Anno VI - terzo anno della battaglia del grano,Genova,Centro
 Regno,1928,1429,,Anno VI - terzo anno della battaglia del grano,Genova,Centro
-Regno,1928,1441,,IL grano diventi ovunque è possibile una …,Milano,Ferrovia
-Regno,1928,1480,,Dovunque è possibile aumentare…..,Verona,Centro ( A )
-Regno,1928,1481,,Dovunque è possibile aumentare…..,Genova,Centro
+Regno,1928,1441,,Il grano diventi ovunque è possibile una cultura intensiva - Mussolini - (angoli aperti),Milano,Ferrovia
+Regno,1928,1480,,Dovunque è possibile aumentare il rendimento per ettaro del grano,Verona,Centro ( A )
+Regno,1928,1481,,Dovunque è possibile aumentare il rendimento medio per ettaro del grano - Mussolini - (angoli aperti) ,Genova,Centro
 Regno,1928,1516,,Acquistate i buoni postali - fruttiferi -,Napoli,Distribuzione
-Regno,1928,1529,A,Montecatini - stomaco fegato intestino,Milano,Corrispondenze Centro A
-Regno,1928,1531,AR,Montecatini - stomaco fegato intestino,Palermo,Centro
+Regno,1928,1529,A,Montecatini - stomaco fegato intestino (Tipo 1),Milano,Corrispondenze Centro A
+Regno,1928,1531,AR,Montecatini - stomaco fegato intestino (Tipo 1),Palermo,Centro
 Regno,1928,1542,,Montecatini - ottimo per cura e soggiorno,Genova,Centro
 Regno,1928,1548,,Montecatini - ottimo per cura e soggiorno,Milano,Corrispondenze Centro P
 Regno,1928,1551,A,Montecatini - ottimo per cura e soggiorno,Torino,Centro
 Regno,1928,1554,,Montecatini - opportuno continuare cura a domicilio,Genova,Centro
-Regno,1928,1582,,Preferite le sigarette Eja Savoia Eva,Verona,Centro ( A )
-Regno,1928,1592,R,Preferite le sigarette Eja Savoia Eva,Milano,Ferrovia
-Regno,1928,1611,,Preferite le sigarette Eja Savoia Eva,Milano,Ferrovia
-Regno,1928,1613,,Preferite le sigarette Eja Savoia Eva,Palermo,Ferrovia
-Regno,1928,1625,,Preferite le sigarette Eja Savoia Eva,Milano,Corrispondenze Centro P
-Regno,1928,1629,R,Preferite le sigarette Eja Savoia Eva,Venezia,Centro
-Regno,1928,1635,,Preferite le sigarette Eja Savoia Eva,Milano,Distribuzione
-Regno,1928,1639,,Preferite le sigarette Eja Savoia Eva,Roma,Distribuzione
-Regno,1928,1647,,IL chinino è il farmaco sovrano per ...,Milano,Centro Arrivi
-Regno,1928,1669,A,IL dispensario è buona guida alla profilassi ..,Milano,Ferrovia
-Regno,1928,1696,,L'alcoolismo avvia alla tubercolosi …,Alessandria,Centro
-Regno,1928,1720,,Pregate i vostri corrispondenti,Firenze,Ferrovia
-Regno,1928,1720,A,Pregate i vostri corrispondenti,Torino,Ferrovia
+Regno,1928,1582,,Preferite le sigarette Eja Savoia Eva le migliori e le piu convenienti (Tipo 1),Verona,Centro ( A )
+Regno,1928,1592,R,Preferite le sigarette Eja Savoia Eva le migliori e le piu convenienti (Tipo 3),Milano,Ferrovia
+Regno,1928,1611,,Preferite le sigarette Eja Savoia Eva le migliori e le piu convenienti (Tipo 2),Milano,Ferrovia
+Regno,1928,1613,,Preferite le sigarette Eja Savoia Eva le migliori e le piu convenienti (Tipo 2),Palermo,Ferrovia
+Regno,1928,1625,,Preferite le sigarette Eja Savoia Eva le migliori e le piu convenienti (Tipo 4),Milano,Corrispondenze Centro P
+Regno,1928,1629,R,Preferite le sigarette Eja Savoia Eva le migliori e le piu convenienti (Tipo 4),Venezia,Centro
+Regno,1928,1635,,Preferite le sigarette Eja Savoia Eva le migliori e le piu convenienti (Tipo 5),Milano,Distribuzione
+Regno,1928,1639,,Preferite le sigarette Eja Savoia Eva le migliori e le piu convenienti (Tipo 5),Roma,Distribuzione
+Regno,1928,1647,,IL chinino è il farmaco sovrano della cura della malaria,Milano,Centro Arrivi
+Regno,1928,1669,A,IL dispensario è buona guida alla profilassi ed alla cura della tubercolosi,Milano,Ferrovia
+Regno,1928,1696,,L'alcoolismo avvia alla tubercolosi ed apporta rovina all'individuo alla famiglia alla razza,Alessandria,Centro
+Regno,1928,1720,,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Firenze,Ferrovia
+Regno,1928,1720,A,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Torino,Ferrovia
 Regno,1928,1734,,Usate i pacchi postali urgenti,Spezia,Centro
 Regno,1928,1741,,Usate i pacchi postali urgenti,Como,Arrivi e partenze
 Regno,1928,1747,A,Usate i pacchi postali urgenti,Venezia,Centro
-Regno,1929,1768,A,O.N. Dopolavoro ,Milano,Corrispondenze Centro A
-Regno,1929,1777,,Agricoltori raccogliete il comandamento del duce,Roma,Ferrovia
-Regno,1929,1789,,IL grano diventi ovunque è possibile una …,Genova,Centro
+Regno,1929,1768,A,O.N. Dopolavoro Mostra casa popolare Roma 15 Dic 6 Gen VII (angoli chiusi),Milano,Corrispondenze Centro A
+Regno,1929,1777,,Agricoltori raccogliete il comandamento del Duce per la battaglia del grano,Roma,Ferrovia
+Regno,1929,1789,,Il grano diventi ovunque è possibile una cultura intensiva - Mussolini - (angoli aperti),Genova,Centro
 Regno,1929,1803,,Agricoltori coltivate razionalmente - vincerete,Genova,Ferrovia
-Regno,1929,1811,A,E' dovere di tutti gli agricoltori italiani ….,Firenze,Ferrovia
-Regno,1929,1814,,E' dovere di tutti gli agricoltori italiani ….,Napoli,Distribuzione
-Regno,1929,1843,,E' dovere di tutti gli agricoltori italiani ….,Palermo,Centro
-Regno,1929,1862,,Un  altro quintale in più di media e …,Milano,Corrispondenze Centro P
-Regno,1929,1881,,Il problema del grano investe il problema …,Roma,Ferrovia
+Regno,1929,1811,A,E' dovere di tutti gli agricoltori italiani contribuire alla vittoria del grano,Firenze,Ferrovia
+Regno,1929,1814,,E' dovere di tutti gli agricoltori italiani contribuire alla vittoria del grano,Napoli,Distribuzione
+Regno,1929,1843,,E' dovere di tutti gli agricoltori Italiani contribuire alla vittoria del grano,Palermo,Centro
+Regno,1929,1862,,Un altro quintale in più di media e saremo alla vigilia della vittoria del grano - Mussolini -,Milano,Corrispondenze Centro P
+Regno,1929,1881,,Il problema del grano investe il problema di tutta l'agricoltura italiana,Roma,Ferrovia
 Regno,1929,1906,,Usate i pacchi postali urgenti,Salerno,3 stelle
 Regno,1929,1912,,Usate i pacchi postali urgenti,Bologna,Ferrovia
 Regno,1929,1916,,Usate i pacchi postali urgenti,Spezia,Centro
@@ -196,81 +196,81 @@ Regno,1929,1926,,Montecatini - ottimo per cura e soggiorno,Roma,Distribuzione
 Regno,1929,1932,A,Montecatini - ottimo per cura e soggiorno,Torino,Centro
 Regno,1929,1940,,Montecatini - opportuno continuare cura a domicilio,Bologna,Centro
 Regno,1929,1964,AR,Montecatini - opportuno continuare la cura a domicilio,Torino,Centro
-Regno,1929,1967,,Pregate i vostri corrispondenti,Genova,Centro
-Regno,1929,1976,,Preferite le sigarette Eja Savoia Eva,Milano,Distribuzione
-Regno,1929,1986,,Preferite le sigarette orientali Eva - Eja,Verona,Centro ( A )
-Regno,1929,1987,R,Preferite le sigarette orientali Eva - Eja,Verona,Ferrovia
-Regno,1929,2007,,Fumatori di toscani provate …,Milano,Corrispondenze Centro A
-Regno,1929,2011,A,Fumatori di toscani provate …,Milano,Ferrovia
+Regno,1929,1967,,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Genova,Centro
+Regno,1929,1976,,Preferite le sigarette Eja Savoia Eva le migliori e le piu convenienti (Tipo 2),Milano,Distribuzione
+Regno,1929,1986,,Preferite le sigarette orientali Eva - Eja le migliori e le piu convenienti (Tipo 1),Verona,Centro ( A )
+Regno,1929,1987,R,Preferite le sigarette orientali Eva - Eja le migliori e le piu convenienti (Tipo 1),Verona,Ferrovia
+Regno,1929,2007,,Fumatori di toscani provate il sigaretto Roma (Tipo 2),Milano,Corrispondenze Centro A
+Regno,1929,2011,A,Fumatori di toscani provate il sigaretto Roma (Tipo 2),Milano,Ferrovia
 Regno,1930,2029,,Agricoltori bisogna vincere la battaglia del grano,Genova,Centro
 Regno,1930,2030,,Agricoltori bisogna vincere la battaglia del grano,Genova,Ferrovia
 Regno,1930,2038,,Montecatini stabilimenti aperti il 1° Aprile,Milano,Corrispondenze Centro P
-Regno,1930,2053,,Montecatini - stomaco fegato intestino,Genova,Centro
-Regno,1930,2055,A,Montecatini - stomaco fegato intestino,Torino,Centro
-Regno,1930,2057,,Preferite le sigarette Eja Savoia Eva,Milano,Non Noto
+Regno,1930,2053,,Montecatini - stomaco fegato intestino (Tipo 3),Genova,Centro
+Regno,1930,2055,A,Montecatini - stomaco fegato intestino (Tipo 3),Torino,Centro
+Regno,1930,2057,,Preferite le sigarette Eja Savoia Eva le migliori e le piu convenienti (Tipo 4),Milano,Non Noto
 Regno,1930,2072,R,Provate la sigaretta regina,Palermo,Centro
 Regno,1930,2075,,Provate la sigaretta regina,Roma,Ferrovia
-Regno,1930,2085,,Fumatori di toscani provate …,Roma,Ferrovia
-Regno,1930,2091,,Fumatori di toscani provate …,Palermo,Ferrovia
-Regno,1930,2096,,Fumatori di toscani provate …,Milano,Ferrovia
+Regno,1930,2085,,Fumatori di toscani provate il sigaretto Roma (Tipo 1),Roma,Ferrovia
+Regno,1930,2091,,Fumatori di toscani provate il sigaretto Roma (Tipo 2),Palermo,Ferrovia
+Regno,1930,2096,,Fumatori di toscani provate il sigaretto Roma (Tipo 3),Milano,Ferrovia
 Regno,1930,2108,,Usate i pacchi postali urgenti,Roma,Distribuzione
 Regno,1930,2109,,Usate i pacchi postali urgenti,Roma,Ferrovia
 Regno,1930,2114,,Usate i pacchi postali urgenti,Venezia,Ferrovia
 Regno,1930,2116,,Acquistate i buoni postali fruttiferi,Verona,Ferrovia
-Regno,1930,2130,,Tutti gli uffici postali eseguono il servizio ...,Monza,Centro
-Regno,1930,2139,,Tutti gli uffici postali eseguono il servizio ...,Roma,Distribuzione
-Regno,1930,2149,,Pregate i vostri corrispondenti,Torino,Centro
-Regno,1930,2150,,Pregate i vostri corrispondenti,Firenze,Ferrovia
-Regno,1930,2152,,Servitevi dei pacchi postali urgenti,Firenze,Centro
-Regno,1930,2159,,Servitevi dei pacchi postali urgenti,Milano,Corrispondenze Centro P
-Regno,1930,2170,,Servitevi dei pacchi postali urgenti,Verona,Ferrovia
+Regno,1930,2130,,Tutti gli uffici postali eseguono il servizio dei pacchi postali urgenti,Monza,Centro
+Regno,1930,2139,,Tutti gli uffici postali eseguono il servizio dei pacchi postali urgenti,Roma,Distribuzione
+Regno,1930,2149,,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Torino,Centro
+Regno,1930,2150,,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Firenze,Ferrovia
+Regno,1930,2152,,Servitevi dei pacchi postali urgenti (Tipo 1),Firenze,Centro
+Regno,1930,2159,,Servitevi dei pacchi postali urgenti (Tipo 1),Milano,Corrispondenze Centro P
+Regno,1930,2170,,Servitevi dei pacchi postali urgenti (Tipo 1),Verona,Ferrovia
 Regno,1930,2203,,L'olio d'oliva è il condimento più ricco di vitamine,Milano,Ferrovia
 Regno,1930,2212,A,L'olio d'oliva fa crescere sani e forti i bambini,Genova,Ferrovia
 Regno,1930,2225,B,L'olio d'oliva fa crescere sani e forti i bambini,Torino,Ferrovia
-Regno,1930,2233,,L'olio d'oliva italiano è il migliore del mondo,Novara,Ferrovia
-Regno,1930,2234,,L'olio d'oliva italiano è il migliore del mondo,Palermo,Centro
-Regno,1930,2236,,L'olio d'oliva italiano è il migliore del mondo,Spezia,Centro
-Regno,1931,2253,,Tutti gli uffici postali eseguono il servizio ...,Genova,Centro
-Regno,1931,2257,A,Tutti gli uffici postali eseguono il servizio ...,Torino,Centro
+Regno,1930,2233,,L'olio d'oliva italiano è il migliore del mondo (Tipo 1),Novara,Ferrovia
+Regno,1930,2234,,L'olio d'oliva italiano è il migliore del mondo (Tipo 1),Palermo,Centro
+Regno,1930,2236,,L'olio d'oliva italiano è il migliore del mondo (Tipo 1),Spezia,Centro
+Regno,1931,2253,,Tutti gli uffici postali eseguono il servizio dei pacchi postali urgenti,Genova,Centro
+Regno,1931,2257,A,Tutti gli uffici postali eseguono il servizio dei pacchi postali urgenti,Torino,Centro
 Regno,1931,2265,,Provate la sigaretta regina,Milano,Corrispondenze Centro P
-Regno,1931,2288,,Servitevi dei pacchi postali urgenti,Torino,Ferrovia
-Regno,1931,2290,,Servitevi dei pacchi postali urgenti,Milano,Ferrovia
-Regno,1931,2341,,Utenti domandate l'apertura di un ….,Messina,Distribuzione
-Regno,1931,2353,,Correntisti postali usate il postagiro …,Milano,Arrivi Distribuzione
-Regno,1931,2358,A,Correntisti postali usate il postagiro …,Torino,Centro
-Regno,1931,2360,,Gli uffici postali accettano per l'incasso a mezzo ..,Bergamo,Centro
-Regno,1931,2363,,Gli uffici postali accettano per l'incasso a mezzo ..,Milano,Arrivi 
-Regno,1931,2371,,Gli uffici postali accettano per l'incasso a mezzo ..,Palermo,Ferrovia
-Regno,1931,2374,,Gli uffici postali accettano per l'incasso a mezzo ..,Roma,Centro
-Regno,1931,2375,,Gli uffici postali accettano per l'incasso a mezzo ..,Roma,Ferrovia
-Regno,1931,2378,,Gli uffici postali accettano per l'incasso a mezzo ..,Salerno,Stella
-Regno,1931,2381,,Chiedete agli uffici postali la guida pratica …,Bari,Ferrovia
-Regno,1931,2406,,Presso tutti gli uffici postali pagamenti …,Milano,Corrispondenze Centro A
-Regno,1932,2435,R,Utenti domandate l'apertura di un ….,Messina,Distribuzione
-Regno,1932,2436,R,Utenti domandate l'apertura di un ….,Torino,Centro
-Regno,1932,2438,R,Utenti domandate l'apertura di un ….,Trieste,Centro
-Regno,1932,2452,,Gli uffici postali accettano per l'incasso a mezzo ..,Roma,Ferrovia
-Regno,1932,2461,,Correntisti postali usate il postagiro …,Roma,Distribuzione
-Regno,1932,2462,,Presso tutti gli uffici postali pagamenti …,Como,Centro
-Regno,1932,2474,,Servitevi dei pacchi postali urgenti,Bari,Ferrovia
-Regno,1932,2475,,Servitevi dei pacchi postali urgenti,Firenze,Ferrovia
-Regno,1932,2476,,Servitevi dei pacchi postali urgenti,Milano,Ferrovia
-Regno,1932,2491,,Mostra rivoluzione fascista,Catania,Ferrovia
-Regno,1932,2501,A,Mostra rivoluzione fascista,Milano,Ferrovia
-Regno,1932,2515,,Mostra rivoluzione fascista,Torino,Centro
-Regno,1932,2519,,Mostra rivoluzione fascista,Verona,Ferrovia
-Regno,1933,2579,A,Mostra rivoluzione fascista,Verona,Centro ( A )
-Regno,1933,2600,,Chiedete agli uffici postali la guida pratica …,Torino,Centro
-Regno,1933,2608,,Estate livornese,Livorno,Ferrovia
-Regno,1934,2635,A,Mostra rivoluzione fascista,Milano,Ferrovia
-Regno,1934,2647,,Mostra rivoluzione fascista,Torino,Ferrovia
-Regno,1934,2649,,Mostra rivoluzione fascista,Trieste,Centro
-Regno,1934,2658,,Utenti domandate l'apertura di un ….,Messina,Ferrovia
-Regno,1934,2659,,Tutti gli uffici postali eseguono il servizio ...,Milano,Ferr. Corrispondenze
-Regno,1934,2660,,Tutti gli uffici postali eseguono il servizio ...,Milano,Ferrovia
-Regno,1934,2661,,Pregate i vostri corrispondenti,Torino,Ferrovia
-Regno,1934,2663,,Chiedete agli uffici postali la guida pratica …,Bergamo,Centro
-Regno,1934,2673,,Servitevi dei pacchi postali urgenti,Milano,Ferrovia
+Regno,1931,2288,,Servitevi dei pacchi postali urgenti (Tipo 2),Torino,Ferrovia
+Regno,1931,2290,,Servitevi dei pacchi postali urgenti (Tipo 4),Milano,Ferrovia
+Regno,1931,2341,,Utenti domandate l'apertura di un conto corrente postale (Tipo 1),Messina,Distribuzione
+Regno,1931,2353,,Correntisti postali usate il postagiro per pagamenti ad altri correntisti,Milano,Arrivi Distribuzione
+Regno,1931,2358,A,Correntisti postali usate il postagiro per pagamenti ad altri correntisti,Torino,Centro
+Regno,1931,2360,,"Gli uffici postali accettano per l'incasso a mezzo dei conto correnti effetti, assegni, fatture",Bergamo,Centro
+Regno,1931,2363,,"Gli uffici postali accettano per l'incasso a mezzo dei conto correnti effetti, assegni, fatture",Milano,Arrivi 
+Regno,1931,2371,,"Gli uffici postali accettano per l'incasso a mezzo dei conto correnti effetti, assegni, fatture",Palermo,Ferrovia
+Regno,1931,2374,,"Gli uffici postali accettano per l'incasso a mezzo dei conto correnti effetti, assegni, fatture",Roma,Centro
+Regno,1931,2375,,"Gli uffici postali accettano per l'incasso a mezzo dei conto correnti effetti, assegni, fatture",Roma,Ferrovia
+Regno,1931,2378,,"Gli uffici postali accettano per l'incasso a mezzo dei conto correnti effetti, assegni, fatture",Salerno,Stella
+Regno,1931,2381,,Chiedete agli uffici postali la guida pratica sul servizio dei conti correnti,Bari,Ferrovia
+Regno,1931,2406,,Presso tutti gli uffici postali pagamenti e incassi a mezzo dei conti correnti postali,Milano,Corrispondenze Centro A
+Regno,1932,2435,R,Utenti domandate l'apertura di un conto corrente postale (Tipo 1),Messina,Distribuzione
+Regno,1932,2436,R,Utenti domandate l'apertura di un conto corrente postale (Tipo 1),Torino,Centro
+Regno,1932,2438,R,Utenti domandate l'apertura di un conto corrente postale (Tipo 1),Trieste,Centro
+Regno,1932,2452,,"Gli uffici postali accettano per l'incasso a mezzo dei conto correnti effetti, assegni, fatture",Roma,Ferrovia
+Regno,1932,2461,,Correntisti postali usate il postagiro per pagamenti ad altri correntisti,Roma,Distribuzione
+Regno,1932,2462,,Presso tutti gli uffici postali pagamenti e incassi a mezzo dei conti correnti postali,Como,Centro
+Regno,1932,2474,,Servitevi dei pacchi postali urgenti (Tipo 3),Bari,Ferrovia
+Regno,1932,2475,,Servitevi dei pacchi postali urgenti (Tipo 4),Firenze,Ferrovia
+Regno,1932,2476,,Servitevi dei pacchi postali urgenti (Tipo 4),Milano,Ferrovia
+Regno,1932,2491,,Mostra rivoluzione fascista Roma riduzioni ferrov. 70%,Catania,Ferrovia
+Regno,1932,2501,A,Mostra rivoluzione fascista Roma riduzioni ferrov. 70%,Milano,Ferrovia
+Regno,1932,2515,,Mostra rivoluzione fascista Roma riduzioni ferrov. 70%,Torino,Centro
+Regno,1932,2519,,Mostra rivoluzione fascista Roma riduzioni ferrov. 70%,Verona,Ferrovia
+Regno,1933,2579,A,Mostra rivoluzione fascista Roma riduzioni ferrov. 70%,Verona,Centro ( A )
+Regno,1933,2600,,Chiedete agli uffici postali la guida pratica sul servizio dei conti correnti,Torino,Centro
+Regno,1933,2608,,Estate livornese Luglio - Settembre ribassi ferroviari 50 - 70%,Livorno,Ferrovia
+Regno,1934,2635,A,Mostra rivoluzione fascista Roma riduzioni ferrov. 70%,Milano,Ferrovia
+Regno,1934,2647,,Mostra rivoluzione fascista Roma riduzioni ferrov. 70%,Torino,Ferrovia
+Regno,1934,2649,,Mostra rivoluzione fascista Roma riduzioni ferrov. 70%,Trieste,Centro
+Regno,1934,2658,,Utenti domandate l'apertura di un conto corrente postale (Tipo 1),Messina,Ferrovia
+Regno,1934,2659,,Tutti gli uffici postali eseguono il servizio dei pacchi postali urgenti,Milano,Ferr. Corrispondenze
+Regno,1934,2660,,Tutti gli uffici postali eseguono il servizio dei pacchi postali urgenti,Milano,Ferrovia
+Regno,1934,2661,,Pregate i vostri corrispondenti di aggiungere all'indirizzo il numero del quartiere postale,Torino,Ferrovia
+Regno,1934,2663,,Chiedete agli uffici postali la guida pratica sul servizio dei conti correnti,Bergamo,Centro
+Regno,1934,2673,,Servitevi dei pacchi postali urgenti (Tipo 2),Milano,Ferrovia
 Regno,1935,2711,,La lotteria di Merano vi farà milionari,Milano,Ferrovia
 Regno,1935,2715,,La lotteria di Merano vi farà milionari,Napoli,Ferrovia
 Regno,1935,2717,,La lotteria di Merano vi farà milionari,Palermo,Ferrovia
@@ -290,7 +290,7 @@ Regno,1936,2888,,La lotteria di Merano vi farà milionari,Palermo,Ferrovia
 Regno,1936,2891,,La lotteria di Merano vi farà milionari,Roma,Distribuzione
 Regno,1936,2897,B,La lotteria di Merano vi farà milionari,Torino,Centro
 Regno,1936,2900,,La lotteria di Merano vi farà milionari,Trieste,Arrivi e partenze
-Regno,1937,2916,,Tutti gli uffici postali eseguono il servizio ...,Trento,Ferrovia
+Regno,1937,2916,,Tutti gli uffici postali eseguono il servizio dei pacchi postali urgenti,Trento,Ferrovia
 Regno,1937,2918,B,Prestito nazionale rendita 5%,Roma,Ostiense
 Regno,1937,2938,,Lotteria automobilistica di Tripoli,Milano,Ferrovia
 Regno,1937,2944,R,Lotteria automobilistica di Tripoli,Roma,Distribuzione
@@ -299,9 +299,9 @@ Regno,1937,2949,,Lotteria automobilistica di Tripoli,Torino,Centro R.P.T.S.
 Regno,1937,2951,,Lotteria automobilistica di Tripoli,Torino,Ferrovia
 Regno,1937,3013,,Visitate l'Italia,Torino,Centro R.P.T.S.
 Regno,1937,3015,,Visitate l'Italia,Trieste,C.P.
-Regno,1937,3022,,Cesenatico la spiaggia ideale,Treviso,Stella
-Regno,1937,3026,,Chiedete agli uffici postali la guida pratica …,Torino,Centro
-Regno,1937,3027,,Correntisti postali usate il postagiro …,Trento,Ferrovia
+Regno,1937,3022,,Cesenatico la spiaggia ideale (Tipo 1),Treviso,Stella
+Regno,1937,3026,,Chiedete agli uffici postali la guida pratica sul servizio dei conti correnti,Torino,Centro
+Regno,1937,3027,,Correntisti postali usate il postagiro per pagamenti ad altri correntisti,Trento,Ferrovia
 Regno,1937,3043,,La lotteria di Merano vi farà milionari,Milano,Ferr. Corrispondenze
 Regno,1937,3044,,La lotteria di Merano vi farà milionari,Milano,Ferrovia
 Regno,1937,3047,,La lotteria di Merano vi farà milionari,Napoli,Ferr. Corrispondenze
@@ -332,7 +332,7 @@ Regno,1940,3447,,Lotteria automobilistica di Tripoli,Genova,Corrispondenze
 Regno,1940,3451,,Lotteria automobilistica di Tripoli,Milano,Centro Corrisp. e pacchi
 Regno,1940,3453,,Lotteria automobilistica di Tripoli,Milano,Ferrovia Corr.
 Regno,1940,3484,,La lotteria di Merano vi farà milionari,Bologna,Centro
-Regno,1940,3514,,La lotteria esposizione Romavi farà milionari,Firenze,C.P. Ferrovia
+Regno,1940,3514,,La lotteria esposizione Roma vi farà milionari,Firenze,C.P. Ferrovia
 Regno,1941,3534,,Visitate l'Italia,Alessandria,Ferrovia
 Regno,1941,3550,,Visitate l'Italia,Milano,Centro Corrisp. Pacchi
 Regno,1941,3604,,La lotteria di Tripoli vi farà milionari,Trieste,Corr. Pacchi
@@ -349,13 +349,13 @@ Regno,1943,3684,,Viaggiando servitevi dei telegrammi treno,Milano,Ferrovia Corr.
 Regno,1943,3696,,La lotteria di Merano vi farà milionari,Napoli,Ferrovia Corr.
 Regno,1943,3700,,La lotteria di Merano vi farà milionari,Verona,Ferrovia
 Regno,1944,3722,A,La lotteria di Merano vi farà milionari,Bologna,Centro
-Regno,1946,3732,,La lotteria della solidarietà nazionale …,Bari,Ferrovia
-Regno,1946,3733,,La lotteria della solidarietà nazionale …,Bologna,Ferrovia
-Regno,1946,3734,,La lotteria della solidarietà nazionale …,Catania,Distribuzione
-Regno,1946,3735,,La lotteria della solidarietà nazionale …,Firenze,Ferrovia
-Regno,1946,3736,,La lotteria della solidarietà nazionale …,Napoli,Ferrovia
-Regno,1946,3737,,La lotteria della solidarietà nazionale …,Roma,Ferrovia
-Regno,1946,3738,,La lotteria della solidarietà nazionale …,Torino,Ferrovia
+Regno,1946,3732,,La lotteria della solidarietà nazionale vi farà milionari,Bari,Ferrovia
+Regno,1946,3733,,La lotteria della solidarietà nazionale vi farà milionari,Bologna,Ferrovia
+Regno,1946,3734,,La lotteria della solidarietà nazionale vi farà milionari,Catania,Distribuzione
+Regno,1946,3735,,La lotteria della solidarietà nazionale vi farà milionari,Firenze,Ferrovia
+Regno,1946,3736,,La lotteria della solidarietà nazionale vi farà milionari,Napoli,Ferrovia
+Regno,1946,3737,,La lotteria della solidarietà nazionale vi farà milionari,Roma,Ferrovia
+Regno,1946,3738,,La lotteria della solidarietà nazionale vi farà milionari,Torino,Ferrovia
 Trieste A,1953,14,,Recapito Celere,Trieste,Corrisp. Pacchi
 Libia,1928,5,,Italiani visitate la tripolitania,Tripoli,Corrispondenze
 Libia,1929,7,,Italiani visitate la tripolitania,Tripoli,Corrispondenze
