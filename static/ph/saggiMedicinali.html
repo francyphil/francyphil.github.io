@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="it">
+  <head>
+      <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartolina</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css">
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css">
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .tipo-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .tipo-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        width: 340px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .tipo-card h3 {
+        margin: 0;
+        padding: 14px 16px 10px;
+        font-size: 1.05em;
+        color: #2c3e50;
+        border-bottom: 1px solid #eee;
+      }
+
+      .tipo-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        background: #f9f9f9;
+        display: block;
+        padding: 8px;
+        box-sizing: border-box;
+        cursor: pointer;
+      }
+
+      .tipo-card-desc {
+        padding: 12px 16px;
+        font-size: 0.9em;
+        color: #555;
+        line-height: 1.5;
+        min-height: 60px;
+      }
+
+      /* Lightbox */
+      #lightboxOverlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        color: white;
+        flex-direction: column;
+      }
+      #lightboxImage {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+      #fallbackText { margin-bottom: 10px; }
+      #lightboxOverlay .controls { pointer-events: none; }
+      #lightboxOverlay .controls button {
+        position: fixed;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        font-size: 24px;
+        padding: 35px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.2s;
+        pointer-events: auto;
+      }
+      #lightboxOverlay .controls button:hover { background: rgba(255,255,255,0.5); }
+      #lightboxOverlay .controls button:nth-child(1) { top: 50%; left: 20px;  transform: translateY(-50%); }
+      #lightboxOverlay .controls button:nth-child(2) { bottom: 30px; left: 50%; transform: translateX(-50%); }
+      #lightboxOverlay .controls button:nth-child(3) { top: 50%; right: 20px; transform: translateY(-50%); }
+
+      table {
+        border-collapse: collapse;
+        margin: 30px auto;
+        width: auto;
+      }
+
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: top;
+      }
+
+      th {
+        background-color: #f0f0f0;
+      }
+
+      /* Mobile: tabelle scrollabili */
+      @media (max-width: 768px) {
+        .table-scroll {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          margin: 20px 0;
+        }
+
+        th, td {
+          padding: 6px 8px;
+          font-size: 0.85em;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/footer/footer.css" />
+  </head>
+  <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
+
+    <div class="content-container">
+      <h1>Saggi gratuiti medicinali</h1>
+
+    <div id="tabelle"></div>
+
+    <script>
+      const tariffe = [
+        {
+          titolo: "Saggi gratuiti medicinali",
+          nota: " porto da 50g fino ad un massimo di 500g",
+          voci: [
+            ["1.7.1924",  "0,20 fino a 100g\n0,10 per ogni 50g aggiuntivi"],
+            ["16.3.1925", "0,30 fino a 100g\n0,15 per ogni 50g aggiuntivi"],
+            ["16.8.1927", "0,25 fino a 100g\n0,10 per ogni 50g aggiuntivi"],
+            ["1.10.1944", "0,50 fino a 100g\n0,20 per ogni 50g aggiuntivi"],
+            ["1.4.1945",  "1,00 fino a 100g\n0,40 per ogni 50g aggiuntivi"],
+          ]
+        }
+      ];
+
+      const container = document.getElementById("tabelle");
+      tariffe.forEach(t => {
+        const wrap = document.createElement("div");
+        wrap.className = "table-scroll";
+        wrap.innerHTML = `
+          <table>
+            <thead><tr>
+              <th>${t.titolo}</th>
+              <th>Tariffa</th>
+            </tr></thead>
+            <tbody>
+              ${t.voci.map(([d, v]) => `<tr><th>${d}</th><td>${v.replace(/\n/g, '<br>')}</td></tr>`).join("")}
+            </tbody>
+          </table>`;
+        container.appendChild(wrap);
+        const nota = document.createElement("p");
+        nota.textContent = t.nota;
+        container.appendChild(nota);
+      });
+    </script>
+
+    <div class="tipo-cards">
+      <div class="tipo-card">
+        <img src="../jpeg/saggi/Saggio_medicinale_1926_Milano 1.jpeg" alt="Saggio medicinale Milano 1926" loading="lazy" decoding="async" />
+        <div class="tipo-card-desc">Saggio medicinale da Milano nel 1926 con un peso tra 450g e 500g assolto con 1,5L</div>
+      </div>
+      <div class="tipo-card">
+        <img src="../jpeg/saggi/Saggio_medicinale1926_Milano.jpeg" alt="Saggio medicinale Milano 1930" loading="lazy" decoding="async" />
+        <div class="tipo-card-desc">Saggio medicinale da Milano nel 1930 con un peso tra 250g e 300g assolto con 0,65L</div>
+      </div>
+    </div>
+
+    </div>
+
+    <script src="/footer/footer.js"></script>
+    <div id="footerContainer"></div>
+
+    <div id="lightboxOverlay">
+      <img id="lightboxImage" />
+      <div id="fallbackText"></div>
+      <div class="controls">
+        <button onclick="lbPrev()">&#x27E8;</button>
+        <button onclick="lbChiudi()">&#x2715;</button>
+        <button onclick="lbNext()">&#x27E9;</button>
+      </div>
+    </div>
+
+    <script>
+      let lbImgs = [], lbIdx = 0;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        lbImgs = Array.from(document.querySelectorAll(".tipo-card img"));
+        lbImgs.forEach((img, i) => img.addEventListener("click", () => lbApri(i)));
+      });
+
+      function lbApri(i) {
+        lbIdx = i;
+        const overlay  = document.getElementById("lightboxOverlay");
+        const imgEl    = document.getElementById("lightboxImage");
+        const fallback = document.getElementById("fallbackText");
+        imgEl.src = lbImgs[i].src;
+        imgEl.style.display = "block";
+        fallback.textContent = "";
+        imgEl.onerror = () => { imgEl.style.display = "none"; fallback.textContent = "Immagine non ancora presente"; };
+        overlay.style.display = "flex";
+      }
+
+      function lbChiudi() { document.getElementById("lightboxOverlay").style.display = "none"; }
+      function lbPrev()   { lbApri((lbIdx - 1 + lbImgs.length) % lbImgs.length); }
+      function lbNext()   { lbApri((lbIdx + 1) % lbImgs.length); }
+
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape")     lbChiudi();
+        if (e.key === "ArrowLeft")  lbPrev();
+        if (e.key === "ArrowRight") lbNext();
+      });
+
+      let tsX = null;
+      const lbEl = document.getElementById("lightboxOverlay");
+      lbEl.addEventListener("touchstart", e => { tsX = e.touches[0].clientX; }, { passive: true });
+      lbEl.addEventListener("touchend",   e => {
+        if (tsX === null) return;
+        const dx = e.changedTouches[0].clientX - tsX;
+        tsX = null;
+        if (Math.abs(dx) < 50) return;
+        dx < 0 ? lbNext() : lbPrev();
+      }, { passive: true });
+    </script>
+  </body>
+</html>
