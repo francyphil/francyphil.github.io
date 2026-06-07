@@ -153,7 +153,33 @@
             ["1.1.1926",  "0,75"],
             ["1.9.1944",  "1,50"],
             ["1.4.1945",  "3,00"],
-
+          ],
+          cards: [
+            {
+              src: "../jpeg/cartoline/cpEstero_39.jpeg",
+              alt: "Cartolina postale per l'estero 10 Cent",
+              desc: "Cartolina postale per l'estero da 10 centesimi (tariffa del 1.10.1907)"
+            },
+            {
+              src: "../jpeg/cartoline/cpEstero_88.jpeg",
+              alt: "Cartolina postale per l'estero 40 Cent",
+              desc: "Cartolina postale per l'estero da 40 centesimi (tariffa del 1.2.1921)"
+            },
+            {
+              src: "../jpeg/cartoline/cpEstero_122.jpeg",
+              alt: "Cartolina postale per l'estero 50 Cent",
+              desc: "Cartolina postale per l'estero da 50 centesimi (tariffa del 1.1.1922)"
+            },
+            {
+              src: "../jpeg/cartoline/cpEstero_274_GA_T1.jpeg",
+              alt: "Cartolina postale per l'estero 60 Cent",
+              desc: "Cartolina postale per l'estero da 60 centesimi (tariffa del 1.1.1923)"
+            },
+            {
+              src: "../jpeg/cartoline/cpEstero_776.jpeg",
+              alt: "Cartolina postale per l'estero 75 Cent",
+              desc: "Cartolina postale per l'estero da 75 centesimi (tariffa del 1.1.1926)"
+            }
           ]
         },
         {
@@ -164,7 +190,14 @@
             ["1.1.1923",  "0,45"],
             ["1.1.1926",  "0,60"],
             ["1.1.1942",  "fine tariffa speciale"],
-          ]
+          ],
+          cards: [
+            {
+              src: "../jpeg/cartoline/cpEstero_portorose.jpeg",
+              alt: "Cartolina postale per l'estero 45 Cent",
+              desc: "Cartolina postale per l'estero da 45 centesimi (tariffa del 1.1.1923)"
+            }
+          ]          
         },
         {
           titolo: "Cartolina postale per l'estero verso paesi dell'asse",
@@ -208,19 +241,26 @@
             </tr></tbody>
           </table>`;
         container.appendChild(wrap);
-        const nota = document.createElement("p");
-        nota.textContent = t.nota;
-        container.appendChild(nota);
+        
+        if (t.nota) {
+          const nota = document.createElement("p");
+          nota.textContent = t.nota;
+          container.appendChild(nota);
+        }
+
+        if (t.cards && t.cards.length > 0) {
+          const cardsWrap = document.createElement("div");
+          cardsWrap.className = "tipo-cards";
+          cardsWrap.innerHTML = t.cards.map(c => `
+            <div class="tipo-card">
+              <img src="${c.src}" alt="${c.alt || ''}" loading="lazy" decoding="async" />
+              <div class="tipo-card-desc">${c.desc}</div>
+            </div>
+          `).join("");
+          container.appendChild(cardsWrap);
+        }
       });
     </script>
-
-    <div class="tipo-cards">
-      <div class="tipo-card">
-        <img src="../jpeg/cartoline/cpEstero_39.jpeg" alt="Cartolina postale per l'estero" loading="lazy" decoding="async" />
-        <div class="tipo-card-desc">Cartolina postale per l'estero da 10 centesimi (tariffa del 1.10.1907)</div>
-      </div>
-    </div>
-
     </div>
 
     <script src="/footer/footer.js"></script>
