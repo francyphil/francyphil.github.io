@@ -29,7 +29,7 @@ COORDINATE_DB = {
     'Tokyo': [35.6762, 139.6503],
     'Afghanistan': [34.5553, 69.2075],
     'Iraq': [33.3152, 44.3661],
-    
+
     # Medio Oriente
     'Istanbul': [41.0082, 28.9784],
     'Costantinopoli': [41.0082, 28.9784],
@@ -39,7 +39,7 @@ COORDINATE_DB = {
     'Tel_Aviv': [32.0853, 34.7818],
     'Haifa': [32.7940, 34.9896],
     'Palestina': [31.9522, 35.2332],
-    
+
     # Europa
     'Sofia': [42.6977, 23.3219],
     'Atene': [37.9838, 23.7275],
@@ -60,7 +60,7 @@ COORDINATE_DB = {
     'Finlandia': [60.1699, 24.9384],
     'Albania': [41.3275, 19.8187],
     'Ungheria': [47.4979, 19.0402],
-    
+
     # Africa
     'Bengasi': [32.1191, 20.0869],
     'Alessandria': [31.2001, 29.9187],
@@ -79,7 +79,7 @@ COORDINATE_DB = {
     'Senegal': [14.6937, -17.4441],
     'Congo_Belga': [-4.3276, 15.3136],
     'SudAfrica': [-30.5595, 22.9375],
-    
+
     # Americhe
     'BuenosAires': [-34.6037, -58.3816],
     'Quito': [-0.1807, -78.4678],
@@ -104,14 +104,14 @@ COORDINATE_DB = {
     'Santiago': [-33.4489, -70.6693],
     'Messico': [19.4326, -99.1332],
     'Mexico': [19.4326, -99.1332],
-    
+
     # Oceania
     'Perth': [-31.9505, 115.8605],
     'Wellington': [-41.2865, 174.7762],
     'Australia': [-33.8688, 151.2093],
     'Sydney': [-33.8688, 151.2093],
     'NuovaZelanda': [-41.2865, 174.7762],
-    
+
     # Europa (aggiunte)
     'LasPalmas': [28.1235, -15.4363],
     'Las_Palmas': [28.1235, -15.4363],
@@ -156,13 +156,13 @@ COORDINATE_DB_LOWER = {k.lower(): v for k, v in COORDINATE_DB.items()}
 # Tipo di destinazione in base alla regione
 def get_tipo_destinazione(paese, citta):
     """Determina il tipo di destinazione"""
-    estero_europa = ['Albania', 'Bulgaria', 'Grecia', 'Norvegia', 'Svezia', 'Polonia', 
-                     'Principato_di_Monaco', 'Monaco', 'Liechtenstein', 'Ungheria', 
+    estero_europa = ['Albania', 'Bulgaria', 'Grecia', 'Norvegia', 'Svezia', 'Polonia',
+                     'Principato_di_Monaco', 'Monaco', 'Liechtenstein', 'Ungheria',
                      'Yugoslavia', 'Estonia', 'Lettonia', 'Finlandia', 'Spagna']
-    
-    coloniale = ['Libia', 'Egitto', 'Tunisia', 'Senegal', 'Kenya', 'Nigeria', 
+
+    coloniale = ['Libia', 'Egitto', 'Tunisia', 'Senegal', 'Kenya', 'Nigeria',
                  'Congo_Belga', 'SudAfrica', 'Togoland']
-    
+
     if paese in estero_europa or citta in ['Atene', 'Sofia', 'Oslo', 'Stoccolma']:
         return 'estero_europa'
     elif paese in coloniale:
@@ -174,26 +174,26 @@ def parse_filename(filename):
     """Estrae informazioni dal nome del file"""
     # Rimuovi estensione
     name = os.path.splitext(filename)[0]
-    
+
     # Gestisci casi speciali con spazi
     name = name.replace(' ', '_')
-    
+
     # Pattern: Paese_Città.ext o Paese.ext
     parts = name.split('_')
-    
+
     if len(parts) >= 2:
         paese = parts[0]
         # Rimuovi numeri e altre info dalla città
         citta = re.sub(r'\d+$', '', '_'.join(parts[1:]))
         citta = citta.strip('_')
-        
+
         # Casi speciali
         if citta == '':
             citta = None
     else:
         paese = parts[0]
         citta = None
-    
+
     return paese, citta
 
 def get_coordinate(paese, citta):
@@ -208,7 +208,7 @@ def get_coordinate(paese, citta):
         'Belga': 'Congo_Belga',
         'Principato': 'Monaco'
     }
-    
+
     # Funzione helper per lookup case-insensitive
     def lookup_key(key):
         if not key:
@@ -255,14 +255,14 @@ def get_coordinate(paese, citta):
 
 def main():
     base_path = 'static/jpeg/destinazioni'
-    
+
     if not os.path.exists(base_path):
         print(f"Errore: directory {base_path} non trovata")
         return
-    
+
     destinazioni = []
     files_without_coords = []
-    
+
     # Estensioni supportate (aggiungi altre se necessario)
     SUPPORTED_EXT = ('.jpeg', '.jpg', '.png', '.gif', '.pdf', '.svg', '.tiff', '.webp')
 
@@ -283,11 +283,11 @@ def main():
         filename = os.path.basename(full_path)
         paese, citta = parse_filename(filename)
         coords = get_coordinate(paese, citta)
-        
+
         if coords is None:
             files_without_coords.append(rel_path)
             continue
-        
+
         # Crea nome leggibile
         if citta:
             nome_display = citta.replace('_', ' ')
@@ -295,7 +295,7 @@ def main():
         else:
             nome_display = paese.replace('_', ' ')
             paese_display = paese.replace('_', ' ')
-        
+
         # costruisci l'URL relativo alla cartella static
         image_url = f'/static/jpeg/destinazioni/{rel_path.replace(os.sep, "/")}'
 
@@ -306,17 +306,17 @@ def main():
             'paese': paese_display,
             'citta': citta.replace('_', ' ') if citta else None
         }
-        
+
         destinazioni.append(destinazione)
-    
+
     # Salva JSON
     output_file = 'destinazioni_data.json'
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(destinazioni, f, indent=2, ensure_ascii=False)
-    
+
     print(f"✓ Generato {output_file} con {len(destinazioni)} destinazioni")
     print(f"✓ File mappati: {len(destinazioni)}/{len(files)}")
-    
+
     if files_without_coords:
         print(f"\n⚠ {len(files_without_coords)} file senza coordinate:")
         for f in files_without_coords[:10]:  # mostra primi 10

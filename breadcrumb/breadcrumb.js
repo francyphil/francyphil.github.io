@@ -16,7 +16,7 @@
   function initBreadcrumb() {
     // Cerca il container esistente
     let breadcrumbContainer = document.getElementById('breadcrumbContainer');
-    
+
     if (breadcrumbContainer) {
       // Usa il container esistente e aggiungi il breadcrumb
       breadcrumbContainer.className = 'breadcrumb-container';
@@ -24,13 +24,13 @@
     } else {
       // Se non esiste, crea il breadcrumb container direttamente
       const breadcrumbHTML = '<div class="breadcrumb-container"><nav class="breadcrumb" id="breadcrumb"></nav></div>';
-      
+
       // Appendi al body (essendo position fixed, la posizione nel DOM non importa)
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = breadcrumbHTML;
       document.body.appendChild(tempDiv.firstElementChild);
     }
-    
+
     // Usa setTimeout per assicurarsi che il DOM sia aggiornato
     setTimeout(() => {
       populateBreadcrumb();
@@ -160,6 +160,14 @@
       items.push({ text: 'Storia Postale', link: path.includes('phindex.html') ? null : '/static/ph/phindex.html' });
       if (path.includes('cartolina.html')) {
         items.push({ text: 'Cartolina', link: null });
+      } else if (path.includes('cedola.html')) {
+        items.push({ text: 'Cedola Libraria', link: null });
+      } else if (path.includes('ciechi.html')) {
+        items.push({ text: 'Carte per ciechi', link: null });
+      } else if (path.includes('saggiMedicinali.html')) {
+        items.push({ text: 'Saggi Gratuiti Medicinali', link: null });
+      } else if (path.includes('cartolina_estero.html')) {
+        items.push({ text: 'Cartolina Estero', link: null });
       } else if (path.includes('destinazioni.html')) {
         items.push({ text: 'Destinazioni', link: null });
       } else if (path.includes('espresso.html')) {
@@ -196,7 +204,7 @@
     const breadcrumbHTML = items.map((item, index) => {
       const isLast = index === items.length - 1;
       const separator = isLast ? '' : '<span class="breadcrumb-separator">/</span>';
-      
+
       if (isLast) {
         return `<span class="breadcrumb-current">${item.text}</span>`;
       } else if (item.link) {
@@ -205,7 +213,7 @@
         return `<span>${item.text}</span>${separator}`;
       }
     }).join('');
-    
+
     breadcrumb.innerHTML = breadcrumbHTML;
 
   }

@@ -103,7 +103,7 @@
     search.type = "text";
     search.className = "ms-search";
     search.placeholder = "Cerca…";
-    
+
     function filterOptions() {
       const q = search.value.toLowerCase().trim();
       panel.querySelectorAll("label.ms-option").forEach((lbl) => {

@@ -8,9 +8,9 @@
     <script src="/favicon-loader.js"></script>
     <link rel="stylesheet" href="/navbar/navbar.css">
     <link rel="stylesheet" href="/breadcrumb/breadcrumb.css">
-    
+
     <!-- Leaflet CSS (caricamento condizionale in base al consenso) -->
-    
+
     <style>
       body {
         font-family: sans-serif;
@@ -60,7 +60,7 @@
         cursor: pointer;
         transition: transform 0.2s;
       }
- 
+
 
       /* Lightbox per anteprima immagini */
       #lightbox {
@@ -145,16 +145,16 @@
       <h1>Destinazioni</h1>
 
       <p>La comunicazione postale dal Regno d'Italia verso il mondo nel periodo preso in considerazione non è certamente scarsa ne generalmente rara. Verso alcune destinazioni il traffico era intenso, basti pensare verso le colonie o verso le destinazioni principali dei flussi migranti
-        Verso altre destinazioni, invece, il traffico era più limitato e quindi le buste con annulli di queste destinazioni sono più difficili da reperire. 
+        Verso altre destinazioni, invece, il traffico era più limitato e quindi le buste con annulli di queste destinazioni sono più difficili da reperire.
       </p>
 
       <p class="map-intro">
-        Esplora le destinazioni della corrispondenza postale dal Regno d'Italia. 
+        Esplora le destinazioni della corrispondenza postale dal Regno d'Italia.
         Clicca sui marker per vedere le immagini delle buste e cartoline originali.
       </p>
 
       <div id="map"></div>
- 
+
     </div>
 
     <!-- Lightbox per anteprima immagini -->
@@ -162,7 +162,7 @@
       <img id="lightbox-img" src="" alt="">
       <button id="lightbox-close">✕</button>
     </div>
-    
+
     <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
 
@@ -201,7 +201,7 @@
         }catch(e){ showPlaceholder(); }
       })();
     </script>
-    
+
     <script>
       // Funzioni per il lightbox
       function openLightbox(imageSrc) {
@@ -266,8 +266,8 @@
               // Crea popup con immagine
               const popupContent = `
                 <div class="popup-title">${dest.nome}</div>
-                <img src="${dest.immagine}" 
-                     alt="${descrizione}" 
+                <img src="${dest.immagine}"
+                     alt="${descrizione}"
                      class="popup-image"
                      loading="lazy"
                      decoding="async"

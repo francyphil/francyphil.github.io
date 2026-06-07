@@ -7,7 +7,7 @@ async function loadNavbar() {
     navbarContainer.id = 'navbar-container';
     navbarContainer.innerHTML = navbarHTML;
     document.body.insertBefore(navbarContainer, document.body.firstChild);
-    
+
     // Evidenzia la voce di menu corrente
     const path = window.location.pathname;
     if (path === '/' || path === '/index.html') {
@@ -33,7 +33,7 @@ async function loadNavbar() {
 
 function setupMobileDropdowns() {
   const isMobile = () => window.innerWidth <= 768;
-  
+
   // Marca visivamente i link che hanno sotto-menu
   document.querySelectorAll('.dropdown-submenu').forEach(li => {
     if (li.querySelector(':scope > .dropdown-content-sub')) {
@@ -83,7 +83,7 @@ function setupMobileDropdowns() {
   document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function() {
       if (!isMobile()) return;
-      if (!this.parentElement.classList.contains('dropdown') && 
+      if (!this.parentElement.classList.contains('dropdown') &&
           !this.nextElementSibling?.classList?.contains('dropdown-content-sub')) {
         document.querySelector('nav ul')?.classList.remove('nav-open');
         document.getElementById('hamburger-btn')?.classList.remove('active');
