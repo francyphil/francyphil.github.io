@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="it">
+  <head>
+      <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartolina</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css">
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css">
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 30px auto;
+        width: auto;
+      }
+
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      th {
+        background-color: #f0f0f0;
+      }
+
+      /* Mobile: tabelle scrollabili */
+      @media (max-width: 768px) {
+        .table-scroll {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          margin: 20px 0;
+        }
+
+        th, td {
+          padding: 6px 8px;
+          font-size: 0.85em;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/footer/footer.css" />
+  </head>
+  <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
+
+    <div class="content-container">
+      <h1>Cartolina postale per l'estero</h1>
+
+    <div id="tabelle"></div>
+
+    <script>
+      const tariffe = [
+        {
+          titolo: "Cartolina postale per l'estero",
+          nota: "",
+          voci: [
+            ["1.10.1907",  "0,10"],
+            ["1.2.1921",  "0,40"],
+            ["1.1.1922",  "0,50"],
+            ["1.1.1923",  "0,60"],     
+            ["1.1.1926",  "0,75"],
+            ["1.9.1944",  "1,50"],      
+            ["1.4.1945",  "3,00"],                    
+
+          ]
+        },
+        {
+          titolo: "Cartolina postale per l'estero accorto Portorose",
+          nota: "Valido verso Austria (fino al 14.8.1938), Cecoslovacchia (fino al 3.1928), Romania (fino al 1927) e Ungheria. Valido anche per la Jugoslavia dal 1.2.1929",
+          voci: [
+            ["1.6.1922",  "0,40"],
+            ["1.1.1923",  "0,45"], 
+            ["1.1.1926",  "0,60"],        
+            ["1.1.1942",  "fine tariffa speciale"],                   
+          ]
+        },
+        {
+          titolo: "Cartolina postale per l'estero verso paesi dell'asse",
+          nota: "verso Germania, Jugoslavia e Ungheria dal 1.1.1942 e Bulgaria, Croazia, Danimarca, Finlandia, Norvegia, Olanda, Romania, Slovacchia dal 1.4.1943",
+          voci: [
+            ["1.1.1942",  "0,50"],
+            ["1.9.1944",  "fine tariffa speciale"],
+          ]
+        },
+        {
+          titolo: "Cartolina illustrata per l'estero solo firma",
+          nota: "",
+          voci: [
+            ["1.1.1923",  "0,20"],
+            ["1.1.1926",  "fine tariffa speciale"],
+          ]
+        },
+        {
+          titolo: "Cartolina illustrata per l'estero 5 parole",
+          nota: "",
+          voci: [
+            ["1.1.1926",  "0,25"],
+            ["1.9.1944",  "fine tariffa speciale"],
+          ]
+        }    
+      ];
+
+      const container = document.getElementById("tabelle");
+      tariffe.forEach(t => {
+        const wrap = document.createElement("div");
+        wrap.className = "table-scroll";
+        wrap.innerHTML = `
+          <table>
+            <thead><tr>
+              <th>${t.titolo}</th>
+              ${t.voci.map(([d]) => `<th>${d}</th>`).join("")}
+            </tr></thead>
+            <tbody><tr>
+              <td></td>
+              ${t.voci.map(([, v]) => `<td>${v}</td>`).join("")}
+            </tr></tbody>
+          </table>`;
+        container.appendChild(wrap);
+        const nota = document.createElement("p");
+        nota.textContent = t.nota;
+        container.appendChild(nota);
+      });
+    </script>
+    </div>
+    
+    <script src="/footer/footer.js"></script>
+    <div id="footerContainer"></div>
+  </body>
+</html>
