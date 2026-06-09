@@ -15,6 +15,51 @@
         padding: 0;
       }
 
+      .tipo-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .tipo-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        width: 340px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .tipo-card h3 {
+        margin: 0;
+        padding: 14px 16px 10px;
+        font-size: 1.05em;
+        color: #2c3e50;
+        border-bottom: 1px solid #eee;
+      }
+
+      .tipo-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        background: #f9f9f9;
+        display: block;
+        padding: 8px;
+        box-sizing: border-box;
+        cursor: pointer;
+      }
+
+      .tipo-card-desc {
+        padding: 12px 16px;
+        font-size: 0.9em;
+        color: #555;
+        line-height: 1.5;
+        min-height: 60px;
+      }
+
       table {
         border-collapse: collapse;
         margin: 30px auto;
@@ -32,18 +77,55 @@
         background-color: #f0f0f0;
       }
 
-      /* Mobile: tabelle scrollabili */
+      /* Lightbox */
+      #lightboxOverlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        color: white;
+        flex-direction: column;
+      }
+      #lightboxImage {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+      #fallbackText { margin-bottom: 10px; }
+      #lightboxOverlay .controls { pointer-events: none; }
+      #lightboxOverlay .controls button {
+        position: fixed;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        font-size: 24px;
+        padding: 35px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.2s;
+        pointer-events: auto;
+      }
+      #lightboxOverlay .controls button:hover { background: rgba(255,255,255,0.5); }
+      #lightboxOverlay .controls button:nth-child(1) { top: 50%; left: 20px;  transform: translateY(-50%); }
+      #lightboxOverlay .controls button:nth-child(2) { bottom: 30px; left: 50%; transform: translateX(-50%); }
+      #lightboxOverlay .controls button:nth-child(3) { top: 50%; right: 20px; transform: translateY(-50%); }
+
+      /* Mobile */
       @media (max-width: 768px) {
         .table-scroll {
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;
           margin: 20px 0;
         }
-
-        th, td {
-          padding: 6px 8px;
-          font-size: 0.85em;
-        }
+        th, td { padding: 6px 8px; font-size: 0.85em; }
+        #lightboxOverlay .controls button { padding: 20px; font-size: 20px; }
+        #lightboxOverlay .controls button:nth-child(1) { left: 5px; }
+        #lightboxOverlay .controls button:nth-child(3) { right: 5px; }
       }
     </style>
     <link rel="stylesheet" href="/footer/footer.css" />
@@ -72,10 +154,37 @@
             ["16.8.1927", "0,30"],
             ["1.10.1944", "0,60"],
             ["1.4.1945",  "1,20"],
+          ],
+          cards: [
+            {
+              src: "../jpeg/cartoline/cpInterno_15.jpeg",
+              alt: "Cartolina postale 15 c.",
+              desc: "Cartolina postale affrancata con tariffa da 15 centesimi (tariffa del 1.3.1919)"
+            },
+            {
+              src: "../jpeg/cartoline/cpInterno_25.jpeg",
+              alt: "Cartolina postale 25 c.",
+              desc: "Cartolina postale affrancata con tariffa da 25 centesimi (tariffa del 1.2.1921)"
+            },
+            {
+              src: "../jpeg/cartoline/cpInterno_30.jpeg",
+              alt: "Cartolina postale 30 c.",
+              desc: "Cartolina postale affrancata con tariffa da 30 centesimi (tariffa del 1.1.1923)"
+            },
+            {
+              src: "../jpeg/cartoline/cpInterno_40.jpeg",
+              alt: "Cartolina postale 40 c.",
+              desc: "Cartolina postale affrancata con tariffa da 40 centesimi (tariffa del 16.3.1925)"
+            },
+            {
+              src: "../jpeg/cartoline/cpInterno_30_1447.jpeg",
+              alt: "Cartolina postale 30 c.",
+              desc: "Cartolina postale affrancata con tariffa da 30 centesimi (tariffa del 16.8.1927)"
+            }
           ]
         },
         {
-          titolo: "entro il distretto",
+          titolo: "Cartolina postale entro il distretto",
           nota: "",
           voci: [
             ["28.10.1901*", "0,10"],
@@ -86,10 +195,32 @@
             ["16.8.1927", "0,15"],
             ["1.10.1944", "0,30"],
             ["1.4.1945",  "0,60"],
+          ],
+          cards: [
+            {
+              src: "../jpeg/cartoline/cpInterno_distretto_10_66.jpeg",
+              alt: "Cartolina postale nel distretto 10 c.",
+              desc: "Cartolina postale nel distretto affrancata per 10 centesimi (tariffa del 1.3.1919)"
+            },
+            {
+              src: "../jpeg/cartoline/cpInterno_distretto_15_91.jpeg",
+              alt: "Cartolina postale nel distretto 15 c.",
+              desc: "Cartolina postale nel distretto affrancata per 15 centesimi (tariffa del 1.2.1921)"
+            },
+            {
+              src: "../jpeg/cartoline/cpInterno_distretto_20_550A.jpeg",
+              alt: "Cartolina postale nel distretto 20 c.",
+              desc: "Cartolina postale nel distretto affrancata per 20 centesimi (tariffa del 16.3.1925)"
+            },
+            {
+              src: "../jpeg/cartoline/cpInterno_distretto_15_1683.jpeg",
+              alt: "Cartolina postale nel distretto 15 c.",
+              desc: "Cartolina postale nel distretto affrancata per 15 centesimi (tariffa del 16.8.1927)"
+            }
           ]
         },
         {
-          titolo: "Corrispondenza Sindaci",
+          titolo: "Cartolina postale di corrispondenza Sindaci",
           nota: "",
           voci: [
             ["28.10.1901*","0,05"],
@@ -122,7 +253,14 @@
             ["1.3.1919","fine tariffa speciale"],
             ["1.1.1924","0,15"],
             ["1.7.1924","fine tariffa speciale"],
-          ]
+          ],
+          cards: [
+            {
+              src: "../jpeg/cartoline/cpInterno_illustrata_15_326.jpeg",
+              alt: "Cartolina illustrata 15 c.",
+              desc: "Cartolina illustrata affrancata per 15 centesimi (tariffa del 1.1.1924)"
+            }
+          ]          
         },
         {
           titolo: "Cartolina illustrata solo firma",
@@ -135,6 +273,13 @@
             ["26.3.1942","fine tariffa speciale"],
             ["1.10.1944","0,20"],
             ["1.4.1945","0,40"],
+          ],
+          cards: [
+            {
+              src: "../jpeg/cartoline/cpInterno_firma_10_344.jpeg",
+              alt: "Cartolina illustrata solo firma 10 c.",
+              desc: "Cartolina illustrata solo firma affrancata per 10 centesimi (tariffa del 1.7.1924)"
+            }
           ]
         },
         {
@@ -149,6 +294,23 @@
             ["26.3.1942","fine tariffa speciale"],
             ["1.10.1944","0,40"],
             ["1.4.1945","0,80"],
+          ],
+          cards: [
+            {
+              src: "../jpeg/cartoline/cpInterno_5Parole_10.jpeg",
+              alt: "Cartolina illustrata 5 parole 10 c.",
+              desc: "Cartolina illustrata 5 parole affrancata per 10 centesimi (tariffa del 1.3.1919)"
+            },
+            {
+              src: "../jpeg/cartoline/cpInterno_5Parole_15.jpeg",
+              alt: "Cartolina illustrata 5 parole 15 c.",
+              desc: "Cartolina illustrata 5 parole affrancata per 15 centesimi (tariffa del 1.2.1921)"
+            },
+            {
+              src: "../jpeg/cartoline/cpInterno_5Parole_20_562_A.jpeg",
+              alt: "Cartolina illustrata 5 parole 20 c.",
+              desc: "Cartolina illustrata 5 parole affrancata per 20 centesimi (tariffa del 6.3.1925)"
+            }
           ]
         },
         {
@@ -178,14 +340,84 @@
             </tr></tbody>
           </table>`;
         container.appendChild(wrap);
-        const nota = document.createElement("p");
-        nota.textContent = t.nota;
-        container.appendChild(nota);
+        
+        if (t.nota) {
+          const nota = document.createElement("p");
+          nota.textContent = t.nota;
+          container.appendChild(nota);
+        }
+
+        if (t.cards && t.cards.length > 0) {
+          const cardsWrap = document.createElement("div");
+          cardsWrap.className = "tipo-cards";
+          cardsWrap.innerHTML = t.cards.map(c => `
+            <div class="tipo-card">
+              <img src="${c.src}" alt="${c.alt || ''}" loading="lazy" decoding="async" />
+              <div class="tipo-card-desc">${c.desc}</div>
+            </div>
+          `).join("");
+          container.appendChild(cardsWrap);
+        }
       });
     </script>
     </div>
 
     <script src="/footer/footer.js"></script>
     <div id="footerContainer"></div>
+
+    <div id="lightboxOverlay">
+      <img id="lightboxImage" />
+      <div id="fallbackText"></div>
+      <div class="controls">
+        <button onclick="lbPrev()">&#x27E8;</button>
+        <button onclick="lbChiudi()">&#x2715;</button>
+        <button onclick="lbNext()">&#x27E9;</button>
+      </div>
+    </div>
+
+    <script>
+      let lbImgs = [], lbIdx = 0;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        lbImgs = Array.from(document.querySelectorAll(".tipo-card img"));
+        lbImgs.forEach((img, i) => {
+          img.addEventListener("click", () => lbApri(i));
+        });
+      });
+
+      function lbApri(i) {
+        lbIdx = i;
+        const overlay = document.getElementById("lightboxOverlay");
+        const imgEl   = document.getElementById("lightboxImage");
+        const fallback = document.getElementById("fallbackText");
+        imgEl.src = lbImgs[i].src;
+        imgEl.style.display = "block";
+        fallback.textContent = "";
+        imgEl.onerror = () => { imgEl.style.display = "none"; fallback.textContent = "Immagine non ancora presente"; };
+        overlay.style.display = "flex";
+      }
+
+      function lbChiudi() { document.getElementById("lightboxOverlay").style.display = "none"; }
+      function lbPrev()   { lbApri((lbIdx - 1 + lbImgs.length) % lbImgs.length); }
+      function lbNext()   { lbApri((lbIdx + 1) % lbImgs.length); }
+
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape")     lbChiudi();
+        if (e.key === "ArrowLeft")  lbPrev();
+        if (e.key === "ArrowRight") lbNext();
+      });
+
+      // Swipe mobile
+      let tsX = null;
+      const lbEl = document.getElementById("lightboxOverlay");
+      lbEl.addEventListener("touchstart", e => { tsX = e.touches[0].clientX; }, { passive: true });
+      lbEl.addEventListener("touchend",   e => {
+        if (tsX === null) return;
+        const dx = e.changedTouches[0].clientX - tsX;
+        tsX = null;
+        if (Math.abs(dx) < 50) return;
+        dx < 0 ? lbNext() : lbPrev();
+      }, { passive: true });
+    </script>
   </body>
 </html>
