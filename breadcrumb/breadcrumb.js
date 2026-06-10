@@ -190,6 +190,8 @@
         items.push({ text: 'Raccomandata', link: null });
       } else if (path.includes('perfin.html')) {
         items.push({ text: 'Perfin', link: null });
+      } else if (path.includes('lettera_estero.html')) {
+        items.push({ text: 'Lettera per l\'estero', link: null });        
       } else if (path.includes('stampe_estero.html')) {
         items.push({ text: 'Stampe per l\'estero', link: null });        
       }

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="it">
+  <head>
+      <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lettera</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css">
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css">
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 30px auto;
+        width: auto;
+      }
+
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      th {
+        background-color: #f0f0f0;
+      }
+
+      /* Mobile: tabelle scrollabili */
+      @media (max-width: 768px) {
+        .table-scroll {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          margin: 20px 0;
+        }
+
+        th, td {
+          padding: 6px 8px;
+          font-size: 0.85em;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/footer/footer.css" />
+  </head>
+  <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
+
+    <div class="content-container">
+      <h1>Lettere e Biglietti postali</h1>
+
+    <div id="tabelle"></div>
+
+    <script>
+      const tariffe = [
+        {
+          titolo: "Lettere e Biglietti postali per l'estero",
+          nota: " fino al 1.3.1919, 20 gr per ogni porto dal 1.3.1919",
+          voci: [
+            ["1.10.1907",  "0,25 15 gr per ogni porto"],
+            ["1.3.1919",   "0,25 20 gr per ogni porto"],
+            ["1.2.1921",   "0,60 primo porto 20 gr\n0,20 per ogni porto aggiuntivo 20 gr"],
+            ["1.2.1922",   "0,80 primo porto 20 gr\n0,40 per ogni porto aggiuntivo 20 gr"],
+            ["1.1.1924",   "1,00 primo porto 20 gr\n0,50 per ogni porto aggiuntivo 20 gr"],
+            ["1.1.1926",   "1,25 primo porto 20 gr\n0,75 per ogni porto aggiuntivo 20 gr"],
+            ["1.9.1944",   "2,50 primo porto 20 gr\n4,00 da 20gr a 40gr"],   
+            ["1.4.1945",   "5,00 primo porto 20 gr\n3,00 per ogni porto aggiuntivo 20gr"],      
+          ]
+        },
+        {
+          titolo: "Lettere e Biglietti postali per l'estero Portorose",
+          nota: "Tariffa valida per Austria (fino al 14.8.1938), Cecoslovacchia (fino a 3.1928), Romania (fino al 1927), Ungheria, Jugoslavia (dal 1.2.1929)",
+          voci: [
+            ["1.6.1922",   "0,60 primo porto 20 gr\n0,40 per ogni porto aggiuntivo 20 gr"],
+            ["1.1.1924",   "0,75 primo porto 20 gr\n0,50 per ogni porto aggiuntivo 20 gr"],
+            ["1.1.1926",   "1,00 primo porto 20 gr\n0,75 per ogni porto aggiuntivo 20 gr"],
+            ["1.1.1942",   "sospesa"]       
+          ]
+        },
+        {
+          titolo: "Lettere e Biglietti postali per l'estero tariffa ridotta per Germania, Jugoslavia e Ungheria",
+          nota: "",
+          voci: [
+            ["1.1.1942",   "1,00 primo porto 20 gr\n0,60 per ogni porto aggiuntivo 20 gr"]
+          ]
+        } ,        
+        {
+          titolo: "Lettere e Biglietti postali per l'estero tariffa ridotta per Bulgaria, Croazia, Danimarca, Finlandia, Germania, Norvegia, Olanda, Romania, Slovacchia, Ungheria",
+          nota: "",
+          voci: [
+            ["1.4.1943",   "1,00 primo porto 20 gr\n2,00 da 20 gr a 250\n3,35 da 250 gr a 500\n5,00 da 500 gr a 1000"]
+          ]
+        }             
+      ];
+
+      const container = document.getElementById("tabelle");
+      tariffe.forEach(t => {
+        const wrap = document.createElement("div");
+        wrap.className = "table-scroll";
+        wrap.innerHTML = `
+          <table>
+            <thead><tr>
+              <th>${t.titolo}</th>
+              <th>Tariffa</th>
+            </tr></thead>
+            <tbody>
+              ${t.voci.map(([d, v]) => `<tr><th>${d}</th><td>${v.replace(/\n/g, '<br>')}</td></tr>`).join("")}
+            </tbody>
+          </table>`;
+        container.appendChild(wrap);
+        const nota = document.createElement("p");
+        nota.textContent = t.nota;
+        container.appendChild(nota);
+      });
+    </script>
+    </div>
+
+    <script src="/footer/footer.js"></script>
+    <div id="footerContainer"></div>
+  </body>
+</html>
