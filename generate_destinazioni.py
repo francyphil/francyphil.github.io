@@ -148,6 +148,29 @@ COORDINATE_DB = {
     'San': [43.9424, 12.4578],
     'Marino': [43.9424, 12.4578],
     'San_Marino': [43.9424, 12.4578],
+
+    # Specifiche per città mancanti o coordinate più precise
+    'Korca': [40.6139, 20.7719],
+    'Melbourne': [-37.8136, 144.9631],
+    'Victoria': [-37.8136, 144.9631],
+    'Tasmania': [-42.8821, 147.3272],
+    'Famagosta': [35.125, 33.95],
+    'Larnaca': [34.92, 33.6233],
+    'Nicosia': [35.1725, 33.3650],
+    'Parnu': [58.3859, 24.4971],
+    'Paaskula': [59.3561, 24.6417],
+    'Pääsküla': [59.3561, 24.6417],
+    'Nummela': [60.3333, 24.3167],
+    'Hammaslahti': [62.4431, 30.0169],
+    'Kyoto': [35.0116, 135.7681],
+    'Bandoeng': [-6.9175, 107.6191],
+    'Malang': [-7.9829, 112.6308],
+    'Vaduz': [47.1410, 9.5209],
+    'Rajkot': [22.3039, 70.8022],
+    'LaValletta': [35.8989, 14.5146],
+    'NewBrunswick': [46.5653, -66.4619],
+    'CongoBelga': [-4.3276, 15.3136],
+    'Quebec': [46.8139, -71.2082],
 }
 
 # Mappa per lookup case-insensitive

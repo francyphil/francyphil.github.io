@@ -236,15 +236,6 @@
           maxZoom: 18
         }).addTo(map);
 
-        // Icona bandierina unica per tutti i marker
-        const iconaBandiera = L.divIcon({
-          html: '<div style="font-size: 28px; line-height: 1; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🚩</div>',
-          className: '',
-          iconSize: [32, 32],
-          iconAnchor: [16, 32],
-          popupAnchor: [0, -32]
-        });
-
         // Carica i dati delle destinazioni dal JSON
         fetch('/destinazioni_data.json')
           .then(response => {
@@ -254,33 +245,99 @@
             return response.json();
           })
           .then(destinazioni => {
-            // Aggiungi marker alla mappa
+            // Raggruppa le destinazioni per coordinate identiche
+            const gruppiDestinazioni = {};
             destinazioni.forEach(dest => {
-              const marker = L.marker(dest.coords, {
-                icon: iconaBandiera
+              const key = `${dest.coords[0].toFixed(4)},${dest.coords[1].toFixed(4)}`;
+              if (!gruppiDestinazioni[key]) {
+                gruppiDestinazioni[key] = {
+                  coords: dest.coords,
+                  nome: dest.nome,
+                  items: []
+                };
+              }
+              gruppiDestinazioni[key].items.push(dest);
+            });
+
+            // Aggiungi marker alla mappa per ciascun gruppo
+            Object.values(gruppiDestinazioni).forEach(gruppo => {
+              const count = gruppo.items.length;
+              
+              // Se ci sono più immagini nello stesso punto, mostra un numero sopra la bandierina
+              let htmlMarker = '<div style="font-size: 28px; line-height: 1; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); font-family: sans-serif;">🚩</div>';
+              if (count > 1) {
+                htmlMarker = `
+                  <div style="position: relative; font-size: 28px; line-height: 1; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); display: inline-block; font-family: sans-serif;">
+                    🚩
+                    <div style="position: absolute; top: -8px; right: -8px; background-color: #e74c3c; color: white; border-radius: 50%; min-width: 18px; height: 18px; padding: 1px 3px; font-size: 11px; font-family: sans-serif; font-weight: bold; display: flex; align-items: center; justify-content: center; border: 1.5px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.3); pointer-events: none;">
+                      ${count}
+                    </div>
+                  </div>`;
+              }
+
+              const iconaGruppo = L.divIcon({
+                html: htmlMarker,
+                className: '',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
+              });
+
+              const marker = L.marker(gruppo.coords, {
+                icon: iconaGruppo
               }).addTo(map);
 
-              // Crea descrizione: Paese - Città (o solo Paese se non c'è città)
-              const descrizione = dest.citta ? `${dest.paese} - ${dest.citta}` : dest.paese;
+              let popupContent = '';
 
-              // Crea popup con immagine
-              const popupContent = `
-                <div class="popup-title">${dest.nome}</div>
-                <img src="${dest.immagine}"
-                     alt="${descrizione}"
-                     class="popup-image"
-                     loading="lazy"
-                     decoding="async"
-                     onclick="openLightbox('${dest.immagine}'); event.stopPropagation();"
-                     onerror="this.style.display='none'">
-                <div class="popup-info">${descrizione}</div>
-              `;
+              if (count === 1) {
+                const dest = gruppo.items[0];
+                const descrizione = dest.citta ? `${dest.paese} - ${dest.citta}` : dest.paese;
+                popupContent = `
+                  <div class="popup-title">${dest.nome}</div>
+                  <img src="${dest.immagine}"
+                       alt="${descrizione}"
+                       class="popup-image"
+                       loading="lazy"
+                       decoding="async"
+                       onclick="openLightbox('${dest.immagine}'); event.stopPropagation();"
+                       onerror="this.style.display='none'">
+                  <div class="popup-info">${descrizione}</div>
+                `;
+              } else {
+                // Per destinazioni multiple nello stesso punto, mostra l'elenco scorrevole
+                const firstDest = gruppo.items[0];
+                const nomeMostrato = firstDest.citta ? firstDest.citta : firstDest.paese;
+                
+                let listHtml = gruppo.items.map(dest => {
+                  const descrizione = dest.citta ? `${dest.paese} - ${dest.citta}` : dest.paese;
+                  return `
+                    <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 12px; text-align: center;">
+                      <img src="${dest.immagine}"
+                           alt="${descrizione}"
+                           class="popup-image"
+                           loading="lazy"
+                           decoding="async"
+                           onclick="openLightbox('${dest.immagine}'); event.stopPropagation();"
+                           onerror="this.style.display='none'"
+                           style="cursor: pointer; max-width: 100%; border-radius: 4px; display: block; margin: 8px auto;">
+                      <div class="popup-info" style="font-size: 13px; color: #555; margin-top: 4px;">${descrizione}</div>
+                    </div>
+                  `;
+                }).join('');
+
+                popupContent = `
+                  <div class="popup-title" style="border-bottom: 2px solid #eee; padding-bottom: 5px; margin-bottom: 10px;">${nomeMostrato} (${count} buste)</div>
+                  <div style="max-height: 320px; overflow-y: auto; padding-right: 8px; text-align: left;">
+                    ${listHtml}
+                  </div>
+                `;
+              }
 
               // Dimensioni popup responsive
               const isMobile = window.innerWidth <= 768;
               marker.bindPopup(popupContent, {
                 maxWidth: isMobile ? 220 : 350,
-                minWidth: isMobile ? 150 : 250
+                minWidth: isMobile ? 180 : 260
               });
             });
 

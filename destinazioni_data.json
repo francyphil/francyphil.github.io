@@ -1,33 +1,13 @@
 [
   {
-    "nome": "Iraq Bagdad",
+    "nome": "korca",
     "coords": [
-      33.3152,
-      44.3661
+      40.6139,
+      20.7719
     ],
-    "immagine": "/static/jpeg/destinazioni/1938_Iraq_Bagdad.jpeg",
-    "paese": "1938",
-    "citta": "Iraq Bagdad"
-  },
-  {
-    "nome": "Bagdad",
-    "coords": [
-      33.3152,
-      44.3661
-    ],
-    "immagine": "/static/jpeg/destinazioni/Afghanistan_Bagdad.jpeg",
-    "paese": "Afghanistan",
-    "citta": "Bagdad"
-  },
-  {
-    "nome": "Albania",
-    "coords": [
-      41.3275,
-      19.8187
-    ],
-    "immagine": "/static/jpeg/destinazioni/Albania.pdf",
+    "immagine": "/static/jpeg/destinazioni/Albania_korca.jpg",
     "paese": "Albania",
-    "citta": null
+    "citta": "korca"
   },
   {
     "nome": "BuenosAires",
@@ -42,8 +22,8 @@
   {
     "nome": "Melbourne",
     "coords": [
-      -33.8688,
-      151.2093
+      -37.8136,
+      144.9631
     ],
     "immagine": "/static/jpeg/destinazioni/Australia_Melbourne.jpeg",
     "paese": "Australia",
@@ -62,8 +42,8 @@
   {
     "nome": "Tasmania",
     "coords": [
-      -33.8688,
-      151.2093
+      -42.8821,
+      147.3272
     ],
     "immagine": "/static/jpeg/destinazioni/Australia_Tasmania.jpeg",
     "paese": "Australia",
@@ -72,8 +52,8 @@
   {
     "nome": "Victoria",
     "coords": [
-      -33.8688,
-      151.2093
+      -37.8136,
+      144.9631
     ],
     "immagine": "/static/jpeg/destinazioni/Australia_Victoria.jpeg",
     "paese": "Australia",
@@ -88,26 +68,6 @@
     "immagine": "/static/jpeg/destinazioni/Bulgaria_Sofia.jpeg",
     "paese": "Bulgaria",
     "citta": "Sofia"
-  },
-  {
-    "nome": "Canada",
-    "coords": [
-      45.4215,
-      -75.6972
-    ],
-    "immagine": "/static/jpeg/destinazioni/Canada.jpeg",
-    "paese": "Canada",
-    "citta": null
-  },
-  {
-    "nome": "Canada",
-    "coords": [
-      45.4215,
-      -75.6972
-    ],
-    "immagine": "/static/jpeg/destinazioni/Canada_1928.jpeg",
-    "paese": "Canada",
-    "citta": null
   },
   {
     "nome": "Ontario",
@@ -130,6 +90,26 @@
     "citta": "Winnipeg"
   },
   {
+    "nome": "newBrunswick",
+    "coords": [
+      46.5653,
+      -66.4619
+    ],
+    "immagine": "/static/jpeg/destinazioni/Canada_newBrunswick.jpeg",
+    "paese": "Canada",
+    "citta": "newBrunswick"
+  },
+  {
+    "nome": "quebec",
+    "coords": [
+      46.8139,
+      -71.2082
+    ],
+    "immagine": "/static/jpeg/destinazioni/Canada_quebec.jpeg",
+    "paese": "Canada",
+    "citta": "quebec"
+  },
+  {
     "nome": "LasPalmas",
     "coords": [
       28.1235,
@@ -150,16 +130,6 @@
     "citta": "Santiago"
   },
   {
-    "nome": "1903 tsingtau mahlke",
-    "coords": [
-      31.2304,
-      121.4737
-    ],
-    "immagine": "/static/jpeg/destinazioni/Cina_1903_tsingtau_mahlke.jpeg",
-    "paese": "Cina",
-    "citta": "1903 tsingtau mahlke"
-  },
-  {
     "nome": "Hankow",
     "coords": [
       30.5928,
@@ -175,7 +145,7 @@
       31.2304,
       121.4737
     ],
-    "immagine": "/static/jpeg/destinazioni/Cina_Shanghai 1.jpeg",
+    "immagine": "/static/jpeg/destinazioni/Cina_Shanghai.jpeg",
     "paese": "Cina",
     "citta": "Shanghai"
   },
@@ -185,7 +155,7 @@
       31.2304,
       121.4737
     ],
-    "immagine": "/static/jpeg/destinazioni/Cina_Shanghai.jpeg",
+    "immagine": "/static/jpeg/destinazioni/Cina_Shanghai_1.jpeg",
     "paese": "Cina",
     "citta": "Shanghai"
   },
@@ -200,44 +170,54 @@
     "citta": "Tiensin"
   },
   {
-    "nome": "Cipro",
+    "nome": "tsingtau",
     "coords": [
-      35.1264,
-      33.4299
+      36.0671,
+      120.3826
     ],
-    "immagine": "/static/jpeg/destinazioni/Cipro.jpg",
-    "paese": "Cipro",
-    "citta": null
+    "immagine": "/static/jpeg/destinazioni/Cina_tsingtau.jpeg",
+    "paese": "Cina",
+    "citta": "tsingtau"
   },
   {
-    "nome": "Cipro",
+    "nome": "Famagosta",
     "coords": [
-      35.1264,
-      33.4299
+      35.125,
+      33.95
     ],
-    "immagine": "/static/jpeg/destinazioni/Cipro_2.jpg",
+    "immagine": "/static/jpeg/destinazioni/Cipro_Famagosta.jpg",
     "paese": "Cipro",
-    "citta": null
+    "citta": "Famagosta"
   },
   {
-    "nome": "Cipro",
+    "nome": "Nicosia",
     "coords": [
-      35.1264,
-      33.4299
+      35.1725,
+      33.365
     ],
-    "immagine": "/static/jpeg/destinazioni/Cipro_3.jpg",
+    "immagine": "/static/jpeg/destinazioni/Cipro_Nicosia.jpg",
     "paese": "Cipro",
-    "citta": null
+    "citta": "Nicosia"
   },
   {
-    "nome": "Belga Elisabethville",
+    "nome": "larnaca",
     "coords": [
-      -4.3276,
-      15.3136
+      34.92,
+      33.6233
     ],
-    "immagine": "/static/jpeg/destinazioni/Congo_Belga_Elisabethville.jpeg",
-    "paese": "Congo",
-    "citta": "Belga Elisabethville"
+    "immagine": "/static/jpeg/destinazioni/Cipro_larnaca.jpg",
+    "paese": "Cipro",
+    "citta": "larnaca"
+  },
+  {
+    "nome": "Elisabethville",
+    "coords": [
+      -11.6795,
+      27.5069
+    ],
+    "immagine": "/static/jpeg/destinazioni/CongoBelga_Elisabethville.jpeg",
+    "paese": "CongoBelga",
+    "citta": "Elisabethville"
   },
   {
     "nome": "Alessandria",
@@ -320,14 +300,24 @@
     "citta": "Quito"
   },
   {
-    "nome": "Estonia",
+    "nome": "Pääsküla",
     "coords": [
       59.437,
       24.7536
     ],
-    "immagine": "/static/jpeg/destinazioni/Estonia_1938.jpeg",
+    "immagine": "/static/jpeg/destinazioni/Estonia_ Pääsküla.jpeg",
     "paese": "Estonia",
-    "citta": null
+    "citta": "Pääsküla"
+  },
+  {
+    "nome": "Parnu",
+    "coords": [
+      58.3859,
+      24.4971
+    ],
+    "immagine": "/static/jpeg/destinazioni/Estonia_Parnu.jpeg",
+    "paese": "Estonia",
+    "citta": "Parnu"
   },
   {
     "nome": "AddisAbeba",
@@ -340,14 +330,24 @@
     "citta": "AddisAbeba"
   },
   {
-    "nome": "Finlandia",
+    "nome": "Nummela",
     "coords": [
-      60.1699,
-      24.9384
+      60.3333,
+      24.3167
     ],
-    "immagine": "/static/jpeg/destinazioni/Finlandia_1933.jpeg",
+    "immagine": "/static/jpeg/destinazioni/Finlandia_ Nummela.jpeg",
     "paese": "Finlandia",
-    "citta": null
+    "citta": "Nummela"
+  },
+  {
+    "nome": "Hammaslahti",
+    "coords": [
+      62.4431,
+      30.0169
+    ],
+    "immagine": "/static/jpeg/destinazioni/Finlandia_Hammaslahti.jpeg",
+    "paese": "Finlandia",
+    "citta": "Hammaslahti"
   },
   {
     "nome": "Giappone",
@@ -356,26 +356,6 @@
       139.6503
     ],
     "immagine": "/static/jpeg/destinazioni/Giappone 1.jpeg",
-    "paese": "Giappone",
-    "citta": null
-  },
-  {
-    "nome": "Giappone",
-    "coords": [
-      35.6762,
-      139.6503
-    ],
-    "immagine": "/static/jpeg/destinazioni/Giappone 2.jpeg",
-    "paese": "Giappone",
-    "citta": null
-  },
-  {
-    "nome": "Giappone",
-    "coords": [
-      35.6762,
-      139.6503
-    ],
-    "immagine": "/static/jpeg/destinazioni/Giappone 3.jpeg",
     "paese": "Giappone",
     "citta": null
   },
@@ -398,6 +378,26 @@
     "immagine": "/static/jpeg/destinazioni/Giappone_1930.jpeg",
     "paese": "Giappone",
     "citta": null
+  },
+  {
+    "nome": "Kyoto",
+    "coords": [
+      35.0116,
+      135.7681
+    ],
+    "immagine": "/static/jpeg/destinazioni/Giappone_Kyoto.jpeg",
+    "paese": "Giappone",
+    "citta": "Kyoto"
+  },
+  {
+    "nome": "kyoto",
+    "coords": [
+      35.0116,
+      135.7681
+    ],
+    "immagine": "/static/jpeg/destinazioni/Giappone_kyoto_1.jpeg",
+    "paese": "Giappone",
+    "citta": "kyoto"
   },
   {
     "nome": "Atene",
@@ -428,16 +428,6 @@
     "immagine": "/static/jpeg/destinazioni/Grecia_Salonicco.jpeg",
     "paese": "Grecia",
     "citta": "Salonicco"
-  },
-  {
-    "nome": "India",
-    "coords": [
-      28.7041,
-      77.1025
-    ],
-    "immagine": "/static/jpeg/destinazioni/India_1928.jpeg",
-    "paese": "India",
-    "citta": null
   },
   {
     "nome": "Allahabad",
@@ -500,44 +490,54 @@
     "citta": "Madras"
   },
   {
-    "nome": "Istanbul",
+    "nome": "Rajkot",
     "coords": [
-      41.0082,
-      28.9784
+      22.3039,
+      70.8022
     ],
-    "immagine": "/static/jpeg/destinazioni/Istanbul 1.jpeg",
-    "paese": "Istanbul",
-    "citta": null
+    "immagine": "/static/jpeg/destinazioni/India_Rajkot.jpeg",
+    "paese": "India",
+    "citta": "Rajkot"
   },
   {
-    "nome": "Istanbul",
+    "nome": "Bagdad",
     "coords": [
-      41.0082,
-      28.9784
+      33.3152,
+      44.3661
     ],
-    "immagine": "/static/jpeg/destinazioni/Istanbul.jpeg",
-    "paese": "Istanbul",
-    "citta": null
+    "immagine": "/static/jpeg/destinazioni/Iraq_Bagdad.jpeg",
+    "paese": "Iraq",
+    "citta": "Bagdad"
   },
   {
-    "nome": "Java",
+    "nome": "Bagdad",
     "coords": [
-      -7.6145,
-      110.7122
+      33.3152,
+      44.3661
     ],
-    "immagine": "/static/jpeg/destinazioni/Java.jpeg",
+    "immagine": "/static/jpeg/destinazioni/Iraq_Bagdad_2.jpeg",
+    "paese": "Iraq",
+    "citta": "Bagdad"
+  },
+  {
+    "nome": "Bandoeng",
+    "coords": [
+      -6.9175,
+      107.6191
+    ],
+    "immagine": "/static/jpeg/destinazioni/Java_Bandoeng.jpeg",
     "paese": "Java",
-    "citta": null
+    "citta": "Bandoeng"
   },
   {
-    "nome": "Java",
+    "nome": "Malang",
     "coords": [
-      -7.6145,
-      110.7122
+      -7.9829,
+      112.6308
     ],
-    "immagine": "/static/jpeg/destinazioni/Java_1929.jpeg",
+    "immagine": "/static/jpeg/destinazioni/Java_Malang.jpeg",
     "paese": "Java",
-    "citta": null
+    "citta": "Malang"
   },
   {
     "nome": "Nairobi",
@@ -570,54 +570,54 @@
     "citta": "Bengasi"
   },
   {
-    "nome": "Liechtenstein",
+    "nome": "vaduz",
     "coords": [
-      47.166,
-      9.5554
+      47.141,
+      9.5209
     ],
-    "immagine": "/static/jpeg/destinazioni/Liechtenstein 1.jpeg",
+    "immagine": "/static/jpeg/destinazioni/Liechtenstein_vaduz 2.jpeg",
     "paese": "Liechtenstein",
-    "citta": null
+    "citta": "vaduz"
   },
   {
-    "nome": "Liechtenstein",
+    "nome": "vaduz",
     "coords": [
-      47.166,
-      9.5554
+      47.141,
+      9.5209
     ],
-    "immagine": "/static/jpeg/destinazioni/Liechtenstein.jpeg",
+    "immagine": "/static/jpeg/destinazioni/Liechtenstein_vaduz.jpeg",
     "paese": "Liechtenstein",
-    "citta": null
+    "citta": "vaduz"
   },
   {
-    "nome": "La Valletta",
+    "nome": "LaValletta",
     "coords": [
       35.8989,
       14.5146
     ],
-    "immagine": "/static/jpeg/destinazioni/Malta_La_Valletta.jpeg",
+    "immagine": "/static/jpeg/destinazioni/Malta_LaValletta.jpeg",
     "paese": "Malta",
-    "citta": "La Valletta"
+    "citta": "LaValletta"
   },
   {
-    "nome": "Messico",
+    "nome": "mexicoDF",
     "coords": [
       19.4326,
       -99.1332
     ],
-    "immagine": "/static/jpeg/destinazioni/Messico 2.jpeg",
+    "immagine": "/static/jpeg/destinazioni/Messico_mexicoDF 2.jpeg",
     "paese": "Messico",
-    "citta": null
+    "citta": "mexicoDF"
   },
   {
-    "nome": "Messico",
+    "nome": "mexicoDF",
     "coords": [
       19.4326,
       -99.1332
     ],
-    "immagine": "/static/jpeg/destinazioni/Messico.jpeg",
+    "immagine": "/static/jpeg/destinazioni/Messico_mexicoDF.jpeg",
     "paese": "Messico",
-    "citta": null
+    "citta": "mexicoDF"
   },
   {
     "nome": "Zinder",
@@ -935,7 +935,27 @@
       41.0082,
       28.9784
     ],
+    "immagine": "/static/jpeg/destinazioni/Turchia_Istanbul 1.jpeg",
+    "paese": "Turchia",
+    "citta": "Istanbul"
+  },
+  {
+    "nome": "Istanbul",
+    "coords": [
+      41.0082,
+      28.9784
+    ],
     "immagine": "/static/jpeg/destinazioni/Turchia_Istanbul.jpeg",
+    "paese": "Turchia",
+    "citta": "Istanbul"
+  },
+  {
+    "nome": "Istanbul",
+    "coords": [
+      41.0082,
+      28.9784
+    ],
+    "immagine": "/static/jpeg/destinazioni/Turchia_Istanbul_2.jpeg",
     "paese": "Turchia",
     "citta": "Istanbul"
   },
@@ -1078,16 +1098,6 @@
     "immagine": "/static/jpeg/destinazioni/Yugoslavia_Zagabria.jpeg",
     "paese": "Yugoslavia",
     "citta": "Zagabria"
-  },
-  {
-    "nome": "estonia",
-    "coords": [
-      59.437,
-      24.7536
-    ],
-    "immagine": "/static/jpeg/destinazioni/estonia_1935.jpeg",
-    "paese": "estonia",
-    "citta": null
   },
   {
     "nome": "vaticano3",
