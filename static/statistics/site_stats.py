@@ -337,6 +337,7 @@ def main():
         ("triestea",      "targhetteTriesteA.json"),
         ("colonie/libia", "targhetteLibia.json"),
         ("colonie/libia", "ondeLibia.json"),
+        ("colonie/libia", "BarreLibia.json"),
     ]
     datari_set = set()
     for folder, json_file in ALL_CATALOG_JSONS:
@@ -368,13 +369,24 @@ def main():
                 pass
     stats["total_onde"] = total_onde
 
-    # Conta barre classificate
-    barre_json = project_dir / "regno" / "BarreRegno.json"
+    # Conta barre classificate su tutte le sezioni disponibili.
+    # Trieste A al momento non ha un JSON barre standardizzato nel repo,
+    # ma lasciamo candidate path per compatibilita' futura.
+    BARRE_JSONS = [
+        ("regno", "BarreRegno.json"),
+        ("colonie/libia", "BarreLibia.json"),
+        ("triestea", "BarreTriesteA.json"),
+        ("triestea", "BarreTrieste.json"),
+        ("triestea", "barreTriesteA.json"),
+    ]
     total_barre = 0
-    if barre_json.exists():
+    for folder, barre_file in BARRE_JSONS:
+        barre_json = project_dir / folder / barre_file
+        if not barre_json.exists():
+            continue
         try:
             with open(barre_json, "r", encoding="utf-8") as f:
-                total_barre = len(json.load(f))
+                total_barre += len(json.load(f))
         except Exception:
             pass
     stats["total_barre"] = total_barre
