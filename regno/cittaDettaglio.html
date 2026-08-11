@@ -124,6 +124,26 @@
         <div id="datariChart" style="margin-top: 8px; text-align: center"></div>
       </div>
 
+      <div id="chartControls" style="display:none; margin-top:8px; padding:10px 16px; background:#f7f7f7; border:1px solid #ddd; border-radius:6px; text-align:center;">
+        <span style="font-weight:bold; margin-right:14px; font-size:14px;">Mostra nel grafico:</span>
+        <label style="margin-right:14px; cursor:pointer; font-size:14px;">
+          <input type="checkbox" id="chkTarghette" checked>
+          <span style="display:inline-block;width:10px;height:10px;background:#333;margin:0 4px 0 2px;vertical-align:middle;"></span>Targhette
+        </label>
+        <label style="margin-right:14px; cursor:pointer; font-size:14px;">
+          <input type="checkbox" id="chkOnde" checked>
+          <span style="display:inline-block;width:10px;height:10px;background:#f5c542;margin:0 4px 0 2px;vertical-align:middle;"></span>Onde
+        </label>
+        <label style="margin-right:14px; cursor:pointer; font-size:14px;">
+          <input type="checkbox" id="chkBarre" checked>
+          <span style="display:inline-block;width:10px;height:10px;background:#2266cc;margin:0 4px 0 2px;vertical-align:middle;"></span>Barre
+        </label>
+        <label style="cursor:pointer; font-size:14px;">
+          <input type="checkbox" id="chkSoloDatario" checked>
+          <span style="display:inline-block;width:10px;height:10px;background:#27ae60;margin:0 4px 0 2px;vertical-align:middle;"></span>Solo datario
+        </label>
+      </div>
+
       <div class="stats">
         <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
       </div>
@@ -143,6 +163,9 @@
             localita: params.get("localita"),
           };
         }
+
+        // Dati globali per ridisegno del grafico
+        let _chartFiltered = [], _chartOndeFiltered = [], _chartBarreFiltered = [], _chartSoloDatarioFiltered = [], _chartLocalita = "";
 
         // Carica e filtra i dati
         async function loadLocalityDetails() {
@@ -286,8 +309,22 @@
               document.getElementById("noResults").style.display = "none";
             }
 
+            // Salva i dati per il ridisegno del grafico
+            _chartFiltered = filtered;
+            _chartOndeFiltered = ondeFiltered;
+            _chartBarreFiltered = barreFiltered;
+            _chartSoloDatarioFiltered = soloDatarioFiltered;
+            _chartLocalita = localita;
+
             // Disegna sempre il grafico (mostra targhette, onde, barre e/o solo datario)
             renderChart(filtered, localita, ondeFiltered, barreFiltered, soloDatarioFiltered);
+
+            // Collega i checkbox ai controlli del grafico
+            ['chkTarghette','chkOnde','chkBarre','chkSoloDatario'].forEach(id => {
+              document.getElementById(id)?.addEventListener('change', () => {
+                renderChart(_chartFiltered, _chartLocalita, _chartOndeFiltered, _chartBarreFiltered, _chartSoloDatarioFiltered);
+              });
+            });
           } catch (error) {
             console.error("Errore caricamento dati:", error);
             document.getElementById("localityTitle").textContent =
@@ -298,15 +335,29 @@
         // Render simple SVG chart: years (x) × offices (y)
         function renderChart(records, localita, ondeRecords, barreRecords, soloDatarioRecords) {
           const chartContainer = document.getElementById("datariChart");
+          const controlsBlock = document.getElementById("chartControls");
           chartContainer.innerHTML = "";
 
           // definizione fonti con colori
-          const sources = [
-            { records: records, color: '#333', label: 'Targhette' },
-            { records: ondeRecords, color: '#f5c542', label: 'Onde' },
-            { records: barreRecords, color: '#2266cc', label: 'Barre' },
-            { records: soloDatarioRecords, color: '#27ae60', label: 'Solo datario' }
+          const allSources = [
+            { records: records, color: '#333', label: 'Targhette', chkId: 'chkTarghette' },
+            { records: ondeRecords, color: '#f5c542', label: 'Onde', chkId: 'chkOnde' },
+            { records: barreRecords, color: '#2266cc', label: 'Barre', chkId: 'chkBarre' },
+            { records: soloDatarioRecords, color: '#27ae60', label: 'Solo datario', chkId: 'chkSoloDatario' }
           ];
+
+          // Filtra fonti attive in base ai checkbox
+          const sources = allSources.filter(src => {
+            const el = document.getElementById(src.chkId);
+            return !el || el.checked;
+          });
+
+          if (controlsBlock) controlsBlock.style.display = 'block';
+          if (sources.length === 0) {
+            chartContainer.innerHTML = '<p style="text-align:center;color:#999;padding:20px;">Seleziona almeno una categoria.</p>';
+            document.getElementById("datariChartBlock").style.display = "block";
+            return;
+          }
 
           const officeSet = new Set();
           const yearSet = new Set();
@@ -319,6 +370,7 @@
           const offices = Array.from(officeSet).sort();
           if (offices.length === 0 || yearSet.size === 0) {
             document.getElementById("datariChartBlock").style.display = "none";
+            if (controlsBlock) controlsBlock.style.display = 'none';
             return;
           }
           const years = Array.from(yearSet).sort((a, b) => a - b);

@@ -139,6 +139,23 @@
         <div id="datariChart" style="margin-top:8px; display:flex; justify-content:center; overflow-x:auto;"></div>
       </div>
 
+      <!-- Controlli grafico datari -->
+      <div id="chartControls" style="display:none; margin-top:8px; padding:10px 16px; background:#f7f7f7; border:1px solid #ddd; border-radius:6px; text-align:center;">
+        <span style="font-weight:bold; margin-right:14px; font-size:14px;">Mostra nel grafico:</span>
+        <label style="margin-right:14px; cursor:pointer; font-size:14px;">
+          <input type="checkbox" id="chkTarghette" checked>
+          <span style="display:inline-block;width:10px;height:10px;background:#333;margin:0 4px 0 2px;vertical-align:middle;"></span>Targhette
+        </label>
+        <label style="margin-right:14px; cursor:pointer; font-size:14px;">
+          <input type="checkbox" id="chkOnde" checked>
+          <span style="display:inline-block;width:10px;height:10px;background:#f5c542;margin:0 4px 0 2px;vertical-align:middle;"></span>Onde
+        </label>
+        <label style="margin-right:14px; cursor:pointer; font-size:14px;">
+          <input type="checkbox" id="chkBarre" checked>
+          <span style="display:inline-block;width:10px;height:10px;background:#2266cc;margin:0 4px 0 2px;vertical-align:middle;"></span>Barre
+        </label>
+      </div>
+
       <div class="stats">
         <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
       </div>
@@ -159,6 +176,9 @@
           };
         }
 
+        // Dati globali per ridisegno del grafico
+        let _chartFiltered = [], _chartOndeFiltered = [], _chartBarreFiltered = [];
+
         // Carica e filtra i dati
         async function loadOfficeDetails() {
           const { denominazione, localita } = getURLParams();
@@ -177,12 +197,14 @@
 
           try {
             // Carica i JSON
-            const [response, ondeResponse] = await Promise.all([
+            const [response, ondeResponse, barreResponse] = await Promise.all([
               fetch("targhetteLibia.json"),
-              fetch("ondeLibia.json")
+              fetch("ondeLibia.json"),
+              fetch("BarreLibia.json")
             ]);
             const data = await response.json();
             const ondeData = await ondeResponse.json();
+            const barreData = await barreResponse.json();
 
             // Filtra per denominazione e localita
             const filtered = data.filter(
@@ -191,6 +213,11 @@
                 item["Località"] === localita,
             );
             const ondeFiltered = ondeData.filter(
+              (item) =>
+                item["Denominazione ufficio"] === denominazione &&
+                item["Località"] === localita,
+            );
+            const barreFiltered = barreData.filter(
               (item) =>
                 item["Denominazione ufficio"] === denominazione &&
                 item["Località"] === localita,
@@ -288,10 +315,23 @@
             }
 
             // Mostra i datari usati per gli annulli (se presenti)
-            // Unisce tutte le fonti (targhette, onde) per mostrare tutti i datari
-            renderDatari([...filtered, ...ondeFiltered]);
-            // Disegna sempre il grafico (mostra targhette e onde)
-            renderChart(filtered, ondeFiltered);
+            // Unisce tutte le fonti (targhette, onde, barre) per mostrare tutti i datari
+            renderDatari([...filtered, ...ondeFiltered, ...barreFiltered]);
+
+            // Salva i dati per il ridisegno del grafico
+            _chartFiltered = filtered;
+            _chartOndeFiltered = ondeFiltered;
+            _chartBarreFiltered = barreFiltered;
+
+            // Disegna sempre il grafico (mostra targhette, onde e barre)
+            renderChart(filtered, ondeFiltered, barreFiltered);
+
+            // Collega i checkbox ai controlli del grafico
+            ['chkTarghette','chkOnde','chkBarre'].forEach(id => {
+              document.getElementById(id)?.addEventListener('change', () => {
+                renderChart(_chartFiltered, _chartOndeFiltered, _chartBarreFiltered);
+              });
+            });
           } catch (error) {
             console.error("Errore caricamento dati:", error);
             document.getElementById("officeTitle").textContent =
@@ -402,16 +442,31 @@
         }
 
             // Disegna la griglia anni x datari: quadratino se il datario è stato usato in quell'anno
-            function renderChart(records, ondeRecords) {
+            function renderChart(records, ondeRecords, barreRecords) {
               const chartBlock = document.getElementById('datariChartBlock');
               const container = document.getElementById('datariChart');
+              const controlsBlock = document.getElementById('chartControls');
               container.innerHTML = '';
 
               // definizione fonti con colori
-              const sources = [
-                { records: records, color: '#333', label: 'Targhette' },
-                { records: ondeRecords, color: '#f5c542', label: 'Onde' }
+              const allSources = [
+                { records: records, color: '#333', label: 'Targhette', chkId: 'chkTarghette' },
+                { records: ondeRecords, color: '#f5c542', label: 'Onde', chkId: 'chkOnde' },
+                { records: barreRecords, color: '#2266cc', label: 'Barre', chkId: 'chkBarre' }
               ];
+
+              // Filtra le fonti attive in base ai checkbox
+              const sources = allSources.filter(src => {
+                const el = document.getElementById(src.chkId);
+                return !el || el.checked;
+              });
+
+              if (controlsBlock) controlsBlock.style.display = 'block';
+              if (sources.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:#999;padding:20px;">Seleziona almeno una categoria.</p>';
+                chartBlock.style.display = 'block';
+                return;
+              }
 
               // ricava codici Datario unici e gli anni da tutte le fonti
               const datariSet = new Set();
@@ -419,8 +474,9 @@
               sources.forEach(src => {
                 src.records.forEach(r => {
                   const d = (r.Datario||'').trim();
+                  const yearNum = Number(r.Anno);
                   if (d) datariSet.add(d);
-                  if (Number.isFinite(r.Anno)) yearSetAll.add(r.Anno);
+                  if (Number.isFinite(yearNum)) yearSetAll.add(yearNum);
                 });
               });
               const datari = Array.from(datariSet).sort(naturalDatariCompare);
@@ -435,6 +491,7 @@
 
               if (datari.length === 0 || years.length === 0) {
                 chartBlock.style.display = 'none';
+                if (controlsBlock) controlsBlock.style.display = 'none';
                 return;
               }
               chartBlock.style.display = 'block';
@@ -514,7 +571,7 @@
               datari.forEach((d, i) => {
                 years.forEach((yr, j) => {
                   const activeColors = sources
-                    .filter(src => src.records.some(r => ((r.Datario||'').trim() === d) && r.Anno === yr))
+                    .filter(src => src.records.some(r => ((r.Datario||'').trim() === d) && Number(r.Anno) === yr))
                     .map(src => src.color);
                   if (activeColors.length === 0) return;
                   const x = left + j * cell + 1;
