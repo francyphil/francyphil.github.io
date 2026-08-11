@@ -108,8 +108,8 @@
         "Località": "Cattolica",
         "Denominazione ufficio": "Forli",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D3",
+        "linkDatario": "Cattolica_Forli_D3.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -122,8 +122,8 @@
         "Località": "Foggia",
         "Denominazione ufficio": "Corr. e Pacchi",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Foggia_CorrPacc_D1.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -188,12 +188,26 @@
         "Descrizione": "Barre",
         "linkTarghetta": "",
         "linkImgTarghetta": "",
+        "Anno": 1943,
+        "Località": "Genova",
+        "Denominazione ufficio": "Corrispondenze",
+        "Denominazione ufficio breve": "",
+        "Datario": "D8",
+        "linkDatario": "Genova_Corr_D8.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
         "Anno": 1938,
         "Località": "Gorizia",
         "Denominazione ufficio": "C.P.",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Gorizia_CP_D1.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -206,8 +220,8 @@
         "Località": "Massa Apuania",
         "Denominazione ufficio": "Arr. E Part",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Apuania_Massa_ArrPart_D1.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -220,7 +234,7 @@
         "Località": "Milano",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
+        "Datario": "D4",
         "linkDatario": ""
     },
     {
@@ -244,12 +258,26 @@
         "Descrizione": "Barre",
         "linkTarghetta": "",
         "linkImgTarghetta": "",
+        "Anno": 1942,
+        "Località": "Milano",
+        "Denominazione ufficio": "Ferrovia Corr.",
+        "Denominazione ufficio breve": "",
+        "Datario": "D17",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
         "Anno": 1938,
         "Località": "Montecatini Terme",
         "Denominazione ufficio": "Pistoia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "MontecatiniTerme_Pistoia_D1.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -262,8 +290,8 @@
         "Località": "Montecatini Terme",
         "Denominazione ufficio": "Pistoia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "MontecatiniTerme_Pistoia_D1.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -276,8 +304,8 @@
         "Località": "Montecatini Terme",
         "Denominazione ufficio": "Pistoia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "MontecatiniTerme_Pistoia_D1.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -290,8 +318,8 @@
         "Località": "Montecatini Terme",
         "Denominazione ufficio": "Pistoia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "MontecatiniTerme_Pistoia_D1.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -304,8 +332,8 @@
         "Località": "Nuoro",
         "Denominazione ufficio": "Corr. e Pacchi",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Nuoro_CorrPacc_D1.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -332,7 +360,7 @@
         "Località": "Pisa",
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "",
-        "Datario": "",
+        "Datario": "D3",
         "linkDatario": ""
     },
     {
@@ -360,8 +388,8 @@
         "Località": "Prato",
         "Denominazione ufficio": "Firenze",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Prato_Firenze_D1.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -374,8 +402,8 @@
         "Località": "Predappio",
         "Denominazione ufficio": "Forli",
         "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D1",
+        "linkDatario": "Predappio_Forli_D1.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -388,8 +416,8 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
-        "Datario": "",
-        "linkDatario": ""
+        "Datario": "D27",
+        "linkDatario": "Roma_Centro_D27.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -471,9 +499,9 @@
         "Anno": 1942,
         "Località": "Roma",
         "Denominazione ufficio": "Ferrovia",
-        "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Denominazione ufficio breve": "Ferr",
+        "Datario": "D60",
+        "linkDatario": "Roma_Ferr_D60.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -569,7 +597,7 @@
         "Anno": 1925,
         "Località": "Venezia",
         "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
         "linkDatario": ""
     },
@@ -583,7 +611,7 @@
         "Anno": 1926,
         "Località": "Venezia",
         "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
         "linkDatario": ""
     },
@@ -597,7 +625,7 @@
         "Anno": 1927,
         "Località": "Venezia",
         "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
         "linkDatario": ""
     },
@@ -611,7 +639,7 @@
         "Anno": 1928,
         "Località": "Venezia",
         "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
         "linkDatario": ""
     },
@@ -625,7 +653,7 @@
         "Anno": 1944,
         "Località": "Verona",
         "Denominazione ufficio": "Ferrovia",
-        "Denominazione ufficio breve": "",
+        "Denominazione ufficio breve": "Ferrovia",
         "Datario": "D1",
         "linkDatario": ""
     },
@@ -695,8 +723,8 @@
         "Anno": 1923,
         "Località": "Trieste",
         "Denominazione ufficio": "Centro",
-        "Denominazione ufficio breve": "",
-        "Datario": "",
-        "linkDatario": ""
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "D10",
+        "linkDatario": "Trieste_Centro_D10.jpeg"
     }
 ]
