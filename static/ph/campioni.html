@@ -93,9 +93,24 @@
             </tbody>
           </table>`;
         container.appendChild(wrap);
-        const nota = document.createElement("p");
-        nota.textContent = t.nota;
-        container.appendChild(nota);
+
+        if (t.nota) {
+          const nota = document.createElement("p");
+          nota.textContent = t.nota;
+          container.appendChild(nota);
+        }
+
+        if (t.cards && t.cards.length > 0) {
+          const cardsWrap = document.createElement("div");
+          cardsWrap.className = "tipo-cards";
+          cardsWrap.innerHTML = t.cards.map(c => `
+            <div class="tipo-card">
+              <img src="${c.src}" alt="${c.alt || ''}" loading="lazy" decoding="async" />
+              <div class="tipo-card-desc">${c.desc}</div>
+            </div>
+          `).join("");
+          container.appendChild(cardsWrap);
+        }
       });
     </script>
     </div>

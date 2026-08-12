@@ -153,6 +153,18 @@
             ["16.8.1927", "0,25 fino a 100g\n0,10 per ogni 50g aggiuntivi"],
             ["1.10.1944", "0,50 fino a 100g\n0,20 per ogni 50g aggiuntivi"],
             ["1.4.1945",  "1,00 fino a 100g\n0,40 per ogni 50g aggiuntivi"],
+          ],
+          cards: [
+            {
+              src: "../jpeg/saggi/Saggio_medicinale_1926_Milano 1.jpeg",
+              alt: "Saggio medicinale Milano 1926",
+              desc: "Saggio medicinale da Milano nel 1926 con un peso tra 450g e 500g assolto con 1,5L"
+            },
+            {
+              src: "../jpeg/saggi/Saggio_medicinale1926_Milano.jpeg",
+              alt: "Saggio medicinale Milano 1930",
+              desc: "Saggio medicinale da Milano nel 1930 con un peso tra 250g e 300g assolto con 0,65L"
+            }
           ]
         }
       ];
@@ -172,22 +184,26 @@
             </tbody>
           </table>`;
         container.appendChild(wrap);
-        const nota = document.createElement("p");
-        nota.textContent = t.nota;
-        container.appendChild(nota);
+
+        if (t.nota) {
+          const nota = document.createElement("p");
+          nota.textContent = t.nota;
+          container.appendChild(nota);
+        }
+
+        if (t.cards && t.cards.length > 0) {
+          const cardsWrap = document.createElement("div");
+          cardsWrap.className = "tipo-cards";
+          cardsWrap.innerHTML = t.cards.map(c => `
+            <div class="tipo-card">
+              <img src="${c.src}" alt="${c.alt || ''}" loading="lazy" decoding="async" />
+              <div class="tipo-card-desc">${c.desc}</div>
+            </div>
+          `).join("");
+          container.appendChild(cardsWrap);
+        }
       });
     </script>
-
-    <div class="tipo-cards">
-      <div class="tipo-card">
-        <img src="../jpeg/saggi/Saggio_medicinale_1926_Milano 1.jpeg" alt="Saggio medicinale Milano 1926" loading="lazy" decoding="async" />
-        <div class="tipo-card-desc">Saggio medicinale da Milano nel 1926 con un peso tra 450g e 500g assolto con 1,5L</div>
-      </div>
-      <div class="tipo-card">
-        <img src="../jpeg/saggi/Saggio_medicinale1926_Milano.jpeg" alt="Saggio medicinale Milano 1930" loading="lazy" decoding="async" />
-        <div class="tipo-card-desc">Saggio medicinale da Milano nel 1930 con un peso tra 250g e 300g assolto con 0,65L</div>
-      </div>
-    </div>
 
     </div>
 

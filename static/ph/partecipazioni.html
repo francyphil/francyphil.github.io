@@ -153,6 +153,13 @@
             ["26.3.1942", "sospeso"],
             ["1.10.1944", "0,30"],
             ["1.4.1945",  "0,60"],
+          ],
+          cards: [
+            {
+              src: "../jpeg/ciechi/Ciechi.jpeg",
+              alt: "Partecipazioni",
+              desc: "Esempio di partecipazione"
+            }
           ]
         }
       ];
@@ -173,18 +180,26 @@
             </tr></tbody>
           </table>`;
         container.appendChild(wrap);
-        const nota = document.createElement("p");
-        nota.textContent = t.nota;
-        container.appendChild(nota);
+
+        if (t.nota) {
+          const nota = document.createElement("p");
+          nota.textContent = t.nota;
+          container.appendChild(nota);
+        }
+
+        if (t.cards && t.cards.length > 0) {
+          const cardsWrap = document.createElement("div");
+          cardsWrap.className = "tipo-cards";
+          cardsWrap.innerHTML = t.cards.map(c => `
+            <div class="tipo-card">
+              <img src="${c.src}" alt="${c.alt || ''}" loading="lazy" decoding="async" />
+              <div class="tipo-card-desc">${c.desc}</div>
+            </div>
+          `).join("");
+          container.appendChild(cardsWrap);
+        }
       });
     </script>
-
-    <div class="tipo-cards">
-      <div class="tipo-card">
-        <img src="../jpeg/ciechi/Ciechi.jpeg" alt="Carte per ciechi" loading="lazy" decoding="async" />
-        <div class="tipo-card-desc">Carta per ciechi affrancata per 2 centesimi con un francobollo della serie floreale</div>
-      </div>
-    </div>
 
     </div>
 
