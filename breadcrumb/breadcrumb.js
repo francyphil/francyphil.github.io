@@ -162,6 +162,12 @@
       items.push({ text: 'Storia Postale', link: path.includes('phindex.html') ? null : '/static/ph/phindex.html' });
       if (path.includes('cartolina.html')) {
         items.push({ text: 'Cartolina', link: null });
+      } else if (path.includes('bigliettiVisita.html')) {
+        items.push({ text: 'Biglietti da visita', link: null });
+      } else if (path.includes('avvisiPassaggio.html')) {
+        items.push({ text: 'Avvisi di passaggio', link: null });
+      } else if (path.includes('partecipazioni.html')) {
+        items.push({ text: 'Partecipazioni', link: null });
       } else if (path.includes('cedola.html')) {
         items.push({ text: 'Cedola Libraria', link: null });
       } else if (path.includes('ciechi.html')) {
@@ -184,8 +190,12 @@
         items.push({ text: 'Introduzione Meccanici', link: null });
       } else if (path.includes('stampe.html')) {
         items.push({ text: 'Stampe', link: null });
+      } else if (path.includes('stampePeriodicheGiornali.html')) {
+        items.push({ text: 'Stampe periodiche e giornali', link: null });
       } else if (path.includes('campioni.html')) {
         items.push({ text: 'Campioni', link: null });
+      } else if (path.includes('pieghiLibri.html')) {
+        items.push({ text: 'Pieghi di libri', link: null });
       } else if (path.includes('postaAerea.html')) {
         items.push({ text: 'Posta Aerea', link: null });
       } else if (path.includes('raccomandata.html')) {
