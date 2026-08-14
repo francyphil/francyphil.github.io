@@ -87,6 +87,22 @@
         border-radius: 4px;
       }
 
+      .chart-tooltip {
+        position: fixed;
+        display: none;
+        z-index: 2000;
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid #cfd8e3;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        color: #2c3e50;
+        font-size: 13px;
+        line-height: 1.35;
+        padding: 8px 10px;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+
       details {
         margin-top: 20px;
         border-bottom: 2px solid #0066cc;
@@ -123,6 +139,7 @@
       >
         <strong>Uso delle denominazioni ufficio nel tempo</strong>
         <div id="datariChart" style="margin-top: 8px; text-align: center"></div>
+        <div id="chartTooltip" class="chart-tooltip"></div>
       </div>
 
       <div id="chartControls" style="display:none; margin-top:8px; padding:10px 16px; background:#f7f7f7; border:1px solid #ddd; border-radius:6px; text-align:center;">
@@ -337,7 +354,9 @@
         function renderChart(records, localita, ondeRecords, barreRecords, soloDatarioRecords) {
           const chartContainer = document.getElementById("datariChart");
           const controlsBlock = document.getElementById("chartControls");
+          const tooltip = document.getElementById("chartTooltip");
           chartContainer.innerHTML = "";
+          if (tooltip) tooltip.style.display = "none";
 
           // definizione fonti con colori
           const allSources = [
@@ -473,6 +492,9 @@
               const y = top + j * cell + 1;
               const s = cell - 2;
               const sw = s / activeColors.length;
+              const officeLabel = office;
+              const yearLabel = yr;
+              const tooltipText = `${officeLabel} · ${yearLabel}`;
               activeColors.forEach((color, idx) => {
                 const rect = document.createElementNS(svgNS, 'rect');
                 rect.setAttribute('x', x + idx * sw);
@@ -480,6 +502,23 @@
                 rect.setAttribute('width', sw);
                 rect.setAttribute('height', s);
                 rect.setAttribute('fill', color);
+                rect.addEventListener('mouseenter', (e) => {
+                  if (!tooltip) return;
+                  tooltip.textContent = tooltipText;
+                  tooltip.style.display = 'block';
+                });
+                rect.addEventListener('mousemove', (e) => {
+                  if (!tooltip) return;
+                  const offset = 14;
+                  const maxLeft = window.innerWidth - tooltip.offsetWidth - offset;
+                  const maxTop = window.innerHeight - tooltip.offsetHeight - offset;
+                  tooltip.style.left = `${Math.min(e.clientX + offset, maxLeft)}px`;
+                  tooltip.style.top = `${Math.min(e.clientY + offset, maxTop)}px`;
+                });
+                rect.addEventListener('mouseleave', () => {
+                  if (!tooltip) return;
+                  tooltip.style.display = 'none';
+                });
                 svg.appendChild(rect);
               });
             });
