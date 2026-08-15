@@ -150,6 +150,20 @@
         "Località": "Roma",
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
+        "Datario": "D12",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Solo Datario",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1926,
+        "Località": "Roma",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
         "Datario": "D25",
         "linkDatario": "Roma_Centro_D25.jpeg"
     },
