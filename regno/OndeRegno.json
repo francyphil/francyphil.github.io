@@ -720,6 +720,20 @@
         "Descrizione": "Onde lunghe",
         "linkTarghetta": "",
         "linkImgTarghetta": "",
+        "Anno": 1933.0,
+        "Località": "Arezzo",
+        "Denominazione ufficio": "Stella",
+        "Denominazione ufficio breve": "Stella",
+        "Datario": "D1",
+        "linkDatario": "Arezzo_Stella_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
         "Anno": 1934.0,
         "Località": "Arezzo",
         "Denominazione ufficio": "Stella",
@@ -2778,12 +2792,26 @@
         "Descrizione": "Onde lunghe",
         "linkTarghetta": "",
         "linkImgTarghetta": "",
+        "Anno": 1939.0,
+        "Località": "Campobasso",
+        "Denominazione ufficio": "Stella",
+        "Denominazione ufficio breve": "Stella",
+        "Datario": "D2",
+        "linkDatario": "Campobasso_Stella_D2.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
         "Anno": 1941.0,
         "Località": "Campobasso",
         "Denominazione ufficio": "Stella",
         "Denominazione ufficio breve": "Stella",
-        "Datario": "D1",
-        "linkDatario": "Campobasso_Stella_D1.jpeg"
+        "Datario": "D2",
+        "linkDatario": "Campobasso_Stella_D2.jpeg"
     },
     {
         "Targhetta Tipo": "",
@@ -12738,6 +12766,20 @@
         "Denominazione ufficio breve": "Centro",
         "Datario": "D6",
         "linkDatario": "Padova_Centro_D6.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Onde lunghe",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1930.0,
+        "Località": "Padova",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "D2",
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": "",
