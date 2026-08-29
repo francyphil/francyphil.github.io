@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dettagli Ufficio – Trieste A</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 0;
+      }
+
+      .office-header {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .office-header h1 {
+        margin: 0 0 10px 0;
+      }
+
+      .office-header p {
+        margin: 5px 0;
+        font-size: 16px;
+      }
+
+      .table-wrapper {
+        overflow-x: auto;
+        margin-top: 20px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 100%;
+        table-layout: fixed;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      th {
+        background-color: #f0f0f0;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      tr:hover {
+        background-color: #f0f0f0;
+      }
+
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .no-results {
+        text-align: center;
+        padding: 40px;
+        color: #999;
+        font-size: 18px;
+      }
+
+      .stats {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #e8f4f8;
+        border-left: 4px solid #0066cc;
+        border-radius: 4px;
+      }
+
+      details {
+        margin-top: 20px;
+        border-bottom: 2px solid #0066cc;
+      }
+
+      details summary {
+        cursor: pointer;
+        padding: 8px 0;
+        font-size: 1.17em;
+        font-weight: bold;
+      }
+
+      details summary:hover {
+        color: #0066cc;
+      }
+    </style>
+    <link rel="stylesheet" href="/footer/footer.css" />
+  </head>
+  <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
+    <div class="content-container">
+      <div class="office-header">
+        <h1 id="officeTitle">Ufficio</h1>
+        <p id="officeInfo"></p>
+      </div>
+
+      <!-- Blocchetto: Datari usati (icone _circle) -->
+      <div id="datariBlock" style="display: none; margin-bottom: 18px">
+        <strong>Datari usati per gli annulli:</strong>
+        <div
+            id="datariList"
+          style="
+            margin-top: 8px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: flex-start;
+            justify-content: center;
+          "
+        ></div>
+      </div>
+
+      <!-- Contenitore grafico: anni x datari -->
+      <div id="datariChartBlock" style="display:none; margin-top:18px;">
+        <div style="text-align:center;"><strong>Uso dei datari nel tempo</strong></div>
+        <div id="datariChart" style="margin-top:8px; display:flex; justify-content:center; overflow-x:auto;"></div>
+      </div>
+
+      <div class="stats">
+        <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
+      </div>
+
+      <div id="tablesContainer"></div>
+
+      <div id="noResults" class="no-results" style="display: none">
+        Nessuna targhetta trovata per questo ufficio.
+      </div>
+
+      <script>
+        function getURLParams() {
+          const params = new URLSearchParams(window.location.search);
+          return {
+            denominazione: params.get("denominazione"),
+            localita: params.get("localita"),
+          };
+        }
+
+        async function loadOfficeDetails() {
+          const { denominazione, localita } = getURLParams();
+
+          if (!denominazione || !localita) {
+            document.getElementById("officeTitle").textContent = "Ufficio non trovato";
+            return;
+          }
+
+          document.getElementById("officeTitle").textContent = `${denominazione} - ${localita}`;
+          document.getElementById("officeInfo").textContent = "Elenco targhette ordinate per anno";
+
+          try {
+            const response = await fetch("targhetteTriesteA.json");
+            const data = await response.json();
+
+            const filtered = data.filter(
+              (item) =>
+                item["Denominazione ufficio"] === denominazione &&
+                item["Località"] === localita,
+            );
+
+            filtered.sort((a, b) => {
+              if (a.Anno === b.Anno) {
+                return a["Targhetta Ufficio"] - b["Targhetta Ufficio"];
+              }
+              return a.Anno - b.Anno;
+            });
+
+            if (filtered.length === 0) {
+              document.getElementById("noResults").style.display = "block";
+              document.getElementById("tablesContainer").innerHTML = "";
+              document.getElementById("statsCount").textContent = "0";
+            } else {
+              const container = document.getElementById("tablesContainer");
+              container.innerHTML = "";
+
+              const groups = new Map();
+              filtered.forEach((item) => {
+                const key = (item.Datario || "").trim();
+                if (!groups.has(key)) groups.set(key, []);
+                groups.get(key).push(item);
+              });
+
+              groups.forEach((items, datarioName) => {
+                const details = document.createElement("details");
+                const summary = document.createElement("summary");
+                summary.textContent = datarioName || "(senza datario)";
+                details.appendChild(summary);
+
+                const wrapper = document.createElement("div");
+                wrapper.className = "table-wrapper";
+                const table = document.createElement("table");
+
+                const colgroup = document.createElement("colgroup");
+                ["16%", "12%", "12%", "60%"].forEach((w) => {
+                  const col = document.createElement("col");
+                  col.style.width = w;
+                  colgroup.appendChild(col);
+                });
+                table.appendChild(colgroup);
+
+                const thead = document.createElement("thead");
+                const headRow = document.createElement("tr");
+                ["Anno", "Targhetta Tipo", "Targhetta Ufficio", "Descrizione"].forEach((text) => {
+                  const th = document.createElement("th");
+                  th.textContent = text;
+                  headRow.appendChild(th);
+                });
+                thead.appendChild(headRow);
+                table.appendChild(thead);
+
+                const tbody = document.createElement("tbody");
+                items.forEach((item) => {
+                  const tr = document.createElement("tr");
+                  const tdAnno = document.createElement("td");
+                  tdAnno.textContent = item.Anno;
+                  const tdTipo = document.createElement("td");
+                  tdTipo.textContent = item["Targhetta Tipo"];
+                  const tdUfficio = document.createElement("td");
+                  tdUfficio.textContent = item["Targhetta Ufficio"];
+                  const tdDescrizione = document.createElement("td");
+                  tdDescrizione.textContent = item["Descrizione"];
+                  tr.appendChild(tdAnno);
+                  tr.appendChild(tdTipo);
+                  tr.appendChild(tdUfficio);
+                  tr.appendChild(tdDescrizione);
+                  tbody.appendChild(tr);
+                });
+                table.appendChild(tbody);
+                wrapper.appendChild(table);
+                details.appendChild(wrapper);
+                container.appendChild(details);
+              });
+
+              document.getElementById("statsCount").textContent = filtered.length;
+              document.getElementById("noResults").style.display = "none";
+            }
+
+            renderDatari(filtered);
+            renderChart(filtered);
+
+          } catch (error) {
+            console.error("Errore caricamento dati:", error);
+            document.getElementById("officeTitle").textContent = "Errore caricamento dati";
+          }
+        }
+
+        function naturalDatariCompare(a, b) {
+          const re = /^([A-Za-z]*)(\d+)$/;
+          const ma = a.match(re);
+          const mb = b.match(re);
+          if (ma && mb) {
+            const cmp = ma[1].localeCompare(mb[1]);
+            if (cmp !== 0) return cmp;
+            return parseInt(ma[2], 10) - parseInt(mb[2], 10);
+          }
+          return a.localeCompare(b);
+        }
+
+        // Mostra i datari unici. Usa la cartella imgDatariTriestea
+        // Se l'immagine non esiste, mostra un badge con il codice datario
+        function renderDatari(records) {
+          const listContainer = document.getElementById("datariList");
+          const block = document.getElementById("datariBlock");
+          listContainer.innerHTML = "";
+
+          const linkByDatario = new Map();
+          records.forEach((r) => {
+            const datarioCode = (r.Datario || "").trim();
+            const candidateLink = (r.linkDatario || "").trim();
+            if (!datarioCode || !candidateLink || linkByDatario.has(datarioCode)) return;
+            linkByDatario.set(datarioCode, candidateLink);
+          });
+
+          const uniqueMap = new Map();
+          records.forEach((r) => {
+            const datarioCode = (r.Datario || "").trim();
+            if (!datarioCode) return;
+            if (!uniqueMap.has(datarioCode)) {
+              uniqueMap.set(datarioCode, r);
+            }
+          });
+
+          const sortedDatari = Array.from(uniqueMap.values()).sort((a, b) => {
+            return naturalDatariCompare((a.Datario || "").trim(), (b.Datario || "").trim());
+          });
+
+          const seen = new Set();
+          sortedDatari.forEach((r) => {
+            const datarioCode = (r.Datario || "").trim();
+            if (!datarioCode || seen.has(datarioCode)) return;
+            seen.add(datarioCode);
+
+            const link = linkByDatario.get(datarioCode) || "";
+
+            const wrapper = document.createElement("div");
+            wrapper.style.display = "flex";
+            wrapper.style.flexDirection = "column";
+            wrapper.style.alignItems = "center";
+            wrapper.style.maxWidth = "200px";
+            wrapper.style.margin = "0";
+            wrapper.style.flex = "0 0 auto";
+
+            let mediaElement;
+            if (link) {
+              const m = link.match(/^(.*)\.(jpeg|jpg|png)$/i);
+              let circleName = link;
+              if (m) circleName = `${m[1]}_circle.${m[2]}`;
+              else circleName = `${link}_circle`;
+
+              const img = document.createElement("img");
+              img.src = `imgDatariTriestea/${circleName}`;
+              img.alt = datarioCode;
+              img.style.height = "200px";
+              img.style.maxWidth = "200px";
+              img.style.display = "block";
+              img.style.margin = "0 auto";
+              img.style.borderRadius = "100px";
+              img.style.border = "1px solid #ddd";
+              img.style.objectFit = "contain";
+              img.style.background = "#fff";
+              img.onerror = () => {
+                // sostituisce l'immagine con un badge testuale
+                const badge = document.createElement("div");
+                badge.textContent = datarioCode;
+                badge.style.width = "200px";
+                badge.style.height = "200px";
+                badge.style.borderRadius = "100px";
+                badge.style.border = "1px solid #ddd";
+                badge.style.background = "#fff";
+                badge.style.display = "flex";
+                badge.style.alignItems = "center";
+                badge.style.justifyContent = "center";
+                badge.style.fontWeight = "700";
+                badge.style.fontSize = "28px";
+                badge.style.color = "#2c3e50";
+                badge.style.boxSizing = "border-box";
+                wrapper.replaceChild(badge, wrapper.firstChild);
+              };
+
+              const a = document.createElement("a");
+              a.target = "_blank";
+              a.appendChild(img);
+              mediaElement = a;
+            } else {
+              const badge = document.createElement("div");
+              badge.textContent = datarioCode;
+              badge.style.width = "200px";
+              badge.style.height = "200px";
+              badge.style.borderRadius = "100px";
+              badge.style.border = "1px solid #ddd";
+              badge.style.background = "#fff";
+              badge.style.display = "flex";
+              badge.style.alignItems = "center";
+              badge.style.justifyContent = "center";
+              badge.style.fontWeight = "700";
+              badge.style.fontSize = "28px";
+              badge.style.color = "#2c3e50";
+              badge.style.boxSizing = "border-box";
+              mediaElement = badge;
+            }
+
+            const lbl = document.createElement("div");
+            lbl.textContent = datarioCode;
+            lbl.style.marginTop = "6px";
+            lbl.style.fontSize = "20px";
+            lbl.style.color = "#333";
+            lbl.style.textAlign = "center";
+            wrapper.appendChild(mediaElement);
+            wrapper.appendChild(lbl);
+
+            listContainer.appendChild(wrapper);
+          });
+
+          if (seen.size > 0) {
+            block.style.display = "block";
+          } else {
+            block.style.display = "none";
+          }
+        }
+
+        function renderChart(records) {
+          const chartBlock = document.getElementById("datariChartBlock");
+          const container = document.getElementById("datariChart");
+          container.innerHTML = "";
+
+          const hasData = records.some(r => (r.Datario || "").trim() && Number.isFinite(Number(r.Anno)));
+          if (!hasData) {
+            chartBlock.style.display = "none";
+            return;
+          }
+          chartBlock.style.display = "block";
+
+          function naturalDatariCompareLocal(a, b) {
+            const re = /^([A-Za-z]*)(\d+)$/;
+            const ma = a.match(re);
+            const mb = b.match(re);
+            if (ma && mb) {
+              const cmp = ma[1].localeCompare(mb[1]);
+              if (cmp !== 0) return cmp;
+              return parseInt(ma[2], 10) - parseInt(mb[2], 10);
+            }
+            return a.localeCompare(b);
+          }
+
+          const datariSet = new Set();
+          const yearSetAll = new Set();
+          records.forEach(r => {
+            const d = (r.Datario || "").trim();
+            const y = Number(r.Anno);
+            if (d) datariSet.add(d);
+            if (Number.isFinite(y)) yearSetAll.add(y);
+          });
+
+          const datari = Array.from(datariSet).sort(naturalDatariCompareLocal);
+          const yearsPresent = Array.from(yearSetAll).sort((a, b) => a - b);
+          const years = [];
+          if (yearsPresent.length > 0) {
+            for (let y = yearsPresent[0]; y <= yearsPresent[yearsPresent.length - 1]; y++) years.push(y);
+          }
+
+          if (datari.length === 0 || years.length === 0) {
+            chartBlock.style.display = "none";
+            return;
+          }
+
+          const cell = 16;
+          const left = 140;
+          const top = 20;
+          const gridWidth = years.length * cell;
+          const gridHeight = datari.length * cell;
+          const width = left + gridWidth + 20;
+          const height = top + gridHeight + 80;
+
+          const svgNS = "http://www.w3.org/2000/svg";
+          const svg = document.createElementNS(svgNS, "svg");
+          svg.setAttribute("width", width);
+          svg.setAttribute("height", height);
+          svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+          svg.setAttribute("style", "flex-shrink:0;");
+
+          datari.forEach((d, i) => {
+            const y = top + i * cell + cell / 2;
+            const text = document.createElementNS(svgNS, "text");
+            text.setAttribute("x", left - 12);
+            text.setAttribute("y", y);
+            text.setAttribute("text-anchor", "end");
+            text.setAttribute("font-size", "15px");
+            text.setAttribute("dominant-baseline", "middle");
+            text.textContent = d;
+            svg.appendChild(text);
+          });
+
+          for (let j = 0; j <= years.length; j++) {
+            const xline = left + j * cell;
+            const line = document.createElementNS(svgNS, "line");
+            line.setAttribute("x1", xline); line.setAttribute("y1", top);
+            line.setAttribute("x2", xline); line.setAttribute("y2", top + gridHeight);
+            line.setAttribute("stroke", "#ddd"); line.setAttribute("stroke-width", "1");
+            svg.appendChild(line);
+          }
+          for (let i = 0; i <= datari.length; i++) {
+            const yline = top + i * cell;
+            const hline = document.createElementNS(svgNS, "line");
+            hline.setAttribute("x1", left); hline.setAttribute("y1", yline);
+            hline.setAttribute("x2", left + gridWidth); hline.setAttribute("y2", yline);
+            hline.setAttribute("stroke", "#bbb"); hline.setAttribute("stroke-width", "2");
+            svg.appendChild(hline);
+          }
+
+          years.forEach((yr, j) => {
+            const x = left + j * cell + cell / 2;
+            const baseY = top + datari.length * cell + cell / 2;
+            const text = document.createElementNS(svgNS, "text");
+            text.setAttribute("x", x - 12);
+            text.setAttribute("y", baseY);
+            text.setAttribute("font-size", "15px");
+            text.setAttribute("text-anchor", "middle");
+            text.setAttribute("dominant-baseline", "middle");
+            text.setAttribute("transform", `rotate(-90 ${x} ${baseY})`);
+            text.textContent = yr;
+            svg.appendChild(text);
+          });
+
+          datari.forEach((d, i) => {
+            years.forEach((yr, j) => {
+              const hasRecord = records.some(r => (r.Datario || "").trim() === d && Number(r.Anno) === yr);
+              if (!hasRecord) return;
+              const x = left + j * cell + 1;
+              const y = top + i * cell + 1;
+              const s = cell - 2;
+              const rect = document.createElementNS(svgNS, "rect");
+              rect.setAttribute("x", x); rect.setAttribute("y", y);
+              rect.setAttribute("width", s); rect.setAttribute("height", s);
+              rect.setAttribute("fill", "#333");
+              svg.appendChild(rect);
+            });
+          });
+
+          container.appendChild(svg);
+        }
+
+        document.addEventListener("DOMContentLoaded", loadOfficeDetails);
+      </script>
+    </div>
+
+    <script src="/footer/footer.js"></script>
+    <div id="footerContainer"></div>
+  </body>
+</html>

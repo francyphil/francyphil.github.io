@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uffici Trieste A</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .intro {
+        margin-bottom: 14px;
+        color: #444;
+      }
+
+      .table-wrapper {
+        overflow-x: auto;
+        margin-top: 10px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        min-width: 480px;
+        background: #fff;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 7px 10px;
+        text-align: left;
+      }
+
+      th {
+        background: #f0f0f0;
+      }
+
+      td.flag {
+        text-align: center;
+        width: 90px;
+        font-weight: 700;
+      }
+
+      .ok {
+        color: #1f7a2e;
+      }
+
+      .no {
+        color: #999;
+      }
+
+      .stats {
+        margin: 8px 0 14px;
+      }
+
+      .error {
+        color: #b30000;
+        font-weight: 600;
+      }
+    </style>
+    <link rel="stylesheet" href="/footer/footer.css" />
+  </head>
+  <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
+
+    <div class="content-container">
+      <h1>Uffici di Trieste A</h1>
+      <p class="intro">
+        Elenco uffici con indicazione delle tipologie presenti: targhette.
+      </p>
+      <div class="stats"><strong>Uffici trovati:</strong> <span id="ufficiCount">0</span></div>
+      <div id="errorBox" class="error" style="display:none;"></div>
+
+      <div class="table-wrapper">
+        <table id="ufficiTable">
+          <thead>
+            <tr>
+              <th>Città</th>
+              <th>Ufficio</th>
+              <th>Targhette</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      function normText(value) {
+        if (value === null || value === undefined) return "";
+        return String(value).trim();
+      }
+
+      function officeKey(localita, ufficio) {
+        return `${normText(localita)}|${normText(ufficio)}`;
+      }
+
+      function ensureOffice(map, localita, ufficio) {
+        const key = officeKey(localita, ufficio);
+        if (!key || key === "|") return null;
+        if (!map.has(key)) {
+          map.set(key, {
+            localita: normText(localita),
+            ufficio: normText(ufficio),
+            targhette: false,
+          });
+        }
+        return map.get(key);
+      }
+
+      function markCategory(map, rows, category) {
+        rows.forEach((r) => {
+          const item = ensureOffice(map, r["Località"], r["Denominazione ufficio"]);
+          if (item) item[category] = true;
+        });
+      }
+
+      function flagCell(value) {
+        return value
+          ? '<span class="ok">SI</span>'
+          : '<span class="no">-</span>';
+      }
+
+      function byOffice(a, b) {
+        const c = a.localita.localeCompare(b.localita, "it");
+        if (c !== 0) return c;
+        return a.ufficio.localeCompare(b.ufficio, "it");
+      }
+
+      function loadUffici() {
+        const tbody = document.querySelector("#ufficiTable tbody");
+        const errorBox = document.getElementById("errorBox");
+        fetch("targhetteTriesteA.json")
+          .then((res) => res.json())
+          .then((targhette) => {
+            const officeMap = new Map();
+            markCategory(officeMap, targhette, "targhette");
+
+            const rows = Array.from(officeMap.values()).sort(byOffice);
+            document.getElementById("ufficiCount").textContent = String(rows.length);
+
+            tbody.innerHTML = rows
+              .map((r) => {
+                const officeHref = `ufficioDettaglioTriestea.html?localita=${encodeURIComponent(r.localita)}&denominazione=${encodeURIComponent(r.ufficio)}`;
+                return `
+                  <tr>
+                    <td>${r.localita}</td>
+                    <td><a href="${officeHref}">${r.ufficio}</a></td>
+                    <td class="flag">${flagCell(r.targhette)}</td>
+                  </tr>`;
+              })
+              .join("");
+
+            if (rows.length === 0) {
+              errorBox.style.display = "block";
+              errorBox.textContent = "Nessun ufficio trovato.";
+            }
+          })
+          .catch((err) => {
+            console.error("Errore caricamento uffici:", err);
+            errorBox.style.display = "block";
+            errorBox.textContent = "Errore nel caricamento dei dati degli uffici.";
+          });
+      }
+
+      document.addEventListener("DOMContentLoaded", loadUffici);
+    </script>
+
+    <script src="/footer/footer.js"></script>
+    <div id="footerContainer"></div>
+  </body>
+</html>

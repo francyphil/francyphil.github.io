@@ -119,8 +119,10 @@
           items.push({ text: 'Onde', link: null });
         } else if (path.includes('barreLibia.html')) {
           items.push({ text: 'Barre', link: null });
+        } else if (path.includes('ufficiLibia.html')) {
+          items.push({ text: 'Uffici', link: null });
         } else if (path.includes('ufficioDettaglioLibia.html')) {
-          items.push({ text: 'Targhette', link: '/colonie/libia/catalogLibia.html' });
+          items.push({ text: 'Uffici', link: '/colonie/libia/ufficiLibia.html' });
           const params = new URLSearchParams(search);
           const localita = params.get('localita');
           const denominazione = params.get('denominazione');
@@ -144,6 +146,19 @@
           items.push({ text: 'Onde', link: null });
         } else if (path.includes('barre-trieste.html')) {
           items.push({ text: 'Barre', link: null });
+        } else if (path.includes('ufficiTriestea.html')) {
+          items.push({ text: 'Uffici', link: null });
+        } else if (path.includes('ufficioDettaglioTriestea.html')) {
+          items.push({ text: 'Uffici', link: '/triestea/ufficiTriestea.html' });
+          const params = new URLSearchParams(search);
+          const localita = params.get('localita');
+          const denominazione = params.get('denominazione');
+          if (localita) {
+            items.push({ text: localita, link: null });
+          }
+          if (denominazione) {
+            items.push({ text: denominazione, link: null });
+          }
         }
       }
     } else if (path.includes('/static/info/')) {
