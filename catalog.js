@@ -57,6 +57,84 @@
     return String(a).localeCompare(String(b), "it");
   }
 
+  // ── Stato filtri in URL ─────────────────────────────────────────────
+
+  // encodeURIComponent per valore: preserva eventuali virgole nei valori stessi
+  function codificaValori(valori) {
+    return valori.map(encodeURIComponent).join(",");
+  }
+
+  function decodificaValori(stringa) {
+    return stringa.split(",").map(decodeURIComponent);
+  }
+
+  function applicaStatoDaUrl() {
+    const params = new URLSearchParams(window.location.search);
+
+    document.querySelectorAll("#trFiltri .multi-select").forEach((ms) => {
+      const valori = params.get("f_" + ms.dataset.campo);
+      if (valori) setMultiSelectSelections(ms, decodificaValori(valori));
+    });
+
+    const periodo = params.get("periodo");
+    if (periodo) {
+      const valori = decodificaValori(periodo);
+      setMultiSelectSelections(getDesktopPeriodoMultiSelect(), valori);
+      setMultiSelectSelections(getMobilePeriodoMultiSelect(), valori);
+    }
+
+    const max = params.get("max");
+    if (max) {
+      document.getElementById("maxRecords").value = max;
+      const mobileMax = document.getElementById("mobileMaxRecords");
+      if (mobileMax) mobileMax.value = max;
+    }
+
+    const vista = params.get("vista");
+    if (vista) document.getElementById("vistaSelezionata").value = vista;
+
+    const schema = params.get("schema");
+    if (schema) {
+      document.getElementById("schemaCatalogazione").value = schema;
+      const mobileSchema = document.getElementById("mobileSchemaCatalogazione");
+      if (mobileSchema) mobileSchema.value = schema;
+    }
+
+    const pagina = parseInt(params.get("pagina"), 10);
+    if (!isNaN(pagina) && pagina > 0) currentPage = pagina;
+  }
+
+  function aggiornaUrl() {
+    const params = new URLSearchParams();
+
+    document.querySelectorAll("#trFiltri .multi-select").forEach((ms) => {
+      const valori = getMultiSelectValues(ms);
+      if (valori.length > 0)
+        params.set("f_" + ms.dataset.campo, codificaValori(valori));
+    });
+
+    const periodo = getMultiSelectValues(getDesktopPeriodoMultiSelect());
+    if (periodo.length > 0) params.set("periodo", codificaValori(periodo));
+
+    const maxRecords = document.getElementById("maxRecords").value;
+    if (maxRecords !== "100") params.set("max", maxRecords);
+
+    const vista = document.getElementById("vistaSelezionata").value;
+    if (vista !== "tabella") params.set("vista", vista);
+
+    const schema = document.getElementById("schemaCatalogazione").value;
+    if (schema !== "ornaghi_ufficio") params.set("schema", schema);
+
+    if (currentPage > 1) params.set("pagina", currentPage);
+
+    const query = params.toString();
+    history.replaceState(
+      null,
+      "",
+      window.location.pathname + (query ? "?" + query : ""),
+    );
+  }
+
   // ── Caricamento JSON ─────────────────────────────────────────────────
 
   fetch(CFG.jsonFile)
@@ -67,7 +145,10 @@
       calcolaLarghezzeFisse(data);
       costruisciFiltri(data);
       costruisciFiltriMobile(data);
-      aggiornaVisualizzazione(data);
+      applicaStatoDaUrl();
+      aggiornaOpzioniFiltri();
+      updateFilterBadge();
+      aggiornaVisualizzazione(filtraDati(data));
       let lastWidth = window.innerWidth;
       window.addEventListener("resize", () => {
         const currentWidth = window.innerWidth;
@@ -825,6 +906,7 @@
 
       aggiornaGrafico(records);
     } finally {
+      aggiornaUrl();
       loadingIndicator.style.display = "none";
     }
   }
