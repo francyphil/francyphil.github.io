@@ -105,6 +105,17 @@
         white-space: nowrap;
       }
 
+      .chart-tooltip img {
+        display: block;
+        width: 173px;
+        height: 173px;
+        margin: 0 auto 6px;
+        border: 1px solid #ddd;
+        border-radius: 86.5px;
+        object-fit: contain;
+        background: #fff;
+      }
+
       details {
         margin-top: 20px;
         border-bottom: 2px solid #0066cc;
@@ -569,6 +580,7 @@
               const container = document.getElementById('datariChart');
               const controlsBlock = document.getElementById('chartControls');
               const tooltip = document.getElementById('chartTooltip');
+              let activeTooltipKey = null;
               container.innerHTML = '';
               if (tooltip) tooltip.style.display = 'none';
 
@@ -579,6 +591,16 @@
                 { records: barreRecords, color: '#2266cc', label: 'Barre', chkId: 'chkBarre' },
                 { records: soloDatarioRecords, color: '#27ae60', label: 'Solo datario', chkId: 'chkSoloDatario' }
               ];
+              const imageLinkByDatario = new Map();
+              allSources.forEach((source) => {
+                source.records.forEach((record) => {
+                  const datarioCode = (record.Datario || '').trim();
+                  const imageLink = (record.linkDatario || '').trim();
+                  if (datarioCode && imageLink && !imageLinkByDatario.has(datarioCode)) {
+                    imageLinkByDatario.set(datarioCode, imageLink);
+                  }
+                });
+              });
 
               // Controlla se esiste almeno un dato in qualsiasi fonte
               const hasAnyData = allSources.some(s => s.records.some(r => (r.Datario||'').trim() && Number.isFinite(r.Anno)));
@@ -740,6 +762,49 @@
                   const datarioLabel = d;
                   const yearLabel = yr;
                   const tooltipText = `${datarioLabel} · ${yearLabel}`;
+                  const imageLink = imageLinkByDatario.get(datarioLabel);
+                  let imageSrc;
+                  if (imageLink) {
+                    const imageMatch = imageLink.match(/^(.*)\.(jpeg|jpg|png)$/i);
+                    const circleName = imageMatch
+                      ? `${imageMatch[1]}_circle.${imageMatch[2]}`
+                      : `${imageLink}_circle`;
+                    imageSrc = `imgDatariRegno/${circleName}`;
+                  }
+                  const tooltipKey = `${datarioLabel}\u0000${yearLabel}\u0000${imageSrc || ''}`;
+                  const updateTooltipPosition = (e) => {
+                    if (!tooltip) return;
+                    const offset = 14;
+                    const maxLeft = window.innerWidth - tooltip.offsetWidth - offset;
+                    const maxTop = window.innerHeight - tooltip.offsetHeight - offset;
+                    tooltip.style.left = `${Math.min(e.clientX + offset, maxLeft)}px`;
+                    tooltip.style.top = `${Math.min(e.clientY + offset, maxTop)}px`;
+                  };
+                  const showTooltip = (e) => {
+                    if (!tooltip) return;
+                    if (activeTooltipKey !== tooltipKey) {
+                      tooltip.innerHTML = '';
+                      if (imageSrc) {
+                        const image = document.createElement('img');
+                        image.src = imageSrc;
+                        image.alt = datarioLabel;
+                        image.onerror = () => image.remove();
+                        tooltip.appendChild(image);
+                      }
+                      const label = document.createElement('div');
+                      label.textContent = tooltipText;
+                      tooltip.appendChild(label);
+                      activeTooltipKey = tooltipKey;
+                    }
+                    tooltip.style.display = 'block';
+                    updateTooltipPosition(e);
+                  };
+                  const hideTooltip = () => {
+                    if (!tooltip || activeTooltipKey !== tooltipKey) return;
+                    tooltip.style.display = 'none';
+                  };
+
+                  // Un solo hitbox evita il flicker tra le strisce delle fonti.
                   activeColors.forEach((color, idx) => {
                     const rect = document.createElementNS(svgNS, 'rect');
                     rect.setAttribute('x', x + idx * w);
@@ -747,25 +812,21 @@
                     rect.setAttribute('width', w);
                     rect.setAttribute('height', s);
                     rect.setAttribute('fill', color);
-                    rect.addEventListener('mouseenter', () => {
-                      if (!tooltip) return;
-                      tooltip.textContent = tooltipText;
-                      tooltip.style.display = 'block';
-                    });
-                    rect.addEventListener('mousemove', (e) => {
-                      if (!tooltip) return;
-                      const offset = 14;
-                      const maxLeft = window.innerWidth - tooltip.offsetWidth - offset;
-                      const maxTop = window.innerHeight - tooltip.offsetHeight - offset;
-                      tooltip.style.left = `${Math.min(e.clientX + offset, maxLeft)}px`;
-                      tooltip.style.top = `${Math.min(e.clientY + offset, maxTop)}px`;
-                    });
-                    rect.addEventListener('mouseleave', () => {
-                      if (!tooltip) return;
-                      tooltip.style.display = 'none';
-                    });
+                    rect.setAttribute('pointer-events', 'none');
                     svg.appendChild(rect);
                   });
+                  const hoverRect = document.createElementNS(svgNS, 'rect');
+                  hoverRect.setAttribute('x', x - 1);
+                  hoverRect.setAttribute('y', y - 1);
+                  hoverRect.setAttribute('width', cell);
+                  hoverRect.setAttribute('height', cell);
+                  hoverRect.setAttribute('fill', '#ffffff');
+                  hoverRect.setAttribute('fill-opacity', '0');
+                  hoverRect.setAttribute('pointer-events', 'all');
+                  hoverRect.addEventListener('mouseenter', showTooltip);
+                  hoverRect.addEventListener('mousemove', updateTooltipPosition);
+                  hoverRect.addEventListener('mouseleave', hideTooltip);
+                  svg.appendChild(hoverRect);
                 });
               });
 
