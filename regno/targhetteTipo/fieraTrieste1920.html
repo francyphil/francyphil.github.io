@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/common-bg.css">
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css">
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css">
+    <link rel="stylesheet" href="/footer/footer.css">
+
+    <title>Fiera Campionaria Internazionale di Trieste - 1920</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #e9e3d6;
+            color: #29251f;
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.65;
+        }
+
+        .page {
+            max-width: 950px;
+            margin: 40px auto;
+            background: #f8f5ed;
+            padding: 65px 75px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.18);
+            border: 1px solid #c9c0ae;
+        }
+
+        .header {
+            text-align: center;
+            border-top: 4px double #51483b;
+            border-bottom: 4px double #51483b;
+            padding: 25px 10px 22px;
+            margin-bottom: 35px;
+        }
+
+        .eyebrow {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #6b6255;
+        }
+
+        h1 {
+            margin: 10px 0 5px;
+            font-size: 42px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 21px;
+            font-style: italic;
+            color: #62594c;
+        }
+
+        .year {
+            margin-top: 12px;
+            font-size: 18px;
+            letter-spacing: 6px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 25px;
+            font-weight: normal;
+            border-bottom: 1px solid #aaa08e;
+            padding-bottom: 7px;
+            margin-top: 35px;
+            color: #40392f;
+        }
+
+        p {
+            text-align: justify;
+            margin: 0 0 17px;
+        }
+
+        .dropcap:first-letter {
+            float: left;
+            font-size: 62px;
+            line-height: 48px;
+            padding-right: 8px;
+            color: #51483b;
+        }
+
+        .box {
+            margin: 30px 0;
+            padding: 22px 28px;
+            border: 1px solid #aaa08e;
+            background: #eee9de;
+        }
+
+        .box-title {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #5b5245;
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 7px 20px;
+            font-size: 15px;
+        }
+
+        .facts strong {
+            color: #50483d;
+        }
+
+        .ornament {
+            text-align: center;
+            font-size: 25px;
+            margin: 30px 0;
+            color: #706658;
+        }
+
+        .quote {
+            margin: 30px 25px;
+            padding: 20px 25px;
+            border-left: 4px solid #756b5d;
+            font-size: 20px;
+            font-style: italic;
+            color: #514a40;
+        }
+
+        .timeline {
+            margin: 25px 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .timeline li {
+            margin-bottom: 14px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .timeline li::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            top: 1px;
+            font-size: 10px;
+            color: #665d50;
+        }
+
+        .caption {
+            text-align: center;
+            font-size: 13px;
+            font-style: italic;
+            color: #71685b;
+            margin-top: 8px;
+        }
+
+        .footer {
+            margin-top: 45px;
+            padding-top: 18px;
+            border-top: 1px solid #aaa08e;
+            text-align: center;
+            font-size: 13px;
+            color: #746b5e;
+        }
+
+        .sources {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        body {
+            background: transparent;
+            color: inherit;
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+
+        .page {
+            max-width: none;
+            margin: 0 auto;
+            background: transparent;
+            padding: 28px 20px 45px;
+            box-shadow: none;
+            border: 0;
+        }
+
+        .header {
+            border: 0;
+            padding: 0 0 20px;
+            margin: 0 auto 28px;
+            max-width: 1100px;
+            text-align: left;
+        }
+
+        .eyebrow {
+            color: #666;
+            font-size: 0.9em;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+
+        h1 {
+            color: inherit;
+            font-size: 2em;
+            letter-spacing: 0;
+            margin: 8px 0;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .year {
+            color: #666;
+            font-size: 1em;
+            letter-spacing: 0;
+            margin-top: 6px;
+        }
+
+        .page > section,
+        .page > .footer,
+        .page > .ornament {
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 0;
+            color: inherit;
+            font-size: 1.45em;
+            margin-top: 36px;
+            padding: 20px 0 0;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .dropcap:first-letter {
+            color: inherit;
+        }
+
+        .box {
+            background: #e8f4f8;
+            border: 0;
+            border-left: 4px solid #0066cc;
+            padding: 12px 16px;
+        }
+
+        .box-title {
+            color: inherit;
+            letter-spacing: 0;
+        }
+
+        .quote {
+            border-left-color: #0066cc;
+            color: inherit;
+            font-size: 1em;
+        }
+
+        .ornament {
+            color: #666;
+            font-size: 1.2em;
+            margin: 28px auto;
+        }
+
+        .footer {
+            color: #666;
+            border-top-color: #e0e0e0;
+        }
+
+        .content-container {
+            padding-top: 20px;
+            padding-bottom: 45px;
+        }
+
+        h1,
+        h2 {
+            font-family: "Playfair Display", serif;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.45em;
+        }
+
+        .header {
+            max-width: none;
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 10px 10px 35px;
+            }
+
+            .page {
+                padding: 20px 0 0;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .page {
+                margin: 0;
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .facts {
+                grid-template-columns: 1fr;
+                gap: 2px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page {
+                margin: 0;
+                max-width: none;
+                box-shadow: none;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<script src="/navbar/navbar.js"></script>
+<div id="breadcrumbContainer"></div>
+<script src="/breadcrumb/breadcrumb.js"></script>
+
+<div class="content-container">
+
+    <header class="header">
+        <div class="eyebrow">Trieste • Venezia Giulia</div>
+
+        <h1>Fiera Campionaria</h1>
+
+        <div class="subtitle">
+            Internazionale di Trieste
+        </div>
+
+        <div class="year">1920</div>
+    </header>
+
+
+    <section>
+
+        <h2>Una città al centro dei traffici europei</h2>
+
+        <p class="dropcap">
+            Nel 1920 Trieste si trovava in un momento particolarmente delicato
+            e significativo della propria storia. La fine della Prima guerra
+            mondiale aveva profondamente modificato l'equilibrio politico ed
+            economico dell'Adriatico e la città, da secoli legata ai grandi
+            traffici commerciali dell'Europa centrale, cercava una nuova
+            collocazione nel mutato scenario del dopoguerra.
+        </p>
+
+        <p>
+            In questo contesto nacque la <strong>Prima Fiera Campionaria
+            Internazionale di Trieste</strong>, manifestazione destinata a
+            diventare uno degli strumenti attraverso i quali la città cercava
+            di rilanciare la propria vocazione commerciale e industriale.
+            La documentazione archivistica conferma l'esistenza di una
+            specifica attività organizzativa per la Fiera del 1920 e ne
+            testimonia il carattere internazionale.
+        </p>
+
+        <p>
+            La scelta di Trieste non era casuale. Il suo porto rappresentava
+            uno dei principali punti di collegamento tra il Mediterraneo,
+            l'Adriatico e l'Europa danubiana. Merci, persone, capitali e
+            informazioni transitavano attraverso la città, che aveva costruito
+            nei decenni precedenti una solida tradizione mercantile e
+            industriale.
+        </p>
+
+        <div class="box">
+
+            <div class="box-title">La manifestazione in breve</div>
+
+            <div class="facts">
+                <strong>Anno</strong>
+                <span>1920</span>
+
+                <strong>Manifestazione</strong>
+                <span>Prima Fiera Campionaria Internazionale di Trieste</span>
+
+                <strong>Località</strong>
+                <span>Trieste – zona di San Andrea</span>
+
+                <strong>Carattere</strong>
+                <span>Commerciale, industriale e internazionale</span>
+
+                <strong>Periodo storico</strong>
+                <span>Primo dopoguerra</span>
+            </div>
+
+        </div>
+
+
+        <h2>La Fiera di San Andrea</h2>
+
+        <p>
+            L'area destinata alla manifestazione fu individuata nella zona di
+            <strong>San Andrea</strong>. Una fonte storica dedicata alla
+            storia economica e industriale di Trieste indica infatti proprio
+            questa zona come sede della prima Fiera Campionaria del 1920.
+        </p>
+
+        <p>
+            La scelta di un'area dedicata all'esposizione permetteva di
+            concentrare in un unico luogo prodotti, aziende e rappresentanze
+            commerciali. Il concetto di "fiera campionaria" era quello di
+            presentare campioni e produzioni delle diverse attività economiche,
+            creando un punto d'incontro tra produttori, commercianti,
+            intermediari e pubblico.
+        </p>
+
+        <p>
+            Non si trattava quindi soltanto di una grande esposizione
+            commerciale. Una fiera di questo tipo costituiva anche una vetrina
+            della capacità produttiva di una città e del territorio che la
+            circondava. Per Trieste significava soprattutto riaffermare la
+            propria funzione di porta commerciale verso l'Europa centrale e
+            verso il Mediterraneo.
+        </p>
+
+        <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+
+        <h2>Industria, commercio e nuove opportunità</h2>
+
+        <p>
+            Le fiere campionarie del primo Novecento erano caratterizzate dalla
+            presenza di numerosi settori produttivi. Accanto alle produzioni
+            industriali potevano trovare spazio l'artigianato, le attività
+            commerciali, i prodotti destinati al consumo e le nuove tecnologie
+            che stavano rapidamente trasformando la vita quotidiana.
+        </p>
+
+        <p>
+            Per gli espositori la partecipazione rappresentava un'importante
+            occasione pubblicitaria. Mostrare direttamente i propri prodotti
+            significava raggiungere un pubblico più ampio e, soprattutto,
+            stabilire nuovi rapporti commerciali. Per i visitatori, invece,
+            la fiera offriva la possibilità di conoscere macchinari, manufatti
+            e prodotti provenienti da realtà diverse.
+        </p>
+
+        <p>
+            In una città portuale come Trieste questo aspetto assumeva un
+            significato particolare. La dimensione internazionale non era
+            soltanto uno slogan pubblicitario: apparteneva alla storia stessa
+            della città e alle sue relazioni economiche con i paesi dell'area
+            adriatica e danubiana.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <h2>La pubblicità e l'immagine della Fiera</h2>
+
+        <p>
+            Le manifestazioni fieristiche del periodo erano accompagnate da
+            una intensa attività pubblicitaria. Manifesti, cartoline,
+            dépliant, inserzioni sui giornali e altri materiali promozionali
+            contribuivano a costruire l'immagine dell'evento e a richiamare
+            visitatori ed espositori.
+        </p>
+
+        <p>
+            Anche la comunicazione postale partecipava a questo sistema
+            pubblicitario. Le <strong>targhette meccaniche</strong> applicate
+            alle buste e alla corrispondenza costituivano un mezzo
+            particolarmente efficace per diffondere un messaggio commerciale.
+            Una targhetta poteva viaggiare per tutta Italia e raggiungere
+            direttamente commercianti, aziende e privati.
+        </p>
+
+        <div class="quote">
+            La pubblicità della Fiera trasformava la corrispondenza quotidiana
+            in un piccolo manifesto itinerante dell'iniziativa commerciale.
+        </div>
+
+        <p>
+            Proprio per questo le targhette pubblicitarie rappresentano oggi
+            una testimonianza interessante non soltanto della storia postale,
+            ma anche della storia economica e della comunicazione commerciale.
+            Nel caso della Fiera Campionaria di Trieste del 1920, la targhetta
+            pubblicitaria consente di collegare un semplice oggetto postale
+            alla grande trasformazione economica che interessava la città.
+        </p>
+
+
+        <h2>Trieste e il nuovo dopoguerra</h2>
+
+        <p>
+            Il 1920 era un anno di transizione. La guerra era terminata da
+            poco e l'assetto politico dell'area adriatica era ancora oggetto
+            di profondi cambiamenti. Trieste cercava di recuperare il proprio
+            ruolo economico dopo gli anni difficili del conflitto e delle
+            interruzioni nei traffici.
+        </p>
+
+        <p>
+            Organizzare una grande manifestazione commerciale proprio in quel
+            momento aveva quindi anche un forte valore simbolico. La Fiera
+            rappresentava l'idea di una città che voleva tornare a guardare
+            al commercio, alla produzione e agli scambi internazionali.
+        </p>
+
+        <p>
+            L'iniziativa non rimase un episodio isolato. La documentazione
+            conservata negli archivi testimonia infatti l'esistenza di una
+            continuità progettuale e organizzativa intorno alle fiere
+            triestine. Negli anni successivi la manifestazione sarebbe
+            tornata a caratterizzare la vita economica della città.
+        </p>
+
+
+        <h2>Dalla prima Fiera alle edizioni successive</h2>
+
+        <p>
+            La Fiera del 1920 può essere considerata l'inizio di una storia
+            fieristica che avrebbe avuto un seguito importante. La seconda
+            Fiera Campionaria Internazionale di Trieste si svolse nel
+            <strong>1922</strong>, dal 3 al 18 settembre. La documentazione
+            relativa a quell'edizione la presenta come un'importante occasione
+            per far conoscere ai commercianti italiani e stranieri il ruolo
+            internazionale del porto di Trieste.
+        </p>
+
+        <p>
+            È interessante osservare come, nella comunicazione della Fiera
+            del 1922, Trieste venisse rappresentata proprio attraverso il
+            rapporto tra la città, il mare e il commercio. Un manifesto
+            conservato dal Museo Nazionale Collezione Salce raffigura infatti
+            Trieste e il suo golfo insieme a Mercurio, simbolo tradizionale
+            del commercio, e alle imbarcazioni che arrivano alla città.
+        </p>
+
+        <p>
+            Questa iconografia aiuta a comprendere anche il significato della
+            prima manifestazione del 1920: la Fiera non era semplicemente un
+            luogo dove acquistare o osservare merci, ma uno strumento per
+            comunicare l'identità commerciale di Trieste e la sua vocazione
+            internazionale.
+        </p>
+
+
+        <h2>Una testimonianza nella storia postale</h2>
+
+        <p>
+            Oggi una targhetta pubblicitaria dedicata alla <strong>Fiera
+            Campionaria 1920</strong> può essere considerata una piccola
+            testimonianza materiale di quel momento storico. La dicitura
+            pubblicitaria impressa meccanicamente sulla corrispondenza
+            collegava infatti il messaggio commerciale alla rete postale,
+            permettendo alla manifestazione di essere conosciuta anche al di
+            fuori di Trieste.
+        </p>
+
+        <p>
+            Per il collezionista di storia postale, questi piccoli segni
+            acquistano quindi un valore particolare. In pochi centimetri di
+            stampa si incontrano la storia della città, quella della
+            comunicazione pubblicitaria, la storia economica del primo
+            dopoguerra e quella del servizio postale.
+        </p>
+
+        <div class="box">
+
+            <div class="box-title">Per il collezionista</div>
+
+            <p style="margin-bottom:0;">
+                <strong>Fiera campionaria 1920 – Trieste centro</strong><br>
+                La targhetta pubblicitaria costituisce una rara testimonianza
+                dell'attività fieristica triestina all'inizio degli anni Venti
+                e permette di collegare la storia postale alla storia
+                commerciale della città.
+            </p>
+
+        </div>
+
+
+        <h2>1920: l'inizio di una nuova stagione</h2>
+
+        <p>
+            La prima Fiera Campionaria di Trieste si inserisce dunque in un
+            periodo nel quale la città cercava di ricostruire le proprie
+            relazioni economiche dopo la guerra. Attraverso la Fiera,
+            Trieste poteva presentarsi come centro produttivo e commerciale,
+            sfruttando ancora una volta la posizione strategica del proprio
+            porto.
+        </p>
+
+        <p>
+            A distanza di oltre un secolo, l'importanza della manifestazione
+            non risiede soltanto nei prodotti che vi furono presentati, ma
+            anche nel messaggio che essa trasmetteva: <em>Trieste tornava a
+            proporsi come città degli scambi, del commercio e delle relazioni
+            internazionali.</em>
+        </p>
+
+        <p>
+            Una semplice targhetta postale del 1920 conserva così una parte di
+            quella storia. Attraverso la posta, il nome della Fiera poteva
+            uscire dai confini della città e raggiungere altre località,
+            diventando una piccola ma efficace forma di pubblicità itinerante.
+        </p>
+
+    </section>
+
+
+    <div class="ornament">❦</div>
+
+
+    <div id="footerContainer"></div>
+
+</div>
+
+<script src="/footer/footer.js"></script>
+
+</body>
+</html>
