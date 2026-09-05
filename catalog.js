@@ -36,7 +36,8 @@
     immagini = [],
     datiImmagini = [],
     lightboxIndex = 0,
-    currentPage = 1;
+    currentPage = 1,
+    datarioLinksByCode = new Map();
 
   // ── Utilità ──────────────────────────────────────────────────────────
 
@@ -55,6 +56,85 @@
       nb = Number(b);
     if (!isNaN(na) && !isNaN(nb)) return na - nb;
     return String(a).localeCompare(String(b), "it");
+  }
+
+  function getDatarioImgPathFromLink(link, record) {
+    link = String(link || "").trim();
+    if (!link) return "";
+    if (CFG.getDatarioImgPath && record && link === String(record.linkDatario || "").trim()) {
+      return CFG.getDatarioImgPath(record);
+    }
+    if (/^(https?:)?\//.test(link) || link.includes("/")) return link;
+    if (String(CFG.jsonFile).includes("Regno") || window.location.pathname.includes("/regno/")) {
+      const match = link.match(/^(.*)\.(jpeg|jpg|png)$/i);
+      const circleName = match ? `${match[1]}_circle.${match[2]}` : `${link}_circle`;
+      return "imgDatariRegno/" + circleName;
+    }
+    return link;
+  }
+
+  function getDatarioImgPaths(record) {
+    const code = String(record.Datario || "").trim();
+    const links = [record.linkDatario, ...(datarioLinksByCode.get(code) || [])];
+    return [...new Set(links.map((link) => getDatarioImgPathFromLink(link, record)).filter(Boolean))];
+  }
+
+  function attachDatarioPreview(td, record, value) {
+    if (!value) return;
+    const imagePaths = getDatarioImgPaths(record);
+    if (!imagePaths.length) return;
+
+    td.classList.add("catalog-datario-cell");
+    let tooltip = document.querySelector(".catalog-datario-tooltip");
+    if (!tooltip) {
+      tooltip = document.createElement("div");
+      tooltip.className = "catalog-datario-tooltip";
+      document.body.appendChild(tooltip);
+    }
+
+    const tooltipKey = imagePaths.join("\u0001") + "\u0000" + value;
+    const updatePosition = (event) => {
+      const offset = 14;
+      const maxLeft = window.innerWidth - tooltip.offsetWidth - offset;
+      const maxTop = window.innerHeight - tooltip.offsetHeight - offset;
+      tooltip.style.left = Math.max(offset, Math.min(event.clientX + offset, maxLeft)) + "px";
+      tooltip.style.top = Math.max(offset, Math.min(event.clientY + offset, maxTop)) + "px";
+    };
+    const show = (event) => {
+      if (tooltip.dataset.key !== tooltipKey) {
+        tooltip.innerHTML = "";
+        const image = document.createElement("img");
+        let imageIndex = 0;
+        image.src = imagePaths[imageIndex];
+        image.alt = value;
+        image.onerror = () => {
+          if (image.src.includes("_circle.")) {
+            image.src = image.src.replace("_circle.", "_square.");
+            return;
+          }
+          imageIndex += 1;
+          if (imageIndex < imagePaths.length) {
+            image.src = imagePaths[imageIndex];
+          } else {
+            tooltip.style.display = "none";
+          }
+        };
+        tooltip.appendChild(image);
+        const label = document.createElement("div");
+        label.textContent = value;
+        tooltip.appendChild(label);
+        tooltip.dataset.key = tooltipKey;
+      }
+      tooltip.style.display = "block";
+      updatePosition(event);
+    };
+    const hide = () => {
+      if (tooltip.dataset.key === tooltipKey) tooltip.style.display = "none";
+    };
+
+    td.addEventListener("mouseenter", show);
+    td.addEventListener("mousemove", updatePosition);
+    td.addEventListener("mouseleave", hide);
   }
 
   // ── Stato filtri in URL ─────────────────────────────────────────────
@@ -137,10 +217,27 @@
 
   // ── Caricamento JSON ─────────────────────────────────────────────────
 
-  fetch(CFG.jsonFile)
-    .then((res) => res.json())
-    .then((json) => {
+  const datarioSourceFiles = CFG.datarioSourceFiles ||
+    (window.location.pathname.includes("/regno/")
+      ? ["targhetteRegno.json", "OndeRegno.json", "BarreRegno.json", "SoloDatarioRegno.json"]
+      : []);
+
+  Promise.all([
+    fetch(CFG.jsonFile).then((res) => res.json()),
+    ...datarioSourceFiles.map((file) =>
+      fetch(file).then((res) => res.json()).catch(() => []),
+    ),
+  ])
+    .then(([json, ...datarioSources]) => {
       data = json;
+      datarioSources.flat().forEach((record) => {
+        const code = String(record.Datario || "").trim();
+        const link = String(record.linkDatario || "").trim();
+        if (!code || !link) return;
+        const links = datarioLinksByCode.get(code) || [];
+        if (!links.includes(link)) links.push(link);
+        datarioLinksByCode.set(code, links);
+      });
       popolaControlloPeriodo(data);
       calcolaLarghezzeFisse(data);
       costruisciFiltri(data);
@@ -1078,6 +1175,8 @@
             td.textContent = val;
           }
         }
+
+        if (c === "Datario") attachDatarioPreview(td, r, val);
 
         tr.appendChild(td);
       });
