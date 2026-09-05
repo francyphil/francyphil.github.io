@@ -8,6 +8,7 @@
     <script src="/favicon-loader.js"></script>
     <link rel="stylesheet" href="/navbar/navbar.css" />
     <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
+    <link rel="stylesheet" href="/catalog.css" />
     <style>
       body {
         font-family: sans-serif;
@@ -58,23 +59,6 @@
         min-height: 60px;
       }
 
-      .barre-table {
-        border-collapse: collapse;
-        margin-top: 18px;
-        width: auto;
-      }
-      .barre-table th, .barre-table td {
-        border: 1px solid #bbb;
-        padding: 6px 14px;
-        text-align: left;
-      }
-      .barre-table th {
-        background-color: #f0f0f0;
-      }
-      .barre-table td:last-child {
-        text-align: center;
-        font-weight: bold;
-      }
     </style>
     <link rel="stylesheet" href="/footer/footer.css" />
   </head>
@@ -128,44 +112,116 @@
 
       </div>
 
-      <h2>Uffici con annulli a barre</h2>
-      <table id="barreTable" class="barre-table">
-        <thead>
-          <tr>
-            <th>Città</th>
-            <th>Ufficio</th>
-            <th>Barre</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <h2>Catalogo degli annulli a barre</h2>
+
+      <button id="mobileFilterToggle">
+        <span>Filtri <span id="filterBadge" class="filter-badge" style="display:none"></span></span>
+        <span class="filter-arrow">▼</span>
+      </button>
+      <div id="mobileFilterPanel"></div>
+      <div id="mobileListContainer"></div>
+
+      <fieldset class="controlli-box">
+        <legend>Controlli</legend>
+        <div class="controlli-wrapper">
+          <label>
+            Max record:
+            <select id="maxRecords">
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="500">500</option>
+              <option value="all">Tutti</option>
+            </select>
+          </label>
+          <label>
+            Vista:
+            <select id="vistaSelezionata">
+              <option value="tabella">Tabella</option>
+              <option value="card">Card</option>
+              <option value="tabella_card">Tabella + Card</option>
+            </select>
+          </label>
+          <label>
+            Schema di catalogazione:
+            <select id="schemaCatalogazione">
+              <option value="ornaghi_ufficio">Ufficio</option>
+              <option value="ornaghi_tipo">Tipo</option>
+            </select>
+          </label>
+        </div>
+        <div id="loadingIndicator" class="loading-indicator" style="display:none">
+          <div class="spinner"></div>
+          <span>Caricamento...</span>
+        </div>
+      </fieldset>
+
+      <div id="pagination-top" class="pagination" aria-label="Paginazione"></div>
+
+      <div class="table-wrapper">
+        <table id="tabellaFiltri">
+          <thead id="theadFiltri">
+            <tr id="trTitoli">
+              <th data-campo="Località">Località</th>
+              <th data-campo="Denominazione ufficio">Den. Ufficio</th>
+              <th data-campo="Anno">Anno</th>
+              <th data-campo="Descrizione">Descrizione</th>
+              <th data-campo="Datario">Datario</th>
+            </tr>
+            <tr id="trFiltri"></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="card-container" id="cardContainer"></div>
+      <div id="pagination" class="pagination" aria-label="Paginazione"></div>
+
+      <div id="graficoWrapper">
+        <canvas id="grafico" height="400"></canvas>
+      </div>
+
+      <div id="lightboxOverlay">
+        <div id="lightboxInfo"></div>
+        <img id="lightboxImage" />
+        <div id="fallbackText"></div>
+        <div class="controls">
+          <button onclick="prevImage()">⟨</button>
+          <button onclick="chiudiLightbox()">✕</button>
+          <button onclick="nextImage()">⟩</button>
+        </div>
+      </div>
 
       <script>
-        fetch("BarreRegno.json")
-          .then(res => res.json())
-          .then(data => {
-            const seen = new Set();
-            const unique = [];
-            data.forEach(item => {
-              const key = item["Località"] + "|" + item["Denominazione ufficio"];
-              if (!seen.has(key)) {
-                seen.add(key);
-                unique.push({ citta: item["Località"], ufficio: item["Denominazione ufficio"] });
-              }
-            });
-            unique.sort((a, b) => a.citta.localeCompare(b.citta) || a.ufficio.localeCompare(b.ufficio));
-            const tbody = document.querySelector("#barreTable tbody");
-            unique.forEach(u => {
-              const tr = document.createElement("tr");
-              const cittaLink = "cittaDettaglio.html?localita=" + encodeURIComponent(u.citta);
-              const ufficioLink = "ufficioDettaglio.html?localita=" + encodeURIComponent(u.citta) + "&denominazione=" + encodeURIComponent(u.ufficio);
-              tr.innerHTML = '<td><a href="' + cittaLink + '">' + u.citta + '</a></td>'
-                           + '<td><a href="' + ufficioLink + '">' + u.ufficio + '</a></td>'
-                           + '<td>V</td>';
-              tbody.appendChild(tr);
-            });
-          });
+        var CATALOG_CONFIG = {
+          jsonFile: "BarreRegno.json",
+          getImgPath: function(r) {
+            return r["linkDatario"] ? "imgDatariRegno/" + r["linkDatario"] : "";
+          },
+          customCell: function(td, campo, val, r) {
+            if (campo === "Denominazione ufficio") {
+              var ufficio = document.createElement("a");
+              ufficio.href = "ufficioDettaglio.html?" + new URLSearchParams({
+                denominazione: r["Denominazione ufficio"],
+                localita: r["Località"]
+              }).toString();
+              ufficio.textContent = val;
+              td.appendChild(ufficio);
+              return true;
+            }
+            if (campo === "Località") {
+              var localita = document.createElement("a");
+              localita.href = "cittaDettaglio.html?" + new URLSearchParams({
+                localita: r["Località"]
+              }).toString();
+              localita.textContent = val;
+              td.appendChild(localita);
+              return true;
+            }
+            return false;
+          }
+        };
       </script>
+      <script src="/catalog.js"></script>
 
       </div>
 
