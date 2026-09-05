@@ -37,7 +37,7 @@
     datiImmagini = [],
     lightboxIndex = 0,
     currentPage = 1,
-    datarioLinksByCode = new Map();
+    datarioLinksByContext = new Map();
 
   // ── Utilità ──────────────────────────────────────────────────────────
 
@@ -75,7 +75,15 @@
 
   function getDatarioImgPaths(record) {
     const code = String(record.Datario || "").trim();
-    const links = [record.linkDatario, ...(datarioLinksByCode.get(code) || [])];
+    const localita = String(record["Località"] || "").trim();
+    const ufficio = String(record["Denominazione ufficio"] || "").trim();
+    const contextKey = `${localita}\u0000${ufficio}\u0000${code}`;
+    const localitaKey = `${localita}\u0000\u0000${code}`;
+    const links = [
+      record.linkDatario,
+      ...(datarioLinksByContext.get(contextKey) || []),
+      ...(datarioLinksByContext.get(localitaKey) || []),
+    ];
     return [...new Set(links.map((link) => getDatarioImgPathFromLink(link, record)).filter(Boolean))];
   }
 
@@ -232,11 +240,19 @@
       data = json;
       datarioSources.flat().forEach((record) => {
         const code = String(record.Datario || "").trim();
+        const localita = String(record["Località"] || "").trim();
+        const ufficio = String(record["Denominazione ufficio"] || "").trim();
         const link = String(record.linkDatario || "").trim();
-        if (!code || !link) return;
-        const links = datarioLinksByCode.get(code) || [];
-        if (!links.includes(link)) links.push(link);
-        datarioLinksByCode.set(code, links);
+        if (!code || !link || !localita) return;
+        const keys = [
+          `${localita}\u0000${ufficio}\u0000${code}`,
+          `${localita}\u0000\u0000${code}`,
+        ];
+        keys.forEach((key) => {
+          const links = datarioLinksByContext.get(key) || [];
+          if (!links.includes(link)) links.push(link);
+          datarioLinksByContext.set(key, links);
+        });
       });
       popolaControlloPeriodo(data);
       calcolaLarghezzeFisse(data);
