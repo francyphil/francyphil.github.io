@@ -81,7 +81,7 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D2",
-        "linkDatario": "D2"
+        "linkDatario": ""
     },
     {
         "Targhetta Tipo": "",
@@ -109,6 +109,20 @@
         "Denominazione ufficio": "Centro",
         "Denominazione ufficio breve": "Centro",
         "Datario": "D1",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Solo Datario",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1925,
+        "Località": "Firenze",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "Centro",
+        "Datario": "D5",
         "linkDatario": ""
     },
     {
