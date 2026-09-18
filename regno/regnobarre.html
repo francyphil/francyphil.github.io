@@ -22,6 +22,25 @@
         margin-top: 24px;
       }
 
+      .tipo-details {
+        margin-top: 24px;
+      }
+
+      .tipo-details > summary {
+        padding: 12px 16px;
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        color: #2c3e50;
+        cursor: pointer;
+        font-weight: 600;
+        list-style-position: inside;
+      }
+
+      .tipo-details[open] > summary {
+        border-radius: 6px 6px 0 0;
+      }
+
       .tipo-card {
         background: #fff;
         border: 1px solid #ddd;
@@ -70,15 +89,15 @@
     <div class="content-container">
       <h1>Regno Annulli Barre</h1>
 
-      <p>
-        Gli annulli a barre sono stati usati in un numero relativamente limitato di uffici postali del Regno d'Italia.
-        Una catalogazione puntuale dei differenti tipi porterebbe ad una lunga lista con differenze minime tra un tipo e l'altro.
-        Di seguito viene proposta una classificazione più generale che tiene conto di alcune
-        caratteristiche principali degli annulli a barre.
-      </p>
-
-      <h2>Tipologie di annulli a barre</h2>
-      <div class="tipo-cards">
+      <details class="tipo-details">
+        <summary>Mostra le impronte dei tipi di annulli a barre</summary>
+        <p>
+          Gli annulli a barre sono stati usati in un numero relativamente limitato di uffici postali del Regno d'Italia.
+          Una catalogazione puntuale dei differenti tipi porterebbe ad una lunga lista con differenze minime tra un tipo e l'altro.
+          Di seguito viene proposta una classificazione più generale che tiene conto di alcune
+          caratteristiche principali degli annulli a barre.
+        </p>
+        <div class="tipo-cards">
 
         <div class="tipo-card">
           <h3>Annulli a sei barre</h3>
@@ -110,7 +129,8 @@
           <div class="tipo-card-desc">Caratterizzato da barre di lunghezza circa 30mm e di spessore fine. Usato solo a Trieste</div>
         </div>
 
-      </div>
+        </div>
+      </details>
 
       <h2>Catalogo degli annulli a barre</h2>
 

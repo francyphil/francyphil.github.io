@@ -22,6 +22,25 @@
         margin-top: 24px;
       }
 
+      .tipo-details {
+        margin-top: 24px;
+      }
+
+      .tipo-details > summary {
+        padding: 12px 16px;
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        color: #2c3e50;
+        cursor: pointer;
+        font-weight: 600;
+        list-style-position: inside;
+      }
+
+      .tipo-details[open] > summary {
+        border-radius: 6px 6px 0 0;
+      }
+
       .tipo-card {
         background: #fff;
         border: 1px solid #ddd;
@@ -117,39 +136,41 @@
     <div class="content-container">
       <h1>Regno Annulli Onde</h1>
 
-      <p>
-        Una classificazione puntuale degli annulli ad onde dettagliando le più
-        piccole differenze porterebbe rapidamente ad ottenere una lunga lista di
-        targhette tipo di probabile poco interesse. Ad esempio alcune targhette
-        ad onde si sono danneggiate nel tempo per usura deformando le onde per
-        poi perderne alcune. Elencare quindi tutte le possibili varianti potrebbe non essere utile.
-        Contrariamente alle targhette figurate, dove furono usate delle macchine Krag per le impressioni continue
-        e delle Flyer di varia derivazione per le targhette, qui è stato riscontrato l'uso, probabilmente di prova siccome
-        molto limitato nel tempo, di altre macchine.
-        Di seguito viene proposta una classificazione più generale che tiene conto di alcune
-        caratteristiche principali degli annulli ad onde.
-      </p>
+      <details class="tipo-details">
+        <summary>Mostra le impronte dei tipi di annulli ad onde</summary>
+        <p>
+          Una classificazione puntuale degli annulli ad onde dettagliando le più
+          piccole differenze porterebbe rapidamente ad ottenere una lunga lista di
+          targhette tipo di probabile poco interesse. Ad esempio alcune targhette
+          ad onde si sono danneggiate nel tempo per usura deformando le onde per
+          poi perderne alcune. Elencare quindi tutte le possibili varianti potrebbe non essere utile.
+          Contrariamente alle targhette figurate, dove furono usate delle macchine Krag per le impressioni continue
+          e delle Flyer di varia derivazione per le targhette, qui è stato riscontrato l'uso, probabilmente di prova siccome
+          molto limitato nel tempo, di altre macchine.
+          Di seguito viene proposta una classificazione più generale che tiene conto di alcune
+          caratteristiche principali degli annulli ad onde.
+        </p>
 
-      <p>
-        A partire dal 1910 sono stati usati in più uffici ed in modo discontinuo
-        annulli meccanici di produzione americana (dalla ditta International
-        Postal Supply di NewYork) del tipo ad onde con lettere. Le lettere
-        possibili sono C, D, R e T. Idealmente secondo il costruttore, le
-        lettere differenti dovevano indicare usi differenti della macchina
-        annullatrice, in particolare C per la fase di raccolta della posta
-        (Collected), D per indicarne lo stato di deposito (Deposited), R per
-        l’annullamento in arrivo (Recived) e T per gli annulli di transito
-        (Transited). In nessun ufficio sembra sia stato seguito alcun ordine per
-        l’utilizzo. Da notare che la stessa ditta ha fornito a molte altre
-        amministrazioni postali lo stesso tipo di annullo. Dopo questa prima
-        fornitura negli anni furono realizzate altre targhette annulli ad onde,
-        sempre con queste lettere, di lunghezza differente per essere adattati
-        alle nuove macchine. Sono state utilizzate anche per posta militare.
-        Sono inoltre state trovate impronte con lettere difettose o mancanti.
-      </p>
+        <p>
+          A partire dal 1910 sono stati usati in più uffici ed in modo discontinuo
+          annulli meccanici di produzione americana (dalla ditta International
+          Postal Supply di NewYork) del tipo ad onde con lettere. Le lettere
+          possibili sono C, D, R e T. Idealmente secondo il costruttore, le
+          lettere differenti dovevano indicare usi differenti della macchina
+          annullatrice, in particolare C per la fase di raccolta della posta
+          (Collected), D per indicarne lo stato di deposito (Deposited), R per
+          l’annullamento in arrivo (Recived) e T per gli annulli di transito
+          (Transited). In nessun ufficio sembra sia stato seguito alcun ordine per
+          l’utilizzo. Da notare che la stessa ditta ha fornito a molte altre
+          amministrazioni postali lo stesso tipo di annullo. Dopo questa prima
+          fornitura negli anni furono realizzate altre targhette annulli ad onde,
+          sempre con queste lettere, di lunghezza differente per essere adattati
+          alle nuove macchine. Sono state utilizzate anche per posta militare.
+          Sono inoltre state trovate impronte con lettere difettose o mancanti.
+        </p>
 
-      <h2>Flyer</h2>
-      <div class="tipo-cards">
+        <h2>Flyer</h2>
+        <div class="tipo-cards">
 
         <div class="tipo-card">
           <h3>Annulli a 7 onde con lunghezza di circa 45 mm</h3>
@@ -208,10 +229,10 @@
           <div class="tipo-card-desc"></div>
         </div>
 
-      </div>
+        </div>
 
-      <h2>Universal</h2>
-      <div class="tipo-cards">
+        <h2>Universal</h2>
+        <div class="tipo-cards">
 
         <div class="tipo-card">
           <h3>Annulli a 9 onde</h3>
@@ -219,10 +240,10 @@
           <div class="tipo-card-desc"></div>
         </div>
 
-      </div>
+        </div>
 
-      <h2>Macchina non nota</h2>
-      <div class="tipo-cards">
+        <h2>Macchina non nota</h2>
+        <div class="tipo-cards">
 
         <div class="tipo-card">
           <h3>Annulli a 9 onde</h3>
@@ -230,7 +251,8 @@
           <div class="tipo-card-desc"></div>
         </div>
 
-      </div>
+        </div>
+      </details>
 
       <h2>Catalogo degli annulli ad onde</h2>
 
