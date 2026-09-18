@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <link rel="stylesheet" href="/common-bg.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milano 1906 Esposizione</title>
+    <script src="/favicon-loader.js"></script>
+    <link rel="stylesheet" href="/navbar/navbar.css" />
+    <link rel="stylesheet" href="/breadcrumb/breadcrumb.css" />
+    <link rel="stylesheet" href="/footer/footer.css" />
+    <style>
+      body { font-family: sans-serif; margin: 0; padding: 0; }
+      .manual-page { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; }
+      .tipo-cards { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; }
+      .tipo-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        width: 340px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .tipo-card h3 {
+        margin: 0;
+        padding: 14px 16px 10px;
+        font-size: 1.05em;
+        color: #2c3e50;
+        border-bottom: 1px solid #eee;
+      }
+      .tipo-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        background: #f9f9f9;
+        display: block;
+        padding: 8px;
+        box-sizing: border-box;
+        cursor: pointer;
+      }
+      .tipo-card-desc {
+        padding: 12px 16px;
+        font-size: 0.9em;
+        color: #555;
+        line-height: 1.5;
+        min-height: 60px;
+      }
+      .back-link { display: inline-block; margin-bottom: 20px; color: #2c3e50; }
+
+      #manualLightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.9);
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      #manualLightbox.open { display: flex; }
+
+      #manualLightboxImage {
+        max-width: 90%;
+        max-height: 85%;
+        border-radius: 8px;
+      }
+
+      #manualLightboxTitle,
+      #manualLightboxDescription {
+        max-width: 80%;
+        color: #fff;
+        text-align: center;
+      }
+
+      #manualLightboxTitle {
+        margin: 0 0 16px;
+        font-size: 1.2em;
+      }
+
+      #manualLightboxDescription {
+        margin: 16px 0 0;
+        font-size: 1em;
+      }
+
+      .manual-lightbox-button {
+        position: fixed;
+        border: 0;
+        border-radius: 5px;
+        padding: 28px 32px;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        cursor: pointer;
+        font-size: 28px;
+        line-height: 1;
+      }
+
+      .manual-lightbox-button:hover { background: rgba(255, 255, 255, 0.5); }
+      .manual-lightbox-prev { left: 20px; }
+      .manual-lightbox-next { right: 20px; }
+      .manual-lightbox-close {
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 18px;
+      }
+
+      @media (max-width: 600px) {
+        .manual-lightbox-button { padding: 20px 22px; }
+        .manual-lightbox-prev { left: 5px; }
+        .manual-lightbox-next { right: 5px; }
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/navbar/navbar.js"></script>
+    <div id="breadcrumbContainer"></div>
+    <script src="/breadcrumb/breadcrumb.js"></script>
+    <main class="manual-page">
+      <h1>Milano 1906 Esposizione</h1>
+      <p>
+        Per l'Esposizione Internazionale di Milano del 1906 furono utilizzati, tra gli altri, annulli meccanici per macchina Daugin ad azionamento manuale.
+        Furono utilizzate piu piastrine sia nell'ufficio di Milano centro che in quello di Milano Ferrovia. Una catalogazione è stata proposta dagli Ornaghi
+        ma non esaustiva. D'altronte le impronte sono spesso molto sporche e di difficile lettura. Inoltre sono abbastanza comune anche le bollature multiple che 
+        rendono complessa l'identificazione delle singole impronte tipo. Di seguito una possibile catalogazione riportante impronte sufficientemente differenti tra loro.
+      </p>
+
+      <h2>Milano Centro</h2>
+      <div class="tipo-cards">
+        <div class="tipo-card">
+          <h3>Tipo 1</h3>
+          <img src="manuali/ExpoMilanoCentro_T1_29.jpeg" alt="Impronta Milano 1906 Esposizione, tipo 1" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc">Datario 1</div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Tipo 2</h3>
+          <img src="manuali/ExpoMilanoCentro_T2_29A.jpeg" alt="Impronta Milano 1906 Esposizione, tipo 2" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc">Datario 2</div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Tipo 3</h3>
+          <img src="manuali/ExpoMilanoCentro_T3_29B.jpeg" alt="Impronta Milano 1906 Esposizione, tipo 3" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc">Datario 2</div>
+        </div>
+
+        <div class="tipo-card">
+          <h3>Tipo 3 Datario Inclinato</h3>
+          <img src="manuali/ExpoMilanoCentro_T3_29B_DatarioInclinato.jpeg" alt="Impronta Milano 1906 Esposizione, tipo 4" loading="lazy" decoding="async" />
+          <div class="tipo-card-desc">Datario 2</div>
+        </div>
+      </div>
+      
+    </main>
+
+    <div id="manualLightbox" role="dialog" aria-modal="true" aria-label="Ingrandimento immagine">
+      <h2 id="manualLightboxTitle"></h2>
+      <img id="manualLightboxImage" alt="" />
+      <p id="manualLightboxDescription"></p>
+      <button class="manual-lightbox-button manual-lightbox-prev" type="button" aria-label="Immagine precedente">&#10094;</button>
+      <button class="manual-lightbox-button manual-lightbox-next" type="button" aria-label="Immagine successiva">&#10095;</button>
+      <button class="manual-lightbox-button manual-lightbox-close" type="button" aria-label="Chiudi">&#10005;</button>
+    </div>
+
+    <script>
+      const manualImages = Array.from(document.querySelectorAll('.tipo-card img'));
+      const manualLightbox = document.getElementById('manualLightbox');
+      const manualLightboxTitle = document.getElementById('manualLightboxTitle');
+      const manualLightboxImage = document.getElementById('manualLightboxImage');
+      const manualLightboxDescription = document.getElementById('manualLightboxDescription');
+      let manualImageIndex = 0;
+
+      function showManualImage(index) {
+        manualImageIndex = (index + manualImages.length) % manualImages.length;
+        const image = manualImages[manualImageIndex];
+        const card = image.closest('.tipo-card');
+        manualLightboxImage.src = image.src;
+        manualLightboxImage.alt = image.alt;
+        manualLightboxTitle.textContent = card.querySelector('h3').textContent;
+        manualLightboxDescription.textContent = card.querySelector('.tipo-card-desc').textContent;
+        manualLightbox.classList.add('open');
+      }
+
+      manualImages.forEach((image, index) => {
+        image.addEventListener('click', (event) => {
+          event.stopPropagation();
+          showManualImage(index);
+        });
+      });
+
+      document.querySelector('.manual-lightbox-prev').addEventListener('click', (event) => {
+        event.stopPropagation();
+        showManualImage(manualImageIndex - 1);
+      });
+
+      document.querySelector('.manual-lightbox-next').addEventListener('click', (event) => {
+        event.stopPropagation();
+        showManualImage(manualImageIndex + 1);
+      });
+
+      document.querySelector('.manual-lightbox-close').addEventListener('click', () => {
+        manualLightbox.classList.remove('open');
+      });
+
+      manualLightbox.addEventListener('click', (event) => {
+        if (event.target === manualLightbox) manualLightbox.classList.remove('open');
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (!manualLightbox.classList.contains('open')) return;
+        if (event.key === 'Escape') manualLightbox.classList.remove('open');
+        if (event.key === 'ArrowLeft') showManualImage(manualImageIndex - 1);
+        if (event.key === 'ArrowRight') showManualImage(manualImageIndex + 1);
+      });
+    </script>
+    <script src="/footer/footer.js"></script>
+    <div id="footerContainer"></div>
+  </body>
+</html>
