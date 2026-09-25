@@ -202,6 +202,20 @@
         "Descrizione": "Barre",
         "linkTarghetta": "",
         "linkImgTarghetta": "",
+        "Anno": 1937,
+        "Località": "Gorizia",
+        "Denominazione ufficio": "C.P.",
+        "Denominazione ufficio breve": "",
+        "Datario": "D1",
+        "linkDatario": "Gorizia_CP_D1.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
         "Anno": 1938,
         "Località": "Gorizia",
         "Denominazione ufficio": "C.P.",
@@ -516,6 +530,20 @@
         "Denominazione ufficio breve": "Ferr",
         "Datario": "D60",
         "linkDatario": "Roma_Ferr_D60.jpeg"
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1940,
+        "Località": "San Remo",
+        "Denominazione ufficio": "Imperia",
+        "Denominazione ufficio breve": "Imperia",
+        "Datario": "D2",
+        "linkDatario": "SanRemo_Imperia_D2.jpeg"
     },
     {
         "Targhetta Tipo": "",
