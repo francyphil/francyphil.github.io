@@ -160,6 +160,7 @@
           <input type="checkbox" id="chkSoloDatario" checked>
           <span style="display:inline-block;width:10px;height:10px;background:#27ae60;margin:0 4px 0 2px;vertical-align:middle;"></span>Solo datario
         </label>
+        <button id="btnResetYearFilter" type="button" disabled style="margin-left:20px; font-size:14px; padding:3px 10px; cursor:pointer; background:#f44336; color:#fff; border:none; border-radius:4px; font-weight:bold; vertical-align:middle;">Reset Filtro Anno</button>
       </div>
 
       <div class="stats">
@@ -174,6 +175,8 @@
 
       <script src="/navbar/navbar.js"></script>
       <script>
+        let selectedYearFilter = null;
+
         // Estrae i parametri dall'URL
         function getURLParams() {
           const params = new URLSearchParams(window.location.search);
@@ -184,6 +187,7 @@
 
         // Dati globali per ridisegno del grafico
         let _chartFiltered = [], _chartOndeFiltered = [], _chartBarreFiltered = [], _chartSoloDatarioFiltered = [], _chartLocalita = "";
+        let renderCurrentState = () => {};
 
         // Carica e filtra i dati
         async function loadLocalityDetails() {
@@ -296,6 +300,7 @@
                 const tbody = document.createElement("tbody");
                 items.forEach((item) => {
                   const tr = document.createElement("tr");
+                  tr.dataset.year = item.Anno;
 
                   const tdAnno = document.createElement("td");
                   tdAnno.textContent = item.Anno;
@@ -334,14 +339,35 @@
             _chartSoloDatarioFiltered = soloDatarioFiltered;
             _chartLocalita = localita;
 
-            // Disegna sempre il grafico (mostra targhette, onde, barre e/o solo datario)
-            renderChart(filtered, localita, ondeFiltered, barreFiltered, soloDatarioFiltered);
+            renderCurrentState = () => {
+              const tableRows = Array.from(document.querySelectorAll("#tablesContainer tbody tr"));
+              let visibleCount = 0;
+              tableRows.forEach((row) => {
+                const matchesYear = selectedYearFilter === null || Number(row.dataset.year) === Number(selectedYearFilter);
+                row.hidden = !matchesYear;
+                if (matchesYear) visibleCount += 1;
+              });
+              document.querySelectorAll("#tablesContainer details").forEach((details) => {
+                details.hidden = !Array.from(details.querySelectorAll("tbody tr")).some((row) => !row.hidden);
+              });
+              document.getElementById("statsCount").textContent = visibleCount;
+              document.getElementById("noResults").style.display = visibleCount === 0 ? "block" : "none";
+              const resetBtn = document.getElementById("btnResetYearFilter");
+              if (resetBtn) resetBtn.disabled = selectedYearFilter === null;
+              renderChart(_chartFiltered, _chartLocalita, _chartOndeFiltered, _chartBarreFiltered, _chartSoloDatarioFiltered);
+            };
+
+            renderCurrentState();
 
             // Collega i checkbox ai controlli del grafico
             ['chkTarghette','chkOnde','chkBarre','chkSoloDatario'].forEach(id => {
               document.getElementById(id)?.addEventListener('change', () => {
-                renderChart(_chartFiltered, _chartLocalita, _chartOndeFiltered, _chartBarreFiltered, _chartSoloDatarioFiltered);
+                renderCurrentState();
               });
+            });
+            document.getElementById('btnResetYearFilter')?.addEventListener('click', () => {
+              selectedYearFilter = null;
+              renderCurrentState();
             });
           } catch (error) {
             console.error("Errore caricamento dati:", error);
@@ -411,6 +437,10 @@
           svg.setAttribute("width", w);
           svg.setAttribute("height", h);
           svg.setAttribute("style", "display:block; margin:0 auto;");
+          const toggleYearFilter = (year) => {
+            selectedYearFilter = Number(selectedYearFilter) === Number(year) ? null : year;
+            renderCurrentState();
+          };
 
           // vertical grid lines (years)
           fullYears.forEach((yr, i) => {
@@ -476,7 +506,32 @@
             text.setAttribute("dominant-baseline", "middle");
             text.setAttribute("transform", `rotate(-90 ${x} ${baseY})`);
             text.textContent = yr;
+            text.setAttribute("fill", Number(selectedYearFilter) === Number(yr) ? "#c0392b" : "#000");
+            text.setAttribute("font-weight", Number(selectedYearFilter) === Number(yr) ? "bold" : "normal");
+            text.style.cursor = "pointer";
+            text.addEventListener("click", () => toggleYearFilter(yr));
             svg.appendChild(text);
+
+            const yearHitArea = document.createElementNS(svgNS, "rect");
+            yearHitArea.setAttribute("x", left + i * cell);
+            yearHitArea.setAttribute("y", top + offices.length * cell + 1);
+            yearHitArea.setAttribute("width", cell);
+            yearHitArea.setAttribute("height", 38);
+            yearHitArea.setAttribute("fill", "#fff");
+            yearHitArea.setAttribute("fill-opacity", "0");
+            yearHitArea.setAttribute("pointer-events", "all");
+            yearHitArea.setAttribute("role", "button");
+            yearHitArea.setAttribute("tabindex", "0");
+            yearHitArea.setAttribute("aria-label", `Filtra i dati per l'anno ${yr}`);
+            yearHitArea.style.cursor = "pointer";
+            yearHitArea.addEventListener("click", () => toggleYearFilter(yr));
+            yearHitArea.addEventListener("keydown", (event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                toggleYearFilter(yr);
+              }
+            });
+            svg.appendChild(yearHitArea);
           });
 
           // squares — strisce verticali per ogni fonte attiva
@@ -502,6 +557,17 @@
                 rect.setAttribute('width', sw);
                 rect.setAttribute('height', s);
                 rect.setAttribute('fill', color);
+                rect.setAttribute('role', 'button');
+                rect.setAttribute('tabindex', '0');
+                rect.setAttribute('aria-label', `Filtra i dati per l'anno ${yr}`);
+                rect.style.cursor = 'pointer';
+                rect.addEventListener('click', () => toggleYearFilter(yr));
+                rect.addEventListener('keydown', (event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleYearFilter(yr);
+                  }
+                });
                 rect.addEventListener('mouseenter', (e) => {
                   if (!tooltip) return;
                   tooltip.textContent = tooltipText;

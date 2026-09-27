@@ -154,6 +154,7 @@
           <input type="checkbox" id="chkBarre" checked>
           <span style="display:inline-block;width:10px;height:10px;background:#2266cc;margin:0 4px 0 2px;vertical-align:middle;"></span>Barre
         </label>
+        <button id="btnResetYearFilter" type="button" disabled style="margin-left:20px; font-size:14px; padding:3px 10px; cursor:pointer; background:#f44336; color:#fff; border:none; border-radius:4px; font-weight:bold; vertical-align:middle;">Reset Filtro Anno</button>
       </div>
 
       <div class="stats">
@@ -167,6 +168,9 @@
       </div>
 
       <script>
+        let selectedYearFilter = null;
+        let renderCurrentState = () => {};
+
         // Estrae i parametri dall'URL
         function getURLParams() {
           const params = new URLSearchParams(window.location.search);
@@ -231,106 +235,126 @@
               return a.Anno - b.Anno;
             });
 
-            // Mostra risultati tabella (una tabella per datario)
-            if (filtered.length === 0) {
-              document.getElementById("noResults").style.display = "block";
-              document.getElementById("tablesContainer").innerHTML = "";
-              document.getElementById("statsCount").textContent = "0";
-            } else {
-              const container = document.getElementById("tablesContainer");
-              container.innerHTML = "";
-
-              // Raggruppa per Datario
-              const groups = new Map();
-              filtered.forEach((item) => {
-                const key = (item.Datario || "").trim();
-                if (!groups.has(key)) groups.set(key, []);
-                groups.get(key).push(item);
-              });
-
-              // Itera i gruppi nell'ordine di inserimento (segue l'ordine della tabella per Anno)
-              groups.forEach((items, datarioName) => {
-
-                // Sezione collassabile
-                const details = document.createElement("details");
-                const summary = document.createElement("summary");
-                summary.textContent = datarioName || "(senza datario)";
-                details.appendChild(summary);
-
-                // Wrapper + tabella
-                const wrapper = document.createElement("div");
-                wrapper.className = "table-wrapper";
-                const table = document.createElement("table");
-
-                const colgroup = document.createElement("colgroup");
-                ["16%", "12%", "12%", "60%"].forEach((w) => {
-                  const col = document.createElement("col");
-                  col.style.width = w;
-                  colgroup.appendChild(col);
-                });
-                table.appendChild(colgroup);
-
-                const thead = document.createElement("thead");
-                const headRow = document.createElement("tr");
-                ["Anno", "Targhetta Tipo", "Targhetta Ufficio", "Descrizione"].forEach((text) => {
-                  const th = document.createElement("th");
-                  th.textContent = text;
-                  headRow.appendChild(th);
-                });
-                thead.appendChild(headRow);
-                table.appendChild(thead);
-
-                const tbody = document.createElement("tbody");
-                items.forEach((item) => {
-                  const tr = document.createElement("tr");
-
-                  const tdAnno = document.createElement("td");
-                  tdAnno.textContent = item.Anno;
-
-                  const tdTipo = document.createElement("td");
-                  tdTipo.textContent = item["Targhetta Tipo"];
-
-                  const tdUfficio = document.createElement("td");
-                  tdUfficio.textContent = item["Targhetta Ufficio"];
-
-                  const tdDescrizione = document.createElement("td");
-                  tdDescrizione.textContent = item["Descrizione"];
-
-                  tr.appendChild(tdAnno);
-                  tr.appendChild(tdTipo);
-                  tr.appendChild(tdUfficio);
-                  tr.appendChild(tdDescrizione);
-
-                  tbody.appendChild(tr);
-                });
-                table.appendChild(tbody);
-                wrapper.appendChild(table);
-                details.appendChild(wrapper);
-                container.appendChild(details);
-              });
-
-              document.getElementById("statsCount").textContent =
-                filtered.length;
-              document.getElementById("noResults").style.display = "none";
-            }
-
-            // Mostra i datari usati per gli annulli (se presenti)
-            // Unisce tutte le fonti (targhette, onde, barre) per mostrare tutti i datari
-            renderDatari([...filtered, ...ondeFiltered, ...barreFiltered]);
-
             // Salva i dati per il ridisegno del grafico
             _chartFiltered = filtered;
             _chartOndeFiltered = ondeFiltered;
             _chartBarreFiltered = barreFiltered;
 
-            // Disegna sempre il grafico (mostra targhette, onde e barre)
-            renderChart(filtered, ondeFiltered, barreFiltered);
+            function renderTables(itemsToRender) {
+              if (itemsToRender.length === 0) {
+                document.getElementById("noResults").style.display = "block";
+                document.getElementById("tablesContainer").innerHTML = "";
+                document.getElementById("statsCount").textContent = "0";
+              } else {
+                const container = document.getElementById("tablesContainer");
+                container.innerHTML = "";
 
+                // Raggruppa per Datario
+                const groups = new Map();
+                itemsToRender.forEach((item) => {
+                  const key = (item.Datario || "").trim();
+                  if (!groups.has(key)) groups.set(key, []);
+                  groups.get(key).push(item);
+                });
+
+                // Itera i gruppi nell'ordine di inserimento (segue l'ordine della tabella per Anno)
+                groups.forEach((items, datarioName) => {
+                  // Sezione collassabile
+                  const details = document.createElement("details");
+                  const summary = document.createElement("summary");
+                  summary.textContent = datarioName || "(senza datario)";
+                  details.appendChild(summary);
+
+                  // Wrapper + tabella
+                  const wrapper = document.createElement("div");
+                  wrapper.className = "table-wrapper";
+                  const table = document.createElement("table");
+
+                  const colgroup = document.createElement("colgroup");
+                  ["16%", "12%", "12%", "60%"].forEach((w) => {
+                    const col = document.createElement("col");
+                    col.style.width = w;
+                    colgroup.appendChild(col);
+                  });
+                  table.appendChild(colgroup);
+
+                  const thead = document.createElement("thead");
+                  const headRow = document.createElement("tr");
+                  ["Anno", "Targhetta Tipo", "Targhetta Ufficio", "Descrizione"].forEach((text) => {
+                    const th = document.createElement("th");
+                    th.textContent = text;
+                    headRow.appendChild(th);
+                  });
+                  thead.appendChild(headRow);
+                  table.appendChild(thead);
+
+                  const tbody = document.createElement("tbody");
+                  items.forEach((item) => {
+                    const tr = document.createElement("tr");
+
+                    const tdAnno = document.createElement("td");
+                    tdAnno.textContent = item.Anno;
+                    const tdTipo = document.createElement("td");
+                    tdTipo.textContent = item["Targhetta Tipo"];
+
+                    const tdUfficio = document.createElement("td");
+                    tdUfficio.textContent = item["Targhetta Ufficio"];
+
+                    const tdDescrizione = document.createElement("td");
+                    tdDescrizione.textContent = item["Descrizione"];
+
+                    tr.appendChild(tdAnno);
+                    tr.appendChild(tdTipo);
+                    tr.appendChild(tdUfficio);
+                    tr.appendChild(tdDescrizione);
+
+                    tbody.appendChild(tr);
+                  });
+                  table.appendChild(tbody);
+                  wrapper.appendChild(table);
+                  details.appendChild(wrapper);
+                  container.appendChild(details);
+                });
+
+                document.getElementById("statsCount").textContent = itemsToRender.length;
+                document.getElementById("noResults").style.display = "none";
+              }
+            }
+
+            renderCurrentState = () => {
+              renderTables(_chartFiltered);
+
+              let datariRecords = [
+                { records: _chartFiltered, id: 'chkTarghette' },
+                { records: _chartOndeFiltered, id: 'chkOnde' },
+                { records: _chartBarreFiltered, id: 'chkBarre' },
+              ].filter(source => document.getElementById(source.id)?.checked !== false)
+                .flatMap(source => source.records);
+              if (selectedYearFilter !== null) {
+                datariRecords = datariRecords.filter(r => Number(r.Anno) === Number(selectedYearFilter));
+              }
+              renderDatari(datariRecords);
+              renderChart(_chartFiltered, _chartOndeFiltered, _chartBarreFiltered);
+
+              const resetBtn = document.getElementById("btnResetYearFilter");
+              if (resetBtn) {
+                resetBtn.disabled = selectedYearFilter === null;
+              }
+            };
+
+            // Disegna tutto lo stato
+            renderCurrentState();
+
+            // Disegna sempre il grafico (mostra targhette, onde e barre)
             // Collega i checkbox ai controlli del grafico
             ['chkTarghette','chkOnde','chkBarre'].forEach(id => {
               document.getElementById(id)?.addEventListener('change', () => {
-                renderChart(_chartFiltered, _chartOndeFiltered, _chartBarreFiltered);
+                renderCurrentState();
               });
+            });
+            document.getElementById('btnResetYearFilter')?.addEventListener('click', () => {
+              selectedYearFilter = null;
+              renderCurrentState();
             });
           } catch (error) {
             console.error("Errore caricamento dati:", error);
@@ -352,6 +376,17 @@
           return a.localeCompare(b);
         }
 
+        function getDatarioImageLink(record) {
+          const explicitLink = (record.linkDatario || "").trim();
+          if (explicitLink) return explicitLink;
+
+          const localita = (record["Località"] || "").trim();
+          const ufficio = (record["Denominazione ufficio breve"] || record["Denominazione ufficio"] || "").trim();
+          const datario = (record.Datario || "").trim();
+          if (!localita || !ufficio || !datario) return "";
+          return `${localita}_${ufficio}_${datario}.jpeg`;
+        }
+
         // Mostra i datari unici usati nel set filtrato. Usa la cartella imgDatariLibia
         function renderDatari(records) {
           const listContainer = document.getElementById("datariList");
@@ -361,10 +396,12 @@
           // Raccogli datari unici e ordinali per nome (Datario)
           const uniqueMap = new Map();
           records.forEach((r) => {
-            const link = (r.linkDatario || "").trim();
-            if (!link) return;
-            if (uniqueMap.has(link)) return;
-            uniqueMap.set(link, r);
+            const datarioCode = (r.Datario || "").trim();
+            if (!datarioCode) return;
+            const current = uniqueMap.get(datarioCode);
+            if (!current || (!getDatarioImageLink(current) && getDatarioImageLink(r))) {
+              uniqueMap.set(datarioCode, r);
+            }
           });
           const sortedDatari = Array.from(uniqueMap.values()).sort((a, b) => {
             const nameA = (a.Datario || "").trim();
@@ -374,10 +411,10 @@
 
           const seen = new Set();
           sortedDatari.forEach((r) => {
-            const link = (r.linkDatario || "").trim();
-            if (!link) return;
-            if (seen.has(link)) return;
-            seen.add(link);
+            const datarioCode = (r.Datario || "").trim();
+            const link = getDatarioImageLink(r);
+            if (!link || seen.has(datarioCode)) return;
+            seen.add(datarioCode);
 
             // costruisci nome con _circle prima dell'estensione
             const m = link.match(/^(.*)\.(jpeg|jpg|png)$/i);
@@ -408,8 +445,13 @@
             img.style.border = "1px solid #ddd";
             img.style.objectFit = "contain";
 
-            // se l'immagine non esiste, rimuoviamo l'intero wrapper
-            img.onerror = () => wrapper.remove();
+            img.onerror = () => {
+              if (img.src.includes("_circle.")) {
+                img.src = img.src.replace("_circle.", "_square.");
+              } else {
+                wrapper.remove();
+              }
+            };
 
             // click apre la versione completa (senza _circle) se presente
             const a = document.createElement("a");
@@ -417,7 +459,6 @@
             a.appendChild(img);
 
             // label con il codice Datario (se presente)
-            const datarioCode = (r.Datario || "").trim();
             if (datarioCode) {
               const lbl = document.createElement("div");
               lbl.textContent = datarioCode;
@@ -512,6 +553,10 @@
               svg.setAttribute('height', height);
               svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
               svg.setAttribute('style', 'flex-shrink:0;');
+              const toggleYearFilter = (year) => {
+                selectedYearFilter = Number(selectedYearFilter) === Number(year) ? null : year;
+                renderCurrentState();
+              };
 
               // y labels (datari) - vertically centered in cell
               datari.forEach((d, i) => {
@@ -564,7 +609,32 @@
                 text.setAttribute('dominant-baseline', 'middle');
                 text.setAttribute('transform', `rotate(-90 ${x} ${baseY})`);
                 text.textContent = yr;
+                text.setAttribute('fill', Number(selectedYearFilter) === Number(yr) ? '#c0392b' : '#000');
+                text.setAttribute('font-weight', Number(selectedYearFilter) === Number(yr) ? 'bold' : 'normal');
+                text.style.cursor = 'pointer';
+                text.addEventListener('click', () => toggleYearFilter(yr));
                 svg.appendChild(text);
+
+                const yearHitArea = document.createElementNS(svgNS, 'rect');
+                yearHitArea.setAttribute('x', left + j * cell);
+                yearHitArea.setAttribute('y', top + gridHeight + 1);
+                yearHitArea.setAttribute('width', cell);
+                yearHitArea.setAttribute('height', 38);
+                yearHitArea.setAttribute('fill', '#fff');
+                yearHitArea.setAttribute('fill-opacity', '0');
+                yearHitArea.setAttribute('pointer-events', 'all');
+                yearHitArea.setAttribute('role', 'button');
+                yearHitArea.setAttribute('tabindex', '0');
+                yearHitArea.setAttribute('aria-label', `Filtra i datari per l'anno ${yr}`);
+                yearHitArea.style.cursor = 'pointer';
+                yearHitArea.addEventListener('click', () => toggleYearFilter(yr));
+                yearHitArea.addEventListener('keydown', (event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleYearFilter(yr);
+                  }
+                });
+                svg.appendChild(yearHitArea);
               });
 
               // draw squares — strisce verticali per ogni fonte attiva
@@ -585,6 +655,17 @@
                     rect.setAttribute('width', w);
                     rect.setAttribute('height', s);
                     rect.setAttribute('fill', color);
+                    rect.setAttribute('role', 'button');
+                    rect.setAttribute('tabindex', '0');
+                    rect.setAttribute('aria-label', `Filtra i datari per l'anno ${yr}`);
+                    rect.style.cursor = 'pointer';
+                    rect.addEventListener('click', () => toggleYearFilter(yr));
+                    rect.addEventListener('keydown', (event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        toggleYearFilter(yr);
+                      }
+                    });
                     svg.appendChild(rect);
                   });
                 });

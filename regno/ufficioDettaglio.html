@@ -191,6 +191,7 @@
           <option value="numero">Numero datario</option>
           <option value="anno">Anno</option>
         </select>
+        <button id="btnResetYearFilter" type="button" disabled style="margin-left:20px; font-size:14px; padding:3px 10px; cursor:pointer; background:#f44336; color:#fff; border:none; border-radius:4px; font-weight:bold; vertical-align:middle;">Reset Filtro Anno</button>
       </div>
 
       <div class="stats">
@@ -207,6 +208,9 @@
 
       <script src="/navbar/navbar.js"></script>
       <script>
+        let selectedYearFilter = null;
+        let renderCurrentState = () => {};
+
         // Estrae i parametri dall'URL
         function getURLParams() {
           const params = new URLSearchParams(window.location.search);
@@ -382,11 +386,24 @@
               }
               return Number(a.Anno) - Number(b.Anno);
             });
-            const renderCurrentState = () => {
+            renderCurrentState = () => {
               const activeRecords = sortActiveRecords(getActiveSourceRecords());
               renderOfficeTables(activeRecords);
-              renderDatari(activeRecords, allDatariRecords);
+
+              let recordsForDatari = activeRecords;
+              if (selectedYearFilter !== null) {
+                recordsForDatari = activeRecords.filter(r => Number(r.Anno) === Number(selectedYearFilter));
+              }
+              const linkCandidates = selectedYearFilter === null
+                ? allDatariRecords
+                : allDatariRecords.filter(r => Number(r.Anno) === Number(selectedYearFilter));
+              renderDatari(recordsForDatari, linkCandidates);
               renderChart(filtered, ondeFiltered, barreFiltered, soloDatarioFiltered);
+
+              const resetBtn = document.getElementById("btnResetYearFilter");
+              if (resetBtn) {
+                resetBtn.disabled = selectedYearFilter === null;
+              }
             };
 
             // Salva i dati per il ridisegno del grafico
@@ -403,6 +420,10 @@
               });
             });
             document.getElementById('chartSortOrder')?.addEventListener('change', () => {
+              renderCurrentState();
+            });
+            document.getElementById('btnResetYearFilter')?.addEventListener('click', () => {
+              selectedYearFilter = null;
               renderCurrentState();
             });
           } catch (error) {
@@ -426,6 +447,17 @@
           return a.localeCompare(b);
         }
 
+        function getDatarioImageLink(record) {
+          const explicitLink = (record.linkDatario || "").trim();
+          if (explicitLink) return explicitLink;
+
+          const localita = (record["Località"] || "").trim();
+          const ufficio = (record["Denominazione ufficio breve"] || record["Denominazione ufficio"] || "").trim();
+          const datario = (record.Datario || "").trim();
+          if (!localita || !ufficio || !datario) return "";
+          return `${localita}_${ufficio}_${datario}.jpeg`;
+        }
+
         function renderDatari(records, linkCandidates = records) {
           const listContainer = document.getElementById("datariList");
           const block = document.getElementById("datariBlock");
@@ -440,6 +472,13 @@
             }
             linkByDatario.set(datarioCode, candidateLink);
           });
+          linkCandidates.forEach((candidate) => {
+            const datarioCode = (candidate.Datario || "").trim();
+            const candidateLink = getDatarioImageLink(candidate);
+            if (datarioCode && candidateLink && !linkByDatario.has(datarioCode)) {
+              linkByDatario.set(datarioCode, candidateLink);
+            }
+          });
 
           // Raccogli datari unici e ordinali per nome (Datario), non per immagine.
           // Alcuni datari non hanno un linkDatario ma devono restare visibili se presenti nella tabella.
@@ -452,8 +491,8 @@
               uniqueMap.set(datarioCode, r);
               return;
             }
-            const currentLink = linkByDatario.get(datarioCode) || (existing.linkDatario || "").trim();
-            const nextLink = linkByDatario.get(datarioCode) || (r.linkDatario || "").trim();
+            const currentLink = linkByDatario.get(datarioCode) || getDatarioImageLink(existing);
+            const nextLink = getDatarioImageLink(r);
             if (!currentLink && nextLink) {
               uniqueMap.set(datarioCode, r);
             }
@@ -471,7 +510,7 @@
             if (seen.has(datarioCode)) return;
             seen.add(datarioCode);
 
-            const link = linkByDatario.get(datarioCode) || (r.linkDatario || "").trim();
+            const link = linkByDatario.get(datarioCode) || getDatarioImageLink(r);
 
             // costruisci nome con _circle prima dell'estensione
 
@@ -517,9 +556,15 @@
               img.alt = datarioCode;
             }
 
-            // se l'immagine non esiste, rimuoviamo l'intero wrapper
+            // Prova il ritaglio quadrato se manca quello circolare.
             if (link) {
-              img.onerror = () => wrapper.remove();
+              img.onerror = () => {
+                if (img.src.includes("_circle.")) {
+                  img.src = img.src.replace("_circle.", "_square.");
+                } else {
+                  wrapper.remove();
+                }
+              };
             } else {
               img.onerror = null;
             }
@@ -595,7 +640,7 @@
               allSources.forEach((source) => {
                 source.records.forEach((record) => {
                   const datarioCode = (record.Datario || '').trim();
-                  const imageLink = (record.linkDatario || '').trim();
+                  const imageLink = getDatarioImageLink(record);
                   if (datarioCode && imageLink && !imageLinkByDatario.has(datarioCode)) {
                     imageLinkByDatario.set(datarioCode, imageLink);
                   }
@@ -693,6 +738,10 @@
               svg.setAttribute('height', height);
               svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
               svg.setAttribute('style', 'flex-shrink:0;');
+              const toggleYearFilter = (year) => {
+                selectedYearFilter = Number(selectedYearFilter) === Number(year) ? null : year;
+                renderCurrentState();
+              };
 
               // y labels (datari) - vertically centered in cell
               datari.forEach((d, i) => {
@@ -745,7 +794,33 @@
                 text.setAttribute('dominant-baseline', 'middle');
                 text.setAttribute('transform', `rotate(-90 ${x} ${baseY})`);
                 text.textContent = yr;
+                text.setAttribute('fill', Number(selectedYearFilter) === Number(yr) ? '#c0392b' : '#000');
+                text.setAttribute('font-weight', Number(selectedYearFilter) === Number(yr) ? 'bold' : 'normal');
+                text.style.cursor = 'pointer';
+                text.setAttribute('aria-label', `Filtra i datari per l'anno ${yr}`);
+                text.addEventListener('click', () => toggleYearFilter(yr));
                 svg.appendChild(text);
+
+                const yearHitArea = document.createElementNS(svgNS, 'rect');
+                yearHitArea.setAttribute('x', left + j * cell);
+                yearHitArea.setAttribute('y', top + gridHeight + 1);
+                yearHitArea.setAttribute('width', cell);
+                yearHitArea.setAttribute('height', 38);
+                yearHitArea.setAttribute('fill', '#fff');
+                yearHitArea.setAttribute('fill-opacity', '0');
+                yearHitArea.setAttribute('pointer-events', 'all');
+                yearHitArea.setAttribute('role', 'button');
+                yearHitArea.setAttribute('tabindex', '0');
+                yearHitArea.setAttribute('aria-label', `Filtra i datari per l'anno ${yr}`);
+                yearHitArea.style.cursor = 'pointer';
+                yearHitArea.addEventListener('click', () => toggleYearFilter(yr));
+                yearHitArea.addEventListener('keydown', (event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleYearFilter(yr);
+                  }
+                });
+                svg.appendChild(yearHitArea);
               });
 
               // draw squares — strisce verticali per ogni fonte attiva
@@ -788,7 +863,13 @@
                         const image = document.createElement('img');
                         image.src = imageSrc;
                         image.alt = datarioLabel;
-                        image.onerror = () => image.remove();
+                        image.onerror = () => {
+                          if (image.src.includes('_circle.')) {
+                            image.src = image.src.replace('_circle.', '_square.');
+                          } else {
+                            image.remove();
+                          }
+                        };
                         tooltip.appendChild(image);
                       }
                       const label = document.createElement('div');
@@ -823,9 +904,20 @@
                   hoverRect.setAttribute('fill', '#ffffff');
                   hoverRect.setAttribute('fill-opacity', '0');
                   hoverRect.setAttribute('pointer-events', 'all');
+                  hoverRect.setAttribute('role', 'button');
+                  hoverRect.setAttribute('tabindex', '0');
+                  hoverRect.setAttribute('aria-label', `Filtra i datari per l'anno ${yearLabel}`);
+                  hoverRect.style.cursor = 'pointer';
                   hoverRect.addEventListener('mouseenter', showTooltip);
                   hoverRect.addEventListener('mousemove', updateTooltipPosition);
                   hoverRect.addEventListener('mouseleave', hideTooltip);
+                  hoverRect.addEventListener('click', () => toggleYearFilter(yearLabel));
+                  hoverRect.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      toggleYearFilter(yearLabel);
+                    }
+                  });
                   svg.appendChild(hoverRect);
                 });
               });

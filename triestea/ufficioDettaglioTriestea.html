@@ -137,6 +137,12 @@
         <div id="datariChart" style="margin-top:8px; display:flex; justify-content:center; overflow-x:auto;"></div>
       </div>
 
+      <!-- Controlli grafico datari -->
+      <div id="chartControls" style="display:none; margin-top:8px; padding:10px 16px; background:#f7f7f7; border:1px solid #ddd; border-radius:6px; text-align:center;">
+        <span style="font-weight:bold; margin-right:14px; font-size:14px;">Mostra nel grafico:</span>
+        <button id="btnResetYearFilter" type="button" disabled style="margin-left:20px; font-size:14px; padding:3px 10px; cursor:pointer; background:#f44336; color:#fff; border:none; border-radius:4px; font-weight:bold; vertical-align:middle;">Reset Filtro Anno</button>
+      </div>
+
       <div class="stats">
         <strong>Targhette trovate:</strong> <span id="statsCount">0</span>
       </div>
@@ -148,6 +154,10 @@
       </div>
 
       <script>
+        let selectedYearFilter = null;
+        let _chartFiltered = [];
+        let renderCurrentState = () => {};
+
         function getURLParams() {
           const params = new URLSearchParams(window.location.search);
           return {
@@ -184,78 +194,103 @@
               return a.Anno - b.Anno;
             });
 
-            if (filtered.length === 0) {
-              document.getElementById("noResults").style.display = "block";
-              document.getElementById("tablesContainer").innerHTML = "";
-              document.getElementById("statsCount").textContent = "0";
-            } else {
-              const container = document.getElementById("tablesContainer");
-              container.innerHTML = "";
+            _chartFiltered = filtered;
 
-              const groups = new Map();
-              filtered.forEach((item) => {
-                const key = (item.Datario || "").trim();
-                if (!groups.has(key)) groups.set(key, []);
-                groups.get(key).push(item);
-              });
+            function renderTables(itemsToRender) {
+              if (itemsToRender.length === 0) {
+                document.getElementById("noResults").style.display = "block";
+                document.getElementById("tablesContainer").innerHTML = "";
+                document.getElementById("statsCount").textContent = "0";
+              } else {
+                const container = document.getElementById("tablesContainer");
+                container.innerHTML = "";
 
-              groups.forEach((items, datarioName) => {
-                const details = document.createElement("details");
-                const summary = document.createElement("summary");
-                summary.textContent = datarioName || "(senza datario)";
-                details.appendChild(summary);
-
-                const wrapper = document.createElement("div");
-                wrapper.className = "table-wrapper";
-                const table = document.createElement("table");
-
-                const colgroup = document.createElement("colgroup");
-                ["16%", "12%", "12%", "60%"].forEach((w) => {
-                  const col = document.createElement("col");
-                  col.style.width = w;
-                  colgroup.appendChild(col);
+                const groups = new Map();
+                itemsToRender.forEach((item) => {
+                  const key = (item.Datario || "").trim();
+                  if (!groups.has(key)) groups.set(key, []);
+                  groups.get(key).push(item);
                 });
-                table.appendChild(colgroup);
 
-                const thead = document.createElement("thead");
-                const headRow = document.createElement("tr");
-                ["Anno", "Targhetta Tipo", "Targhetta Ufficio", "Descrizione"].forEach((text) => {
-                  const th = document.createElement("th");
-                  th.textContent = text;
-                  headRow.appendChild(th);
+                groups.forEach((items, datarioName) => {
+                  const details = document.createElement("details");
+                  const summary = document.createElement("summary");
+                  summary.textContent = datarioName || "(senza datario)";
+                  details.appendChild(summary);
+
+                  const wrapper = document.createElement("div");
+                  wrapper.className = "table-wrapper";
+                  const table = document.createElement("table");
+
+                  const colgroup = document.createElement("colgroup");
+                  ["16%", "12%", "12%", "60%"].forEach((w) => {
+                    const col = document.createElement("col");
+                    col.style.width = w;
+                    colgroup.appendChild(col);
+                  });
+                  table.appendChild(colgroup);
+
+                  const thead = document.createElement("thead");
+                  const headRow = document.createElement("tr");
+                  ["Anno", "Targhetta Tipo", "Targhetta Ufficio", "Descrizione"].forEach((text) => {
+                    const th = document.createElement("th");
+                    th.textContent = text;
+                    headRow.appendChild(th);
+                  });
+                  thead.appendChild(headRow);
+                  table.appendChild(thead);
+
+                  const tbody = document.createElement("tbody");
+                  items.forEach((item) => {
+                    const tr = document.createElement("tr");
+                    const tdAnno = document.createElement("td");
+                    tdAnno.textContent = item.Anno;
+
+                    const tdTipo = document.createElement("td");
+                    tdTipo.textContent = item["Targhetta Tipo"];
+                    const tdUfficio = document.createElement("td");
+                    tdUfficio.textContent = item["Targhetta Ufficio"];
+                    const tdDescrizione = document.createElement("td");
+                    tdDescrizione.textContent = item["Descrizione"];
+                    tr.appendChild(tdAnno);
+                    tr.appendChild(tdTipo);
+                    tr.appendChild(tdUfficio);
+                    tr.appendChild(tdDescrizione);
+                    tbody.appendChild(tr);
+                  });
+                  table.appendChild(tbody);
+                  wrapper.appendChild(table);
+                  details.appendChild(wrapper);
+                  container.appendChild(details);
                 });
-                thead.appendChild(headRow);
-                table.appendChild(thead);
 
-                const tbody = document.createElement("tbody");
-                items.forEach((item) => {
-                  const tr = document.createElement("tr");
-                  const tdAnno = document.createElement("td");
-                  tdAnno.textContent = item.Anno;
-                  const tdTipo = document.createElement("td");
-                  tdTipo.textContent = item["Targhetta Tipo"];
-                  const tdUfficio = document.createElement("td");
-                  tdUfficio.textContent = item["Targhetta Ufficio"];
-                  const tdDescrizione = document.createElement("td");
-                  tdDescrizione.textContent = item["Descrizione"];
-                  tr.appendChild(tdAnno);
-                  tr.appendChild(tdTipo);
-                  tr.appendChild(tdUfficio);
-                  tr.appendChild(tdDescrizione);
-                  tbody.appendChild(tr);
-                });
-                table.appendChild(tbody);
-                wrapper.appendChild(table);
-                details.appendChild(wrapper);
-                container.appendChild(details);
-              });
-
-              document.getElementById("statsCount").textContent = filtered.length;
-              document.getElementById("noResults").style.display = "none";
+                document.getElementById("statsCount").textContent = itemsToRender.length;
+                document.getElementById("noResults").style.display = "none";
+              }
             }
 
-            renderDatari(filtered);
-            renderChart(filtered);
+            renderCurrentState = () => {
+              renderTables(_chartFiltered);
+
+              let datariRecords = _chartFiltered;
+              if (selectedYearFilter !== null) {
+                datariRecords = _chartFiltered.filter(r => Number(r.Anno) === Number(selectedYearFilter));
+              }
+              renderDatari(datariRecords);
+              renderChart(_chartFiltered);
+
+              const resetBtn = document.getElementById("btnResetYearFilter");
+              if (resetBtn) {
+                resetBtn.disabled = selectedYearFilter === null;
+              }
+            };
+
+            renderCurrentState();
+
+            document.getElementById('btnResetYearFilter')?.addEventListener('click', () => {
+              selectedYearFilter = null;
+              renderCurrentState();
+            });
 
           } catch (error) {
             console.error("Errore caricamento dati:", error);
@@ -275,6 +310,17 @@
           return a.localeCompare(b);
         }
 
+        function getDatarioImageLink(record) {
+          const explicitLink = (record.linkDatario || "").trim();
+          if (explicitLink) return explicitLink;
+
+          const localita = (record["Località"] || "").trim();
+          const ufficio = (record["Denominazione ufficio breve"] || record["Denominazione ufficio"] || "").trim();
+          const datario = (record.Datario || "").trim();
+          if (!localita || !ufficio || !datario) return "";
+          return `${localita}_${ufficio}_${datario}.jpeg`;
+        }
+
         // Mostra i datari unici. Usa la cartella imgDatariTriestea
         // Se l'immagine non esiste, mostra un badge con il codice datario
         function renderDatari(records) {
@@ -288,6 +334,13 @@
             const candidateLink = (r.linkDatario || "").trim();
             if (!datarioCode || !candidateLink || linkByDatario.has(datarioCode)) return;
             linkByDatario.set(datarioCode, candidateLink);
+          });
+          records.forEach((r) => {
+            const datarioCode = (r.Datario || "").trim();
+            const candidateLink = getDatarioImageLink(r);
+            if (datarioCode && candidateLink && !linkByDatario.has(datarioCode)) {
+              linkByDatario.set(datarioCode, candidateLink);
+            }
           });
 
           const uniqueMap = new Map();
@@ -309,7 +362,7 @@
             if (!datarioCode || seen.has(datarioCode)) return;
             seen.add(datarioCode);
 
-            const link = linkByDatario.get(datarioCode) || "";
+            const link = linkByDatario.get(datarioCode) || getDatarioImageLink(r);
 
             const wrapper = document.createElement("div");
             wrapper.style.display = "flex";
@@ -338,7 +391,10 @@
               img.style.objectFit = "contain";
               img.style.background = "#fff";
               img.onerror = () => {
-                // sostituisce l'immagine con un badge testuale
+                if (img.src.includes("_circle.")) {
+                  img.src = img.src.replace("_circle.", "_square.");
+                  return;
+                }
                 const badge = document.createElement("div");
                 badge.textContent = datarioCode;
                 badge.style.width = "200px";
@@ -400,14 +456,17 @@
         function renderChart(records) {
           const chartBlock = document.getElementById("datariChartBlock");
           const container = document.getElementById("datariChart");
+          const controlsBlock = document.getElementById("chartControls");
           container.innerHTML = "";
 
           const hasData = records.some(r => (r.Datario || "").trim() && Number.isFinite(Number(r.Anno)));
           if (!hasData) {
             chartBlock.style.display = "none";
+            if (controlsBlock) controlsBlock.style.display = "none";
             return;
           }
           chartBlock.style.display = "block";
+          if (controlsBlock) controlsBlock.style.display = "block";
 
           function naturalDatariCompareLocal(a, b) {
             const re = /^([A-Za-z]*)(\d+)$/;
@@ -486,6 +545,11 @@
             svg.appendChild(hline);
           }
 
+          const toggleYearFilter = (year) => {
+            selectedYearFilter = Number(selectedYearFilter) === Number(year) ? null : year;
+            renderCurrentState();
+          };
+
           years.forEach((yr, j) => {
             const x = left + j * cell + cell / 2;
             const baseY = top + datari.length * cell + cell / 2;
@@ -497,7 +561,32 @@
             text.setAttribute("dominant-baseline", "middle");
             text.setAttribute("transform", `rotate(-90 ${x} ${baseY})`);
             text.textContent = yr;
+            text.setAttribute("fill", Number(selectedYearFilter) === Number(yr) ? "#c0392b" : "#000");
+            text.setAttribute("font-weight", Number(selectedYearFilter) === Number(yr) ? "bold" : "normal");
+            text.style.cursor = "pointer";
+            text.addEventListener("click", () => toggleYearFilter(yr));
             svg.appendChild(text);
+
+            const yearHitArea = document.createElementNS(svgNS, "rect");
+            yearHitArea.setAttribute("x", left + j * cell);
+            yearHitArea.setAttribute("y", top + gridHeight + 1);
+            yearHitArea.setAttribute("width", cell);
+            yearHitArea.setAttribute("height", 38);
+            yearHitArea.setAttribute("fill", "#fff");
+            yearHitArea.setAttribute("fill-opacity", "0");
+            yearHitArea.setAttribute("pointer-events", "all");
+            yearHitArea.setAttribute("role", "button");
+            yearHitArea.setAttribute("tabindex", "0");
+            yearHitArea.setAttribute("aria-label", `Filtra i datari per l'anno ${yr}`);
+            yearHitArea.style.cursor = "pointer";
+            yearHitArea.addEventListener("click", () => toggleYearFilter(yr));
+            yearHitArea.addEventListener("keydown", (event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                toggleYearFilter(yr);
+              }
+            });
+            svg.appendChild(yearHitArea);
           });
 
           datari.forEach((d, i) => {
@@ -511,6 +600,17 @@
               rect.setAttribute("x", x); rect.setAttribute("y", y);
               rect.setAttribute("width", s); rect.setAttribute("height", s);
               rect.setAttribute("fill", "#333");
+              rect.setAttribute("role", "button");
+              rect.setAttribute("tabindex", "0");
+              rect.setAttribute("aria-label", `Filtra i datari per l'anno ${yr}`);
+              rect.style.cursor = "pointer";
+              rect.addEventListener("click", () => toggleYearFilter(yr));
+              rect.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  toggleYearFilter(yr);
+                }
+              });
               svg.appendChild(rect);
             });
           });
