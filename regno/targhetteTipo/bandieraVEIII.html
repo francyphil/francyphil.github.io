@@ -89,6 +89,7 @@
     <script src="/navbar/navbar.js"></script>
     <div id="breadcrumbContainer"></div>
     <script src="/breadcrumb/breadcrumb.js"></script>
+    <script src="/date-table.js" defer></script>
 
     <div class="content-container">
       <h1>Bandiera V.E. III</h1>
@@ -181,119 +182,85 @@
 
       <h2>Date di utilizzo note &ndash; Roma Ferrovia 1901</h2>
 
-       <div class="table-scroll">
-        <table class="date-table">
-          <thead>
-            <tr>
-              <th>Mese</th>
-              <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
-              <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
-              <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
-              <th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
-              <th>21</th><th>22</th><th>23</th><th>24</th><th>25</th>
-              <th>26</th><th>27</th><th>28</th><th>29</th><th>30</th>
-              <th>31</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>Ottobre</th>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="marcata">X</td>     <td class="marcata">X</td>     <td></td>
-              <td class="marcata">O</td>
-            </tr>
-            <tr>
-              <th>Novembre</th>
-              <td class="marcata">X</td><td class="marcata">X</td><td class="marcata">X</td>
-              <td class="marcata">X</td><td class="marcata">X</td><td class="marcata">X</td>
-              <td class="marcata">X</td><td class="marcata">X</td><td class="marcata">X</td>
-              <td class="marcata">X</td><td class="marcata">X</td><td class="marcata">X</td>
-              <td class="marcata">X</td><td></td>                 <td></td>
-              <td class="marcata">X</td><td class="marcata">X</td><td class="marcata">X</td>
-              <td class="marcata">X</td><td class="marcata">X</td><td></td>
-              <td></td>                 <td class="marcata">X</td><td></td>
-              <td class="marcata">X</td><td class="marcata">X</td><td class="marcata">X</td>
-              <td class="marcata">X</td><td class="marcata">X</td>  <td></td>
-              <td class="non-possibile"></td>
-            </tr>
-            <tr>
-              <th>Dicembre</th>
-              <td class="marcata">X</td><td class="marcata">X</td><td></td>
-              <td class="marcata">X</td><td class="marcata">X</td><td class="marcata">X</td>
-              <td class="marcata">X</td><td></td>                 <td class="marcata">X</td>
-              <td class="marcata">X</td><td class="marcata">X</td><td></td>
-              <td class="marcata">X</td><td class="marcata">X</td><td class="marcata">X</td>
-              <td class="marcata">X</td><td></td>                 <td class="marcata">X</td>
-              <td class="marcata">X</td><td class="marcata">X</td><td class="marcata">X</td>
-              <td class="marcata">X</td><td></td>                 <td class="marcata">X</td>
-              <td></td>                 <td class="marcata">X</td><td class="marcata">X</td>
-              <td class="marcata">X</td><td></td>                 <td class="marcata">X</td>
-              <td class="marcata">X</td>
-            </tr>
-          </tbody>
-        </table>
-        <p>Legenda: X = giorno noto, O = giorno riportato da Ornaghi, vuoto = giorno non noto</p>
-      </div>
+      <pre class="date-table-src" data-anno="1901">
+      Ottobre  | impossibile: 1-27 | X: 28-29 | O: 31
+      Novembre | X: 1-13, 16-20, 23, 25-29
+      Dicembre | X: 1-2, 4-7, 9-11, 13-16, 18-22, 24, 26-28, 30-31
+      </pre>
 
-            <h2>Date di utilizzo note &ndash; Napoli Ferrovia 1901</h2>
- 
-      <div class="table-scroll">
-        <table class="date-table">
-          <thead>
-            <tr>
-              <th>Mese</th>
-              <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
-              <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
-              <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
-              <th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
-              <th>21</th><th>22</th><th>23</th><th>24</th><th>25</th>
-              <th>26</th><th>27</th><th>28</th><th>29</th><th>30</th>
-              <th>31</th>
-            </tr>
-          </thead>
-          <tbody>
+      <h2>Date di utilizzo note &ndash; Napoli Ferrovia 1901</h2>
 
-            <tr>
-              <th>Dicembre</th>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="non-possibile"></td>
-              <td class="non-possibile"></td><td class="non-possibile"></td><td class="marcata">X</td>
-              <td class="marcata">X</td>     <td class="marcata">X</td>     <td class="marcata">X</td>
-              <td></td>                      <td class="marcata">O</td>     <td class="marcata">X</td>
-              <td class="marcata">X</td>     <td class="marcata">X</td>     <td class="marcata">X</td>
-              <td class="marcata">X</td>
-            </tr>
-          </tbody>
-        </table>
-        <p>Legenda: X = giorno noto, O = giorno riportato da Ornaghi, vuoto = giorno non noto</p>        
-      </div>
+      <pre class="date-table-src" data-anno="1901">
+      Dicembre | impossibile: 1-20 | X: 21-24, 27-31 | O: 26
+      </pre>
 
-      <h2>La "timbratura meccanica parlante"</h2>
+      <h2>Date di utilizzo note &ndash; Genova 1908</h2>
+      <pre class="date-table-src" data-anno="1908">
+      Marzo | X:2,16,27   | O: 6,20,31
+      Aprile | X:8,16,22,26 | O:23
+      Maggio | X:   | O: 9,11
+      Luglio | X:14,23   | O: 10,29
+      Agosto | X:   | O: 7
+      </pre>
 
-      <p>
-        Con l'obliteratrice meccanica l'annullo avviene tramite l'opera di due
-        punzoni: uno tondo, detto "guller", che riporta le indicazioni relative
-        alla spedizione (data e ufficio), e l'altro rettangolare, detto
-        "targhetta", in grado di contenere messaggi diversi. Proprio per questa
-        possibilità di affiancare al normale annullo una stampigliatura
-        pubblicitaria, la timbratura meccanica fu definita "parlante": la
-        prima targhetta utilizzata a questo scopo in Italia fu appunto la
-        bandiera con le iniziali del Re "V.E.III".
-      </p>
+      <h2>Date di utilizzo note &ndash; Milano 1908</h2>
+      <pre class="date-table-src" data-anno="1908">
+      Aprile | X:18,27  | O:
+      Maggio | X:27  | O: 
+      </pre>
 
-      <p>Inizia così l'era dell'annullo meccanico in Italia.</p>
+      <h2>Date di utilizzo note &ndash; Napoli 1908</h2>
+      <pre class="date-table-src" data-anno="1908">
+      Luglio | X:25  | O:
+      Agosto | X:5,26  | O: 7,9
+      Settembre | X:12  | O: 
+      </pre>
+
+      <h2>Date di utilizzo note &ndash; Roma 1908</h2>
+      <pre class="date-table-src" data-anno="1908">
+      Marzo | X:  | O: 7
+      Aprile | X:13  | O: 
+      Ottobre | X: 28 | O: 
+      Novembre | X:3 | O: 
+      Dicembre | X:7,18,23,25,27,30 | O: 2,14,16,24,26
+      </pre>
+
+      <h2>Date di utilizzo note &ndash; Napoli 1909</h2>
+      <pre class="date-table-src" data-anno="1909">
+      Dicembre | X:23,31 | O:  22
+      </pre>
+
+      <h2>Date di utilizzo note &ndash; Roma 1909</h2>
+      <pre class="date-table-src" data-anno="1909">
+      Gennaio | X:5 | O:  
+      Marzo | X:  | O: 18 
+      </pre>
+
+      <h2>Date di utilizzo note &ndash; Brescia 1912</h2>
+      <pre class="date-table-src" data-anno="1912">
+      Settembre | X:30 | O:  
+      Novembre | X:  | O: 9 
+      Dicembre | X:2,13,14,18,21,24   | O:  
+      </pre>
+
+      <h2>Date di utilizzo note &ndash; Napoli Smistamento 1912</h2>
+      <pre class="date-table-src" data-anno="1912">
+      Agosto | X:28 | O:  19
+      </pre>
+
+      <h2>Date di utilizzo note &ndash; Brescia 1917</h2>
+      <pre class="date-table-src" data-anno="1917">
+      Novembre | X:2,3,4,11,13,14,19,20,21,29  | O:  10
+      Dicembre | X:7,11,12,14,21,22,26,29,30  | O:  13,17,23,24,31
+      </pre>
+
+      <h2>Date di utilizzo note &ndash; Brescia 1918</h2>
+      <pre class="date-table-src" data-anno="1918">
+      Gennaio | X:1,5,8,13,16 | O: 2,22
+      Febbraio | X:1,14 | O: 19
+      Marzo | X: 3,7,27,30 | O: 13,22
+      Aprile | X: 9 | O: 7,8,10,20,21,29
+      </pre>
 
       <div class="fonti">
         <p>Fonti:</p>
