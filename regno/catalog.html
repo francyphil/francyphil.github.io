@@ -113,6 +113,8 @@
     <script>
       var CATALOG_CONFIG = {
         jsonFile: "targhetteRegno.json",
+        ornaghiTypeIndexFile: "ornaghi_tipo_index.json",
+        ornaghiTypeCatalogFile: "ornaghi_tipo_catalog.json",
         getImgPath: function(r) {
           return "jpg/prev_" + r["Targhetta Ufficio"] + ((r["extra"]) ? ("_" + (r["extra"]).toString().trim()) : "") + ".jpeg";
         },

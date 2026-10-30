@@ -38,6 +38,10 @@
     lightboxIndex = 0,
     currentPage = 1,
     datarioLinksByContext = new Map(),
+    ornaghiTypeCatalog = null,
+    ornaghiTypeCatalogPromise = null,
+    ornaghiTypeGroups = null,
+    ornaghiTypeIndexPromise = null,
     imageAvailabilityCache = new Map(),
     imageCheckQueue = [],
     activeImageChecks = 0,
@@ -185,6 +189,101 @@
 
     imageAvailabilityCache.set(imagePath, check);
     return check;
+  }
+
+  function prepareOrnaghiTypeGroups(index, records) {
+    if (
+      !index ||
+      index.sourceRecordCount !== records.length ||
+      !Array.isArray(index.groups)
+    ) {
+      return null;
+    }
+
+    const seenIndexes = new Set();
+    const preparedGroups = [];
+    for (const group of index.groups) {
+      if (
+        typeof group.type !== "string" ||
+        !Array.isArray(group.indices) ||
+        !Array.isArray(group.imageIndices)
+      ) {
+        return null;
+      }
+      const imageIndices = new Set(group.imageIndices);
+      if (imageIndices.size !== group.imageIndices.length) return null;
+      const groupIndexes = new Set(group.indices);
+      if (groupIndexes.size !== group.indices.length) return null;
+
+      for (const index of group.indices) {
+        const record = records[index];
+        if (
+          !Number.isInteger(index) ||
+          !record ||
+          seenIndexes.has(index) ||
+          String(record["Targhetta Tipo"]) !== group.type ||
+          (imageIndices.has(index) && !groupIndexes.has(index))
+        ) {
+          return null;
+        }
+        seenIndexes.add(index);
+      }
+      for (const index of imageIndices) {
+        if (!groupIndexes.has(index)) return null;
+      }
+      preparedGroups.push({ indices: group.indices, imageIndices });
+    }
+
+    return seenIndexes.size === records.length ? preparedGroups : null;
+  }
+
+  function loadOrnaghiTypeGroups(records) {
+    if (ornaghiTypeGroups) return Promise.resolve(ornaghiTypeGroups);
+    if (!CFG.ornaghiTypeIndexFile) return Promise.resolve(null);
+    if (!records.length) return Promise.resolve(null);
+    if (!ornaghiTypeIndexPromise) {
+      ornaghiTypeIndexPromise = fetch(CFG.ornaghiTypeIndexFile)
+        .then((response) => (response.ok ? response.json() : null))
+        .then((index) => {
+          ornaghiTypeGroups = prepareOrnaghiTypeGroups(index, records);
+          if (!ornaghiTypeGroups) {
+            console.warn("Indice Ornaghi Tipo assente o non aggiornato; uso il controllo runtime.");
+          }
+          return ornaghiTypeGroups;
+        })
+        .catch(() => null);
+    }
+    return ornaghiTypeIndexPromise;
+  }
+
+  function loadOrnaghiTypeCatalog(records) {
+    if (ornaghiTypeCatalog) return Promise.resolve(ornaghiTypeCatalog);
+    if (!CFG.ornaghiTypeCatalogFile || !records.length) return Promise.resolve(null);
+    if (!ornaghiTypeCatalogPromise) {
+      ornaghiTypeCatalogPromise = fetch(CFG.ornaghiTypeCatalogFile)
+        .then((response) => (response.ok ? response.json() : null))
+        .then((catalog) => {
+          const sourceTypes = new Set(records.map((record) => String(record["Targhetta Tipo"])));
+          const catalogTypes = new Set(
+            Array.isArray(catalog)
+              ? catalog.map((record) => String(record["Targhetta Tipo"]))
+              : [],
+          );
+          if (
+            !Array.isArray(catalog) ||
+            catalog.length !== sourceTypes.size ||
+            catalogTypes.size !== sourceTypes.size ||
+            [...catalogTypes].some((type) => !sourceTypes.has(type))
+          ) {
+            console.warn("Catalogo Ornaghi Tipo assente o non aggiornato; uso l'indice dei candidati.");
+            return null;
+          }
+          ornaghiTypeCatalog = catalog;
+          return ornaghiTypeCatalog;
+        })
+        .catch(() => null);
+    }
+    return ornaghiTypeCatalogPromise;
   }
 
   function getDatarioImgPathFromLink(link, record) {
@@ -1051,6 +1150,34 @@
     if (schema === "ornaghi_ufficio") {
       return records;
     } else if (schema === "ornaghi_tipo") {
+      if (records.length === data.length) {
+        const catalog = await loadOrnaghiTypeCatalog(data);
+        if (catalog) return catalog;
+      }
+
+      const typeGroups = await loadOrnaghiTypeGroups(data);
+
+      if (typeGroups) {
+        const activeRecords = new Set(records);
+        const selectedRecords = [];
+        for (const group of typeGroups) {
+          let firstActiveRecord = null;
+          let firstActiveWithImage = null;
+          for (const index of group.indices) {
+            const record = data[index];
+            if (!activeRecords.has(record)) continue;
+            if (!firstActiveRecord) firstActiveRecord = record;
+            if (group.imageIndices.has(index)) {
+              firstActiveWithImage = record;
+              break;
+            }
+          }
+          const selectedRecord = firstActiveWithImage || firstActiveRecord;
+          if (selectedRecord) selectedRecords.push(selectedRecord);
+        }
+        return selectedRecords;
+      }
+
       const gruppi = {};
       records.forEach((r) => {
         const tipo = r["Targhetta Tipo"];
@@ -1058,11 +1185,7 @@
         gruppi[tipo].push(r);
       });
 
-      const soloTabella = vistaSelezionata === "tabella";
-
       const gruppiPerTipo = Object.values(gruppi);
-      if (soloTabella) return gruppiPerTipo.map((gruppo) => gruppo[0]);
-
       return Promise.all(
         gruppiPerTipo.map(async (gruppo) => {
           for (const record of gruppo) {

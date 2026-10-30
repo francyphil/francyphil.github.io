@@ -15,6 +15,15 @@ if [ $rc -ne 0 ]; then
 fi
 
 echo ""
+echo "Generazione catalogo Regno Ornaghi per tipo..."
+python3 generate_ornaghi_tipo.py
+rc=$?
+if [ $rc -ne 0 ]; then
+    echo "ERRORE: generate_ornaghi_tipo.py fallito con codice $rc"
+    exit $rc
+fi
+
+echo ""
 echo "Eseguendo Check uffici senza datario check_missing_datari.py..."
 python3 check_missing_datari.py
 rc=$?
