@@ -20,6 +20,26 @@ body {
   margin-left: auto;
 }
 
+.catalog-export-actions .loading-indicator {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  justify-content: center;
+  margin-left: 0;
+}
+
+.catalog-export-actions .loading-indicator > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .catalog-export-button {
   border: 1px solid #27834a;
   border-radius: 4px;

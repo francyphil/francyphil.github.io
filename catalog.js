@@ -132,6 +132,12 @@
 
   const desktopExportActions = document.createElement("div");
   desktopExportActions.className = "catalog-export-actions";
+  const loadingIndicator = document.getElementById("loadingIndicator");
+  if (loadingIndicator) {
+    loadingIndicator.setAttribute("role", "status");
+    loadingIndicator.setAttribute("aria-live", "polite");
+    desktopExportActions.appendChild(loadingIndicator);
+  }
   desktopExportActions.appendChild(createExcelExportButton());
   document.querySelector(".controlli-wrapper")?.appendChild(desktopExportActions);
 
