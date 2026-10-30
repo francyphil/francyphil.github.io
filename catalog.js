@@ -37,7 +37,13 @@
     datiImmagini = [],
     lightboxIndex = 0,
     currentPage = 1,
-    datarioLinksByContext = new Map();
+    datarioLinksByContext = new Map(),
+    imageAvailabilityCache = new Map(),
+    imageCheckQueue = [],
+    activeImageChecks = 0,
+    renderVersion = 0;
+
+  const MAX_CONCURRENT_IMAGE_CHECKS = 8;
 
   // ── Utilità ──────────────────────────────────────────────────────────
 
@@ -56,6 +62,43 @@
       nb = Number(b);
     if (!isNaN(na) && !isNaN(nb)) return na - nb;
     return String(a).localeCompare(String(b), "it");
+  }
+
+  function verificaImmagine(record) {
+    const imagePath = CFG.getImgPath(record);
+    if (imageAvailabilityCache.has(imagePath)) {
+      return imageAvailabilityCache.get(imagePath);
+    }
+
+    const check = new Promise((resolve) => {
+      const startCheck = () => {
+        activeImageChecks += 1;
+        const image = new Image();
+        let settled = false;
+
+        const finish = (available) => {
+          if (settled) return;
+          settled = true;
+          activeImageChecks -= 1;
+          resolve(available);
+          const nextCheck = imageCheckQueue.shift();
+          if (nextCheck) nextCheck();
+        };
+
+        image.onload = () => finish(true);
+        image.onerror = () => finish(false);
+        image.src = imagePath;
+      };
+
+      if (activeImageChecks < MAX_CONCURRENT_IMAGE_CHECKS) {
+        startCheck();
+      } else {
+        imageCheckQueue.push(startCheck);
+      }
+    });
+
+    imageAvailabilityCache.set(imagePath, check);
+    return check;
   }
 
   function getDatarioImgPathFromLink(link, record) {
@@ -925,35 +968,17 @@
 
       const soloTabella = vistaSelezionata === "tabella";
 
-      const risultato = [];
-      for (const tipo in gruppi) {
-        const gruppo = gruppi[tipo];
+      const gruppiPerTipo = Object.values(gruppi);
+      if (soloTabella) return gruppiPerTipo.map((gruppo) => gruppo[0]);
 
-        if (soloTabella) {
-          risultato.push(gruppo[0]);
-        } else {
-          const verificaImmagine = (record) => {
-            return new Promise((resolve) => {
-              const img = new Image();
-              img.onload = () => resolve(true);
-              img.onerror = () => resolve(false);
-              img.src = CFG.getImgPath(record);
-            });
-          };
-
-          let recordSelezionato = gruppo[0];
+      return Promise.all(
+        gruppiPerTipo.map(async (gruppo) => {
           for (const record of gruppo) {
-            const hasImage = await verificaImmagine(record);
-            if (hasImage) {
-              recordSelezionato = record;
-              break;
-            }
+            if (await verificaImmagine(record)) return record;
           }
-
-          risultato.push(recordSelezionato);
-        }
-      }
-      return risultato;
+          return gruppo[0];
+        }),
+      );
     }
     return records;
   }
@@ -961,6 +986,7 @@
   // ── Visualizzazione ──────────────────────────────────────────────────
 
   async function aggiornaVisualizzazione(records) {
+    const currentRenderVersion = ++renderVersion;
     const loadingIndicator = document.getElementById("loadingIndicator");
     loadingIndicator.style.display = "flex";
 
@@ -968,6 +994,7 @@
       const vista = document.getElementById("vistaSelezionata").value;
 
       records = await applicaSchema(records, vista);
+      if (currentRenderVersion !== renderVersion) return;
 
       const maxRecords = document.getElementById("maxRecords").value;
       let perPage =
@@ -1019,8 +1046,10 @@
 
       aggiornaGrafico(records);
     } finally {
-      aggiornaUrl();
-      loadingIndicator.style.display = "none";
+      if (currentRenderVersion === renderVersion) {
+        aggiornaUrl();
+        loadingIndicator.style.display = "none";
+      }
     }
   }
 
