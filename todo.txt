@@ -7,7 +7,6 @@ MIGLIORIE
 - link esterni con icona (e.g. in bibliografia)
 - responsive card  
 - Aggiungere selezione numerazione differenti cataloghi Ornaghi Bartolomasi, Moschetti, etc
-- export dati
 - forse i filtri fatti cosi non sono troppo comodi, magari nel mobile devono essere classici e questi si lasciano nella versione desktop
 - modificare logo regno
 - aggiungere selezione anche meno di 100 targhette per pagina
