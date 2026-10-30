@@ -44,6 +44,92 @@
     renderVersion = 0;
 
   const MAX_CONCURRENT_IMAGE_CHECKS = 8;
+  const excelExportButtons = [];
+
+  function loadXlsxLibrary() {
+    if (window.XLSX) return Promise.resolve(window.XLSX);
+    if (window.catalogXlsxLoading) return window.catalogXlsxLoading;
+
+    window.catalogXlsxLoading = new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = "/services/vendor/xlsx.full.min.js";
+      script.onload = () => {
+        if (window.XLSX) resolve(window.XLSX);
+        else reject(new Error("Libreria Excel non disponibile"));
+      };
+      script.onerror = () => reject(new Error("Impossibile caricare la libreria Excel"));
+      document.head.appendChild(script);
+    });
+
+    return window.catalogXlsxLoading;
+  }
+
+  async function downloadCatalogExcel(button) {
+    const originalLabel = button.textContent;
+    button.disabled = true;
+    button.textContent = "Preparazione...";
+
+    try {
+      const xlsx = await loadXlsxLibrary();
+      const filteredRecords = filtraDati(data);
+      const exportRecords = await applicaSchema(filteredRecords, "tabella");
+      const fields = getCampi();
+      const headers = Array.from(document.querySelectorAll("#trTitoli th")).map(
+        (header) => header.textContent.trim(),
+      );
+      const rows = exportRecords.map((record) =>
+        fields.map((field) => {
+          const value = record[field];
+          if (Array.isArray(value)) return value.join(", ");
+          return value == null ? "" : value;
+        }),
+      );
+      const worksheet = xlsx.utils.aoa_to_sheet([headers, ...rows]);
+      if (worksheet["!ref"]) {
+        worksheet["!autofilter"] = { ref: worksheet["!ref"] };
+      }
+      worksheet["!cols"] = fields.map((field, index) => {
+        const longestValue = rows.reduce((longest, row) => {
+          return Math.max(longest, String(row[index] ?? "").length);
+        }, headers[index].length);
+        return { wch: Math.min(Math.max(longestValue + 2, 12), 48) };
+      });
+
+      const workbook = xlsx.utils.book_new();
+      xlsx.utils.book_append_sheet(workbook, worksheet, "Catalogo");
+      const catalogName = (document.querySelector("h1")?.textContent || "catalogo")
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "") || "catalogo";
+      const date = new Date().toISOString().slice(0, 10);
+      xlsx.writeFile(workbook, `${catalogName}-${date}.xlsx`, { compression: true });
+    } catch (error) {
+      console.error("Errore esportazione Excel:", error);
+      window.alert("Non è stato possibile generare il file Excel.");
+    } finally {
+      button.textContent = originalLabel;
+      button.disabled = false;
+    }
+  }
+
+  function createExcelExportButton() {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "catalog-export-button";
+    button.textContent = "↓ Excel";
+    button.disabled = true;
+    button.title = "Scarica tutti i risultati filtrati in formato Excel";
+    button.setAttribute("aria-label", button.title);
+    button.addEventListener("click", () => downloadCatalogExcel(button));
+    excelExportButtons.push(button);
+    return button;
+  }
+
+  const desktopExportActions = document.createElement("div");
+  desktopExportActions.className = "catalog-export-actions";
+  desktopExportActions.appendChild(createExcelExportButton());
+  document.querySelector(".controlli-wrapper")?.appendChild(desktopExportActions);
 
   // ── Utilità ──────────────────────────────────────────────────────────
 
@@ -304,6 +390,9 @@
       applicaStatoDaUrl();
       aggiornaOpzioniFiltri();
       updateFilterBadge();
+      excelExportButtons.forEach((button) => {
+        button.disabled = false;
+      });
       aggiornaVisualizzazione(filtraDati(data));
       let lastWidth = window.innerWidth;
       window.addEventListener("resize", () => {
@@ -760,7 +849,10 @@
       updateFilterBadge();
       aggiornaVisualizzazione(filtraDati(data));
     });
-    panel.appendChild(resetBtn);
+    const mobileActions = document.createElement("div");
+    mobileActions.className = "mobile-filter-actions";
+    mobileActions.append(createExcelExportButton(), resetBtn);
+    panel.appendChild(mobileActions);
   }
 
   function toggleMobileFilters() {
@@ -1168,7 +1260,11 @@
       currentPage = 1;
       aggiornaVisualizzazione(filtraDati(data));
     });
-    wrapper.appendChild(btn);
+    if (desktopExportActions.parentElement) {
+      desktopExportActions.appendChild(btn);
+    } else {
+      wrapper.appendChild(btn);
+    }
   })();
 
   // Reset pagina quando cambia il numero per pagina o vista

@@ -13,6 +13,53 @@ body {
   margin-top: 20px;
 }
 
+.catalog-export-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.catalog-export-button {
+  border: 1px solid #27834a;
+  border-radius: 4px;
+  padding: 5px 10px;
+  background: #2f9a58;
+  font-weight: 500;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.catalog-export-button,
+.reset-filters-desktop,
+.mobile-filter-actions .reset-filters {
+  height: 30px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.catalog-export-button:hover:not(:disabled) {
+  background: #247a45;
+}
+
+.catalog-export-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.mobile-filter-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.mobile-filter-actions > button {
+  flex: 1 1 0;
+}
+
 /* Tabella */
 table {
   border-collapse: collapse;
@@ -443,14 +490,14 @@ select[multiple] {
 
 /* Pulsante azzera filtri desktop */
 .reset-filters-desktop {
-  margin-left: auto;
-  padding: 6px 16px;
+  margin-left: 0;
+  padding: 5px 16px;
   background-color: #e74c3c;
   color: #fff;
   border: none;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 600;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
   transition: background-color 0.2s ease;
