@@ -41,7 +41,7 @@
     const breadcrumb = document.getElementById('breadcrumb');
     const path = window.location.pathname;
     const search = window.location.search;
-    const items = [{ text: '&#127968;', link: '/' }];
+    const items = [{ text: String.fromCodePoint(0x1f3e0), link: '/', isHome: true }];
 
     // Determina il percorso in base all'URL
     if (path.includes('/regno/')) {
@@ -231,21 +231,34 @@
       items.push({ text: 'Macchine', link: null });
     }
 
-    // Costruisci l'HTML del breadcrumb
-    const breadcrumbHTML = items.map((item, index) => {
+    const fragment = document.createDocumentFragment();
+    items.forEach((item, index) => {
       const isLast = index === items.length - 1;
-      const separator = isLast ? '' : '<span class="breadcrumb-separator">/</span>';
+      let node;
 
       if (isLast) {
-        return `<span class="breadcrumb-current">${item.text}</span>`;
+        node = document.createElement('span');
+        node.className = 'breadcrumb-current';
       } else if (item.link) {
-        return `<a href="${item.link}">${item.text}</a>${separator}`;
+        node = document.createElement('a');
+        node.href = item.link;
+        if (item.isHome) node.setAttribute('aria-label', 'Home');
       } else {
-        return `<span>${item.text}</span>${separator}`;
+        node = document.createElement('span');
       }
-    }).join('');
 
-    breadcrumb.innerHTML = breadcrumbHTML;
+      node.textContent = item.text;
+      fragment.appendChild(node);
+
+      if (!isLast) {
+        const separator = document.createElement('span');
+        separator.className = 'breadcrumb-separator';
+        separator.textContent = '/';
+        fragment.appendChild(separator);
+      }
+    });
+
+    breadcrumb.replaceChildren(fragment);
 
   }
 })();
