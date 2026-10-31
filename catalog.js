@@ -304,6 +304,13 @@
       const circleName = match ? `${match[1]}_circle.${match[2]}` : `${link}_circle`;
       return "imgDatariRegno/" + circleName;
     }
+    if (window.location.pathname.includes("/triestea/")) {
+      const match = link.match(/^(.*)\.(jpeg|jpg|png)$/i);
+      const circleName = match
+        ? `${match[1]}_circle.${match[2]}`
+        : `${link}_circle`;
+      return `imgDatariTriestea/${circleName}`;
+    }
     return link;
   }
 
@@ -358,7 +365,19 @@
           if (imageIndex < imagePaths.length) {
             image.src = imagePaths[imageIndex];
           } else {
-            tooltip.style.display = "none";
+            const fallback = document.createElement("div");
+            fallback.className = "catalog-datario-fallback";
+            fallback.textContent = value;
+            fallback.style.width = "173px";
+            fallback.style.height = "173px";
+            fallback.style.margin = "0 auto 6px";
+            fallback.style.border = "1px solid #ddd";
+            fallback.style.borderRadius = "50%";
+            fallback.style.display = "flex";
+            fallback.style.alignItems = "center";
+            fallback.style.justifyContent = "center";
+            fallback.style.fontSize = "28px";
+            tooltip.replaceChild(fallback, image);
           }
         };
         tooltip.appendChild(image);

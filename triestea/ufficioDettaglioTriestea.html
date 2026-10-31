@@ -321,6 +321,14 @@
           return `${localita}_${ufficio}_${datario}.jpeg`;
         }
 
+        function getDatarioImagePath(link, shape) {
+          const match = link.match(/^(.*)\.(jpeg|jpg|png)$/i);
+          const imageName = match
+            ? `${match[1]}_${shape}.${match[2]}`
+            : `${link}_${shape}`;
+          return `imgDatariTriestea/${imageName}`;
+        }
+
         // Mostra i datari unici. Usa la cartella imgDatariTriestea
         // Se l'immagine non esiste, mostra un badge con il codice datario
         function renderDatari(records) {
@@ -374,13 +382,8 @@
 
             let mediaElement;
             if (link) {
-              const m = link.match(/^(.*)\.(jpeg|jpg|png)$/i);
-              let circleName = link;
-              if (m) circleName = `${m[1]}_circle.${m[2]}`;
-              else circleName = `${link}_circle`;
-
               const img = document.createElement("img");
-              img.src = `imgDatariTriestea/${circleName}`;
+              img.src = getDatarioImagePath(link, "circle");
               img.alt = datarioCode;
               img.style.height = "200px";
               img.style.maxWidth = "200px";
@@ -392,7 +395,7 @@
               img.style.background = "#fff";
               img.onerror = () => {
                 if (img.src.includes("_circle.")) {
-                  img.src = img.src.replace("_circle.", "_square.");
+                  img.src = getDatarioImagePath(link, "square");
                   return;
                 }
                 const badge = document.createElement("div");
