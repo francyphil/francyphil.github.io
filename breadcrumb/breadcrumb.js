@@ -144,8 +144,6 @@
           items.push({ text: 'Targhette', link: null });
         } else if (path.includes('onde-trieste.html')) {
           items.push({ text: 'Onde', link: null });
-        } else if (path.includes('barre-trieste.html')) {
-          items.push({ text: 'Barre', link: null });
         } else if (path.includes('ufficiTriestea.html')) {
           items.push({ text: 'Uffici', link: null });
         } else if (path.includes('ufficioDettaglioTriestea.html')) {
