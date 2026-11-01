@@ -335,6 +335,7 @@ def main():
         ("regno",         "doppioCerchio.json"),
         ("regno",         "RRPosteRegno.json"),
         ("triestea",      "targhetteTriesteA.json"),
+        ("triestea",      "OndeTrieste.json"),
         ("colonie/libia", "targhetteLibia.json"),
         ("colonie/libia", "ondeLibia.json"),
         ("colonie/libia", "BarreLibia.json"),
@@ -359,7 +360,11 @@ def main():
 
     # Conta onde classificate
     total_onde = 0
-    for onde_folder, onde_file in [("regno", "OndeRegno.json"), ("colonie/libia", "ondeLibia.json")]:
+    for onde_folder, onde_file in [
+        ("regno", "OndeRegno.json"),
+        ("colonie/libia", "ondeLibia.json"),
+        ("triestea", "OndeTrieste.json"),
+    ]:
         onde_json = project_dir / onde_folder / onde_file
         if onde_json.exists():
             try:
