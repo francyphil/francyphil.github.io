@@ -19,8 +19,7 @@ MIGLIORIE
 Migliorare gestione da cellulare non è semplice
 - rivedere grafici, ho aggiunto le barre, le onde i continui etc,, nn sono cosi sicuro che sia la visualizzazione MIGLIORIE
 
-mettere immagini datari trieste a
-onde trieste a
+ 
 
 PRIMA DELLA PUBBLICAZIONE
 - creare sitemaps.xml

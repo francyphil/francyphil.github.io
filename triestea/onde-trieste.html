@@ -8,26 +8,12 @@
     <script src="/favicon-loader.js"></script>
     <link rel="stylesheet" href="/navbar/navbar.css">
     <link rel="stylesheet" href="/breadcrumb/breadcrumb.css">
+    <link rel="stylesheet" href="/catalog.css" />
     <style>
       body {
         font-family: sans-serif;
         margin: 0;
         padding: 0;
-      }
-      .coming-soon {
-        text-align: center;
-        padding: 80px 20px;
-      }
-      .coming-soon .icon {
-        font-size: 4em;
-        margin-bottom: 20px;
-      }
-      .coming-soon p {
-        font-size: 1.2em;
-        color: #5a6c7d;
-        max-width: 500px;
-        margin: 15px auto;
-        line-height: 1.6;
       }
     </style>
     <link rel="stylesheet" href="/footer/footer.css" />
@@ -39,10 +25,101 @@
 
     <div class="content-container">
       <h1>Onde Trieste A</h1>
-      <div class="coming-soon">
-        <div class="icon">🚧</div>
-        <p>Questa sezione è in fase di preparazione.<br>Il catalogo degli annulli ad onde di Trieste A sarà disponibile prossimamente.</p>
+
+      <button id="mobileFilterToggle">
+        <span>🔍 Filtri <span id="filterBadge" class="filter-badge" style="display:none"></span></span>
+        <span class="filter-arrow">▼</span>
+      </button>
+      <div id="mobileFilterPanel"></div>
+      <div id="mobileListContainer"></div>
+
+      <fieldset class="controlli-box">
+        <legend>Controlli</legend>
+        <div class="controlli-wrapper">
+          <label>
+            Max record:
+            <select id="maxRecords">
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="500">500</option>
+              <option value="all">Tutti</option>
+            </select>
+          </label>
+          <label>
+            Vista:
+            <select id="vistaSelezionata">
+              <option value="tabella">Tabella</option>
+              <option value="card">Card</option>
+              <option value="tabella_card">Tabella + Card</option>
+            </select>
+          </label>
+        </div>
+        <div id="loadingIndicator" class="loading-indicator" style="display:none">
+          <div class="spinner"></div>
+          <span>Caricamento...</span>
+        </div>
+      </fieldset>
+
+      <div id="pagination-top" class="pagination" aria-label="Paginazione"></div>
+
+      <div class="table-wrapper">
+        <table id="tabellaFiltri">
+          <thead id="theadFiltri">
+            <tr id="trTitoli">
+              <th data-campo="Località">Località</th>
+              <th data-campo="Denominazione ufficio">Ufficio</th>
+              <th data-campo="Anno">Anno</th>
+              <th data-campo="Descrizione">Descrizione</th>
+              <th data-campo="Datario">Datario</th>
+            </tr>
+            <tr id="trFiltri"></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </div>
+
+      <div class="card-container" id="cardContainer"></div>
+      <div id="pagination" class="pagination" aria-label="Paginazione"></div>
+
+      <div id="graficoWrapper">
+        <canvas id="grafico" height="400"></canvas>
+      </div>
+
+      <div id="lightboxOverlay">
+        <div id="lightboxInfo"></div>
+        <img id="lightboxImage" />
+        <div id="fallbackText"></div>
+        <div class="controls">
+          <button onclick="prevImage()">⟨</button>
+          <button onclick="chiudiLightbox()">✕</button>
+          <button onclick="nextImage()">⟩</button>
+        </div>
+      </div>
+
+      <script>
+        var CATALOG_CONFIG = {
+          jsonFile: "OndeTrieste.json",
+          getImgPath: function(r) {
+            var link = (r["linkDatario"] || "").trim();
+            return link ? "imgDatariTriestea/" + link.replace(/\.(jpeg|jpg|png)$/i, "_square.$1") : "";
+          },
+          customCell: function(td, campo, val, r) {
+            if (campo === "Denominazione ufficio") {
+              var params = new URLSearchParams({
+                denominazione: r["Denominazione ufficio"],
+                localita: r["Località"],
+              });
+              var link = document.createElement("a");
+              link.href = "ufficioDettaglioTriestea.html?" + params.toString();
+              link.textContent = val;
+              td.appendChild(link);
+              return true;
+            }
+            return false;
+          },
+        };
+      </script>
+      <script src="/catalog.js"></script>
     </div>
 
     <script src="/footer/footer.js"></script>

@@ -435,8 +435,9 @@
     if (vista) document.getElementById("vistaSelezionata").value = vista;
 
     const schema = params.get("schema");
-    if (schema) {
-      document.getElementById("schemaCatalogazione").value = schema;
+    const schemaSelect = document.getElementById("schemaCatalogazione");
+    if (schema && schemaSelect) {
+      schemaSelect.value = schema;
       const mobileSchema = document.getElementById("mobileSchemaCatalogazione");
       if (mobileSchema) mobileSchema.value = schema;
     }
@@ -463,8 +464,8 @@
     const vista = document.getElementById("vistaSelezionata").value;
     if (vista !== "tabella") params.set("vista", vista);
 
-    const schema = document.getElementById("schemaCatalogazione").value;
-    if (schema !== "ornaghi_ufficio") params.set("schema", schema);
+    const schema = document.getElementById("schemaCatalogazione")?.value;
+    if (schema && schema !== "ornaghi_ufficio") params.set("schema", schema);
 
     if (currentPage > 1) params.set("pagina", currentPage);
 
@@ -905,26 +906,29 @@
     maxLabel.appendChild(maxSelect);
     controlsDiv.appendChild(maxLabel);
 
-    const schemaLabel = document.createElement("label");
-    schemaLabel.textContent = "Schema";
-    const schemaSelect = document.createElement("select");
-    schemaSelect.id = "mobileSchemaCatalogazione";
-    [
-      { v: "ornaghi_ufficio", t: "Ornaghi Ufficio" },
-      { v: "ornaghi_tipo", t: "Ornaghi Tipo" },
-    ].forEach((o) => {
-      const opt = document.createElement("option");
-      opt.value = o.v;
-      opt.textContent = o.t;
-      schemaSelect.appendChild(opt);
-    });
-    schemaSelect.addEventListener("change", () => {
-      document.getElementById("schemaCatalogazione").value =
-        schemaSelect.value;
-      aggiornaVisualizzazione(filtraDati(data));
-    });
-    schemaLabel.appendChild(schemaSelect);
-    controlsDiv.appendChild(schemaLabel);
+    if (document.getElementById("schemaCatalogazione")) {
+      const schemaLabel = document.createElement("label");
+      schemaLabel.textContent = "Schema";
+      const schemaSelect = document.createElement("select");
+      schemaSelect.id = "mobileSchemaCatalogazione";
+      [
+        { v: "ornaghi_ufficio", t: "Ornaghi Ufficio" },
+        { v: "ornaghi_tipo", t: "Ornaghi Tipo" },
+      ].forEach((o) => {
+        const opt = document.createElement("option");
+        opt.value = o.v;
+        opt.textContent = o.t;
+        schemaSelect.appendChild(opt);
+      });
+      schemaSelect.addEventListener("change", () => {
+        const desktopSchema = document.getElementById("schemaCatalogazione");
+        if (!desktopSchema) return;
+        desktopSchema.value = schemaSelect.value;
+        aggiornaVisualizzazione(filtraDati(data));
+      });
+      schemaLabel.appendChild(schemaSelect);
+      controlsDiv.appendChild(schemaLabel);
+    }
 
     const periodoLabel = document.createElement("label");
     periodoLabel.textContent = "Periodo";
@@ -1171,7 +1175,7 @@
   // ── Schema di catalogazione ──────────────────────────────────────────
 
   async function applicaSchema(records, vistaSelezionata) {
-    const schema = document.getElementById("schemaCatalogazione").value;
+    const schema = document.getElementById("schemaCatalogazione")?.value || "ornaghi_ufficio";
     if (schema === "ornaghi_ufficio") {
       return records;
     } else if (schema === "ornaghi_tipo") {
@@ -1826,7 +1830,7 @@
   // maxRecords e vistaSelezionata listeners già registrati sopra (con reset currentPage)
   document
     .getElementById("schemaCatalogazione")
-    .addEventListener("change", () =>
+    ?.addEventListener("change", () =>
       aggiornaVisualizzazione(filtraDati(data)),
     );
 
