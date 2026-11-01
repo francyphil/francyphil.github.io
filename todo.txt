@@ -18,7 +18,7 @@ MIGLIORIE
 - RRPOste TS: cambiare nome da RPx a TSx
 Migliorare gestione da cellulare non è semplice
 - rivedere grafici, ho aggiunto le barre, le onde i continui etc,, nn sono cosi sicuro che sia la visualizzazione MIGLIORIE
-
+ 
  
 
 PRIMA DELLA PUBBLICAZIONE
