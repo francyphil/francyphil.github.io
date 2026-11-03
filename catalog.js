@@ -568,6 +568,25 @@
     search.addEventListener("keyup", filterOptions);
     search.addEventListener("change", filterOptions);
     search.addEventListener("compositionend", filterOptions);
+    search.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" || e.isComposing) return;
+      e.preventDefault();
+      if (!search.value.trim()) return;
+      const visibili = Array.from(
+        panel.querySelectorAll("label.ms-option"),
+      ).filter(
+        (lbl) =>
+          !lbl.classList.contains("ms-hidden") && lbl.style.display !== "none",
+      );
+      if (!visibili.length) return;
+      visibili.forEach((lbl) => {
+        lbl.querySelector("input[type=checkbox]").checked = true;
+      });
+      search.value = "";
+      filterOptions();
+      aggiornaMultiSelectLabel(wrapper);
+      onChange();
+    });
     panel.appendChild(search);
 
     // Azioni: seleziona tutto / deseleziona tutto
@@ -1309,7 +1328,23 @@
 
     const totalPages = perPage === 0 ? 1 : Math.max(1, Math.ceil(totalItems / perPage));
 
-    const maxDots = 11;
+    // Pulsanti numerati: al massimo 25, ridotti se non stanno su una riga.
+    containers.forEach((c) => (c.style.display = "flex"));
+    const probeHost = containers[0];
+    const probeDot = document.createElement("button");
+    probeDot.className = "page-dot";
+    const probeArrow = document.createElement("button");
+    probeArrow.className = "page-arrow";
+    probeHost.append(probeDot, probeArrow);
+    const dotWidth = probeDot.offsetWidth;
+    const arrowWidth = probeArrow.offsetWidth;
+    probeDot.remove();
+    probeArrow.remove();
+    const gap = parseFloat(getComputedStyle(probeHost).columnGap) || 0;
+    const fitting = Math.floor(
+      (probeHost.clientWidth - 2 * arrowWidth - gap) / (dotWidth + gap),
+    );
+    const maxDots = dotWidth > 0 ? Math.max(1, Math.min(25, fitting)) : 25;
 
     const createArrow = (dir, currentPage, totalPages) => {
       const btn = document.createElement("button");
@@ -1330,11 +1365,6 @@
 
     containers.forEach((container) => {
       container.innerHTML = "";
-
-      if (!perPage || perPage >= totalItems) {
-        container.style.display = "none";
-        return;
-      }
       container.style.display = "flex";
 
       container.appendChild(createArrow("prev", page, totalPages));
