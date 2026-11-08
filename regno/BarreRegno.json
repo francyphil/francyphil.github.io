@@ -384,6 +384,20 @@
         "Descrizione": "Barre",
         "linkTarghetta": "",
         "linkImgTarghetta": "",
+        "Anno": 1943,
+        "Località": "Padova",
+        "Denominazione ufficio": "Centro",
+        "Denominazione ufficio breve": "",
+        "Datario": "D6",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
         "Anno": 1944,
         "Località": "Padova",
         "Denominazione ufficio": "Centro",
@@ -753,6 +767,20 @@
         "Denominazione ufficio": "Ferrovia",
         "Denominazione ufficio breve": "Ferrovia",
         "Datario": "D1",
+        "linkDatario": ""
+    },
+    {
+        "Targhetta Tipo": "",
+        "Targhetta Ufficio": "",
+        "extra": "",
+        "Descrizione": "Barre",
+        "linkTarghetta": "",
+        "linkImgTarghetta": "",
+        "Anno": 1944,
+        "Località": "Verona",
+        "Denominazione ufficio": "Ferrovia",
+        "Denominazione ufficio breve": "Ferrovia",
+        "Datario": "D11",
         "linkDatario": ""
     },
     {
