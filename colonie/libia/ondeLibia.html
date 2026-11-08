@@ -106,6 +106,13 @@
     <script>
       var CATALOG_CONFIG = {
         jsonFile: "ondeLibia.json",
+        datarioSourceFiles: ["targhetteLibia.json", "ondeLibia.json", "BarreLibia.json"],
+        getDatarioImgPath: function(r, link) {
+          var imageLink = link || r.linkDatario;
+          var match = imageLink.match(/^(.*)\.(jpeg|jpg|png)$/i);
+          var circleName = match ? match[1] + "_circle." + match[2] : imageLink + "_circle";
+          return "imgDatariLibia/" + circleName;
+        },
         getImgPath: function(r) {
           return "img/prev_tripoli_" + r["Targhetta Ufficio"] + ((r["extra"]) ? ("_" + (r["extra"]).toString().trim()) : "") + ".jpeg";
         },

@@ -182,6 +182,7 @@
 
         // Dati globali per ridisegno del grafico
         let _chartFiltered = [], _chartOndeFiltered = [], _chartBarreFiltered = [];
+        let _datarioLinksByCode = new Map();
 
         // Carica e filtra i dati
         async function loadOfficeDetails() {
@@ -226,6 +227,15 @@
                 item["Denominazione ufficio"] === denominazione &&
                 item["Località"] === localita,
             );
+
+            _datarioLinksByCode = new Map();
+            [...filtered, ...ondeFiltered, ...barreFiltered].forEach((item) => {
+              const datario = (item.Datario || "").trim();
+              const link = (item.linkDatario || "").trim();
+              if (datario && link && !_datarioLinksByCode.has(datario)) {
+                _datarioLinksByCode.set(datario, link);
+              }
+            });
 
             // Ordina per anno (ascendente)
             filtered.sort((a, b) => {
@@ -379,10 +389,12 @@
         function getDatarioImageLink(record) {
           const explicitLink = (record.linkDatario || "").trim();
           if (explicitLink) return explicitLink;
+          const datario = (record.Datario || "").trim();
+          const linkFromOtherSource = _datarioLinksByCode.get(datario);
+          if (linkFromOtherSource) return linkFromOtherSource;
 
           const localita = (record["Località"] || "").trim();
           const ufficio = (record["Denominazione ufficio breve"] || record["Denominazione ufficio"] || "").trim();
-          const datario = (record.Datario || "").trim();
           if (!localita || !ufficio || !datario) return "";
           return `${localita}_${ufficio}_${datario}.jpeg`;
         }

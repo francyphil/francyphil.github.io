@@ -295,8 +295,13 @@
   function getDatarioImgPathFromLink(link, record) {
     link = String(link || "").trim();
     if (!link) return "";
-    if (CFG.getDatarioImgPath && record && link === String(record.linkDatario || "").trim()) {
-      return CFG.getDatarioImgPath(record);
+    if (
+      CFG.getDatarioImgPath &&
+      record &&
+      (link === String(record.linkDatario || "").trim() ||
+        window.location.pathname.includes("/colonie/libia/"))
+    ) {
+      return CFG.getDatarioImgPath(record, link);
     }
     if (/^(https?:)?\//.test(link) || link.includes("/")) return link;
     if (String(CFG.jsonFile).includes("Regno") || window.location.pathname.includes("/regno/")) {
