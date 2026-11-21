@@ -23,37 +23,61 @@
       })
       .then(stats => {
         const sections = stats.sections || {};
-        const rows = Object.keys(sections).map(name => {
+        const table = document.createElement('table');
+        table.className = 'catalog-stats';
+
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
+        ['Sezione', 'Catalogati', 'Immagini', '% immagini', 'Datari', '% datari']
+          .forEach(label => {
+            const th = document.createElement('th');
+            th.textContent = label;
+            headerRow.appendChild(th);
+          });
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        const tbody = document.createElement('tbody');
+        const appendTextCell = (row, value) => {
+          const cell = document.createElement('td');
+          cell.textContent = String(value);
+          row.appendChild(cell);
+        };
+        const appendProgressCell = (row, value) => {
+          const pct = Number(value);
+          const safePct = Number.isFinite(pct) ? Math.max(0, Math.min(100, pct)) : 0;
+          const display = (Math.round(safePct * 10) / 10).toFixed(safePct % 1 === 0 ? 0 : 1);
+          const cell = document.createElement('td');
+          cell.className = 'pct';
+          const progress = document.createElement('div');
+          progress.className = 'progress';
+          progress.setAttribute('role', 'progressbar');
+          progress.setAttribute('aria-valuenow', String(safePct));
+          progress.setAttribute('aria-valuemin', '0');
+          progress.setAttribute('aria-valuemax', '100');
+          const bar = document.createElement('div');
+          bar.className = 'progress-bar';
+          bar.style.width = `${safePct}%`;
+          const text = document.createElement('div');
+          text.className = 'progress-text';
+          text.textContent = `${display}%`;
+          progress.append(bar, text);
+          cell.appendChild(progress);
+          row.appendChild(cell);
+        };
+
+        Object.keys(sections).forEach(name => {
           const s = sections[name] || {};
-          const pct = Number(s.images_pct || 0);
-          const pctDisplay = (Math.round(pct * 10) / 10).toFixed(pct % 1 === 0 ? 0 : 1);
-          const pctSafe = Math.max(0, Math.min(100, pct));
-          const datPct = Number(s.datario_pct || 0);
-          const datPctDisplay = (Math.round(datPct * 10) / 10).toFixed(datPct % 1 === 0 ? 0 : 1);
-          const datPctSafe = Math.max(0, Math.min(100, datPct));
-          return `<tr>
-            <td>${name}</td>
-            <td>${s.total_catalogati || 0}</td>
-            <td>${s.images_present || 0}</td>
-            <td class="pct">
-              <div class="progress" aria-valuenow="${pctSafe}" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" style="width: ${pctSafe}%;"></div>
-                <div class="progress-text">${pctDisplay}%</div>
-              </div>
-            </td>
-            <td>${s.datario_present || 0}</td>
-            <td class="pct">
-              <div class="progress" aria-valuenow="${datPctSafe}" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" style="width: ${datPctSafe}%;"></div>
-                <div class="progress-text">${datPctDisplay}%</div>
-              </div>
-            </td>
-          </tr>`;
-        }).join('');
-        const table = `<table class="catalog-stats">
-          <thead><tr><th>Sezione</th><th>Catalogati</th><th>Immagini</th><th>% immagini</th><th>Datari</th><th>% datari</th></tr></thead>
-          <tbody>${rows}</tbody>
-        </table>`;
+          const row = document.createElement('tr');
+          appendTextCell(row, name);
+          appendTextCell(row, s.total_catalogati || 0);
+          appendTextCell(row, s.images_present || 0);
+          appendProgressCell(row, s.images_pct || 0);
+          appendTextCell(row, s.datario_present || 0);
+          appendProgressCell(row, s.datario_pct || 0);
+          tbody.appendChild(row);
+        });
+        table.appendChild(tbody);
         let container = document.getElementById('catalogStatsContainer');
         if (!container) {
           const card = document.getElementById('cardContainer');
@@ -64,7 +88,7 @@
             card.insertAdjacentElement('afterend', container);
           } else return;
         }
-        container.innerHTML = table;
+        container.replaceChildren(table);
       })
       .catch(() => {
         // silently ignore if stats not available

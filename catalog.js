@@ -1648,7 +1648,15 @@
       if (r["Denominazione ufficio"])
         parts.push(r["Denominazione ufficio"]);
       if (r["Anno"]) parts.push(r["Anno"]);
-      meta.innerHTML = parts.join('<span class="sep">·</span>');
+      parts.forEach((part, index) => {
+        if (index > 0) {
+          const separator = document.createElement("span");
+          separator.className = "sep";
+          separator.textContent = "·";
+          meta.appendChild(separator);
+        }
+        meta.appendChild(document.createTextNode(String(part)));
+      });
 
       info.appendChild(title);
       info.appendChild(meta);
@@ -1823,10 +1831,14 @@
       const btn = document.getElementById('acceptChartBtn');
       if (btn) btn.addEventListener('click', function(){
         try { localStorage.setItem('cookie_consent_status','accepted'); } catch(e){}
-        loadScript('https://cdn.jsdelivr.net/npm/chart.js', function(){
-          chart = createChartInstance();
-          aggiornaGrafico(data);
-        });
+        loadScript(
+          'https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js',
+          function(){
+            chart = createChartInstance();
+            aggiornaGrafico(data);
+          },
+          'sha384-T/4KgSWuZEPozpPz7rnnp/5lDSnpY1VPJCojf1S81uTHS1E38qgLfMgVsAeRCWc4',
+        );
       });
     }
 
@@ -1836,9 +1848,13 @@
         chart = createChartInstance();
       } else if (consent === 'accepted' && typeof Chart === 'undefined') {
         // load Chart.js then create
-        loadScript('https://cdn.jsdelivr.net/npm/chart.js', function(){
-          chart = createChartInstance();
-        });
+        loadScript(
+          'https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js',
+          function(){
+            chart = createChartInstance();
+          },
+          'sha384-T/4KgSWuZEPozpPz7rnnp/5lDSnpY1VPJCojf1S81uTHS1E38qgLfMgVsAeRCWc4',
+        );
       } else {
         // no consent -> show placeholder
         showPlaceholder();
@@ -1849,9 +1865,11 @@
   }
 
   // Utility per caricare script dinamicamente
-  function loadScript(src, cb) {
+  function loadScript(src, cb, integrity) {
     const s = document.createElement('script');
     s.src = src;
+    s.integrity = integrity;
+    s.crossOrigin = 'anonymous';
     s.onload = cb || function(){};
     s.onerror = function(){ console.error('Failed to load script', src); };
     document.body.appendChild(s);

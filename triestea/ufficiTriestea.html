@@ -126,9 +126,13 @@
       }
 
       function flagCell(value) {
-        return value
-          ? '<span class="ok">SI</span>'
-          : '<span class="no">-</span>';
+        const cell = document.createElement("td");
+        cell.className = "flag";
+        const flag = document.createElement("span");
+        flag.className = value ? "ok" : "no";
+        flag.textContent = value ? "SI" : "-";
+        cell.appendChild(flag);
+        return cell;
       }
 
       function byOffice(a, b) {
@@ -149,17 +153,22 @@
             const rows = Array.from(officeMap.values()).sort(byOffice);
             document.getElementById("ufficiCount").textContent = String(rows.length);
 
-            tbody.innerHTML = rows
-              .map((r) => {
-                const officeHref = `ufficioDettaglioTriestea.html?localita=${encodeURIComponent(r.localita)}&denominazione=${encodeURIComponent(r.ufficio)}`;
-                return `
-                  <tr>
-                    <td>${r.localita}</td>
-                    <td><a href="${officeHref}">${r.ufficio}</a></td>
-                    <td class="flag">${flagCell(r.targhette)}</td>
-                  </tr>`;
-              })
-              .join("");
+            const fragment = document.createDocumentFragment();
+            rows.forEach((r) => {
+              const tr = document.createElement("tr");
+              const cityCell = document.createElement("td");
+              cityCell.textContent = r.localita;
+              tr.appendChild(cityCell);
+
+              const officeCell = document.createElement("td");
+              const officeLink = document.createElement("a");
+              officeLink.href = `ufficioDettaglioTriestea.html?localita=${encodeURIComponent(r.localita)}&denominazione=${encodeURIComponent(r.ufficio)}`;
+              officeLink.textContent = r.ufficio;
+              officeCell.appendChild(officeLink);
+              tr.append(officeCell, flagCell(r.targhette));
+              fragment.appendChild(tr);
+            });
+            tbody.replaceChildren(fragment);
 
             if (rows.length === 0) {
               errorBox.style.display = "block";

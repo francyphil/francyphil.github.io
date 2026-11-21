@@ -90,9 +90,21 @@
               const tr = document.createElement("tr");
               const cittaLink = "cittaDettaglio.html?localita=" + encodeURIComponent(u.citta);
               const ufficioLink = "ufficioDettaglio.html?localita=" + encodeURIComponent(u.citta) + "&denominazione=" + encodeURIComponent(u.ufficio);
-              tr.innerHTML = '<td><a href="' + cittaLink + '">' + u.citta + '</a></td>'
-                           + '<td><a href="' + ufficioLink + '">' + u.ufficio + '</a></td>'
-                           + '<td>V</td>';
+              const cityCell = document.createElement("td");
+              const cityAnchor = document.createElement("a");
+              cityAnchor.href = cittaLink;
+              cityAnchor.textContent = u.citta;
+              cityCell.appendChild(cityAnchor);
+
+              const officeCell = document.createElement("td");
+              const officeAnchor = document.createElement("a");
+              officeAnchor.href = ufficioLink;
+              officeAnchor.textContent = u.ufficio;
+              officeCell.appendChild(officeAnchor);
+
+              const flagCell = document.createElement("td");
+              flagCell.textContent = "V";
+              tr.append(cityCell, officeCell, flagCell);
               tbody.appendChild(tr);
             });
           });
